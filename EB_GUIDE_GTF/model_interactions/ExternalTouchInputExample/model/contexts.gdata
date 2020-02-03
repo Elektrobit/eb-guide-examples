@@ -1,0 +1,10 @@
+EBGUIDE 6.7.0.148693;
+@46deb1ad-23e7-4f8b-975c-adae4b218ca9
+{
+	#1669284054 items :: context_list : <object>[
+		context : @e0cb619a-81f0-4a76-b849-b3c189622a3e
+		{
+			#1019251764 name :: string : "HMI";
+			#2119147411 ownsThread :: bool : false;
+		}];
+}

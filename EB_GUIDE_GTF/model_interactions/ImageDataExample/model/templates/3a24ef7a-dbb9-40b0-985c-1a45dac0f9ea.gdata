@@ -1,0 +1,79 @@
+EBGUIDE 6.7.0.148693;
+@3a24ef7a-dbb9-40b0-985c-1a45dac0f9ea
+{
+	#62725243 name :: string : "IconButton";
+	#4043104779 structure :: GtfRectangle : @b6941c0c-d730-43c6-ba79-1d6f57c42fc8
+	{
+		#3514003583 features :: feature_list : @6655cf11-c74d-403c-86ae-da2a65345b62
+		{
+			#2393819079 child_1 :: Border : @6cdaed49-096a-426b-9ed1-fce584848ba8
+			{
+				#698715008 borderThickness :: int : 1;
+				#3208435073 borderColor :: color : 0x808080F5;
+				#2626279984 borderStyle :: int : 0;
+			}
+			#4266845165 child_2 :: TouchShortReleased : @3a7fd192-24cc-49e1-b531-17820b243961
+			{
+				#3114962824 touchShortReleased :: function(bool,int,int,int,int) : @743c6425-0b4f-4ba3-8b29-8e2674ba75c3
+				{
+					#1202705475 script :: string : "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)
+{
+	fire ev:home();
+    false;
+}";
+				}
+			}
+			#1363053963 child_3 :: StateTouched : @12c9b0ea-1134-4413-9fac-1e1e687efab4
+			{
+				#48586717 touchable :: bool : true;
+				#4126992839 touched :: bool : false;
+				#936718848 touchPolicy :: int : 0;
+				#1717151004 touchBehavior :: int : 0;
+			}
+			#4177618652 child_4 :: StateEnabled : @7ea03ea5-3dd5-4be4-9768-b19cfb06b831
+			{
+				#646178060 enabled :: bool : true;
+			}
+		}
+		#4055471879 children :: children_list : @fdf482f4-e585-40f0-83b3-d394ef5a55ca
+		{
+			#2393819079 child_1 :: GtfImage : @6d4b3d47-9e53-41d9-aa65-0e23be48f9b8
+			{
+				#3514003583 features :: feature_list : @19d8a81d-5396-4f97-b0a6-fd82f49f4584
+				{
+				}
+				#255682932 children :: children_list : @3b6b157d-dae4-45b5-8388-919d5d4f1cb9
+				{
+				}
+				#3044143181 name :: string : "icon";
+				#2184414696 visible :: bool : true;
+				#2157159517 width :: propref(int) : @b6941c0c-d730-43c6-ba79-1d6f57c42fc8#1231539353;
+				#108506690 height :: propref(int) : @b6941c0c-d730-43c6-ba79-1d6f57c42fc8#2527863835;
+				#22523962 x :: int : 0;
+				#2318468318 y :: int : 0;
+				#2908890103 image :: propref(image) : @b6941c0c-d730-43c6-ba79-1d6f57c42fc8#25495939;
+				#2102091985 sRGB :: bool : false;
+				#4224040490 horizontalAlign :: int : 1;
+				#2535756262 verticalAlign :: int : 0;
+			}
+		}
+		#3129130839 name :: string : "bg";
+		#35168987 visible :: bool : true;
+		#1231539353 width :: int : 60;
+		#2527863835 height :: int : 40;
+		#3096990316 x :: int : 20;
+		#1777601929 y :: int : 15;
+		#2387461316 fillColor :: color : 0xC0C0C0FF;
+		#25495939 button_icon :: image_resource : @8456294f-39e7-469e-89af-9fd118d59df2
+		{
+			#1629333464 file :: file : "images/home.png";
+		}
+	}
+	#4013493799 width :: propref(int) : @b6941c0c-d730-43c6-ba79-1d6f57c42fc8#1231539353;
+	#3999771553 height :: propref(int) : @b6941c0c-d730-43c6-ba79-1d6f57c42fc8#2527863835;
+	#843354320 x :: propref(int) : @b6941c0c-d730-43c6-ba79-1d6f57c42fc8#3096990316;
+	#4216805943 y :: propref(int) : @b6941c0c-d730-43c6-ba79-1d6f57c42fc8#1777601929;
+	#3532392616 touchShortReleased :: propref(function(bool,int,int,int,int)) : @3a7fd192-24cc-49e1-b531-17820b243961#3114962824;
+	#2322343294 button_icon :: propref(image_resource) : @b6941c0c-d730-43c6-ba79-1d6f57c42fc8#25495939;
+	#154749364 enabled :: propref(bool) : @7ea03ea5-3dd5-4be4-9768-b19cfb06b831#646178060;
+}

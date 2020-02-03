@@ -1,0 +1,471 @@
+EBGUIDE 6.7.0.148693;
+@669a97de-0e37-4273-a305-3645d71c4470
+{
+	#3452614616 x :: int : 99;
+	#3610860994 y :: int : 284;
+	#3705968389 width :: int : 1402;
+	#2783750803 height :: int : 445;
+	#459069395 name :: string : "Features";
+	#700657469 entry_action :: function(void) : @00000000-0000-0000-0000-000000000000;
+	#4236914709 exit_action :: function(void) : @00000000-0000-0000-0000-000000000000;
+	#1585593916 transitions :: haptic_transitions : @0c2132e1-edbf-4b1a-90c3-fd0fc3a99b0d
+	{
+		#2393819079 child_1 :: haptic_transition : @2695cd44-c629-429f-bf26-aaf6f044d36b
+		{
+			#2734520598 event :: objectref(event) : @00000000-0000-0000-0000-000000000000;
+			#3533856893 condition :: function(bool) : @00000000-0000-0000-0000-000000000000;
+			#1085649886 action :: function(void) : @00000000-0000-0000-0000-000000000000;
+			#2172031641 target_state :: objectref(haptic_dialog_state) : @1ecdeefa-40fa-4510-9b0a-dc434f789879;
+			#1358561326 source_dock :: float : 0.9585407F;
+			#2665104228 target_dock :: float : 0.4809923F;
+		}
+		#4212594314 child_2 :: haptic_transition : @f3a4d3cf-86fb-4661-8038-16e21a732adb
+		{
+			#2734520598 event :: objectref(event) : @01ffb473-23d9-4f56-945a-7875a2cd708a;
+			#3216209459 condition :: function(bool) : @00000000-0000-0000-0000-000000000000;
+			#2609612210 action :: function(void) : @00000000-0000-0000-0000-000000000000;
+			#3735694698 target_state :: objectref(haptic_final_state) : @b0c62a09-416e-436f-89ab-5f66208a7696;
+			#2175755128 source_dock :: float : 0.5466544F;
+			#338560168 target_dock :: float : 0.4774164F;
+		}
+	}
+	#1512425185 internal_transitions :: haptic_internal_transitions : @4d131b7d-1697-4e11-ae5c-6c986cf97449
+	{
+	}
+	#3297738973 background_color :: color : 0x6C6C6CFF;
+	#27831179 states :: haptic_states : @9189f2e7-ab7f-467f-8645-14c3190b88a2
+	{
+		#2393819079 child_1 :: haptic_choice_state : @9216d14c-307e-4b2e-b6ab-6173bed6a197
+		{
+			#3452614616 x :: int : 366;
+			#3640730994 y :: int : 19;
+			#3265623433 width :: int : 100;
+			#1880400100 height :: int : 100;
+			#2879226967 name :: string : "Choice state 1";
+			#1852745016 choice_transitions :: haptic_choice_transitions : @200e3427-e563-4528-b305-993a8314ef92
+			{
+				#2393819079 child_1 :: haptic_choice_transition : @7d475eed-da0c-44c9-844c-3353b47b064a
+				{
+					#1534769276 condition :: function(bool) : @80925b19-b8b2-4edb-b63b-576fb0543923
+					{
+						#1202705475 script :: string : "function()
+{
+	match_event v:evt=ev:feature in
+	{
+		if(v:evt.featureID == dp:showcase_id_event)
+		{
+			true;
+		}
+		else
+		{
+			false;
+		}
+	}
+	else
+	{
+		false;
+	}
+}";
+					}
+					#2777917028 action :: function(void) : @00000000-0000-0000-0000-000000000000;
+					#551813738 target_state :: objectref(haptic_dialog_state) : @466bf56b-a24e-44da-9a63-68ad8e2cd305;
+					#2425804179 source_dock :: float : 0.625F;
+					#84869059 target_dock :: float : 0.06444053F;
+				}
+				#727146321 child_2 :: haptic_choice_transition : @74d4a539-a58c-4f15-9740-018051373d23
+				{
+					#1534769276 condition :: function(bool) : @ec413020-359a-4bea-85c7-9cea5ed8de6f
+					{
+						#1202705475 script :: string : "function()
+{
+	match_event v:evt=ev:feature in
+	{
+		if(v:evt.featureID == dp:showcase_id_datapool)
+		{
+			true;
+		}
+		else
+		{
+			false;
+		}
+	}
+	else
+	{
+		false;
+	}
+}";
+					}
+					#3071984033 action :: function(void) : @00000000-0000-0000-0000-000000000000;
+					#2831551280 target_state :: objectref(haptic_dialog_state) : @d2ddea14-a848-4beb-b091-a8f32b8c9eaf;
+					#1155887343 source_dock :: float : 0.5314165F;
+					#2610542713 target_dock :: float : 0.9936372F;
+				}
+				#234069807 child_3 :: haptic_choice_transition : @c3144d33-c280-4ed7-a7ad-5b457e1a0e8d
+				{
+					#1534769276 condition :: function(bool) : @bff71756-e07a-4587-a064-e4874c452f43
+					{
+						#1202705475 script :: string : "function()
+{
+	match_event v:evt=ev:feature in
+	{
+		if(v:evt.featureID == dp:showcase_id_datapool_updates)
+		{
+			true;
+		}
+		else
+		{
+			false;
+		}
+	}
+	else
+	{
+		false;
+	}
+}";
+					}
+					#2886046736 action :: function(void) : @00000000-0000-0000-0000-000000000000;
+					#1370245990 target_state :: objectref(haptic_dialog_state) : @919dd67f-e22d-4757-bc79-0f236b759e3b;
+					#2054534815 source_dock :: float : 0.375F;
+					#2832997673 target_dock :: float : 0.9972719F;
+				}
+				#473585009 child_4 :: haptic_choice_transition : @88201093-33ec-4ab4-a313-a23033fd7647
+				{
+					#1534769276 condition :: function(bool) : @1a18767f-3d6a-45a9-8147-b392e9590987
+					{
+						#1202705475 script :: string : "function()
+{
+	match_event v:evt=ev:feature in
+	{
+		if(v:evt.featureID == dp:showcase_id_static_image)
+		{
+			true;
+		}
+		else
+		{
+			false;
+		}
+	}
+	else
+	{
+		false;
+	}
+}";
+					}
+					#106572418 action :: function(void) : @00000000-0000-0000-0000-000000000000;
+					#900727018 target_state :: objectref(haptic_dialog_state) : @9f172891-4757-4574-97d4-d532f77292e5;
+					#3759989235 source_dock :: float : 0.2900577F;
+					#4098753259 target_dock :: float : 0.995454F;
+				}
+				#3425154343 child_5 :: haptic_choice_transition : @0179abdd-490a-4da5-8915-34c3b3593fcb
+				{
+					#1534769276 condition :: function(bool) : @1a469fd5-387a-4ac2-ad1e-874b879519b1
+					{
+						#1202705475 script :: string : "function()
+{
+	match_event v:evt=ev:feature in
+	{
+		if(v:evt.featureID == dp:showcase_id_dynamic_image)
+		{
+			true;
+		}
+		else
+		{
+			false;
+		}
+	}
+	else
+	{
+		false;
+	}
+}";
+					}
+					#3134367216 action :: function(void) : @00000000-0000-0000-0000-000000000000;
+					#610576340 target_state :: objectref(haptic_dialog_state) : @f4c4c627-5bac-4e17-9caa-ac79a3125392;
+					#4053290239 source_dock :: float : 0.245454F;
+					#568738468 target_dock :: float : 0.9668385F;
+				}
+				#3511629185 child_6 :: haptic_choice_transition : @b4329f87-a940-47e2-8142-d0c7e2aebca6
+				{
+					#1534769276 condition :: function(bool) : @a3ecdeb9-f939-4430-b2ad-9ab4f5a17d6a
+					{
+						#1202705475 script :: string : "function()
+{
+	match_event v:evt=ev:feature in
+	{
+		if(v:evt.featureID == dp:showcase_id_windowed_list)
+		{
+			true;
+		}
+		else
+		{
+			false;
+		}
+	}
+	else
+	{
+		false;
+	}
+}";
+					}
+					#4047822780 action :: function(void) : @00000000-0000-0000-0000-000000000000;
+					#3303902178 target_state :: objectref(haptic_dialog_state) : @47b58d51-a795-4c85-8032-d56b30c62716;
+					#3523169703 source_dock :: float : 0.1887003F;
+					#2248936729 target_dock :: float : 0.9703363F;
+				}
+			}
+			#281308250 else_transition :: haptic_default_transition : @bf5ac299-63bb-484b-9f86-4422d3a2a14f
+			{
+				#2365897554 action :: function(void) : @00000000-0000-0000-0000-000000000000;
+				#450670432 target_state :: objectref(haptic_dialog_state) : @466bf56b-a24e-44da-9a63-68ad8e2cd305;
+				#933458388 source_dock :: float : 0.7274164F;
+				#2827633664 target_dock :: float : 0.9918221F;
+			}
+		}
+		#663228616 child_2 :: haptic_dialog_state : @466bf56b-a24e-44da-9a63-68ad8e2cd305
+		{
+			#3452614616 x :: int : 74;
+			#3476411275 y :: int : 157;
+			#33340907 width :: int : 100;
+			#1605538434 height :: int : 100;
+			#1446854951 name :: string : "Event interaction";
+			#2620282679 entry_action :: function(void) : @00000000-0000-0000-0000-000000000000;
+			#1484763861 exit_action :: function(void) : @00000000-0000-0000-0000-000000000000;
+			#932469917 transitions :: haptic_transitions : @1ba657d1-6732-4866-9113-fe751fb60ae5
+			{
+				#2393819079 child_1 :: haptic_transition : @59676639-4c7d-4133-b395-c500b73c72ae
+				{
+					#2734520598 event :: objectref(event) : @cf5d0e4a-6e0e-409c-9511-5e244e7095d9;
+					#1902818732 condition :: function(bool) : @00000000-0000-0000-0000-000000000000;
+					#1312497826 action :: function(void) : @00000000-0000-0000-0000-000000000000;
+					#2272443960 target_state :: objectref(haptic_dialog_state) : @d2ddea14-a848-4beb-b091-a8f32b8c9eaf;
+					#1833461073 source_dock :: float : 0.2425749F;
+					#4115718980 target_dock :: float : 0.7626494F;
+				}
+				#1000722632 child_2 :: haptic_transition : @a4096905-bbd1-4373-9d9a-333ed8148663
+				{
+					#2734520598 event :: objectref(event) : @a5c53304-298c-4710-adc5-a15f85ff9973;
+					#2442221969 condition :: function(bool) : @00000000-0000-0000-0000-000000000000;
+					#2103097144 action :: function(void) : @00000000-0000-0000-0000-000000000000;
+					#149258573 target_state :: objectref(haptic_final_state) : @b0c62a09-416e-436f-89ab-5f66208a7696;
+					#1113470862 source_dock :: float : 0.4113416F;
+					#3728721538 target_dock :: float : 0.8219625F;
+				}
+			}
+			#1091513665 internal_transitions :: haptic_internal_transitions : @4659bca4-3109-485c-91b7-20d6517f4fbd
+			{
+			}
+			#3012047801 background_color :: color : 0x6C6C6CFF;
+			#1741438802 dialog :: GtfView_template_instance : @2749e2e7-23f0-40f9-916f-20657e735c9c;
+			#2554110721 priority_stack :: priority_stack : @00000000-0000-0000-0000-000000000000;
+		}
+		#2436956263 child_3 :: haptic_dialog_state : @919dd67f-e22d-4757-bc79-0f236b759e3b
+		{
+			#3452614616 x :: int : 515;
+			#268517353 y :: int : 152;
+			#2977396171 width :: int : 100;
+			#1937399278 height :: int : 100;
+			#1038410935 name :: string : "Datapool updates";
+			#2701184519 entry_action :: function(void) : @00000000-0000-0000-0000-000000000000;
+			#882430769 exit_action :: function(void) : @00000000-0000-0000-0000-000000000000;
+			#3840336357 transitions :: haptic_transitions : @2905d532-48ae-4d37-a016-bf0b2dd94db0
+			{
+				#2393819079 child_1 :: haptic_transition : @b9660ffd-4223-4fa3-b95b-0fd32ee4c8f1
+				{
+					#2734520598 event :: objectref(event) : @a5c53304-298c-4710-adc5-a15f85ff9973;
+					#2317832329 condition :: function(bool) : @00000000-0000-0000-0000-000000000000;
+					#77877732 action :: function(void) : @00000000-0000-0000-0000-000000000000;
+					#709676378 target_state :: objectref(haptic_dialog_state) : @d2ddea14-a848-4beb-b091-a8f32b8c9eaf;
+					#1399915528 source_dock :: float : 0.666921F;
+					#987391198 target_dock :: float : 0.3220927F;
+				}
+				#1636707140 child_2 :: haptic_transition : @95707fe7-e308-4c30-becc-bff5b4867174
+				{
+					#2734520598 event :: objectref(event) : @cf5d0e4a-6e0e-409c-9511-5e244e7095d9;
+					#3409991797 condition :: function(bool) : @00000000-0000-0000-0000-000000000000;
+					#1111768370 action :: function(void) : @00000000-0000-0000-0000-000000000000;
+					#408929144 target_state :: objectref(haptic_dialog_state) : @9f172891-4757-4574-97d4-d532f77292e5;
+					#3050241767 source_dock :: float : 0.247733F;
+					#968091194 target_dock :: float : 0.7429624F;
+				}
+			}
+			#28267593 internal_transitions :: haptic_internal_transitions : @5bbb0dc7-31a9-4d37-a4f1-fb77790cf374
+			{
+			}
+			#1370954821 background_color :: color : 0x6C6C6CFF;
+			#3547769419 dialog :: GtfView_template_instance : @5f48e0da-d292-4c1c-8888-abe6f40e78c5;
+			#436998781 priority_stack :: priority_stack : @00000000-0000-0000-0000-000000000000;
+		}
+		#3653276937 child_4 :: haptic_dialog_state : @d2ddea14-a848-4beb-b091-a8f32b8c9eaf
+		{
+			#3452614616 x :: int : 295;
+			#4110657066 y :: int : 157;
+			#326422049 width :: int : 100;
+			#560418348 height :: int : 100;
+			#3111003255 name :: string : "Datapool interaction";
+			#2587453560 entry_action :: function(void) : @00000000-0000-0000-0000-000000000000;
+			#2650906975 exit_action :: function(void) : @00000000-0000-0000-0000-000000000000;
+			#3813578099 transitions :: haptic_transitions : @1df55f98-e300-4fc2-ac8a-b9b95fdc47af
+			{
+				#2393819079 child_1 :: haptic_transition : @81a2b793-72d9-4891-99f8-90ef20ef85a7
+				{
+					#2734520598 event :: objectref(event) : @a5c53304-298c-4710-adc5-a15f85ff9973;
+					#3527316739 condition :: function(bool) : @00000000-0000-0000-0000-000000000000;
+					#4190445454 action :: function(void) : @00000000-0000-0000-0000-000000000000;
+					#3189621375 target_state :: objectref(haptic_dialog_state) : @466bf56b-a24e-44da-9a63-68ad8e2cd305;
+					#1118631051 source_dock :: float : 0.6734163F;
+					#3179193880 target_dock :: float : 0.3265837F;
+				}
+				#996058831 child_2 :: haptic_transition : @4be2da8b-1fa4-47bd-b40a-fce052737f86
+				{
+					#2734520598 event :: objectref(event) : @cf5d0e4a-6e0e-409c-9511-5e244e7095d9;
+					#2335635372 condition :: function(bool) : @00000000-0000-0000-0000-000000000000;
+					#2864323814 action :: function(void) : @00000000-0000-0000-0000-000000000000;
+					#930864642 target_state :: objectref(haptic_dialog_state) : @919dd67f-e22d-4757-bc79-0f236b759e3b;
+					#1929694387 source_dock :: float : 0.2475516F;
+					#3049647692 target_dock :: float : 0.7457756F;
+				}
+			}
+			#1188613457 internal_transitions :: haptic_internal_transitions : @84f9ebf1-d95a-4763-84e7-c1c6bae8c39c
+			{
+			}
+			#2909007400 background_color :: color : 0x6C6C6CFF;
+			#3205396076 dialog :: GtfView_template_instance : @b5a23149-f790-43bd-ab21-8335ef9d4538;
+			#158359207 priority_stack :: priority_stack : @00000000-0000-0000-0000-000000000000;
+		}
+		#2932772643 child_5 :: haptic_dialog_state : @9f172891-4757-4574-97d4-d532f77292e5
+		{
+			#3452614616 x :: int : 742;
+			#276805823 y :: int : 149;
+			#3226999123 width :: int : 100;
+			#127260726 height :: int : 100;
+			#2992124263 name :: string : "Static images";
+			#2284019369 entry_action :: function(void) : @00000000-0000-0000-0000-000000000000;
+			#3920552501 exit_action :: function(void) : @00000000-0000-0000-0000-000000000000;
+			#3542381893 transitions :: haptic_transitions : @92649281-1fe3-4f6e-b25f-f3a488010113
+			{
+				#2393819079 child_1 :: haptic_transition : @d0d34292-c39e-4352-b0ef-2f807a1cd4cb
+				{
+					#2734520598 event :: objectref(event) : @a5c53304-298c-4710-adc5-a15f85ff9973;
+					#3273698661 condition :: function(bool) : @00000000-0000-0000-0000-000000000000;
+					#68430066 action :: function(void) : @00000000-0000-0000-0000-000000000000;
+					#173278206 target_state :: objectref(haptic_dialog_state) : @919dd67f-e22d-4757-bc79-0f236b759e3b;
+					#2782776582 source_dock :: float : 0.6712189F;
+					#2256120104 target_dock :: float : 0.3174749F;
+				}
+				#697017273 child_2 :: haptic_transition : @a35877b3-9978-49f7-b31c-99f5d3e6ab51
+				{
+					#2734520598 event :: objectref(event) : @cf5d0e4a-6e0e-409c-9511-5e244e7095d9;
+					#2324165528 condition :: function(bool) : @00000000-0000-0000-0000-000000000000;
+					#4229939932 action :: function(void) : @00000000-0000-0000-0000-000000000000;
+					#1682057528 target_state :: objectref(haptic_dialog_state) : @f4c4c627-5bac-4e17-9caa-ac79a3125392;
+					#2548983382 source_dock :: float : 0.2523672F;
+					#3905512984 target_dock :: float : 0.7429624F;
+				}
+			}
+			#1944540729 internal_transitions :: haptic_internal_transitions : @63398339-2c31-49fd-961e-cd7edfa58db3
+			{
+			}
+			#3266304385 background_color :: color : 0x6C6C6CFF;
+			#1305075121 dialog :: GtfView_template_instance : @dadb168c-7a5c-4cfd-9dcd-148af4ad2e3e;
+			#1252508627 priority_stack :: priority_stack : @00000000-0000-0000-0000-000000000000;
+		}
+		#415494936 child_6 :: haptic_dialog_state : @f4c4c627-5bac-4e17-9caa-ac79a3125392
+		{
+			#3452614616 x :: int : 958;
+			#1096794458 y :: int : 149;
+			#3829156941 width :: int : 100;
+			#2928818704 height :: int : 100;
+			#2105495815 name :: string : "Dynamic images";
+			#2222160705 entry_action :: function(void) : @00000000-0000-0000-0000-000000000000;
+			#1131408803 exit_action :: function(void) : @00000000-0000-0000-0000-000000000000;
+			#3890420123 transitions :: haptic_transitions : @849abb29-0e2b-48bc-a970-55a90e0b1780
+			{
+				#2393819079 child_1 :: haptic_transition : @a1b4e625-2370-48e8-b79e-7bbcc86b4809
+				{
+					#2734520598 event :: objectref(event) : @a5c53304-298c-4710-adc5-a15f85ff9973;
+					#2967008908 condition :: function(bool) : @00000000-0000-0000-0000-000000000000;
+					#3410626042 action :: function(void) : @00000000-0000-0000-0000-000000000000;
+					#445843994 target_state :: objectref(haptic_dialog_state) : @9f172891-4757-4574-97d4-d532f77292e5;
+					#2773862888 source_dock :: float : 0.6648207F;
+					#4074859280 target_dock :: float : 0.3372474F;
+				}
+				#522242342 child_2 :: haptic_transition : @5152cfd5-20d7-4fe0-a615-01ce807ce485
+				{
+					#2734520598 event :: objectref(event) : @cf5d0e4a-6e0e-409c-9511-5e244e7095d9;
+					#2713788969 condition :: function(bool) : @00000000-0000-0000-0000-000000000000;
+					#1026723752 action :: function(void) : @00000000-0000-0000-0000-000000000000;
+					#2375590782 target_state :: objectref(haptic_dialog_state) : @47b58d51-a795-4c85-8032-d56b30c62716;
+					#573717311 source_dock :: float : 0.2402182F;
+					#3961094778 target_dock :: float : 0.7598466F;
+				}
+			}
+			#1222089081 internal_transitions :: haptic_internal_transitions : @1ec38d5f-b88e-4b0d-baa5-4af0c69e2af5
+			{
+			}
+			#1356290254 background_color :: color : 0x6C6C6CFF;
+			#985996360 dialog :: GtfView_template_instance : @8aa5d387-6509-4603-af23-79df320688be;
+			#2505607847 priority_stack :: priority_stack : @00000000-0000-0000-0000-000000000000;
+		}
+		#3842043135 child_7 :: haptic_dialog_state : @47b58d51-a795-4c85-8032-d56b30c62716
+		{
+			#3452614616 x :: int : 1185;
+			#1016347100 y :: int : 147;
+			#1541814479 width :: int : 100;
+			#1311027243 height :: int : 100;
+			#788146695 name :: string : "Windowed list";
+			#2041557689 entry_action :: function(void) : @00000000-0000-0000-0000-000000000000;
+			#3239739425 exit_action :: function(void) : @00000000-0000-0000-0000-000000000000;
+			#1888394163 transitions :: haptic_transitions : @ffe2c6e4-fa3a-4e2a-9b61-6522eb90afa7
+			{
+				#2393819079 child_1 :: haptic_transition : @9fd9c7f8-60b7-4499-ae90-50d0d8ef2468
+				{
+					#2734520598 event :: objectref(event) : @a5c53304-298c-4710-adc5-a15f85ff9973;
+					#3513320986 condition :: function(bool) : @00000000-0000-0000-0000-000000000000;
+					#1771494682 action :: function(void) : @00000000-0000-0000-0000-000000000000;
+					#4262284273 target_state :: objectref(haptic_dialog_state) : @f4c4c627-5bac-4e17-9caa-ac79a3125392;
+					#957287512 source_dock :: float : 0.6648207F;
+					#708690864 target_dock :: float : 0.3287811F;
+				}
+				#2292824756 "haptic_transitions 1" :: haptic_transition : @fe900ab3-a17d-409b-95d8-8495da9c440e
+				{
+					#397393055 event :: objectref(event) : @cf5d0e4a-6e0e-409c-9511-5e244e7095d9;
+					#2594186397 condition :: function(bool) : @00000000-0000-0000-0000-000000000000;
+					#139897019 action :: function(void) : @00000000-0000-0000-0000-000000000000;
+					#614152320 target_state :: objectref(haptic_final_state) : @b0c62a09-416e-436f-89ab-5f66208a7696;
+					#1895231394 source_dock :: float : 0.6173816F;
+					#1968355710 target_dock :: float : 0.2274164F;
+				}
+			}
+			#4164442801 internal_transitions :: haptic_internal_transitions : @36643953-e137-41aa-a438-26d089dc9479
+			{
+			}
+			#1230799750 background_color :: color : 0x6C6C6CFF;
+			#4113867242 dialog :: GtfView_template_instance : @718e667b-bb22-4b66-8eac-27ee279c088f;
+			#1239318571 priority_stack :: priority_stack : @00000000-0000-0000-0000-000000000000;
+		}
+	}
+	#1226505672 initial_state :: haptic_initial_state : @920302b7-2f5f-4fa2-9fbf-5d5e2fee2a26
+	{
+		#3452614616 x :: int : 9;
+		#3749695220 y :: int : 11;
+		#1170325527 width :: int : 100;
+		#1698564364 height :: int : 100;
+		#3808806313 default_transition :: haptic_default_transition : @558ba07b-ac32-40e8-97d4-bec5d0f4312d
+		{
+			#2365897554 action :: function(void) : @00000000-0000-0000-0000-000000000000;
+			#652733791 target_state :: objectref(haptic_choice_state) : @9216d14c-307e-4b2e-b6ab-6173bed6a197;
+			#1579480461 source_dock :: float : 0.2430846F;
+			#3171462800 target_dock :: float : 0.7900577F;
+		}
+	}
+	#3625801147 final_state :: haptic_final_state : @b0c62a09-416e-436f-89ab-5f66208a7696
+	{
+		#3452614616 x :: int : 465;
+		#252269977 y :: int : 353;
+		#218304315 width :: int : 100;
+		#2150969520 height :: int : 100;
+	}
+	#3279059048 history_state :: haptic_history_state : @00000000-0000-0000-0000-000000000000;
+	#1612906647 deep_history_state :: haptic_deep_history_state : @00000000-0000-0000-0000-000000000000;
+	#1552963325 priority_stack :: priority_stack : @00000000-0000-0000-0000-000000000000;
+}

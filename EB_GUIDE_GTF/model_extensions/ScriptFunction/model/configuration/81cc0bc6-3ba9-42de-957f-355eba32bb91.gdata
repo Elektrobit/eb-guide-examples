@@ -1,0 +1,68 @@
+EBGUIDE 6.7.0.148693;
+@81cc0bc6-3ba9-42de-957f-355eba32bb91
+{
+	#1696215065 name :: string : "Simulation";
+	#817439401 isDefault :: bool : true;
+	#969853947 scene_configurations :: scene_configurations : @6d153dc2-b1e7-436e-8a8a-1018caded739
+	{
+		#1416092622 "Scene configurations 1" :: scene_configuration : @a0d61d5d-9666-49e1-968a-4bc10584a267
+		{
+			#2480618060 context :: objectref(context) : @148827fe-9c8c-4d03-b2aa-9eb0ca4005f2;
+			#338852264 statemachine :: objectref(haptic_statemachine) : @dd2421cb-7bbc-4151-97b9-a2bff137e365;
+			#1815839092 enabled :: bool : true;
+			#3295367322 scene :: GtfVisualScene : @c9a272ee-a7dc-4a22-b88f-1ac416cfd2fe
+			{
+				#618025567 features :: feature_list : @47ad2b39-81c5-4219-a862-dd8e1f2c592a
+				{
+					#1297401978 "feature_list 1" :: DirectXRenderer : @f7987c21-b17e-40a6-9cdf-9661fc24347f
+					{
+					}
+				}
+				#4167158577 children :: children_list : @f2b43697-6d56-41fb-ae24-47bb10eb3fe8
+				{
+				}
+				#761296189 name :: string : "";
+				#1077271741 visible :: bool : true;
+				#3166184465 width :: int : 800;
+				#1678858495 height :: int : 480;
+				#435262134 x :: int : 0;
+				#729531601 y :: int : 0;
+				#2403686693 projectName :: string : "project";
+				#3510831641 windowCaption :: string : "EB GUIDE 6 model";
+				#759187241 sceneId :: int : 0;
+				#3056448608 maxFPS :: int : 60;
+				#2540669762 hwLayerId :: int : 0;
+				#1789987286 colorMode :: int : 1;
+				#3712247403 multisampling :: int : 0;
+				#386139818 enableRemoteFramebuffer :: bool : false;
+				#271283573 showWindowFrame :: bool : true;
+				#3889248169 showWindow :: bool : true;
+				#1561933081 disableVSync :: bool : false;
+				#4098437428 showFPS :: int : 0;
+			}
+			#3858024597 additional_data :: object : @00000000-0000-0000-0000-000000000000;
+		}
+	}
+	#3551638568 platform_configuration :: string : "{
+  \"gtf\": {
+    \"core\": {
+      \"pluginstoload\": [
+        \"GtfService\"
+      ]
+    },
+    \"servicemapper\": {
+      \"port\": 60000
+    }
+  }
+}";
+	#1145648688 model_configuration :: string : "{
+\"gtf\": {
+     \"model\": {
+	     \"pluginstoload\": [
+             \"resources/ScriptFunction\"
+         ]
+     }
+ }
+}";
+	#3368062984 additional_data :: object : @00000000-0000-0000-0000-000000000000;
+}

@@ -1,0 +1,10 @@
+EBGUIDE 6.7.0.148693;
+@4ba5e50b-dc6c-4c10-8165-b319a5cef09c
+{
+	#62725243 name :: string : "FeatureView";
+	#3837405838 structure :: GtfView : @6a9f74c0-aff9-41e5-a9e0-2b44fe531623;
+	#1012980398 title_text :: propref(string) : @6a9f74c0-aff9-41e5-a9e0-2b44fe531623#1872951579;
+	#2935233148 description_text :: propref(string) : @6a9f74c0-aff9-41e5-a9e0-2b44fe531623#1861430663;
+	#658049167 prev_enabled :: propref(bool) : @6a9f74c0-aff9-41e5-a9e0-2b44fe531623#354216659;
+	#630980785 next_enabled :: propref(bool) : @6a9f74c0-aff9-41e5-a9e0-2b44fe531623#2270243700;
+}

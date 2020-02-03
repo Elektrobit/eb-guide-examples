@@ -1,0 +1,35 @@
+EBGUIDE 6.7.0.148693;
+@18d508fd-81f1-47d3-8d6e-b8fdcb0de559
+{
+	#2545465111 items :: event_list : <object>[
+		event : @0ef4a9bf-ec8d-4c8d-ab94-f95d27ebf28c
+		{
+			#63667494 name :: string : "WhatToDo";
+			#1215275719 eventId :: int : 0;
+			#1952411311 event_group :: objectref(event_group) : @0154822c-a529-42c4-8923-9efab88044c2;
+		}, 
+		event : @30f37b3a-b95d-4abd-a0de-ff0ef8236f93
+		{
+			#1040670002 name :: string : "GoToB";
+			#3517607269 eventId :: int : 2;
+			#2147824616 event_group :: objectref(event_group) : @0154822c-a529-42c4-8923-9efab88044c2;
+		}, 
+		event : @53314cb8-ee87-411d-86d7-0b1019f72d11
+		{
+			#1555813603 name :: string : "back";
+			#652077304 eventId :: int : 3;
+			#649725770 event_group :: objectref(event_group) : @55bd7598-b548-4b67-b3c9-ac38a1745d53;
+		}, 
+		event : @7c293e74-5229-4ee3-b7fb-351112136b05
+		{
+			#1502564230 name :: string : "next";
+			#387154336 eventId :: int : 4;
+			#1796778630 event_group :: objectref(event_group) : @55bd7598-b548-4b67-b3c9-ac38a1745d53;
+		}, 
+		event : @f23ee48b-835f-4995-854b-8be7f38531fb
+		{
+			#1833863020 name :: string : "GoToA";
+			#1340697308 eventId :: int : 1;
+			#121920428 event_group :: objectref(event_group) : @0154822c-a529-42c4-8923-9efab88044c2;
+		}];
+}

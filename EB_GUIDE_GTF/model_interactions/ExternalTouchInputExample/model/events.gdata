@@ -1,0 +1,22 @@
+EBGUIDE 6.7.0.148693;
+@18d508fd-81f1-47d3-8d6e-b8fdcb0de559
+{
+	#2545465111 items :: event_list : <object>[
+		event : @7c293e74-5229-4ee3-b7fb-351112136b05
+		{
+			#1502564230 name :: string : "next";
+			#387154336 eventId :: int : 4;
+			#1796778630 event_group :: objectref(event_group) : @55bd7598-b548-4b67-b3c9-ac38a1745d53;
+		}, 
+		event : @c65d5796-9339-4183-a2a2-d2617240746d
+		{
+			#1109337863 name :: string : "externalTouch";
+			#402335284 eventId :: int : 0;
+			#1044308294 event_group :: objectref(event_group) : @2ae02214-3bfa-4de2-90b1-00d90a4408dc;
+			#623213309 displayManagerId :: int : 0;
+			#3734753542 status :: int : 0;
+			#423884416 x :: int : 0;
+			#57355821 y :: int : 0;
+			#615853326 fingerId :: int : 0;
+		}];
+}

@@ -1,0 +1,8 @@
+EBGUIDE 6.7.0.148693;
+@d5d59616-5174-41c3-95e0-650c21bf2aa0
+{
+	#75070992 name :: string : "T_BasicView";
+	#4154115852 structure :: GtfView : @57e38a59-6f6e-44e1-ae4b-8517cb2f2fca;
+	#939805610 text :: propref(string) : @4e4e7e1c-0f07-4dc4-aa0b-44046cf57948#941268763;
+	#2781241849 bottom_text :: propref(string) : @b13a675b-a5d7-40fd-bd8f-d264a1f80831#1189832501;
+}

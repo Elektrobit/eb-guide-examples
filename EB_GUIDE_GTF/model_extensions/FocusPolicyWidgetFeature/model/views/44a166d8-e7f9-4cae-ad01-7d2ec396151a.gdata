@@ -1,0 +1,108 @@
+EBGUIDE 6.7.0.148693;
+@44a166d8-e7f9-4cae-ad01-7d2ec396151a
+{
+	#1295022060 name :: string : "View 1";
+	#3337751109 template :: objectref(GtfView_template) : @d9ee43bd-ee64-4c9f-904a-75cf1fd8f745;
+	#3849665348 children :: children_list : @06d628bb-34c0-4f01-823a-533194ea1017
+	{
+		#3489888885 "children_list 1" :: GtfInstantiator : @6ede58ce-af4a-4849-91d7-5f13b5ff0e8f
+		{
+			#343061949 features :: feature_list : @3d63b733-e0ab-499c-bd2f-27d1ef9cf4cd
+			{
+				#1897237578 "feature_list 3" :: LayoutPolicyFlow : @a5abdab3-e034-490c-85a0-be898013c070
+				{
+					#3669991540 horizontalGap :: int : 10;
+					#4054487301 verticalGap :: int : 10;
+					#2377041454 layoutDirection :: int : 1;
+					#2033304118 horizontalChildAlign :: int : 1;
+					#4222458170 verticalChildAlign :: int : 0;
+				}
+				#2511107730 "feature_list 9" :: StateFocused : @41ac56d1-ea14-4e16-9b27-8a34417b8ef8
+				{
+					#2228804785 focusable :: int : 3;
+					#3007803342 focused :: bool : false;
+				}
+				#2592485970 "feature_list 1" :: RandomFocusPolicy : @99cf776a-d390-4e8d-a210-e816c4b640e5
+				{
+				}
+			}
+			#2826641705 children :: children_list : @b7534c84-c423-42d8-a6c1-c66a198433aa
+			{
+				#3927509577 "children_list 2" :: GtfRectangle_template_instance : @fe39569e-8301-4569-ba7f-34017612677b
+				{
+					#1545312526 name :: string : "T_FocusableRectangle 1";
+					#2127780101 template :: objectref(GtfRectangle_template) : @880b1913-33e4-4201-aab5-5a187b2dce25;
+					#3675909784 children :: children_list : @e20107f1-5c85-43dc-b4b6-83fb912a6fc5
+					{
+					}
+					#3636028940 x :: int : 147;
+					#1888494472 height :: int : 50;
+					#2297863846 width :: int : 50;
+					#3487333561 y :: int : 70;
+					#1707906082 focused :: propref(bool) : @880b1913-33e4-4201-aab5-5a187b2dce25#2747255770;
+					#4241681271 touchShortReleased :: function(bool,int,int,int,int) : @a826fb64-095b-4f46-825d-46d61ddc000e
+					{
+						#3149760993 script :: string : "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)
+{
+	f:focusMoveTo(v:this)
+    false
+}";
+					}
+				}
+			}
+			#1999253370 name :: string : "Instantiator 1";
+			#1700387076 visible :: bool : true;
+			#3186622163 width :: int : 278;
+			#1907601740 height :: int : 242;
+			#3539006 x :: int : 216;
+			#3881179460 y :: int : 142;
+			#2218945001 numItems :: int : 20;
+			#641295729 lineMapping :: intlist : <int>[];
+		}
+		#2879666886 "children_list 5" :: GtfContainer_template_instance : @9112cb16-6b9b-414f-b6e6-bbc1cd48e5e2
+		{
+			#1768350069 name :: string : "NextButton";
+			#3708025061 template :: objectref(GtfContainer_template) : @6ab593c7-e0c4-4fa3-8950-35d1d85945af;
+			#257329358 children :: children_list : @62006159-4ac4-4cfc-9ff5-97d05a517ba5
+			{
+			}
+			#3558620143 x :: int : 562;
+			#805013041 y :: int : 201;
+			#22766844 text :: string : "Next";
+			#217338597 touchShortReleased :: function(bool,int,int,int,int) : @177c98c3-833d-4a86-9523-823ae53160f1
+			{
+				#2166863571 script :: string : "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)
+{
+	f:focusNext();
+    false
+}";
+			}
+			#3011019923 width :: propref(int) : @6ab593c7-e0c4-4fa3-8950-35d1d85945af#3011019923;
+			#519972696 height :: propref(int) : @6ab593c7-e0c4-4fa3-8950-35d1d85945af#519972696;
+		}
+		#2213705192 "children_list 6" :: GtfContainer_template_instance : @f3b21c49-0fa6-4b7c-9990-31fffc54ba2b
+		{
+			#75057162 name :: string : "PreviousButton";
+			#3730360253 template :: objectref(GtfContainer_template) : @6ab593c7-e0c4-4fa3-8950-35d1d85945af;
+			#3662957001 children :: children_list : @d81af59f-355e-4b07-9cde-59f742caee80
+			{
+			}
+			#3621172226 x :: int : 63;
+			#4139147351 y :: int : 200;
+			#1407626669 text :: string : "Previous";
+			#3537807057 touchShortReleased :: function(bool,int,int,int,int) : @2c81d3d3-5a89-4645-b038-4c63b73eeae5
+			{
+				#2338724852 script :: string : "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)
+{
+	f:focusPrevious();
+    false
+}";
+			}
+			#3011019923 width :: propref(int) : @6ab593c7-e0c4-4fa3-8950-35d1d85945af#3011019923;
+			#519972696 height :: propref(int) : @6ab593c7-e0c4-4fa3-8950-35d1d85945af#519972696;
+		}
+	}
+	#1811592483 text :: string : "Focused policy widget feature demo";
+	#4144685201 description :: string : "An HMI model can load EB GUIDE GTF extension example ";
+	#3576835781 "text 2" :: string : "Move the focus by pressing on Next and Previous or by selecting one element manually.";
+}

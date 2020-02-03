@@ -1,0 +1,57 @@
+EBGUIDE 6.7.0.148693;
+@1bbc5878-c220-4949-82cf-16f039212f17
+{
+	#716774371 name :: string : "Edit";
+	#3945653218 isDefault :: bool : true;
+	#1202196716 scene_configurations :: scene_configurations : @c9344566-8132-472d-8033-df6ae65b34f7
+	{
+		#2959150502 "Scene configurations 2" :: scene_configuration : @c13262b1-968b-48c3-b681-268a500e234d
+		{
+			#3362126425 context :: objectref(context) : @148827fe-9c8c-4d03-b2aa-9eb0ca4005f2;
+			#1438308915 statemachine :: objectref(haptic_statemachine) : @dd2421cb-7bbc-4151-97b9-a2bff137e365;
+			#835880714 enabled :: bool : true;
+			#3398133671 scene :: GtfVisualScene : @c23ea819-e4a3-49ae-895f-920723710079
+			{
+				#3600382732 features :: feature_list : @fa9896b9-0090-4cb3-bc02-58a0d569b271
+				{
+					#2517819939 "feature_list 2" :: DirectXRenderer : @43adc44f-6496-4582-93ac-a774cd354553
+					{
+					}
+				}
+				#2780548807 children :: children_list : @794e2e9d-5d65-40ef-9c7b-19b642c09930
+				{
+				}
+				#2019785429 name :: string : "";
+				#1909179923 visible :: bool : true;
+				#2074156781 width :: int : 800;
+				#1477776889 height :: int : 480;
+				#4014138621 x :: int : 0;
+				#3998658343 y :: int : 0;
+				#3890133696 projectName :: string : "project";
+				#3652789813 windowCaption :: string : "EB GUIDE 6 model";
+				#1292105623 sceneId :: int : 0;
+				#2366430188 maxFPS :: int : 0;
+				#3830824998 hwLayerId :: int : 0;
+				#2454785108 colorMode :: int : 1;
+				#3261716731 multisampling :: int : 0;
+				#2204861079 enableRemoteFramebuffer :: bool : true;
+				#3400379540 showWindowFrame :: bool : false;
+				#2974284924 showWindow :: bool : false;
+				#1198938987 disableVSync :: bool : false;
+				#3856068314 showFPS :: int : 0;
+			}
+			#2999003797 additional_data :: object : @00000000-0000-0000-0000-000000000000;
+		}
+	}
+	#563902230 platform_configuration :: string : "{}";
+	#1531770394 model_configuration :: string : "{
+\"gtf\": {
+     \"model\": {
+	     \"pluginstoload\": [
+             \"resources/ScriptFunction\"
+         ]
+     }
+ }
+}";
+	#513293390 additional_data :: object : @00000000-0000-0000-0000-000000000000;
+}

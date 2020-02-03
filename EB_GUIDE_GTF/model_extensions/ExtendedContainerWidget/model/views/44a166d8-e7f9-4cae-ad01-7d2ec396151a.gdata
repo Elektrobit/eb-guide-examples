@@ -1,0 +1,97 @@
+EBGUIDE 6.7.0.148693;
+@44a166d8-e7f9-4cae-ad01-7d2ec396151a
+{
+	#1295022060 name :: string : "View 1";
+	#3337751109 template :: objectref(GtfView_template) : @d9ee43bd-ee64-4c9f-904a-75cf1fd8f745;
+	#3849665348 children :: children_list : @06d628bb-34c0-4f01-823a-533194ea1017
+	{
+		#4123728342 "children_list 1" :: GtfExtendedContainerWidget : @45fe0c11-4940-4c84-b0f8-2af76c5665fb
+		{
+			#4271751355 features :: feature_list : @79f62eb2-a636-4629-8708-81032084a01e
+			{
+			}
+			#3056267523 children :: children_list : @64c134c9-7875-4b91-9476-87817600a98a
+			{
+				#3451049196 "children_list 4" :: GtfImage : @1f4c4b0a-0c81-4fbb-915f-6d93d70e3aaf
+				{
+					#723150644 features :: feature_list : @f51cb96e-0d7d-470a-9115-0bb90e81c33f
+					{
+					}
+					#3638513206 children :: children_list : @902fb293-193b-4a0c-ba9f-5bd856756ec0
+					{
+					}
+					#1552636552 name :: string : "ExampleImage";
+					#4109051019 visible :: bool : true;
+					#2586137512 width :: int : 135;
+					#2379845393 height :: int : 135;
+					#3477632969 x :: int : 332;
+					#209936146 y :: int : 113;
+					#1702118655 image :: image_resource : @c7a9dfa3-d13e-4aac-abac-27fcc2205130
+					{
+						#1786823384 file :: file : "images\\EB.png";
+					}
+					#1095811895 sRGB :: bool : false;
+					#2742649341 horizontalAlign :: int : 0;
+					#3830512827 verticalAlign :: int : 1;
+				}
+				#2665066476 "children_list 5" :: GtfLabel : @859bce67-c8df-4f57-be20-70a8af0ac874
+				{
+					#442322319 features :: feature_list : @e33168b6-7c24-48d1-8554-4c7902ca842a
+					{
+						#2482534191 "feature_list 1" :: MultiLine : @1df47c5f-6681-4b2e-b49e-24ac1d0d723a
+						{
+							#2371153949 lineGap :: int : 0;
+							#4078233610 maxLineCount :: int : 0;
+						}
+					}
+					#2875184636 children :: children_list : @30ded134-faae-4d42-bd7e-2623d05d5fc3
+					{
+					}
+					#193416254 name :: string : "Description";
+					#587047087 visible :: bool : true;
+					#3574055198 width :: int : 600;
+					#1120309575 height :: int : 100;
+					#4138553602 x :: int : 100;
+					#268529048 y :: int : 250;
+					#1123986978 text :: string : "This is an example of a custom container widget\\nClick background to change the display status of custom container";
+					#3410891241 textColor :: color : 0xFFFFFFFF;
+					#1207664079 font :: font_resource : @aa9e27ab-94e4-4fe8-8ef0-4652d1bdd777
+					{
+						#2327068053 file :: file : "fonts\\PT_Sans.ttf";
+						#1876729426 size :: int : 25;
+					}
+					#4236542370 horizontalAlign :: int : 1;
+					#4101161801 verticalAlign :: int : 0;
+				}
+			}
+			#1380022305 name :: string : "ExtendedContainer 1";
+			#170065991 visible :: bool : true;
+			#2697714308 width :: int : 100;
+			#479464435 height :: int : 100;
+			#3499316237 x :: int : 0;
+			#3877434411 y :: int : 0;
+			#282260358 displayStatus :: objectref(int) : @eaf41c79-d817-41dd-a9fb-0b0694556675;
+		}
+	}
+	#1811592483 text :: string : "Custom container demo";
+	#4144685201 description :: string : "An HMI model can load custom widgets.";
+	#1103164676 touchPressed :: function(bool,int,int,int,int) : @2c421f08-e812-4ee9-ab93-387a37383742
+	{
+		#3085952538 script :: string : "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)
+{
+	if(v:this->\"ExtendedContainer 1\".displayStatus==0)
+	{
+		v:this->\"ExtendedContainer 1\".displayStatus=1
+	}
+	else if(v:this->\"ExtendedContainer 1\".displayStatus==1)
+	{
+		v:this->\"ExtendedContainer 1\".displayStatus=2
+	}
+	else if(v:this->\"ExtendedContainer 1\".displayStatus==2)
+	{
+		v:this->\"ExtendedContainer 1\".displayStatus=0
+	}
+    false
+}";
+	}
+}

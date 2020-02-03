@@ -1,0 +1,233 @@
+EBGUIDE 6.7.0.148693;
+@b5a23149-f790-43bd-ab21-8335ef9d4538
+{
+	#62725243 name :: string : "DatapoolInteractionView";
+	#2115171859 template :: objectref(GtfView_template) : @4ba5e50b-dc6c-4c10-8165-b319a5cef09c;
+	#1352367159 children :: children_list : @b7776e25-828e-4e93-a580-9f05666899cf
+	{
+		#2393819079 child_1 :: GtfRectangle : @c984bf32-4f43-447c-8697-286828e16125
+		{
+			#3514003583 features :: feature_list : @9e202530-16eb-4c24-a417-b22b35c8e16e
+			{
+				#2393819079 child_1 :: Border : @8d10043a-4240-45f8-8c7f-e5e410b532b8
+				{
+					#698715008 borderThickness :: int : 2;
+					#3925183946 borderColor :: color : 0x282626F5;
+					#696979056 borderStyle :: int : 0;
+				}
+			}
+			#3427448145 children :: children_list : @98c949d5-471c-45b5-8d12-d26566a3e298
+			{
+				#2393819079 child_1 :: GtfLabel : @83237d6d-bca5-4c4a-a994-22f954528bb9
+				{
+					#3514003583 features :: feature_list : @6274c4e6-f3aa-4348-bf0c-e76c65246302
+					{
+					}
+					#311448894 children :: children_list : @623c3a32-a773-4513-a526-74b1425fef5a
+					{
+					}
+					#1515990985 name :: string : "name";
+					#1911742958 visible :: bool : true;
+					#616769365 width :: propref(int) : @c984bf32-4f43-447c-8697-286828e16125#3769555749;
+					#3851345785 height :: int : 50;
+					#2335124692 x :: int : 0;
+					#3163832369 y :: int : 0;
+					#2459973870 text :: string : "HMI";
+					#1684596550 textColor :: color : 0x404040FF;
+					#315105700 font :: font_resource : @ba7d34e0-6715-484e-976a-ea16f088b9b9
+					{
+						#1629333464 file :: file : "fonts/PT_Sans.ttf";
+						#606080290 size :: int : 23;
+					}
+					#2345146035 horizontalAlign :: int : 1;
+					#211055168 verticalAlign :: int : 0;
+				}
+				#665980990 child_2 :: GtfRectangle_template_instance : @cbf17870-248d-4f53-91ef-03a06009a850
+				{
+					#62725243 name :: string : "trigger button";
+					#2660937837 template :: objectref(GtfRectangle_template) : @7e16277d-99a1-41b2-99fc-ddee370c1aa3;
+					#718686975 children :: children_list : @c2f87ff9-9d41-41a4-ac21-869c670060fa
+					{
+					}
+					#1211415555 y :: int : 40;
+					#2744199204 x :: int : 20;
+					#1228237470 touchShortReleased :: function(bool,int,int,int,int) : @e6fa2cb0-e855-43c1-b1a1-b7886a1e721a
+					{
+						#1202705475 script :: string : "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)
+{
+	dp:dpInterplayCurrent += 1;
+	dp:dpInterplayOut = dp:dpInterplayCurrent;
+	
+    false;
+}";
+					}
+					#198665531 button_text :: propref(string) : @7e16277d-99a1-41b2-99fc-ddee370c1aa3#198665531;
+					#3030381665 width :: propref(int) : @7e16277d-99a1-41b2-99fc-ddee370c1aa3#3030381665;
+					#2854245985 height :: propref(int) : @7e16277d-99a1-41b2-99fc-ddee370c1aa3#2854245985;
+					#3941002429 touched :: propref(bool) : @7e16277d-99a1-41b2-99fc-ddee370c1aa3#3941002429;
+					#2172411584 enabled :: propref(bool) : @7e16277d-99a1-41b2-99fc-ddee370c1aa3#2172411584;
+					#1794701616 setText :: conditional_script : @f00bd393-7772-4ede-b0cd-fd4cedc717dd
+					{
+						#1076004264 triggerList :: trigger_list : @46760a52-15ce-4393-84e1-59957813f8c5
+						{
+							#2742057238 events :: event_refs : <objectref>[];
+							#445047183 dp_items :: dp_item_refs : <objectref>[@2292b772-9ba2-4439-a0bd-3a255929b2c3];
+							#1705770177 properties :: property_reference_list : <propref>[];
+						}
+						#3414473437 onTrigger :: function(bool,bool) : @a699433f-785c-422d-9bb4-dcc5cd364374
+						{
+							#1202705475 script :: string : "function(v:arg0::bool)
+{
+	v:this.button_text = \"Send: \" + f:int2string(dp:dpInterplayCurrent);
+	
+	false;
+}";
+						}
+					}
+				}
+				#1294211943 child_3 :: GtfLabel : @821bc075-faa7-47d7-a647-877b0760237d
+				{
+					#3514003583 features :: feature_list : @eaf46696-877a-4a98-9935-73c0114e9495
+					{
+					}
+					#3907764124 children :: children_list : @68ae2346-7680-42f9-a081-898df795fe98
+					{
+					}
+					#3857225129 name :: string : "in";
+					#4126785325 visible :: bool : true;
+					#3032703321 width :: int : 100;
+					#1876420091 height :: int : 30;
+					#73851768 x :: int : 335;
+					#537599249 y :: int : 45;
+					#4067618590 text :: string : "label";
+					#2267756153 textColor :: color : 0x000000FF;
+					#2837211524 font :: font_resource : @8d080bed-db1a-4092-a344-a12d36c023bd
+					{
+						#1629333464 file :: file : "fonts/PT_Sans.ttf";
+						#655929782 size :: int : 20;
+					}
+					#2974666439 horizontalAlign :: int : 0;
+					#4231487012 verticalAlign :: int : 0;
+					#1262445094 setText :: conditional_script : @3a92decb-8b9b-45f2-b147-63b1ba9f2baf
+					{
+						#1076004264 triggerList :: trigger_list : @a59c5289-d112-4c55-b7d5-e444e98af2de
+						{
+							#2742057238 events :: event_refs : <objectref>[];
+							#3886316695 dp_items :: dp_item_refs : <objectref>[@82ae0432-a572-4fdb-84b9-ae94437fb4fe];
+							#2190609321 properties :: property_reference_list : <propref>[];
+						}
+						#3107394044 onTrigger :: function(bool,bool) : @d0e1a542-59c5-40e7-af31-5c760f9650ba
+						{
+							#1202705475 script :: string : "function(v:arg0::bool)
+{
+	v:this.text = \"Got: \" + f:int2string(dp:dpInterplayIn);
+	
+	false;
+}";
+						}
+					}
+				}
+			}
+			#1252033275 name :: string : "hmi";
+			#240380813 visible :: bool : true;
+			#3769555749 width :: int : 466;
+			#314271889 height :: int : 90;
+			#2789420884 x :: int : 171;
+			#1524200277 y :: int : 120;
+			#915983780 fillColor :: color : 0x808080FF;
+		}
+		#27054038 child_2 :: GtfImage : @aaec7304-d528-499e-90be-959f7426da5b
+		{
+			#3514003583 features :: feature_list : @4999b733-ad10-4217-83ad-fba8fd8832de
+			{
+				#2393819079 child_1 :: ScaleMode : @013acbc5-315b-4f70-94c2-545e2ec63de9
+				{
+					#2790929656 scaleMode :: int : 2;
+				}
+			}
+			#3752652404 children :: children_list : @29630853-d702-437b-947f-271f7ebae000
+			{
+			}
+			#593002331 name :: string : "bg";
+			#1250509032 visible :: bool : true;
+			#3883137861 width :: int : 400;
+			#3272202886 height :: int : 98;
+			#546852474 x :: int : 205;
+			#3828360701 y :: int : 220;
+			#3534491271 image :: image_resource : @0f1515e4-6f1c-45ef-99dc-7702f01e624d
+			{
+				#1629333464 file :: file : "images/interaction_dp.png";
+			}
+			#743176090 sRGB :: bool : false;
+			#250930568 horizontalAlign :: int : 0;
+			#885520818 verticalAlign :: int : 1;
+		}
+		#1298688277 child_3 :: GtfRectangle : @e6236742-4e9d-45e3-bcdb-9e06369e3531
+		{
+			#3514003583 features :: feature_list : @7d38ac92-5c57-4cbc-94ca-6fe7d9a78b7e
+			{
+				#2393819079 child_1 :: Border : @6ca02cc5-4378-44c7-b3a4-16c59c5e103b
+				{
+					#698715008 borderThickness :: int : 2;
+					#3591610022 borderColor :: color : 0x282626FF;
+					#1134763044 borderStyle :: int : 0;
+				}
+			}
+			#2684212578 children :: children_list : @8cac34d0-c828-4536-9797-53c095f3367c
+			{
+				#2393819079 child_1 :: GtfLabel : @c8da2569-25bb-44f3-b520-91f76e3b6456
+				{
+					#3514003583 features :: feature_list : @5c4fcc89-2ea9-4457-a1ac-390b3a4681d8
+					{
+					}
+					#3389314758 children :: children_list : @e9e9a261-2209-48c5-821c-97dac8ea18b7
+					{
+					}
+					#668775507 name :: string : "name";
+					#944482949 visible :: bool : true;
+					#4292120553 width :: propref(int) : @e6236742-4e9d-45e3-bcdb-9e06369e3531#1145803057;
+					#1671098520 height :: propref(int) : @e6236742-4e9d-45e3-bcdb-9e06369e3531#2446292389;
+					#847197406 x :: int : 0;
+					#2509237050 y :: int : 0;
+					#1822699462 text :: string : "Application";
+					#2905144866 textColor :: color : 0x404040F5;
+					#2582311402 font :: font_resource : @4e06576a-b30e-4108-b939-4ca69792fb22
+					{
+						#1629333464 file :: file : "fonts/PT_Sans.ttf";
+						#606080290 size :: int : 23;
+					}
+					#826076689 horizontalAlign :: int : 1;
+					#3132169576 verticalAlign :: int : 0;
+				}
+			}
+			#2429613435 name :: string : "app";
+			#1338634259 visible :: bool : true;
+			#1145803057 width :: int : 466;
+			#2446292389 height :: int : 50;
+			#3246968144 x :: int : 171;
+			#3429396762 y :: int : 330;
+			#1867582500 fillColor :: color : 0x808080FF;
+		}
+	}
+	#3735723287 setTitleText :: conditional_script : @425f1944-9573-4ebb-b1c1-6b6a6f9f07c4
+	{
+		#1076004264 triggerList :: trigger_list : @7a9589c7-7782-47a7-9afc-3fbcbd6449af
+		{
+			#2742057238 events :: event_refs : <objectref>[];
+			#50546083 dp_items :: dp_item_refs : <objectref>[@e674f9bf-0caa-40dd-89b0-ce9fdd8ccac5];
+			#3328317559 properties :: property_reference_list : <propref>[];
+		}
+		#2579257361 onTrigger :: function(bool,bool) : @a879c191-b9fd-4845-8001-baa3a5638e4c
+		{
+			#1202705475 script :: string : "function(v:arg0::bool)
+{
+	v:this.title_text = dp:showcase_title_list[dp:showcase_id_datapool];
+	false;
+}";
+		}
+	}
+	#2935233148 description_text :: string : "Press 'Send' to notify the app using a datapool item.";
+	#1012980398 title_text :: string : "";
+	#630980785 next_enabled :: bool : true;
+	#658049167 prev_enabled :: bool : true;
+}

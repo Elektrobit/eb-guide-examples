@@ -1,0 +1,11 @@
+EBGUIDE 6.6.0.141996;
+@44a166d8-e7f9-4cae-ad01-7d2ec396151a
+{
+	#1295022060 name :: string : "View 1";
+	#3337751109 template :: objectref(GtfView_template) : @d9ee43bd-ee64-4c9f-904a-75cf1fd8f745;
+	#3849665348 children :: children_list : @06d628bb-34c0-4f01-823a-533194ea1017
+	{
+	}
+	#1811592483 text :: string : "DDS texture loader demo";
+	#4144685201 description :: string : "An HMI model can use custom file formats.";
+}

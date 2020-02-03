@@ -1,0 +1,68 @@
+EBGUIDE 6.7.0.148693;
+@0d87f242-dbbe-451f-b029-3d13688d6ac1
+{
+	#1300030830 name :: string : "T_BasicButton";
+	#315541619 structure :: GtfRectangle : @59673683-4dda-4ed7-bde5-96010d2ce0de
+	{
+		#1186170676 features :: feature_list : @0cadca9a-325f-4da4-a782-e740bd38b4a1
+		{
+		}
+		#3729183599 children :: children_list : @6fe300da-2667-467e-9ff3-646f0a168189
+		{
+			#1825829080 "children_list 8" :: GtfLabel : @af90e814-31fd-4870-96b0-04359d3942a5
+			{
+				#673164344 features :: feature_list : @896d3a60-bea7-44d3-a979-96b1de7e7859
+				{
+					#1841138170 "feature_list 3" :: TouchPressed : @28d0159b-cedf-4287-8d75-ada9728672c9
+					{
+						#2352822238 touchPressed :: function(bool,int,int,int,int) : @45d2113c-a20f-415f-aab1-c8c8b9b6ce63
+						{
+							#1911390588 script :: string : "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)
+{
+    false
+}";
+						}
+					}
+					#2766676194 "feature_list 4" :: StateTouched : @4f87f86c-b72c-437d-8e37-b88bcc9143aa
+					{
+						#2169404813 touchable :: bool : true;
+						#2168317056 touched :: bool : false;
+						#692337944 touchPolicy :: int : 0;
+						#119349124 touchBehavior :: int : 0;
+					}
+				}
+				#140759351 children :: children_list : @473c03be-ff12-4e25-b0b3-a7b614b8eb3d
+				{
+				}
+				#644063831 name :: string : "Label 4";
+				#979941459 visible :: bool : true;
+				#3691097530 width :: propref(int) : @59673683-4dda-4ed7-bde5-96010d2ce0de#3772777105;
+				#1777677193 height :: propref(int) : @59673683-4dda-4ed7-bde5-96010d2ce0de#1243549657;
+				#3527004143 x :: int : 0;
+				#4196916102 y :: int : 0;
+				#843672834 text :: string : "label";
+				#4084750428 textColor :: color : 0xFFFFFFFF;
+				#451153110 font :: font_resource : @552bbaf9-a2ba-48de-a134-115afa3e4464
+				{
+					#1853495321 file :: file : "fonts\\PT_Sans.ttf";
+					#1541437395 size :: int : 30;
+				}
+				#3424541482 horizontalAlign :: int : 1;
+				#4238366684 verticalAlign :: int : 0;
+			}
+		}
+		#619817429 name :: string : "Background";
+		#791255222 visible :: bool : true;
+		#3772777105 width :: int : 100;
+		#1243549657 height :: int : 100;
+		#690623230 x :: int : 0;
+		#1188892977 y :: int : 0;
+		#1947602391 fillColor :: color : 0xA9A9A9FF;
+	}
+	#337483134 text :: propref(string) : @af90e814-31fd-4870-96b0-04359d3942a5#843672834;
+	#2830530877 touchPressed :: propref(function(bool,int,int,int,int)) : @28d0159b-cedf-4287-8d75-ada9728672c9#2352822238;
+	#2060533841 width :: propref(int) : @59673683-4dda-4ed7-bde5-96010d2ce0de#3772777105;
+	#1848938317 height :: propref(int) : @59673683-4dda-4ed7-bde5-96010d2ce0de#1243549657;
+	#231610467 x :: propref(int) : @59673683-4dda-4ed7-bde5-96010d2ce0de#690623230;
+	#4270661298 y :: propref(int) : @59673683-4dda-4ed7-bde5-96010d2ce0de#1188892977;
+}

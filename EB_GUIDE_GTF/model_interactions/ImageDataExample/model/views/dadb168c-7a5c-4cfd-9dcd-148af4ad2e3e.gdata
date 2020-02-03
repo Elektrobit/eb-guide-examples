@@ -1,0 +1,49 @@
+EBGUIDE 6.7.0.148693;
+@dadb168c-7a5c-4cfd-9dcd-148af4ad2e3e
+{
+	#62725243 name :: string : "StaticImagesView";
+	#2188715275 template :: objectref(GtfView_template) : @4ba5e50b-dc6c-4c10-8165-b319a5cef09c;
+	#3058342829 children :: children_list : @9549d301-f437-4232-bce7-9220525a28d2
+	{
+		#2393819079 child_1 :: GtfImage : @197f5554-ed48-4925-a24e-2712a4ef7202
+		{
+			#3514003583 features :: feature_list : @ab87be58-b03d-45f2-862e-eae2b502eb50
+			{
+			}
+			#482543406 children :: children_list : @887b1aea-94a9-49dc-ad8f-6e8a2f77c4c7
+			{
+			}
+			#1103554057 name :: string : "image";
+			#3511949541 visible :: bool : true;
+			#3997584441 width :: int : 500;
+			#2954828165 height :: int : 254;
+			#2866553610 x :: int : 150;
+			#2043293649 y :: int : 100;
+			#1539350463 image :: objectref(image) : @11c8170d-7549-4521-98d0-9afa8bd7dfcf;
+			#946916349 sRGB :: bool : false;
+			#2159144318 horizontalAlign :: int : 0;
+			#412317158 verticalAlign :: int : 1;
+		}
+	}
+	#2935233148 description_text :: string : "This image is loaded once by an application during run-time.";
+	#1012980398 title_text :: string : "";
+	#1200153471 setTitleText :: conditional_script : @deb090ec-820d-43e7-9ddc-93b02ad1dd9b
+	{
+		#1076004264 triggerList :: trigger_list : @a59fb5ac-4a92-4359-a1e6-d5cc204cc5bd
+		{
+			#2742057238 events :: event_refs : <objectref>[];
+			#3316014102 dp_items :: dp_item_refs : <objectref>[@e674f9bf-0caa-40dd-89b0-ce9fdd8ccac5];
+			#1238707929 properties :: property_reference_list : <propref>[];
+		}
+		#2121031219 onTrigger :: function(bool,bool) : @7fd3bded-1d56-46e3-a630-bccc71a02a47
+		{
+			#1202705475 script :: string : "function(v:arg0::bool)
+{
+	v:this.title_text = dp:showcase_title_list[dp:showcase_id_static_image];
+	false;
+}";
+		}
+	}
+	#630980785 next_enabled :: bool : true;
+	#658049167 prev_enabled :: bool : true;
+}

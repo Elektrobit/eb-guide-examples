@@ -1,0 +1,30 @@
+EBGUIDE 6.7.0.148693;
+@337c24b4-c433-408a-9dad-936815665cf1
+{
+	#1036390752 items :: event_group_list : <object>[
+		event_group : @89270060-ba53-4433-a780-38e33a224fc0
+		{
+			#115582449 name :: string : "Default";
+			#2773562776 event_group_id :: int : 2;
+		}, 
+		event_group : @8f1934d0-35b0-4c8c-bbca-d1091d0b414d
+		{
+			#1293036798 name :: string : "Key";
+			#2863626752 event_group_id :: int : 10;
+		}, 
+		event_group : @f3433bac-d815-469d-bc85-54e0c9137918
+		{
+			#535127079 name :: string : "Touch";
+			#4001611364 event_group_id :: int : 11;
+		}, 
+		event_group : @f9521914-8a15-49f3-95e1-7f148aedc6e4
+		{
+			#527867982 name :: string : "Rotary";
+			#1955931231 event_group_id :: int : 12;
+		}, 
+		event_group : @d6c19d6f-2467-4801-b1e9-7fd8199111a7
+		{
+			#80296267 name :: string : "System notification";
+			#3645154575 event_group_id :: int : 13;
+		}];
+}

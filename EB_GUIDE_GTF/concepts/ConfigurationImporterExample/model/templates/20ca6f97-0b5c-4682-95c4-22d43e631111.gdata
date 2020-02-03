@@ -1,0 +1,32 @@
+EBGUIDE 6.7.0.148693;
+@20ca6f97-0b5c-4682-95c4-22d43e631111
+{
+	#1526401829 name :: string : "ConfigItem";
+	#1520413715 structure :: GtfLabel : @d0220d84-d4b2-4310-9994-29c8faba0509
+	{
+		#4049561154 features :: feature_list : @527311c9-57fc-4357-a042-add1217691a9
+		{
+		}
+		#3094769058 children :: children_list : @c8ed808d-da9c-4b01-ad1d-54bf7c754535
+		{
+		}
+		#726800481 name :: string : "Label 3";
+		#4193078690 visible :: bool : true;
+		#3476623041 width :: int : 400;
+		#713416627 height :: int : 96;
+		#165974908 x :: int : 0;
+		#372386066 y :: int : 0;
+		#1341773825 text :: string : "";
+		#1193520839 textColor :: color : 0xFFFFFFFF;
+		#94816002 font :: font_resource : @ad86920c-bdb8-4d2f-96a1-8aca2ffc529d
+		{
+			#2623627438 file :: file : "fonts\\PT_Sans.ttf";
+			#1625403108 size :: int : 25;
+		}
+		#4272696306 horizontalAlign :: int : 0;
+		#4031967018 verticalAlign :: int : 0;
+	}
+	#407037501 x :: propref(int) : @d0220d84-d4b2-4310-9994-29c8faba0509#165974908;
+	#383839293 y :: propref(int) : @d0220d84-d4b2-4310-9994-29c8faba0509#372386066;
+	#796820131 text :: propref(string) : @d0220d84-d4b2-4310-9994-29c8faba0509#1341773825;
+}

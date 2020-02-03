@@ -1,0 +1,92 @@
+EBGUIDE 6.7.0.148693;
+@d2274670-c66d-476d-bc31-9357d5349e92
+{
+	#3558136379 x :: int : 0;
+	#4156421919 y :: int : 0;
+	#3065096673 width :: int : 735;
+	#1018022456 height :: int : 409;
+	#1867613915 name :: string : "Main";
+	#2672144249 entry_action :: function(void) : @00000000-0000-0000-0000-000000000000;
+	#1110459662 exit_action :: function(void) : @00000000-0000-0000-0000-000000000000;
+	#3711555412 transitions :: haptic_transitions : @369c4b16-c5e7-4e48-aad6-02598f6dc8b2
+	{
+	}
+	#2956334509 internal_transitions :: haptic_internal_transitions : @2001ad43-4b69-4c23-9bb4-8fe385be8514
+	{
+	}
+	#1730462644 background_color :: color : 0x6C6C6CFF;
+	#3716556317 states :: haptic_states : @9d32bf81-9769-458f-8aef-e99c2a4eb2ef
+	{
+		#2686438400 "haptic_states 1" :: haptic_dialog_state : @94cb7660-99b3-4742-98af-3f3c3abe391f
+		{
+			#547954536 x :: int : 446;
+			#240599149 y :: int : 151;
+			#2824968886 width :: int : 100;
+			#1554390082 height :: int : 100;
+			#684458973 name :: string : "Homescreen";
+			#4206327095 entry_action :: function(void) : @00000000-0000-0000-0000-000000000000;
+			#2132389888 exit_action :: function(void) : @00000000-0000-0000-0000-000000000000;
+			#3832092432 transitions :: haptic_transitions : @26d46ecc-833a-402c-92f1-3943483cd51d
+			{
+			}
+			#3951652922 internal_transitions :: haptic_internal_transitions : @371b5ce2-7e21-405c-90f8-28b30e80de19
+			{
+			}
+			#2980938549 background_color :: color : 0x6C6C6CFF;
+			#2744686353 dialog :: GtfView_template_instance : @a1ef1bb8-5526-44da-be69-b4bd2ed301f3;
+			#367206440 priority_stack :: priority_stack : @00000000-0000-0000-0000-000000000000;
+		}
+		#2590096518 "haptic_states 2" :: haptic_dialog_state : @2233e99a-6cbe-47f8-9b5d-67a90aed4a5b
+		{
+			#3593556140 x :: int : 139;
+			#305735127 y :: int : 150;
+			#2171125930 width :: int : 100;
+			#1099212465 height :: int : 100;
+			#2038140488 name :: string : "Titleview";
+			#2312906003 entry_action :: function(void) : @799ba2b7-8c38-4710-98b1-55b38dbe34d4
+			{
+				#3261972275 script :: string : "function()
+{
+fire_delayed 3000, ev:next()
+}";
+			}
+			#2308891490 exit_action :: function(void) : @00000000-0000-0000-0000-000000000000;
+			#4037915069 transitions :: haptic_transitions : @803b1c81-e604-4715-8343-b7e251343640
+			{
+				#1714335343 "haptic_transitions 1" :: haptic_transition : @d3ba168e-61cb-4a6c-be8e-b3b925dba49f
+				{
+					#3557365432 event :: objectref(event) : @66b5e890-b155-4c81-b3d6-ac133f2be47f;
+					#3218268647 condition :: function(bool) : @00000000-0000-0000-0000-000000000000;
+					#4208308111 action :: function(void) : @00000000-0000-0000-0000-000000000000;
+					#861652758 target_state :: objectref(haptic_dialog_state) : @94cb7660-99b3-4742-98af-3f3c3abe391f;
+					#2697053744 source_dock :: float : 0.25F;
+					#2733211287 target_dock :: float : 0.7542244F;
+				}
+			}
+			#3456229330 internal_transitions :: haptic_internal_transitions : @c3967f89-3e86-4a01-929d-43bf4fe4aff6
+			{
+			}
+			#2972359907 background_color :: color : 0x6C6C6CFF;
+			#1723538418 dialog :: GtfView_template_instance : @9ee640ec-5684-45db-988b-a772c15fd855;
+			#935247377 priority_stack :: priority_stack : @00000000-0000-0000-0000-000000000000;
+		}
+	}
+	#49860295 initial_state :: haptic_initial_state : @f994d570-1cf8-472d-a56b-80bf0c3915be
+	{
+		#551204698 x :: int : 65;
+		#3655617787 y :: int : 72;
+		#2529111283 width :: int : 100;
+		#1887303329 height :: int : 100;
+		#1218130172 default_transition :: haptic_default_transition : @3197cfce-50c7-453c-8f3e-7759c6f54c42
+		{
+			#12572598 action :: function(void) : @00000000-0000-0000-0000-000000000000;
+			#1188544999 target_state :: objectref(haptic_dialog_state) : @2233e99a-6cbe-47f8-9b5d-67a90aed4a5b;
+			#1373998251 source_dock :: float : 0.2649703F;
+			#1822986773 target_dock :: float : 0.8174749F;
+		}
+	}
+	#1734131382 final_state :: haptic_final_state : @00000000-0000-0000-0000-000000000000;
+	#2786706979 history_state :: haptic_history_state : @00000000-0000-0000-0000-000000000000;
+	#4274161497 deep_history_state :: haptic_deep_history_state : @00000000-0000-0000-0000-000000000000;
+	#711303956 priority_stack :: priority_stack : @00000000-0000-0000-0000-000000000000;
+}

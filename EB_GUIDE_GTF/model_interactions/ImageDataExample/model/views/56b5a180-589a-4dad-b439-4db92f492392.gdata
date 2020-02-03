@@ -1,0 +1,21 @@
+EBGUIDE 6.7.0.148693;
+@56b5a180-589a-4dad-b439-4db92f492392
+{
+	#62725243 name :: string : "Titleview";
+	#2896803225 template :: objectref(GtfView_template) : @18edd3fd-90d3-4e6e-bc08-4db08f8b05ee;
+	#3232837885 children :: children_list : @aac42558-71c8-4de2-9604-335472df7afc
+	{
+	}
+	#161320146 title_text :: string : "Loading image data";
+	#3210417653 "short desc_text" :: string : "Example for sending image data from an application to the HMI using the datapool system";
+	#3848654300 "long desc_text" :: string : "Documentation reference:\\nBackground information > Interaction between HMI and applications";
+	#3034462463 touchPressed :: function(bool,int,int,int,int) : @0d8f8101-004c-4bdd-b692-df0d01278531
+	{
+		#1202705475 script :: string : "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)
+{
+	cancel_fire ev:next; // interrupt fire delayed (Titleview's entry action)
+	fire ev:next();
+    false;
+}";
+	}
+}

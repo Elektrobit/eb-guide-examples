@@ -1,0 +1,172 @@
+EBGUIDE 6.7.0.148693;
+@3e27127f-5229-4515-8499-54330f785957
+{
+	#3514003583 features :: feature_list : @ecc2d8c1-c6a1-4b5c-977a-75585810360b
+	{
+		#3087111331 "feature_list 1" :: TouchPressed : @a44d2d0a-1f7d-4dc8-a890-14366ff9efbe
+		{
+			#1906127876 touchPressed :: function(bool,int,int,int,int) : @8aed5feb-99f0-41cc-97c7-7f040589df46
+			{
+				#2871491213 script :: string : "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)
+{
+    false
+}";
+			}
+		}
+		#2543550066 "feature_list 2" :: StateTouched : @ec62803c-d08d-4d6d-8ddd-9be3e0fd4cf9
+		{
+			#1417018541 touchable :: bool : true;
+			#3861224327 touched :: bool : false;
+			#4201525781 touchPolicy :: int : 0;
+			#4274187472 touchBehavior :: int : 0;
+		}
+	}
+	#4012245810 children :: children_list : @7ff534dc-6a11-474f-8e67-5bac71bf86bf
+	{
+		#2393819079 child_1 :: GtfRectangle : @469a2666-60f5-4f18-9b7d-89cfcf4dc1ea
+		{
+			#3514003583 features :: feature_list : @bd7e5fe2-8b4f-4cfe-bde1-678dca3cb578
+			{
+			}
+			#2918202765 children :: children_list : @bc73668d-3cb5-4b53-9710-68600f515bd8
+			{
+			}
+			#2551014319 name :: string : "main bg";
+			#735646095 visible :: bool : true;
+			#3478782985 width :: propref(int) : @3e27127f-5229-4515-8499-54330f785957#3613740437;
+			#4167826976 height :: propref(int) : @3e27127f-5229-4515-8499-54330f785957#1541182024;
+			#761242220 x :: int : 0;
+			#3150594102 y :: int : 0;
+			#1706592884 fillColor :: color : 0x383838FF;
+		}
+		#947035543 child_2 :: GtfImage : @6b779e6a-b6ce-4e06-be4d-82eb9aa04f15
+		{
+			#3514003583 features :: feature_list : @f2927aa4-d642-49d1-8d82-98874213e432
+			{
+			}
+			#271400304 children :: children_list : @b6b3c258-bb66-418d-be3c-590f0b13cb79
+			{
+			}
+			#3868046611 name :: string : "logo";
+			#2936386452 visible :: bool : true;
+			#3040739397 width :: int : 135;
+			#2112743279 height :: int : 135;
+			#3876382078 x :: int : 105;
+			#2434258447 y :: int : 90;
+			#2609743575 image :: image_resource : @79f5106b-c63d-4260-ab6f-165485fd536a
+			{
+				#1629333464 file :: file : "images/EB.png";
+			}
+			#2271936871 sRGB :: bool : false;
+			#1077777691 horizontalAlign :: int : 0;
+			#343920760 verticalAlign :: int : 1;
+		}
+		#2575151713 child_3 :: GtfLabel : @3d9b9b93-279c-4e42-95b7-dc61fa737886
+		{
+			#3514003583 features :: feature_list : @34fa31ca-a19c-4774-b668-b71fa7239fba
+			{
+			}
+			#2929658064 children :: children_list : @e02fa9a0-9a8d-4923-88de-a4544a36e26b
+			{
+			}
+			#1262868409 name :: string : "title";
+			#3016057398 visible :: bool : true;
+			#2774372817 width :: int : 450;
+			#774955729 height :: int : 40;
+			#998493662 x :: int : 260;
+			#3043408261 y :: int : 105;
+			#2607586614 text :: propref(string) : @3e27127f-5229-4515-8499-54330f785957#2632370163;
+			#3496280989 textColor :: color : 0xFFFFFFFF;
+			#1630043920 font :: font_resource : @5887bf62-b63c-4032-906a-611641238333
+			{
+				#1629333464 file :: file : "fonts/PT_Sans.ttf";
+				#516634700 size :: int : 35;
+			}
+			#3226009887 horizontalAlign :: int : 0;
+			#2434667524 verticalAlign :: int : 0;
+		}
+		#455458024 child_4 :: GtfLabel : @247ecb12-0d09-401a-b88e-2d9a591f452a
+		{
+			#3514003583 features :: feature_list : @f0b8916f-1a1c-4903-a474-3afd0f682934
+			{
+				#2393819079 child_1 :: MultiLine : @f3d2caf0-df7d-4b95-9487-816b04d31797
+				{
+					#1309548401 lineGap :: int : 0;
+					#3924804367 maxLineCount :: int : 0;
+				}
+			}
+			#2810560293 children :: children_list : @8c244fb3-b0af-4b89-aa68-f20aadadd0a7
+			{
+			}
+			#1170236231 name :: string : "short desc";
+			#961247451 visible :: bool : true;
+			#393584501 width :: int : 450;
+			#521328621 height :: int : 50;
+			#4169675040 x :: int : 260;
+			#1330597924 y :: int : 160;
+			#2667387574 text :: propref(string) : @3e27127f-5229-4515-8499-54330f785957#3289573438;
+			#679797311 textColor :: color : 0xFFFFFFFF;
+			#2484869972 font :: font_resource : @a76c62c8-9f02-4a29-8696-ef203eeb1c43
+			{
+				#1629333464 file :: file : "fonts/PT_Sans.ttf";
+				#1168978436 size :: int : 18;
+			}
+			#3676996049 horizontalAlign :: int : 0;
+			#2838529608 verticalAlign :: int : 0;
+		}
+		#3129326047 child_6 :: GtfRectangle : @d699f06e-ab68-4587-9860-29d38f3c20dc
+		{
+			#3514003583 features :: feature_list : @890c5092-869e-4884-99b9-0dc134d7da65
+			{
+			}
+			#3101826116 children :: children_list : @1bd0528d-f917-4b6a-959a-d4da0813fd7f
+			{
+			}
+			#4110791223 name :: string : "separator";
+			#1727268123 visible :: bool : true;
+			#3007822449 width :: int : 600;
+			#1740949381 height :: int : 2;
+			#4133980080 x :: int : 105;
+			#992263006 y :: int : 250;
+			#3317328356 fillColor :: color : 0x504E4EFF;
+		}
+		#3407000851 child_5 :: GtfLabel : @9ee345a8-f040-47f4-ae50-ea54ecfec637
+		{
+			#3514003583 features :: feature_list : @62137572-0e66-4f2e-ba59-8bfe0abaee49
+			{
+				#2393819079 child_1 :: MultiLine : @703876bd-4cbf-4d7a-ba27-c65e08e4d1b5
+				{
+					#1309548401 lineGap :: int : 0;
+					#2904290827 maxLineCount :: int : 0;
+				}
+			}
+			#2963438934 children :: children_list : @712ba938-c3d2-4ffe-ab69-c224884a802c
+			{
+			}
+			#4274880871 name :: string : "long desc";
+			#3483398421 visible :: bool : true;
+			#2096813261 width :: int : 595;
+			#1053585995 height :: int : 180;
+			#2532810434 x :: int : 110;
+			#459285604 y :: int : 246;
+			#225221518 text :: propref(string) : @3e27127f-5229-4515-8499-54330f785957#3129136493;
+			#2556587205 textColor :: color : 0xFFFFFFFF;
+			#777208256 font :: font_resource : @c252902d-a75f-4298-afd6-e89684916ff9
+			{
+				#1629333464 file :: file : "fonts/PT_Sans.ttf";
+				#1168978436 size :: int : 18;
+			}
+			#1082537853 horizontalAlign :: int : 0;
+			#968741776 verticalAlign :: int : 0;
+		}
+	}
+	#1264841375 name :: string : "View";
+	#4227294082 visible :: bool : true;
+	#3613740437 width :: int : 800;
+	#1541182024 height :: int : 480;
+	#550890064 x :: int : 0;
+	#973693371 y :: int : 0;
+	#2632370163 title_text :: string : "<Project title>";
+	#3289573438 "short desc_text" :: string : "<short description>";
+	#3129136493 "long desc_text" :: string : "<long description>";
+}

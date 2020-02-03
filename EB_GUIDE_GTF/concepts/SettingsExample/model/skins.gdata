@@ -1,0 +1,9 @@
+EBGUIDE 6.7.0.148693;
+@82115b0e-9d48-403d-a218-5bf79361a339
+{
+	#1121632482 items :: skin_list : <object>[
+		skin : @3052906c-7677-4c86-a4dd-eb49e5167d66
+		{
+			#2006637655 name :: string : "Standard";
+		}];
+}

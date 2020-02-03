@@ -1,0 +1,221 @@
+EBGUIDE 6.7.0.148693;
+@44a166d8-e7f9-4cae-ad01-7d2ec396151a
+{
+	#1295022060 name :: string : "Homescreen";
+	#3337751109 template :: objectref(GtfView_template) : @d9ee43bd-ee64-4c9f-904a-75cf1fd8f745;
+	#3849665348 children :: children_list : @06d628bb-34c0-4f01-823a-533194ea1017
+	{
+		#3044079193 "children_list 6" :: GtfContainer : @b1dae64a-544d-4dbc-bdc7-be561092f878
+		{
+			#467122239 features :: feature_list : @4c206587-8cfd-492f-9829-f37bb40785ab
+			{
+				#3094361518 "feature_list 2" :: LayoutPolicyGrid : @de29deef-c780-49f7-9515-851918793010
+				{
+					#3701523585 horizontalGap :: int : 10;
+					#3527778681 verticalGap :: int : 0;
+					#2814849490 numRows :: int : 3;
+					#2633252088 numColumns :: int : 2;
+				}
+			}
+			#423347720 children :: children_list : @48fb71a3-fcc8-40bb-af06-7c7e707f0034
+			{
+				#250982659 "children_list 7" :: GtfLabel_template_instance : @47ff2a80-7752-4d39-a0ed-7f6585417515
+				{
+					#1409905577 name :: string : "Name";
+					#3464955900 template :: objectref(GtfLabel_template) : @20ca6f97-0b5c-4682-95c4-22d43e631111;
+					#203280376 children :: children_list : @be26bb52-4627-4132-83f9-f357a52bc5ec
+					{
+					}
+					#218427106 x :: propref(int) : @20ca6f97-0b5c-4682-95c4-22d43e631111#407037501;
+					#3817215643 y :: propref(int) : @20ca6f97-0b5c-4682-95c4-22d43e631111#383839293;
+					#4186902351 text :: propref(string) : @20ca6f97-0b5c-4682-95c4-22d43e631111#796820131;
+					#1054829300 setText :: conditional_script : @7cf7d1e6-ebb7-4352-998e-bd778eb5e390
+					{
+						#2415944496 triggerList :: trigger_list : @d2d07a7e-ccf9-4e89-abf1-820179e02870
+						{
+							#4286213092 events :: event_refs : <objectref>[];
+							#17636829 dp_items :: dp_item_refs : <objectref>[@0774c9fe-a61d-4cfa-9678-f0cd70d2a50f];
+							#1995418330 properties :: property_reference_list : <propref>[];
+						}
+						#1634898299 onTrigger :: function(bool,bool) : @112f772d-6b9e-463d-a18d-156c3ad90252
+						{
+							#2105519939 script :: string : "function(v:arg0::bool)
+{
+	v:this.text = \"Name:  \" +  dp:ConfigStringName
+	false
+}";
+						}
+					}
+				}
+				#1067744556 "children_list 8" :: GtfLabel_template_instance : @6e00ab5b-f670-42a3-b701-9f424a4f8f0a
+				{
+					#1409905577 name :: string : "Id";
+					#3464955900 template :: objectref(GtfLabel_template) : @20ca6f97-0b5c-4682-95c4-22d43e631111;
+					#203280376 children :: children_list : @14b73e7b-b9ec-42fd-b1ff-9455be3f87b1
+					{
+					}
+					#218427106 x :: propref(int) : @20ca6f97-0b5c-4682-95c4-22d43e631111#407037501;
+					#3817215643 y :: propref(int) : @20ca6f97-0b5c-4682-95c4-22d43e631111#383839293;
+					#4186902351 text :: propref(string) : @20ca6f97-0b5c-4682-95c4-22d43e631111#796820131;
+					#3624804550 setText :: conditional_script : @4435d57c-3575-4767-84c6-0b882596dbbf
+					{
+						#1513047302 triggerList :: trigger_list : @4f7cef36-7d55-4cca-93e4-4baf12774497
+						{
+							#575896970 events :: event_refs : <objectref>[];
+							#3883121685 dp_items :: dp_item_refs : <objectref>[@f230f5fa-a0e5-4407-9df8-21c02ae502ce];
+							#3319041378 properties :: property_reference_list : <propref>[];
+						}
+						#1840371943 onTrigger :: function(bool,bool) : @08619908-8831-4bf6-9628-d935be5adbfb
+						{
+							#2194637717 script :: string : "function(v:arg0::bool)
+{
+	v:this.text = \"ID:  \" +  f:int2string (dp:ConfigIntId)
+	false
+}";
+						}
+					}
+				}
+				#2915386153 "children_list 9" :: GtfLabel_template_instance : @97c0f891-caee-4bb0-b619-9715268b6805
+				{
+					#1409905577 name :: string : "StringArray";
+					#3464955900 template :: objectref(GtfLabel_template) : @20ca6f97-0b5c-4682-95c4-22d43e631111;
+					#203280376 children :: children_list : @3353b535-35b3-420e-9d19-6655b3527c1a
+					{
+					}
+					#218427106 x :: int : 7;
+					#3817215643 y :: int : 0;
+					#4186902351 text :: propref(string) : @20ca6f97-0b5c-4682-95c4-22d43e631111#796820131;
+					#1463759359 setText :: conditional_script : @bd2e48c1-525b-484b-881c-caf7cf63bdc1
+					{
+						#1713474813 triggerList :: trigger_list : @8f3a5b34-980f-4857-b096-8d4aeedee6aa
+						{
+							#304250905 events :: event_refs : <objectref>[];
+							#3451955808 dp_items :: dp_item_refs : <objectref>[@578c76d2-7285-4efc-ae7a-85dd16b280b0];
+							#2154554914 properties :: property_reference_list : <propref>[];
+						}
+						#1541729991 onTrigger :: function(bool,bool) : @f98cc5a3-cf50-4de4-ad58-5f1545b6e209
+						{
+							#1647553957 script :: string : "function(v:arg0::bool)
+{
+	let   v:index =0
+		v:text = \"StringArray: \" in
+		{
+			while (v:index < length dp:ConfigStringArray)
+			{
+				v:text += dp:ConfigStringArray[v:index]+ \" | \"
+				v:index+=1
+			}
+			v:this.text= v:text
+		}
+	false
+}";
+						}
+					}
+				}
+				#220566492 "children_list 10" :: GtfLabel_template_instance : @ef588005-1c2b-4713-bb92-5d8afaa8f1ca
+				{
+					#1409905577 name :: string : "IntArray";
+					#3464955900 template :: objectref(GtfLabel_template) : @20ca6f97-0b5c-4682-95c4-22d43e631111;
+					#203280376 children :: children_list : @29e42be9-3308-4764-bd68-00128cf3a868
+					{
+					}
+					#218427106 x :: int : 3;
+					#3817215643 y :: propref(int) : @20ca6f97-0b5c-4682-95c4-22d43e631111#383839293;
+					#4186902351 text :: string : "";
+					#3789879242 setText :: conditional_script : @bea9cbb0-1338-4cc4-993b-ad32d19141e1
+					{
+						#2309012858 triggerList :: trigger_list : @fa69f311-57a9-4d08-be8e-c9dcfc40eb33
+						{
+							#4007696746 events :: event_refs : <objectref>[];
+							#217723100 dp_items :: dp_item_refs : <objectref>[@d94750b0-0970-4e22-9320-f77f5e9a50e7];
+							#3528735677 properties :: property_reference_list : <propref>[];
+						}
+						#3284240363 onTrigger :: function(bool,bool) : @6a3b9e25-da79-47a7-aa72-7b61507f1225
+						{
+							#1896881631 script :: string : "function(v:arg0::bool)
+{
+	let   v:index = 0
+		v:text = \"IntArray: \" in
+		{
+			while (v:index < length dp:ConfigIntArray)
+			{
+				v:text += f:int2string (dp:ConfigIntArray[v:index]) + \" | \"
+				v:index+=1
+			}
+			v:this.text = v:text
+		}
+	false
+}";
+						}
+					}
+				}
+				#1684718331 "children_list 11" :: GtfLabel_template_instance : @38a57f0f-fd74-4ce9-8d81-f5310a82fe16
+				{
+					#1409905577 name :: string : "Valid";
+					#3464955900 template :: objectref(GtfLabel_template) : @20ca6f97-0b5c-4682-95c4-22d43e631111;
+					#203280376 children :: children_list : @0747c3a2-6f84-4bb8-beb4-562e698ee209
+					{
+					}
+					#218427106 x :: int : 3;
+					#3817215643 y :: propref(int) : @20ca6f97-0b5c-4682-95c4-22d43e631111#383839293;
+					#4186902351 text :: propref(string) : @20ca6f97-0b5c-4682-95c4-22d43e631111#796820131;
+					#1486437456 setText :: conditional_script : @6e33d971-686e-4418-be8d-02d2e76ae44e
+					{
+						#1143910144 triggerList :: trigger_list : @d3f78694-b82a-4d59-9491-77881f0c5f6f
+						{
+							#559454449 events :: event_refs : <objectref>[];
+							#4145688839 dp_items :: dp_item_refs : <objectref>[@a34e79f6-c853-41d2-a20e-6ba6a9986082];
+							#3697699369 properties :: property_reference_list : <propref>[];
+						}
+						#1899978072 onTrigger :: function(bool,bool) : @cc08df91-3418-44ec-bb0d-c410ed4fabad
+						{
+							#3124423422 script :: string : "function(v:arg0::bool)
+{
+	v:this.text = \"Valid:  \" +  f:bool2string (dp:ConfigBoolValid)
+	false
+}";
+						}
+					}
+				}
+				#3108925168 "children_list 12" :: GtfLabel_template_instance : @b09feea7-13e9-4bcb-92cf-95310372bd16
+				{
+					#1409905577 name :: string : "Version";
+					#3464955900 template :: objectref(GtfLabel_template) : @20ca6f97-0b5c-4682-95c4-22d43e631111;
+					#203280376 children :: children_list : @0932829a-5c3f-4b6b-a71d-8e8043d6af80
+					{
+					}
+					#218427106 x :: propref(int) : @20ca6f97-0b5c-4682-95c4-22d43e631111#407037501;
+					#3817215643 y :: propref(int) : @20ca6f97-0b5c-4682-95c4-22d43e631111#383839293;
+					#4186902351 text :: propref(string) : @20ca6f97-0b5c-4682-95c4-22d43e631111#796820131;
+					#2660001899 setText :: conditional_script : @8cdfaaf8-749a-456e-9954-876a48d1731f
+					{
+						#2710456740 triggerList :: trigger_list : @5bd76653-6e1c-4cc2-a5f1-9c20d300ed44
+						{
+							#4074144522 events :: event_refs : <objectref>[];
+							#252677049 dp_items :: dp_item_refs : <objectref>[@84a6beb8-3196-4733-af7b-71d89987f524];
+							#3621338380 properties :: property_reference_list : <propref>[];
+						}
+						#1721151302 onTrigger :: function(bool,bool) : @17e34b27-8811-4f68-908c-d25a071947be
+						{
+							#1404588881 script :: string : "function(v:arg0::bool)
+{
+	v:this.text = \"version:  \" +  f:float2string (dp:ConfigFloatVersion)
+
+	//v:this.text = \"version:  \" + f:format_float(\"%4.2f\",true,dp:ConfigFloatVersion)
+	false
+}";
+						}
+					}
+				}
+			}
+			#608207997 name :: string : "ConfigContainer";
+			#921330088 visible :: bool : true;
+			#4023667058 width :: int : 773;
+			#875437024 height :: int : 320;
+			#179188840 x :: int : 15;
+			#1106757696 y :: int : 82;
+		}
+	}
+	#1811592483 text :: string : "Configuration importer demo";
+	#4144685201 description :: string : "The application loads the values from the configuration file";
+}

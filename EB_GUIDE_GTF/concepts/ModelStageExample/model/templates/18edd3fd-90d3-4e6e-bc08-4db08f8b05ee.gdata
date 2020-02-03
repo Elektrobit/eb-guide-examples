@@ -1,0 +1,10 @@
+EBGUIDE 6.7.0.148693;
+@18edd3fd-90d3-4e6e-bc08-4db08f8b05ee
+{
+	#62725243 name :: string : "TitleView";
+	#551883483 structure :: GtfView : @3e27127f-5229-4515-8499-54330f785957;
+	#161320146 title_text :: propref(string) : @3e27127f-5229-4515-8499-54330f785957#2632370163;
+	#3210417653 "short desc_text" :: propref(string) : @3e27127f-5229-4515-8499-54330f785957#3289573438;
+	#3848654300 "long desc_text" :: propref(string) : @3e27127f-5229-4515-8499-54330f785957#3129136493;
+	#1501116859 touchPressed :: propref(function(bool,int,int,int,int)) : @a331210d-44fc-43f2-810e-43e38315f880#2234463702;
+}

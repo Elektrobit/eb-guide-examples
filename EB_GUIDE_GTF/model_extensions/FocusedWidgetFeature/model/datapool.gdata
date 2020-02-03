@@ -1,0 +1,10 @@
+EBGUIDE 6.7.0.148693;
+@1f4315dd-e5ac-401a-863b-24c2a6ae1c75
+{
+	#2033207263 items :: dp_item_list : <object>[
+		dp(bool) : @ff56931d-9eca-4d00-b4c3-462c0786446d
+		{
+			#886420078 value :: bool : false;
+			#1898421753 name :: string : "focused";
+		}];
+}

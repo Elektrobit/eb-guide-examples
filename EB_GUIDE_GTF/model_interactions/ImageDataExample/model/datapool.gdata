@@ -1,0 +1,129 @@
+EBGUIDE 6.7.0.148693;
+@1f4315dd-e5ac-401a-863b-24c2a6ae1c75
+{
+	#904340787 items :: dp_item_list : <object>[
+		dp(int) : @0c767e02-66a7-45cc-ae6e-e8628d2cf658
+		{
+			#3493618073 value :: int : 0;
+			#2001541603 name :: string : "view_y";
+		}, 
+		dp(image) : @11c8170d-7549-4521-98d0-9afa8bd7dfcf
+		{
+			#3493618073 value :: image_resource : @3f1e1652-ba13-4f35-aeb4-265828c5519f
+			{
+				#1629333464 file :: file : "";
+			}
+			#1094916942 name :: string : "dpUpdatesExternalImageIn";
+		}, 
+		dp(int) : @3489aba8-3c8d-4f1a-8dab-82828e89be81
+		{
+			#3493618073 value :: int : 480;
+			#566396157 name :: string : "resolution_height";
+		}, 
+		dp(int) : @5a4bf912-e4e3-4ccd-88c2-b29d91720e75
+		{
+			#3493618073 value :: int : 3000;
+			#1118768909 name :: string : "delay";
+		}, 
+		dp(image) : @6673ecdd-90da-41de-a2c1-99af91d871d4
+		{
+			#3493618073 value :: image_resource : @6d931406-f3d7-431f-9bfd-bc5ff86812dc
+			{
+				#1629333464 file :: file : "";
+			}
+			#1045509740 name :: string : "dpUpdatesImageIn";
+		}, 
+		dp(float) : @aac15288-4a14-4b00-9869-70b8c36130e6
+		{
+			#3493618073 value :: float : 100F;
+			#694404708 name :: string : "scaling";
+		}, 
+		dp(imagelist) : @ad0338a4-d807-473e-b2f3-6cee361f3300
+		{
+			#3493618073 value :: imagelist : @f6df4b00-417f-4ac0-a9f4-61f5ae878da9
+			{
+				#785677157 item_0 :: image_resource : @c28dfc47-20dd-4d09-9189-0b6089d285be
+				{
+					#1629333464 file :: file : "images/icon_events.png";
+				}
+				#2457534845 item_1 :: image_resource : @50d9c682-7483-49d5-8326-f7ca9c2bbd83
+				{
+					#1629333464 file :: file : "images/icon_dp.png";
+				}
+				#3677861535 item_2 :: image_resource : @acf95499-a1e9-43a8-86f8-9557387bea83
+				{
+					#1629333464 file :: file : "images/icon_datapool_items.png";
+				}
+				#845876065 item_3 :: image_resource : @409268f9-c4bf-4016-9279-9d5b41932354
+				{
+					#1629333464 file :: file : "images/icon_external_image.png";
+				}
+				#985108365 item_4 :: image_resource : @04d9035e-e67d-40ab-a568-32a7a8ba3a3e
+				{
+					#1629333464 file :: file : "images/icon_mandelbrot.png";
+				}
+				#1551848656 item_5 :: image_resource : @a42168ac-29cd-4737-9115-1284ffc1bb56
+				{
+					#1629333464 file :: file : "images/icon_windowed_list.png";
+				}
+			}
+			#518608411 name :: string : "showcase_icon_list";
+		}, 
+		dp(conditional_script) : @b36eac86-e4a1-4e28-98a1-0877ffa36888
+		{
+			#3493618073 value :: conditional_script : @d061134a-0912-4aa6-8ed4-9518f282134a
+			{
+				#1076004264 triggerList :: trigger_list : @62534f4e-d931-4665-9047-13eaee575342
+				{
+					#2742057238 events :: event_refs : <objectref>[];
+					#231058666 dp_items :: dp_item_refs : <objectref>[@ca521382-8e27-4548-a295-f5c4e8136677, @3489aba8-3c8d-4f1a-8dab-82828e89be81];
+					#3414399585 properties :: property_reference_list : <propref>[];
+				}
+				#2080444067 onTrigger :: function(bool,bool) : @4b17fbcc-04e1-4128-a558-19612ce68043
+				{
+					#1202705475 script :: string : "function(v:arg0::bool)
+{
+	if (dp:resolution_width/8 < dp:resolution_height * 10/48)
+	{
+		dp:scaling = f:int2float(dp:resolution_width/8)
+	}  
+	else
+	{
+		dp:scaling = f:int2float(dp:resolution_height * 10/48);
+	}
+	
+	dp:view_x = (dp:resolution_width - 8 * f:round(dp:scaling))/2;
+	dp:view_y = (dp:resolution_height - f:round(4.8 * dp:scaling))/2;
+
+	true;
+}";
+				}
+			}
+			#360445135 name :: string : "compute_scale_and_position";
+		}, 
+		dp(int) : @ca521382-8e27-4548-a295-f5c4e8136677
+		{
+			#3493618073 value :: int : 800;
+			#1819467140 name :: string : "resolution_width";
+		}, 
+		dp(int) : @d424c1e4-0698-4bfa-b58d-ef86809aa7d6
+		{
+			#3493618073 value :: int : 0;
+			#489722175 name :: string : "view_x";
+		}, 
+		dp(int) : @d4a2af4f-7a8e-482b-b5cf-efb82c9d99c5
+		{
+			#3493618073 value :: int : 1;
+			#1751590920 name :: string : "showcase_id_dynamic_image";
+		}, 
+		dp(stringlist) : @e674f9bf-0caa-40dd-89b0-ce9fdd8ccac5
+		{
+			#3493618073 value :: stringlist : <string>["Static images", "Dynamic images"];
+			#746293204 name :: string : "showcase_title_list";
+		}, 
+		dp(int) : @e77cf9db-be76-4d08-a048-334a6c90d495
+		{
+			#3493618073 value :: int : 0;
+			#2196187812 name :: string : "showcase_id_static_image";
+		}];
+}

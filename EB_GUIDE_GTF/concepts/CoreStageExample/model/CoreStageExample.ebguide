@@ -1,0 +1,31 @@
+EBGUIDE 6.7.0.148693;
+@c5502165-63b6-47ca-83b2-340df41ed57f
+{
+	#3851748955 module :: module : @38235024-5254-4db7-80b1-1e47080c1652
+	{
+		#62725243 name :: string : "";
+		#28126306 events :: events : @fe6bdf48-39a9-4112-8ad5-7404a575cd68;
+		#214838227 statemachines :: statemachines : @d1e1c729-dac2-4a1b-ae9c-4aa10d794f8c
+		{
+			#2393819079 child_1 :: haptic_statemachine : @6f380ae8-a34c-4f61-a7d9-3bd7cf7541f7;
+		}
+		#2925493427 dp_items :: dp_items : @1f4315dd-e5ac-401a-863b-24c2a6ae1c75;
+		#1411631374 contexts :: contexts : @48287835-5d81-44d6-bbe3-111d11b81d0a;
+		#2821955744 languages :: languages : @ce998b7c-428e-4465-849e-4b7986dd0710;
+		#2122689170 skins :: skins : @62089501-aa84-4609-98bb-8c49bb6a974e;
+		#2112788477 templates :: templates : @c4b323f0-5d63-4c6d-bccd-aea906afcc6d
+		{
+			#2393819079 child_1 :: GtfView_template : @18edd3fd-90d3-4e6e-bc08-4db08f8b05ee;
+			#87456570 child_2 :: GtfView_template : @d9ee43bd-ee64-4c9f-904a-75cf1fd8f745;
+		}
+		#457325924 event_groups :: event_groups : @79a4a9b2-fc9e-4b72-97ce-017551ce177e;
+		#3986573086 view_transition_animation_configurations :: view_transition_animation_configurations : @ecd556a3-d549-4703-8ca0-6f4cbed71e0d;
+		#2145320211 profiles :: profiles : @cd5d9d08-e9c7-4244-a3cc-1cdf09d66fa9
+		{
+			#2393819079 child_1 :: configuration_profile : @ad3fe8be-21ec-4f27-814d-d6a86eb16eda;
+			#210914226 child_2 :: configuration_profile : @417d04d7-fb39-44be-b3cd-a350d3171223;
+		}
+		#2500332662 editModeConfigurationProfile :: objectref(configuration_profile) : @ad3fe8be-21ec-4f27-814d-d6a86eb16eda;
+		#1757731022 simulationModeConfigurationProfile :: objectref(configuration_profile) : @417d04d7-fb39-44be-b3cd-a350d3171223;
+	}
+}

@@ -1,0 +1,48 @@
+EBGUIDE 6.7.0.148693;
+@44a166d8-e7f9-4cae-ad01-7d2ec396151a
+{
+	#1295022060 name :: string : "View 1";
+	#3337751109 template :: objectref(GtfView_template) : @d9ee43bd-ee64-4c9f-904a-75cf1fd8f745;
+	#3849665348 children :: children_list : @06d628bb-34c0-4f01-823a-533194ea1017
+	{
+		#1046444320 "children_list 11" :: GtfContainer_template_instance : @f0e7ab53-ebbf-486d-aee6-567a510217a4
+		{
+			#470360677 name :: string : "OrginalContainer";
+			#3715966084 template :: objectref(GtfContainer_template) : @2a0f5cff-ccba-43db-8bb3-bd9c32edf65d;
+			#3236472323 children :: children_list : @749f500d-bbc7-48d5-be2e-997dd286f457
+			{
+			}
+			#4159474662 text :: string : "without ripple effect";
+			#888938568 x :: propref(int) : @2a0f5cff-ccba-43db-8bb3-bd9c32edf65d#4102549290;
+		}
+		#2309787932 "children_list 12" :: RippleEffect : @ae7266d1-e302-4251-b749-21405c20610c
+		{
+			#141029995 features :: feature_list : @69f4db64-1c36-44cd-9dbb-2dbd9f933a81
+			{
+			}
+			#500613036 children :: children_list : @f3b48dcc-b817-439f-a606-2f2c88e05a4a
+			{
+				#762243058 "children_list 13" :: GtfContainer_template_instance : @161df37a-c330-4e6d-ae2c-834b8558037f
+				{
+					#2012870162 name :: string : "OrginalContainer 2";
+					#2967246608 template :: objectref(GtfContainer_template) : @2a0f5cff-ccba-43db-8bb3-bd9c32edf65d;
+					#4048832129 children :: children_list : @f2431d16-4aab-46fb-b62e-7ba2fd036a8c
+					{
+					}
+					#499992965 x :: int : 0;
+					#1043795497 text :: string : "with ripple effect";
+				}
+			}
+			#1623173289 name :: string : "Ripple effect";
+			#453794547 visible :: bool : true;
+			#3930162417 width :: int : 400;
+			#812942958 height :: int : 480;
+			#1063024495 x :: int : 400;
+			#591598108 y :: int : 0;
+			#2453136816 animationTime :: int : 0;
+			#1232883984 enabled :: bool : true;
+		}
+	}
+	#1811592483 text :: string : "Ripple effect demo";
+	#4144685201 description :: string : "An HMI model can load custom ripple effect.";
+}

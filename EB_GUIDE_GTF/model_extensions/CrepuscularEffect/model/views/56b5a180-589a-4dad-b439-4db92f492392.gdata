@@ -1,0 +1,20 @@
+EBGUIDE 6.7.0.148693;
+@56b5a180-589a-4dad-b439-4db92f492392
+{
+	#62725243 name :: string : "Titleview";
+	#2896803225 template :: objectref(GtfView_template) : @18edd3fd-90d3-4e6e-bc08-4db08f8b05ee;
+	#3232837885 children :: children_list : @aac42558-71c8-4de2-9604-335472df7afc
+	{
+	}
+	#161320146 title_text :: string : "Custom effect demo";
+	#3210417653 "short desc_text" :: string : "Example of loading a custom crepuscular effect with the HMI";
+	#3848654300 "long desc_text" :: string : "Documentation reference:\\nExtensions to EB GUIDE TF";
+	#1507373998 touchPressed :: function(bool,int,int,int,int) : @a833b774-1633-4423-bc01-9bff091cce0c
+	{
+		#3118756565 script :: string : "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)
+{
+	fire ev:next();
+    false
+}";
+	}
+}

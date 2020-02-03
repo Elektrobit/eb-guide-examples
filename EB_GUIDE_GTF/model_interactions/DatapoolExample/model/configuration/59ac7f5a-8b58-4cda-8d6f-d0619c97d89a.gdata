@@ -1,0 +1,62 @@
+EBGUIDE 6.7.0.148693;
+@59ac7f5a-8b58-4cda-8d6f-d0619c97d89a
+{
+	#1159090044 name :: string : "Simulation";
+	#3891287371 isDefault :: bool : true;
+	#1185282477 scene_configurations :: scene_configurations : @a2724336-9e07-4672-9866-b70634187811
+	{
+		#1856352850 "Scene configurations 1" :: scene_configuration : @21abf601-f568-4407-9d1a-a46611e7078e
+		{
+			#1728910624 context :: objectref(context) : @264459bf-d885-4f6e-826d-ef94d7c41038;
+			#1441787933 statemachine :: objectref(haptic_statemachine) : @d2274670-c66d-476d-bc31-9357d5349e92;
+			#1708291918 enabled :: bool : true;
+			#2721280015 scene :: GtfVisualScene : @6f6e47a7-635a-4cdc-ac77-be93794782f2
+			{
+				#525127794 features :: feature_list : @d9cfdeaf-275a-4941-949b-ce83164adc9e
+				{
+					#1597330806 "feature_list 1" :: DirectXRenderer : @f4b220a2-3822-4553-8967-0cb4573bdcd0
+					{
+					}
+				}
+				#3268552212 children :: children_list : @e2aaa66c-e280-47cd-adf4-bb4abfedca8a
+				{
+				}
+				#560254526 name :: string : "";
+				#1357526991 visible :: bool : true;
+				#3920602797 width :: int : 800;
+				#1669502995 height :: int : 480;
+				#4184513973 x :: int : 0;
+				#3779936826 y :: int : 0;
+				#2333306655 projectName :: string : "project";
+				#3743205132 windowCaption :: string : "EB GUIDE 6 model";
+				#3568159098 sceneId :: int : 0;
+				#3222965763 maxFPS :: int : 60;
+				#3189533489 hwLayerId :: int : 0;
+				#1975955311 colorMode :: int : 1;
+				#2267682669 multisampling :: int : 0;
+				#315250013 enableRemoteFramebuffer :: bool : true;
+				#3212642640 showWindowFrame :: bool : true;
+				#2385749714 showWindow :: bool : true;
+				#2870966389 disableVSync :: bool : false;
+				#4068923092 showFPS :: int : 0;
+			}
+			#4012766109 additional_data :: object : @00000000-0000-0000-0000-000000000000;
+		}
+	}
+	#3169915552 platform_configuration :: string : "{
+  \"gtf\": {
+    \"core\": {
+      \"pluginstoload\": [
+        \"GtfService\",
+        \"resources/DatapoolExample\"
+      ]
+    },
+    \"servicemapper\": {
+      \"port\": 60000
+    }
+  },
+  \"datapoolFile\": \"datapool.gtf\"
+}";
+	#4104117420 model_configuration :: string : "{}";
+	#3852009028 additional_data :: object : @00000000-0000-0000-0000-000000000000;
+}

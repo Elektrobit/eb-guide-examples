@@ -1,0 +1,22 @@
+EBGUIDE 6.7.0.148693;
+@6a626597-78a8-49d7-a591-14b29c5ec41f
+{
+	#62725243 name :: string : "HomeView";
+	#2277557636 template :: objectref(GtfView_template) : @bad749ae-e164-4670-bd0b-647bce039801;
+	#2092456847 children :: children_list : @4b2fba8f-f114-44bd-acae-0b6ea8f1e166
+	{
+	}
+	#560673630 title_text :: string : "Loading image data";
+	#861597670 button_icon_li :: imagelist : @cd131363-cc34-449d-a7a5-3acc52eafb04
+	{
+		#0 item_0 :: image_resource : @fb7a45af-c6a6-45db-a74d-e1538b4a71a1
+		{
+			#1629333464 file :: file : "images\\icon_external_image.png";
+		}
+		#1 item_1 :: image_resource : @81343138-0d49-40d8-a445-1a5bde86790c
+		{
+			#1629333464 file :: file : "images\\icon_mandelbrot.png";
+		}
+	}
+	#4135411410 button_desc_li :: stringlist : <string>["Static images", "Dynamic images"];
+}

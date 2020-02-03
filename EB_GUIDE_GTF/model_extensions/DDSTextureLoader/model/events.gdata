@@ -1,0 +1,11 @@
+EBGUIDE 6.6.0.141996;
+@fe6bdf48-39a9-4112-8ad5-7404a575cd68
+{
+	#2763601511 items :: event_list : <object>[
+		event : @b9045dce-21a0-4111-a7a4-53ec7d1f729e
+		{
+			#1409975701 name :: string : "next";
+			#487339739 eventId :: int : 0;
+			#570527347 event_group :: objectref(event_group) : @91a9bab0-e2b2-4952-b5c1-f02e10b46f18;
+		}];
+}

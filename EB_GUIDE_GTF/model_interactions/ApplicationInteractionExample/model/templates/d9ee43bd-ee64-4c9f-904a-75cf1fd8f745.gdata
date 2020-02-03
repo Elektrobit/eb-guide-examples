@@ -1,0 +1,7 @@
+EBGUIDE 6.7.0.148693;
+@d9ee43bd-ee64-4c9f-904a-75cf1fd8f745
+{
+	#62725243 name :: string : "MainView";
+	#4006632549 structure :: GtfView : @68fc7fd2-5637-4a1f-95aa-3e351b7dad9c;
+	#2857427668 description :: propref(string) : @68fc7fd2-5637-4a1f-95aa-3e351b7dad9c#4144592265;
+}

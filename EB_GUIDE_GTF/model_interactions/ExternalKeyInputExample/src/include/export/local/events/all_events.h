@@ -1,0 +1,7 @@
+#ifndef GTF_INCLUDED_LOCAL_EVENTS_IDENTIFIERS_H
+#define GTF_INCLUDED_LOCAL_EVENTS_IDENTIFIERS_H
+
+#include "group_Default.h"
+#include "group_Key.h"
+
+#endif //GTF_INCLUDED_LOCAL_EVENTS_IDENTIFIERS_H

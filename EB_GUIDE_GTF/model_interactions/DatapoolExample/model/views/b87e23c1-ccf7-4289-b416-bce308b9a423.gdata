@@ -1,0 +1,172 @@
+EBGUIDE 6.7.0.148693;
+@b87e23c1-ccf7-4289-b416-bce308b9a423
+{
+	#4012975740 features :: feature_list : @952ae765-bfee-40b4-b7f7-c9d161f323d5
+	{
+		#1706524691 "feature_list 1" :: TouchPressed : @7d5f9f82-2c1c-4fd0-96a7-af5941297c77
+		{
+			#1505211565 touchPressed :: function(bool,int,int,int,int) : @b1822017-bfdb-4c8c-a962-7e99846ab200
+			{
+				#2267791482 script :: string : "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)
+{
+    false
+}";
+			}
+		}
+		#1691796206 "feature_list 2" :: StateTouched : @2ea5ee21-bc31-4f25-a6ea-a0f6d7769b4a
+		{
+			#1441566755 touchable :: bool : true;
+			#3045521055 touched :: bool : false;
+			#1828316027 touchPolicy :: int : 0;
+			#4050876874 touchBehavior :: int : 0;
+		}
+	}
+	#3176886449 children :: children_list : @6411c6b7-173d-4ed2-9796-4ad0c5580064
+	{
+		#3722667801 "children_list 9" :: GtfRectangle : @80a47464-1edd-4344-870b-fc2bdd5cbb53
+		{
+			#362360133 features :: feature_list : @c30186bf-2498-406d-b965-be38474f970d
+			{
+			}
+			#2859044330 children :: children_list : @baba5936-3588-4317-9b03-010bed57f8d7
+			{
+				#4057667065 "children_list 10" :: GtfImage : @ae283bee-b101-4cd4-81c0-5e554907741e
+				{
+					#634924373 features :: feature_list : @60fc1a4b-97e9-400b-9254-97aec749b73e
+					{
+					}
+					#3944068132 children :: children_list : @9176444f-dcf3-430e-bc07-fafe5b43055d
+					{
+					}
+					#377417112 name :: string : "logo";
+					#1119588846 visible :: bool : true;
+					#2420512633 width :: int : 135;
+					#1278945139 height :: int : 135;
+					#3890346194 x :: int : 105;
+					#3925340743 y :: int : 90;
+					#1788868416 image :: image_resource : @cecf3030-0cf1-48c2-9dea-6e1fd8337b82
+					{
+						#3499699905 file :: file : "images\\EB.png";
+					}
+					#791000926 sRGB :: bool : false;
+					#3138902523 horizontalAlign :: int : 0;
+					#387878032 verticalAlign :: int : 1;
+				}
+				#3877995210 "children_list 12" :: GtfLabel : @6dd3a7b4-92a3-41ee-b26a-1eb3c2fbbd44
+				{
+					#4268044606 features :: feature_list : @e47e8ea3-f487-4444-a79b-658081e57f31
+					{
+					}
+					#3554898434 children :: children_list : @a721d81a-67fc-4af1-95d8-e5a94e28d5a3
+					{
+					}
+					#871734555 name :: string : "title";
+					#870135327 visible :: bool : true;
+					#3647770078 width :: int : 450;
+					#2326827876 height :: int : 40;
+					#239563848 x :: int : 260;
+					#4142234963 y :: int : 104;
+					#1821727511 text :: propref(string) : @b87e23c1-ccf7-4289-b416-bce308b9a423#136264727;
+					#40553153 textColor :: color : 0xFFFFFFFF;
+					#4293892287 font :: font_resource : @fc9cbdb6-e1df-429c-b9d6-b447b501dbf9
+					{
+						#3204795422 file :: file : "fonts/PT_Sans.ttf";
+						#1070987124 size :: int : 35;
+					}
+					#3701565119 horizontalAlign :: int : 0;
+					#3768464604 verticalAlign :: int : 0;
+				}
+				#1245652022 "children_list 13" :: GtfLabel : @996c48c4-f8ec-49b8-89e0-158520887b43
+				{
+					#767854674 features :: feature_list : @fcf35f99-3a1c-49fd-b0f4-51cd8c01b369
+					{
+						#1632061627 "feature_list 1" :: MultiLine : @506a5c73-ab8d-4307-836f-1da510dd513e
+						{
+							#2694236063 lineGap :: int : 0;
+							#236601660 maxLineCount :: int : 0;
+						}
+					}
+					#419687697 children :: children_list : @ec2ee077-b90e-46ea-be42-4490227748da
+					{
+					}
+					#1926470835 name :: string : "shortdesc";
+					#1175536175 visible :: bool : true;
+					#3134712552 width :: int : 450;
+					#1875611039 height :: int : 50;
+					#20710544 x :: int : 260;
+					#755960276 y :: int : 160;
+					#642899199 text :: propref(string) : @b87e23c1-ccf7-4289-b416-bce308b9a423#1327555624;
+					#1146572086 textColor :: color : 0xFFFFFFFF;
+					#211104899 font :: font_resource : @dc4147df-fce6-4da6-945e-98749a572d10
+					{
+						#3578792366 file :: file : "fonts/PT_Sans.ttf";
+						#1484152904 size :: int : 18;
+					}
+					#2569213516 horizontalAlign :: int : 0;
+					#452073469 verticalAlign :: int : 0;
+				}
+				#649370056 "children_list 17" :: GtfRectangle : @7b550e37-6048-4d82-bfa4-cd6bcb167534
+				{
+					#3716628496 features :: feature_list : @af817ecf-8b39-4d9d-814c-7596e644ca8d
+					{
+					}
+					#391515620 children :: children_list : @30ee7078-2bf1-493b-95f6-f9643b7805cb
+					{
+					}
+					#1930566200 name :: string : "separator";
+					#1871407010 visible :: bool : true;
+					#2783718283 width :: int : 600;
+					#2490026942 height :: int : 2;
+					#3536116188 x :: int : 105;
+					#4200636618 y :: int : 250;
+					#764778203 fillColor :: color : 0xA9A9A9FF;
+				}
+				#1304801265 "children_list 18" :: GtfLabel : @4c441811-c768-4820-ac4e-1c058d7abcf8
+				{
+					#4036967588 features :: feature_list : @f3f9c772-9626-496c-84b1-fec588d4da86
+					{
+						#2403866902 "feature_list 2" :: MultiLine : @41dc9061-bd7f-4666-b73e-4c8276bffe57
+						{
+							#2196707359 lineGap :: int : 0;
+							#3721860406 maxLineCount :: int : 0;
+						}
+					}
+					#3688053500 children :: children_list : @d80e74a6-41b0-402e-bba9-bdcf5a9edec7
+					{
+					}
+					#1235678701 name :: string : "londDesc";
+					#363172839 visible :: bool : true;
+					#2935974054 width :: int : 595;
+					#1360512735 height :: int : 180;
+					#3960250586 x :: int : 110;
+					#819014683 y :: int : 246;
+					#957591068 text :: propref(string) : @b87e23c1-ccf7-4289-b416-bce308b9a423#4087731552;
+					#334669845 textColor :: color : 0xFFFFFFFF;
+					#720782687 font :: font_resource : @84f985d6-cd40-4528-9fd5-c2222bf8f5fd
+					{
+						#3323282879 file :: file : "fonts/PT_Sans.ttf";
+						#1571998191 size :: int : 18;
+					}
+					#3395434924 horizontalAlign :: int : 0;
+					#3037288696 verticalAlign :: int : 0;
+				}
+			}
+			#1613007104 name :: string : "Background";
+			#980591605 visible :: bool : true;
+			#2914689751 width :: propref(int) : @b87e23c1-ccf7-4289-b416-bce308b9a423#2787155044;
+			#2061815623 height :: propref(int) : @b87e23c1-ccf7-4289-b416-bce308b9a423#2290541022;
+			#4057054451 x :: int : -1;
+			#1096423980 y :: int : 0;
+			#966230330 fillColor :: color : 0x383838FF;
+		}
+	}
+	#1061135806 name :: string : "View";
+	#523711745 visible :: bool : true;
+	#2787155044 width :: int : 800;
+	#2290541022 height :: int : 480;
+	#1196514119 x :: int : 0;
+	#119134493 y :: int : 0;
+	#136264727 title_text :: string : "<Project title>";
+	#1327555624 short_desc_text :: string : "<short description>";
+	#4087731552 long_desc_text :: string : "<long description>";
+}

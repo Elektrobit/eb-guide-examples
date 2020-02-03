@@ -1,0 +1,113 @@
+EBGUIDE 6.7.0.148693;
+@57e38a59-6f6e-44e1-ae4b-8517cb2f2fca
+{
+	#3689867813 features :: feature_list : @1611bc1b-aedd-4e38-8343-65b866320523
+	{
+	}
+	#3995162161 children :: children_list : @24d57841-cc45-4f27-8e26-0b136c9d9b36
+	{
+		#3416475694 "children_list 1" :: GtfRectangle : @4f42e958-7f2c-4c9c-b0b5-b9c6ac7eb914
+		{
+			#3807757259 features :: feature_list : @330fcdc5-f3d3-4efc-8505-0701b411df36
+			{
+			}
+			#436223544 children :: children_list : @95b4a05c-1426-4dbf-9437-e558f3222150
+			{
+				#2757614995 "children_list 3" :: GtfLabel : @4e4e7e1c-0f07-4dc4-aa0b-44046cf57948
+				{
+					#1084766052 features :: feature_list : @f2ed11dc-f151-4c0e-9f77-874441d64369
+					{
+					}
+					#2921552472 children :: children_list : @513851d1-8c0f-40c1-bb5c-ab774534dc34
+					{
+					}
+					#531787920 name :: string : "Title";
+					#1369195136 visible :: bool : true;
+					#2087695817 width :: propref(int) : @57e38a59-6f6e-44e1-ae4b-8517cb2f2fca#2244267981;
+					#455701602 height :: int : 65;
+					#184426112 x :: int : 0;
+					#3615093473 y :: int : 0;
+					#941268763 text :: string : "<Title>";
+					#809568432 textColor :: color : 0xC0C0C0FF;
+					#363216836 font :: font_resource : @5165f3f9-f38b-438e-b505-c7980eb13c46
+					{
+						#2152640322 file :: file : "fonts/PT_Sans.ttf";
+						#797051575 size :: int : 25;
+					}
+					#4048789908 horizontalAlign :: int : 1;
+					#306185226 verticalAlign :: int : 0;
+				}
+				#322364188 "children_list 4" :: GtfRectangle : @3b736a54-ed04-47d8-a733-3592af0de1eb
+				{
+					#491329435 features :: feature_list : @383070e3-407c-49a9-b606-129d16457372
+					{
+					}
+					#2872622011 children :: children_list : @8daea78e-f3ac-4409-a05a-b6315108a1d5
+					{
+					}
+					#1532058156 name :: string : "Separator";
+					#606646224 visible :: bool : true;
+					#3560645320 width :: propref(int) : @57e38a59-6f6e-44e1-ae4b-8517cb2f2fca#2244267981;
+					#1704504631 height :: int : 3;
+					#1096287572 x :: int : 4;
+					#1303285470 y :: int : 68;
+					#989169551 fillColor :: color : 0xA9A9A9FF;
+				}
+				#1349376956 "children_list 6" :: GtfRectangle : @a60442c2-ef43-4307-8a55-5e6ec47cf5d1
+				{
+					#491329435 features :: feature_list : @1449a380-79fc-4b9a-89a9-b24f96dc0af4
+					{
+					}
+					#2872622011 children :: children_list : @d6195d31-c38a-4794-b210-bd78cc98d134
+					{
+					}
+					#1532058156 name :: string : "bottomSeparator";
+					#606646224 visible :: bool : true;
+					#3560645320 width :: propref(int) : @57e38a59-6f6e-44e1-ae4b-8517cb2f2fca#2244267981;
+					#1704504631 height :: int : 3;
+					#1096287572 x :: int : 4;
+					#1303285470 y :: int : 410;
+					#989169551 fillColor :: color : 0xA9A9A9FF;
+				}
+				#1198868661 "children_list 8" :: GtfLabel : @b13a675b-a5d7-40fd-bd8f-d264a1f80831
+				{
+					#160868698 features :: feature_list : @6239f133-acd4-43f6-9b55-813e41390f1c
+					{
+					}
+					#3215233766 children :: children_list : @f3578b3e-56a5-481d-952d-87490e07652c
+					{
+					}
+					#2171997697 name :: string : "bottom";
+					#1178075377 visible :: bool : true;
+					#3248050112 width :: propref(int) : @57e38a59-6f6e-44e1-ae4b-8517cb2f2fca#2244267981;
+					#2304099969 height :: int : 61;
+					#368634273 x :: int : 0;
+					#3456089966 y :: int : 417;
+					#1586015990 text :: propref(string) : @b13a675b-a5d7-40fd-bd8f-d264a1f80831#1189832501;
+					#3924004302 textColor :: color : 0xC0C0C0FF;
+					#244577597 font :: font_resource : @ae85b2f2-27f2-4fd6-8cff-11fcf690f412
+					{
+						#2587908159 file :: file : "fonts/PT_Sans.ttf";
+						#1032340764 size :: int : 25;
+					}
+					#4117873127 horizontalAlign :: int : 1;
+					#341047351 verticalAlign :: int : 0;
+					#1189832501 bottom_text :: string : "<description>";
+				}
+			}
+			#2207205831 name :: string : "Rectangle 1";
+			#1862786081 visible :: bool : true;
+			#2905769001 width :: propref(int) : @57e38a59-6f6e-44e1-ae4b-8517cb2f2fca#2244267981;
+			#2374542577 height :: propref(int) : @57e38a59-6f6e-44e1-ae4b-8517cb2f2fca#2315460138;
+			#4021447052 x :: int : 1;
+			#326318954 y :: int : 0;
+			#991732559 fillColor :: color : 0x38383BFF;
+		}
+	}
+	#1098313584 name :: string : "View 1";
+	#727810857 visible :: bool : true;
+	#2244267981 width :: int : 800;
+	#2315460138 height :: int : 480;
+	#4277100847 x :: int : 0;
+	#215642684 y :: int : 0;
+}

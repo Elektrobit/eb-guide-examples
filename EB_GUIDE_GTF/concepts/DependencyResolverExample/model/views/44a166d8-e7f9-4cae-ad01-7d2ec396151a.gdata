@@ -1,0 +1,35 @@
+EBGUIDE 6.7.0.148693;
+@44a166d8-e7f9-4cae-ad01-7d2ec396151a
+{
+	#1295022060 name :: string : "View 1";
+	#3337751109 template :: objectref(GtfView_template) : @d9ee43bd-ee64-4c9f-904a-75cf1fd8f745;
+	#3849665348 children :: children_list : @06d628bb-34c0-4f01-823a-533194ea1017
+	{
+		#3356046757 "children_list 1" :: GtfLabel : @51dc5609-9214-47d8-b6f8-9ddee28a2428
+		{
+			#952660968 features :: feature_list : @919a1157-ff3b-434f-a118-15a628cdd2ea
+			{
+			}
+			#4227228351 children :: children_list : @c6a27ec0-7462-48a4-a4a5-113b8a891df2
+			{
+			}
+			#1020657787 name :: string : "Label 1";
+			#4185909950 visible :: bool : true;
+			#2730130223 width :: int : 666;
+			#1901196149 height :: int : 117;
+			#3542923902 x :: int : 77;
+			#3854885981 y :: int : 182;
+			#754635359 text :: string : "You have started the Dependency resolver model.";
+			#3909669274 textColor :: color : 0xFFFFFFFF;
+			#1107289023 font :: font_resource : @484077d5-731c-4409-991b-eea98afd48fe
+			{
+				#3282615672 file :: file : "fonts\\PT_Sans.ttf";
+				#1665184444 size :: int : 30;
+			}
+			#3761937845 horizontalAlign :: int : 1;
+			#4094204145 verticalAlign :: int : 0;
+		}
+	}
+	#1811592483 text :: string : "Dependency resolver plugin";
+	#4144685201 description :: string : "Application registers the implementation against the interface.";
+}

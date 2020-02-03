@@ -1,0 +1,11 @@
+EBGUIDE 6.7.0.148693;
+@0e891c7e-5c48-4658-853f-767000559745
+{
+	#1022602997 items :: language_list : <object>[
+		language : @91cca09e-7dd5-4aa3-98ea-a6ee15645053
+		{
+			#1447346437 name :: string : "Standard";
+			#1742521797 country :: string : "US";
+			#784940572 dialect :: string : "en";
+		}];
+}

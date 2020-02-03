@@ -1,0 +1,144 @@
+EBGUIDE 6.7.0.148693;
+@44a166d8-e7f9-4cae-ad01-7d2ec396151a
+{
+	#1295022060 name :: string : "View 1";
+	#3337751109 template :: objectref(GtfView_template) : @d9ee43bd-ee64-4c9f-904a-75cf1fd8f745;
+	#3849665348 children :: children_list : @06d628bb-34c0-4f01-823a-533194ea1017
+	{
+		#1287405602 "children_list 2" :: BloomEffect : @b565eada-f9a8-4a10-8ad1-e7da9243429b
+		{
+			#374433143 features :: feature_list : @c19b0ea3-5171-437e-9d57-60acc238d101
+			{
+			}
+			#3091733301 children :: children_list : @55bdc441-b003-465b-a4ae-4d1653b4c900
+			{
+				#1824773591 "children_list 6" :: GtfImage : @c5f42e52-41f7-4196-8386-e9f6c410fcd2
+				{
+					#826522724 features :: feature_list : @b727b5ec-d080-47cc-b1cd-8f7278920739
+					{
+						#1903758419 "feature_list 1" :: ScaleMode : @0d602bf1-e5e0-4cb2-98da-b3003670b9fc
+						{
+							#4138089097 scaleMode :: int : 2;
+						}
+					}
+					#418354137 children :: children_list : @b507fac1-5079-4ddf-a93c-4943664efa33
+					{
+					}
+					#761049943 name :: string : "Image";
+					#911755178 visible :: bool : true;
+					#2463915517 width :: propref(int) : @b565eada-f9a8-4a10-8ad1-e7da9243429b#2529521372;
+					#1581018451 height :: propref(int) : @b565eada-f9a8-4a10-8ad1-e7da9243429b#804453344;
+					#3955903772 x :: int : 0;
+					#1144837618 y :: int : 0;
+					#1236171239 image :: image_resource : @9984bb44-ed4b-44b7-b67d-d5a84e383962
+					{
+						#3478958539 file :: file : "images\\Nummer_bold_RGB.png";
+					}
+					#1835834700 sRGB :: bool : true;
+					#4066341901 horizontalAlign :: int : 1;
+					#233712561 verticalAlign :: int : 0;
+				}
+			}
+			#1721693078 name :: string : "BloomEffect";
+			#1787968836 visible :: bool : true;
+			#2529521372 width :: int : 325;
+			#804453344 height :: int : 325;
+			#1211037807 x :: int : 235;
+			#119517663 y :: int : 78;
+			#1366177066 luminosityRGB :: color : 0x00FF7FFF;
+			#3257382728 threshold :: float : 100F;
+			#4067899493 luminanceBlurPath :: float : 0F;
+			#4115882287 blurIterations :: int : 20;
+			#2945274411 ChangeIntensity :: conditional_script : @fcd6e6d3-091f-4a97-a3e7-378928c0fff0
+			{
+				#1154103161 triggerList :: trigger_list : @67e4efb9-5ba1-4652-a8d5-6360ebf71786
+				{
+					#3913035161 events :: event_refs : <objectref>[@4291d43c-0928-4bf1-bb15-a13ac389b947];
+					#3194749939 dp_items :: dp_item_refs : <objectref>[];
+					#1780023914 properties :: property_reference_list : <propref>[];
+				}
+				#2169598217 onTrigger :: function(bool,bool) : @6922d2c7-26bb-4a44-bf43-050ae74b1580
+				{
+					#2690562846 script :: string : "function(v:arg0::bool)
+{
+match_event v:event = ev:changeIntesity in
+{
+	 if (v:this.threshold == 0.0)
+	 {
+	 	v:this.threshold = 100.0;
+	 	
+	 }
+	 else
+	 {
+	 	
+	 	v:this.threshold= 0.0;
+	 }
+}
+
+	false
+}";
+				}
+			}
+		}
+		#889581395 "children_list 7" :: GtfRectangle : @3b8d6978-17ab-4377-9ca0-80f86560c6c1
+		{
+			#569802485 features :: feature_list : @93deaffb-9887-4d67-a496-8df518e17843
+			{
+				#2046276282 "feature_list 2" :: TouchPressed : @5c515b92-eba8-4d2b-80d9-916e113134b9
+				{
+					#1791035629 touchPressed :: function(bool,int,int,int,int) : @283410b7-962d-4706-b785-d7ec41edef03
+					{
+						#2244713182 script :: string : "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)
+{
+	fire ev:changeIntesity();
+    false
+}";
+					}
+				}
+				#2518151159 "feature_list 3" :: StateTouched : @fe7b11b0-b016-484e-893c-974a7935486e
+				{
+					#165811883 touchable :: bool : true;
+					#4222119178 touched :: bool : false;
+					#292979036 touchPolicy :: int : 0;
+					#965278787 touchBehavior :: int : 0;
+				}
+			}
+			#2710871968 children :: children_list : @323961a3-f41a-40e7-8bd0-8484748d3171
+			{
+				#1717459200 "children_list 8" :: GtfLabel : @45c8c1d3-8e65-49a0-b24a-957ae1bb4a16
+				{
+					#449997427 features :: feature_list : @ab4b225f-719d-4ab9-9979-402e5aadbcbd
+					{
+					}
+					#3379077621 children :: children_list : @93a28eed-3aa1-4ce6-8838-cb50dd09414d
+					{
+					}
+					#1543322872 name :: string : "text";
+					#482025097 visible :: bool : true;
+					#2479813077 width :: propref(int) : @3b8d6978-17ab-4377-9ca0-80f86560c6c1#2465106730;
+					#1607890593 height :: propref(int) : @3b8d6978-17ab-4377-9ca0-80f86560c6c1#1620432789;
+					#1123683443 x :: int : 0;
+					#427022602 y :: int : 1;
+					#1504528219 text :: string : "Change intensity";
+					#4223757843 textColor :: color : 0xFFFFFFFF;
+					#1434072772 font :: font_resource : @2c2ff9f8-4bfe-4383-90ca-3a1e97e7c99b
+					{
+						#2065007945 file :: file : "fonts\\PT_Sans.ttf";
+						#1131190903 size :: int : 25;
+					}
+					#3758189821 horizontalAlign :: int : 1;
+					#3942186686 verticalAlign :: int : 0;
+				}
+			}
+			#1679865966 name :: string : "ChangeIntensity";
+			#1504552870 visible :: bool : true;
+			#2465106730 width :: int : 200;
+			#1620432789 height :: int : 60;
+			#568192143 x :: int : 587;
+			#3881473522 y :: int : 194;
+			#2428217905 fillColor :: color : 0xA9A9A9FF;
+		}
+	}
+	#1811592483 text :: string : "Custom effect demo";
+	#4144685201 description :: string : "An HMI model can load custom effects.";
+}

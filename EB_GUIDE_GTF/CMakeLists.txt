@@ -1,0 +1,43 @@
+cmake_minimum_required(VERSION 2.8)
+
+project(sdk_examples)
+
+set(GTF_EXAMPLES_NAME ${PROJECT_NAME})
+
+if(EXISTS "${PROJECT_SOURCE_DIR}/../cmake")
+    include(${PROJECT_SOURCE_DIR}/../cmake/examples.cmake)
+else()
+    set(GTF_TARGET_BUILD_SYSTEM_ROOT "" CACHE PATH "Build system folder containing cmake files")
+    include(${GTF_TARGET_BUILD_SYSTEM_ROOT}/cmake/examples.cmake)
+endif()
+
+add_subdirectory("concepts/BasicExample")
+add_subdirectory("concepts/DependencyResolverExample")
+add_subdirectory("concepts/ModelStageExample")
+add_subdirectory("concepts/CoreStageExample")
+add_subdirectory("concepts/SettingsExample")
+add_subdirectory("concepts/ConfigurationImporterExample")
+add_subdirectory("concepts/TraceOutputExample")
+
+add_subdirectory("model_extensions/TriangleWidget")
+add_subdirectory("model_extensions/RippleEffect")
+add_subdirectory("model_extensions/CrepuscularEffect")
+add_subdirectory("model_extensions/GaussianBlur")
+add_subdirectory("model_extensions/DDSTextureLoader")
+add_subdirectory("model_extensions/KTXTextureLoader")
+add_subdirectory("model_extensions/BloomEffect")
+add_subdirectory("model_extensions/ExtendedContainerWidget")
+add_subdirectory("model_extensions/ScriptFunction")
+add_subdirectory("model_extensions/FocusedWidgetFeature")
+add_subdirectory("model_extensions/FocusPolicyWidgetFeature")
+
+add_subdirectory("model_interactions/ApplicationInteractionExample")
+add_subdirectory("model_interactions/DatapoolExample")
+add_subdirectory("model_interactions/EventExample")
+add_subdirectory("model_interactions/ImageDataExample")
+add_subdirectory("model_interactions/WindowListExample")
+add_subdirectory("model_interactions/ExternalKeyInputExample")
+add_subdirectory("model_interactions/ExternalTouchInputExample")
+add_subdirectory("model_interactions/ScreenshotExample")
+
+add_subdirectory("multi_model/ModelLauncher")

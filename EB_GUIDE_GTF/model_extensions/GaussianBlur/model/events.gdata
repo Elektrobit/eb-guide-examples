@@ -1,0 +1,18 @@
+EBGUIDE 6.8.0.190612124148;
+
+events(fe6bdf48-39a9-4112-8ad5-7404a575cd68)
+{
+	items: event_list [
+		event(4291d43c-0928-4bf1-bb15-a13ac389b947)
+		{
+			name: "changeIntesity"
+			eventId: 1
+			event_group: @91a9bab0-e2b2-4952-b5c1-f02e10b46f18 (objectref<event_group>)
+		}, 
+		event(b9045dce-21a0-4111-a7a4-53ec7d1f729e)
+		{
+			name: "next"
+			eventId: 0
+			event_group: @91a9bab0-e2b2-4952-b5c1-f02e10b46f18 (objectref<event_group>)
+		}]
+}

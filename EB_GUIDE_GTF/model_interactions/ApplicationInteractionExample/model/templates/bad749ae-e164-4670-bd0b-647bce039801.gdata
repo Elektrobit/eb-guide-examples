@@ -1,0 +1,9 @@
+EBGUIDE 6.7.0.148693;
+@bad749ae-e164-4670-bd0b-647bce039801
+{
+	#62725243 name :: string : "MenuView";
+	#3815472930 structure :: GtfView : @f84ec406-ee3d-4292-8bd3-1ad16c6c9dfc;
+	#560673630 title_text :: propref(string) : @f84ec406-ee3d-4292-8bd3-1ad16c6c9dfc#3790394851;
+	#4135411410 button_desc_li :: propref(stringlist) : @d35016b7-3676-425f-ad83-1740d540966a#3110522066;
+	#861597670 button_icon_li :: propref(imagelist) : @d35016b7-3676-425f-ad83-1740d540966a#4179818355;
+}

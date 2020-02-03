@@ -1,0 +1,101 @@
+EBGUIDE 6.8.0.190612124148;
+
+configuration_profile(ad3fe8be-21ec-4f27-814d-d6a86eb16eda)
+{
+	name: "Edit"
+	isDefault: true
+	scene_configurations: scene_configurations [
+		scene_configuration(eed7fa20-9a2a-43b0-b7ef-92aa7feaa328)
+		{
+			context: @94f4c807-6042-40f2-8cf5-de6145e66413 (objectref<context>)
+			statemachine: @6f380ae8-a34c-4f61-a7d9-3bd7cf7541f7 (objectref<haptic_statemachine>)
+			enabled: true
+			scene: GtfVisualScene(123d2765-b4f6-4568-8d83-3ca0725f3577)
+			{
+				features: feature_list [
+					OpenGL3Renderer(c5438de0-9f3d-4cf0-a5d2-0888988ec2d4)
+					{
+					}]
+				children: children_list []
+				name: ""
+				visible: true
+				width: 800
+				height: 480
+				x: 0
+				y: 0
+				projectName: "project"
+				windowCaption: "EB GUIDE 6 model"
+				sceneId: 0
+				maxFPS: 0
+				hwLayerId: 0
+				colorMode: 1
+				multisampling: 0
+				enableRemoteFramebuffer: true
+				showWindowFrame: false
+				showWindow: false
+				disableVSync: false
+				showFPS: 0
+			}
+			additional_data: object(none)
+		}]
+	platform_configuration: "{" \
+		"  \"gtf\": {" \
+		"    \"resourcesystem\": {" \
+		"      \"defaultdecoding\": [" \
+		"        {" \
+		"          \"inputformat\": \"gtf::decoder::ImagePath\"," \
+		"          \"outputformat\": \"gtf::decoder::EncodedMemImage\"" \
+		"        }," \
+		"        {" \
+		"          \"inputformat\": \"gtf::decoder::MeshPath\"," \
+		"          \"outputformat\": \"gtf::decoder::EncodedMeshData\"" \
+		"        }," \
+		"        {" \
+		"          \"inputformat\": \"gtf::decoder::IBLPath\"," \
+		"          \"outputformat\": \"gtf::decoder::EncodedIBLData\"" \
+		"        }," \
+		"        {" \
+		"          \"inputformat\": \"gtf::decoder::EncodedMemImage\"," \
+		"          \"outputformat\": \"gtf::decoder::MemImage\"" \
+		"        }," \
+		"        {" \
+		"          \"inputformat\": \"gtf::decoder::DescriptorResource::font\"," \
+		"          \"outputformat\": \"gtf::decoder::FontData\"" \
+		"        }," \
+		"        {" \
+		"          \"inputformat\": \"gtf::decoder::DescriptorResource::image\"," \
+		"          \"outputformat\": \"gtf::decoder::ImagePath\"" \
+		"        }," \
+		"        {" \
+		"          \"inputformat\": \"gtf::decoder::DescriptorResource::ibl\"," \
+		"          \"outputformat\": \"gtf::decoder::IBLPath\"" \
+		"        }," \
+		"        {" \
+		"          \"inputformat\": \"gtf::decoder::DescriptorResource::mesh\"," \
+		"          \"outputformat\": \"gtf::decoder::MeshPath\"" \
+		"        }," \
+		"        {" \
+		"          \"inputformat\": \"gtf::decoder::MemImage\"," \
+		"          \"outputformat\": \"gtf::scdr::decoder::NinePatchImage\"" \
+		"        }" \
+		"      ]," \
+		"      \"residentformats\": [" \
+		"        \"gtf::decoder::FontData\"," \
+		"        \"gtf::decoder::IBLPath\"," \
+		"        \"gtf::decoder::ImagePath\"," \
+		"        \"gtf::decoder::MeshPath\"" \
+		"      ]" \
+		"    }" \
+		"  }" \
+		"}"
+	model_configuration: "{" \
+		"\"gtf\": {" \
+		"     \"model\": {" \
+		"	     \"pluginstoload\": [" \
+		"             \"resources/GaussianBlur\"" \
+		"         				]" \
+		"     		}" \
+		" 	}" \
+		"}"
+	additional_data: object(none)
+}

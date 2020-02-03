@@ -1,0 +1,10 @@
+{
+    "gtf":
+    {
+        "tracing":
+        {
+            "Plugins": ["TraceOutputExample"],
+            "DefaultSeverity": "Info"
+        }
+    }
+}

@@ -1,0 +1,30 @@
+EBGUIDE 6.7.0.148693;
+@fe6bdf48-39a9-4112-8ad5-7404a575cd68
+{
+	#1307034838 items :: event_list : <object>[
+		event : @01ffb473-23d9-4f56-945a-7875a2cd708a
+		{
+			#62725243 name :: string : "home";
+			#771795684 eventId :: int : 1;
+			#2078594385 event_group :: objectref(event_group) : @91a9bab0-e2b2-4952-b5c1-f02e10b46f18;
+		}, 
+		event : @a5c53304-298c-4710-adc5-a15f85ff9973
+		{
+			#62725243 name :: string : "prev";
+			#3965075832 eventId :: int : 5;
+			#3027936065 event_group :: objectref(event_group) : @91a9bab0-e2b2-4952-b5c1-f02e10b46f18;
+		}, 
+		event : @cdbb1a1f-08ba-4f82-aa5b-909c3c4b36bb
+		{
+			#62725243 name :: string : "feature";
+			#3622452915 eventId :: int : 2;
+			#2499069911 event_group :: objectref(event_group) : @91a9bab0-e2b2-4952-b5c1-f02e10b46f18;
+			#1388351420 featureID :: int : 0;
+		}, 
+		event : @cf5d0e4a-6e0e-409c-9511-5e244e7095d9
+		{
+			#62725243 name :: string : "next";
+			#74281575 eventId :: int : 0;
+			#3524203239 event_group :: objectref(event_group) : @91a9bab0-e2b2-4952-b5c1-f02e10b46f18;
+		}];
+}

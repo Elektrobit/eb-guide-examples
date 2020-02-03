@@ -1,0 +1,21 @@
+EBGUIDE 6.7.0.148693;
+@cdd506e8-f09f-4312-abd0-b6b2bce2c699
+{
+	#1505557819 name :: string : "ViewA";
+	#2705405090 template :: objectref(GtfView_template) : @c0f1c727-95c8-4441-8262-f18240012cb1;
+	#3126727061 children :: children_list : @c4c765d5-e5fd-46ba-a4be-0fc8ff8e3f5b
+	{
+	}
+	#838108768 text :: string : "State A";
+	#2286065804 fillColor :: color : 0x0000FFFF;
+	#4082010816 touchShortReleased :: function(bool,int,int,int,int) : @fc2a5bc0-ad9e-4756-8a7d-e2a24c45b6ba
+	{
+		#2189034247 script :: string : "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)
+{
+	fire ev:back();
+    false
+}";
+	}
+	#3891575323 "text 2" :: string : "Press the rectangle to go back";
+	#188899321 Description :: string : "The application navigates to State A";
+}
