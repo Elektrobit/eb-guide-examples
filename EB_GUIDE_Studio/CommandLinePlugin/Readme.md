@@ -14,7 +14,7 @@ In this example, the number of events of a model on project load is printed via 
 
 ### Setup
 
-1. In Visual Studio, open the _studio\_examples.sln_ solution file.
+1. In Visual Studio, open the _EB\_GUIDE\_Studio\_examples.sln_ solution file.
 2. Compile the _CommandLinePlugin_ project.\
 The _CommandLinePlugin_ library file is created. 
 
