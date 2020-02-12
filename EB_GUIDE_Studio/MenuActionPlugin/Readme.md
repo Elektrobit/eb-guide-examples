@@ -13,7 +13,7 @@ With this example, you create a menu for the menu bar, a toast notification, and
 
 ### Setup
 
-1. In Visual Studio, open the_studio\_examples.sln_ solution file.
+1. In Visual Studio, open the _EB\_GUIDE\_Studio\_examples.sln_ solution file.
 2. Compile the _MenuActionPlugin_ project.\
 The _MenuActionPlugin_ library file is created. 
 
