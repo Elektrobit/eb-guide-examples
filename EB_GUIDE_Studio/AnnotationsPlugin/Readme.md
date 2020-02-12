@@ -17,7 +17,7 @@ In this example, you create customized:
 * The source code of this extension example is locally available
 
 ### Setup
-1. In Visual Studio, open the _studio\_examples.sln_ solution file.
+1. In Visual Studio, open the _EB\_GUIDE\_Studio\_examples.sln_ solution file.
 2. Compile the _AnnotationsPlugin_ project.\
 The _AnnotationsPlugin.dll_ library file is created. 
 
