@@ -12,7 +12,7 @@ Shows how to extend the EB GUIDE Studio exporter.
 
 ### Setup
 
-1. In Visual Studio, open the _studio\_examples.sln_ solution file.
+1. In Visual Studio, open the _EB\_GUIDE\_Studio\_examples.sln_ solution file.
 2. Compile the _ExportStatisticsPlugin_ project.\
 The _ExportStatisticsPlugin_ library file is created. 
 
