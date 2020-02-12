@@ -12,7 +12,7 @@ Shows how to write a custom validator to add entries to the **Problems** compone
 
 ### Setup
 
-1. In Visual Studio, open the _studio\_examples.sln_ solution file. 
+1. In Visual Studio, open the _EB\_GUIDE\_Studio\_examples.sln_ solution file. 
 2. Compile the _ValidationPlugin_ project.\
 The _ValidationPlugin_ library file is created.
 
