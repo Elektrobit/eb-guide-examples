@@ -34,7 +34,7 @@ For information on how to use CMake, see <https://cmake.org/runningcmake>.
 2. Set **Where is the source code** to the root folder of the EB GUIDE GTF examples.
 3. Set **Where to build the binaries** to a dedicated working directory with write permissions, e.g. _C:\\Users\\...\\Desktop\\eb\_guide\_sdk\_examples\_build_.
 4. Click **Configure**.\
-Agree on creating missing folders and using the generator for **Visual Studio 15 2017**.
+Select the generator for **Visual Studio 15 2017 Win64** and agree on creating missing folders.
 5. CMake will report an error in the configuration process.\
 Set the value of the CMake variable _CMAKE\_INSTALL\_PREFIX_ to a dedicated install folder with write permissions, e.g. _C:\\Users\\...\\Desktop\\eb\_guide\_sdk\_examples\_install_.
 6. Set the value of the CMake variable _GTF\_TARGET\_SDK\_ROOT_ to the folder that contains the EB GUIDE GTF EB GUIDE SDK.
