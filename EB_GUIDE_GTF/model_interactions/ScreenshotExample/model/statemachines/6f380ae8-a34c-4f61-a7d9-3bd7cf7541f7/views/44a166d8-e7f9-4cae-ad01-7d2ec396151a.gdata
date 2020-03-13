@@ -1,0 +1,114 @@
+EBGUIDE 6.9.0.191213104248;
+
+GtfView_template_instance(44a166d8-e7f9-4cae-ad01-7d2ec396151a)
+{
+	name: "View 1"
+	template: @d9ee43bd-ee64-4c9f-904a-75cf1fd8f745 (objectref<GtfView_template>)
+	children: children_list [
+		GtfImage(463aa1ae-5799-47e9-9876-63bbf533d720)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfParallelAnimation(b668a378-ac4b-4726-9ebd-648b0a38fd4c)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLinearInterpolationS32(1effdd2e-f555-4533-99fd-6167011512fd)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Linear interpolation curve 1"
+							enabled: true
+							delay: 0
+							duration: 1000
+							repeat: 1
+							alternating: true
+							relative: true
+							start: 0
+							end: 400
+							target: x@463aa1ae-5799-47e9-9876-63bbf533d720 (propref<int>)
+						}]
+					name: "Animation"
+					enabled: true
+					repeat: 0
+					alternating: true
+					scale: 1F
+					onPlay: function<void,int,bool>(b70e8386-045c-4de3-8671-613dd4b20cdc)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onPause: function<void,int>(d0204ad1-45d4-4221-99ca-7d0d203b3519)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onTerminate: function<void,int,int>(2fe95906-6784-4476-aec7-bb70ecb6ae0f)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					startAnimation: conditional_script(ff1d3b5f-9a85-43e6-930c-43981f04968d)
+					{
+						triggerList: trigger_list(4788fe65-92b9-44ed-a566-78600d5b12bd)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(5e963f8b-28c1-456d-bcd3-e52f8915b889)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	f:animation_play(v:this)" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "EB_logo"
+			visible: true
+			width: 144
+			height: 144
+			x: 146
+			y: 113
+			image: image_resource(2469c540-911b-41e5-b5bf-d1311789b4eb)
+			{
+				file: "images\\EB.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfLabel(51dc5609-9214-47d8-b6f8-9ddee28a2428)
+		{
+			features: feature_list [
+				MultiLine(8668cb1e-f6f2-4c30-afc9-8fccd45707b8)
+				{
+					lineOffset: 0
+					maxLineCount: 5
+				}]
+			children: children_list []
+			name: "Label 1"
+			visible: true
+			width: 799
+			height: 168
+			x: 0
+			y: 259
+			text: "You have started the ScreenshotExample plugin model. \\n Find the \"scene1.tga\" screenshot file in \\AppData\\Local\\Temp\\eb_guide_simulation_export\\ScreenshotExample\\n or in your export directory. "
+			textColor: #FFFFFFFF
+			font: font_resource(484077d5-731c-4409-991b-eea98afd48fe)
+			{
+				file: "fonts\\PT_Sans.ttf"
+				size: 24
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}]
+	text: "Screenshot demo"
+	description: "An HMI model can load different applications."
+}

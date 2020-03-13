@@ -1,503 +1,474 @@
-EBGUIDE 6.7.0.148693;
-@abc16f1e-4157-4f01-912f-28c58856d605
-{
-	#62725243 name :: string : "list";
-	#3961904074 structure :: GtfContainer : @0f41d9af-cfde-42ce-beda-95369526eb2e
-	{
-		#3514003583 features :: feature_list : @0f2d5260-a50b-4300-9652-5df74aa7802a
-		{
-			#962787150 "feature_list 1" :: ViewPort : @96ecfc34-3e74-48dd-b18f-3d309a2e4bd4
-			{
-				#2687317013 xOffset :: int : 0;
-				#299269295 yOffset :: int : 0;
-			}
-		}
-		#3498800540 children :: children_list : @da6d8bea-02e4-43c2-8bc8-5ba7aea5bb07
-		{
-			#3232566356 "children_list 1" :: GtfInstantiator : @51b5f311-068c-4b33-a0cb-609df6ba866c
-			{
-				#3514003583 features :: feature_list : @f66b1869-a1da-4985-a822-35334990ab55
-				{
-					#962852686 "feature_list 2" :: TouchPressed : @d4c97bd9-ee9e-4860-b780-6e59216b9992
-					{
-						#776325383 touchPressed :: function(bool,int,int,int,int) : @6b398a13-bfb8-4e45-a28e-516cdb956b86
-						{
-							#1202705475 script :: string : "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)
-{
-	v:this.timeDown = f:system_time_ms();
-	v:this.yLast = v:y* 100 / f:round(v:this.globalScaling);
-	v:this.yDown = v:y* 100 / f:round(v:this.globalScaling);
-	
-	true
-}";
-						}
-					}
-					#1670441788 "feature_list 3" :: TouchShortReleased : @0279ffb5-2259-4b16-8444-11b7cff39ead
-					{
-						#3114962824 touchShortReleased :: function(bool,int,int,int,int) : @0d7b433d-a0d8-4e69-a879-29c460870a4b
-						{
-							#1202705475 script :: string : "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)
-{
-	let v:v=-1; 
-	    v:deltaTime=(f:system_time_ms()-v:this.timeDown) 
-	    v:y_scaled = v:y* 100 / f:round(v:this.globalScaling); 
-	in
-	{
-	
-	  if (f:abs(v:this.yDown-v:y_scaled) < v:this->^.selectDistance)
-	  {
-	    v:this->^.selectItem = v:this.touchedItem;
-	    v:this->^->ScrollAnim.stopAnim(); {}
-	  }
-	  else
-	  {
-	    if (v:this.bounceValue != 0)
-	    {
-	      v:this->^->ScrollAnim.stopAnim();
-	      v:this.scrollOffset += v:this.bounceValue;
-	    }
-	    else
-	    {
-	      v:v = (v:this.yDown-v:y_scaled)* 100 / (v:deltaTime+1);
-	      v:this->^->ScrollAnim.scroll = v:v;
-	    }
-	  }
-	}
-	
-	true
-}";
-						}
-					}
-					#50633060 "feature_list 4" :: TouchMove : @01ed8389-224f-40c1-8871-3e7a34a23034
-					{
-						#1927396782 touchMoved :: function(bool,int,int,int,int) : @ce74e364-f5f0-47fd-95e7-7189a862d67a
-						{
-							#1202705475 script :: string : "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)
-{
-	if (!v:this.animRunning)
-	{
-	  v:this.scrollOffset += v:this.yLast - v:y * 100 / f:round(v:this.globalScaling);
-	}  
-	else if (f:system_time_ms()-v:this.timeDown>150)
-	{ 
-	  v:this->^->ScrollAnim.stopAnim();
-	  v:this.scrollOffset += v:this.yLast - v:y* 100 / f:round(v:this.globalScaling);
-	}	
-		v:this.yLast = v:y* 100 / f:round(v:this.globalScaling);
-	
-	true
-}";
-						}
-					}
-					#2440162316 "feature_list 5" :: StateTouched : @487f664c-4417-489b-bbfb-7452910d9ee0
-					{
-						#48586717 touchable :: bool : true;
-						#2421192902 touched :: bool : false;
-						#2112713620 touchPolicy :: int : 1;
-						#583873592 touchBehavior :: int : 0;
-					}
-					#2989178126 "feature_list 6" :: LayoutPolicyList : @6a70b2d6-a3c3-4bac-ad5f-bbeb2a357e45
-					{
-						#1719512605 layoutDirection :: int : 1;
-						#4249783468 scrollOffset :: int : 0;
-						#2581965104 scrollOffsetRebase :: bool : false;
-						#1019779633 firstListIndex :: int : 0;
-						#1720406618 scrollIndex :: int : 0;
-						#290074944 scrollValue :: int : 0;
-						#997541179 scrollValueMax :: int : 253;
-						#980165679 scrollValueMin :: int : 0;
-						#1002681927 bounceValue :: int : 0;
-						#1679701772 bounceValueMax :: int : 100;
-						#259023597 segments :: int : 1;
-						#724021524 listLength :: int : 50;
-						#1075081706 wrapAround :: bool : false;
-					}
-				}
-				#3208371319 children :: children_list : @b62da261-3460-490c-8346-ecddd2ddf1d0
-				{
-					#3635850883 "children_list 2" :: GtfContainer : @8cf86819-d6a7-425a-aa87-8c3411d2c084
-					{
-						#3514003583 features :: feature_list : @b15fb068-1980-419a-9075-6e9f02bcc7c2
-						{
-							#962656078 "feature_list 7" :: MoveOut : @5c6b28b7-e5dc-462f-886c-aafc12ad89a7
-							{
-								#1875920206 moveOut :: function(bool,int,int,int,int) : @34965c6f-f404-4bf7-9a17-804af0a4f7eb
-								{
-									#1202705475 script :: string : "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)
-{
-	v:this.hovered = false;
-	true;
-}";
-								}
-							}
-							#2385971165 "feature_list 8" :: MoveIn : @48e9c8e9-5a05-47df-a832-f5c85f883936
-							{
-								#1242801598 moveIn :: function(bool,int,int,int,int) : @3cea6e53-937f-4751-8bdb-809f6caf1dbf
-								{
-									#1202705475 script :: string : "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)
-{
-	v:this.hovered = true;
-	true;
-}";
-								}
-							}
-							#2282500622 "feature_list 9" :: TouchPressed : @8b61019e-d121-424e-8ad4-4362a2fdefd5
-							{
-								#776325383 touchPressed :: function(bool,int,int,int,int) : @727d546a-8bcf-4176-bdb8-51a727e4d11a
-								{
-									#1202705475 script :: string : "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)
-{
-	v:this->^.touchedItem = v:this.listIndex;
-	
-	false
-}";
-								}
-							}
-							#1069420712 "feature_list 10" :: StateTouched : @9d037d32-7af0-46ec-8be2-5fa0b15d1477
-							{
-								#48586717 touchable :: bool : true;
-								#4275063844 touched :: bool : false;
-								#2469083732 touchPolicy :: int : 0;
-								#3912219471 touchBehavior :: int : 0;
-							}
-							#14524109 "feature_list 11" :: LayoutPolicyListItem : @bc2623ec-6c75-4a70-a99b-ff6547b40a3a
-							{
-								#3014236211 listIndex :: int : 0;
-							}
-						}
-						#3620991658 children :: children_list : @8f1e57a6-4293-43d6-9a0d-a5cba85ea746
-						{
-							#2069766942 "children_list 3" :: GtfLabel : @67058381-9afd-4c6c-ae0d-396fbbecb1fa
-							{
-								#3514003583 features :: feature_list : @3c40bef5-89f0-4aa3-a0ba-93feab65d8a5
-								{
-								}
-								#4193573698 children :: children_list : @237a3ac2-d858-42c6-b696-c38b8be8209b
-								{
-								}
-								#4180477493 name :: string : "Label";
-								#115333146 visible :: bool : true;
-								#1313635073 width :: int : 680;
-								#3202266610 height :: propref(int) : @8cf86819-d6a7-425a-aa87-8c3411d2c084#2744930110;
-								#1859250090 x :: int : 20;
-								#3292425722 y :: int : 0;
-								#480677798 text :: string_scriptedValue : @9284ffca-e700-4330-9bd2-addc7e093107
-								{
-									#1076004264 triggerList :: trigger_list : @c13e0a1c-25f4-4f3e-8c0b-e5e6bf3c3cb6
-									{
-										#2742057238 events :: event_refs : <objectref>[];
-										#3282327532 dp_items :: dp_item_refs : <objectref>[];
-										#1101878301 properties :: property_reference_list : <propref>[@0f41d9af-cfde-42ce-beda-95369526eb2e#1710705348, @0f41d9af-cfde-42ce-beda-95369526eb2e#2339452527];
-									}
-									#1479653124 onTrigger :: function(bool,bool) : @b18b2232-f35d-4821-a277-efec395f3ceb
-									{
-										#1202705475 script :: string : "function(v:arg0::bool)
-{
-	true
-}";
-									}
-									#2114248509 read :: function(string) : @12065ca2-c809-4762-8f33-7371cb08e6d4
-									{
-										#1202705475 script :: string : "function()
-{
-	if ((v:this->^.listIndex < length v:this->^->^->^.dataValid)
-	    && (v:this->^->^->^.dataValid[v:this->^.listIndex]))
-	{
-	  v:this->^->^->^.data[v:this->^.listIndex]
-	}
-	else
-	{
-	 \"Updating...\"
-	}
-}";
-									}
-									#1858795487 write :: function(bool,string) : @e03ca213-8484-4c42-a9d8-d6fa09d391be
-									{
-										#1202705475 script :: string : "function(v:arg0::string)
-{
-	// todo: auto generated return value, please adapt
-	false
-}";
-									}
-								}
-								#3872227981 textColor :: color : 0xFFFFFFFF;
-								#2146024524 font :: font_resource : @67edcbb0-d199-41f6-8c81-b9b830446bfa
-								{
-									#1629333464 file :: file : "fonts\\PT_Sans.ttf";
-									#1272990288 size :: int : 22;
-								}
-								#560285980 horizontalAlign :: int : 0;
-								#1672542984 verticalAlign :: int : 0;
-							}
-						}
-						#745974033 name :: string : "Item";
-						#1087407965 visible :: bool : true;
-						#2993906825 width :: int : 700;
-						#2744930110 height :: int : 40;
-						#3709718698 x :: int : 0;
-						#2598428767 y :: int : 0;
-						#1282355320 hovered :: bool : false;
-						#3397211940 selected :: bool : false;
-						#1423382156 updatedSelected :: conditional_script : @70e2da91-b620-41da-bbbd-6074ac76b82a
-						{
-							#1076004264 triggerList :: trigger_list : @93cab503-1339-4d87-82af-bcbc699b4e4a
-							{
-								#2742057238 events :: event_refs : <objectref>[];
-								#2836201233 dp_items :: dp_item_refs : <objectref>[];
-								#3917175111 properties :: property_reference_list : <propref>[@0f41d9af-cfde-42ce-beda-95369526eb2e#3380202349, @bc2623ec-6c75-4a70-a99b-ff6547b40a3a#3014236211];
-							}
-							#3118006275 onTrigger :: function(bool,bool) : @4d5f52e0-d6b2-4cfd-bf12-026ad3f7e7a2
-							{
-								#1202705475 script :: string : "function(v:arg0::bool)
-{
-	v:this.selected = v:this.listIndex == v:this->^->^.selectedItem;
-	true
-}";
-							}
-						}
-					}
-				}
-				#3194536183 name :: string : "Instantiator";
-				#567941084 visible :: bool : true;
-				#1579614201 width :: int : 700;
-				#2663090496 height :: int : 300;
-				#974475552 x :: int : 0;
-				#582352198 y :: int : 1;
-				#3299644804 numItems :: int : 9;
-				#1102160622 lineMapping :: intlist : <int>[];
-				#3500160284 animRunning :: propref(bool) : @2f144313-eeb6-436f-986d-cdd5072323a9#367592681;
-				#3438164127 touchedItem :: int : 0;
-				#975323188 yDown :: int : 0;
-				#2989394871 yLast :: int : 0;
-				#1095732506 set_window_pos_out :: conditional_script : @819aea82-1a17-4118-b4d9-82de66731d76
-				{
-					#1076004264 triggerList :: trigger_list : @ea48df0f-e2ec-4d58-aa8a-a000dcb2d114
-					{
-						#2742057238 events :: event_refs : <objectref>[];
-						#460547614 dp_items :: dp_item_refs : <objectref>[];
-						#3608745181 properties :: property_reference_list : <propref>[@6a70b2d6-a3c3-4bac-ad5f-bbeb2a357e45#1019779633];
-					}
-					#3369565387 onTrigger :: function(bool,bool) : @47321128-e808-4e8a-9634-4059ef743497
-					{
-						#1202705475 script :: string : "function(v:arg0::bool)
-	{
-		v:this.windowPosInternal = v:this.firstListIndex
-	 
-	if (v:this.windowPosInternal  > 0)
-	{
-	  v:this.windowPosOut = v:this.windowPosInternal 
-	}
-	else if (v:this.windowPosInternal  < (length v:this.windowListIn - v:this.windowSizeOut))
-	{
-	  v:this.windowPosOut = v:this.windowPosInternal ;
-	}
-	
-	false;
-}";
-					}
-				}
-				#583395585 windowPosOut :: int : 0;
-				#2133027528 windowPosInternal :: int : 0;
-				#3742753912 windowSizeOut :: int : 0;
-				#3823537459 windowListIn :: stringlist : <string>[];
-				#1967480720 timeDown :: int : 0;
-				#559956202 globalScaling :: float : 0F;
-			}
-			#170679427 "children_list 4" :: GtfParallelAnimation : @2f144313-eeb6-436f-986d-cdd5072323a9
-			{
-				#3514003583 features :: feature_list : @45edd878-5db5-4227-b932-d1433afa36fc
-				{
-				}
-				#4129144670 children :: children_list : @f1df2bd5-48f0-4671-a2b3-99705fa54d12
-				{
-					#906967528 "children_list 5" :: GtfFastStartS32 : @89a28d7c-f93a-480d-8b60-81c11a23ac4d
-					{
-						#3514003583 features :: feature_list : @feabed8b-c7c8-48d9-a724-3394ca23c6b3
-						{
-						}
-						#4170325426 children :: children_list : @6c80b648-9936-4e4f-b429-04c27a537759
-						{
-						}
-						#2159862119 name :: string : "Curve";
-						#3598423379 enabled :: bool : true;
-						#1140652403 delay :: int : 0;
-						#3367152632 duration :: int : 1000;
-						#2549116321 repeat :: int : 1;
-						#1629738908 alternating :: bool : false;
-						#3627952666 relative :: bool : false;
-						#3899556434 start :: int : 0;
-						#2055526387 end :: int : 1;
-						#1741731335 target :: propref(int) : @6a70b2d6-a3c3-4bac-ad5f-bbeb2a357e45#4249783468;
-					}
-				}
-				#907960441 name :: string : "ScrollAnim";
-				#3698248013 enabled :: bool : true;
-				#1670918421 repeat :: int : 1;
-				#501033888 alternating :: bool : false;
-				#1454355679 scale :: float : 1F;
-				#1126815205 onPlay :: function(void,int,bool) : @2581a9d8-6d4c-42c5-b597-fe783681e2ee
-				{
-					#1202705475 script :: string : "function(v:animation_time::int, v:forward::bool)
-{
-   v:this.animRunning = true;
-}";
-				}
-				#1472213403 onPause :: function(void,int) : @160de2c7-3fc4-49fc-9c26-ed0d39d4a318
-				{
-					#1202705475 script :: string : "function(v:animation_time::int)
-{
+EBGUIDE 6.9.0.191213104248;
 
-}";
-				}
-				#188400853 onTerminate :: function(void,int,int) : @434b85f8-8524-423f-93b5-3864603d35b3
-				{
-					#1202705475 script :: string : "function(v:animation_time::int, v:terminate::int)
+GtfContainer_template(abc16f1e-4157-4f01-912f-28c58856d605)
 {
-	v:this.animRunning = false;
-}";
-				}
-				#367592681 animRunning :: bool : false;
-				#657625134 scroll :: int_scriptedValue : @919f4850-570a-4e5c-8c20-4ba54e055388
-				{
-					#1076004264 triggerList :: trigger_list : @c5b54690-228d-4419-975b-ccabfbbe297d
-					{
-						#2742057238 events :: event_refs : <objectref>[];
-						#2961211632 dp_items :: dp_item_refs : <objectref>[];
-						#2608326657 properties :: property_reference_list : <propref>[];
-					}
-					#1973694108 onTrigger :: function(bool,bool) : @84e95dae-1e06-4459-81b3-666a1eaa20e1
-					{
-						#1202705475 script :: string : "function(v:arg0::bool)
-{
-	// todo: auto generated return value, please adapt
-	false
-}";
-					}
-					#2660303065 read :: function(int) : @cd560810-6843-4f8d-b77d-42bf5bc12e63
-					{
-						#1202705475 script :: string : "function()
-{
-	// todo: auto generated return value, please adapt
-	0
-}";
-					}
-					#2987245092 write :: function(bool,int) : @c00b67a9-7983-4380-a36b-8e42d5825576
-					{
-						#1202705475 script :: string : "function(v:arg0::int)
-{
-	if ( !v:this.animRunning )
-	{  
-	  v:this.speedup = 1;
-	  v:this->Curve.duration = 2000;
-	  v:this->Curve.start = v:this->^->Instantiator.scrollOffset;
-	  v:this->Curve.end = v:this->Curve.start + (v:this.velocity * v:arg0);
-	  f:animation_play(v:this);
-	  {}
-	}
-	else if ((v:arg0*(v:this->Curve.end-v:this->Curve.start))<0) // scroll direction changed
+	name: "list"
+	structure: GtfContainer(0f41d9af-cfde-42ce-beda-95369526eb2e)
 	{
-	  f:animation_cancel(v:this);
-	  v:this->Curve.start = v:this->^->Instantiator.scrollOffset;
-	  v:this->Curve.end = v:this->Curve.start + (v:this.velocity * v:arg0);
-	  f:animation_play(v:this);
-	  {}
-	}
-	else
-	{
-	  v:this.speedup += 1;
-	  f:animation_cancel(v:this);
-	  v:this->Curve.start = v:this->^->Instantiator.scrollOffset;
-	  v:this->Curve.end += v:this.speedup * (v:this.velocity * v:arg0);
-	  v:this->Curve.duration = 2000;
-	  f:animation_play(v:this);
-	  {}
-	}
-	true
-}";
+		features: feature_list [
+			ViewPort(96ecfc34-3e74-48dd-b18f-3d309a2e4bd4)
+			{
+				xOffset: 0
+				yOffset: 0
+			}]
+		children: children_list [
+			GtfInstantiator(51b5f311-068c-4b33-a0cb-609df6ba866c)
+			{
+				features: feature_list [
+					TouchPressed(d4c97bd9-ee9e-4860-b780-6e59216b9992)
+					{
+						touchPressed: function<bool,int,int,int,int>(6b398a13-bfb8-4e45-a28e-516cdb956b86)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this.timeDown = f:system_time_ms();" \
+								"	v:this.yLast = v:y* 100 / f:round(v:this.globalScaling);" \
+								"	v:this.yDown = v:y* 100 / f:round(v:this.globalScaling);" \
+								"	" \
+								"	true" \
+								"}"
+						}
+					}, 
+					TouchShortReleased(0279ffb5-2259-4b16-8444-11b7cff39ead)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(0d7b433d-a0d8-4e69-a879-29c460870a4b)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	let v:v=-1; " \
+								"	    v:deltaTime=(f:system_time_ms()-v:this.timeDown) " \
+								"	    v:y_scaled = v:y* 100 / f:round(v:this.globalScaling); " \
+								"	in" \
+								"	{" \
+								"	" \
+								"	  if (f:abs(v:this.yDown-v:y_scaled) < v:this->^.selectDistance)" \
+								"	  {" \
+								"	    v:this->^.selectItem = v:this.touchedItem;" \
+								"	    v:this->^->ScrollAnim.stopAnim(); {}" \
+								"	  }" \
+								"	  else" \
+								"	  {" \
+								"	    if (v:this.bounceValue != 0)" \
+								"	    {" \
+								"	      v:this->^->ScrollAnim.stopAnim();" \
+								"	      v:this.scrollOffset += v:this.bounceValue;" \
+								"	    }" \
+								"	    else" \
+								"	    {" \
+								"	      v:v = (v:this.yDown-v:y_scaled)* 100 / (v:deltaTime+1);" \
+								"	      v:this->^->ScrollAnim.scroll = v:v;" \
+								"	    }" \
+								"	  }" \
+								"	}" \
+								"	" \
+								"	true" \
+								"}"
+						}
+					}, 
+					TouchMove(01ed8389-224f-40c1-8871-3e7a34a23034)
+					{
+						touchMoved: function<bool,int,int,int,int>(ce74e364-f5f0-47fd-95e7-7189a862d67a)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	if (!v:this.animRunning)" \
+								"	{" \
+								"	  v:this.scrollOffset += v:this.yLast - v:y * 100 / f:round(v:this.globalScaling);" \
+								"	}  " \
+								"	else if (f:system_time_ms()-v:this.timeDown>150)" \
+								"	{ " \
+								"	  v:this->^->ScrollAnim.stopAnim();" \
+								"	  v:this.scrollOffset += v:this.yLast - v:y* 100 / f:round(v:this.globalScaling);" \
+								"	}	" \
+								"		v:this.yLast = v:y* 100 / f:round(v:this.globalScaling);" \
+								"	" \
+								"	true" \
+								"}"
+						}
+					}, 
+					StateTouched(487f664c-4417-489b-bbfb-7452910d9ee0)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 1
+						touchBehavior: 0
+					}, 
+					LayoutPolicyList(6a70b2d6-a3c3-4bac-ad5f-bbeb2a357e45)
+					{
+						layoutDirection: 1
+						scrollOffset: 0
+						scrollOffsetRebase: false
+						firstListIndex: 0
+						scrollIndex: 0
+						scrollValue: 0
+						scrollValueMax: 253
+						scrollValueMin: 0
+						bounceValue: 0
+						bounceValueMax: 100
+						segments: 1
+						listLength: 50
+						wrapAround: false
+					}]
+				children: children_list [
+					GtfContainer(8cf86819-d6a7-425a-aa87-8c3411d2c084)
+					{
+						features: feature_list [
+							MoveOut(5c6b28b7-e5dc-462f-886c-aafc12ad89a7)
+							{
+								moveOut: function<bool,int,int,int,int>(34965c6f-f404-4bf7-9a17-804af0a4f7eb)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"	v:this.hovered = false;" \
+										"	true;" \
+										"}"
+								}
+							}, 
+							MoveIn(48e9c8e9-5a05-47df-a832-f5c85f883936)
+							{
+								moveIn: function<bool,int,int,int,int>(3cea6e53-937f-4751-8bdb-809f6caf1dbf)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"	v:this.hovered = true;" \
+										"	true;" \
+										"}"
+								}
+							}, 
+							TouchPressed(8b61019e-d121-424e-8ad4-4362a2fdefd5)
+							{
+								touchPressed: function<bool,int,int,int,int>(727d546a-8bcf-4176-bdb8-51a727e4d11a)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"	v:this->^.touchedItem = v:this.listIndex;" \
+										"	" \
+										"	false" \
+										"}"
+								}
+							}, 
+							StateTouched(9d037d32-7af0-46ec-8be2-5fa0b15d1477)
+							{
+								touchable: true
+								touched: false
+								touchPolicy: 0
+								touchBehavior: 0
+							}, 
+							LayoutPolicyListItem(bc2623ec-6c75-4a70-a99b-ff6547b40a3a)
+							{
+								listIndex: 0
+							}]
+						children: children_list [
+							GtfLabel(67058381-9afd-4c6c-ae0d-396fbbecb1fa)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Label"
+								visible: true
+								width: 680
+								height: height@8cf86819-d6a7-425a-aa87-8c3411d2c084 (propref<int>)
+								x: 20
+								y: 0
+								text: string_scriptedValue(9284ffca-e700-4330-9bd2-addc7e093107)
+								{
+									triggerList: trigger_list(c13e0a1c-25f4-4f3e-8c0b-e5e6bf3c3cb6)
+									{
+										script: "v:this->^->^->^.data" \
+											"v:this->^->^->^.dataValid" \
+											""
+									}
+									onTrigger: function<bool,bool>(b18b2232-f35d-4821-a277-efec395f3ceb)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	true" \
+											"}"
+									}
+									read: function<string>(12065ca2-c809-4762-8f33-7371cb08e6d4)
+									{
+										script: "function()" \
+											"{" \
+											"	if ((v:this->^.listIndex < length v:this->^->^->^.dataValid)" \
+											"	    && (v:this->^->^->^.dataValid[v:this->^.listIndex]))" \
+											"	{" \
+											"	  v:this->^->^->^.data[v:this->^.listIndex]" \
+											"	}" \
+											"	else" \
+											"	{" \
+											"	 \"Updating...\"" \
+											"	}" \
+											"}"
+									}
+									write: function<bool,string>(e03ca213-8484-4c42-a9d8-d6fa09d391be)
+									{
+										script: "function(v:arg0::string)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+								}
+								textColor: #FFFFFFFF
+								font: font_resource(67edcbb0-d199-41f6-8c81-b9b830446bfa)
+								{
+									file: "fonts\\PT_Sans.ttf"
+									size: 22
+								}
+								horizontalAlign: 0
+								verticalAlign: 0
+							}]
+						name: "Item"
+						visible: true
+						width: 700
+						height: 40
+						x: 0
+						y: 0
+						hovered: false
+						selected: false
+						updatedSelected: conditional_script(70e2da91-b620-41da-bbbd-6074ac76b82a)
+						{
+							triggerList: trigger_list(93cab503-1339-4d87-82af-bcbc699b4e4a)
+							{
+								script: "v:this->^->^.selectedItem" \
+									"v:this.listIndex" \
+									""
+							}
+							onTrigger: function<bool,bool>(4d5f52e0-d6b2-4cfd-bf12-026ad3f7e7a2)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	v:this.selected = v:this.listIndex == v:this->^->^.selectedItem;" \
+									"	true" \
+									"}"
+							}
+						}
+					}]
+				name: "Instantiator"
+				visible: true
+				width: 700
+				height: 300
+				x: 0
+				y: 1
+				numItems: 9
+				lineMapping: intlist []
+				animRunning: animRunning@2f144313-eeb6-436f-986d-cdd5072323a9 (propref<bool>)
+				touchedItem: 0
+				yDown: 0
+				yLast: 0
+				set_window_pos_out: conditional_script(819aea82-1a17-4118-b4d9-82de66731d76)
+				{
+					triggerList: trigger_list(ea48df0f-e2ec-4d58-aa8a-a000dcb2d114)
+					{
+						script: "v:this.firstListIndex" \
+							""
+					}
+					onTrigger: function<bool,bool>(47321128-e808-4e8a-9634-4059ef743497)
+					{
+						script: "function(v:arg0::bool)" \
+							"	{" \
+							"		v:this.windowPosInternal = v:this.firstListIndex" \
+							"	 " \
+							"	if (v:this.windowPosInternal  > 0)" \
+							"	{" \
+							"	  v:this.windowPosOut = v:this.windowPosInternal " \
+							"	}" \
+							"	else if (v:this.windowPosInternal  < (length v:this.windowListIn - v:this.windowSizeOut))" \
+							"	{" \
+							"	  v:this.windowPosOut = v:this.windowPosInternal ;" \
+							"	}" \
+							"	" \
+							"	false;" \
+							"}"
 					}
 				}
-				#3879752783 speedup :: int : 0;
-				#2753207152 velocity :: int : 2;
-				#3919277596 stopAnim :: function(bool) : @3c3c3fc6-4774-4a50-a864-390c93209ffb
+				windowPosOut: 0
+				windowPosInternal: 0
+				windowSizeOut: 0
+				windowListIn: stringlist []
+				timeDown: 0
+				globalScaling: 0F
+			}, 
+			GtfParallelAnimation(2f144313-eeb6-436f-986d-cdd5072323a9)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfFastStartS32(89a28d7c-f93a-480d-8b60-81c11a23ac4d)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Curve"
+						enabled: true
+						delay: 0
+						duration: 1000
+						repeat: 1
+						alternating: false
+						relative: false
+						start: 0
+						end: 1
+						target: scrollOffset@6a70b2d6-a3c3-4bac-ad5f-bbeb2a357e45 (propref<int>)
+					}]
+				name: "ScrollAnim"
+				enabled: true
+				repeat: 1
+				alternating: false
+				scale: 1F
+				onPlay: function<void,int,bool>(2581a9d8-6d4c-42c5-b597-fe783681e2ee)
 				{
-					#1202705475 script :: string : "function()
-{
-  if (v:this.animRunning)
- {
-  f:animation_cancel(v:this)
- }
- false
-}";
+					script: "function(v:animation_time::int, v:forward::bool)" \
+						"{" \
+						"   v:this.animRunning = true;" \
+						"}"
 				}
+				onPause: function<void,int>(160de2c7-3fc4-49fc-9c26-ed0d39d4a318)
+				{
+					script: "function(v:animation_time::int)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onTerminate: function<void,int,int>(434b85f8-8524-423f-93b5-3864603d35b3)
+				{
+					script: "function(v:animation_time::int, v:terminate::int)" \
+						"{" \
+						"	v:this.animRunning = false;" \
+						"}"
+				}
+				animRunning: false
+				scroll: int_scriptedValue(919f4850-570a-4e5c-8c20-4ba54e055388)
+				{
+					triggerList: trigger_list(c5b54690-228d-4419-975b-ccabfbbe297d)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(84e95dae-1e06-4459-81b3-666a1eaa20e1)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(cd560810-6843-4f8d-b77d-42bf5bc12e63)
+					{
+						script: "function()" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	0" \
+							"}"
+					}
+					write: function<bool,int>(c00b67a9-7983-4380-a36b-8e42d5825576)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	if ( !v:this.animRunning )" \
+							"	{  " \
+							"	  v:this.speedup = 1;" \
+							"	  v:this->Curve.duration = 2000;" \
+							"	  v:this->Curve.start = v:this->^->Instantiator.scrollOffset;" \
+							"	  v:this->Curve.end = v:this->Curve.start + (v:this.velocity * v:arg0);" \
+							"	  f:animation_play(v:this);" \
+							"	  {}" \
+							"	}" \
+							"	else if ((v:arg0*(v:this->Curve.end-v:this->Curve.start))<0) // scroll direction changed" \
+							"	{" \
+							"	  f:animation_cancel(v:this);" \
+							"	  v:this->Curve.start = v:this->^->Instantiator.scrollOffset;" \
+							"	  v:this->Curve.end = v:this->Curve.start + (v:this.velocity * v:arg0);" \
+							"	  f:animation_play(v:this);" \
+							"	  {}" \
+							"	}" \
+							"	else" \
+							"	{" \
+							"	  v:this.speedup += 1;" \
+							"	  f:animation_cancel(v:this);" \
+							"	  v:this->Curve.start = v:this->^->Instantiator.scrollOffset;" \
+							"	  v:this->Curve.end += v:this.speedup * (v:this.velocity * v:arg0);" \
+							"	  v:this->Curve.duration = 2000;" \
+							"	  f:animation_play(v:this);" \
+							"	  {}" \
+							"	}" \
+							"	true" \
+							"}"
+					}
+				}
+				speedup: 0
+				velocity: 2
+				stopAnim: function<bool>(3c3c3fc6-4774-4a50-a864-390c93209ffb)
+				{
+					script: "function()" \
+						"{" \
+						"  if (v:this.animRunning)" \
+						" {" \
+						"  f:animation_cancel(v:this)" \
+						" }" \
+						" false" \
+						"}"
+				}
+			}]
+		name: "list"
+		visible: true
+		width: 750
+		height: 300
+		x: 0
+		y: 0
+		data: @bd1e0e5e-73e7-4cc2-859e-12a26f6dce03 (objectref<stringlist>)
+		dataValid: boollist []
+		init: conditional_script(a69b6836-122f-4c4f-b554-d0c6f2318a83)
+		{
+			triggerList: trigger_list(15085642-51f5-49f5-a84e-23e35f0ddc89)
+			{
+				script: "v:this.data" \
+					""
+			}
+			onTrigger: function<bool,bool>(66fa61a0-3e6a-493f-8fbf-076204e0936a)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	v:this->Instantiator.listLength = length v:this.data; " \
+					"	true" \
+					"}"
 			}
 		}
-		#3724562131 name :: string : "list";
-		#1638196650 visible :: bool : true;
-		#2887054873 width :: int : 750;
-		#2206408950 height :: int : 300;
-		#495835448 x :: int : 0;
-		#2572429441 y :: int : 0;
-		#1710705348 data :: objectref(stringlist) : @bd1e0e5e-73e7-4cc2-859e-12a26f6dce03;
-		#2339452527 dataValid :: boollist : <bool>[];
-		#1597954424 init :: conditional_script : @a69b6836-122f-4c4f-b554-d0c6f2318a83
+		selectDistance: 15
+		selectedItem: -1
+		selectItem: int_scriptedValue(e6a7b7ac-8762-4a6f-a1e9-52b1ba9547f8)
 		{
-			#1076004264 triggerList :: trigger_list : @15085642-51f5-49f5-a84e-23e35f0ddc89
+			triggerList: trigger_list(3ce1d726-4d73-407d-9c2b-0cadeb27ff99)
 			{
-				#2742057238 events :: event_refs : <objectref>[];
-				#3478665795 dp_items :: dp_item_refs : <objectref>[];
-				#670322871 properties :: property_reference_list : <propref>[@0f41d9af-cfde-42ce-beda-95369526eb2e#1710705348];
+				script: ""
 			}
-			#2455247066 onTrigger :: function(bool,bool) : @66fa61a0-3e6a-493f-8fbf-076204e0936a
+			onTrigger: function<bool,bool>(f3903204-b620-41a2-92ac-e400676f4efa)
 			{
-				#1202705475 script :: string : "function(v:arg0::bool)
-{
-	v:this->Instantiator.listLength = length v:this.data; 
-	true
-}";
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	// todo: auto generated return value, please adapt" \
+					"	false" \
+					"}"
 			}
-		}
-		#1035674378 selectDistance :: int : 15;
-		#3380202349 selectedItem :: int : -1;
-		#1995407080 selectItem :: int_scriptedValue : @e6a7b7ac-8762-4a6f-a1e9-52b1ba9547f8
-		{
-			#1076004264 triggerList :: trigger_list : @3ce1d726-4d73-407d-9c2b-0cadeb27ff99
+			read: function<int>(43f0d7b5-5d5e-40cd-a40d-61c48e5e18f2)
 			{
-				#2742057238 events :: event_refs : <objectref>[];
-				#2809011689 dp_items :: dp_item_refs : <objectref>[];
-				#2430422255 properties :: property_reference_list : <propref>[];
+				script: "function()" \
+					"{" \
+					"	v:this.selectedItem" \
+					"}"
 			}
-			#1831126479 onTrigger :: function(bool,bool) : @f3903204-b620-41a2-92ac-e400676f4efa
+			write: function<bool,int>(200fc480-4ded-4a60-afd8-11a0e2910841)
 			{
-				#1202705475 script :: string : "function(v:arg0::bool)
-{
-	// todo: auto generated return value, please adapt
-	false
-}";
-			}
-			#3835915875 read :: function(int) : @43f0d7b5-5d5e-40cd-a40d-61c48e5e18f2
-			{
-				#1202705475 script :: string : "function()
-{
-	v:this.selectedItem
-}";
-			}
-			#2242658945 write :: function(bool,int) : @200fc480-4ded-4a60-afd8-11a0e2910841
-			{
-				#1202705475 script :: string : "function(v:arg0::int)
-{
-	v:this.selectedItem = v:arg0;
-	true
-}";
+				script: "function(v:arg0::int)" \
+					"{" \
+					"	v:this.selectedItem = v:arg0;" \
+					"	true" \
+					"}"
 			}
 		}
 	}
-	#537187024 windowPosOut :: propref(int) : @51b5f311-068c-4b33-a0cb-609df6ba866c#583395585;
-	#2388951214 windowPosInternal :: propref(int) : @51b5f311-068c-4b33-a0cb-609df6ba866c#2133027528;
-	#2669440407 windowSizeOut :: propref(int) : @51b5f311-068c-4b33-a0cb-609df6ba866c#3742753912;
-	#876994375 windowListIn :: propref(stringlist) : @51b5f311-068c-4b33-a0cb-609df6ba866c#3823537459;
-	#592888955 globalScaling :: propref(float) : @51b5f311-068c-4b33-a0cb-609df6ba866c#559956202;
-	#3407504458 data :: propref(stringlist) : @0f41d9af-cfde-42ce-beda-95369526eb2e#1710705348;
-	#3910832225 dataValid :: propref(boollist) : @0f41d9af-cfde-42ce-beda-95369526eb2e#2339452527;
-	#3620634745 x :: propref(int) : @0f41d9af-cfde-42ce-beda-95369526eb2e#495835448;
-	#2669814467 y :: propref(int) : @0f41d9af-cfde-42ce-beda-95369526eb2e#2572429441;
+	windowPosOut: windowPosOut@51b5f311-068c-4b33-a0cb-609df6ba866c (propref<int>)
+	windowPosInternal: windowPosInternal@51b5f311-068c-4b33-a0cb-609df6ba866c (propref<int>)
+	windowSizeOut: windowSizeOut@51b5f311-068c-4b33-a0cb-609df6ba866c (propref<int>)
+	windowListIn: windowListIn@51b5f311-068c-4b33-a0cb-609df6ba866c (propref<stringlist>)
+	globalScaling: globalScaling@51b5f311-068c-4b33-a0cb-609df6ba866c (propref<float>)
+	data: data@0f41d9af-cfde-42ce-beda-95369526eb2e (propref<stringlist>)
+	dataValid: dataValid@0f41d9af-cfde-42ce-beda-95369526eb2e (propref<boollist>)
+	x: x@0f41d9af-cfde-42ce-beda-95369526eb2e (propref<int>)
+	y: y@0f41d9af-cfde-42ce-beda-95369526eb2e (propref<int>)
 }

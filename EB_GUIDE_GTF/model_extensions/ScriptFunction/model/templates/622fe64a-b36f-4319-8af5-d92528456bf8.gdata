@@ -1,10 +1,153 @@
-EBGUIDE 6.7.0.148693;
-@622fe64a-b36f-4319-8af5-d92528456bf8
+EBGUIDE 6.9.0.191213104248;
+
+GtfView_template(622fe64a-b36f-4319-8af5-d92528456bf8)
 {
-	#1596672076 name :: string : "T_TitleView";
-	#4146943356 structure :: GtfView : @a1e4bad1-e749-46c1-82a8-be3c65a0b38e;
-	#2196182066 title_text :: propref(string) : @a1e4bad1-e749-46c1-82a8-be3c65a0b38e#4037022648;
-	#861955715 short_desc_text :: propref(string) : @a1e4bad1-e749-46c1-82a8-be3c65a0b38e#2995147351;
-	#548714131 long_desc_text :: propref(string) : @a1e4bad1-e749-46c1-82a8-be3c65a0b38e#1020493894;
-	#1269383956 touchPressed :: propref(function(bool,int,int,int,int)) : @e1a71748-a9a8-4b84-bd44-e6ee96b77378#1188111545;
+	name: "T_TitleView"
+	structure: GtfView(a1e4bad1-e749-46c1-82a8-be3c65a0b38e)
+	{
+		features: feature_list [
+			TouchPressed(e1a71748-a9a8-4b84-bd44-e6ee96b77378)
+			{
+				touchPressed: function<bool,int,int,int,int>(954976fb-6115-468d-aefa-14efd522ab1f)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(3929321c-fa81-4730-9500-5688c39b203f)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(e7707394-ab79-473b-97f3-c2440c7c93b5)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfImage(93e92e85-a0b8-48c3-a600-a0576d9130a7)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "logo"
+						visible: true
+						width: 135
+						height: 135
+						x: 105
+						y: 90
+						image: image_resource(edca6ae9-4353-4cda-a68d-3cb8e1d65b99)
+						{
+							file: "images\\EB.png"
+						}
+						sRGB: false
+						horizontalAlign: 0
+						verticalAlign: 1
+					}, 
+					GtfLabel(1fe091f2-8f1a-49fe-85f2-fadec459972b)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Title"
+						visible: true
+						width: 450
+						height: 40
+						x: 260
+						y: 105
+						text: title_text@a1e4bad1-e749-46c1-82a8-be3c65a0b38e (propref<string>)
+						textColor: #FFFFFFFF
+						font: font_resource(2e7f9a59-414b-487a-bff9-db78deee8fc6)
+						{
+							file: "fonts/PT_Sans.ttf"
+							size: 35
+						}
+						horizontalAlign: 0
+						verticalAlign: 0
+					}, 
+					GtfLabel(f9875ed7-3318-4d6b-9977-8f64274cff37)
+					{
+						features: feature_list [
+							MultiLine(32054d3b-3afa-45c3-ada1-92fe99f2a2f7)
+							{
+								lineOffset: 0
+								maxLineCount: 0
+							}]
+						children: children_list []
+						name: "ShortDesc"
+						visible: true
+						width: 460
+						height: 82
+						x: 260
+						y: 160
+						text: short_desc_text@a1e4bad1-e749-46c1-82a8-be3c65a0b38e (propref<string>)
+						textColor: #FFFFFFFF
+						font: font_resource(8be86398-5d52-4d21-9729-023c67df0ecd)
+						{
+							file: "fonts/PT_Sans.ttf"
+							size: 18
+						}
+						horizontalAlign: 0
+						verticalAlign: 0
+					}, 
+					GtfRectangle(13d6be95-dc31-4c59-87c7-02ef58ead74a)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Separator"
+						visible: true
+						width: width@a1e4bad1-e749-46c1-82a8-be3c65a0b38e (propref<int>)
+						height: 2
+						x: 105
+						y: 250
+						fillColor: #A9A9A9FF
+					}, 
+					GtfLabel(3a69aebf-dcae-482d-aeac-14c27b76fd41)
+					{
+						features: feature_list [
+							MultiLine(94ed5d91-1c65-4004-ac92-2cc3fbe9ade7)
+							{
+								lineOffset: 0
+								maxLineCount: 0
+							}]
+						children: children_list []
+						name: "LongDesc"
+						visible: true
+						width: 595
+						height: 180
+						x: 110
+						y: 248
+						text: long_desc_text@a1e4bad1-e749-46c1-82a8-be3c65a0b38e (propref<string>)
+						textColor: #FFFFFFFF
+						font: font_resource(d171c295-8114-4a56-8101-225bf424f8cc)
+						{
+							file: "fonts/PT_Sans.ttf"
+							size: 18
+						}
+						horizontalAlign: 0
+						verticalAlign: 0
+					}]
+				name: "Backgr"
+				visible: true
+				width: 800
+				height: height@a1e4bad1-e749-46c1-82a8-be3c65a0b38e (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #383838FF
+			}]
+		name: "View"
+		visible: true
+		width: 600
+		height: 480
+		x: 0
+		y: 0
+		title_text: "<Project title>"
+		short_desc_text: "<short description>"
+		long_desc_text: "<long description>"
+	}
+	title_text: title_text@a1e4bad1-e749-46c1-82a8-be3c65a0b38e (propref<string>)
+	short_desc_text: short_desc_text@a1e4bad1-e749-46c1-82a8-be3c65a0b38e (propref<string>)
+	long_desc_text: long_desc_text@a1e4bad1-e749-46c1-82a8-be3c65a0b38e (propref<string>)
+	touchPressed: touchPressed@e1a71748-a9a8-4b84-bd44-e6ee96b77378 (propref<function<bool,int,int,int,int>>)
 }

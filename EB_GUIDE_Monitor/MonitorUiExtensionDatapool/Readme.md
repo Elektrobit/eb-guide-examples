@@ -16,12 +16,12 @@ In this example, you use the following services:
 
 ### Setup
 
-1. In Visual Studio, open the _studio\_examples.sln_ solution file.
-2. Compile the _MonitorUiExtensionEvents_ project.
-The _MonitorUiExtensionEvents.dll_ library file is created.
+1. In Visual Studio, open the _EB\_GUIDE\_Monitor\\EB\_GUIDE\_Monitor\_examples.sln_ solution file.
+2. Compile the _MonitorUiExtensionDatapool_ project.\
+The _MonitorUiExtensionDatapool_ library file is created.
 
 ### Run
 
-1. Copy the _MonitorUiExtensionDatapool.dll_ into _$GUIDE\_INSTALL\_PATH\\monitor__\\lib\\ui\\_ folder.
+1. Copy the _MonitorUiExtensionDatapool.dll_ into _$GUIDE\_INSTALL\_PATH\\tools\\monitor\\lib\\ui\\_ folder.
 2. Start EB GUIDE Monitor.
-3. To open the extension, select _Layout_ in the menu and click _Monitor Extension_.
+3. To open the extension, select **Layout** in the menu and click **Monitor Datapool Extension**.

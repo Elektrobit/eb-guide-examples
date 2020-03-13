@@ -1,0 +1,20 @@
+EBGUIDE 6.9.0.191213104248;
+
+GtfView_template_instance(b626692a-8da1-4992-9ec2-699783714772)
+{
+	name: "InitialView"
+	template: @36192fc9-a3a9-4a7f-9edf-a98a14c704eb (objectref<GtfView_template>)
+	children: children_list []
+	long_desc_text: "Documentation reference:\\nBackground information > Interaction between HMI and applications > Datapool > Windowed lists"
+	title_text: "Window list application"
+	short_desc_text: "The content of the list is provided by an application."
+	touchPressed: function<bool,int,int,int,int>(173e111a-42f4-4429-9f3c-63c1f07d27be)
+	{
+		script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+			"{" \
+			"    fire ev:next();" \
+			"    false" \
+			"}"
+	}
+	width: width@36192fc9-a3a9-4a7f-9edf-a98a14c704eb (propref<int>)
+}

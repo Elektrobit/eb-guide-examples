@@ -1,0 +1,43 @@
+EBGUIDE 6.9.0.191213104248;
+
+GtfView_template_instance(dadb168c-7a5c-4cfd-9dcd-148af4ad2e3e)
+{
+	name: "StaticImagesView"
+	template: @4ba5e50b-dc6c-4c10-8165-b319a5cef09c (objectref<GtfView_template>)
+	children: children_list [
+		GtfImage(197f5554-ed48-4925-a24e-2712a4ef7202)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "image"
+			visible: true
+			width: 500
+			height: 254
+			x: 150
+			y: 100
+			image: @11c8170d-7549-4521-98d0-9afa8bd7dfcf (objectref<image>)
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	description_text: "This image is loaded once by an application during run-time."
+	title_text: ""
+	setTitleText: conditional_script(deb090ec-820d-43e7-9ddc-93b02ad1dd9b)
+	{
+		triggerList: trigger_list(a59fb5ac-4a92-4359-a1e6-d5cc204cc5bd)
+		{
+			script: "dp:showcase_title_list" \
+				""
+		}
+		onTrigger: function<bool,bool>(7fd3bded-1d56-46e3-a630-bccc71a02a47)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	v:this.title_text = dp:showcase_title_list[dp:showcase_id_static_image];" \
+				"	false;" \
+				"}"
+		}
+	}
+	next_enabled: true
+	prev_enabled: true
+}

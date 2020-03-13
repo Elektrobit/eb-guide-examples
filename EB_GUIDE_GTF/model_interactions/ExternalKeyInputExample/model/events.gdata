@@ -1,19 +1,20 @@
-EBGUIDE 6.7.0.148693;
-@18d508fd-81f1-47d3-8d6e-b8fdcb0de559
+EBGUIDE 6.9.0.191213104248;
+
+events(18d508fd-81f1-47d3-8d6e-b8fdcb0de559)
 {
-	#2545465111 items :: event_list : <object>[
-		event : @7c293e74-5229-4ee3-b7fb-351112136b05
+	items: event_list [
+		event(7c293e74-5229-4ee3-b7fb-351112136b05)
 		{
-			#1502564230 name :: string : "next";
-			#387154336 eventId :: int : 4;
-			#1796778630 event_group :: objectref(event_group) : @55bd7598-b548-4b67-b3c9-ac38a1745d53;
+			name: "next"
+			eventId: 4
+			event_group: @55bd7598-b548-4b67-b3c9-ac38a1745d53 (objectref<event_group>)
 		}, 
-		event : @e31013e6-3480-4416-87a6-3817650a0e6f
+		event(e31013e6-3480-4416-87a6-3817650a0e6f)
 		{
-			#149612537 name :: string : "keyEvent";
-			#1100641535 eventId :: int : 32;
-			#1332036792 event_group :: objectref(event_group) : @db2a01e5-d272-4337-9596-8f183fb37c7e;
-			#3837507742 displayManagerId :: int : 0;
-			#339018987 status :: int : 0;
-		}];
+			name: "keyEvent"
+			eventId: 32
+			event_group: @db2a01e5-d272-4337-9596-8f183fb37c7e (objectref<event_group>)
+			displayManagerId: 0
+			status: 0
+		}]
 }

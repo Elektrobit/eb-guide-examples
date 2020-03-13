@@ -1,83 +1,72 @@
-EBGUIDE 6.7.0.148693;
-@6ab593c7-e0c4-4fa3-8950-35d1d85945af
+EBGUIDE 6.9.0.191213104248;
+
+GtfContainer_template(6ab593c7-e0c4-4fa3-8950-35d1d85945af)
 {
-	#1908304723 name :: string : "T_TextButton";
-	#1077410031 structure :: GtfContainer : @5a260c97-e451-4ce9-ace8-78ec3879c3bd
+	name: "T_TextButton"
+	structure: GtfContainer(5a260c97-e451-4ce9-ace8-78ec3879c3bd)
 	{
-		#817062100 features :: feature_list : @5ce103d2-334b-4579-b799-055e6f1a2780
-		{
-			#2984502601 "feature_list 6" :: TouchShortReleased : @c9068517-07b9-4607-9d33-6d555d43f641
+		features: feature_list [
+			TouchShortReleased(c9068517-07b9-4607-9d33-6d555d43f641)
 			{
-				#878855356 touchShortReleased :: function(bool,int,int,int,int) : @91e8d9e9-3420-4d67-b2f3-2e434eae5eab
+				touchShortReleased: function<bool,int,int,int,int>(91e8d9e9-3420-4d67-b2f3-2e434eae5eab)
 				{
-					#1921930001 script :: string : "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)
-{
-    false
-}";
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
 				}
-			}
-			#1708640791 "feature_list 7" :: StateTouched : @40d49919-cc37-49b8-8587-fbae627dfe38
+			}, 
+			StateTouched(40d49919-cc37-49b8-8587-fbae627dfe38)
 			{
-				#1333603383 touchable :: bool : true;
-				#2851104920 touched :: bool : false;
-				#1914161944 touchPolicy :: int : 0;
-				#3368825301 touchBehavior :: int : 0;
-			}
-		}
-		#3129282182 children :: children_list : @90eaf013-aac7-4e93-ba74-e8259464b00c
-		{
-			#3671193251 "children_list 3" :: GtfRectangle : @429e0ab5-05d0-4aa8-85c4-02543c2c3cd4
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(429e0ab5-05d0-4aa8-85c4-02543c2c3cd4)
 			{
-				#3525009865 features :: feature_list : @b7587d1e-e44e-4ec4-9126-3defa323a520
-				{
-				}
-				#3855881423 children :: children_list : @24b5a565-90e4-4b6b-a4a9-7904c5069cbf
-				{
-					#2604920559 "children_list 4" :: GtfLabel : @72b87d70-1377-4d89-8cf3-97e26ad1a0ee
+				features: feature_list []
+				children: children_list [
+					GtfLabel(72b87d70-1377-4d89-8cf3-97e26ad1a0ee)
 					{
-						#815525141 features :: feature_list : @4e4fcf1e-92e2-4c20-9b25-2e0aad04ae5e
+						features: feature_list []
+						children: children_list []
+						name: "text"
+						visible: true
+						width: width@5a260c97-e451-4ce9-ace8-78ec3879c3bd (propref<int>)
+						height: height@5a260c97-e451-4ce9-ace8-78ec3879c3bd (propref<int>)
+						x: 0
+						y: 0
+						text: "label"
+						textColor: #FFFFFFFF
+						font: font_resource(7e6ca346-7300-4efc-b3c4-a6383e687478)
 						{
+							file: "fonts\\PT_Sans.ttf"
+							size: 25
 						}
-						#4069534903 children :: children_list : @1a68e6f6-1c1d-4d13-9b49-4ed33cc39ed0
-						{
-						}
-						#926846476 name :: string : "text";
-						#71372310 visible :: bool : true;
-						#3222519161 width :: propref(int) : @5a260c97-e451-4ce9-ace8-78ec3879c3bd#2510601882;
-						#1861209622 height :: propref(int) : @5a260c97-e451-4ce9-ace8-78ec3879c3bd#1136791203;
-						#547141350 x :: int : 0;
-						#3572151786 y :: int : 0;
-						#4247927048 text :: string : "label";
-						#998241630 textColor :: color : 0xFFFFFFFF;
-						#1027084666 font :: font_resource : @7e6ca346-7300-4efc-b3c4-a6383e687478
-						{
-							#1668790215 file :: file : "fonts\\PT_Sans.ttf";
-							#526695336 size :: int : 25;
-						}
-						#2984489686 horizontalAlign :: int : 1;
-						#868459236 verticalAlign :: int : 0;
-					}
-				}
-				#403526604 name :: string : "Rectangle 1";
-				#1078900942 visible :: bool : true;
-				#2276241205 width :: propref(int) : @5a260c97-e451-4ce9-ace8-78ec3879c3bd#2510601882;
-				#846094128 height :: propref(int) : @5a260c97-e451-4ce9-ace8-78ec3879c3bd#1136791203;
-				#4264181007 x :: int : 0;
-				#896031496 y :: int : 0;
-				#899117460 fillColor :: color : 0x808080FF;
-			}
-		}
-		#802314557 name :: string : "Container 1";
-		#1162441130 visible :: bool : true;
-		#2510601882 width :: int : 100;
-		#1136791203 height :: int : 100;
-		#4021603904 x :: int : 0;
-		#300623148 y :: int : 0;
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				name: "Rectangle 1"
+				visible: true
+				width: width@5a260c97-e451-4ce9-ace8-78ec3879c3bd (propref<int>)
+				height: height@5a260c97-e451-4ce9-ace8-78ec3879c3bd (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #808080FF
+			}]
+		name: "Container 1"
+		visible: true
+		width: 100
+		height: 100
+		x: 0
+		y: 0
 	}
-	#243554536 text :: propref(string) : @72b87d70-1377-4d89-8cf3-97e26ad1a0ee#4247927048;
-	#3011019923 width :: propref(int) : @5a260c97-e451-4ce9-ace8-78ec3879c3bd#2510601882;
-	#519972696 height :: propref(int) : @5a260c97-e451-4ce9-ace8-78ec3879c3bd#1136791203;
-	#3620546706 x :: propref(int) : @5a260c97-e451-4ce9-ace8-78ec3879c3bd#4021603904;
-	#806416093 y :: propref(int) : @5a260c97-e451-4ce9-ace8-78ec3879c3bd#300623148;
-	#4119457051 touchShortReleased :: propref(function(bool,int,int,int,int)) : @c9068517-07b9-4607-9d33-6d555d43f641#878855356;
+	text: text@72b87d70-1377-4d89-8cf3-97e26ad1a0ee (propref<string>)
+	width: width@5a260c97-e451-4ce9-ace8-78ec3879c3bd (propref<int>)
+	height: height@5a260c97-e451-4ce9-ace8-78ec3879c3bd (propref<int>)
+	x: x@5a260c97-e451-4ce9-ace8-78ec3879c3bd (propref<int>)
+	y: y@5a260c97-e451-4ce9-ace8-78ec3879c3bd (propref<int>)
+	touchShortReleased: touchShortReleased@c9068517-07b9-4607-9d33-6d555d43f641 (propref<function<bool,int,int,int,int>>)
 }

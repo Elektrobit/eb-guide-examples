@@ -1,4 +1,4 @@
-EBGUIDE 6.8.0.190612124148;
+EBGUIDE 6.9.0.191213104248;
 
 GtfView_template(18edd3fd-90d3-4e6e-bc08-4db08f8b05ee)
 {
@@ -79,7 +79,7 @@ GtfView_template(18edd3fd-90d3-4e6e-bc08-4db08f8b05ee)
 				features: feature_list [
 					MultiLine(f3d2caf0-df7d-4b95-9487-816b04d31797)
 					{
-						lineGap: 0
+						lineOffset: 0
 						maxLineCount: 0
 					}]
 				children: children_list []
@@ -116,7 +116,7 @@ GtfView_template(18edd3fd-90d3-4e6e-bc08-4db08f8b05ee)
 				features: feature_list [
 					MultiLine(703876bd-4cbf-4d7a-ba27-c65e08e4d1b5)
 					{
-						lineGap: 0
+						lineOffset: 0
 						maxLineCount: 0
 					}]
 				children: children_list []

@@ -1,0 +1,20 @@
+EBGUIDE 6.9.0.191213104248;
+
+GtfView_template_instance(56b5a180-589a-4dad-b439-4db92f492392)
+{
+	name: "Titleview"
+	template: @18edd3fd-90d3-4e6e-bc08-4db08f8b05ee (objectref<GtfView_template>)
+	children: children_list []
+	title_text: "Application interaction demo"
+	"short desc_text": "Example for communicating from an application with the HMI using datapool and event system"
+	"long desc_text": "Documentation reference:\\nBackground information > Interaction between HMI and applications"
+	touchPressed: function<bool,int,int,int,int>(0d8f8101-004c-4bdd-b692-df0d01278531)
+	{
+		script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+			"{" \
+			"	cancel_fire ev:next; // interrupt fire delayed (Titleview's entry action)" \
+			"	fire ev:next();" \
+			"    false;" \
+			"}"
+	}
+}

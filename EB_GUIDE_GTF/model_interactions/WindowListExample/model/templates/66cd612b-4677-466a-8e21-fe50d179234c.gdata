@@ -1,379 +1,360 @@
-EBGUIDE 6.7.0.148693;
-@66cd612b-4677-466a-8e21-fe50d179234c
-{
-	#1438079844 name :: string : "T_ScollList";
-	#329863861 structure :: GtfContainer : @e06b9ddc-c295-4e76-acfd-52cf6d8773ec
-	{
-		#3988006854 features :: feature_list : @f316fee8-d719-4e06-8b46-b149609146d7
-		{
-		}
-		#4167949537 children :: children_list : @9835bb0d-98ef-4b52-9d7a-111a551b1265
-		{
-			#3734147630 "children_list 2" :: GtfInstantiator : @533d280b-846a-4117-b71a-9e4eef22a816
-			{
-				#457095308 features :: feature_list : @16972716-0784-4014-8c12-1cbdbb1d876c
-				{
-					#2625749388 "feature_list 1" :: TouchPressed : @4cc27b2b-77de-4f0c-ad24-b864b2119520
-					{
-						#1745690220 touchPressed :: function(bool,int,int,int,int) : @e3e61d7c-3202-4196-a149-57acd7fe3808
-						{
-							#2612922159 script :: string : "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)
-{   
-    if(v:fingerId == 0)
-    {
-    	
-	    v:this.touched = true
-	    v:this.wasMoved = false
-	    if(v:this.layoutDirection == 0)
-	    {
-	    	v:this.touchPosition = f:transformToWidgetX(v:this,v:x,v:y)
-	    }
-	    else
-	    {
-	    	v:this.touchPosition = f:transformToWidgetY(v:this,v:x,v:y)
-	    }
-	    v:this.scrollOffsetRebase = !v:this.scrollOffsetRebase
-    }
-    
-    //consume touch if this was moved
-   v:this.wasMoved
-   
-  
- 
-}";
-						}
-					}
-					#1512050089 "feature_list 2" :: TouchShortReleased : @c4e2bbf7-3f07-4e7e-8c26-2b3a7ac48e73
-					{
-						#4093592518 touchShortReleased :: function(bool,int,int,int,int) : @83fe18ce-5b5d-4b44-8465-51a1651c0d15
-						{
-							#1666567442 script :: string : "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)
-{
-	
-    if(v:fingerId == 0)
-    {
-    	v:this.touched = false
-    }
-    
-    //consume touch if this was moved
-  v:this.wasMoved
+EBGUIDE 6.9.0.191213104248;
 
-    
-}";
-						}
-					}
-					#1083485788 "feature_list 3" :: TouchMove : @05dca582-b72b-40a1-aad2-d1bd892fa9a3
-					{
-						#1969318157 touchMoved :: function(bool,int,int,int,int) : @f5fe5bca-ff32-4dfb-94be-40c587fac1cb
-						{
-							#3195903790 script :: string : "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)
+GtfContainer_template(66cd612b-4677-466a-8e21-fe50d179234c)
 {
-	
-    if(v:this.touched && v:fingerId == 0)
+	name: "T_ScollList"
+	structure: GtfContainer(e06b9ddc-c295-4e76-acfd-52cf6d8773ec)
 	{
-	
-		let v:moved = 0
-			v:newScrollOffset = 0
-			v:newTouch = 0
-		in
-		{
-			if(v:this.layoutDirection == 0)
+		features: feature_list []
+		children: children_list [
+			GtfInstantiator(533d280b-846a-4117-b71a-9e4eef22a816)
 			{
-				let v:localX = f:transformToWidgetX(v:this,v:x,v:y)
-				in
-				{
-					v:moved = v:localX - v:this.touchPosition
-					v:newTouch = v:localX
-				}
-			}
-			else
-			{
-				let v:localY = f:transformToWidgetY(v:this,v:x,v:y)
-				in
-				{
-					v:moved = v:localY - v:this.touchPosition
-					v:newTouch = v:localY	
-				}
-			}
-			
-			if((f:abs(v:moved) > v:this.moveThreshold || v:this.wasMoved))
-			{
-				v:this.scrollOffset -= v:moved 
-				v:this.touchMoveDistance += v:moved
-				v:this.touchPosition = v:newTouch
-				v:this.wasMoved = true
-			}
-		}
-		
-	}
-	
-	//consume touch if this was moved
-	v:this.wasMoved
-	
-
-}";
-						}
-					}
-					#1632032510 "feature_list 4" :: StateTouched : @c81ddfca-b678-45f6-93cd-aa0006beff2c
+				features: feature_list [
+					TouchPressed(4cc27b2b-77de-4f0c-ad24-b864b2119520)
 					{
-						#1399588030 touchable :: bool : true;
-						#3021231074 touched :: bool : false;
-						#1548030775 touchPolicy :: int : 1;
-						#3430300412 touchBehavior :: int : 0;
-					}
-					#2161515015 "feature_list 5" :: ViewPort : @585ebb1e-6dcd-4569-9242-1a4348fdf176
-					{
-						#2767357391 xOffset :: int : 0;
-						#3389499964 yOffset :: int : 0;
-					}
-					#2463626258 "feature_list 6" :: LayoutPolicyList : @2ee107df-9ee2-4efd-8b45-1742d9445ff2
-					{
-						#2257919847 layoutDirection :: int : 1;
-						#1340192422 scrollOffset :: int : 0;
-						#3973580119 scrollOffsetRebase :: bool : false;
-						#974863336 firstListIndex :: int : 0;
-						#278277467 scrollIndex :: int : 0;
-						#2667066158 scrollValue :: int : 0;
-						#1075513521 scrollValueMax :: int : 0;
-						#1347920526 scrollValueMin :: int : 0;
-						#2548213144 bounceValue :: int : 0;
-						#713805495 bounceValueMax :: int : 0;
-						#1641229099 segments :: int : 1;
-						#391115762 listLength :: int : 0;
-						#3070964026 wrapAround :: bool : false;
-					}
-				}
-				#248227867 children :: children_list : @ae0cd278-ec43-4854-818b-44b2d68d2cad
-				{
-					#3403354642 "children_list 3" :: GtfContainer : @d09c31b5-f150-4270-b6f8-e4d15b5faef4
-					{
-						#265102905 features :: feature_list : @01733b1b-2649-4102-baef-a1d7bcc83a51
+						touchPressed: function<bool,int,int,int,int>(e3e61d7c-3202-4196-a149-57acd7fe3808)
 						{
-							#1909261355 "feature_list 7" :: TouchPressed : @3f218f0d-2579-45b7-a921-c9fe6ced1b1f
-							{
-								#2850387790 touchPressed :: function(bool,int,int,int,int) : @89fc5a36-d5b2-4e0c-843e-cb41dcb8f488
-								{
-									#1626779871 script :: string : "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)
-{
-    false
-}";
-								}
-							}
-							#1502456327 "feature_list 8" :: TouchShortReleased : @bbcb2ed0-fd81-4104-92fd-87e104d25ec6
-							{
-								#831983805 touchShortReleased :: function(bool,int,int,int,int) : @75f8d04e-50c1-4eaa-9b07-5e0d193e361f
-								{
-									#1212425358 script :: string : "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)
-{
-    false
-}";
-								}
-							}
-							#2901153492 "feature_list 9" :: TouchMove : @a2ddabd4-e19a-4478-bb29-279a280a70af
-							{
-								#3763937962 touchMoved :: function(bool,int,int,int,int) : @9659a7d2-446d-45df-b9b6-29ea148eda4e
-								{
-									#3020663172 script :: string : "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)
-{
-	v:this->^.touchMoved(v:touchId,v:x,v:y,v:fingerId);
-    true;
-}";
-								}
-							}
-							#669754642 "feature_list 10" :: StateTouched : @9ed383ee-6b3c-4ba4-84d9-53f415ac0d81
-							{
-								#1100293351 touchable :: bool : true;
-								#3966026406 touched :: bool : false;
-								#1470986603 touchPolicy :: int : 1;
-								#3655895124 touchBehavior :: int : 0;
-							}
-							#1094529885 "feature_list 11" :: LineIndex : @2ad48505-c713-4461-9228-64af5ba7d7d5
-							{
-								#111084002 lineIndex :: int : 0;
-							}
-							#2057509014 "feature_list 1" :: LayoutPolicyListItem : @0f9a312d-ebcd-4308-9f7d-06026b43c102
-							{
-								#3579917362 listIndex :: int : 0;
-							}
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{   " \
+								"    if(v:fingerId == 0)" \
+								"    {" \
+								"    	" \
+								"	    v:this.touched = true" \
+								"	    v:this.wasMoved = false" \
+								"	    if(v:this.layoutDirection == 0)" \
+								"	    {" \
+								"	    	v:this.touchPosition = f:transformToWidgetX(v:this,v:x,v:y)" \
+								"	    }" \
+								"	    else" \
+								"	    {" \
+								"	    	v:this.touchPosition = f:transformToWidgetY(v:this,v:x,v:y)" \
+								"	    }" \
+								"	    v:this.scrollOffsetRebase = !v:this.scrollOffsetRebase" \
+								"    }" \
+								"    " \
+								"    //consume touch if this was moved" \
+								"   v:this.wasMoved" \
+								"   " \
+								"  " \
+								" " \
+								"}"
 						}
-						#3524917582 children :: children_list : @8eda4b42-7a3a-4d6b-9069-deccd73e8b74
+					}, 
+					TouchShortReleased(c4e2bbf7-3f07-4e7e-8c26-2b3a7ac48e73)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(83fe18ce-5b5d-4b44-8465-51a1651c0d15)
 						{
-							#3977267512 "children_list 4" :: GtfRectangle : @573cc2e8-abdb-480a-b9d9-db75f9570d8a
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	" \
+								"    if(v:fingerId == 0)" \
+								"    {" \
+								"    	v:this.touched = false" \
+								"    }" \
+								"    " \
+								"    //consume touch if this was moved" \
+								"  v:this.wasMoved" \
+								"" \
+								"    " \
+								"}"
+						}
+					}, 
+					TouchMove(05dca582-b72b-40a1-aad2-d1bd892fa9a3)
+					{
+						touchMoved: function<bool,int,int,int,int>(f5fe5bca-ff32-4dfb-94be-40c587fac1cb)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	" \
+								"    if(v:this.touched && v:fingerId == 0)" \
+								"	{" \
+								"	" \
+								"		let v:moved = 0" \
+								"			v:newScrollOffset = 0" \
+								"			v:newTouch = 0" \
+								"		in" \
+								"		{" \
+								"			if(v:this.layoutDirection == 0)" \
+								"			{" \
+								"				let v:localX = f:transformToWidgetX(v:this,v:x,v:y)" \
+								"				in" \
+								"				{" \
+								"					v:moved = v:localX - v:this.touchPosition" \
+								"					v:newTouch = v:localX" \
+								"				}" \
+								"			}" \
+								"			else" \
+								"			{" \
+								"				let v:localY = f:transformToWidgetY(v:this,v:x,v:y)" \
+								"				in" \
+								"				{" \
+								"					v:moved = v:localY - v:this.touchPosition" \
+								"					v:newTouch = v:localY	" \
+								"				}" \
+								"			}" \
+								"			" \
+								"			if((f:abs(v:moved) > v:this.moveThreshold || v:this.wasMoved))" \
+								"			{" \
+								"				v:this.scrollOffset -= v:moved " \
+								"				v:this.touchMoveDistance += v:moved" \
+								"				v:this.touchPosition = v:newTouch" \
+								"				v:this.wasMoved = true" \
+								"			}" \
+								"		}" \
+								"		" \
+								"	}" \
+								"	" \
+								"	//consume touch if this was moved" \
+								"	v:this.wasMoved" \
+								"	" \
+								"" \
+								"}"
+						}
+					}, 
+					StateTouched(c81ddfca-b678-45f6-93cd-aa0006beff2c)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 1
+						touchBehavior: 0
+					}, 
+					ViewPort(585ebb1e-6dcd-4569-9242-1a4348fdf176)
+					{
+						xOffset: 0
+						yOffset: 0
+					}, 
+					LayoutPolicyList(2ee107df-9ee2-4efd-8b45-1742d9445ff2)
+					{
+						layoutDirection: 1
+						scrollOffset: 0
+						scrollOffsetRebase: false
+						firstListIndex: 0
+						scrollIndex: 0
+						scrollValue: 0
+						scrollValueMax: 0
+						scrollValueMin: 0
+						bounceValue: 0
+						bounceValueMax: 0
+						segments: 1
+						listLength: 0
+						wrapAround: false
+					}]
+				children: children_list [
+					GtfContainer(d09c31b5-f150-4270-b6f8-e4d15b5faef4)
+					{
+						features: feature_list [
+							TouchPressed(3f218f0d-2579-45b7-a921-c9fe6ced1b1f)
 							{
-								#4284095509 features :: feature_list : @8079f68e-079c-4330-86cf-1fb3d6adb807
+								touchPressed: function<bool,int,int,int,int>(89fc5a36-d5b2-4e0c-843e-cb41dcb8f488)
 								{
-									#2037120834 "feature_list 12" :: Border : @ba898bf8-c2ee-4d20-8696-b1c30131ce91
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"    false" \
+										"}"
+								}
+							}, 
+							TouchShortReleased(bbcb2ed0-fd81-4104-92fd-87e104d25ec6)
+							{
+								touchShortReleased: function<bool,int,int,int,int>(75f8d04e-50c1-4eaa-9b07-5e0d193e361f)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"    false" \
+										"}"
+								}
+							}, 
+							TouchMove(a2ddabd4-e19a-4478-bb29-279a280a70af)
+							{
+								touchMoved: function<bool,int,int,int,int>(9659a7d2-446d-45df-b9b6-29ea148eda4e)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"	v:this->^.touchMoved(v:touchId,v:x,v:y,v:fingerId);" \
+										"    true;" \
+										"}"
+								}
+							}, 
+							StateTouched(9ed383ee-6b3c-4ba4-84d9-53f415ac0d81)
+							{
+								touchable: true
+								touched: false
+								touchPolicy: 1
+								touchBehavior: 0
+							}, 
+							LineIndex(2ad48505-c713-4461-9228-64af5ba7d7d5)
+							{
+								lineIndex: 0
+							}, 
+							LayoutPolicyListItem(0f9a312d-ebcd-4308-9f7d-06026b43c102)
+							{
+								listIndex: 0
+							}]
+						children: children_list [
+							GtfRectangle(573cc2e8-abdb-480a-b9d9-db75f9570d8a)
+							{
+								features: feature_list [
+									Border(ba898bf8-c2ee-4d20-8696-b1c30131ce91)
 									{
-										#1116387900 borderThickness :: int : 2;
-										#782668548 borderColor :: color : 0x000000FF;
-										#2828296851 borderStyle :: int : 0;
+										borderThickness: 2
+										borderColor: #000000FF
+										borderStyle: 0
+									}]
+								children: children_list []
+								name: "Background"
+								visible: true
+								width: width@d09c31b5-f150-4270-b6f8-e4d15b5faef4 (propref<int>)
+								height: height@d09c31b5-f150-4270-b6f8-e4d15b5faef4 (propref<int>)
+								x: 0
+								y: 0
+								fillColor: #1E90FFFF
+							}, 
+							GtfLabel(a6ff9ad2-0eee-4536-bd6f-a35bc9b8584b)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Label"
+								visible: true
+								width: width@573cc2e8-abdb-480a-b9d9-db75f9570d8a (propref<int>)
+								height: height@573cc2e8-abdb-480a-b9d9-db75f9570d8a (propref<int>)
+								x: 0
+								y: 0
+								text: ""
+								textColor: #FFFFFFFF
+								font: font_resource(bbd0c245-1a0f-42a7-8f54-5fa85334cf0b)
+								{
+									file: "fonts\\PT_Sans.ttf"
+									size: 30
+								}
+								horizontalAlign: 1
+								verticalAlign: 0
+								set_Text: conditional_script(5e9bea25-4d44-4b37-90fc-cbd6454aa4e5)
+								{
+									triggerList: trigger_list(e00a6025-490f-44a7-9f0a-5996a554871d)
+									{
+										script: "v:this->^.listIndex" \
+											"v:this->^->^->^.inputList" \
+											"v:this->^->^.listLength" \
+											"v:this->^->^->^.dataValid" \
+											""
+									}
+									onTrigger: function<bool,bool>(37612899-dc06-4e4c-94fb-b1df09a120df)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	if (v:this->^.listIndex < v:this->^->^.listLength)" \
+											"	{" \
+											"		v:this->^.visible = true" \
+											"		" \
+											"		if( v:this->^->^->^.dataValid[v:this->^.listIndex] )			" \
+											"		{" \
+											"			v:this.text = v:this->^->^->^.inputList[v:this->^.listIndex]" \
+											"		}" \
+											"		else" \
+											"		{" \
+											"			v:this.text = \"Invalid item\";" \
+											"		}" \
+											"		" \
+											"	}" \
+											"	else" \
+											"	{" \
+											"		v:this->^.visible = false;" \
+											"	}" \
+											"	false" \
+											"}"
 									}
 								}
-								#36390710 children :: children_list : @ede3a326-7ad1-472a-b227-df315cbbd0eb
-								{
-								}
-								#1857176890 name :: string : "Background";
-								#428625601 visible :: bool : true;
-								#3580364340 width :: propref(int) : @d09c31b5-f150-4270-b6f8-e4d15b5faef4#2069327964;
-								#1938982392 height :: propref(int) : @d09c31b5-f150-4270-b6f8-e4d15b5faef4#911431202;
-								#1221605984 x :: int : 0;
-								#150317499 y :: int : 0;
-								#2241143139 fillColor :: color : 0x1E90FFFF;
-							}
-							#1286812761 "children_list 7" :: GtfLabel : @a6ff9ad2-0eee-4536-bd6f-a35bc9b8584b
-							{
-								#168022592 features :: feature_list : @e99a2448-b53c-4cb2-b580-c87e5bcc12b1
-								{
-								}
-								#3755165898 children :: children_list : @4076c5f6-eabc-423a-9ed3-8ab0a0c3257a
-								{
-								}
-								#2177966581 name :: string : "Label";
-								#1435287378 visible :: bool : true;
-								#2478209783 width :: propref(int) : @573cc2e8-abdb-480a-b9d9-db75f9570d8a#3580364340;
-								#1292126824 height :: propref(int) : @573cc2e8-abdb-480a-b9d9-db75f9570d8a#1938982392;
-								#3551805430 x :: int : 0;
-								#349570338 y :: int : 0;
-								#4136264056 text :: string : "";
-								#4038013705 textColor :: color : 0xFFFFFFFF;
-								#4180461395 font :: font_resource : @bbd0c245-1a0f-42a7-8f54-5fa85334cf0b
-								{
-									#2417566885 file :: file : "fonts\\PT_Sans.ttf";
-									#819531911 size :: int : 30;
-								}
-								#3293870867 horizontalAlign :: int : 1;
-								#3700739839 verticalAlign :: int : 0;
-								#949363330 set_Text :: conditional_script : @5e9bea25-4d44-4b37-90fc-cbd6454aa4e5
-								{
-									#2637480581 triggerList :: trigger_list : @e00a6025-490f-44a7-9f0a-5996a554871d
-									{
-										#305276533 events :: event_refs : <objectref>[];
-										#3575796336 dp_items :: dp_item_refs : <objectref>[];
-										#2438728913 properties :: property_reference_list : <propref>[@0f9a312d-ebcd-4308-9f7d-06026b43c102#3579917362, @e06b9ddc-c295-4e76-acfd-52cf6d8773ec#3572210272, @2ee107df-9ee2-4efd-8b45-1742d9445ff2#391115762, @e06b9ddc-c295-4e76-acfd-52cf6d8773ec#2014255245];
-									}
-									#1639865417 onTrigger :: function(bool,bool) : @37612899-dc06-4e4c-94fb-b1df09a120df
-									{
-										#2105000144 script :: string : "function(v:arg0::bool)
-{
-	if (v:this->^.listIndex < v:this->^->^.listLength)
-	{
-		v:this->^.visible = true
-		
-		if( v:this->^->^->^.dataValid[v:this->^.listIndex] )			
-		{
-			v:this.text = v:this->^->^->^.inputList[v:this->^.listIndex]
-		}
-		else
-		{
-			v:this.text = \"Invalid item\";
-		}
-		
-	}
-	else
-	{
-		v:this->^.visible = false;
-	}
-	false
-}";
-									}
-								}
-							}
-						}
-						#737798149 name :: string : "List_Button";
-						#494056559 visible :: bool : true;
-						#2069327964 width :: propref(int) : @e06b9ddc-c295-4e76-acfd-52cf6d8773ec#2474749623;
-						#911431202 height :: propref(int) : @533d280b-846a-4117-b71a-9e4eef22a816#4002559694;
-						#236899559 x :: int : 0;
-						#309449318 y :: int : 0;
-					}
-				}
-				#742018812 name :: string : "Instantiator 1";
-				#1628466927 visible :: bool : true;
-				#2558081082 width :: propref(int) : @e06b9ddc-c295-4e76-acfd-52cf6d8773ec#2474749623;
-				#1027461800 height :: propref(int) : @e06b9ddc-c295-4e76-acfd-52cf6d8773ec#1107262705;
-				#805896990 x :: int : 0;
-				#4165051606 y :: int : 0;
-				#2274115778 numItems :: int : 0;
-				#592877512 lineMapping :: intlist : <int>[];
-				#249039092 yCurrentValue :: int : 0;
-				#4002559694 listButtonHeight :: int : 50;
-				#3319372455 set_window_pos_out :: conditional_script : @b2e2492e-a1c2-4653-bc3f-c06d45c7e428
+							}]
+						name: "List_Button"
+						visible: true
+						width: width@e06b9ddc-c295-4e76-acfd-52cf6d8773ec (propref<int>)
+						height: listButtonHeight@533d280b-846a-4117-b71a-9e4eef22a816 (propref<int>)
+						x: 0
+						y: 0
+					}]
+				name: "Instantiator 1"
+				visible: true
+				width: width@e06b9ddc-c295-4e76-acfd-52cf6d8773ec (propref<int>)
+				height: height@e06b9ddc-c295-4e76-acfd-52cf6d8773ec (propref<int>)
+				x: 0
+				y: 0
+				numItems: 0
+				lineMapping: intlist []
+				yCurrentValue: 0
+				listButtonHeight: 50
+				set_window_pos_out: conditional_script(b2e2492e-a1c2-4653-bc3f-c06d45c7e428)
 				{
-					#1580803225 triggerList :: trigger_list : @96144eec-a707-4ab9-9d8f-0ffb826d2bcb
+					triggerList: trigger_list(96144eec-a707-4ab9-9d8f-0ffb826d2bcb)
 					{
-						#422251991 events :: event_refs : <objectref>[];
-						#183464998 dp_items :: dp_item_refs : <objectref>[];
-						#3474798316 properties :: property_reference_list : <propref>[@2ee107df-9ee2-4efd-8b45-1742d9445ff2#974863336];
+						script: "v:this.firstListIndex" \
+							""
 					}
-					#1912158745 onTrigger :: function(bool,bool) : @5d1a55a9-31bd-4ac5-a875-679f1030ea26
+					onTrigger: function<bool,bool>(5d1a55a9-31bd-4ac5-a875-679f1030ea26)
 					{
-						#1339446183 script :: string : "function(v:arg0::bool)
-{
-		dp:WindowPositionInternal = v:this.firstListIndex
- 
-if (dp:WindowPositionInternal > 0)
-{
-  dp:WindowPosition = dp:WindowPositionInternal
-}
-else if (dp:WindowPositionInternal < (length dp:myReceivedWindowList - dp:WindowSize))
-{
-  dp:WindowPosition = dp:WindowPositionInternal;
-}
-	false
-}";
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"		dp:WindowPositionInternal = v:this.firstListIndex" \
+							" " \
+							"if (dp:WindowPositionInternal > 0)" \
+							"{" \
+							"  dp:WindowPosition = dp:WindowPositionInternal" \
+							"}" \
+							"else if (dp:WindowPositionInternal < (length dp:myReceivedWindowList - dp:WindowSize))" \
+							"{" \
+							"  dp:WindowPosition = dp:WindowPositionInternal;" \
+							"}" \
+							"	false" \
+							"}"
 					}
 				}
-				#1370380390 set_numItems :: conditional_script : @11a051a6-f80a-4cf9-b6da-b06f1145204a
+				set_numItems: conditional_script(11a051a6-f80a-4cf9-b6da-b06f1145204a)
 				{
-					#2970302878 triggerList :: trigger_list : @afc63a51-8cd4-4044-9ed4-96b8636b5c9e
+					triggerList: trigger_list(afc63a51-8cd4-4044-9ed4-96b8636b5c9e)
 					{
-						#3847725289 events :: event_refs : <objectref>[];
-						#3150901929 dp_items :: dp_item_refs : <objectref>[];
-						#2145024256 properties :: property_reference_list : <propref>[@e06b9ddc-c295-4e76-acfd-52cf6d8773ec#3572210272];
+						script: "v:this->^.inputList" \
+							""
 					}
-					#1827455662 onTrigger :: function(bool,bool) : @9c1a9241-463a-4e9e-b895-e64447813dd9
+					onTrigger: function<bool,bool>(9c1a9241-463a-4e9e-b895-e64447813dd9)
 					{
-						#2276783282 script :: string : "function(v:arg0::bool)
-{
-	let v:count = 0  in
-	{
-		v:count = v:this.height / v:this.listButtonHeight +1
-		
-		v:this.listLength = length v:this->^.inputList;
-		
-		if(v:count < v:this.listLength)
-			{
-				v:this.numItems = v:count
-			}
-			else
-			{
-				v:this.numItems = v:this.listLength
-			}
-		
-	}
-	false
-}";
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	let v:count = 0  in" \
+							"	{" \
+							"		v:count = v:this.height / v:this.listButtonHeight +1" \
+							"		" \
+							"		v:this.listLength = length v:this->^.inputList;" \
+							"		" \
+							"		if(v:count < v:this.listLength)" \
+							"			{" \
+							"				v:this.numItems = v:count" \
+							"			}" \
+							"			else" \
+							"			{" \
+							"				v:this.numItems = v:this.listLength" \
+							"			}" \
+							"		" \
+							"	}" \
+							"	false" \
+							"}"
 					}
 				}
-				#2515258486 wasMoved :: bool : false;
-				#762151299 touchPosition :: int : 0;
-				#886711394 touchMoveDistance :: int : 0;
-				#3198919255 moveThreshold :: int : 0;
-			}
-		}
-		#1643635478 name :: string : "List_Elements";
-		#1329652694 visible :: bool : true;
-		#2474749623 width :: int : 369;
-		#1107262705 height :: int : 418;
-		#3568600764 x :: int : 0;
-		#1164283113 y :: int : 0;
-		#3572210272 inputList :: stringlist : <string>[];
-		#2014255245 dataValid :: boollist : <bool>[];
+				wasMoved: false
+				touchPosition: 0
+				touchMoveDistance: 0
+				moveThreshold: 0
+			}]
+		name: "List_Elements"
+		visible: true
+		width: 369
+		height: 418
+		x: 0
+		y: 0
+		inputList: stringlist []
+		dataValid: boollist []
 	}
-	#1952606914 width :: propref(int) : @e06b9ddc-c295-4e76-acfd-52cf6d8773ec#2474749623;
-	#1939119860 height :: propref(int) : @e06b9ddc-c295-4e76-acfd-52cf6d8773ec#1107262705;
-	#558215932 x :: propref(int) : @e06b9ddc-c295-4e76-acfd-52cf6d8773ec#3568600764;
-	#4269756097 y :: propref(int) : @e06b9ddc-c295-4e76-acfd-52cf6d8773ec#1164283113;
-	#220148821 inputList :: propref(stringlist) : @e06b9ddc-c295-4e76-acfd-52cf6d8773ec#3572210272;
-	#2880771778 dataValid :: propref(boollist) : @e06b9ddc-c295-4e76-acfd-52cf6d8773ec#2014255245;
+	width: width@e06b9ddc-c295-4e76-acfd-52cf6d8773ec (propref<int>)
+	height: height@e06b9ddc-c295-4e76-acfd-52cf6d8773ec (propref<int>)
+	x: x@e06b9ddc-c295-4e76-acfd-52cf6d8773ec (propref<int>)
+	y: y@e06b9ddc-c295-4e76-acfd-52cf6d8773ec (propref<int>)
+	inputList: inputList@e06b9ddc-c295-4e76-acfd-52cf6d8773ec (propref<stringlist>)
+	dataValid: dataValid@e06b9ddc-c295-4e76-acfd-52cf6d8773ec (propref<boollist>)
 }

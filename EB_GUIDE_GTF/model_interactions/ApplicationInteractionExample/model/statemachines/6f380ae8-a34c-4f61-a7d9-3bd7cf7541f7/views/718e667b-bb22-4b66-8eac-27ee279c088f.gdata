@@ -1,0 +1,80 @@
+EBGUIDE 6.9.0.191213104248;
+
+GtfView_template_instance(718e667b-bb22-4b66-8eac-27ee279c088f)
+{
+	name: "WindowedListView"
+	template: @4ba5e50b-dc6c-4c10-8165-b319a5cef09c (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(6428e61e-4eae-4480-8f13-42d2ae49a20f)
+		{
+			name: "list 1"
+			template: @abc16f1e-4157-4f01-912f-28c58856d605 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 30
+			y: 90
+			dataValid: bool_scriptedListValue(9cae54a0-4374-4340-8787-aaa635283199)
+			{
+				triggerList: trigger_list(4657e301-1359-4d53-9d70-83fbc4cf6ae4)
+				{
+					script: "dp:dpWindowListIn" \
+						""
+				}
+				onTrigger: function<bool,bool>(19a015d3-dc6f-4bfd-a74d-dc7f5e8dc82a)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				readList: function<bool,int>(6a4f5afb-8a76-43c8-9849-44c3bec2f683)
+				{
+					script: "function(v:arg0::int)" \
+						"{" \
+						"  f:has_list_window(&dp:dpWindowListIn, v:arg0)" \
+						"}"
+				}
+				writeList: function<bool,int,bool>(3bbdf684-f794-4403-b66f-ee49b921c38d)
+				{
+					script: "function(v:arg0::int, v:arg1::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				getListLength: function<int>(42213ba0-a4b1-476e-86fc-4b7b98261a56)
+				{
+					script: "function()" \
+						"{" \
+						"  length dp:dpWindowListIn" \
+						"}"
+				}
+			}
+			data: @bd1e0e5e-73e7-4cc2-859e-12a26f6dce03 (objectref<stringlist>)
+			globalScaling: @aac15288-4a14-4b00-9869-70b8c36130e6 (objectref<float>)
+			windowListIn: @bd1e0e5e-73e7-4cc2-859e-12a26f6dce03 (objectref<stringlist>)
+			windowSizeOut: @6a12a66e-59eb-4d7a-a14b-742a1e8b9510 (objectref<int>)
+			windowPosInternal: @a1037cc7-65fc-4291-a8eb-872da5c4e24d (objectref<int>)
+			windowPosOut: @7448bc73-974b-4c7f-bbc6-a63a768f16ba (objectref<int>)
+		}]
+	description_text: "The content of the list is provided by an application."
+	title_text: ""
+	prev_enabled: prev_enabled@4ba5e50b-dc6c-4c10-8165-b319a5cef09c (propref<bool>)
+	next_enabled: next_enabled@4ba5e50b-dc6c-4c10-8165-b319a5cef09c (propref<bool>)
+	setTitleText: conditional_script(f43faf5f-2635-41da-a0b9-c43a42173453)
+	{
+		triggerList: trigger_list(98c9bfac-6958-4b4d-a0d4-c0347342dabf)
+		{
+			script: "dp:showcase_title_list" \
+				""
+		}
+		onTrigger: function<bool,bool>(f1029dd0-d76d-42d9-9ebd-88d5604539eb)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	v:this.title_text = dp:showcase_title_list[dp:showcase_id_windowed_list];" \
+				"	false;" \
+				"}"
+		}
+	}
+}

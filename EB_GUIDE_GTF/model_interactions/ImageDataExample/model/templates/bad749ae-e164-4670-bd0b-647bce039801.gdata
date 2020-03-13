@@ -1,9 +1,236 @@
-EBGUIDE 6.7.0.148693;
-@bad749ae-e164-4670-bd0b-647bce039801
+EBGUIDE 6.9.0.191213104248;
+
+GtfView_template(bad749ae-e164-4670-bd0b-647bce039801)
 {
-	#62725243 name :: string : "MenuView";
-	#3815472930 structure :: GtfView : @f84ec406-ee3d-4292-8bd3-1ad16c6c9dfc;
-	#560673630 title_text :: propref(string) : @f84ec406-ee3d-4292-8bd3-1ad16c6c9dfc#3790394851;
-	#4135411410 button_desc_li :: propref(stringlist) : @d35016b7-3676-425f-ad83-1740d540966a#3110522066;
-	#861597670 button_icon_li :: propref(imagelist) : @d35016b7-3676-425f-ad83-1740d540966a#4179818355;
+	name: "MenuView"
+	structure: GtfView(f84ec406-ee3d-4292-8bd3-1ad16c6c9dfc)
+	{
+		features: feature_list [
+			Scaling(b57e6c15-8174-4885-a207-a8dbb3294257)
+			{
+				scalingEnabled: true
+				scalingX: @aac15288-4a14-4b00-9869-70b8c36130e6 (objectref<float>)
+				scalingY: @aac15288-4a14-4b00-9869-70b8c36130e6 (objectref<float>)
+				scalingZ: 100F
+			}]
+		children: children_list [
+			GtfRectangle(8c0c3785-515c-4597-98b3-116767bdd0a3)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "main bg"
+				visible: true
+				width: width@f84ec406-ee3d-4292-8bd3-1ad16c6c9dfc (propref<int>)
+				height: height@f84ec406-ee3d-4292-8bd3-1ad16c6c9dfc (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #383838FF
+			}, 
+			GtfLabel(750ec45a-f917-4a6a-a73e-2d19d634736a)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "title"
+				visible: true
+				width: 760
+				height: 50
+				x: 20
+				y: 10
+				text: title_text@f84ec406-ee3d-4292-8bd3-1ad16c6c9dfc (propref<string>)
+				textColor: #FFFFFFFF
+				font: font_resource(eb468483-d75e-4f2f-a843-bef648d70d11)
+				{
+					file: "fonts/PT_Sans.ttf"
+					size: 35
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfRectangle(fe33d989-d7a6-4d2a-b1f1-1417225e0edb)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "separator"
+				visible: true
+				width: 780
+				height: 2
+				x: 10
+				y: 70
+				fillColor: #504E4EFF
+			}, 
+			GtfInstantiator(d35016b7-3676-425f-ad83-1740d540966a)
+			{
+				features: feature_list [
+					LayoutPolicyFlow(3f1666f5-546c-4f04-a324-432421e384ee)
+					{
+						horizontalGap: 60
+						verticalGap: 75
+						layoutDirection: 0
+						horizontalChildAlign: 1
+						verticalChildAlign: 0
+					}]
+				children: children_list [
+					GtfImage(77572c51-402c-4efe-ac14-ee873167f354)
+					{
+						features: feature_list [
+							LineIndex(37f10224-b689-4079-945e-bb5eec7a94a0)
+							{
+								lineIndex: 0
+							}, 
+							ScaleMode(fed3a30a-caf3-41cd-86df-9db7d5b3533b)
+							{
+								scaleMode: 2
+							}, 
+							TouchShortReleased(2717271a-917e-41fd-a845-1f86f01eeb58)
+							{
+								touchShortReleased: function<bool,int,int,int,int>(560149e9-844d-49e3-b7b3-4934b3c83ca3)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"	fire ev:feature(v:this.lineIndex);" \
+										"    false;" \
+										"}"
+								}
+							}, 
+							StateTouched(e06d3998-e1b9-4774-8586-4bbb2315335c)
+							{
+								touchable: true
+								touched: false
+								touchPolicy: 0
+								touchBehavior: 0
+							}]
+						children: children_list [
+							GtfImage(e6f7f4eb-9134-463a-a99f-85608f80d3e5)
+							{
+								features: feature_list [
+									ScaleMode(993c8abf-e074-4536-b69c-81b5668c5b5f)
+									{
+										scaleMode: 1
+									}]
+								children: children_list [
+									GtfLabel(bf44fded-115c-4f12-963f-d917a1f6142d)
+									{
+										features: feature_list [
+											MultiLine(09890807-0bea-4674-9814-cf75f462cc2e)
+											{
+												lineOffset: 0
+												maxLineCount: 0
+											}]
+										children: children_list []
+										name: "desc"
+										visible: true
+										width: width@e6f7f4eb-9134-463a-a99f-85608f80d3e5 (propref<int>)
+										height: 70
+										x: 0
+										y: height@e6f7f4eb-9134-463a-a99f-85608f80d3e5 (propref<int>)
+										text: "label"
+										textColor: #FFFFFFFF
+										font: font_resource(158356c5-f93a-4c26-ac21-0da1181dba50)
+										{
+											file: "fonts/PT_Sans.ttf"
+											size: 18
+										}
+										horizontalAlign: 1
+										verticalAlign: 1
+										setText: conditional_script(ce72061a-1c97-481f-a361-503fc22d2e9f)
+										{
+											triggerList: trigger_list(7193c7b8-7cbc-450e-afb4-fa3b38805202)
+											{
+												script: "v:this->^->^->^.button_desc_li" \
+													"v:this->^->^.lineIndex" \
+													""
+											}
+											onTrigger: function<bool,bool>(e5279f97-e216-4aa8-b1d3-52c11bbf8300)
+											{
+												script: "function(v:arg0::bool)" \
+													"{" \
+													"	v:this.text = v:this->^->^->^.button_desc_li[v:this->^->^.lineIndex];" \
+													"	false;" \
+													"}"
+											}
+										}
+									}]
+								name: "icon"
+								visible: true
+								width: width@77572c51-402c-4efe-ac14-ee873167f354 (propref<int>)
+								height: height@77572c51-402c-4efe-ac14-ee873167f354 (propref<int>)
+								x: 0
+								y: 0
+								image: image_resource(fdc2e8cf-2604-4c52-8053-c24e7090c125)
+								{
+									file: ""
+								}
+								sRGB: false
+								horizontalAlign: 1
+								verticalAlign: 0
+								setImage: conditional_script(90160924-1ce8-417e-92df-b6ed7f04b4a1)
+								{
+									triggerList: trigger_list(4c407595-4c83-4d93-a6b2-a3bcb35b190c)
+									{
+										script: "v:this->^->^.button_icon_li" \
+											"v:this->^.lineIndex" \
+											""
+									}
+									onTrigger: function<bool,bool>(2fd60e38-6e9e-486e-879b-5660bf670426)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	v:this.image = v:this->^->^.button_icon_li[v:this->^.lineIndex];" \
+											"	false;" \
+											"}"
+									}
+								}
+							}]
+						name: "button"
+						visible: true
+						width: 200
+						height: 200
+						x: 0
+						y: 0
+						image: image_resource(fe14ece4-9c5f-4ca6-9751-54801d49d7e1)
+						{
+							file: "images/icon_base.png"
+						}
+						sRGB: false
+						horizontalAlign: 0
+						verticalAlign: 1
+					}]
+				name: "content"
+				visible: true
+				width: 700
+				height: 334
+				x: 59
+				y: 136
+				numItems: 0
+				lineMapping: intlist []
+				button_desc_li: stringlist []
+				button_icon_li: imagelist []
+				setNumItems: conditional_script(6b1c2345-5448-4b81-a123-bbf144621264)
+				{
+					triggerList: trigger_list(4168d5a2-cff0-4299-90b0-9f49493601a4)
+					{
+						script: "v:this.button_desc_li" \
+							""
+					}
+					onTrigger: function<bool,bool>(14c8ff6b-3168-4a07-a78e-c40833891775)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	v:this.numItems = length v:this.button_desc_li;" \
+							"	false;" \
+							"}"
+					}
+				}
+			}]
+		name: "View"
+		visible: true
+		width: 800
+		height: 480
+		x: @d424c1e4-0698-4bfa-b58d-ef86809aa7d6 (objectref<int>)
+		y: @0c767e02-66a7-45cc-ae6e-e8628d2cf658 (objectref<int>)
+		title_text: "<title>"
+	}
+	title_text: title_text@f84ec406-ee3d-4292-8bd3-1ad16c6c9dfc (propref<string>)
+	button_desc_li: button_desc_li@d35016b7-3676-425f-ad83-1740d540966a (propref<stringlist>)
+	button_icon_li: button_icon_li@d35016b7-3676-425f-ad83-1740d540966a (propref<imagelist>)
 }

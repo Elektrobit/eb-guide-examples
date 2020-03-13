@@ -1,5 +1,6 @@
-EBGUIDE 6.7.0.148693;
-@1f4315dd-e5ac-401a-863b-24c2a6ae1c75
+EBGUIDE 6.9.0.191213104248;
+
+dp_items(1f4315dd-e5ac-401a-863b-24c2a6ae1c75)
 {
-	#2367285965 items :: dp_item_list : <object>[];
+	items: dp_item_list []
 }

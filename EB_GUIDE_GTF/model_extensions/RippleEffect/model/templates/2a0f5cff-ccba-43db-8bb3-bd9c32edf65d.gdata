@@ -1,72 +1,61 @@
-EBGUIDE 6.7.0.148693;
-@2a0f5cff-ccba-43db-8bb3-bd9c32edf65d
+EBGUIDE 6.9.0.191213104248;
+
+GtfContainer_template(2a0f5cff-ccba-43db-8bb3-bd9c32edf65d)
 {
-	#1431754407 name :: string : "Custom";
-	#420402795 structure :: GtfContainer : @9579db3e-9324-4ef9-ad19-a03491519b67
+	name: "Custom"
+	structure: GtfContainer(9579db3e-9324-4ef9-ad19-a03491519b67)
 	{
-		#240736375 features :: feature_list : @69f23ff9-a365-45bc-9dab-6ccb8d12dd18
-		{
-		}
-		#2997405548 children :: children_list : @eb0ec3a9-f845-422c-b55f-ffc209ddbed3
-		{
-			#2212878990 "children_list 8" :: GtfImage : @6eb76ad6-3e4a-4307-a774-4acf6ba85a90
+		features: feature_list []
+		children: children_list [
+			GtfImage(6eb76ad6-3e4a-4307-a774-4acf6ba85a90)
 			{
-				#1069846538 features :: feature_list : @c716c661-0b4c-415e-9667-848117b2d55c
-				{
-					#1860179201 "feature_list 3" :: ScaleMode : @0b8e818d-260b-4a9b-8623-2ce2b0b0457e
+				features: feature_list [
+					ScaleMode(0b8e818d-260b-4a9b-8623-2ce2b0b0457e)
 					{
-						#158204403 scaleMode :: int : 1;
-					}
-				}
-				#211978806 children :: children_list : @923f206e-058b-4706-9060-5be6ccfa0aaa
-				{
-					#96852685 "children_list 10" :: GtfLabel : @967b6ffa-6f7b-41fb-99a7-47fa7b96e162
+						scaleMode: 1
+					}]
+				children: children_list [
+					GtfLabel(967b6ffa-6f7b-41fb-99a7-47fa7b96e162)
 					{
-						#790921645 features :: feature_list : @20d0d3dd-eabe-4745-9bd5-3dc4d01aa8f9
+						features: feature_list []
+						children: children_list []
+						name: "Text"
+						visible: true
+						width: 358
+						height: 100
+						x: -80
+						y: 190
+						text: "add your text here"
+						textColor: #FFFFFFFF
+						font: font_resource(f5ca15db-a6a8-4ca9-8368-df5ea8c0eb6f)
 						{
+							file: "fonts\\PT_Sans.ttf"
+							size: 25
 						}
-						#2999467246 children :: children_list : @b00c36b2-32fe-472c-9233-2eb83f5b9685
-						{
-						}
-						#1069845691 name :: string : "Text";
-						#1607461707 visible :: bool : true;
-						#2221389900 width :: int : 358;
-						#1285644064 height :: int : 100;
-						#1017228091 x :: int : -80;
-						#4287557405 y :: int : 190;
-						#974576571 text :: string : "add your text here";
-						#3743925931 textColor :: color : 0xFFFFFFFF;
-						#4115079137 font :: font_resource : @f5ca15db-a6a8-4ca9-8368-df5ea8c0eb6f
-						{
-							#2139324708 file :: file : "fonts\\PT_Sans.ttf";
-							#1477349883 size :: int : 25;
-						}
-						#2771430497 horizontalAlign :: int : 1;
-						#647160349 verticalAlign :: int : 0;
-					}
-				}
-				#595470340 name :: string : "Icon";
-				#1678854704 visible :: bool : true;
-				#2290171019 width :: int : 200;
-				#1447913032 height :: int : 200;
-				#4204684479 x :: int : 100;
-				#783290166 y :: int : 100;
-				#1074698347 image :: image_resource : @9b305294-4c78-49d0-b936-b18aa2b461b8
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				name: "Icon"
+				visible: true
+				width: 200
+				height: 200
+				x: 100
+				y: 100
+				image: image_resource(9b305294-4c78-49d0-b936-b18aa2b461b8)
 				{
-					#2291565831 file :: file : "images\\example.png";
+					file: "images\\example.png"
 				}
-				#1110567205 sRGB :: bool : false;
-				#2568140360 horizontalAlign :: int : 0;
-				#393849127 verticalAlign :: int : 1;
-			}
-		}
-		#839858467 name :: string : "Container";
-		#333932365 visible :: bool : true;
-		#1957713394 width :: int : 400;
-		#2447225548 height :: int : 480;
-		#1269307894 x :: int : 0;
-		#3473871332 y :: int : 0;
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}]
+		name: "Container"
+		visible: true
+		width: 400
+		height: 480
+		x: 0
+		y: 0
 	}
-	#4102549290 x :: propref(int) : @9579db3e-9324-4ef9-ad19-a03491519b67#1269307894;
-	#357398469 text :: propref(string) : @967b6ffa-6f7b-41fb-99a7-47fa7b96e162#974576571;
+	x: x@9579db3e-9324-4ef9-ad19-a03491519b67 (propref<int>)
+	text: text@967b6ffa-6f7b-41fb-99a7-47fa7b96e162 (propref<string>)
 }

@@ -17,12 +17,12 @@ In this example you use the following services:
 
 ### Setup
 
-1. In Visual Studio, open the _studio\_examples.sln_ solution file.
-2. Compile the _MonitorUiExtensionEvents_ project.
-The _MonitorUiExtensionEvents.dll_ file is created.
+1. In Visual Studio, open the _EB\_GUIDE\_Monitor\\EB\_GUIDE\_Monitor\_examples.sln_ solution file.
+2. Compile the _MonitorUiExtensionEvents_ project.\
+The _MonitorUiExtensionEvents_ library file is created.
 
 ### Run
 
-1. Copy the _MonitorUiExtensionEvents.dll_ into  _$GUIDE\_INSTALL\_PATH\\monitor\\lib\\ui\\_.
+1. Copy the _MonitorUiExtensionEvents.dll_ into  _$GUIDE\_INSTALL\_PATH\\tools\\monitor\\lib\\ui\\_.
 2. Start EB GUIDE Monitor.
-3. To open the extension, select _Layout_ in the menu and click _Monitor Events Extension_.
+3. To open the extension, select **Layout** in the menu and click **Monitor Events Extension**.

@@ -1,0 +1,19 @@
+EBGUIDE 6.9.0.191213104248;
+
+GtfView_template_instance(6a626597-78a8-49d7-a591-14b29c5ec41f)
+{
+	name: "HomeView"
+	template: @bad749ae-e164-4670-bd0b-647bce039801 (objectref<GtfView_template>)
+	children: children_list []
+	title_text: "Loading image data"
+	button_icon_li: imagelist [
+		image_resource(fb7a45af-c6a6-45db-a74d-e1538b4a71a1)
+		{
+			file: "images\\icon_external_image.png"
+		}, 
+		image_resource(81343138-0d49-40d8-a445-1a5bde86790c)
+		{
+			file: "images\\icon_mandelbrot.png"
+		}]
+	button_desc_li: stringlist ["Static images", "Dynamic images"]
+}

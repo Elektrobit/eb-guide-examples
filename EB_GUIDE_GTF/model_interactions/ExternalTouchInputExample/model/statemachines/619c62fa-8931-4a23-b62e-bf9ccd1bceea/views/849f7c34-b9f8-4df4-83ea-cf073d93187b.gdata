@@ -1,0 +1,90 @@
+EBGUIDE 6.9.0.191213104248;
+
+GtfView_template_instance(849f7c34-b9f8-4df4-83ea-cf073d93187b)
+{
+	name: "MainView"
+	template: @c0f1c727-95c8-4441-8262-f18240012cb1 (objectref<GtfView_template>)
+	children: children_list [
+		GtfImage(21df18f2-2b38-4190-95b4-7c3155261533)
+		{
+			features: feature_list [
+				ScaleMode(cbe85e13-e727-4538-9df5-1f8a61e6b190)
+				{
+					scaleMode: 2
+				}, 
+				Scaling(4032bf95-3b4e-4dd8-bc3b-5c031e25c891)
+				{
+					scalingEnabled: false
+					scalingX: 130F
+					scalingY: 130F
+					scalingZ: 100F
+				}]
+			children: children_list []
+			name: "Image 1"
+			visible: true
+			width: 100
+			height: 100
+			x: 140
+			y: 200
+			image: image_resource(c38c27d1-1424-4c4e-99bc-9037d92720f5)
+			{
+				file: "images\\EB.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+			DragImage: conditional_script(3fada23a-1530-4989-8177-fab19f0510c8)
+			{
+				triggerList: trigger_list(18ae1485-d72d-4e4d-8506-4015b93c474c)
+				{
+					script: "ev:externalTouch" \
+						""
+				}
+				onTrigger: function<bool,bool>(d05e5eaf-6175-4f92-a7b2-ee51223fed35)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"" \
+						"match_event v:touchEvent = ev:externalTouch in" \
+						"{" \
+						"	f:trace_string (\"touch event received, displaymanagerID \" + f:int2string(v:touchEvent.displayManagerId)" \
+						"	+ \"status \" + f:int2string(v:touchEvent.status))" \
+						"	" \
+						"	if (v:touchEvent.displayManagerId == 1)" \
+						"	{" \
+						"		if(v:touchEvent.status == 0)" \
+						"		{" \
+						"			v:this.scalingEnabled = true" \
+						"		}" \
+						"		else if (v:touchEvent.status == 1)" \
+						"		{" \
+						"			v:this.x = v:this.startX + v:touchEvent.x" \
+						"			v:this.y = v:this.startY + v:touchEvent.y" \
+						"		}" \
+						"		else if (v:touchEvent.status == 2)" \
+						"		{" \
+						"			v:this.scalingEnabled = false;			" \
+						"		}" \
+						"" \
+						"	}" \
+						"}" \
+						"" \
+						"	false" \
+						"}"
+				}
+			}
+			startX: 140
+			startY: 200
+		}]
+	text: "Main"
+	"text 2": "The EB Image reacts on the touch event and moves when it receives the swipe effect. "
+	Description: "The application will continuously send events with touch coordinates."
+	touchShortReleased: function<bool,int,int,int,int>(3e185801-1222-4586-b5f1-0e43eeef35fe)
+	{
+		script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+			"{" \
+			"    false" \
+			"}"
+	}
+	fillColor: #FF4500FF
+}

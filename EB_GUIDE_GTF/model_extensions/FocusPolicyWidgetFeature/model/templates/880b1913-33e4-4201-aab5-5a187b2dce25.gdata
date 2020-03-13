@@ -1,84 +1,80 @@
-EBGUIDE 6.7.0.148693;
-@880b1913-33e4-4201-aab5-5a187b2dce25
+EBGUIDE 6.9.0.191213104248;
+
+GtfRectangle_template(880b1913-33e4-4201-aab5-5a187b2dce25)
 {
-	#1797396763 name :: string : "T_FocusableRectangle";
-	#324233808 structure :: GtfRectangle : @df50bf9f-86af-4500-bb6e-9df5f032f844
+	name: "T_FocusableRectangle"
+	structure: GtfRectangle(df50bf9f-86af-4500-bb6e-9df5f032f844)
 	{
-		#5239800 features :: feature_list : @25c2ed50-df20-4865-8ba1-17b10187028c
-		{
-			#2286575609 "feature_list 1" :: StateFocused : @a846c163-0dcf-48f5-8111-090f2215b0f8
+		features: feature_list [
+			StateFocused(a846c163-0dcf-48f5-8111-090f2215b0f8)
 			{
-				#1787178632 focusable :: int : 3;
-				#1422346230 focused :: bool : false;
-			}
-			#2219065759 "feature_list 2" :: Border : @b5837ad2-dff8-4fa0-8e93-3c549148f009
+				focusable: 3
+				focused: false
+			}, 
+			Border(b5837ad2-dff8-4fa0-8e93-3c549148f009)
 			{
-				#1744553911 borderThickness :: int : 0;
-				#3286031468 borderColor :: color : 0x000000FF;
-				#2494141922 borderStyle :: int : 0;
-			}
-			#2248200741 "feature_list 4" :: StateTouched : @30afcfee-c6df-4974-8a85-6a2e13b3bd51
+				borderThickness: 0
+				borderColor: #000000FF
+				borderStyle: 0
+			}, 
+			StateTouched(30afcfee-c6df-4974-8a85-6a2e13b3bd51)
 			{
-				#169767846 touchable :: bool : true;
-				#3513728486 touched :: bool : false;
-				#1472669268 touchPolicy :: int : 0;
-				#4191430091 touchBehavior :: int : 0;
-			}
-			#2720882468 "feature_list 5" :: TouchShortReleased : @36676c08-67d4-4ac9-abbd-d847c6327a3f
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			TouchShortReleased(36676c08-67d4-4ac9-abbd-d847c6327a3f)
 			{
-				#4028261087 touchShortReleased :: function(bool,int,int,int,int) : @2e203802-b0ff-4b86-a989-9ec5ab3e6a9b
+				touchShortReleased: function<bool,int,int,int,int>(2e203802-b0ff-4b86-a989-9ec5ab3e6a9b)
 				{
-					#3258486818 script :: string : "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)
-{
-    false
-}";
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
 				}
-			}
-		}
-		#4147216420 children :: children_list : @179ee78f-ae60-4fdc-bf9e-a75857db8827
+			}]
+		children: children_list []
+		name: "Rectangle 1"
+		visible: true
+		width: 100
+		height: 100
+		x: 0
+		y: 0
+		fillColor: #008000FF
+		focusedBorderColor: #FF0000FF
+		defaultBorderColor: #008000FF
+		CheckFocus: conditional_script(3ee71e5f-bfe8-4881-b7fb-9d3738b1b913)
 		{
-		}
-		#1977789957 name :: string : "Rectangle 1";
-		#266788262 visible :: bool : true;
-		#2906658392 width :: int : 100;
-		#2509217513 height :: int : 100;
-		#3605279033 x :: int : 0;
-		#4254077048 y :: int : 0;
-		#1835883982 fillColor :: color : 0x008000FF;
-		#2095287243 focusedBorderColor :: color : 0xFF0000FF;
-		#2743278566 defaultBorderColor :: color : 0x008000FF;
-		#3769627377 CheckFocus :: conditional_script : @3ee71e5f-bfe8-4881-b7fb-9d3738b1b913
-		{
-			#2700395452 triggerList :: trigger_list : @286939df-64bf-4df6-8b56-98bad3f8fe8f
+			triggerList: trigger_list(286939df-64bf-4df6-8b56-98bad3f8fe8f)
 			{
-				#4282212151 events :: event_refs : <objectref>[];
-				#3204268322 dp_items :: dp_item_refs : <objectref>[];
-				#3078089540 properties :: property_reference_list : <propref>[@a846c163-0dcf-48f5-8111-090f2215b0f8#1422346230];
+				script: "v:this.focused" \
+					""
 			}
-			#1642985184 onTrigger :: function(bool,bool) : @e5052905-cf44-43ff-bfdc-3bf44144d658
+			onTrigger: function<bool,bool>(e5052905-cf44-43ff-bfdc-3bf44144d658)
 			{
-				#2734065002 script :: string : "function(v:arg0::bool)
-{
-	if(v:this.focused)
-	{
-		
-		v:this.borderColor = v:this.focusedBorderColor
-		v:this.borderThickness = 5;
-	}
-	else
-	{
-		v:this.borderColor = v:this.defaultBorderColor
-		v:this.borderThickness = 0
-	}
-	false
-}";
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	if(v:this.focused)" \
+					"	{" \
+					"		" \
+					"		v:this.borderColor = v:this.focusedBorderColor" \
+					"		v:this.borderThickness = 5;" \
+					"	}" \
+					"	else" \
+					"	{" \
+					"		v:this.borderColor = v:this.defaultBorderColor" \
+					"		v:this.borderThickness = 0" \
+					"	}" \
+					"	false" \
+					"}"
 			}
 		}
 	}
-	#2747255770 focused :: propref(bool) : @a846c163-0dcf-48f5-8111-090f2215b0f8#1422346230;
-	#3511158051 width :: propref(int) : @df50bf9f-86af-4500-bb6e-9df5f032f844#2906658392;
-	#2228265651 height :: propref(int) : @df50bf9f-86af-4500-bb6e-9df5f032f844#2509217513;
-	#165780347 x :: propref(int) : @df50bf9f-86af-4500-bb6e-9df5f032f844#3605279033;
-	#949449634 y :: propref(int) : @df50bf9f-86af-4500-bb6e-9df5f032f844#4254077048;
-	#4241681271 touchShortReleased :: propref(function(bool,int,int,int,int)) : @36676c08-67d4-4ac9-abbd-d847c6327a3f#4028261087;
+	focused: focused@a846c163-0dcf-48f5-8111-090f2215b0f8 (propref<bool>)
+	width: width@df50bf9f-86af-4500-bb6e-9df5f032f844 (propref<int>)
+	height: height@df50bf9f-86af-4500-bb6e-9df5f032f844 (propref<int>)
+	x: x@df50bf9f-86af-4500-bb6e-9df5f032f844 (propref<int>)
+	y: y@df50bf9f-86af-4500-bb6e-9df5f032f844 (propref<int>)
+	touchShortReleased: touchShortReleased@36676c08-67d4-4ac9-abbd-d847c6327a3f (propref<function<bool,int,int,int,int>>)
 }

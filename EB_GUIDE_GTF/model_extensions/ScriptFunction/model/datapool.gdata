@@ -1,20 +1,21 @@
-EBGUIDE 6.7.0.148693;
-@95fb0102-1792-48b7-9ea1-8d5568ba6d68
+EBGUIDE 6.9.0.191213104248;
+
+dp_items(95fb0102-1792-48b7-9ea1-8d5568ba6d68)
 {
-	#1113854490 items :: dp_item_list : <object>[
-		dp(int) : @50ad3370-aab3-443d-b086-6521884ba255
+	items: dp_item_list [
+		dp<int>(50ad3370-aab3-443d-b086-6521884ba255)
 		{
-			#1168297376 value :: int : 0;
-			#1885349209 name :: string : "result_value";
+			value: 0
+			name: "result_value"
 		}, 
-		dp(int) : @b60c4c78-1793-44c4-9707-c738026eab42
+		dp<int>(b60c4c78-1793-44c4-9707-c738026eab42)
 		{
-			#139846397 value :: int : 1;
-			#943355808 name :: string : "a_value";
+			value: 1
+			name: "a_value"
 		}, 
-		dp(int) : @d34d7592-4186-4862-8107-bbe14c001212
+		dp<int>(d34d7592-4186-4862-8107-bbe14c001212)
 		{
-			#3681547889 value :: int : 2;
-			#587412448 name :: string : "b_value";
-		}];
+			value: 2
+			name: "b_value"
+		}]
 }

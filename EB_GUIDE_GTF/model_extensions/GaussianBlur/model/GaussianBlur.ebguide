@@ -1,4 +1,4 @@
-EBGUIDE 6.8.0.190612124148;
+EBGUIDE 6.9.0.191213104248;
 
 project(c5502165-63b6-47ca-83b2-340df41ed57f)
 {
@@ -19,6 +19,10 @@ project(c5502165-63b6-47ca-83b2-340df41ed57f)
 	languages: (ce998b7c-428e-4465-849e-4b7986dd0710)
 	skins: (16da4782-d381-4882-9fde-9062ef42b27b)
 	event_groups: (79a4a9b2-fc9e-4b72-97ce-017551ce177e)
+	model_interfaces: model_interfaces [
+		(387e0371-2275-4824-a713-577801d0558f)]
+	imported_model_interfaces: imported_model_interfaces []
+	pluginData: pluginDataList []
 	profiles: profiles [
 		(ad3fe8be-21ec-4f27-814d-d6a86eb16eda), 
 		(417d04d7-fb39-44be-b3cd-a350d3171223)]

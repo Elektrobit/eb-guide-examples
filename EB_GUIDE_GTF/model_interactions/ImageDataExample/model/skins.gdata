@@ -1,9 +1,10 @@
-EBGUIDE 6.7.0.148693;
-@0c415d6c-f3eb-474f-819e-b23a197c0cae
+EBGUIDE 6.9.0.191213104248;
+
+skins(0c415d6c-f3eb-474f-819e-b23a197c0cae)
 {
-	#1115272089 items :: skin_list : <object>[
-		skin : @05d6bb5f-20f0-4cf8-a1c2-9cab54e559ea
+	items: skin_list [
+		skin(05d6bb5f-20f0-4cf8-a1c2-9cab54e559ea)
 		{
-			#1694386769 name :: string : "Standard";
-		}];
+			name: "Standard"
+		}]
 }

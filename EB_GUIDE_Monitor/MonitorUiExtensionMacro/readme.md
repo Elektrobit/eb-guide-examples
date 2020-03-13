@@ -23,17 +23,17 @@ The following classes are used to convert the sent messages to script:
 
 ### Setup
 
-1. In Visual Studio, open the _EB\_GUIDE\_Monitor\_examples.sln_ solution file.
-2. Compile the _MonitorUiExtensionMacro_ project.
-The _MonitorUiExtensionMacro.dll_ library file is created.
+1. In Visual Studio, open the _EB\_GUIDE\_Monitor\\EB\_GUIDE\_Monitor\_examples.sln_ solution file.
+2. Compile the _MonitorUiExtensionMacro_ project.\
+The _MonitorUiExtensionMacro_ library file is created.
 
 ### Run
 
-1. Copy the _MonitorUiExtensionMacro.dll_ into _$GUIDE\_INSTALL\_PATH\\monitor__\\lib\\ui\\_ folder.
+1. Copy the _MonitorUiExtensionMacro.dll_ into _$GUIDE\_INSTALL\_PATH\\tools\\monitor\\lib\\ui\\_ folder.
 2. Start EB GUIDE Monitor.
 3. To open the extension, select **Layout** in the menu and click **Macro Recorder**.\
 The UI of the message recorder opens.
-4. Click _Run_ to start the macro recording.\
+4. Click **Run** to start the macro recording.\
 Now you can change values of datapool items or trigger events.
-5. CLick _Build_ to serialize the recorded messages to a script file.
-6. Click _Stop_ to stop the recorder.
+5. Click **Stop** to stop the recorder. 
+6. Click **Build** to serialize the recorded messages to a script file.

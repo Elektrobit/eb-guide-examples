@@ -1,30 +1,31 @@
-EBGUIDE 6.7.0.148693;
-@bdaf8b04-a25a-4535-852a-d7e1f4a6a8d6
+EBGUIDE 6.9.0.191213104248;
+
+event_groups(bdaf8b04-a25a-4535-852a-d7e1f4a6a8d6)
 {
-	#1055930721 items :: event_group_list : <object>[
-		event_group : @2dff9d9a-3327-4318-9310-00736e4258f2
+	items: event_group_list [
+		event_group(2dff9d9a-3327-4318-9310-00736e4258f2)
 		{
-			#1079214699 name :: string : "Default";
-			#3188226904 event_group_id :: int : 2;
+			name: "Default"
+			event_group_id: 2
 		}, 
-		event_group : @664635d0-1bb9-4479-a2ee-e9c44e990611
+		event_group(664635d0-1bb9-4479-a2ee-e9c44e990611)
 		{
-			#1596046975 name :: string : "Key";
-			#2484565038 event_group_id :: int : 10;
+			name: "Key"
+			event_group_id: 10
 		}, 
-		event_group : @1305e2ce-cbe4-4f47-ba58-9f7b1f7e69f4
+		event_group(1305e2ce-cbe4-4f47-ba58-9f7b1f7e69f4)
 		{
-			#1226322432 name :: string : "Touch";
-			#2434272146 event_group_id :: int : 11;
+			name: "Touch"
+			event_group_id: 11
 		}, 
-		event_group : @99bc44d1-67ec-44c2-a246-e95a02a3169b
+		event_group(99bc44d1-67ec-44c2-a246-e95a02a3169b)
 		{
-			#2161527338 name :: string : "Rotary";
-			#3475193749 event_group_id :: int : 12;
+			name: "Rotary"
+			event_group_id: 12
 		}, 
-		event_group : @18ddc9fd-42b9-4362-9797-c126fbb1aeb1
+		event_group(18ddc9fd-42b9-4362-9797-c126fbb1aeb1)
 		{
-			#1615065128 name :: string : "System notification";
-			#3880688126 event_group_id :: int : 13;
-		}];
+			name: "System notification"
+			event_group_id: 13
+		}]
 }

@@ -1,0 +1,202 @@
+EBGUIDE 6.9.0.191213104248;
+
+GtfView_template_instance(a1ef1bb8-5526-44da-be69-b4bd2ed301f3)
+{
+	name: "WindowListView"
+	template: @d5d59616-5174-41c3-95e0-650c21bf2aa0 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(0f99a789-8550-441f-9625-dc5b12656ca0)
+		{
+			name: "T_ScollList 1"
+			template: @66cd612b-4677-466a-8e21-fe50d179234c (objectref<GtfContainer_template>)
+			children: children_list []
+			y: 63
+			height: 346
+			width: 413
+			x: 160
+			inputList: @7cc88ba8-a363-494d-94c3-086a44d923be (objectref<stringlist>)
+			dataValid: bool_scriptedListValue(15eba5fa-c11a-4db6-ac82-09c077490c6d)
+			{
+				triggerList: trigger_list(33ac0e10-a442-4a9e-afb9-1d596abfd9fc)
+				{
+					script: "dp:myReceivedWindowList" \
+						""
+				}
+				onTrigger: function<bool,bool>(00fbc0f2-f1fc-42bb-9ba1-9f5b35779320)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				readList: function<bool,int>(be37832b-7591-46fa-9453-5dfb8764e2c2)
+				{
+					script: "function(v:arg0::int)" \
+						"{" \
+						"	f:has_list_window(&dp:myReceivedWindowList, v:arg0)" \
+						"}"
+				}
+				writeList: function<bool,int,bool>(c53c1726-db85-4b51-848f-6384507268ab)
+				{
+					script: "function(v:arg0::int, v:arg1::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				getListLength: function<int>(551b8774-90f1-4e9a-b59e-e6c5a0d52ae3)
+				{
+					script: "function()" \
+						"{" \
+						"	length dp:myReceivedWindowList" \
+						"}"
+				}
+			}
+		}, 
+		GtfContainer(aff57a3c-f7bd-4b82-9953-4157d56008d7)
+		{
+			features: feature_list [
+				LayoutPolicyFlow(862ac991-f1d1-4bed-8f9c-1328b23682db)
+				{
+					horizontalGap: 5
+					verticalGap: 0
+					layoutDirection: 0
+					horizontalChildAlign: 1
+					verticalChildAlign: 0
+				}]
+			children: children_list [
+				GtfLabel(baff3cbd-e0a9-4529-8b4f-d7eaf47daa05)
+				{
+					features: feature_list [
+						MultiLine(f36fcbd9-b9fd-436c-ae99-652ec40f6eb9)
+						{
+							lineOffset: 0
+							maxLineCount: 0
+						}]
+					children: children_list []
+					name: "listSize"
+					visible: true
+					width: 274
+					height: height@aff57a3c-f7bd-4b82-9953-4157d56008d7 (propref<int>)
+					x: -47
+					y: -1
+					text: ""
+					textColor: #FFFFFFFF
+					font: font_resource(c7310f57-8118-4c46-a78e-ac1f002f275a)
+					{
+						file: "fonts/PT_Sans.ttf"
+						size: 20
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+					set_Text: conditional_script(0029ebbd-75d6-4f0d-ab8e-73e171c59f01)
+					{
+						triggerList: trigger_list(952fa5e6-fea0-4c85-93d7-13178196f5f0)
+						{
+							script: "dp:WindowSize" \
+								""
+						}
+						onTrigger: function<bool,bool>(ac889c1b-5efb-49df-93ca-6d90853b7571)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this.text = \"Window size: \\n\" +  f:int2string(dp:WindowSize);" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfLabel(fc46dc2d-4c2c-47ab-b9ed-0cdc54c23d51)
+				{
+					features: feature_list [
+						MultiLine(13e9b2bb-ce97-45d5-87c3-45e5d5a7d09e)
+						{
+							lineOffset: 0
+							maxLineCount: 0
+						}]
+					children: children_list []
+					name: "listCurrentPosition"
+					visible: true
+					width: 270
+					height: height@aff57a3c-f7bd-4b82-9953-4157d56008d7 (propref<int>)
+					x: 22
+					y: -1
+					text: ""
+					textColor: #FFFFFFFF
+					font: font_resource(b31a3e6c-a88b-4077-87f0-3f44c591be0d)
+					{
+						file: "fonts/PT_Sans.ttf"
+						size: 20
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+					set_Text: conditional_script(ca476a11-ff8e-4acf-92b3-ccc9ea264c05)
+					{
+						triggerList: trigger_list(8ec0e26f-54e3-47de-ac65-0e6595949f19)
+						{
+							script: "dp:WindowPosition" \
+								""
+						}
+						onTrigger: function<bool,bool>(8c35b8e4-f890-4a7f-b79d-ce51ea700790)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this.text = \"Current position: \\n\" +  f:int2string(dp:WindowPosition);" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfLabel(618654ba-ce7f-41b1-ac0e-e517b03fcf1d)
+				{
+					features: feature_list [
+						MultiLine(0caf6b6d-7d8d-47ee-bee3-91e78ac2e1f8)
+						{
+							lineOffset: 0
+							maxLineCount: 0
+						}]
+					children: children_list []
+					name: "WindowSize"
+					visible: true
+					width: 236
+					height: height@aff57a3c-f7bd-4b82-9953-4157d56008d7 (propref<int>)
+					x: 0
+					y: 0
+					text: "label"
+					textColor: #FFFFFFFF
+					font: font_resource(aea40176-6edf-40ce-a554-230a7c44d581)
+					{
+						file: "fonts/PT_Sans.ttf"
+						size: 20
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+					set_Text: conditional_script(9de02d14-ffa4-4d0f-8a0b-f4c86e4e7def)
+					{
+						triggerList: trigger_list(23a8076a-abca-465e-81a2-7dc66b6bb4c5)
+						{
+							script: "dp:myReceivedWindowList" \
+								""
+						}
+						onTrigger: function<bool,bool>(80ff3dfe-ac89-4874-9294-6fcdcce605ca)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this.text = \"List size: \\n\" +  f:int2string(length dp:myReceivedWindowList);" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "Configuration"
+			visible: true
+			width: width@a1ef1bb8-5526-44da-be69-b4bd2ed301f3 (propref<int>)
+			height: 63
+			x: -3
+			y: 418
+		}]
+	text: "Window list plugin"
+	width: 800
+	description: description@d5d59616-5174-41c3-95e0-650c21bf2aa0 (propref<string>)
+}

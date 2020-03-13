@@ -1,0 +1,9 @@
+EBGUIDE 6.9.0.191213104248;
+
+model_interface(76903b10-10bf-4696-a77d-dd92093e3616)
+{
+	name: "Default Model Interface"
+	color: #3399FFFF
+	dp_items: dp_item_refs []
+	events: event_refs []
+}

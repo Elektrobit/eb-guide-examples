@@ -14,13 +14,13 @@ In this example, the number of events of a model on project load is printed via 
 
 ### Setup
 
-1. In Visual Studio, open the _studio\_examples.sln_ solution file.
+1. In Visual Studio, open the _EB\_GUIDE\_Studio\\EB\_GUIDE\_Studio\_examples.sln_ solution file.
 2. Compile the _CommandLinePlugin_ project.\
 The _CommandLinePlugin_ library file is created. 
 
 ### Run
 
-* Copy the _CommandLinePlugin.dll_ into _$GUIDE_INSTALL_PATH\\studio\\lib\\core\\_.
+* Copy the _CommandLinePlugin.dll_ into _$GUIDE\_INSTALL\_PATH\\studio\\lib\\core\\_.
 * Run the EB GUIDE Studio command line with the custom option:
 ```
 Studio.Console.exe -x -c validation_log.txt -o <project file>

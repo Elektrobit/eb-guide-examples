@@ -13,12 +13,12 @@ In this example, you create a "Hello World" component.
 
 ### Setup
 
-1. In Visual Studio, open the _.sln_ solution file.
-2. Compile the _MonitorUiExtension_ project.
-The _MonitorUiExtension.dll_ library file is created.
+1. In Visual Studio, open the _EB\_GUIDE\_Monitor\\EB\_GUIDE\_Monitor\_examples.sln_ solution file.
+2. Compile the _MonitorUiExtension_ project.\
+The _MonitorUiExtension_ library file is created.
 
 ### Run
 
-1. Copy the _MonitorUiExtension.dll_ into _$GUIDE\_INSTALL\_PATH\\monitor\\lib\\ui\\_.
+1. Copy the _MonitorUiExtension.dll_ into _$GUIDE\_INSTALL\_PATH\\tools\\monitor\\lib\\ui\\_.
 2. Start EB GUIDE Monitor.
-3. To open the extension, select _Layout_ > _Monitor Extension_ in the menu bar.
+3. To open the extension, select **Layout** > **Monitor Extension** in the menu bar.

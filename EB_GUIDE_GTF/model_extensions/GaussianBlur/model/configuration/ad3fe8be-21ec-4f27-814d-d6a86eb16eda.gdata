@@ -1,4 +1,4 @@
-EBGUIDE 6.8.0.190612124148;
+EBGUIDE 6.9.0.191213104248;
 
 configuration_profile(ad3fe8be-21ec-4f27-814d-d6a86eb16eda)
 {
@@ -29,7 +29,7 @@ configuration_profile(ad3fe8be-21ec-4f27-814d-d6a86eb16eda)
 				maxFPS: 0
 				hwLayerId: 0
 				colorMode: 1
-				multisampling: 0
+				antiAliasing: 0
 				enableRemoteFramebuffer: true
 				showWindowFrame: false
 				showWindow: false

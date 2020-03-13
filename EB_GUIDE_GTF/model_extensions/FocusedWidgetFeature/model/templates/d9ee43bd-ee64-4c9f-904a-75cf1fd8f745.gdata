@@ -1,10 +1,131 @@
-EBGUIDE 6.7.0.148693;
-@d9ee43bd-ee64-4c9f-904a-75cf1fd8f745
+EBGUIDE 6.9.0.191213104248;
+
+GtfView_template(d9ee43bd-ee64-4c9f-904a-75cf1fd8f745)
 {
-	#62725243 name :: string : "MainView";
-	#4006632549 structure :: GtfView : @68fc7fd2-5637-4a1f-95aa-3e351b7dad9c;
-	#2857427668 description :: propref(string) : @68fc7fd2-5637-4a1f-95aa-3e351b7dad9c#4144592265;
-	#1014122768 text :: propref(string) : @c6f98777-2a3f-4ca9-bace-3092c8c46a00#1699258030;
-	#1981611947 focusable :: propref(int) : @45c4ae22-364f-4415-a6dd-93554ca766fb#1965266252;
-	#3737508307 "text 2" :: propref(string) : @a2dc4eb3-e8bc-46de-be51-cbdeb52ebff7#1098283811;
+	name: "MainView"
+	structure: GtfView(68fc7fd2-5637-4a1f-95aa-3e351b7dad9c)
+	{
+		features: feature_list [
+			StateFocused(45c4ae22-364f-4415-a6dd-93554ca766fb)
+			{
+				focusable: 0
+				focused: false
+			}, 
+			AutoFocus(4e9a60cd-e65d-47f9-a129-601e012a114a)
+			{
+				initFocus: 0
+				focusedIndex: 0
+				focusNext: false
+				focusPrev: false
+				focusFlow: 0
+			}]
+		children: children_list [
+			GtfRectangle(a7b25ebc-6287-4211-b4c2-7607f2aa52d0)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "main bg"
+				visible: true
+				width: width@68fc7fd2-5637-4a1f-95aa-3e351b7dad9c (propref<int>)
+				height: height@68fc7fd2-5637-4a1f-95aa-3e351b7dad9c (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #383838FF
+			}, 
+			GtfLabel(c6f98777-2a3f-4ca9-bace-3092c8c46a00)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "title"
+				visible: true
+				width: 760
+				height: 50
+				x: 20
+				y: 10
+				text: "Widget features demo"
+				textColor: #C0C0C0FF
+				font: font_resource(0a341b13-4f0e-4ba0-9277-315d9317b57c)
+				{
+					file: "fonts/PT_Sans.ttf"
+					size: 35
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfRectangle(d6a3e2ac-13d0-448a-8fad-062ddb61cded)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "separator top"
+				visible: true
+				width: 780
+				height: 2
+				x: 10
+				y: 70
+				fillColor: #504E4EFF
+			}, 
+			GtfRectangle(3b41b657-b89b-4726-ac22-512fdd3ed760)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "separator bottom"
+				visible: true
+				width: 780
+				height: 2
+				x: 10
+				y: 410
+				fillColor: #504E4EFF
+			}, 
+			GtfLabel(a2dc4eb3-e8bc-46de-be51-cbdeb52ebff7)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "instruction"
+				visible: true
+				width: 800
+				height: 100
+				x: 0
+				y: 70
+				text: "label"
+				textColor: #FFFFFFFF
+				font: font_resource(e02009fa-e506-4b0f-bb9c-96de9a3a948e)
+				{
+					file: "fonts\\PT_Sans.ttf"
+					size: 25
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfLabel(7b023cd2-6ce3-4d95-b25a-2bab1d05eaf4)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "text bottom"
+				visible: true
+				width: 780
+				height: 40
+				x: 10
+				y: 425
+				text: description@68fc7fd2-5637-4a1f-95aa-3e351b7dad9c (propref<string>)
+				textColor: #C0C0C0FF
+				font: font_resource(7fd311b4-2566-483d-8fc5-ac59aced9c74)
+				{
+					file: "fonts/PT_Sans.ttf"
+					size: 25
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "View"
+		visible: true
+		width: 800
+		height: 480
+		x: 0
+		y: 0
+		description: "<description>"
+	}
+	description: description@68fc7fd2-5637-4a1f-95aa-3e351b7dad9c (propref<string>)
+	text: text@c6f98777-2a3f-4ca9-bace-3092c8c46a00 (propref<string>)
+	focusable: focusable@45c4ae22-364f-4415-a6dd-93554ca766fb (propref<int>)
+	"text 2": text@a2dc4eb3-e8bc-46de-be51-cbdeb52ebff7 (propref<string>)
 }

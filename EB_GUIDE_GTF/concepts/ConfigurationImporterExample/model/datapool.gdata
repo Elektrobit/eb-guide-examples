@@ -1,35 +1,36 @@
-EBGUIDE 6.7.0.148693;
-@1f4315dd-e5ac-401a-863b-24c2a6ae1c75
+EBGUIDE 6.9.0.191213104248;
+
+dp_items(1f4315dd-e5ac-401a-863b-24c2a6ae1c75)
 {
-	#2367285965 items :: dp_item_list : <object>[
-		dp(string) : @0774c9fe-a61d-4cfa-9678-f0cd70d2a50f
+	items: dp_item_list [
+		dp<string>(0774c9fe-a61d-4cfa-9678-f0cd70d2a50f)
 		{
-			#718803210 value :: string : "";
-			#648749046 name :: string : "ConfigStringName";
+			value: ""
+			name: "ConfigStringName"
 		}, 
-		dp(stringlist) : @578c76d2-7285-4efc-ae7a-85dd16b280b0
+		dp<stringlist>(578c76d2-7285-4efc-ae7a-85dd16b280b0)
 		{
-			#1125574399 value :: stringlist : <string>[];
-			#2130971775 name :: string : "ConfigStringArray";
+			value: stringlist []
+			name: "ConfigStringArray"
 		}, 
-		dp(float) : @84a6beb8-3196-4733-af7b-71d89987f524
+		dp<float>(84a6beb8-3196-4733-af7b-71d89987f524)
 		{
-			#276029304 value :: float : 0F;
-			#2084437732 name :: string : "ConfigFloatVersion";
+			value: 0F
+			name: "ConfigFloatVersion"
 		}, 
-		dp(bool) : @a34e79f6-c853-41d2-a20e-6ba6a9986082
+		dp<bool>(a34e79f6-c853-41d2-a20e-6ba6a9986082)
 		{
-			#3557847446 value :: bool : false;
-			#1754070815 name :: string : "ConfigBoolValid";
+			value: false
+			name: "ConfigBoolValid"
 		}, 
-		dp(intlist) : @d94750b0-0970-4e22-9320-f77f5e9a50e7
+		dp<intlist>(d94750b0-0970-4e22-9320-f77f5e9a50e7)
 		{
-			#70429570 value :: intlist : <int>[];
-			#300993504 name :: string : "ConfigIntArray";
+			value: intlist []
+			name: "ConfigIntArray"
 		}, 
-		dp(int) : @f230f5fa-a0e5-4407-9df8-21c02ae502ce
+		dp<int>(f230f5fa-a0e5-4407-9df8-21c02ae502ce)
 		{
-			#409265376 value :: int : 0;
-			#1575146723 name :: string : "ConfigIntId";
-		}];
+			value: 0
+			name: "ConfigIntId"
+		}]
 }

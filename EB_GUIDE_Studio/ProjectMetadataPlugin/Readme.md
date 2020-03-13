@@ -12,12 +12,13 @@ Shows how to hook into the project life cycle of an EB GUIDE model.
 
 ### Setup
 
-1. In Visual Studio, open the _studio\_examples.sln_ solution file.
+1. In Visual Studio, open the _EB\_GUIDE\_Studio\\EB\_GUIDE\_Studio\_examples.sln_ solution file.
 2. Compile the _ProjectMetadataPlugin_ project.\
 The _ProjectMetadataPlugin_ library file is created. 
 
 ### Run
 
-1. Copy the _ProjectMetadataPlugin.dll_ into _$GUIDE_INSTALL_PATH\\studio\\lib\\core\\_.
+1. Copy the _ProjectMetadataPlugin.dll_ into _$GUIDE\_INSTALL\_PATH\\studio\\lib\\core\\_.
 2. Start EB GUIDE Studio.
-3. Create a new project or load an existing project.
+3. Create a new project or load an existing project.\
+A _metadata.json_ file is created and stored in the project folder.

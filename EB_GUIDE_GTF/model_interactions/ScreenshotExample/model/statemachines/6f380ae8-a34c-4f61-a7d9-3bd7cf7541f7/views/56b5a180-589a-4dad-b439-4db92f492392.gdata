@@ -1,0 +1,19 @@
+EBGUIDE 6.9.0.191213104248;
+
+GtfView_template_instance(56b5a180-589a-4dad-b439-4db92f492392)
+{
+	name: "Titleview"
+	template: @18edd3fd-90d3-4e6e-bc08-4db08f8b05ee (objectref<GtfView_template>)
+	children: children_list []
+	title_text: "Screenshot demo"
+	"short desc_text": "Example of capturing a screenshot of an HMI "
+	"long desc_text": "Documentation reference:\\nUsing the EB GUIDE TF plugin mechanism "
+	touchPressed: function<bool,int,int,int,int>(a833b774-1633-4423-bc01-9bff091cce0c)
+	{
+		script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+			"{" \
+			"	fire ev:next();" \
+			"    false" \
+			"}"
+	}
+}

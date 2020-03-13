@@ -1,11 +1,12 @@
-EBGUIDE 6.7.0.148693;
-@77442182-06d6-4079-bd7a-5fbf14c64279
+EBGUIDE 6.9.0.191213104248;
+
+events(77442182-06d6-4079-bd7a-5fbf14c64279)
 {
-	#2026365599 items :: event_list : <object>[
-		event : @a6206970-86e9-41df-ba74-43c4dd44278c
+	items: event_list [
+		event(a6206970-86e9-41df-ba74-43c4dd44278c)
 		{
-			#684214879 name :: string : "next";
-			#1020287125 eventId :: int : 0;
-			#1544149991 event_group :: objectref(event_group) : @89270060-ba53-4433-a780-38e33a224fc0;
-		}];
+			name: "next"
+			eventId: 0
+			event_group: @89270060-ba53-4433-a780-38e33a224fc0 (objectref<event_group>)
+		}]
 }

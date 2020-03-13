@@ -1,0 +1,19 @@
+EBGUIDE 6.9.0.191213104248;
+
+GtfView_template_instance(2c9c3499-90c7-43ca-9bcc-dc48f46a24fe)
+{
+	name: "Titleview"
+	template: @622fe64a-b36f-4319-8af5-d92528456bf8 (objectref<GtfView_template>)
+	children: children_list []
+	title_text: "Script function application"
+	short_desc_text: "Example for implementing script functions using the EB GUIDE SDK"
+	long_desc_text: "Documentation reference:\\nExtensions to EB GUIDE TF > EB GUIDE Script functions"
+	touchPressed: function<bool,int,int,int,int>(f9ed46f6-d101-4b66-a950-1816513fd9ac)
+	{
+		script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+			"{" \
+			"	fire ev:next()" \
+			"    false" \
+			"}"
+	}
+}

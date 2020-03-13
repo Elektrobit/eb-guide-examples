@@ -1,4 +1,4 @@
-EBGUIDE 6.8.0.190612124148;
+EBGUIDE 6.9.0.191213104248;
 
 haptic_statemachine(6f380ae8-a34c-4f61-a7d9-3bd7cf7541f7)
 {
@@ -37,6 +37,8 @@ haptic_statemachine(6f380ae8-a34c-4f61-a7d9-3bd7cf7541f7)
 					target_state: @e530994c-e263-4e19-b847-4f77f1fded5c (objectref<haptic_dialog_state>)
 					source_dock: 0.2384395F
 					target_dock: 0.7819578F
+					curveControlXOffset: 0
+					curveControlYOffset: 0
 				}]
 			internal_transitions: haptic_internal_transitions []
 			background_color: #6C6C6CFF
@@ -70,6 +72,8 @@ haptic_statemachine(6f380ae8-a34c-4f61-a7d9-3bd7cf7541f7)
 			target_state: @4d854f81-4864-4220-8960-5d72fc71d3e1 (objectref<haptic_dialog_state>)
 			source_dock: 0.4515356F
 			target_dock: 0.7485916F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
 		}
 	}
 	final_state: haptic_final_state(none)

@@ -1,11 +1,12 @@
-EBGUIDE 6.7.0.148693;
-@0d7b5c08-6a71-4783-87aa-ff1fff43b22a
+EBGUIDE 6.9.0.191213104248;
+
+languages(0d7b5c08-6a71-4783-87aa-ff1fff43b22a)
 {
-	#1927213267 items :: language_list : <object>[
-		language : @871c0f22-d9c2-46ba-a669-a5bd3a2cb2fa
+	items: language_list [
+		language(871c0f22-d9c2-46ba-a669-a5bd3a2cb2fa)
 		{
-			#1869324681 name :: string : "Standard";
-			#2769234955 country :: string : "US";
-			#2675221950 dialect :: string : "en";
-		}];
+			name: "Standard"
+			country: "US"
+			dialect: "en"
+		}]
 }

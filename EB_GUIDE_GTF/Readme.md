@@ -36,14 +36,14 @@ For information on how to use CMake, see <https://cmake.org/runningcmake>.
 4. Click **Configure**.\
 Select the generator for **Visual Studio 15 2017 Win64** and agree on creating missing folders.
 5. CMake will report an error in the configuration process.\
-Set the value of the CMake variable _CMAKE\_INSTALL\_PREFIX_ to a dedicated install folder with write permissions, e.g. _C:\\Users\\...\\Desktop\\eb\_guide\_sdk\_examples\_install_.
-6. Set the value of the CMake variable _GTF\_TARGET\_SDK\_ROOT_ to the folder that contains the EB GUIDE GTF EB GUIDE SDK.
+To solve the error, set the value of the CMake variable _CMAKE\_INSTALL\_PREFIX_ to a dedicated install folder with write permissions, e.g. _C:\\Users\\...\\Desktop\\eb\_guide\_sdk\_examples\_install_.
+6. Set the value of the CMake variable _GTF\_TARGET\_SDK\_ROOT_ to the folder _GUIDE\_INSTALL\_PATH\\platform\\win64_.
 7. Click **Configure**.\
 The CMake error is solved.
 8. Click **Generate**.\
 Your Visual Studio solution for the EB GUIDE examples is now generated and you can close **cmake-gui**.
-9. Start Visual Studio and open the _EB\_GUIDE\_GTF\_examples.sln_ from the folder you configured previously for **Where to build the binaries** in the **cmake-gui**.
-10. In the **Solution Explorer** of Visual Studio right-click **Install**. Select **Build** from the context menu to build and install all EB GUIDE GTF example plug-ins.\
+9. Start Visual Studio and open the _sdk\_examples.sln_ from the folder you configured previously for **Where to build the binaries** in the **cmake-gui**.
+10. In the **Solution Explorer** of Visual Studio right-click **INSTALL**. Select **Build** from the context menu to build and install all EB GUIDE GTF example plug-ins.\
 All EB GUIDE GTF example plug-ins are now available in the folder you configured previously for _CMAKE\_INSTALL\_PREFIX_ in the **cmake-gui**.
 11. Copy the resulting _.dll_ files into the resource subfolder of the EB GUIDE projects. Hereby you overwrite the existing _.dll_ files.\
 Your plug-ins are now available in your EB GUIDE models.

@@ -1,10 +1,175 @@
-EBGUIDE 6.7.0.148693;
-@4ba5e50b-dc6c-4c10-8165-b319a5cef09c
+EBGUIDE 6.9.0.191213104248;
+
+GtfView_template(4ba5e50b-dc6c-4c10-8165-b319a5cef09c)
 {
-	#62725243 name :: string : "FeatureView";
-	#3837405838 structure :: GtfView : @6a9f74c0-aff9-41e5-a9e0-2b44fe531623;
-	#1012980398 title_text :: propref(string) : @6a9f74c0-aff9-41e5-a9e0-2b44fe531623#1872951579;
-	#2935233148 description_text :: propref(string) : @6a9f74c0-aff9-41e5-a9e0-2b44fe531623#1861430663;
-	#658049167 prev_enabled :: propref(bool) : @6a9f74c0-aff9-41e5-a9e0-2b44fe531623#354216659;
-	#630980785 next_enabled :: propref(bool) : @6a9f74c0-aff9-41e5-a9e0-2b44fe531623#2270243700;
+	name: "FeatureView"
+	structure: GtfView(6a9f74c0-aff9-41e5-a9e0-2b44fe531623)
+	{
+		features: feature_list [
+			StateFocused(b3f0b339-6224-477d-b4e9-eeec057029a7)
+			{
+				focusable: 3
+				focused: true
+			}, 
+			Scaling(d4ba1c99-6d88-48ef-a715-60fb6a24efb7)
+			{
+				scalingEnabled: true
+				scalingX: @aac15288-4a14-4b00-9869-70b8c36130e6 (objectref<float>)
+				scalingY: @aac15288-4a14-4b00-9869-70b8c36130e6 (objectref<float>)
+				scalingZ: 100F
+			}]
+		children: children_list [
+			GtfRectangle(6749d620-5a1c-4319-ae4d-a256196c8216)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "main bg"
+				visible: true
+				width: width@6a9f74c0-aff9-41e5-a9e0-2b44fe531623 (propref<int>)
+				height: height@6a9f74c0-aff9-41e5-a9e0-2b44fe531623 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #383838FF
+			}, 
+			GtfLabel(25cd03b3-8d49-4463-8696-944388559154)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "title"
+				visible: true
+				width: 760
+				height: 50
+				x: 20
+				y: 10
+				text: title_text@6a9f74c0-aff9-41e5-a9e0-2b44fe531623 (propref<string>)
+				textColor: #C0C0C0FF
+				font: font_resource(89edf272-34d8-4a68-913f-6f2f9691d3ea)
+				{
+					file: "fonts/PT_Sans.ttf"
+					size: 35
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfRectangle(3701d0f3-8a83-4d49-acd3-1ef26627a31d)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "separator top"
+				visible: true
+				width: 780
+				height: 2
+				x: 10
+				y: 70
+				fillColor: #504E4EFF
+			}, 
+			GtfRectangle(eb55c38d-9ae7-482c-a584-87be6a692f4d)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "separator bottom"
+				visible: true
+				width: 780
+				height: 2
+				x: 10
+				y: 410
+				fillColor: #504E4EFF
+			}, 
+			GtfLabel(f10e8e18-1a01-4f14-a98a-637d7c1a0a2a)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "text bottom"
+				visible: true
+				width: 780
+				height: 40
+				x: 10
+				y: 425
+				text: description_text@6a9f74c0-aff9-41e5-a9e0-2b44fe531623 (propref<string>)
+				textColor: #C0C0C0FF
+				font: font_resource(54ddf20c-d319-45c7-a887-862576ec266e)
+				{
+					file: "fonts/PT_Sans.ttf"
+					size: 25
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfRectangle_template_instance(ce518e81-7189-42cc-bd11-6429bcf852f9)
+			{
+				name: "home"
+				template: @3a24ef7a-dbb9-40b0-985c-1a45dac0f9ea (objectref<GtfRectangle_template>)
+				children: children_list []
+				touchShortReleased: function<bool,int,int,int,int>(793f3bea-fb11-4569-a0f3-93aea92f9785)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	fire ev:home();" \
+						"    false;" \
+						"}"
+				}
+				width: width@3a24ef7a-dbb9-40b0-985c-1a45dac0f9ea (propref<int>)
+				height: height@3a24ef7a-dbb9-40b0-985c-1a45dac0f9ea (propref<int>)
+				x: x@3a24ef7a-dbb9-40b0-985c-1a45dac0f9ea (propref<int>)
+				y: y@3a24ef7a-dbb9-40b0-985c-1a45dac0f9ea (propref<int>)
+				button_icon: button_icon@3a24ef7a-dbb9-40b0-985c-1a45dac0f9ea (propref<image>)
+				enabled: enabled@3a24ef7a-dbb9-40b0-985c-1a45dac0f9ea (propref<bool>)
+			}, 
+			GtfRectangle_template_instance(cc222a15-1569-4994-abde-95185fd5fb9b)
+			{
+				name: "prev"
+				template: @7e16277d-99a1-41b2-99fc-ddee370c1aa3 (objectref<GtfRectangle_template>)
+				children: children_list []
+				button_text: "<"
+				width: 50
+				x: 670
+				y: 15
+				touchShortReleased: function<bool,int,int,int,int>(85132c95-cf4f-44ab-8ac2-cf4b6c1dc2b0)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	fire ev:prev();" \
+						"    false;" \
+						"}"
+				}
+				enabled: prev_enabled@6a9f74c0-aff9-41e5-a9e0-2b44fe531623 (propref<bool>)
+				height: height@7e16277d-99a1-41b2-99fc-ddee370c1aa3 (propref<int>)
+				touched: touched@7e16277d-99a1-41b2-99fc-ddee370c1aa3 (propref<bool>)
+			}, 
+			GtfRectangle_template_instance(a181c704-7221-4038-9fb2-b1bd27f5c141)
+			{
+				name: "next"
+				template: @7e16277d-99a1-41b2-99fc-ddee370c1aa3 (objectref<GtfRectangle_template>)
+				children: children_list []
+				width: 50
+				y: 15
+				x: 730
+				button_text: ">"
+				touchShortReleased: function<bool,int,int,int,int>(248c7d1f-52f8-4b7f-8512-e2f733895d96)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	fire ev:next();" \
+						"	false;" \
+						"}"
+				}
+				enabled: next_enabled@6a9f74c0-aff9-41e5-a9e0-2b44fe531623 (propref<bool>)
+				height: height@7e16277d-99a1-41b2-99fc-ddee370c1aa3 (propref<int>)
+				touched: touched@7e16277d-99a1-41b2-99fc-ddee370c1aa3 (propref<bool>)
+			}]
+		name: "View"
+		visible: true
+		width: 800
+		height: 480
+		x: @d424c1e4-0698-4bfa-b58d-ef86809aa7d6 (objectref<int>)
+		y: @0c767e02-66a7-45cc-ae6e-e8628d2cf658 (objectref<int>)
+		title_text: "<title>"
+		description_text: "<description>"
+		prev_enabled: true
+		next_enabled: true
+	}
+	title_text: title_text@6a9f74c0-aff9-41e5-a9e0-2b44fe531623 (propref<string>)
+	description_text: description_text@6a9f74c0-aff9-41e5-a9e0-2b44fe531623 (propref<string>)
+	prev_enabled: prev_enabled@6a9f74c0-aff9-41e5-a9e0-2b44fe531623 (propref<bool>)
+	next_enabled: next_enabled@6a9f74c0-aff9-41e5-a9e0-2b44fe531623 (propref<bool>)
 }
