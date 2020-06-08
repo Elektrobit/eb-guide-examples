@@ -1,0 +1,42 @@
+EBGUIDE 6.10.0.200602120856;
+
+events(953e94b6-9fc9-4906-898e-c9eea0c83a36)
+{
+	items: event_list [
+		event(0d416b8c-c69f-4116-84ee-dd1309b86e0f)
+		{
+			name: "Next"
+			eventId: 0
+			event_group: @2015a8c3-bdb1-4c7d-9d1d-8d1950797230 (objectref<event_group>)
+		}, 
+		event(3aadd4be-ccd8-42e1-a46d-9c572a9b71a5)
+		{
+			name: "EightSamples"
+			eventId: 5
+			event_group: @2015a8c3-bdb1-4c7d-9d1d-8d1950797230 (objectref<event_group>)
+		}, 
+		event(4e9575e1-5f08-4b2e-9f79-209980d749aa)
+		{
+			name: "PlayAnimation"
+			eventId: 1
+			event_group: @2015a8c3-bdb1-4c7d-9d1d-8d1950797230 (objectref<event_group>)
+		}, 
+		event(a7617fc8-3a02-4587-b3dc-b7205039c8c9)
+		{
+			name: "FourSamples"
+			eventId: 4
+			event_group: @2015a8c3-bdb1-4c7d-9d1d-8d1950797230 (objectref<event_group>)
+		}, 
+		event(af447436-957c-4898-8c76-9bd8b72994b4)
+		{
+			name: "TwoSamples"
+			eventId: 3
+			event_group: @2015a8c3-bdb1-4c7d-9d1d-8d1950797230 (objectref<event_group>)
+		}, 
+		event(edb768af-45e9-4229-8d05-5923cfccdfdd)
+		{
+			name: "OneSample"
+			eventId: 2
+			event_group: @2015a8c3-bdb1-4c7d-9d1d-8d1950797230 (objectref<event_group>)
+		}]
+}

@@ -1,0 +1,16 @@
+EBGUIDE 6.10.0.200602120856;
+
+dp_items(f62b5f8f-ca49-4d20-9b2e-db7dec09c5d0)
+{
+	items: dp_item_list [
+		dp<int>(65018900-9448-4ed4-9c0a-d5886c13e7f3)
+		{
+			value: 0
+			name: "horizontalAlignment"
+		}, 
+		dp<float>(76e0f782-6619-4aba-9145-88b49f18912e)
+		{
+			value: 100F
+			name: "amplitude"
+		}]
+}

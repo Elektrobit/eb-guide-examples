@@ -1,0 +1,74 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfRectangle_template(7e16277d-99a1-41b2-99fc-ddee370c1aa3)
+{
+	name: "TextButton"
+	structure: GtfRectangle(eea6ceca-8a01-404d-9807-fc225e07ef0d)
+	{
+		features: feature_list [
+			Border(f801e642-1442-40f3-a927-d87d260a14cc)
+			{
+				borderThickness: 1
+				borderColor: #808080FF
+				borderStyle: 0
+			}, 
+			TouchShortReleased(350595c6-4aaa-4c23-8444-debae81a18e8)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(8208242b-0cd9-4fd7-b582-5843a35f9053)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(4d18c150-f1cb-4355-b596-a18a0a323625)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			StateEnabled(97015b47-1385-4ed2-82a5-5b0e9240930f)
+			{
+				enabled: true
+			}]
+		children: children_list [
+			GtfLabel(a17ce7e2-a49d-45bd-9a54-33293e977b38)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "text"
+				visible: true
+				width: width@eea6ceca-8a01-404d-9807-fc225e07ef0d (propref<int>)
+				height: height@eea6ceca-8a01-404d-9807-fc225e07ef0d (propref<int>)
+				x: 0
+				y: 0
+				text: button_text@eea6ceca-8a01-404d-9807-fc225e07ef0d (propref<string>)
+				textColor: #000000FF
+				font: font_resource(43a00986-0d90-4b28-b32e-9daee6ef1c52)
+				{
+					file: "fonts/PT_Sans.ttf"
+					size: 20
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "bg"
+		visible: true
+		width: 120
+		height: 40
+		x: 0
+		y: 0
+		fillColor: #C0C0C0FF
+		button_text: "<text>"
+	}
+	touchShortReleased: touchShortReleased@350595c6-4aaa-4c23-8444-debae81a18e8 (propref<function<bool,int,int,int,int>>)
+	button_text: button_text@eea6ceca-8a01-404d-9807-fc225e07ef0d (propref<string>)
+	width: width@eea6ceca-8a01-404d-9807-fc225e07ef0d (propref<int>)
+	height: height@eea6ceca-8a01-404d-9807-fc225e07ef0d (propref<int>)
+	x: x@eea6ceca-8a01-404d-9807-fc225e07ef0d (propref<int>)
+	y: y@eea6ceca-8a01-404d-9807-fc225e07ef0d (propref<int>)
+	touched: touched@4d18c150-f1cb-4355-b596-a18a0a323625 (propref<bool>)
+	enabled: enabled@97015b47-1385-4ed2-82a5-5b0e9240930f (propref<bool>)
+}

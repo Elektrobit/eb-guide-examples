@@ -1,0 +1,10 @@
+EBGUIDE 6.10.0.200602120856;
+
+skins(1d22a477-60db-42f6-859a-30e5c90956e5)
+{
+	items: skin_list [
+		skin(b3c5b664-257e-4239-a5f3-48c75accbade)
+		{
+			name: "Standard"
+		}]
+}

@@ -1,0 +1,19 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(c7443d01-52f5-4fef-a621-cd3cb3614f87)
+{
+	name: "Titleview"
+	template: @d39ab86b-55e4-41b8-a278-7e8cefa331f9 (objectref<GtfView_template>)
+	children: children_list []
+	title_text: "External Input demo"
+	shortDesc: "Example for communicating from an application with the HMI using the External Input system"
+	"long desc": "Documentation reference:\\nUsing the EB GUIDE TF plugin mechanism\\nBackground information > Interaction between HMI and applications "
+	touchPressed: function<bool,int,int,int,int>(6ea329b3-9b80-4fc3-811e-d42c890a751e)
+	{
+		script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+			"{" \
+			"	fire ev:next();" \
+			"    false" \
+			"}"
+	}
+}

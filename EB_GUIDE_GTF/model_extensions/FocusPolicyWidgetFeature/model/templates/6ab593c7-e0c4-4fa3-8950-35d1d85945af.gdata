@@ -1,0 +1,72 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(6ab593c7-e0c4-4fa3-8950-35d1d85945af)
+{
+	name: "T_TextButton"
+	structure: GtfContainer(5a260c97-e451-4ce9-ace8-78ec3879c3bd)
+	{
+		features: feature_list [
+			TouchShortReleased(c9068517-07b9-4607-9d33-6d555d43f641)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(91e8d9e9-3420-4d67-b2f3-2e434eae5eab)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(40d49919-cc37-49b8-8587-fbae627dfe38)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(429e0ab5-05d0-4aa8-85c4-02543c2c3cd4)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfLabel(72b87d70-1377-4d89-8cf3-97e26ad1a0ee)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "text"
+						visible: true
+						width: width@5a260c97-e451-4ce9-ace8-78ec3879c3bd (propref<int>)
+						height: height@5a260c97-e451-4ce9-ace8-78ec3879c3bd (propref<int>)
+						x: 0
+						y: 0
+						text: "label"
+						textColor: #FFFFFFFF
+						font: font_resource(7e6ca346-7300-4efc-b3c4-a6383e687478)
+						{
+							file: "fonts\\PT_Sans.ttf"
+							size: 25
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				name: "Rectangle 1"
+				visible: true
+				width: width@5a260c97-e451-4ce9-ace8-78ec3879c3bd (propref<int>)
+				height: height@5a260c97-e451-4ce9-ace8-78ec3879c3bd (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #808080FF
+			}]
+		name: "Container 1"
+		visible: true
+		width: 100
+		height: 100
+		x: 0
+		y: 0
+	}
+	text: text@72b87d70-1377-4d89-8cf3-97e26ad1a0ee (propref<string>)
+	width: width@5a260c97-e451-4ce9-ace8-78ec3879c3bd (propref<int>)
+	height: height@5a260c97-e451-4ce9-ace8-78ec3879c3bd (propref<int>)
+	x: x@5a260c97-e451-4ce9-ace8-78ec3879c3bd (propref<int>)
+	y: y@5a260c97-e451-4ce9-ace8-78ec3879c3bd (propref<int>)
+	touchShortReleased: touchShortReleased@c9068517-07b9-4607-9d33-6d555d43f641 (propref<function<bool,int,int,int,int>>)
+}

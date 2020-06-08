@@ -1,0 +1,61 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(2a0f5cff-ccba-43db-8bb3-bd9c32edf65d)
+{
+	name: "Custom"
+	structure: GtfContainer(9579db3e-9324-4ef9-ad19-a03491519b67)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfImage(6eb76ad6-3e4a-4307-a774-4acf6ba85a90)
+			{
+				features: feature_list [
+					ScaleMode(0b8e818d-260b-4a9b-8623-2ce2b0b0457e)
+					{
+						scaleMode: 1
+					}]
+				children: children_list [
+					GtfLabel(967b6ffa-6f7b-41fb-99a7-47fa7b96e162)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Text"
+						visible: true
+						width: 358
+						height: 100
+						x: -80
+						y: 190
+						text: "add your text here"
+						textColor: #FFFFFFFF
+						font: font_resource(f5ca15db-a6a8-4ca9-8368-df5ea8c0eb6f)
+						{
+							file: "fonts\\PT_Sans.ttf"
+							size: 25
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				name: "Icon"
+				visible: true
+				width: 200
+				height: 200
+				x: 100
+				y: 100
+				image: image_resource(9b305294-4c78-49d0-b936-b18aa2b461b8)
+				{
+					file: "images\\example.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}]
+		name: "Container"
+		visible: true
+		width: 400
+		height: 480
+		x: 0
+		y: 0
+	}
+	x: x@9579db3e-9324-4ef9-ad19-a03491519b67 (propref<int>)
+	text: text@967b6ffa-6f7b-41fb-99a7-47fa7b96e162 (propref<string>)
+}

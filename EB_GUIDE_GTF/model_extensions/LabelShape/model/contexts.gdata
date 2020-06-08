@@ -1,0 +1,11 @@
+EBGUIDE 6.10.0.200602120856;
+
+contexts(e8e5dcb8-b626-41e6-b602-4a4cf0a02d04)
+{
+	items: context_list [
+		context(f58f23b1-01dd-4e40-86a1-e11ce0a8cd4b)
+		{
+			name: "HMI"
+			ownsThread: false
+		}]
+}

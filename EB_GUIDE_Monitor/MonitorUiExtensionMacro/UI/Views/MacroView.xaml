@@ -1,0 +1,44 @@
+﻿<UserControl
+    x:Class="MonitorUiExtensionMacro.UI.Views.MacroView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:tools="http://www.elektrobit.de/Guide/2014/guide"
+    xmlns:viewModels="clr-namespace:MonitorUiExtensionMacro.UI.ViewModels"
+    d:DataContext="{d:DesignInstance d:Type=viewModels:MacroViewModel}"
+    d:DesignHeight="300"
+    d:DesignWidth="300"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <tools:SharedResourceDictionary
+                    Source="pack://application:,,,/Monitor.UI.Shell;component/Ui/Resources.xaml" />
+                <tools:SharedResourceDictionary
+                    Source="pack://application:,,,/Guide.UI.Shell;component/Ui/Resources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <DockPanel
+        LastChildFill="False">
+        <StackPanel
+            DockPanel.Dock="Top"
+            Orientation="Horizontal">
+            <Button
+                Command="{Binding Record}">
+                Run
+            </Button>
+            <Button
+                Command="{Binding Stop}">
+                Stop
+            </Button>
+            <Button
+                Command="{Binding Build}">
+                Build
+            </Button>
+        </StackPanel>
+    </DockPanel>
+</UserControl>
+

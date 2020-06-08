@@ -1,0 +1,47 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(8aa5d387-6509-4603-af23-79df320688be)
+{
+	name: "DynamicImagesView"
+	template: @4ba5e50b-dc6c-4c10-8165-b319a5cef09c (objectref<GtfView_template>)
+	children: children_list [
+		GtfImage(0524cb4a-ae15-4479-bf0d-eb3886b345a7)
+		{
+			features: feature_list [
+				ScaleMode(f362b7f1-e682-441b-8091-efb7694f9c41)
+				{
+					scaleMode: 2
+				}]
+			children: children_list []
+			name: "image"
+			visible: true
+			width: 256
+			height: 256
+			x: 268
+			y: 111
+			image: @6673ecdd-90da-41de-a2c1-99af91d871d4 (objectref<image>)
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	description_text: "This mandelbrot image is calculated by an application continuously."
+	setTitleText: conditional_script(ea472e97-436a-43d3-b97a-7dd58cc687a9)
+	{
+		triggerList: trigger_list(59964d5a-2679-4758-ab33-f8e6d62cc58b)
+		{
+			script: "dp:showcase_title_list" \
+				""
+		}
+		onTrigger: function<bool,bool>(da622e61-1cc5-49bf-9710-c09d42f5cc61)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	v:this.title_text = dp:showcase_title_list[dp:showcase_id_dynamic_image];" \
+				"	false;" \
+				"}"
+		}
+	}
+	title_text: ""
+	next_enabled: true
+	prev_enabled: true
+}

@@ -1,0 +1,97 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(44a166d8-e7f9-4cae-ad01-7d2ec396151a)
+{
+	name: "View 1"
+	template: @d9ee43bd-ee64-4c9f-904a-75cf1fd8f745 (objectref<GtfView_template>)
+	children: children_list [
+		GtfInstantiator(6ede58ce-af4a-4849-91d7-5f13b5ff0e8f)
+		{
+			features: feature_list [
+				LayoutPolicyFlow(a5abdab3-e034-490c-85a0-be898013c070)
+				{
+					horizontalGap: 10
+					verticalGap: 10
+					layoutDirection: 1
+					horizontalChildAlign: 1
+					verticalChildAlign: 0
+				}, 
+				StateFocused(41ac56d1-ea14-4e16-9b27-8a34417b8ef8)
+				{
+					focusable: 3
+					focused: false
+				}, 
+				RandomFocusPolicy(99cf776a-d390-4e8d-a210-e816c4b640e5)
+				{
+				}]
+			children: children_list [
+				GtfRectangle_template_instance(fe39569e-8301-4569-ba7f-34017612677b)
+				{
+					name: "T_FocusableRectangle 1"
+					template: @880b1913-33e4-4201-aab5-5a187b2dce25 (objectref<GtfRectangle_template>)
+					children: children_list []
+					x: 147
+					height: 50
+					width: 50
+					y: 70
+					focused: focused@880b1913-33e4-4201-aab5-5a187b2dce25 (propref<bool>)
+					touchShortReleased: function<bool,int,int,int,int>(a826fb64-095b-4f46-825d-46d61ddc000e)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	f:focusMoveTo(v:this)" \
+							"    false" \
+							"}"
+					}
+				}]
+			name: "Instantiator 1"
+			visible: true
+			width: 278
+			height: 242
+			x: 216
+			y: 142
+			numItems: 20
+			lineMapping: intlist []
+		}, 
+		GtfContainer_template_instance(9112cb16-6b9b-414f-b6e6-bbc1cd48e5e2)
+		{
+			name: "NextButton"
+			template: @6ab593c7-e0c4-4fa3-8950-35d1d85945af (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 562
+			y: 201
+			text: "Next"
+			touchShortReleased: function<bool,int,int,int,int>(177c98c3-833d-4a86-9523-823ae53160f1)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	f:focusNext();" \
+					"    false" \
+					"}"
+			}
+			width: width@6ab593c7-e0c4-4fa3-8950-35d1d85945af (propref<int>)
+			height: height@6ab593c7-e0c4-4fa3-8950-35d1d85945af (propref<int>)
+		}, 
+		GtfContainer_template_instance(f3b21c49-0fa6-4b7c-9990-31fffc54ba2b)
+		{
+			name: "PreviousButton"
+			template: @6ab593c7-e0c4-4fa3-8950-35d1d85945af (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 63
+			y: 200
+			text: "Previous"
+			touchShortReleased: function<bool,int,int,int,int>(2c81d3d3-5a89-4645-b038-4c63b73eeae5)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	f:focusPrevious();" \
+					"    false" \
+					"}"
+			}
+			width: width@6ab593c7-e0c4-4fa3-8950-35d1d85945af (propref<int>)
+			height: height@6ab593c7-e0c4-4fa3-8950-35d1d85945af (propref<int>)
+		}]
+	text: "Focused policy widget feature demo"
+	description: "An HMI model can load EB GUIDE GTF extension example "
+	"text 2": "Move the focus by pressing on Next and Previous or by selecting one element manually."
+}

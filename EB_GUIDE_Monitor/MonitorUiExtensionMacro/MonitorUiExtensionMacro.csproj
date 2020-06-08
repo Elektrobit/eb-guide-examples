@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1ADDA299-AD40-4960-B927-DA81C642C9BD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MonitorUiExtensionMacro</RootNamespace>
+    <AssemblyName>MonitorUiExtensionMacro</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xaml">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MacroService\Delay.cs" />
+    <Compile Include="MacroService\IMacro.cs" />
+    <Compile Include="MacroService\IMacroFactory.cs" />
+    <Compile Include="MacroService\IMacroRecorder.cs" />
+    <Compile Include="MacroService\IMacroToScriptBuilder.cs" />
+    <Compile Include="MacroService\IMacroService.cs" />
+    <Compile Include="MacroService\IMacroRecordSession.cs" />
+    <Compile Include="MacroService\IMacroRecordSessionFactory.cs" />
+    <Compile Include="MacroService\IMacroStep.cs" />
+    <Compile Include="MacroService\MacroDelayStep.cs" />
+    <Compile Include="MacroService\MacroRecorderBase.cs" />
+    <Compile Include="MacroService\MacroService.cs" />
+    <Compile Include="MacroService\MacroRecordSession.cs" />
+    <Compile Include="MacroService\MacroRecordSessionFactory.cs" />
+    <Compile Include="MacroService\Macros\MessageMacro.cs" />
+    <Compile Include="MacroService\Macros\MessageMacroFactory.cs" />
+    <Compile Include="MacroService\Recorders\MessageStep.cs" />
+    <Compile Include="MacroService\Recorders\SentMessageRecorder.cs" />
+    <Compile Include="MacroService\ScriptBuilder\Converters\DelayStepToScriptConverter.cs" />
+    <Compile Include="MacroService\ScriptBuilder\Converters\IMacroStepToScriptConverter.cs" />
+    <Compile Include="MacroService\ScriptBuilder\Converters\IMessageToScriptConverter.cs" />
+    <Compile Include="MacroService\ScriptBuilder\Converters\MacroStepConverterAttribute.cs" />
+    <Compile Include="MacroService\ScriptBuilder\Converters\MessageConverterAttribute.cs" />
+    <Compile Include="MacroService\ScriptBuilder\Converters\MessageConverters\RemoveListItemConverter.cs" />
+    <Compile Include="MacroService\ScriptBuilder\Converters\MessageConverters\WriteListItemConverter.cs" />
+    <Compile Include="MacroService\ScriptBuilder\Converters\MessageConverters\FireEventConverter.cs" />
+    <Compile Include="MacroService\ScriptBuilder\Converters\MessageConverters\InsertListItemConverter.cs" />
+    <Compile Include="MacroService\ScriptBuilder\Converters\MessageConverters\MessageConverterBase.cs" />
+    <Compile Include="MacroService\ScriptBuilder\Converters\MessageStepToScriptConverter.cs" />
+    <Compile Include="MacroService\ScriptBuilder\Converters\MessageConverters\WriteScalarConverter.cs" />
+    <Compile Include="MacroService\ScriptBuilder\ScriptBuilder.cs" />
+    <Compile Include="MacroService\ScriptBuilder\Template\ScriptAction.cs" />
+    <Compile Include="MacroService\ScriptBuilder\Template\MonitorScriptTemplate.cs" />
+    <Compile Include="MacroService\ScriptBuilder\Template\MonitorScriptTemplate1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MonitorScriptTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\ExtensionResourceProvider.cs" />
+    <Compile Include="UI\ViewModels\MacroViewModel.cs" />
+    <Compile Include="UI\ViewModels\MacroViewModelFactory.cs" />
+    <Compile Include="UI\Views\MacroView.xaml.cs">
+      <DependentUpon>MacroView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MacroService\ScriptBuilder\Template\MonitorScriptTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>MonitorScriptTemplate1.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="UI\Resources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </Page>
+    <Page Include="UI\Views\MacroView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Elektrobit.Guide.Monitor.Ui">
+      <Version>$(GuideVersion)</Version>
+      <IncludeAssets>compile</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

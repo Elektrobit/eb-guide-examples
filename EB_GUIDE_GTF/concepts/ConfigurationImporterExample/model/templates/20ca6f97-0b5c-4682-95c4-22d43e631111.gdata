@@ -1,0 +1,29 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfLabel_template(20ca6f97-0b5c-4682-95c4-22d43e631111)
+{
+	name: "ConfigItem"
+	structure: GtfLabel(d0220d84-d4b2-4310-9994-29c8faba0509)
+	{
+		features: feature_list []
+		children: children_list []
+		name: "Label 3"
+		visible: true
+		width: 400
+		height: 96
+		x: 0
+		y: 0
+		text: ""
+		textColor: #FFFFFFFF
+		font: font_resource(ad86920c-bdb8-4d2f-96a1-8aca2ffc529d)
+		{
+			file: "fonts\\PT_Sans.ttf"
+			size: 25
+		}
+		horizontalAlign: 0
+		verticalAlign: 0
+	}
+	x: x@d0220d84-d4b2-4310-9994-29c8faba0509 (propref<int>)
+	y: y@d0220d84-d4b2-4310-9994-29c8faba0509 (propref<int>)
+	text: text@d0220d84-d4b2-4310-9994-29c8faba0509 (propref<string>)
+}

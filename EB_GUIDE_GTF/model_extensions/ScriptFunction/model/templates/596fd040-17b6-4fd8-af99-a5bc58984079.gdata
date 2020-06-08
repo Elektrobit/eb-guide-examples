@@ -1,0 +1,95 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template(596fd040-17b6-4fd8-af99-a5bc58984079)
+{
+	name: "T_BasicView"
+	structure: GtfView(e9c17cd6-a9d3-4290-b4a1-8f4bec3d3dc0)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(e38422ab-5c31-4a22-9ebc-197209ba155f)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfLabel(c1627459-aaae-4a4a-81e9-e0e03fa13369)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Header"
+						visible: true
+						width: width@e9c17cd6-a9d3-4290-b4a1-8f4bec3d3dc0 (propref<int>)
+						height: 50
+						x: 0
+						y: 0
+						text: "<Title>"
+						textColor: #FFFFFFFF
+						font: font_resource(809fb382-f480-4247-b5d5-295726093b34)
+						{
+							file: "fonts/PT_Sans.ttf"
+							size: 35
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfRectangle(d1f55acf-b0a8-404e-b4be-6edebc43c4f4)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Separator"
+						visible: true
+						width: width@e9c17cd6-a9d3-4290-b4a1-8f4bec3d3dc0 (propref<int>)
+						height: 3
+						x: 0
+						y: 50
+						fillColor: #A9A9A9FF
+					}, 
+					GtfLabel(0c68016d-47f7-4b41-aa2f-110a42a8db0c)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Footer"
+						visible: true
+						width: width@e9c17cd6-a9d3-4290-b4a1-8f4bec3d3dc0 (propref<int>)
+						height: 50
+						x: 1
+						y: 430
+						text: "<Text>"
+						textColor: #FFFFFFFF
+						font: font_resource(6faf0703-e448-4cbe-952e-925780a0bdb4)
+						{
+							file: "fonts/PT_Sans.ttf"
+							size: 35
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfRectangle(6bf78a28-7e44-489f-a397-e136c6c83916)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Separator2"
+						visible: true
+						width: width@e9c17cd6-a9d3-4290-b4a1-8f4bec3d3dc0 (propref<int>)
+						height: 2
+						x: 1
+						y: 432
+						fillColor: #A9A9A9FF
+					}]
+				name: "Backgr"
+				visible: true
+				width: width@e9c17cd6-a9d3-4290-b4a1-8f4bec3d3dc0 (propref<int>)
+				height: height@e9c17cd6-a9d3-4290-b4a1-8f4bec3d3dc0 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #383838FF
+			}]
+		name: "View"
+		visible: true
+		width: 800
+		height: 480
+		x: 0
+		y: 0
+	}
+	text: text@c1627459-aaae-4a4a-81e9-e0e03fa13369 (propref<string>)
+	"text 2": text@0c68016d-47f7-4b41-aa2f-110a42a8db0c (propref<string>)
+}

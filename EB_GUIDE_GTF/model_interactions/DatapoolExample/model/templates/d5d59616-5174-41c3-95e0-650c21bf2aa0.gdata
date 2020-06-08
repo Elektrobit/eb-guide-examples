@@ -1,0 +1,96 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template(d5d59616-5174-41c3-95e0-650c21bf2aa0)
+{
+	name: "T_BasicView"
+	structure: GtfView(57e38a59-6f6e-44e1-ae4b-8517cb2f2fca)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(4f42e958-7f2c-4c9c-b0b5-b9c6ac7eb914)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfLabel(4e4e7e1c-0f07-4dc4-aa0b-44046cf57948)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Title"
+						visible: true
+						width: width@57e38a59-6f6e-44e1-ae4b-8517cb2f2fca (propref<int>)
+						height: 65
+						x: 0
+						y: 0
+						text: "<Title>"
+						textColor: #C0C0C0FF
+						font: font_resource(5165f3f9-f38b-438e-b505-c7980eb13c46)
+						{
+							file: "fonts/PT_Sans.ttf"
+							size: 25
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfRectangle(3b736a54-ed04-47d8-a733-3592af0de1eb)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Separator"
+						visible: true
+						width: width@57e38a59-6f6e-44e1-ae4b-8517cb2f2fca (propref<int>)
+						height: 3
+						x: 4
+						y: 68
+						fillColor: #A9A9A9FF
+					}, 
+					GtfRectangle(a60442c2-ef43-4307-8a55-5e6ec47cf5d1)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "bottomSeparator"
+						visible: true
+						width: width@57e38a59-6f6e-44e1-ae4b-8517cb2f2fca (propref<int>)
+						height: 3
+						x: 4
+						y: 410
+						fillColor: #A9A9A9FF
+					}, 
+					GtfLabel(b13a675b-a5d7-40fd-bd8f-d264a1f80831)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "bottom"
+						visible: true
+						width: width@57e38a59-6f6e-44e1-ae4b-8517cb2f2fca (propref<int>)
+						height: 61
+						x: 0
+						y: 417
+						text: bottom_text@b13a675b-a5d7-40fd-bd8f-d264a1f80831 (propref<string>)
+						textColor: #C0C0C0FF
+						font: font_resource(ae85b2f2-27f2-4fd6-8cff-11fcf690f412)
+						{
+							file: "fonts/PT_Sans.ttf"
+							size: 25
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+						bottom_text: "<description>"
+					}]
+				name: "Rectangle 1"
+				visible: true
+				width: width@57e38a59-6f6e-44e1-ae4b-8517cb2f2fca (propref<int>)
+				height: height@57e38a59-6f6e-44e1-ae4b-8517cb2f2fca (propref<int>)
+				x: 1
+				y: 0
+				fillColor: #38383BFF
+			}]
+		name: "View 1"
+		visible: true
+		width: 800
+		height: 480
+		x: 0
+		y: 0
+	}
+	text: text@4e4e7e1c-0f07-4dc4-aa0b-44046cf57948 (propref<string>)
+	bottom_text: bottom_text@b13a675b-a5d7-40fd-bd8f-d264a1f80831 (propref<string>)
+}

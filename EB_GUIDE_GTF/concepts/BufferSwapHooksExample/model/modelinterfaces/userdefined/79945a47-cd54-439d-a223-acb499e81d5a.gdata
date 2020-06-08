@@ -1,0 +1,9 @@
+EBGUIDE 6.10.0.200602120856;
+
+model_interface(79945a47-cd54-439d-a223-acb499e81d5a)
+{
+	name: "BufferSwapHooksExample"
+	color: #00D6DEFF
+	dp_items: dp_item_refs []
+	events: event_refs []
+}

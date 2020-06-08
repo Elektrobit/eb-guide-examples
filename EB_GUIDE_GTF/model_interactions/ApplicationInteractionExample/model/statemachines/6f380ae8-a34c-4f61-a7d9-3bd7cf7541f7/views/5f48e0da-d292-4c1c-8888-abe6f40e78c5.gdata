@@ -1,0 +1,298 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(5f48e0da-d292-4c1c-8888-abe6f40e78c5)
+{
+	name: "DatapoolUpdatesView"
+	template: @4ba5e50b-dc6c-4c10-8165-b319a5cef09c (objectref<GtfView_template>)
+	children: children_list [
+		GtfRectangle(b92cf423-f7cf-4647-a5ac-a1b86d7caa39)
+		{
+			features: feature_list [
+				Border(7072d1a9-4ae8-4ca7-ab9a-1e05dd6f0d36)
+				{
+					borderThickness: 2
+					borderColor: #282626F5
+					borderStyle: 0
+				}]
+			children: children_list [
+				GtfLabel(5e160a17-5068-4a53-930d-8bc33f9e9bf1)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "name"
+					visible: true
+					width: width@b92cf423-f7cf-4647-a5ac-a1b86d7caa39 (propref<int>)
+					height: 50
+					x: 0
+					y: 0
+					text: "HMI"
+					textColor: #404040F5
+					font: font_resource(24a0f485-4051-49fd-8914-88317f31c078)
+					{
+						file: "fonts/PT_Sans.ttf"
+						size: 23
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(289c7edf-2301-4240-9595-f2b5a6b88e1e)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "bool"
+					visible: true
+					width: 169
+					height: 30
+					x: 30
+					y: 50
+					text: "Boolean: False"
+					textColor: #000000FF
+					font: font_resource(1789b556-1f3f-42c5-bea9-1f4097306d62)
+					{
+						file: "fonts/PT_Sans.ttf"
+						size: 23
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+					setText: conditional_script(bef5612f-8f25-461a-b870-a31aabf48672)
+					{
+						triggerList: trigger_list(f155966b-d3dc-424d-97ea-2e02a7aef361)
+						{
+							script: "dp:dpUpdatesBoolIn" \
+								""
+						}
+						onTrigger: function<bool,bool>(b338e784-92c0-4985-beb9-4ff2d0323099)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	if(dp:dpUpdatesBoolIn == true)" \
+								"	{" \
+								"		v:this.text = \"Boolean: True\";" \
+								"	}" \
+								"	else" \
+								"	{" \
+								"		v:this.text = \"Boolean: False\";" \
+								"	}" \
+								"	" \
+								"	false;" \
+								"}"
+						}
+					}
+				}, 
+				GtfLabel(ca6471eb-5529-4a8a-bf25-a8f6215e053e)
+				{
+					features: feature_list [
+						TextTruncation(2d7cb85d-668b-4a7d-aa6c-af7186518678)
+						{
+							truncationSymbol: "..."
+							truncationPolicy: 1
+						}]
+					children: children_list []
+					name: "integer"
+					visible: true
+					width: 150
+					height: 30
+					x: 210
+					y: 50
+					text: "Integer: 0"
+					textColor: #000000FF
+					font: font_resource(a1bc725f-e224-4bc3-9a55-de0c66b14228)
+					{
+						file: "fonts/PT_Sans.ttf"
+						size: 23
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+					setText: conditional_script(398655a3-3d4b-491f-a154-75fc7fc8e87e)
+					{
+						triggerList: trigger_list(f03c76f0-7fdb-4df1-824b-456579c8e875)
+						{
+							script: "dp:dpUpdatesInt32In" \
+								""
+						}
+						onTrigger: function<bool,bool>(d66eec6f-e16d-4e53-b4d8-b59baae097ae)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this.text = \"Integer: \" + f:int2string(dp:dpUpdatesInt32In);" \
+								"	" \
+								"	false;" \
+								"}"
+						}
+					}
+				}, 
+				GtfLabel(ea4662eb-7f00-45c0-b395-45ff137f19ea)
+				{
+					features: feature_list [
+						TextTruncation(376b0ebb-71c3-46a2-b51d-66969516bccf)
+						{
+							truncationSymbol: "..."
+							truncationPolicy: 1
+						}]
+					children: children_list []
+					name: "string"
+					visible: true
+					width: 167
+					height: 30
+					x: 390
+					y: 50
+					text: "String: "
+					textColor: #000000FF
+					font: font_resource(37d83488-2ce8-45c3-b8d5-6f352a696d10)
+					{
+						file: "fonts/PT_Sans.ttf"
+						size: 23
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+					setText: conditional_script(6fa4d017-3dbd-4878-9e42-3f2244d11203)
+					{
+						triggerList: trigger_list(a8e550b6-a8b9-4ac1-b282-a4d9ff8875ad)
+						{
+							script: "dp:dpUpdatesStringIn" \
+								""
+						}
+						onTrigger: function<bool,bool>(be27e8b5-bb58-485f-bdc3-cb069cbf59bc)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this.text = \"String: \" + dp:dpUpdatesStringIn;" \
+								"	" \
+								"	false;" \
+								"}"
+						}
+					}
+				}]
+			name: "hmi"
+			visible: true
+			width: 550
+			height: 90
+			x: 120
+			y: 120
+			fillColor: #A9A9A9FF
+		}, 
+		GtfImage(e707dcc5-a3ce-486b-aaff-bda860e5ee5f)
+		{
+			features: feature_list [
+				ScaleMode(4b63df7f-14b7-4560-b898-4ff73ee14756)
+				{
+					scaleMode: 2
+				}]
+			children: children_list []
+			name: "arrow 1"
+			visible: true
+			width: 110
+			height: 110
+			x: 169
+			y: 217
+			image: image_resource(f3f5dd8d-bc01-4e63-8338-250f1b728dc6)
+			{
+				file: "images/app_dp.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(34d083e1-54c4-417b-9fb8-4da965d14f83)
+		{
+			features: feature_list [
+				ScaleMode(2d0beec9-555a-40f5-bc71-83661ece9924)
+				{
+					scaleMode: 2
+				}]
+			children: children_list []
+			name: "arrow 2"
+			visible: true
+			width: 110
+			height: 110
+			x: 334
+			y: 217
+			image: image_resource(378c812a-cee3-45de-86d2-3e9074bb808f)
+			{
+				file: "images/app_dp.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(8e065208-622c-467c-becf-69dd111041f5)
+		{
+			features: feature_list [
+				ScaleMode(19eb2de8-7ce0-4ae8-8f61-75f3713e07a2)
+				{
+					scaleMode: 2
+				}]
+			children: children_list []
+			name: "arrow 3"
+			visible: true
+			width: 110
+			height: 110
+			x: 501
+			y: 217
+			image: image_resource(29328190-4112-4c76-bbd6-a76ba2c6a003)
+			{
+				file: "images/app_dp.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfRectangle(31d9438f-7639-4c1e-a908-c4d15fd21bba)
+		{
+			features: feature_list [
+				Border(479ce12e-397d-46b7-bd0a-1ad4d9b81eba)
+				{
+					borderThickness: 2
+					borderColor: #282626F5
+					borderStyle: 0
+				}]
+			children: children_list [
+				GtfLabel(10dcb6dd-78c1-42f6-bbc1-539a3c590efa)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "name"
+					visible: true
+					width: width@31d9438f-7639-4c1e-a908-c4d15fd21bba (propref<int>)
+					height: height@31d9438f-7639-4c1e-a908-c4d15fd21bba (propref<int>)
+					x: 0
+					y: 0
+					text: "Application"
+					textColor: #404040FF
+					font: font_resource(d3b62e5b-522f-463c-a88c-9d3c614f6cd7)
+					{
+						file: "fonts/PT_Sans.ttf"
+						size: 23
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "app"
+			visible: true
+			width: 550
+			height: 50
+			x: 120
+			y: 330
+			fillColor: #A9A9A9FF
+		}]
+	setTitleText: conditional_script(eef9950e-345f-4484-bf97-4f5a49c0f412)
+	{
+		triggerList: trigger_list(8f3f4709-1f2e-4877-84a8-7eadc3f40a7c)
+		{
+			script: "dp:showcase_title_list" \
+				""
+		}
+		onTrigger: function<bool,bool>(418498fa-4f77-4829-8d29-44523285d96e)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	v:this.title_text = dp:showcase_title_list[dp:showcase_id_datapool_updates];" \
+				"	false;" \
+				"}"
+		}
+	}
+	description_text: "These values are automatically updated by an application."
+	title_text: ""
+	next_enabled: true
+	prev_enabled: true
+}

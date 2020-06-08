@@ -1,0 +1,374 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(a1ef1bb8-5526-44da-be69-b4bd2ed301f3)
+{
+	name: "Homescreen"
+	template: @d5d59616-5174-41c3-95e0-650c21bf2aa0 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer(4b5eba1f-2c12-46b1-8c48-fecba42c9eb4)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(61824b4a-3360-40d0-ad89-c866ab3859e1)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "SentValue"
+					visible: true
+					width: width@4b5eba1f-2c12-46b1-8c48-fecba42c9eb4 (propref<int>)
+					height: 75
+					x: -4
+					y: 16
+					text: "Send value to Application:"
+					textColor: #FFFFFFFF
+					font: font_resource(bb2a1e5c-6e0d-40ee-a7be-99d0869f9a9d)
+					{
+						file: "fonts\\PT_Sans.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(b1f94a67-ee62-43d8-9488-e8da8afc1f8f)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "value"
+					visible: true
+					width: 170
+					height: 66
+					x: 77
+					y: 58
+					text: "label"
+					textColor: #FFFFFFFF
+					font: font_resource(a195dcb8-e46f-469e-99a3-c4318079cf4a)
+					{
+						file: "fonts\\PT_Sans.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+					update_value: conditional_script(6458eb4f-9521-47c3-836a-ea24c5d861c1)
+					{
+						triggerList: trigger_list(25e51414-334b-40f6-9e65-376c710987ac)
+						{
+							script: "dp:mySentValue" \
+								""
+						}
+						onTrigger: function<bool,bool>(6da73114-3596-4ecb-84fa-ea95bbd0e747)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this.text = f:int2string (dp:mySentValue)" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfRectangle_template_instance(c1726512-eae7-41fd-a169-66635173cf6d)
+				{
+					name: "IncreaseButton"
+					template: @0d87f242-dbbe-451f-b029-3d13688d6ac1 (objectref<GtfRectangle_template>)
+					children: children_list []
+					height: 30
+					width: 55
+					x: 175
+					y: 114
+					text: "+"
+					touchPressed: function<bool,int,int,int,int>(16c21614-49ec-498d-9c3e-2f57e70cd283)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:mySentValue+=1;" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfRectangle_template_instance(fab4a750-365f-4af2-9c22-180e884e965f)
+				{
+					name: "DecreaseButton"
+					template: @0d87f242-dbbe-451f-b029-3d13688d6ac1 (objectref<GtfRectangle_template>)
+					children: children_list []
+					height: 30
+					width: 55
+					x: 93
+					y: 114
+					text: "-"
+					touchPressed: function<bool,int,int,int,int>(bd439a62-548e-4a5d-9721-4cb40fe20824)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(dp:mySentValue > 0 )" \
+							"	{" \
+							"		dp:mySentValue -= 1;" \
+							"	}" \
+							"    false" \
+							"}"
+					}
+				}]
+			name: "LocalValue"
+			visible: true
+			width: 361
+			height: 171
+			x: 3
+			y: 69
+		}, 
+		GtfContainer(57573c2a-abed-44aa-a20e-10f84148b649)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(8cea6dea-3249-4010-8b3f-08fff2ec1699)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "ReceivedValue"
+					visible: true
+					width: width@57573c2a-abed-44aa-a20e-10f84148b649 (propref<int>)
+					height: 67
+					x: -59
+					y: 8
+					text: "Received value from Application:"
+					textColor: #FFFFFFFF
+					font: font_resource(f2a72c73-b929-426c-8f99-a4e1f23f9f6b)
+					{
+						file: "fonts\\PT_Sans.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(ac693160-d25e-4f94-a890-2d73cc35797d)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "value"
+					visible: true
+					width: 170
+					height: 65
+					x: 40
+					y: 48
+					text: "label"
+					textColor: #FFFFFFFF
+					font: font_resource(73e9a75a-0838-49f2-90b2-fd35b566f834)
+					{
+						file: "fonts\\PT_Sans.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+					update_value: conditional_script(b95954d7-90d0-4cf1-9189-18c716ecc684)
+					{
+						triggerList: trigger_list(85545136-786d-481a-bcfa-84758b3ecbac)
+						{
+							script: "dp:myResponseValue" \
+								""
+						}
+						onTrigger: function<bool,bool>(ee7e455e-91dd-45bd-8443-2b29550315a1)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this.text = f:int2string (dp:myResponseValue)" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "ApplicationValue"
+			visible: true
+			width: 435
+			height: 147
+			x: 423
+			y: 81
+		}, 
+		GtfContainer(bfd96459-f1b2-4851-a963-fad417888346)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle_template_instance(ebe977b4-01cd-435a-9305-e5b18d2a0b9c)
+				{
+					name: "T_BasicButton 1"
+					template: @0d87f242-dbbe-451f-b029-3d13688d6ac1 (objectref<GtfRectangle_template>)
+					children: children_list []
+					height: 41
+					width: 183
+					x: 60
+					y: -10
+					text: "Add to list"
+					touchPressed: function<bool,int,int,int,int>(a1cba5b9-b88e-4f1e-b19c-5c74e2c774d9)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"   	let v:i=0 in" \
+							"	{" \
+							"		while (v:i<length dp:mySentList)" \
+							"		{" \
+							"			if(dp:mySentList[v:i] == 0)" \
+							"			{" \
+							"				dp:mySentList[v:i] = dp:mySentValue		" \
+							"				v:i = length dp:mySentList				" \
+							"			}" \
+							"			" \
+							"			v:i+=1;" \
+							"		}" \
+							"	}	" \
+							"	false	" \
+							"}"
+					}
+				}, 
+				GtfLabel(6f54ff8b-64c5-4364-b57e-967b75aff839)
+				{
+					features: feature_list [
+						MultiLine(ce9c1575-969c-4e52-a7f7-bbb35318ac72)
+						{
+							lineOffset: 0
+							maxLineCount: 0
+						}, 
+						TextTruncation(8ddd966e-e663-40d0-a179-3573a5aeb919)
+						{
+							truncationSymbol: "..."
+							truncationPolicy: 1
+						}]
+					children: children_list []
+					name: "ListElements"
+					visible: true
+					width: width@bfd96459-f1b2-4851-a963-fad417888346 (propref<int>)
+					height: 114
+					x: 4
+					y: 30
+					text: ""
+					textColor: #FFFFFFFF
+					font: font_resource(07915415-5ced-4fc3-be1b-e3711886cda4)
+					{
+						file: "fonts\\PT_Sans.ttf"
+						size: 25
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+					set_text: conditional_script(0e9a05ea-d95e-4985-a5fc-68be64bddc1a)
+					{
+						triggerList: trigger_list(a995c8f6-d5ed-4550-b78f-5fb70c452f67)
+						{
+							script: "dp:mySentList" \
+								""
+						}
+						onTrigger: function<bool,bool>(25117d0c-737e-4bbb-9f5f-537ad96c43a9)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"		v:this.text=\"\"; " \
+								"	" \
+								"	let v:i = 0 in" \
+								"	{" \
+								"		while (v:i< length dp:mySentList)" \
+								"		{" \
+								"			if(dp:mySentList[v:i] != 0 )" \
+								"			{" \
+								"				v:this.text += f:int2string(dp:mySentList[v:i]) + \", \" " \
+								"			}" \
+								"			v:i+=1;" \
+								"		}" \
+								"	}" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "LocalListValue"
+			visible: true
+			width: 308
+			height: 153
+			x: 16
+			y: 258
+		}, 
+		GtfContainer(bd3a6784-0251-414c-abb8-1b34c7b9305b)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(e8eca5d3-6823-4f87-b448-a0376bb08ee8)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "GtfDescription"
+					visible: true
+					width: width@bd3a6784-0251-414c-abb8-1b34c7b9305b (propref<int>)
+					height: 48
+					x: -59
+					y: -10
+					text: "Doubled values by Application:"
+					textColor: #FFFFFFFF
+					font: font_resource(ee889248-5281-4040-b9d5-6efaa60619ec)
+					{
+						file: "fonts\\PT_Sans.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(3de02a6f-8d24-4a1f-958f-ccd253cfba4b)
+				{
+					features: feature_list [
+						MultiLine(a0eaaa44-7a83-49b5-ac79-d550bd067aca)
+						{
+							lineOffset: 0
+							maxLineCount: 0
+						}, 
+						TextTruncation(dd035b22-43cf-41b0-a7d5-8486f67c7b74)
+						{
+							truncationSymbol: "..."
+							truncationPolicy: 1
+						}]
+					children: children_list []
+					name: "GtfListElements"
+					visible: true
+					width: width@bfd96459-f1b2-4851-a963-fad417888346 (propref<int>)
+					height: height@6f54ff8b-64c5-4364-b57e-967b75aff839 (propref<int>)
+					x: -20
+					y: 30
+					text: ""
+					textColor: #FFFFFFFF
+					font: font_resource(1c8c53d4-7b6d-4962-9879-0e8681e159d1)
+					{
+						file: "fonts\\PT_Sans.ttf"
+						size: 25
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+					set_text: conditional_script(52dfe38c-5d5e-474a-8266-1e0393433459)
+					{
+						triggerList: trigger_list(17cea8c5-3022-4373-9416-1c5499dc15aa)
+						{
+							script: "dp:myResponseList" \
+								""
+						}
+						onTrigger: function<bool,bool>(b2e6c75c-dae2-4e7b-84a5-f2619b3963d1)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"			v:this.text=\"\"; " \
+								"	" \
+								"	let v:i = 0 in" \
+								"	{" \
+								"		while (v:i< length dp:myResponseList)" \
+								"		{" \
+								"			if(dp:myResponseList[v:i] != 0 )" \
+								"			{" \
+								"				v:this.text += f:int2string(dp:myResponseList[v:i]) + \", \" " \
+								"			}" \
+								"			v:i+=1;" \
+								"		}" \
+								"	}" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "ApplicationListValue"
+			visible: true
+			width: 418
+			height: 153
+			x: x@57573c2a-abed-44aa-a20e-10f84148b649 (propref<int>)
+			y: y@bfd96459-f1b2-4851-a963-fad417888346 (propref<int>)
+		}]
+	text: "DatapoolPlugin"
+	bottom_text: "Control the value from \"-\", \"+\" and \"Add to list\" options.   "
+}

@@ -1,0 +1,35 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(6a626597-78a8-49d7-a591-14b29c5ec41f)
+{
+	name: "HomeView"
+	template: @bad749ae-e164-4670-bd0b-647bce039801 (objectref<GtfView_template>)
+	children: children_list []
+	title_text: "Application interaction demo"
+	button_icon_li: imagelist [
+		image_resource(7ae9a1e6-69f1-4a27-b356-34c1921c40cc)
+		{
+			file: "images/icon_events.png"
+		}, 
+		image_resource(4c3b84a6-b54a-4f09-850c-766bf5b1a681)
+		{
+			file: "images/icon_dp.png"
+		}, 
+		image_resource(54792a23-db4a-410c-8d46-8b6ae73d9260)
+		{
+			file: "images/icon_datapool_items.png"
+		}, 
+		image_resource(fb7a45af-c6a6-45db-a74d-e1538b4a71a1)
+		{
+			file: "images/icon_external_image.png"
+		}, 
+		image_resource(81343138-0d49-40d8-a445-1a5bde86790c)
+		{
+			file: "images/icon_mandelbrot.png"
+		}, 
+		image_resource(4bfda2e7-e10d-4e64-82c3-2bc5a725b764)
+		{
+			file: "images/icon_windowed_list.png"
+		}]
+	button_desc_li: stringlist ["Communication via events", "Communication via datapool", "Updating datapool items", "Static images", "Dynamic images", "Windowed list"]
+}

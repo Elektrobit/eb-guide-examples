@@ -1,0 +1,203 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(b5a23149-f790-43bd-ab21-8335ef9d4538)
+{
+	name: "DatapoolInteractionView"
+	template: @4ba5e50b-dc6c-4c10-8165-b319a5cef09c (objectref<GtfView_template>)
+	children: children_list [
+		GtfRectangle(c984bf32-4f43-447c-8697-286828e16125)
+		{
+			features: feature_list [
+				Border(8d10043a-4240-45f8-8c7f-e5e410b532b8)
+				{
+					borderThickness: 2
+					borderColor: #282626F5
+					borderStyle: 0
+				}]
+			children: children_list [
+				GtfLabel(83237d6d-bca5-4c4a-a994-22f954528bb9)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "name"
+					visible: true
+					width: width@c984bf32-4f43-447c-8697-286828e16125 (propref<int>)
+					height: 50
+					x: 0
+					y: 0
+					text: "HMI"
+					textColor: #404040FF
+					font: font_resource(ba7d34e0-6715-484e-976a-ea16f088b9b9)
+					{
+						file: "fonts/PT_Sans.ttf"
+						size: 23
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfRectangle_template_instance(cbf17870-248d-4f53-91ef-03a06009a850)
+				{
+					name: "trigger button"
+					template: @7e16277d-99a1-41b2-99fc-ddee370c1aa3 (objectref<GtfRectangle_template>)
+					children: children_list []
+					y: 40
+					x: 20
+					touchShortReleased: function<bool,int,int,int,int>(e6fa2cb0-e855-43c1-b1a1-b7886a1e721a)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:dpInterplayCurrent += 1;" \
+							"	dp:dpInterplayOut = dp:dpInterplayCurrent;" \
+							"	" \
+							"    false;" \
+							"}"
+					}
+					button_text: button_text@7e16277d-99a1-41b2-99fc-ddee370c1aa3 (propref<string>)
+					width: width@7e16277d-99a1-41b2-99fc-ddee370c1aa3 (propref<int>)
+					height: height@7e16277d-99a1-41b2-99fc-ddee370c1aa3 (propref<int>)
+					touched: touched@7e16277d-99a1-41b2-99fc-ddee370c1aa3 (propref<bool>)
+					enabled: enabled@7e16277d-99a1-41b2-99fc-ddee370c1aa3 (propref<bool>)
+					setText: conditional_script(f00bd393-7772-4ede-b0cd-fd4cedc717dd)
+					{
+						triggerList: trigger_list(46760a52-15ce-4393-84e1-59957813f8c5)
+						{
+							script: "dp:dpInterplayCurrent" \
+								""
+						}
+						onTrigger: function<bool,bool>(a699433f-785c-422d-9bb4-dcc5cd364374)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this.button_text = \"Send: \" + f:int2string(dp:dpInterplayCurrent);" \
+								"	" \
+								"	false;" \
+								"}"
+						}
+					}
+				}, 
+				GtfLabel(821bc075-faa7-47d7-a647-877b0760237d)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "in"
+					visible: true
+					width: 100
+					height: 30
+					x: 335
+					y: 45
+					text: "label"
+					textColor: #000000FF
+					font: font_resource(8d080bed-db1a-4092-a344-a12d36c023bd)
+					{
+						file: "fonts/PT_Sans.ttf"
+						size: 20
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+					setText: conditional_script(3a92decb-8b9b-45f2-b147-63b1ba9f2baf)
+					{
+						triggerList: trigger_list(a59c5289-d112-4c55-b7d5-e444e98af2de)
+						{
+							script: "dp:dpInterplayIn" \
+								""
+						}
+						onTrigger: function<bool,bool>(d0e1a542-59c5-40e7-af31-5c760f9650ba)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this.text = \"Got: \" + f:int2string(dp:dpInterplayIn);" \
+								"	" \
+								"	false;" \
+								"}"
+						}
+					}
+				}]
+			name: "hmi"
+			visible: true
+			width: 466
+			height: 90
+			x: 171
+			y: 120
+			fillColor: #808080FF
+		}, 
+		GtfImage(aaec7304-d528-499e-90be-959f7426da5b)
+		{
+			features: feature_list [
+				ScaleMode(013acbc5-315b-4f70-94c2-545e2ec63de9)
+				{
+					scaleMode: 2
+				}]
+			children: children_list []
+			name: "bg"
+			visible: true
+			width: 400
+			height: 98
+			x: 205
+			y: 220
+			image: image_resource(0f1515e4-6f1c-45ef-99dc-7702f01e624d)
+			{
+				file: "images/interaction_dp.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfRectangle(e6236742-4e9d-45e3-bcdb-9e06369e3531)
+		{
+			features: feature_list [
+				Border(6ca02cc5-4378-44c7-b3a4-16c59c5e103b)
+				{
+					borderThickness: 2
+					borderColor: #282626FF
+					borderStyle: 0
+				}]
+			children: children_list [
+				GtfLabel(c8da2569-25bb-44f3-b520-91f76e3b6456)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "name"
+					visible: true
+					width: width@e6236742-4e9d-45e3-bcdb-9e06369e3531 (propref<int>)
+					height: height@e6236742-4e9d-45e3-bcdb-9e06369e3531 (propref<int>)
+					x: 0
+					y: 0
+					text: "Application"
+					textColor: #404040F5
+					font: font_resource(4e06576a-b30e-4108-b939-4ca69792fb22)
+					{
+						file: "fonts/PT_Sans.ttf"
+						size: 23
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "app"
+			visible: true
+			width: 466
+			height: 50
+			x: 171
+			y: 330
+			fillColor: #808080FF
+		}]
+	setTitleText: conditional_script(425f1944-9573-4ebb-b1c1-6b6a6f9f07c4)
+	{
+		triggerList: trigger_list(7a9589c7-7782-47a7-9afc-3fbcbd6449af)
+		{
+			script: "dp:showcase_title_list" \
+				""
+		}
+		onTrigger: function<bool,bool>(a879c191-b9fd-4845-8001-baa3a5638e4c)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	v:this.title_text = dp:showcase_title_list[dp:showcase_id_datapool];" \
+				"	false;" \
+				"}"
+		}
+	}
+	description_text: "Press 'Send' to notify the app using a datapool item."
+	title_text: ""
+	next_enabled: true
+	prev_enabled: true
+}

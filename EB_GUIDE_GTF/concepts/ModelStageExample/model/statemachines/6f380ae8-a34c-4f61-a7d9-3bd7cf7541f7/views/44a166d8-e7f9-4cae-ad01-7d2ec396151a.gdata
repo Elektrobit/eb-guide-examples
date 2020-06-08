@@ -1,0 +1,35 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(44a166d8-e7f9-4cae-ad01-7d2ec396151a)
+{
+	name: "Homescreen"
+	template: @d9ee43bd-ee64-4c9f-904a-75cf1fd8f745 (objectref<GtfView_template>)
+	children: children_list [
+		GtfLabel(51dc5609-9214-47d8-b6f8-9ddee28a2428)
+		{
+			features: feature_list [
+				MultiLine(4a765bef-3863-4c86-953b-97cfc8ee393d)
+				{
+					lineOffset: 0
+					maxLineCount: 0
+				}]
+			children: children_list []
+			name: "Label 1"
+			visible: true
+			width: 776
+			height: 167
+			x: 12
+			y: 151
+			text: "You have started the model life cycle application model! "
+			textColor: #FFFFFFFF
+			font: font_resource(484077d5-731c-4409-991b-eea98afd48fe)
+			{
+				file: "fonts\\PT_Sans.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}]
+	text: "Model lifecycle demo"
+	description: "The HMI prints stage information as they are loaded."
+}

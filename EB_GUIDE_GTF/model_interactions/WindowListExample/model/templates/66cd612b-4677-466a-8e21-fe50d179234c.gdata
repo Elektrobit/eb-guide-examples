@@ -1,0 +1,360 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(66cd612b-4677-466a-8e21-fe50d179234c)
+{
+	name: "T_ScollList"
+	structure: GtfContainer(e06b9ddc-c295-4e76-acfd-52cf6d8773ec)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfInstantiator(533d280b-846a-4117-b71a-9e4eef22a816)
+			{
+				features: feature_list [
+					TouchPressed(4cc27b2b-77de-4f0c-ad24-b864b2119520)
+					{
+						touchPressed: function<bool,int,int,int,int>(e3e61d7c-3202-4196-a149-57acd7fe3808)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{   " \
+								"    if(v:fingerId == 0)" \
+								"    {" \
+								"    	" \
+								"	    v:this.touched = true" \
+								"	    v:this.wasMoved = false" \
+								"	    if(v:this.layoutDirection == 0)" \
+								"	    {" \
+								"	    	v:this.touchPosition = f:transformToWidgetX(v:this,v:x,v:y)" \
+								"	    }" \
+								"	    else" \
+								"	    {" \
+								"	    	v:this.touchPosition = f:transformToWidgetY(v:this,v:x,v:y)" \
+								"	    }" \
+								"	    v:this.scrollOffsetRebase = !v:this.scrollOffsetRebase" \
+								"    }" \
+								"    " \
+								"    //consume touch if this was moved" \
+								"   v:this.wasMoved" \
+								"   " \
+								"  " \
+								" " \
+								"}"
+						}
+					}, 
+					TouchShortReleased(c4e2bbf7-3f07-4e7e-8c26-2b3a7ac48e73)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(83fe18ce-5b5d-4b44-8465-51a1651c0d15)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	" \
+								"    if(v:fingerId == 0)" \
+								"    {" \
+								"    	v:this.touched = false" \
+								"    }" \
+								"    " \
+								"    //consume touch if this was moved" \
+								"  v:this.wasMoved" \
+								"" \
+								"    " \
+								"}"
+						}
+					}, 
+					TouchMove(05dca582-b72b-40a1-aad2-d1bd892fa9a3)
+					{
+						touchMoved: function<bool,int,int,int,int>(f5fe5bca-ff32-4dfb-94be-40c587fac1cb)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	" \
+								"    if(v:this.touched && v:fingerId == 0)" \
+								"	{" \
+								"	" \
+								"		let v:moved = 0" \
+								"			v:newScrollOffset = 0" \
+								"			v:newTouch = 0" \
+								"		in" \
+								"		{" \
+								"			if(v:this.layoutDirection == 0)" \
+								"			{" \
+								"				let v:localX = f:transformToWidgetX(v:this,v:x,v:y)" \
+								"				in" \
+								"				{" \
+								"					v:moved = v:localX - v:this.touchPosition" \
+								"					v:newTouch = v:localX" \
+								"				}" \
+								"			}" \
+								"			else" \
+								"			{" \
+								"				let v:localY = f:transformToWidgetY(v:this,v:x,v:y)" \
+								"				in" \
+								"				{" \
+								"					v:moved = v:localY - v:this.touchPosition" \
+								"					v:newTouch = v:localY	" \
+								"				}" \
+								"			}" \
+								"			" \
+								"			if((f:abs(v:moved) > v:this.moveThreshold || v:this.wasMoved))" \
+								"			{" \
+								"				v:this.scrollOffset -= v:moved " \
+								"				v:this.touchMoveDistance += v:moved" \
+								"				v:this.touchPosition = v:newTouch" \
+								"				v:this.wasMoved = true" \
+								"			}" \
+								"		}" \
+								"		" \
+								"	}" \
+								"	" \
+								"	//consume touch if this was moved" \
+								"	v:this.wasMoved" \
+								"	" \
+								"" \
+								"}"
+						}
+					}, 
+					StateTouched(c81ddfca-b678-45f6-93cd-aa0006beff2c)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 1
+						touchBehavior: 0
+					}, 
+					ViewPort(585ebb1e-6dcd-4569-9242-1a4348fdf176)
+					{
+						xOffset: 0
+						yOffset: 0
+					}, 
+					LayoutPolicyList(2ee107df-9ee2-4efd-8b45-1742d9445ff2)
+					{
+						layoutDirection: 1
+						scrollOffset: 0
+						scrollOffsetRebase: false
+						firstListIndex: 0
+						scrollIndex: 0
+						scrollValue: 0
+						scrollValueMax: 0
+						scrollValueMin: 0
+						bounceValue: 0
+						bounceValueMax: 0
+						segments: 1
+						listLength: 0
+						wrapAround: false
+					}]
+				children: children_list [
+					GtfContainer(d09c31b5-f150-4270-b6f8-e4d15b5faef4)
+					{
+						features: feature_list [
+							TouchPressed(3f218f0d-2579-45b7-a921-c9fe6ced1b1f)
+							{
+								touchPressed: function<bool,int,int,int,int>(89fc5a36-d5b2-4e0c-843e-cb41dcb8f488)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"    false" \
+										"}"
+								}
+							}, 
+							TouchShortReleased(bbcb2ed0-fd81-4104-92fd-87e104d25ec6)
+							{
+								touchShortReleased: function<bool,int,int,int,int>(75f8d04e-50c1-4eaa-9b07-5e0d193e361f)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"    false" \
+										"}"
+								}
+							}, 
+							TouchMove(a2ddabd4-e19a-4478-bb29-279a280a70af)
+							{
+								touchMoved: function<bool,int,int,int,int>(9659a7d2-446d-45df-b9b6-29ea148eda4e)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"	v:this->^.touchMoved(v:touchId,v:x,v:y,v:fingerId);" \
+										"    true;" \
+										"}"
+								}
+							}, 
+							StateTouched(9ed383ee-6b3c-4ba4-84d9-53f415ac0d81)
+							{
+								touchable: true
+								touched: false
+								touchPolicy: 1
+								touchBehavior: 0
+							}, 
+							LineIndex(2ad48505-c713-4461-9228-64af5ba7d7d5)
+							{
+								lineIndex: 0
+							}, 
+							LayoutPolicyListItem(0f9a312d-ebcd-4308-9f7d-06026b43c102)
+							{
+								listIndex: 0
+							}]
+						children: children_list [
+							GtfRectangle(573cc2e8-abdb-480a-b9d9-db75f9570d8a)
+							{
+								features: feature_list [
+									Border(ba898bf8-c2ee-4d20-8696-b1c30131ce91)
+									{
+										borderThickness: 2
+										borderColor: #000000FF
+										borderStyle: 0
+									}]
+								children: children_list []
+								name: "Background"
+								visible: true
+								width: width@d09c31b5-f150-4270-b6f8-e4d15b5faef4 (propref<int>)
+								height: height@d09c31b5-f150-4270-b6f8-e4d15b5faef4 (propref<int>)
+								x: 0
+								y: 0
+								fillColor: #1E90FFFF
+							}, 
+							GtfLabel(a6ff9ad2-0eee-4536-bd6f-a35bc9b8584b)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Label"
+								visible: true
+								width: width@573cc2e8-abdb-480a-b9d9-db75f9570d8a (propref<int>)
+								height: height@573cc2e8-abdb-480a-b9d9-db75f9570d8a (propref<int>)
+								x: 0
+								y: 0
+								text: ""
+								textColor: #FFFFFFFF
+								font: font_resource(bbd0c245-1a0f-42a7-8f54-5fa85334cf0b)
+								{
+									file: "fonts\\PT_Sans.ttf"
+									size: 30
+								}
+								horizontalAlign: 1
+								verticalAlign: 0
+								set_Text: conditional_script(5e9bea25-4d44-4b37-90fc-cbd6454aa4e5)
+								{
+									triggerList: trigger_list(e00a6025-490f-44a7-9f0a-5996a554871d)
+									{
+										script: "v:this->^.listIndex" \
+											"v:this->^->^->^.inputList" \
+											"v:this->^->^.listLength" \
+											"v:this->^->^->^.dataValid" \
+											""
+									}
+									onTrigger: function<bool,bool>(37612899-dc06-4e4c-94fb-b1df09a120df)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	if (v:this->^.listIndex < v:this->^->^.listLength)" \
+											"	{" \
+											"		v:this->^.visible = true" \
+											"		" \
+											"		if( v:this->^->^->^.dataValid[v:this->^.listIndex] )			" \
+											"		{" \
+											"			v:this.text = v:this->^->^->^.inputList[v:this->^.listIndex]" \
+											"		}" \
+											"		else" \
+											"		{" \
+											"			v:this.text = \"Invalid item\";" \
+											"		}" \
+											"		" \
+											"	}" \
+											"	else" \
+											"	{" \
+											"		v:this->^.visible = false;" \
+											"	}" \
+											"	false" \
+											"}"
+									}
+								}
+							}]
+						name: "List_Button"
+						visible: true
+						width: width@e06b9ddc-c295-4e76-acfd-52cf6d8773ec (propref<int>)
+						height: listButtonHeight@533d280b-846a-4117-b71a-9e4eef22a816 (propref<int>)
+						x: 0
+						y: 0
+					}]
+				name: "Instantiator 1"
+				visible: true
+				width: width@e06b9ddc-c295-4e76-acfd-52cf6d8773ec (propref<int>)
+				height: height@e06b9ddc-c295-4e76-acfd-52cf6d8773ec (propref<int>)
+				x: 0
+				y: 0
+				numItems: 0
+				lineMapping: intlist []
+				yCurrentValue: 0
+				listButtonHeight: 50
+				set_window_pos_out: conditional_script(b2e2492e-a1c2-4653-bc3f-c06d45c7e428)
+				{
+					triggerList: trigger_list(96144eec-a707-4ab9-9d8f-0ffb826d2bcb)
+					{
+						script: "v:this.firstListIndex" \
+							""
+					}
+					onTrigger: function<bool,bool>(5d1a55a9-31bd-4ac5-a875-679f1030ea26)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"		dp:WindowPositionInternal = v:this.firstListIndex" \
+							" " \
+							"if (dp:WindowPositionInternal > 0)" \
+							"{" \
+							"  dp:WindowPosition = dp:WindowPositionInternal" \
+							"}" \
+							"else if (dp:WindowPositionInternal < (length dp:myReceivedWindowList - dp:WindowSize))" \
+							"{" \
+							"  dp:WindowPosition = dp:WindowPositionInternal;" \
+							"}" \
+							"	false" \
+							"}"
+					}
+				}
+				set_numItems: conditional_script(11a051a6-f80a-4cf9-b6da-b06f1145204a)
+				{
+					triggerList: trigger_list(afc63a51-8cd4-4044-9ed4-96b8636b5c9e)
+					{
+						script: "v:this->^.inputList" \
+							""
+					}
+					onTrigger: function<bool,bool>(9c1a9241-463a-4e9e-b895-e64447813dd9)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	let v:count = 0  in" \
+							"	{" \
+							"		v:count = v:this.height / v:this.listButtonHeight +1" \
+							"		" \
+							"		v:this.listLength = length v:this->^.inputList;" \
+							"		" \
+							"		if(v:count < v:this.listLength)" \
+							"			{" \
+							"				v:this.numItems = v:count" \
+							"			}" \
+							"			else" \
+							"			{" \
+							"				v:this.numItems = v:this.listLength" \
+							"			}" \
+							"		" \
+							"	}" \
+							"	false" \
+							"}"
+					}
+				}
+				wasMoved: false
+				touchPosition: 0
+				touchMoveDistance: 0
+				moveThreshold: 0
+			}]
+		name: "List_Elements"
+		visible: true
+		width: 369
+		height: 418
+		x: 0
+		y: 0
+		inputList: stringlist []
+		dataValid: boollist []
+	}
+	width: width@e06b9ddc-c295-4e76-acfd-52cf6d8773ec (propref<int>)
+	height: height@e06b9ddc-c295-4e76-acfd-52cf6d8773ec (propref<int>)
+	x: x@e06b9ddc-c295-4e76-acfd-52cf6d8773ec (propref<int>)
+	y: y@e06b9ddc-c295-4e76-acfd-52cf6d8773ec (propref<int>)
+	inputList: inputList@e06b9ddc-c295-4e76-acfd-52cf6d8773ec (propref<stringlist>)
+	dataValid: dataValid@e06b9ddc-c295-4e76-acfd-52cf6d8773ec (propref<boollist>)
+}

@@ -1,0 +1,485 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(442c95ab-b742-4104-a158-fb8650d3a827)
+{
+	name: "View"
+	template: @9b236a75-7a1b-405e-92c8-ef4969c1b4fb (objectref<GtfView_template>)
+	children: children_list [
+		GtfRectangle(8c892615-e723-4560-b533-ba1b80dec411)
+		{
+			features: feature_list [
+				StateTouched(de116534-67cc-4d40-825e-35c2b8e44f02)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}, 
+				TouchPressed(befa56ce-6d82-49f1-8d60-7c0fa52b8439)
+				{
+					touchPressed: function<bool,int,int,int,int>(d8cd3c4e-2192-4989-b2bd-3d4cb6ed833a)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:PlayAnimation()" \
+							"    " \
+							"    false" \
+							"}"
+					}
+				}]
+			children: children_list [
+				GtfLabel(708111b2-05d5-440f-8d39-8bad5d29a6b8)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "ButtonLabel"
+					visible: true
+					width: width@8c892615-e723-4560-b533-ba1b80dec411 (propref<int>)
+					height: height@8c892615-e723-4560-b533-ba1b80dec411 (propref<int>)
+					x: 0
+					y: 0
+					text: ""
+					textColor: #000000FF
+					font: font_resource(46a464b4-d85c-46a1-a297-5e32039d3741)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+					SetLabel: conditional_script(7d9733a1-ce2c-4802-acc4-1b995a4ec6bf)
+					{
+						triggerList: trigger_list(1687b92d-cb4a-4e9f-8a45-77228d32cc3c)
+						{
+							script: "dp:AnimationActive"
+						}
+						onTrigger: function<bool,bool>(75402ed4-6512-48ab-ad51-9d700f74ded9)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	if (!dp:AnimationActive)" \
+								"	{" \
+								"		v:this.text = \"Play\"" \
+								"	}" \
+								"	else" \
+								"	{" \
+								"		v:this.text = \"Stop\"" \
+								"	}" \
+								"" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "PlayButton"
+			visible: true
+			width: 80
+			height: 40
+			x: 220
+			y: 80
+			fillColor: #FFFFFFFF
+			ChangeAnimationStatus: conditional_script(01d5a16f-444e-4db6-888b-96139567032b)
+			{
+				triggerList: trigger_list(26424e04-0138-48d4-9daf-c63ba0596d8a)
+				{
+					script: "ev:PlayAnimation"
+				}
+				onTrigger: function<bool,bool>(0fcb58e5-f288-4d0d-8ecf-319c9fc963c8)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	match_event v:event = ev:PlayAnimation in" \
+						"	{" \
+						"		dp:AnimationActive = !dp:AnimationActive" \
+						"	}" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfParallelAnimation(640b9f3f-9a31-4ff8-b19c-8d62b4d2f31d)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLinearInterpolationFloat(d4c034b7-0551-47fa-8e99-5b25c67b097a)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "linearInterpolationCurve"
+					enabled: true
+					delay: 0
+					duration: 5000
+					repeat: 0
+					alternating: false
+					relative: false
+					start: 1F
+					end: 0F
+					target: animatedProperty@ffb52f7c-470f-4d61-b0fb-457c0a5dfac1 (propref<float>)
+				}]
+			name: "FadeUpwardsAnimation"
+			enabled: true
+			repeat: 0
+			alternating: false
+			scale: 1F
+			onPlay: function<void,int,bool>(29a8f63d-c371-41f1-b681-5a2c426822bf)
+			{
+				script: "function(v:animation_time::int, v:forward::bool)" \
+					"{" \
+					"" \
+					"}"
+			}
+			onPause: function<void,int>(e284ef0b-c5ad-4360-895c-69d507320734)
+			{
+				script: "function(v:animation_time::int)" \
+					"{" \
+					"" \
+					"}"
+			}
+			onTerminate: function<void,int,int>(4adc8b93-0479-4ad6-875a-e0897deec6a7)
+			{
+				script: "function(v:animation_time::int, v:terminate::int)" \
+					"{" \
+					"" \
+					"}"
+			}
+			StartAnimation: conditional_script(20f1de15-3a25-4ebd-b575-b5f47d368f58)
+			{
+				triggerList: trigger_list(022d0630-d60c-41c2-91d2-1519fee74a3f)
+				{
+					script: "dp:AnimationActive"
+				}
+				onTrigger: function<bool,bool>(d15d52a4-31a0-446f-93b9-0c814da046a9)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	if (dp:AnimationActive)" \
+						"	{" \
+						"		f:animation_play(v:this)" \
+						"	}" \
+						"	else" \
+						"	{" \
+						"		f:animation_pause(v:this)" \
+						"	}" \
+						"" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfLabel(6c62a2b0-549a-4478-b0dc-78ce1f3cc01e)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "SampleCountLabel"
+			visible: true
+			width: 149
+			height: 38
+			x: 220
+			y: 120
+			text: "Sample Count:"
+			textColor: #C0C0C0FF
+			font: font_resource(446cfef2-e48b-48bb-8a86-59386391f016)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfRectangle(592577e2-ac7d-4c7e-9a31-9df8d15da7db)
+		{
+			features: feature_list [
+				StateTouched(0ea9235f-1991-4879-b2ad-0db3de199b0a)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}, 
+				TouchPressed(1f683673-d352-44e9-ad90-2237d147bb47)
+				{
+					touchPressed: function<bool,int,int,int,int>(ba9bd82c-f5e6-4ea4-85db-1e1d60810c98)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:OneSample()" \
+							"	false" \
+							"}"
+					}
+				}]
+			children: children_list [
+				GtfLabel(879895f1-78c7-4f53-8ae4-a7ae78a60989)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "ButtonLabel"
+					visible: true
+					width: width@592577e2-ac7d-4c7e-9a31-9df8d15da7db (propref<int>)
+					height: height@592577e2-ac7d-4c7e-9a31-9df8d15da7db (propref<int>)
+					x: 0
+					y: 0
+					text: "1"
+					textColor: #000000FF
+					font: font_resource(36db8790-45d6-48cd-b46d-0517d16e03a1)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "1_SampleButton"
+			visible: true
+			width: 36
+			height: 36
+			x: 368
+			y: 120
+			fillColor: #FFFFFFFF
+		}, 
+		GtfRectangle(6781dce2-3b22-40eb-b8a3-ac6bca6ca23e)
+		{
+			features: feature_list [
+				StateTouched(cc9f8c4d-5e7a-4a54-b607-b65b595c0c5a)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}, 
+				TouchPressed(8fe8fc61-0ba5-4658-8158-1b06054161ad)
+				{
+					touchPressed: function<bool,int,int,int,int>(9d50b24a-8158-49f4-86e8-4e446f5c9811)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:TwoSamples()" \
+							"    false" \
+							"}"
+					}
+				}]
+			children: children_list [
+				GtfLabel(57b8d104-238c-4b0b-97b8-b3a4afe39b9a)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "ButtonLabel"
+					visible: true
+					width: width@6781dce2-3b22-40eb-b8a3-ac6bca6ca23e (propref<int>)
+					height: height@6781dce2-3b22-40eb-b8a3-ac6bca6ca23e (propref<int>)
+					x: 0
+					y: 0
+					text: "2"
+					textColor: #000000FF
+					font: font_resource(a8089d81-7dad-4049-a2c3-f641572fa195)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "2_SampleButton"
+			visible: true
+			width: 36
+			height: 36
+			x: 420
+			y: 120
+			fillColor: #FFFFFFFF
+		}, 
+		GtfRectangle(f5eed532-9f0b-41da-ad8f-d3f016efbf81)
+		{
+			features: feature_list [
+				StateTouched(4f38989c-1b56-40ac-8d4c-d82354e75915)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}, 
+				TouchPressed(a188cad4-87ff-47db-92db-1a7cd27e36e9)
+				{
+					touchPressed: function<bool,int,int,int,int>(56e33d11-8db3-41f2-ac12-126caae7a72b)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:FourSamples()" \
+							"    false" \
+							"}"
+					}
+				}]
+			children: children_list [
+				GtfLabel(e206d858-bb42-4683-9aaf-8521ece24767)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "ButtonLabel"
+					visible: true
+					width: width@f5eed532-9f0b-41da-ad8f-d3f016efbf81 (propref<int>)
+					height: height@f5eed532-9f0b-41da-ad8f-d3f016efbf81 (propref<int>)
+					x: 0
+					y: 0
+					text: "4"
+					textColor: #000000FF
+					font: font_resource(b7131431-1f90-4c9f-b50c-cc195d1c9419)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "4_SampleButton"
+			visible: true
+			width: 36
+			height: 36
+			x: 470
+			y: 120
+			fillColor: #FFFFFFFF
+		}, 
+		GtfRectangle(429bcbd4-866d-4c58-88e1-6db4ab011083)
+		{
+			features: feature_list [
+				StateTouched(eccf9039-02cd-4d5b-ba99-9ca9af74333c)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}, 
+				TouchPressed(5b3a0515-ce42-4931-b8a9-d37f669cab6c)
+				{
+					touchPressed: function<bool,int,int,int,int>(b42d87e9-9c2f-4c96-9f22-4cc78f3b726b)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:EightSamples()" \
+							"    false" \
+							"}"
+					}
+				}]
+			children: children_list [
+				GtfLabel(a261f544-ccce-41a9-b9ca-faa18d77e4a4)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "buttonLabel"
+					visible: true
+					width: width@429bcbd4-866d-4c58-88e1-6db4ab011083 (propref<int>)
+					height: height@429bcbd4-866d-4c58-88e1-6db4ab011083 (propref<int>)
+					x: 0
+					y: 0
+					text: "8"
+					textColor: #000000FF
+					font: font_resource(433b3697-3172-4782-897e-63165183f8ac)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "8_SampleButton"
+			visible: true
+			width: 36
+			height: 36
+			x: 520
+			y: 120
+			fillColor: #FFFFFFFF
+		}, 
+		Multisample(ffb52f7c-470f-4d61-b0fb-457c0a5dfac1)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "MultisampledAnimatedWidget"
+			visible: true
+			width: 340
+			height: 225
+			x: 220
+			y: 170
+			fillColor: #000000FF
+			sampleCount: 1
+			animatedProperty: 1F
+		}]
+	description: "An HMI model with mutlisampling effect"
+	text: "Multisampling demo"
+	UpdateSampleCount: conditional_script(bca4e226-b4d7-410c-81aa-97b3311e7759)
+	{
+		triggerList: trigger_list(d747514e-b6dd-43cc-b5c3-61ebe98317f3)
+		{
+			script: "ev:OneSample" \
+				"ev:TwoSamples" \
+				"ev:FourSamples" \
+				"ev:EightSamples"
+		}
+		onTrigger: function<bool,bool>(468eb516-2087-4f7d-98c6-52fea7dee031)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	match_event v:event = ev:OneSample in" \
+				"	{" \
+				"		dp:SampleCount = 1" \
+				"	}" \
+				"	" \
+				"	match_event v:event = ev:TwoSamples in" \
+				"	{" \
+				"		dp:SampleCount = 2" \
+				"	}" \
+				"	" \
+				"	match_event v:event = ev:FourSamples in" \
+				"	{" \
+				"		dp:SampleCount = 4" \
+				"	}" \
+				"	" \
+				"	match_event v:event = ev:EightSamples in" \
+				"	{" \
+				"		dp:SampleCount = 8" \
+				"	}	" \
+				"" \
+				"	false" \
+				"}"
+		}
+	}
+	UpdateWidget: conditional_script(187c4cc4-3e56-4550-a28f-63fc70067f0e)
+	{
+		triggerList: trigger_list(fba3c3aa-6273-4ef0-9a6b-0c99cc42f869)
+		{
+			script: "dp:SampleCount"
+		}
+		onTrigger: function<bool,bool>(4d54b9e7-d6e7-403d-9c05-ef6035580ce4)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	v:this->MultisampledAnimatedWidget.sampleCount = dp:SampleCount" \
+				"	if (dp:SampleCount == 1)" \
+				"	{" \
+				"		v:this->\"1_SampleButton\".fillColor = #C0C0C0FF" \
+				"		v:this->\"2_SampleButton\".fillColor = #FFFFFFFF" \
+				"        v:this->\"4_SampleButton\".fillColor = #FFFFFFFF" \
+				"    	v:this->\"8_SampleButton\".fillColor = #FFFFFFFF" \
+				"	}" \
+				"	else if (dp:SampleCount == 2)" \
+				"	{" \
+				"		v:this->\"2_SampleButton\".fillColor = #C0C0C0FF" \
+				"		v:this->\"1_SampleButton\".fillColor = #FFFFFFFF" \
+				"		v:this->\"4_SampleButton\".fillColor = #FFFFFFFF" \
+				"    	v:this->\"8_SampleButton\".fillColor = #FFFFFFFF" \
+				"	}" \
+				"	else if (dp:SampleCount == 4)" \
+				"	{" \
+				"		v:this->\"4_SampleButton\".fillColor = #C0C0C0FF" \
+				"		v:this->\"1_SampleButton\".fillColor = #FFFFFFFF" \
+				"		v:this->\"2_SampleButton\".fillColor = #FFFFFFFF" \
+				"		v:this->\"8_SampleButton\".fillColor = #FFFFFFFF" \
+				"	}" \
+				"	else if (dp:SampleCount == 8)" \
+				"	{" \
+				"		v:this->\"8_SampleButton\".fillColor = #C0C0C0FF" \
+				"		v:this->\"1_SampleButton\".fillColor = #FFFFFFFF" \
+				"		v:this->\"2_SampleButton\".fillColor = #FFFFFFFF" \
+				"        v:this->\"4_SampleButton\".fillColor = #FFFFFFFF" \
+				"	}" \
+				"	false" \
+				"}"
+		}
+	}
+}

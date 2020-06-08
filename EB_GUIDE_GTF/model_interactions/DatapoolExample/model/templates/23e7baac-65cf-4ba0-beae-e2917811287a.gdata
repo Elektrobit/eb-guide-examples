@@ -1,0 +1,153 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template(23e7baac-65cf-4ba0-beae-e2917811287a)
+{
+	name: "TitleView"
+	structure: GtfView(b87e23c1-ccf7-4289-b416-bce308b9a423)
+	{
+		features: feature_list [
+			TouchPressed(7d5f9f82-2c1c-4fd0-96a7-af5941297c77)
+			{
+				touchPressed: function<bool,int,int,int,int>(b1822017-bfdb-4c8c-a962-7e99846ab200)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(2ea5ee21-bc31-4f25-a6ea-a0f6d7769b4a)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(80a47464-1edd-4344-870b-fc2bdd5cbb53)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfImage(ae283bee-b101-4cd4-81c0-5e554907741e)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "logo"
+						visible: true
+						width: 135
+						height: 135
+						x: 105
+						y: 90
+						image: image_resource(cecf3030-0cf1-48c2-9dea-6e1fd8337b82)
+						{
+							file: "images\\EB.png"
+						}
+						sRGB: false
+						horizontalAlign: 0
+						verticalAlign: 1
+					}, 
+					GtfLabel(6dd3a7b4-92a3-41ee-b26a-1eb3c2fbbd44)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "title"
+						visible: true
+						width: 450
+						height: 40
+						x: 260
+						y: 104
+						text: title_text@b87e23c1-ccf7-4289-b416-bce308b9a423 (propref<string>)
+						textColor: #FFFFFFFF
+						font: font_resource(fc9cbdb6-e1df-429c-b9d6-b447b501dbf9)
+						{
+							file: "fonts/PT_Sans.ttf"
+							size: 35
+						}
+						horizontalAlign: 0
+						verticalAlign: 0
+					}, 
+					GtfLabel(996c48c4-f8ec-49b8-89e0-158520887b43)
+					{
+						features: feature_list [
+							MultiLine(506a5c73-ab8d-4307-836f-1da510dd513e)
+							{
+								lineOffset: 0
+								maxLineCount: 0
+							}]
+						children: children_list []
+						name: "shortdesc"
+						visible: true
+						width: 450
+						height: 50
+						x: 260
+						y: 160
+						text: short_desc_text@b87e23c1-ccf7-4289-b416-bce308b9a423 (propref<string>)
+						textColor: #FFFFFFFF
+						font: font_resource(dc4147df-fce6-4da6-945e-98749a572d10)
+						{
+							file: "fonts/PT_Sans.ttf"
+							size: 18
+						}
+						horizontalAlign: 0
+						verticalAlign: 0
+					}, 
+					GtfRectangle(7b550e37-6048-4d82-bfa4-cd6bcb167534)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "separator"
+						visible: true
+						width: 600
+						height: 2
+						x: 105
+						y: 250
+						fillColor: #A9A9A9FF
+					}, 
+					GtfLabel(4c441811-c768-4820-ac4e-1c058d7abcf8)
+					{
+						features: feature_list [
+							MultiLine(41dc9061-bd7f-4666-b73e-4c8276bffe57)
+							{
+								lineOffset: 0
+								maxLineCount: 0
+							}]
+						children: children_list []
+						name: "londDesc"
+						visible: true
+						width: 595
+						height: 180
+						x: 110
+						y: 246
+						text: long_desc_text@b87e23c1-ccf7-4289-b416-bce308b9a423 (propref<string>)
+						textColor: #FFFFFFFF
+						font: font_resource(84f985d6-cd40-4528-9fd5-c2222bf8f5fd)
+						{
+							file: "fonts/PT_Sans.ttf"
+							size: 18
+						}
+						horizontalAlign: 0
+						verticalAlign: 0
+					}]
+				name: "Background"
+				visible: true
+				width: width@b87e23c1-ccf7-4289-b416-bce308b9a423 (propref<int>)
+				height: height@b87e23c1-ccf7-4289-b416-bce308b9a423 (propref<int>)
+				x: -1
+				y: 0
+				fillColor: #383838FF
+			}]
+		name: "View"
+		visible: true
+		width: 800
+		height: 480
+		x: 0
+		y: 0
+		title_text: "<Project title>"
+		short_desc_text: "<short description>"
+		long_desc_text: "<long description>"
+	}
+	title_text: title_text@b87e23c1-ccf7-4289-b416-bce308b9a423 (propref<string>)
+	short_desc_text: short_desc_text@b87e23c1-ccf7-4289-b416-bce308b9a423 (propref<string>)
+	long_desc_text: long_desc_text@b87e23c1-ccf7-4289-b416-bce308b9a423 (propref<string>)
+	touchPressed: touchPressed@7d5f9f82-2c1c-4fd0-96a7-af5941297c77 (propref<function<bool,int,int,int,int>>)
+}

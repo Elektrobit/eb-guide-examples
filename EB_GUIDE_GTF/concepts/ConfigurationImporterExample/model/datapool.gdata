@@ -1,0 +1,36 @@
+EBGUIDE 6.10.0.200602120856;
+
+dp_items(1f4315dd-e5ac-401a-863b-24c2a6ae1c75)
+{
+	items: dp_item_list [
+		dp<string>(0774c9fe-a61d-4cfa-9678-f0cd70d2a50f)
+		{
+			value: ""
+			name: "ConfigStringName"
+		}, 
+		dp<stringlist>(578c76d2-7285-4efc-ae7a-85dd16b280b0)
+		{
+			value: stringlist []
+			name: "ConfigStringArray"
+		}, 
+		dp<float>(84a6beb8-3196-4733-af7b-71d89987f524)
+		{
+			value: 0F
+			name: "ConfigFloatVersion"
+		}, 
+		dp<bool>(a34e79f6-c853-41d2-a20e-6ba6a9986082)
+		{
+			value: false
+			name: "ConfigBoolValid"
+		}, 
+		dp<intlist>(d94750b0-0970-4e22-9320-f77f5e9a50e7)
+		{
+			value: intlist []
+			name: "ConfigIntArray"
+		}, 
+		dp<int>(f230f5fa-a0e5-4407-9df8-21c02ae502ce)
+		{
+			value: 0
+			name: "ConfigIntId"
+		}]
+}

@@ -1,0 +1,153 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template(f22f375f-74a5-4677-854b-56ad0cc8b440)
+{
+	name: "TitleView"
+	structure: GtfView(e52b99c1-68bf-4919-85b8-dd4078133b73)
+	{
+		features: feature_list [
+			TouchPressed(184e5130-2961-486a-83f0-3bd637046b62)
+			{
+				touchPressed: function<bool,int,int,int,int>(495184ca-bfa9-48cf-aca0-20e3ea770889)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(5df8e0b2-50a4-47e4-b724-602671844f70)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(3acdb879-7507-435f-9c68-d2f9d85ef968)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "main bg"
+				visible: true
+				width: width@e52b99c1-68bf-4919-85b8-dd4078133b73 (propref<int>)
+				height: height@e52b99c1-68bf-4919-85b8-dd4078133b73 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #383838FF
+			}, 
+			GtfImage(8e99a784-1650-4c76-be24-9c7177ec4f32)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "logo"
+				visible: true
+				width: 135
+				height: 135
+				x: 105
+				y: 90
+				image: image_resource(aba64171-a94f-4e21-9eb9-e22e9e47d605)
+				{
+					file: "images\\EB.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfLabel(cfd1bcd5-63c9-4086-a253-837e68221c01)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "title"
+				visible: true
+				width: 450
+				height: 40
+				x: 260
+				y: 105
+				text: title_text@e52b99c1-68bf-4919-85b8-dd4078133b73 (propref<string>)
+				textColor: #FFFFFFFF
+				font: font_resource(74d15cd5-03fe-4f27-8e0f-2e9eacea9bf5)
+				{
+					file: "fonts\\PT_Sans.ttf"
+					size: 35
+				}
+				horizontalAlign: 0
+				verticalAlign: 0
+			}, 
+			GtfLabel(1b94a37d-b97e-453d-b5eb-6b9e6d95b710)
+			{
+				features: feature_list [
+					MultiLine(ad1546d5-862b-4a86-bd7c-cada76937e71)
+					{
+						lineOffset: 0
+						maxLineCount: 0
+					}]
+				children: children_list []
+				name: "short desc"
+				visible: true
+				width: 450
+				height: 50
+				x: 260
+				y: 160
+				text: "short desc text"@e52b99c1-68bf-4919-85b8-dd4078133b73 (propref<string>)
+				textColor: #FFFFFFFF
+				font: font_resource(515cdc3b-aa5c-4896-94cc-03ee6a01b5ab)
+				{
+					file: "fonts\\PT_Sans.ttf"
+					size: 18
+				}
+				horizontalAlign: 0
+				verticalAlign: 0
+			}, 
+			GtfRectangle(2fabc9da-7af9-4113-8e29-56e0ed462b5e)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "separator"
+				visible: true
+				width: 600
+				height: 2
+				x: 105
+				y: 250
+				fillColor: #50504EFF
+			}, 
+			GtfLabel(1d471611-cb0e-4b1a-94de-b99358202324)
+			{
+				features: feature_list [
+					MultiLine(683d9bc4-0f9d-4491-b019-63404aa231da)
+					{
+						lineOffset: 0
+						maxLineCount: 0
+					}]
+				children: children_list []
+				name: "long desc"
+				visible: true
+				width: 595
+				height: 180
+				x: 110
+				y: 246
+				text: "long desc text"@e52b99c1-68bf-4919-85b8-dd4078133b73 (propref<string>)
+				textColor: #FFFFFFFF
+				font: font_resource(e997124f-9f05-48ef-8263-7d72d6c83636)
+				{
+					file: "fonts\\PT_Sans.ttf"
+					size: 18
+				}
+				horizontalAlign: 0
+				verticalAlign: 0
+			}]
+		name: "View"
+		visible: true
+		width: 800
+		height: 480
+		x: 0
+		y: 0
+		"long desc text": "<long description>"
+		"short desc text": "<short description>"
+		title_text: "<Project title>"
+	}
+	"long desc text": "long desc text"@e52b99c1-68bf-4919-85b8-dd4078133b73 (propref<string>)
+	"short desc text": "short desc text"@e52b99c1-68bf-4919-85b8-dd4078133b73 (propref<string>)
+	title_text: title_text@e52b99c1-68bf-4919-85b8-dd4078133b73 (propref<string>)
+	touchPressed: touchPressed@184e5130-2961-486a-83f0-3bd637046b62 (propref<function<bool,int,int,int,int>>)
+}

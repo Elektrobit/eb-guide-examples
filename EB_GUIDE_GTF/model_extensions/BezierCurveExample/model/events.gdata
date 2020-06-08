@@ -1,0 +1,36 @@
+EBGUIDE 6.10.0.200602120856;
+
+events(fe6bdf48-39a9-4112-8ad5-7404a575cd68)
+{
+	items: event_list [
+		event(83aebd4a-bdaf-4752-9727-ad3e404d5909)
+		{
+			name: "playAnimation_Color"
+			eventId: 3
+			event_group: @91a9bab0-e2b2-4952-b5c1-f02e10b46f18 (objectref<event_group>)
+		}, 
+		event(8f65fbdd-9f7d-437f-a13e-e1248b7db7d5)
+		{
+			name: "playAnimation_Float"
+			eventId: 2
+			event_group: @91a9bab0-e2b2-4952-b5c1-f02e10b46f18 (objectref<event_group>)
+		}, 
+		event(a2fb9869-1cf0-4b18-aa2c-dfc5416b4f47)
+		{
+			name: "playAnimation_Int"
+			eventId: 1
+			event_group: @91a9bab0-e2b2-4952-b5c1-f02e10b46f18 (objectref<event_group>)
+		}, 
+		event(b9045dce-21a0-4111-a7a4-53ec7d1f729e)
+		{
+			name: "next"
+			eventId: 0
+			event_group: @91a9bab0-e2b2-4952-b5c1-f02e10b46f18 (objectref<event_group>)
+		}, 
+		event(ff998b22-1bdf-46a2-b4b0-09277d48d7f6)
+		{
+			name: "isAnimationInTheMiddle"
+			eventId: 4
+			event_group: @91a9bab0-e2b2-4952-b5c1-f02e10b46f18 (objectref<event_group>)
+		}]
+}

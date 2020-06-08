@@ -1,0 +1,71 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfRectangle_template(d0cc6c2b-4cf3-4482-8e51-a14cd535817a)
+{
+	name: "Button"
+	structure: GtfRectangle(3322e59d-2892-4799-a7f5-4be0051e91be)
+	{
+		features: feature_list [
+			StateTouched(3d5cee49-4198-42cf-a6cf-3eaaa9a0f6d3)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			MoveOut(3a566143-6850-4d64-9bdf-92a96d3f9e2f)
+			{
+				moveOut: function<bool,int,int,int,int>(b8f24a3b-542d-4526-aaeb-0474f5499f19)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.isMovedIn = false" \
+						"    false" \
+						"}"
+				}
+			}, 
+			MoveIn(5100a005-b911-453f-8bb3-6dbc616ecb41)
+			{
+				moveIn: function<bool,int,int,int,int>(f54cf44a-6d62-423f-b0fe-c31c513fbd72)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.isMovedIn = true" \
+						"    false" \
+						"}"
+				}
+			}]
+		children: children_list [
+			GtfLabel(9885de80-56e7-4cc7-b5f5-93d10132cc4f)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "ButtonLabel"
+				visible: true
+				width: width@3322e59d-2892-4799-a7f5-4be0051e91be (propref<int>)
+				height: height@3322e59d-2892-4799-a7f5-4be0051e91be (propref<int>)
+				x: 0
+				y: 0
+				text: "<>"
+				textColor: #000000FF
+				font: font_resource(95fdb44a-5cf3-4ea0-9747-36efcbd2f6a2)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Rectangle"
+		visible: true
+		width: 36
+		height: 36
+		x: 0
+		y: 0
+		fillColor: #FFFFFFFF
+		isMovedIn: false
+	}
+	width: width@3322e59d-2892-4799-a7f5-4be0051e91be (propref<int>)
+	height: height@3322e59d-2892-4799-a7f5-4be0051e91be (propref<int>)
+	fillColor: fillColor@3322e59d-2892-4799-a7f5-4be0051e91be (propref<color>)
+}

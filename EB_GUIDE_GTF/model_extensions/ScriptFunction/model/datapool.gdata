@@ -1,0 +1,21 @@
+EBGUIDE 6.10.0.200602120856;
+
+dp_items(95fb0102-1792-48b7-9ea1-8d5568ba6d68)
+{
+	items: dp_item_list [
+		dp<int>(50ad3370-aab3-443d-b086-6521884ba255)
+		{
+			value: 0
+			name: "result_value"
+		}, 
+		dp<int>(b60c4c78-1793-44c4-9707-c738026eab42)
+		{
+			value: 1
+			name: "a_value"
+		}, 
+		dp<int>(d34d7592-4186-4862-8107-bbe14c001212)
+		{
+			value: 2
+			name: "b_value"
+		}]
+}

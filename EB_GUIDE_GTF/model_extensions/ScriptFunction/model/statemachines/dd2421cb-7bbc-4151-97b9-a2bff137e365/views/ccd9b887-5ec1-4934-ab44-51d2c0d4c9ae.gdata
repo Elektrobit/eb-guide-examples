@@ -1,0 +1,307 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(ccd9b887-5ec1-4934-ab44-51d2c0d4c9ae)
+{
+	name: "Homescreen"
+	template: @596fd040-17b6-4fd8-af99-a5bc58984079 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer(a5670e24-c785-44e6-8355-e66e010db1bd)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(744e1725-b161-4f2e-a7ba-b876262e430b)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "operand 1"
+					visible: true
+					width: 48
+					height: 58
+					x: 17
+					y: 2
+					text: "a = "
+					textColor: #FFFFFFFF
+					font: font_resource(c2ca9ea2-10c4-46be-a5b2-133fc670c652)
+					{
+						file: "fonts\\PT_Sans.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(d84e865e-5dd4-412b-8813-6c2a8515fa37)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "operand_value"
+					visible: true
+					width: 79
+					height: 58
+					x: 52
+					y: 4
+					text: "0"
+					textColor: #FFFFFFFF
+					font: font_resource(752fb6cf-d87c-4c89-bc44-65a0ae92f313)
+					{
+						file: "fonts\\PT_Sans.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+					display_value: conditional_script(c03d61a1-e71f-4e78-a0d8-11481cf5c4c4)
+					{
+						triggerList: trigger_list(8150c814-b1e2-4b25-9cc3-d56e45ad56dc)
+						{
+							script: "dp:a_value" \
+								""
+						}
+						onTrigger: function<bool,bool>(68b75f05-4d53-4ab8-ba87-79cafdd6ceb1)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this.text = f:int2string (dp:a_value);" \
+								"	" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfLabel(b5c10b71-14c5-4246-a08b-7f3e6daf9488)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "operand 2"
+					visible: true
+					width: 47
+					height: 58
+					x: 16
+					y: 56
+					text: "b = "
+					textColor: #FFFFFFFF
+					font: font_resource(0fc09bbd-c5b7-49db-a492-3a7a1eb4b50f)
+					{
+						file: "fonts\\PT_Sans.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(fddc9427-8bdc-44e2-bf19-4139180eb102)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "operand_value 2"
+					visible: true
+					width: 75
+					height: 58
+					x: 55
+					y: 55
+					text: "0"
+					textColor: #FFFFFFFF
+					font: font_resource(adcdf54a-2fbf-46c2-b644-dd9c6b6d4a60)
+					{
+						file: "fonts\\PT_Sans.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+					display_value: conditional_script(99c4f5d0-e82b-4a7d-92eb-c21295ae706b)
+					{
+						triggerList: trigger_list(25343cbf-2620-44b3-a606-787fb9158b0b)
+						{
+							script: "dp:b_value" \
+								""
+						}
+						onTrigger: function<bool,bool>(b7baee92-9ae6-4d69-ae1a-d49e9167d746)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this.text = f:int2string (dp:b_value);" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfRectangle(6a499b2f-0804-49b7-a0f1-7da92df33c7f)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "separator"
+					visible: true
+					width: 121
+					height: 6
+					x: 0
+					y: 111
+					fillColor: #A9A9A9FF
+				}, 
+				GtfLabel(ab674625-9396-4d0f-bda4-53d3ab7625ad)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "result"
+					visible: true
+					width: 96
+					height: 71
+					x: -2
+					y: 111
+					text: "a + b = "
+					textColor: #FFFFFFFF
+					font: font_resource(e56dcc2e-84b3-41f4-9c1b-c4e4f2e496e7)
+					{
+						file: "fonts\\PT_Sans.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(2c9a2ce9-e6cb-405b-a95b-29b4f560835f)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "result_value"
+					visible: true
+					width: 159
+					height: 58
+					x: 89
+					y: 117
+					text: "0"
+					textColor: #FFFFFFFF
+					font: font_resource(640a0c42-8634-435d-9a7f-aa0fd8c183f2)
+					{
+						file: "fonts\\PT_Sans.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+					display_value: conditional_script(6a6c081f-a54c-4b4a-a77f-5fdacb56ee8b)
+					{
+						triggerList: trigger_list(a1baa9dd-7c3f-410e-baaa-2bb3e82ea5b8)
+						{
+							script: "dp:result_value" \
+								""
+						}
+						onTrigger: function<bool,bool>(bb505e19-7163-46a8-b34e-7295c05abb10)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this.text = f:int2string (dp:result_value);" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfRectangle_template_instance(23148b51-1a49-4024-8a1c-9b0b199059b2)
+				{
+					name: "Button_increase a"
+					template: @bc8b1908-2dbd-4d08-9acf-5f19ea17de0c (objectref<GtfRectangle_template>)
+					children: children_list []
+					width: 55
+					height: 37
+					text: "+"
+					x: 128
+					y: 14
+					touchPressed: function<bool,int,int,int,int>(761e103e-1c8a-4650-943b-81dba442e264)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:a_value += 1;" \
+							"    false" \
+							"}"
+					}
+					fillColor: fillColor@bc8b1908-2dbd-4d08-9acf-5f19ea17de0c (propref<color>)
+				}, 
+				GtfRectangle_template_instance(48cc8b60-50e5-4b2d-8e16-2fe726a1450b)
+				{
+					name: "Button_decrease a"
+					template: @bc8b1908-2dbd-4d08-9acf-5f19ea17de0c (objectref<GtfRectangle_template>)
+					children: children_list []
+					width: 55
+					height: 37
+					text: "-"
+					x: 193
+					y: 14
+					touchPressed: function<bool,int,int,int,int>(5542959d-fa46-4632-a326-4d72e80c95b9)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(dp:a_value > 0)" \
+							"	{" \
+							"		dp:a_value -= 1;" \
+							"	}" \
+							"	" \
+							"    false" \
+							"}"
+					}
+					fillColor: fillColor@bc8b1908-2dbd-4d08-9acf-5f19ea17de0c (propref<color>)
+				}, 
+				GtfRectangle_template_instance(09298749-3c85-4074-9e59-a715e0c4920c)
+				{
+					name: "Button_increase b"
+					template: @bc8b1908-2dbd-4d08-9acf-5f19ea17de0c (objectref<GtfRectangle_template>)
+					children: children_list []
+					width: 55
+					height: 37
+					text: "+"
+					x: 128
+					y: 66
+					touchPressed: function<bool,int,int,int,int>(707cb224-e0e6-4d7b-9159-2df76698c365)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:b_value += 1;" \
+							"    false" \
+							"}"
+					}
+					fillColor: fillColor@bc8b1908-2dbd-4d08-9acf-5f19ea17de0c (propref<color>)
+				}, 
+				GtfRectangle_template_instance(540c4326-a94d-4de6-89fb-418f536ca33d)
+				{
+					name: "Button_decrease b"
+					template: @bc8b1908-2dbd-4d08-9acf-5f19ea17de0c (objectref<GtfRectangle_template>)
+					children: children_list []
+					width: 55
+					height: 37
+					text: "-"
+					x: 193
+					y: 65
+					touchPressed: function<bool,int,int,int,int>(44dabe80-b8d1-437d-b4d4-93277fc46729)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(dp:b_value > 0)" \
+							"	{" \
+							"		dp:b_value -= 1;" \
+							"	}" \
+							"	" \
+							"    false" \
+							"}"
+					}
+					fillColor: fillColor@bc8b1908-2dbd-4d08-9acf-5f19ea17de0c (propref<color>)
+				}]
+			name: "Container"
+			visible: true
+			width: 400
+			height: 300
+			x: 264
+			y: 101
+		}]
+	text: "Script function demo"
+	"text 2": "Click on \"+\" and \"-\" to update the calculation."
+	update_result: conditional_script(d6f7efe5-04bb-4d68-9f3b-6bd74beab08d)
+	{
+		triggerList: trigger_list(e9279ac7-9a0a-4a61-ad55-7741b210a38b)
+		{
+			script: "dp:a_value" \
+				"dp:b_value" \
+				""
+		}
+		onTrigger: function<bool,bool>(0329d6bc-fde2-4bf8-b971-fb88f6563919)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	dp:result_value  = f:ExampleFunction_SUM(dp:a_value, dp:b_value);" \
+				"	false" \
+				"}"
+		}
+	}
+}

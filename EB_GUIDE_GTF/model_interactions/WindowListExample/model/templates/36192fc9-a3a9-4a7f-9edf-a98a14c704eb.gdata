@@ -1,0 +1,154 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template(36192fc9-a3a9-4a7f-9edf-a98a14c704eb)
+{
+	name: "T_TitleView"
+	structure: GtfView(4dde04fd-a79b-42e0-83e8-7e658e3f0821)
+	{
+		features: feature_list [
+			TouchPressed(cb5459f3-c7f2-421b-bf2b-a5d80a6e3ee9)
+			{
+				touchPressed: function<bool,int,int,int,int>(737eb05a-ee24-4f82-bcf0-bb7fdf310f49)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(b4fe129f-dbab-4934-bff3-9318d86c70e1)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(6128fc87-2a10-4b49-a1d2-d949b917c93c)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfImage(4310be85-e5cd-4aae-af3b-44df420cea42)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "logo"
+						visible: true
+						width: 135
+						height: 135
+						x: 105
+						y: 90
+						image: image_resource(b1d8b387-b9f6-4c0b-84e8-eb9508a44a29)
+						{
+							file: "images\\logo.png"
+						}
+						sRGB: false
+						horizontalAlign: 0
+						verticalAlign: 1
+					}, 
+					GtfLabel(1b340b5e-652a-4643-86b4-78d1c668280f)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Title"
+						visible: true
+						width: 450
+						height: 40
+						x: 260
+						y: 105
+						text: title_text@4dde04fd-a79b-42e0-83e8-7e658e3f0821 (propref<string>)
+						textColor: #FFFFFFFF
+						font: font_resource(f9c76814-fdd0-469e-88f4-b3629d9381b7)
+						{
+							file: "fonts\\PT_Sans.ttf"
+							size: 35
+						}
+						horizontalAlign: 0
+						verticalAlign: 0
+					}, 
+					GtfLabel(d68a73b4-ae1d-4674-bc9b-5d61cacfd013)
+					{
+						features: feature_list [
+							MultiLine(8ac656f1-1417-439a-8bc1-95600602393a)
+							{
+								lineOffset: 0
+								maxLineCount: 0
+							}]
+						children: children_list []
+						name: "shortDesc"
+						visible: true
+						width: 450
+						height: 89
+						x: 256
+						y: 153
+						text: short_desc_text@4dde04fd-a79b-42e0-83e8-7e658e3f0821 (propref<string>)
+						textColor: #FFFFFFFF
+						font: font_resource(e3c7b443-64c5-4583-acd6-36d90d2df47b)
+						{
+							file: "fonts\\PT_Sans.ttf"
+							size: 18
+						}
+						horizontalAlign: 0
+						verticalAlign: 0
+					}, 
+					GtfRectangle(6b391bd1-ca5d-4872-900c-773ba76e9af2)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Separator"
+						visible: true
+						width: 600
+						height: 2
+						x: 105
+						y: 250
+						fillColor: #A9A9A9FF
+					}, 
+					GtfLabel(cb9c11c9-4681-4588-9dd3-6f579200e694)
+					{
+						features: feature_list [
+							MultiLine(1e3a03ef-6af6-4602-9e28-4b1f010c289c)
+							{
+								lineOffset: 0
+								maxLineCount: 0
+							}]
+						children: children_list []
+						name: "Longdesc"
+						visible: true
+						width: 595
+						height: 180
+						x: 109
+						y: 246
+						text: long_desc_text@4dde04fd-a79b-42e0-83e8-7e658e3f0821 (propref<string>)
+						textColor: #FFFFFFFF
+						font: font_resource(57245d04-6a97-4cee-b0a3-ef280cde7876)
+						{
+							file: "fonts\\PT_Sans.ttf"
+							size: 18
+						}
+						horizontalAlign: 0
+						verticalAlign: 0
+					}]
+				name: "Rectangle 1"
+				visible: true
+				width: width@4dde04fd-a79b-42e0-83e8-7e658e3f0821 (propref<int>)
+				height: height@4dde04fd-a79b-42e0-83e8-7e658e3f0821 (propref<int>)
+				x: 1
+				y: 0
+				fillColor: #383838FF
+			}]
+		name: "View 1"
+		visible: true
+		width: 800
+		height: 480
+		x: 0
+		y: 0
+		title_text: "<Project title>"
+		short_desc_text: "<short description>"
+		long_desc_text: "<long description>"
+	}
+	width: width@4dde04fd-a79b-42e0-83e8-7e658e3f0821 (propref<int>)
+	long_desc_text: long_desc_text@4dde04fd-a79b-42e0-83e8-7e658e3f0821 (propref<string>)
+	short_desc_text: short_desc_text@4dde04fd-a79b-42e0-83e8-7e658e3f0821 (propref<string>)
+	title_text: title_text@4dde04fd-a79b-42e0-83e8-7e658e3f0821 (propref<string>)
+	touchPressed: touchPressed@cb5459f3-c7f2-421b-bf2b-a5d80a6e3ee9 (propref<function<bool,int,int,int,int>>)
+}

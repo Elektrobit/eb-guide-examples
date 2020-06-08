@@ -1,0 +1,72 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfRectangle_template(3a24ef7a-dbb9-40b0-985c-1a45dac0f9ea)
+{
+	name: "IconButton"
+	structure: GtfRectangle(b6941c0c-d730-43c6-ba79-1d6f57c42fc8)
+	{
+		features: feature_list [
+			Border(6cdaed49-096a-426b-9ed1-fce584848ba8)
+			{
+				borderThickness: 1
+				borderColor: #808080F5
+				borderStyle: 0
+			}, 
+			TouchShortReleased(3a7fd192-24cc-49e1-b531-17820b243961)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(743c6425-0b4f-4ba3-8b29-8e2674ba75c3)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	fire ev:home();" \
+						"    false;" \
+						"}"
+				}
+			}, 
+			StateTouched(12c9b0ea-1134-4413-9fac-1e1e687efab4)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			StateEnabled(7ea03ea5-3dd5-4be4-9768-b19cfb06b831)
+			{
+				enabled: true
+			}]
+		children: children_list [
+			GtfImage(6d4b3d47-9e53-41d9-aa65-0e23be48f9b8)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "icon"
+				visible: true
+				width: width@b6941c0c-d730-43c6-ba79-1d6f57c42fc8 (propref<int>)
+				height: height@b6941c0c-d730-43c6-ba79-1d6f57c42fc8 (propref<int>)
+				x: 0
+				y: 0
+				image: button_icon@b6941c0c-d730-43c6-ba79-1d6f57c42fc8 (propref<image>)
+				sRGB: false
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "bg"
+		visible: true
+		width: 60
+		height: 40
+		x: 20
+		y: 15
+		fillColor: #C0C0C0FF
+		button_icon: image_resource(8456294f-39e7-469e-89af-9fd118d59df2)
+		{
+			file: "images/home.png"
+		}
+	}
+	width: width@b6941c0c-d730-43c6-ba79-1d6f57c42fc8 (propref<int>)
+	height: height@b6941c0c-d730-43c6-ba79-1d6f57c42fc8 (propref<int>)
+	x: x@b6941c0c-d730-43c6-ba79-1d6f57c42fc8 (propref<int>)
+	y: y@b6941c0c-d730-43c6-ba79-1d6f57c42fc8 (propref<int>)
+	touchShortReleased: touchShortReleased@3a7fd192-24cc-49e1-b531-17820b243961 (propref<function<bool,int,int,int,int>>)
+	button_icon: button_icon@b6941c0c-d730-43c6-ba79-1d6f57c42fc8 (propref<image_resource>)
+	enabled: enabled@7ea03ea5-3dd5-4be4-9768-b19cfb06b831 (propref<bool>)
+}

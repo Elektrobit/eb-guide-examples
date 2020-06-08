@@ -1,0 +1,220 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(2749e2e7-23f0-40f9-916f-20657e735c9c)
+{
+	name: "EventInteractionView"
+	template: @4ba5e50b-dc6c-4c10-8165-b319a5cef09c (objectref<GtfView_template>)
+	children: children_list [
+		GtfRectangle(21aa0284-4f51-40eb-b03e-39587c34f5a9)
+		{
+			features: feature_list [
+				Border(8cdae301-b4d7-4e06-a96b-1e35fcd2cfd0)
+				{
+					borderThickness: 2
+					borderColor: #282626FF
+					borderStyle: 0
+				}]
+			children: children_list [
+				GtfLabel(7ea98acc-e062-470b-8981-830d81486505)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "name"
+					visible: true
+					width: width@21aa0284-4f51-40eb-b03e-39587c34f5a9 (propref<int>)
+					height: 50
+					x: 0
+					y: 0
+					text: "HMI"
+					textColor: #404040FF
+					font: font_resource(d60e3ca2-e383-4c23-ae05-d2c18317af1a)
+					{
+						file: "fonts/PT_Sans.ttf"
+						size: 23
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfRectangle_template_instance(ba9abfcc-ce07-4580-b71c-03a880b09708)
+				{
+					name: "trigger button"
+					template: @7e16277d-99a1-41b2-99fc-ddee370c1aa3 (objectref<GtfRectangle_template>)
+					children: children_list []
+					y: 40
+					x: 20
+					touchShortReleased: function<bool,int,int,int,int>(8a4d4f34-c7d8-4c20-aa52-39277759ff7b)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:evInterplayCurrent += 1;" \
+							"	fire ev:evInterplayOut(dp:evInterplayCurrent);" \
+							"	" \
+							"    false;" \
+							"}"
+					}
+					button_text: button_text@7e16277d-99a1-41b2-99fc-ddee370c1aa3 (propref<string>)
+					width: width@7e16277d-99a1-41b2-99fc-ddee370c1aa3 (propref<int>)
+					height: height@7e16277d-99a1-41b2-99fc-ddee370c1aa3 (propref<int>)
+					touched: touched@7e16277d-99a1-41b2-99fc-ddee370c1aa3 (propref<bool>)
+					enabled: enabled@7e16277d-99a1-41b2-99fc-ddee370c1aa3 (propref<bool>)
+					setText: conditional_script(6e149ee5-50f4-4f25-99b2-e1ca0d3e9d2b)
+					{
+						triggerList: trigger_list(f512ab75-9611-4d58-ab48-c66ffeba47d3)
+						{
+							script: "dp:evInterplayCurrent" \
+								""
+						}
+						onTrigger: function<bool,bool>(accf6584-9e6d-49c8-b8bc-a9fa60ab3588)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this.button_text = \"Send: \" + f:int2string(dp:evInterplayCurrent);" \
+								"	false;" \
+								"}"
+						}
+					}
+				}, 
+				GtfLabel(3035f3ae-0837-4697-8ce8-63f44c3f850f)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "in"
+					visible: true
+					width: 100
+					height: 30
+					x: 335
+					y: 45
+					text: "label"
+					textColor: #000000FF
+					font: font_resource(4322dd8b-3957-4596-810f-fe223912f2d7)
+					{
+						file: "fonts/PT_Sans.ttf"
+						size: 20
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+					receiveValue: conditional_script(50bf56a4-301b-4e04-bf08-2287c0bf9f93)
+					{
+						triggerList: trigger_list(fb16680c-75e5-459f-a02e-edfcf379ae8e)
+						{
+							script: "ev:evInterplayIn" \
+								""
+						}
+						onTrigger: function<bool,bool>(e4c995ba-ec15-4a2c-8dee-43bee67ff760)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	match_event v:evt=ev:evInterplayIn in" \
+								"	{" \
+								"		dp:evInterplayParamIn = v:evt.myParam;" \
+								"	}" \
+								"	false;" \
+								"}"
+						}
+					}
+					setText: conditional_script(116ae459-58a6-478b-9895-3a3507eca515)
+					{
+						triggerList: trigger_list(9dbd816d-dad9-467c-8d3c-36995036ee60)
+						{
+							script: "dp:evInterplayParamIn" \
+								""
+						}
+						onTrigger: function<bool,bool>(78573951-d498-4a42-b965-49350b8e9cc7)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this.text = \"Got: \" + f:int2string(dp:evInterplayParamIn);" \
+								"	false;" \
+								"}"
+						}
+					}
+				}]
+			name: "hmi"
+			visible: true
+			width: 466
+			height: 90
+			x: 171
+			y: 120
+			fillColor: #808080FF
+		}, 
+		GtfImage(9dde1287-5b18-4fd1-b396-57c4e4c02783)
+		{
+			features: feature_list [
+				ScaleMode(70eb44d8-ea2a-4bfb-979e-e29c5ffec611)
+				{
+					scaleMode: 2
+				}]
+			children: children_list []
+			name: "bg"
+			visible: true
+			width: 400
+			height: 110
+			x: 196
+			y: 220
+			image: image_resource(c17a8740-af74-42ad-a826-4470a3da7238)
+			{
+				file: "images/interaction_events.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfRectangle(cd10e23e-944d-4626-9e6d-6f95c7d016a2)
+		{
+			features: feature_list [
+				Border(9a563ed9-729d-4204-886a-82a7d3c7d3fb)
+				{
+					borderThickness: 2
+					borderColor: #282626FF
+					borderStyle: 0
+				}]
+			children: children_list [
+				GtfLabel(58b37869-a496-41fe-bd58-8bddc344d346)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "name"
+					visible: true
+					width: width@cd10e23e-944d-4626-9e6d-6f95c7d016a2 (propref<int>)
+					height: height@cd10e23e-944d-4626-9e6d-6f95c7d016a2 (propref<int>)
+					x: 0
+					y: 0
+					text: "Application"
+					textColor: #404040F5
+					font: font_resource(8915aff1-0230-472f-8503-987dcc973463)
+					{
+						file: "fonts/PT_Sans.ttf"
+						size: 23
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "app"
+			visible: true
+			width: 466
+			height: 50
+			x: 171
+			y: 330
+			fillColor: #808080FF
+		}]
+	setTitleText: conditional_script(cdc53ae9-8b54-4c1c-90a3-6cce4a3e0823)
+	{
+		triggerList: trigger_list(557aeb2f-61eb-4b91-ae90-8521b42b0e58)
+		{
+			script: "dp:showcase_title_list" \
+				""
+		}
+		onTrigger: function<bool,bool>(ad6f481b-59c1-4c8d-9220-495797314033)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	v:this.title_text = dp:showcase_title_list[dp:showcase_id_event];" \
+				"	false;" \
+				"}"
+		}
+	}
+	description_text: "Press 'Send' to trigger an event to the app and see its response."
+	title_text: ""
+	next_enabled: true
+	prev_enabled: true
+}

@@ -1,0 +1,12 @@
+EBGUIDE 6.10.0.200602120856;
+
+languages(6f7aa5ba-db23-448e-b995-40a17fc88aa2)
+{
+	items: language_list [
+		language(828c46a3-b615-49cd-9393-92624bec8185)
+		{
+			name: "Standard"
+			country: "US"
+			dialect: "en"
+		}]
+}

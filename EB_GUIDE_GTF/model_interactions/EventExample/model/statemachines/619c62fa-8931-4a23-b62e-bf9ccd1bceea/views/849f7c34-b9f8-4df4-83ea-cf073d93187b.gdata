@@ -1,0 +1,20 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(849f7c34-b9f8-4df4-83ea-cf073d93187b)
+{
+	name: "MainView"
+	template: @c0f1c727-95c8-4441-8262-f18240012cb1 (objectref<GtfView_template>)
+	children: children_list []
+	text: "Main"
+	fillColor: #FF4500FF
+	"text 2": "Please press the red rectangle to navigate to one of the states"
+	touchShortReleased: function<bool,int,int,int,int>(3e185801-1222-4586-b5f1-0e43eeef35fe)
+	{
+		script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+			"{" \
+			"	fire ev:WhatToDo()" \
+			"    false" \
+			"}"
+	}
+	Description: "The application will receive the touch event and send a response."
+}

@@ -1,0 +1,54 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(44a166d8-e7f9-4cae-ad01-7d2ec396151a)
+{
+	name: "View 1"
+	template: @d9ee43bd-ee64-4c9f-904a-75cf1fd8f745 (objectref<GtfView_template>)
+	children: children_list [
+		GtfRectangle(8353cb5b-093a-4ec6-88eb-9b911b27ebc8)
+		{
+			features: feature_list [
+				GtfFocusRectColorFeature(3542c525-e3a6-4c3a-b160-b2550ff2ed0e)
+				{
+					focusedColor: #FF0000FF
+				}, 
+				StateFocused(cac35bfc-dde2-4338-98a9-cdd0176f9e22)
+				{
+					focusable: 3
+					focused: @ff56931d-9eca-4d00-b4c3-462c0786446d (objectref<bool>)
+				}, 
+				TouchPressed(3116a36b-d98d-4926-af71-b005299514db)
+				{
+					touchPressed: function<bool,int,int,int,int>(ff817151-f858-4a19-94c6-c55a202b077c)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(v:this->^.focusable==3)" \
+							"		v:this->^.focusable=0" \
+							"	else if(v:this->^.focusable==0)" \
+							"		v:this->^.focusable=3" \
+							"    true" \
+							"}"
+					}
+				}, 
+				StateTouched(d93d0c3e-addd-4e53-bf8d-6b89b7cb1f1e)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "Rectangle 1"
+			visible: true
+			width: 100
+			height: 100
+			x: 350
+			y: 190
+			fillColor: #A9A9A9FF
+		}]
+	text: "Focused widget feature demo"
+	description: "An HMI model can load EB GUIDE GTF extension example "
+	"text 2": "Press rectangle to focus it"
+	focusable: focusable@d9ee43bd-ee64-4c9f-904a-75cf1fd8f745 (propref<int>)
+}

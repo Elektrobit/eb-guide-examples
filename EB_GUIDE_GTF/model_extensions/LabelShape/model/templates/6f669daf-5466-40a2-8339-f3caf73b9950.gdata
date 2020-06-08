@@ -1,0 +1,155 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template(6f669daf-5466-40a2-8339-f3caf73b9950)
+{
+	name: "TitleView"
+	structure: GtfView(fa0ff3a8-e1d3-4214-bbe8-3bc72823b3b2)
+	{
+		features: feature_list [
+			StateTouched(4af5b959-dff5-495d-ac20-9506df7a2a53)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			TouchPressed(342b4d25-605a-422c-b8c5-56c4b29af090)
+			{
+				touchPressed: function<bool,int,int,int,int>(0d14788b-09c9-4e1e-a026-e9901114bf15)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}]
+		children: children_list [
+			GtfRectangle(8abbe361-af55-4074-b4e8-44ec69c0c198)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "main bg"
+				visible: true
+				width: width@fa0ff3a8-e1d3-4214-bbe8-3bc72823b3b2 (propref<int>)
+				height: height@fa0ff3a8-e1d3-4214-bbe8-3bc72823b3b2 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #383838FF
+			}, 
+			GtfImage(a1f5afca-1bbd-4d45-993c-f215c2113a75)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "logo"
+				visible: true
+				width: 135
+				height: 135
+				x: 105
+				y: 90
+				image: image_resource(44b394f3-3fed-4ab9-acf3-f4a71adc768e)
+				{
+					file: "images\\EB.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfLabel(2f8cdde4-0a49-4c2e-a26c-4dd55b057d68)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "title"
+				visible: true
+				width: 450
+				height: 40
+				x: 260
+				y: 105
+				text: "title text"@fa0ff3a8-e1d3-4214-bbe8-3bc72823b3b2 (propref<string>)
+				textColor: #FFFFFFFF
+				font: font_resource(e71f7fca-f3d6-4b74-a4bf-5c34dc98154a)
+				{
+					file: "fonts\\PT_Sans.ttf"
+					size: 35
+				}
+				horizontalAlign: 0
+				verticalAlign: 0
+			}, 
+			GtfLabel(aac4faec-8c2f-4665-aee3-0d52639b4f60)
+			{
+				features: feature_list [
+					MultiLine(3d2b992e-0907-4775-9ac2-20b18894919e)
+					{
+						lineOffset: 0
+						maxLineCount: 0
+					}]
+				children: children_list []
+				name: "short desc"
+				visible: true
+				width: 450
+				height: 50
+				x: 260
+				y: 159
+				text: "short desc text"@fa0ff3a8-e1d3-4214-bbe8-3bc72823b3b2 (propref<string>)
+				textColor: #FFFFFFFF
+				font: font_resource(3317edc6-5ef5-483d-a222-673d26de5132)
+				{
+					file: "fonts\\PT_Sans.ttf"
+					size: 18
+				}
+				horizontalAlign: 0
+				verticalAlign: 0
+			}, 
+			GtfRectangle(4cb6b9ab-15f7-4d84-bb88-9be938dfb8e6)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "separator"
+				visible: true
+				width: 600
+				height: 2
+				x: 105
+				y: 250
+				fillColor: #50504EFF
+			}, 
+			GtfLabel(60b0f13c-59f5-46cf-8418-5310a580ddb3)
+			{
+				features: feature_list [
+					MultiLine(5ab23e9c-b000-4d62-ae31-e5d10bcc5ff3)
+					{
+						lineOffset: 0
+						maxLineCount: 0
+					}]
+				children: children_list []
+				name: "long desc"
+				visible: true
+				width: 595
+				height: 180
+				x: 110
+				y: 246
+				text: "long desc text"@fa0ff3a8-e1d3-4214-bbe8-3bc72823b3b2 (propref<string>)
+				textColor: #FFFFFFFF
+				font: font_resource(603bff15-26f2-43c5-9fae-1199f80271ac)
+				{
+					file: "fonts\\PT_Sans.ttf"
+					size: 18
+				}
+				horizontalAlign: 0
+				verticalAlign: 0
+			}]
+		name: "View"
+		visible: true
+		width: 800
+		height: 480
+		x: 0
+		y: 0
+		"long desc text": "<long description>"
+		"short desc text": "<short description>"
+		"title text": "<Project title>"
+	}
+	width: width@fa0ff3a8-e1d3-4214-bbe8-3bc72823b3b2 (propref<int>)
+	height: height@fa0ff3a8-e1d3-4214-bbe8-3bc72823b3b2 (propref<int>)
+	"long desc text": "long desc text"@fa0ff3a8-e1d3-4214-bbe8-3bc72823b3b2 (propref<string>)
+	"short desc text": "short desc text"@fa0ff3a8-e1d3-4214-bbe8-3bc72823b3b2 (propref<string>)
+	"title text": "title text"@fa0ff3a8-e1d3-4214-bbe8-3bc72823b3b2 (propref<string>)
+	touchPressed: touchPressed@342b4d25-605a-422c-b8c5-56c4b29af090 (propref<function<bool,int,int,int,int>>)
+}

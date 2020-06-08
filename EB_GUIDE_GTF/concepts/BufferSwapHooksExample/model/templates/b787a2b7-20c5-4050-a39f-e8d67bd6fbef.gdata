@@ -1,0 +1,96 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template(b787a2b7-20c5-4050-a39f-e8d67bd6fbef)
+{
+	name: "MainView"
+	structure: GtfView(4e69656e-0d17-4d8f-a2b3-790c631da9bb)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(e702883f-70d1-40c5-bc1a-ae6e64a67317)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "main bg"
+				visible: true
+				width: width@4e69656e-0d17-4d8f-a2b3-790c631da9bb (propref<int>)
+				height: height@4e69656e-0d17-4d8f-a2b3-790c631da9bb (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #383838FF
+			}, 
+			GtfLabel(029c095f-a7e3-4ecb-918a-9bb6f81290f3)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "title"
+				visible: true
+				width: 760
+				height: 50
+				x: 20
+				y: 10
+				text: "Widget features demo"
+				textColor: #C0C0C0FF
+				font: font_resource(0168f11e-f865-46eb-b7d3-32dcd320b194)
+				{
+					file: "fonts/PT_Sans.ttf"
+					size: 35
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfRectangle(811e3625-5cf5-4db9-8dd0-888573b11e27)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "separator top"
+				visible: true
+				width: 780
+				height: 2
+				x: 10
+				y: 70
+				fillColor: #504E4EFF
+			}, 
+			GtfRectangle(ccc636eb-c301-4441-8f1a-40509f612e5f)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "separator bottom"
+				visible: true
+				width: 780
+				height: 2
+				x: 10
+				y: 410
+				fillColor: #504E4EFF
+			}, 
+			GtfLabel(692b8933-8647-4173-b2a8-2c99b7f7af6c)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "text bottom"
+				visible: true
+				width: 780
+				height: 40
+				x: 10
+				y: 425
+				text: description@4e69656e-0d17-4d8f-a2b3-790c631da9bb (propref<string>)
+				textColor: #C0C0C0FF
+				font: font_resource(26b91b9e-2e80-47d7-8386-dcbe16a76e1a)
+				{
+					file: "fonts/PT_Sans.ttf"
+					size: 25
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "View"
+		visible: true
+		width: 800
+		height: 480
+		x: 0
+		y: 0
+		description: "<description>"
+	}
+	description: description@4e69656e-0d17-4d8f-a2b3-790c631da9bb (propref<string>)
+	text: text@029c095f-a7e3-4ecb-918a-9bb6f81290f3 (propref<string>)
+}

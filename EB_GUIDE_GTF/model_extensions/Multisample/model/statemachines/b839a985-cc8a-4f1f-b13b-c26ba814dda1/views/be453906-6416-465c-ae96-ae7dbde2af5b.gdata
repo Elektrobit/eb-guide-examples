@@ -1,0 +1,19 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(be453906-6416-465c-ae96-ae7dbde2af5b)
+{
+	name: "View"
+	template: @f22f375f-74a5-4677-854b-56ad0cc8b440 (objectref<GtfView_template>)
+	children: children_list []
+	"long desc text": "Documentation reference:\\nExtensions to EB GUIDE TF"
+	"short desc text": "Example of loading a custom multisampled widget with the HMI"
+	title_text: "Multisampling demo"
+	touchPressed: function<bool,int,int,int,int>(edcaa388-d71b-4574-94d8-3c262b8ad866)
+	{
+		script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+			"{" \
+			"	fire ev:Next();" \
+			"    false" \
+			"}"
+	}
+}

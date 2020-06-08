@@ -1,0 +1,80 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfRectangle_template(880b1913-33e4-4201-aab5-5a187b2dce25)
+{
+	name: "T_FocusableRectangle"
+	structure: GtfRectangle(df50bf9f-86af-4500-bb6e-9df5f032f844)
+	{
+		features: feature_list [
+			StateFocused(a846c163-0dcf-48f5-8111-090f2215b0f8)
+			{
+				focusable: 3
+				focused: false
+			}, 
+			Border(b5837ad2-dff8-4fa0-8e93-3c549148f009)
+			{
+				borderThickness: 0
+				borderColor: #000000FF
+				borderStyle: 0
+			}, 
+			StateTouched(30afcfee-c6df-4974-8a85-6a2e13b3bd51)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			TouchShortReleased(36676c08-67d4-4ac9-abbd-d847c6327a3f)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(2e203802-b0ff-4b86-a989-9ec5ab3e6a9b)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}]
+		children: children_list []
+		name: "Rectangle 1"
+		visible: true
+		width: 100
+		height: 100
+		x: 0
+		y: 0
+		fillColor: #008000FF
+		focusedBorderColor: #FF0000FF
+		defaultBorderColor: #008000FF
+		CheckFocus: conditional_script(3ee71e5f-bfe8-4881-b7fb-9d3738b1b913)
+		{
+			triggerList: trigger_list(286939df-64bf-4df6-8b56-98bad3f8fe8f)
+			{
+				script: "v:this.focused" \
+					""
+			}
+			onTrigger: function<bool,bool>(e5052905-cf44-43ff-bfdc-3bf44144d658)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	if(v:this.focused)" \
+					"	{" \
+					"		" \
+					"		v:this.borderColor = v:this.focusedBorderColor" \
+					"		v:this.borderThickness = 5;" \
+					"	}" \
+					"	else" \
+					"	{" \
+					"		v:this.borderColor = v:this.defaultBorderColor" \
+					"		v:this.borderThickness = 0" \
+					"	}" \
+					"	false" \
+					"}"
+			}
+		}
+	}
+	focused: focused@a846c163-0dcf-48f5-8111-090f2215b0f8 (propref<bool>)
+	width: width@df50bf9f-86af-4500-bb6e-9df5f032f844 (propref<int>)
+	height: height@df50bf9f-86af-4500-bb6e-9df5f032f844 (propref<int>)
+	x: x@df50bf9f-86af-4500-bb6e-9df5f032f844 (propref<int>)
+	y: y@df50bf9f-86af-4500-bb6e-9df5f032f844 (propref<int>)
+	touchShortReleased: touchShortReleased@36676c08-67d4-4ac9-abbd-d847c6327a3f (propref<function<bool,int,int,int,int>>)
+}

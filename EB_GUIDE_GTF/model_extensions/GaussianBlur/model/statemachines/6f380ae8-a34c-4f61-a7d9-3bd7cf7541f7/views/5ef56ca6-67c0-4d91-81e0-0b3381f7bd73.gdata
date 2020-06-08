@@ -1,0 +1,123 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(5ef56ca6-67c0-4d91-81e0-0b3381f7bd73)
+{
+	name: "View 1"
+	template: @d9ee43bd-ee64-4c9f-904a-75cf1fd8f745 (objectref<GtfView_template>)
+	children: children_list [
+		GaussianBlur(20eb3506-8089-4990-bb38-ad251195c07a)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage(86117783-262d-4a03-b4e7-503727d0a760)
+				{
+					features: feature_list [
+						ScaleMode(cf9fb219-cd31-4f61-8071-7a163e54d27a)
+						{
+							scaleMode: 2
+						}]
+					children: children_list []
+					name: "Image"
+					visible: true
+					width: 285
+					height: 285
+					x: 20
+					y: 20
+					image: image_resource(1100951d-6552-4f7d-9d19-744a46af7f3a)
+					{
+						file: "images\\Nummer_bold_RGB.png"
+					}
+					sRGB: true
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "GaussianBlurEffect"
+			visible: true
+			width: 325
+			height: 325
+			x: 235
+			y: 78
+			sigma: 3F
+			enabled: true
+			"Conditional script 1": conditional_script(69d3a907-26f2-480f-8686-a97edf399789)
+			{
+				triggerList: trigger_list(75f01ffa-ab78-4ae3-bf77-465e636f90ab)
+				{
+					script: "ev:changeIntesity"
+				}
+				onTrigger: function<bool,bool>(c4f358f8-ced4-42e4-ba1a-e80604e700e0)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	match_event v:event = ev:changeIntesity in" \
+						"	{" \
+						"		 if (v:this.sigma == 3.0)" \
+						"		 {" \
+						"		 	v:this.sigma = 10.0;" \
+						"		 	" \
+						"		 }" \
+						"		 else" \
+						"		 {" \
+						"		 	" \
+						"		 	v:this.sigma = 3.0;" \
+						"		 }" \
+						"	}" \
+						"	" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfRectangle(b2f40269-cff1-493b-9ab1-50eef71a22d6)
+		{
+			features: feature_list [
+				TouchPressed(e924d905-6924-4cf2-b02f-6ca1f07991de)
+				{
+					touchPressed: function<bool,int,int,int,int>(80996db8-ecec-4426-b902-474ee8fa777d)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:changeIntesity();" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(0e35aced-329b-4af1-b6b2-5611fe58e7e6)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfLabel(a58dbe21-d9f2-4289-bc88-1adec267ed77)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "text"
+					visible: true
+					width: width@b2f40269-cff1-493b-9ab1-50eef71a22d6 (propref<int>)
+					height: height@b2f40269-cff1-493b-9ab1-50eef71a22d6 (propref<int>)
+					x: 0
+					y: 1
+					text: "Change intensity"
+					textColor: #FFFFFFFF
+					font: font_resource(99f382dc-085d-4b7b-9678-8783a414b0f7)
+					{
+						file: "fonts\\PT_Sans.ttf"
+						size: 25
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "ChangeIntensity"
+			visible: true
+			width: 200
+			height: 60
+			x: 587
+			y: 194
+			fillColor: #A9A9A9FF
+		}]
+	text: "Custom effect demo"
+	description: "An HMI model can load custom effects."
+}

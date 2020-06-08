@@ -1,0 +1,62 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfRectangle_template(bc8b1908-2dbd-4d08-9acf-5f19ea17de0c)
+{
+	name: "T_BasicButton"
+	structure: GtfRectangle(fd4c475d-317b-465c-b3b6-5125495b0b87)
+	{
+		features: feature_list [
+			TouchPressed(71904002-8ba0-40ef-8191-f1aac8ca5075)
+			{
+				touchPressed: function<bool,int,int,int,int>(1ab175c2-8484-4357-8497-d8f423aa8081)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(c9892e13-e23b-4d29-9558-13ff034c7c34)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfLabel(3120a877-b4e0-4bd4-b3a1-e82f25ee053b)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Label"
+				visible: true
+				width: width@fd4c475d-317b-465c-b3b6-5125495b0b87 (propref<int>)
+				height: height@fd4c475d-317b-465c-b3b6-5125495b0b87 (propref<int>)
+				x: 0
+				y: 0
+				text: "label"
+				textColor: #FFFFFFFF
+				font: font_resource(bb23e400-05e1-4a4c-b33c-58023cb4030f)
+				{
+					file: "fonts\\PT_Sans.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Background"
+		visible: true
+		width: 100
+		height: 100
+		x: 0
+		y: 0
+		fillColor: #A9A9A9FF
+	}
+	width: width@fd4c475d-317b-465c-b3b6-5125495b0b87 (propref<int>)
+	height: height@fd4c475d-317b-465c-b3b6-5125495b0b87 (propref<int>)
+	x: x@fd4c475d-317b-465c-b3b6-5125495b0b87 (propref<int>)
+	y: y@fd4c475d-317b-465c-b3b6-5125495b0b87 (propref<int>)
+	fillColor: fillColor@fd4c475d-317b-465c-b3b6-5125495b0b87 (propref<color>)
+	text: text@3120a877-b4e0-4bd4-b3a1-e82f25ee053b (propref<string>)
+	touchPressed: touchPressed@71904002-8ba0-40ef-8191-f1aac8ca5075 (propref<function<bool,int,int,int,int>>)
+}

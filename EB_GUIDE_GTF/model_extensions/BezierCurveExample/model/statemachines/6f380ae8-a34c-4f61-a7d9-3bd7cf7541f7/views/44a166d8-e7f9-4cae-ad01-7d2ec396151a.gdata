@@ -1,0 +1,389 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(44a166d8-e7f9-4cae-ad01-7d2ec396151a)
+{
+	name: "View 1"
+	template: @d9ee43bd-ee64-4c9f-904a-75cf1fd8f745 (objectref<GtfView_template>)
+	children: children_list [
+		GtfLabel(4b2a5931-7abb-4132-83fc-5d1f3eea14c0)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Label 1"
+			visible: true
+			width: 445
+			height: 79
+			x: 172
+			y: 75
+			text: "Click on each widget to animate it"
+			textColor: #FFFFFFFF
+			font: font_resource(90107c5c-6a92-4fc8-bb75-fc2d4e822e38)
+			{
+				file: "fonts\\PT_Sans.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfEllipse(c584e096-f144-4a25-9f13-7f989ce409ec)
+		{
+			features: feature_list [
+				TouchShortReleased(2c4cea6c-b076-4521-8834-f2398e3d71ad)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(ed74d704-f25c-4e76-a344-beca3ae36944)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:playAnimation_Int()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(a1608d56-f9de-46af-b550-ca355c9a02db)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfParallelAnimation(e2977141-7e5c-4593-b0f8-c4620c4bf95a)
+				{
+					features: feature_list []
+					children: children_list [
+						BezierCurveS32(1079904c-21ac-48d5-88ed-0e8a11c498a6)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "IntegerCurve"
+							enabled: true
+							delay: 0
+							duration: 2000
+							repeat: 1
+							alternating: true
+							relative: false
+							handle1x: 0F
+							handle1y: 1F
+							handle2x: 1F
+							handle2y: 0F
+							start: 200
+							end: 500
+							target: x@c584e096-f144-4a25-9f13-7f989ce409ec (propref<int>)
+							fireEventIfAnimationReachesMiddleAfter1second: conditional_script(d37c0f88-d547-4ffd-b39b-4b43d155b0b9)
+							{
+								triggerList: trigger_list(3273422b-8411-4dda-8008-4cc04dd75b09)
+								{
+									script: "dp:animationTarget_Ellipse" \
+										""
+								}
+								onTrigger: function<bool,bool>(10497f30-1dc6-4309-aa39-26aa760776a3)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	if(v:arg0==false&&(f:animation_beyond(v:this->^,1000)&&dp:animationTarget_Ellipse==((v:this.end+v:this.start)/2)))" \
+										"	{" \
+										"		fire ev:isAnimationInTheMiddle()" \
+										"	}" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "Animation_Int"
+					enabled: true
+					repeat: 1
+					alternating: false
+					scale: 1F
+					onPlay: function<void,int,bool>(e4ff0915-b599-4385-8423-dd4a54c00341)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"	dp:isAnimationIntFinished=false" \
+							"}"
+					}
+					onPause: function<void,int>(6839e9a1-7cfb-4d6e-ba73-1c62166b4df3)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onTerminate: function<void,int,int>(9cf530a3-c79c-4b8b-ad0a-9fc332d132c4)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"	dp:isAnimationIntFinished=true" \
+							"}"
+					}
+					playAnimation_Int: conditional_script(bd30d89d-dca8-4a6a-a4fb-3b90587d13b4)
+					{
+						triggerList: trigger_list(ceb775f2-b558-46b2-97d3-758d6a6456ff)
+						{
+							script: "ev:playAnimation_Int"
+						}
+						onTrigger: function<bool,bool>(1ff14016-142e-45cc-b92f-6bc2de856bf8)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	if(v:arg0==false)" \
+								"	{" \
+								"		f:animation_play(v:this)" \
+								"	}" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "Ellipse"
+			visible: true
+			width: 72
+			height: 74
+			x: @18a74645-6b00-4815-a3b0-4f55c2befcdb (objectref<int>)
+			y: 141
+			fillColor: #A9A9A9FF
+			arcWidth: 0
+			centralAngle: 360F
+			sectorRotation: 0F
+		}, 
+		GtfEllipse(aff717a4-2c89-4c3c-8ddf-558ba1c7896b)
+		{
+			features: feature_list [
+				TouchShortReleased(420aee07-27b7-4e00-9276-bca3acf32d38)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(2ab5325a-3341-43da-a713-0567d462abe5)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:playAnimation_Float()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(7c74cc2a-eba8-4a8d-856d-0551edb5ab91)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfParallelAnimation(118d62eb-ea25-4edb-975b-13bf01839ec9)
+				{
+					features: feature_list []
+					children: children_list [
+						BezierCurveFloat(d44c495a-b902-4c01-aa6c-4de451ef03a9)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "FloatCurve"
+							enabled: true
+							delay: 0
+							duration: 2000
+							repeat: 1
+							alternating: true
+							relative: false
+							handle1x: 0F
+							handle1y: 1F
+							handle2x: 1F
+							handle2y: 0F
+							start: 0F
+							end: 360F
+							target: centralAngle@aff717a4-2c89-4c3c-8ddf-558ba1c7896b (propref<float>)
+							fireEventIfAnimationReachesMiddleAfter1second: conditional_script(723f073b-b0cb-44ca-8d25-36ea328bc7e6)
+							{
+								triggerList: trigger_list(2e8b4d0d-ab60-4263-a811-9cd7047b0001)
+								{
+									script: "dp:animationTarget_Ellipse1"
+								}
+								onTrigger: function<bool,bool>(dd1aed95-875d-44e2-bcdb-e1aa85853994)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	if(v:arg0==false&&(f:animation_beyond(v:this->^,1000)&&(f:nearbyint(dp:animationTarget_Ellipse1)==180)))" \
+										"	{" \
+										"		fire ev:isAnimationInTheMiddle()" \
+										"	}" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "Animation_Float"
+					enabled: true
+					repeat: 1
+					alternating: false
+					scale: 1F
+					onPlay: function<void,int,bool>(1b28551c-24d4-422b-a6cb-5546229dec5a)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"	dp:isAnimationFloatFinished=false" \
+							"}"
+					}
+					onPause: function<void,int>(29f66c02-c68c-4a45-984a-ca82280f01aa)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onTerminate: function<void,int,int>(cc022180-8956-4754-9a35-0f7acaea2983)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"	dp:isAnimationFloatFinished=true" \
+							"}"
+					}
+					playAnimation_Float: conditional_script(998866a9-429d-4926-9c61-03a19bb49e77)
+					{
+						triggerList: trigger_list(75effb81-22f2-4cb7-83fb-2525a49e30a6)
+						{
+							script: "ev:playAnimation_Float"
+						}
+						onTrigger: function<bool,bool>(bb2a9ad6-838e-4542-9ef2-68a52b684aac)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	if(v:arg0==false)" \
+								"	{" \
+								"		f:animation_play(v:this)" \
+								"	}" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "Ellipse 1"
+			visible: true
+			width: 72
+			height: 74
+			x: 200
+			y: 227
+			fillColor: #A9A9A9FF
+			arcWidth: 0
+			centralAngle: @48571cbb-3f06-4c70-bd4b-c4bcfd75d44b (objectref<float>)
+			sectorRotation: 0F
+		}, 
+		GtfEllipse(731773ec-20bd-4366-8a8f-9bb9f7dc2520)
+		{
+			features: feature_list [
+				TouchShortReleased(0d973735-3fc8-4991-9b71-0b3ef4c03637)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(4df9e6a4-851e-412b-8f5b-74bf780dd528)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:playAnimation_Color()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(842e8e24-b382-425e-a9e2-d2648b705cf7)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfParallelAnimation(d66803ab-8b3c-4143-b666-abea91791fa7)
+				{
+					features: feature_list []
+					children: children_list [
+						BezierCurveColor(a373d3d3-29eb-40cb-9876-b55ea1699924)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "ColorCurve"
+							enabled: true
+							delay: 0
+							duration: 2000
+							repeat: 1
+							alternating: true
+							relative: false
+							handle1x: 0F
+							handle1y: 1F
+							handle2x: 1F
+							handle2y: 0F
+							start: #808080FF
+							end: #008000FF
+							target: fillColor@731773ec-20bd-4366-8a8f-9bb9f7dc2520 (propref<color>)
+							fireEventIfAnimationReachesMiddleAfter1second: conditional_script(5a5328a1-18ce-4c6c-a712-628ec2a9516d)
+							{
+								triggerList: trigger_list(54b36ff8-67f3-4371-95b4-6c309c076dcc)
+								{
+									script: "dp:animationTarget_Ellipse2" \
+										""
+								}
+								onTrigger: function<bool,bool>(3909c3c9-c744-4a56-8431-f78c4b742ec9)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	if(v:arg0==false&&(f:animation_beyond(v:this->^,1000)&&dp:animationTarget_Ellipse2==color:63, 128, 63, 255))" \
+										"	{" \
+										"		fire ev:isAnimationInTheMiddle()" \
+										"	}" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "Animation_Color"
+					enabled: true
+					repeat: 1
+					alternating: false
+					scale: 1F
+					onPlay: function<void,int,bool>(19a872f3-745b-4e9b-81a4-2343c5bece07)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"	dp:isAnimationColorFinished=false" \
+							"}"
+					}
+					onPause: function<void,int>(223a01a0-79ef-4426-8745-21634b231b8f)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onTerminate: function<void,int,int>(9b1e1024-0861-4738-80a3-4ea8e0517e6d)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"	dp:isAnimationColorFinished=true" \
+							"}"
+					}
+					playAnimation_Color: conditional_script(6aec0cda-c88a-46fa-8320-90ac4dd90dd1)
+					{
+						triggerList: trigger_list(b2b15af3-edb8-438f-8e49-7e4ef60bed6c)
+						{
+							script: "ev:playAnimation_Color"
+						}
+						onTrigger: function<bool,bool>(486c56d0-b690-4474-b9e8-bddb89b9c15e)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	if(v:arg0==false)" \
+								"	{" \
+								"		f:animation_play(v:this)" \
+								"	}" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "Ellipse 2"
+			visible: true
+			width: 72
+			height: 74
+			x: 200
+			y: 320
+			fillColor: @3583aa42-2e5a-4188-9213-a4642c8746e7 (objectref<color>)
+			arcWidth: 0
+			centralAngle: 360F
+			sectorRotation: 0F
+		}]
+	text: "Bezier curve demo"
+	description: "The plugin provides a new custom animation curve"
+}

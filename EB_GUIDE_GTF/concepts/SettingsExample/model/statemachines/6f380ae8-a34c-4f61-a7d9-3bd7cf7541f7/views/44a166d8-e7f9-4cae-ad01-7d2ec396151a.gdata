@@ -1,0 +1,35 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(44a166d8-e7f9-4cae-ad01-7d2ec396151a)
+{
+	name: "Homescreen"
+	template: @d9ee43bd-ee64-4c9f-904a-75cf1fd8f745 (objectref<GtfView_template>)
+	children: children_list [
+		GtfLabel(51dc5609-9214-47d8-b6f8-9ddee28a2428)
+		{
+			features: feature_list [
+				MultiLine(c083e626-fb35-4ff4-b54c-0b3a3ed5b84c)
+				{
+					lineOffset: 0
+					maxLineCount: 0
+				}]
+			children: children_list []
+			name: "Label 1"
+			visible: true
+			width: 685
+			height: 153
+			x: 59
+			y: 160
+			text: "You have started the Settings application plugin model!\\nCheck the output text file for the list of loaded plugins."
+			textColor: #FFFFFFFF
+			font: font_resource(768b262b-a8cb-4f5d-93a9-583e3a976c56)
+			{
+				file: "fonts/PT_Sans.ttf"
+				size: 25
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}]
+	text: "Settings application demo"
+	description: "The application retrieves the loaded plugins in the model"
+}

@@ -1,0 +1,61 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfRectangle_template(0d87f242-dbbe-451f-b029-3d13688d6ac1)
+{
+	name: "T_BasicButton"
+	structure: GtfRectangle(59673683-4dda-4ed7-bde5-96010d2ce0de)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfLabel(af90e814-31fd-4870-96b0-04359d3942a5)
+			{
+				features: feature_list [
+					TouchPressed(28d0159b-cedf-4287-8d75-ada9728672c9)
+					{
+						touchPressed: function<bool,int,int,int,int>(45d2113c-a20f-415f-aab1-c8c8b9b6ce63)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(4f87f86c-b72c-437d-8e37-b88bcc9143aa)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list []
+				name: "Label 4"
+				visible: true
+				width: width@59673683-4dda-4ed7-bde5-96010d2ce0de (propref<int>)
+				height: height@59673683-4dda-4ed7-bde5-96010d2ce0de (propref<int>)
+				x: 0
+				y: 0
+				text: "label"
+				textColor: #FFFFFFFF
+				font: font_resource(552bbaf9-a2ba-48de-a134-115afa3e4464)
+				{
+					file: "fonts\\PT_Sans.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Background"
+		visible: true
+		width: 100
+		height: 100
+		x: 0
+		y: 0
+		fillColor: #A9A9A9FF
+	}
+	text: text@af90e814-31fd-4870-96b0-04359d3942a5 (propref<string>)
+	touchPressed: touchPressed@28d0159b-cedf-4287-8d75-ada9728672c9 (propref<function<bool,int,int,int,int>>)
+	width: width@59673683-4dda-4ed7-bde5-96010d2ce0de (propref<int>)
+	height: height@59673683-4dda-4ed7-bde5-96010d2ce0de (propref<int>)
+	x: x@59673683-4dda-4ed7-bde5-96010d2ce0de (propref<int>)
+	y: y@59673683-4dda-4ed7-bde5-96010d2ce0de (propref<int>)
+}
