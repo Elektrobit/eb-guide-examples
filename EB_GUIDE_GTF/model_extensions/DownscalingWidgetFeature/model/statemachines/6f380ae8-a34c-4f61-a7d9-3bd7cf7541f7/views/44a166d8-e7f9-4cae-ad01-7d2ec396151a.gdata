@@ -7,21 +7,27 @@ GtfView_template_instance(44a166d8-e7f9-4cae-ad01-7d2ec396151a)
 	children: children_list [
 		GtfImage(bcb215fb-acf9-4cf8-a865-b17392293c2e)
 		{
-			features: feature_list []
+			features: feature_list [
+				DownScalingFeature(60015f2f-6db1-439a-938d-988069b93bb7)
+				{
+					targetHeight: 127
+					targetWidth: 250
+					imagePath: "resources\\images\\extern.jpg"
+				}]
 			children: children_list []
 			name: "Image 1"
 			visible: true
-			width: 503
-			height: 256
-			x: 6
-			y: 110
+			width: 500
+			height: 254
+			x: 153
+			y: 103
 			image: image_resource(aedc3bfa-4413-45f9-a55d-e845e183e3b8)
 			{
 				file: ""
 			}
 			sRGB: false
-			horizontalAlign: 0
-			verticalAlign: 1
+			horizontalAlign: 1
+			verticalAlign: 0
 		}]
 	text: "Downscaling demo"
 	description: "The HMI model contains the Downscaling Widget Feature"
