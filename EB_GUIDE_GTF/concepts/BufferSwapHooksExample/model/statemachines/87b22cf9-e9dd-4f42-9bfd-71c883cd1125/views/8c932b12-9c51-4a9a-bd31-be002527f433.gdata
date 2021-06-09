@@ -1,0 +1,37 @@
+EBGUIDE 6.11.0.210526170413;
+
+GtfView_template_instance(8c932b12-9c51-4a9a-bd31-be002527f433)
+{
+	name: "View"
+	template: @740846e9-bc76-4da8-835d-586ad4dec9d5 (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<function<bool,int,int,int,int>>(ca9de94b-4224-47f6-a2d3-1542c6782d2a)
+		{
+			name: "touchPressed"
+			value: function<bool,int,int,int,int>(e63bec99-a8c3-4ef3-ba73-2db3f2c5d05c)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:next();" \
+					"    false" \
+					"}"
+			}
+		}, 
+		wp<string>(b694298a-d60b-4a05-956a-714b1cbbd1f7)
+		{
+			name: "long desc_text"
+			value: "Documentation reference:\\nUsing the Display Hooks interface. "
+		}, 
+		wp<string>(2548a8e0-79a3-4103-b5bd-b7b77da7570e)
+		{
+			name: "short desc_text"
+			value: "Example of using Display Hooks to know when buffers are swapped."
+		}, 
+		wp<string>(b4b428fe-c4de-47c6-aac8-c7111ea73461)
+		{
+			name: "title_text"
+			value: "Buffer Swap Hooks demo"
+		}]
+	user_properties: property_list []
+	children: children_list []
+}

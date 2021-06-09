@@ -1,0 +1,36 @@
+EBGUIDE 6.11.0.210526170413;
+
+project(c18b2cbe-6507-4376-8c90-1afa2322d013)
+{
+	rootNamespace: namespace(0ec8b528-cdc5-4b63-871b-6cf45656d6cc)
+	{
+		name: ""
+		namespaces: namespaces []
+		events: (18d508fd-81f1-47d3-8d6e-b8fdcb0de559)
+		statemachines: statemachines [
+			(619c62fa-8931-4a23-b62e-bf9ccd1bceea)]
+		dp_items: (ec527ee9-030d-441d-8b41-76ea7c05fb0c)
+		templates: templates [
+			(c0f1c727-95c8-4441-8262-f18240012cb1), 
+			(d39ab86b-55e4-41b8-a278-7e8cefa331f9)]
+		view_transition_animation_configurations: view_transition_animation_configurations []
+	}
+	contexts: (46deb1ad-23e7-4f8b-975c-adae4b218ca9)
+	languages: (0d7b5c08-6a71-4783-87aa-ff1fff43b22a)
+	skins: (f725d908-d2d5-4904-b3c9-89a529e19a5b)
+	event_groups: (b7974b87-e132-4a11-99b4-3650f70a2bae)
+	model_interfaces: model_interfaces [
+		(e7483415-35cb-4638-945a-e0183956702d)]
+	imported_model_interfaces: imported_model_interfaces []
+	pluginData: pluginDataList []
+	profiles: profiles [
+		(7577beec-e511-427b-b4f5-57af984f13ad), 
+		(3196d92d-a8e8-4190-b93f-f38d429f3082)]
+	editModeConfigurationProfile: @7577beec-e511-427b-b4f5-57af984f13ad (objectref<configuration_profile>)
+	simulationModeConfigurationProfile: @3196d92d-a8e8-4190-b93f-f38d429f3082 (objectref<configuration_profile>)
+	languageExportSets: language_export_sets []
+	skinExportSets: skin_export_sets []
+	exported_packages: exported_packages [
+		(9f294324-107f-4244-a938-4a7498152618)]
+	imported_packages: imported_packages []
+}

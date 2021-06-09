@@ -1,0 +1,7 @@
+#ifndef GTF_EXPORT_ASPECTS_LANGUAGES_H
+#define GTF_EXPORT_ASPECTS_LANGUAGES_H
+
+//! @brief Language: Standard
+#define GTF_LANGUAGE_Standard "071e3013-131a-440b-bc83-490b4eb41b96"
+
+#endif //GTF_EXPORT_ASPECTS_LANGUAGES_H

@@ -1,0 +1,28 @@
+EBGUIDE 6.11.0.210526170413;
+
+events(18d508fd-81f1-47d3-8d6e-b8fdcb0de559)
+{
+	items: event_list [
+		event(7c293e74-5229-4ee3-b7fb-351112136b05)
+		{
+			name: "next"
+			eventId: 4
+			event_group: @55bd7598-b548-4b67-b3c9-ac38a1745d53 (objectref<event_group>)
+			event_params: event_param_list []
+		}, 
+		event(e31013e6-3480-4416-87a6-3817650a0e6f)
+		{
+			name: "keyEvent"
+			eventId: 32
+			event_group: @db2a01e5-d272-4337-9596-8f183fb37c7e (objectref<event_group>)
+			event_params: event_param_list [
+				event_param<int>(8b3af26b-9b6b-497a-9a18-ea8e2d5f42be)
+				{
+					name: "displayManagerId"
+				}, 
+				event_param<int>(cbaa1482-e590-41e2-890e-2ee3e2e59f3c)
+				{
+					name: "status"
+				}]
+		}]
+}

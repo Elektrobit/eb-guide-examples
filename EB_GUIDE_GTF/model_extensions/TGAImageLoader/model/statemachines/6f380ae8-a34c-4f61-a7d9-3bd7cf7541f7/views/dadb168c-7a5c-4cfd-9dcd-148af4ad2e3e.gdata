@@ -1,0 +1,116 @@
+EBGUIDE 6.11.0.210526170413;
+
+GtfView_template_instance(dadb168c-7a5c-4cfd-9dcd-148af4ad2e3e)
+{
+	name: "DecompressedImageView"
+	template: @4ba5e50b-dc6c-4c10-8165-b319a5cef09c (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(115f7606-7284-4a1f-8308-46112b4d202d)
+		{
+			name: "description_text"
+			value: "Decompressed TGA images can be loaded from the resources"
+		}, 
+		wp<string>(91711a23-8b28-4637-be68-b4afe946c001)
+		{
+			name: "title_text"
+			value: ""
+		}, 
+		wp<bool>(3c8c00a8-d707-4525-aebe-28c0a32058d4)
+		{
+			name: "next_enabled"
+			value: true
+		}, 
+		wp<bool>(e172aef9-e1ce-4adb-a88f-dcd54559723e)
+		{
+			name: "prev_enabled"
+			value: true
+		}]
+	user_properties: property_list [
+		wp<conditional_script>(8795f804-2893-4459-80e3-69d5020a1d3e)
+		{
+			name: "setTitleText"
+			value: conditional_script(deb090ec-820d-43e7-9ddc-93b02ad1dd9b)
+			{
+				triggerList: trigger_list(a59fb5ac-4a92-4359-a1e6-d5cc204cc5bd)
+				{
+					script: "dp:showcase_title_list" \
+						""
+				}
+				onTrigger: function<bool,bool>(7fd3bded-1d56-46e3-a630-bccc71a02a47)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	v:this.title_text = dp:showcase_title_list[dp:showcase_id_static_image];" \
+						"	false;" \
+						"}"
+				}
+			}
+		}]
+	children: children_list [
+		GtfImage(197f5554-ed48-4925-a24e-2712a4ef7202)
+		{
+			name: "image"
+			properties: property_list [
+				wp<bool>(73427b14-6bac-46e9-b19b-fc86867e2df8)
+				{
+					name: "visible"
+					value: true
+				}, 
+				wp<int>(174aafee-2de9-482a-a58a-5d0c97a99185)
+				{
+					name: "width"
+					value: 500
+				}, 
+				wp<int>(803654a7-1995-4d29-a04a-d61f66498d90)
+				{
+					name: "height"
+					value: 254
+				}, 
+				wp<int>(94e94840-0456-4268-be99-649dc6f81854)
+				{
+					name: "x"
+					value: 166
+				}, 
+				wp<int>(0c35f3e5-4d7e-4473-9a0d-c8e211fc7beb)
+				{
+					name: "y"
+					value: 100
+				}, 
+				wp<image>(4413d849-8c06-4900-bc05-cfaf847df147)
+				{
+					name: "image"
+					value: image_resource(e41a3870-93fc-46bc-a577-ff9570e9434a)
+					{
+						sourceType: "model"
+						source: "resources"
+						file: "images\\decompressedImage.tga"
+					}
+				}, 
+				wp<bool>(e983a6c4-3ad5-4275-8ecb-9c8a679a176b)
+				{
+					name: "sRGB"
+					value: false
+				}, 
+				wp<int>(2c644d9d-ed02-40ac-a35d-279efd595109)
+				{
+					name: "horizontalAlign"
+					value: 1
+				}, 
+				wp<int>(b8596c2b-dbe8-4feb-a5f1-67862009cb65)
+				{
+					name: "verticalAlign"
+					value: 0
+				}]
+			features: feature_list [
+				ScaleMode(ae1823cb-7481-4de6-beff-851924e75127)
+				{
+					base_properties: property_list [
+						wp<int>(de1f1933-772d-47a5-8338-78320f193941)
+						{
+							name: "scaleMode"
+							value: 2
+						}]
+				}]
+			children: children_list []
+		}]
+}

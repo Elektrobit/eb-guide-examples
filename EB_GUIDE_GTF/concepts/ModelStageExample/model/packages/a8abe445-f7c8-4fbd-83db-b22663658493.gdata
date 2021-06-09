@@ -1,0 +1,8 @@
+EBGUIDE 6.11.0.210526170413;
+
+exported_package(a8abe445-f7c8-4fbd-83db-b22663658493)
+{
+	name: "default.template.package"
+	color: #EEAA3BFF
+	templates: template_refs []
+}

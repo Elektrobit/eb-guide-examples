@@ -1,0 +1,11 @@
+EBGUIDE 6.11.0.210526170413;
+
+dp_items(1f4315dd-e5ac-401a-863b-24c2a6ae1c75)
+{
+	items: dp_item_list [
+		dp<int>(eaf41c79-d817-41dd-a9fb-0b0694556675)
+		{
+			value: 0
+			name: "displayStatus"
+		}]
+}

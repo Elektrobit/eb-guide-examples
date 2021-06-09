@@ -1,0 +1,190 @@
+{
+   "widgets":[
+      {
+         "name":"BezierCurveS32",
+         "alias":"Bezier curve",
+         "type":"GtfDelayedFixedCurve",
+         "category":"Animation",
+         "canHaveChildren":true,
+         "isAbstract":false,
+         "isInstantiator":false,
+         "isView":false,
+         "properties":[
+            {
+               "name":"handle1x",
+               "type":"float",
+               "category":"CurveSettings",
+               "description":"x-coordinate of the first handle.",
+               "defaultValue":"0.0"
+            },
+            {
+               "name":"handle1y",
+               "type":"float",
+               "category":"CurveSettings",
+               "description":"y-coordinate of the first handle.",
+               "defaultValue":"0.0"
+            },
+            {
+               "name":"handle2x",
+               "type":"float",
+               "category":"CurveSettings",
+               "description":"x-coordinate of the second handle.",
+               "defaultValue":"0.0"
+            },
+            {
+               "name":"handle2y",
+               "type":"float",
+               "category":"CurveSettings",
+               "description":"y-coordinate of the second handle.",
+               "defaultValue":"0.0"
+            },
+            {
+               "name":"start",
+               "type":"integer",
+               "category":"CurveSettings",
+               "description":"Initial position.",
+               "defaultValue":"0"
+            },
+            {
+               "name":"end",
+               "type":"integer",
+               "category":"CurveSettings",
+               "description":"End position.",
+               "defaultValue":"1"
+            },
+            {
+               "name":"target",
+               "type":"integer",
+               "category":"Target",
+               "description":"Curve output value.",
+               "defaultValue":"0"
+            }
+         ],
+         "controller":"bezierCurve::BezierCurveInteger"
+      },
+      {
+         "name":"BezierCurveColor",
+         "alias":"Bezier curve",
+         "type":"GtfDelayedFixedCurve",
+         "category":"Animation",
+         "canHaveChildren":true,
+         "isAbstract":false,
+         "isInstantiator":false,
+         "isView":false,
+         "properties":[
+            {
+               "name":"handle1x",
+               "type":"float",
+               "category":"CurveSettings",
+               "description":"x coordinate of the first handle.",
+               "defaultValue":"0.0"
+            },
+            {
+               "name":"handle1y",
+               "type":"float",
+               "category":"CurveSettings",
+               "description":"y coordinate of the first handle.",
+               "defaultValue":"0.0"
+            },
+            {
+               "name":"handle2x",
+               "type":"float",
+               "category":"CurveSettings",
+               "description":"x coordinate of the second handle.",
+               "defaultValue":"0.0"
+            },
+            {
+               "name":"handle2y",
+               "type":"float",
+               "category":"CurveSettings",
+               "description":"y coordinate of the second handle.",
+               "defaultValue":"0.0"
+            },
+            {
+               "name":"start",
+               "type":"color",
+               "category":"CurveSettings",
+               "description":"Initial position.",
+               "defaultValue":"0,0,0,255"
+            },
+            {
+               "name":"end",
+               "type":"color",
+               "category":"CurveSettings",
+               "description":"End position.",
+               "defaultValue":"10,10,10,10"
+            },
+            {
+               "name":"target",
+               "type":"color",
+               "category":"Target",
+               "description":"Curve output value.",
+               "defaultValue":"0,0,0,255"
+            }
+         ],
+         "controller":"bezierCurve::BezierCurveColor"
+      },
+      {
+         "name":"BezierCurveFloat",
+         "alias":"Bezier curve",
+         "type":"GtfDelayedFixedCurve",
+         "category":"Animation",
+         "canHaveChildren":true,
+         "isAbstract":false,
+         "isInstantiator":false,
+         "isView":false,
+         "properties":[
+            {
+               "name":"handle1x",
+               "type":"float",
+               "category":"CurveSettings",
+               "description":"x coordinate of the first handle.",
+               "defaultValue":"0.0"
+            },
+            {
+               "name":"handle1y",
+               "type":"float",
+               "category":"CurveSettings",
+               "description":"y coordinate of the first handle.",
+               "defaultValue":"0.0"
+            },
+            {
+               "name":"handle2x",
+               "type":"float",
+               "category":"CurveSettings",
+               "description":"x coordinate of the second handle.",
+               "defaultValue":"0.0"
+            },
+            {
+               "name":"handle2y",
+               "type":"float",
+               "category":"CurveSettings",
+               "description":"y coordinate of the second handle.",
+               "defaultValue":"0.0"
+            },
+            {
+               "name":"start",
+               "type":"float",
+               "category":"CurveSettings",
+               "description":"Initial position.",
+               "defaultValue":"0.0"
+            },
+            {
+               "name":"end",
+               "type":"float",
+               "category":"CurveSettings",
+               "description":"End position.",
+               "defaultValue":"1.0"
+            },
+            {
+               "name":"target",
+               "type":"float",
+               "category":"Target",
+               "description":"Curve output value.",
+               "defaultValue":"0.0"
+            }
+         ],
+         "controller":"bezierCurve::BezierCurveFloat"
+      }
+   ]
+}

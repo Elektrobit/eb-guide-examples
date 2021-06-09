@@ -1,0 +1,57 @@
+EBGUIDE 6.11.0.210526170413;
+
+GtfView_template_instance(44a166d8-e7f9-4cae-ad01-7d2ec396151a)
+{
+	name: "View 1"
+	template: @d9ee43bd-ee64-4c9f-904a-75cf1fd8f745 (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(cf73b217-bc72-4f81-ae52-f13b11b2dae1)
+		{
+			name: "text"
+			value: "Triangle widget demo"
+		}, 
+		wp<string>(c00d8b27-585e-48fa-95f7-78b8f0984540)
+		{
+			name: "description"
+			value: "An HMI model can load custom widgets."
+		}]
+	user_properties: property_list []
+	children: children_list [
+		Triangle(fea365ba-96c5-4092-b268-fbf5ac760730)
+		{
+			name: "Triangle 1"
+			properties: property_list [
+				wp<bool>(1f23a568-932a-4eff-9b0e-0096f833c8eb)
+				{
+					name: "visible"
+					value: true
+				}, 
+				wp<int>(bbb3810a-673c-4f82-bfff-8dd34d82e320)
+				{
+					name: "width"
+					value: 100
+				}, 
+				wp<int>(e73cd2a2-9b20-495e-a59b-f06033b4eef1)
+				{
+					name: "height"
+					value: 100
+				}, 
+				wp<int>(662e87b8-2a1b-455a-8952-d6a6e60e4d32)
+				{
+					name: "x"
+					value: 335
+				}, 
+				wp<int>(d08c01f8-0d95-48d8-9cf0-9c38068af43c)
+				{
+					name: "y"
+					value: 171
+				}, 
+				wp<color>(307f594a-63ea-46dd-b0fb-2d54928453f8)
+				{
+					name: "fillColor"
+					value: #00EB00FF
+				}]
+			features: feature_list []
+			children: children_list []
+		}]
+}

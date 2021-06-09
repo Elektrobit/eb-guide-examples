@@ -1,0 +1,97 @@
+EBGUIDE 6.11.0.210526170413;
+
+GtfView_template_instance(44a166d8-e7f9-4cae-ad01-7d2ec396151a)
+{
+	name: "View 1"
+	template: @d9ee43bd-ee64-4c9f-904a-75cf1fd8f745 (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(5642438a-c4e2-4e0b-8754-d02cb1b53cc1)
+		{
+			name: "text"
+			value: "Trace output demo"
+		}, 
+		wp<string>(95babcef-25a9-4018-8de5-fcbf3a084162)
+		{
+			name: "description"
+			value: "The plugin prints out traces to a \".csv\" file"
+		}]
+	user_properties: property_list []
+	children: children_list [
+		GtfLabel(51dc5609-9214-47d8-b6f8-9ddee28a2428)
+		{
+			name: "Label 1"
+			properties: property_list [
+				wp<bool>(cbe8b2b0-8acf-40ac-aecb-971c520b1f36)
+				{
+					name: "visible"
+					value: true
+				}, 
+				wp<int>(587149a2-2363-4937-84d7-31013b26f808)
+				{
+					name: "width"
+					value: 755
+				}, 
+				wp<int>(8496470c-2e6c-4710-9983-2687be451945)
+				{
+					name: "height"
+					value: 203
+				}, 
+				wp<int>(cd90050d-210b-41c8-9829-2e48350180d9)
+				{
+					name: "x"
+					value: 28
+				}, 
+				wp<int>(873c8a72-64df-4aa8-9c2c-15bb2a017dcc)
+				{
+					name: "y"
+					value: 161
+				}, 
+				wp<string>(6c1cccb7-3df6-4b33-90ec-a9ed00edd08e)
+				{
+					name: "text"
+					value: "You have started the Trace output plugin model! The TraceOutputExample.dll should be placed in the  GUIDE_INSTALL_PATH/platform/win64/bin directory."
+				}, 
+				wp<color>(7ccee765-4789-465b-b7f2-2e4db1c17f4a)
+				{
+					name: "textColor"
+					value: #FFFFFFFF
+				}, 
+				wp<font>(0e88f9d6-db7b-468b-8432-330de4e5ed14)
+				{
+					name: "font"
+					value: font_resource(484077d5-731c-4409-991b-eea98afd48fe)
+					{
+						sourceType: "model"
+						source: "resources"
+						file: "fonts\\PT_Sans.ttf"
+						size: 30
+					}
+				}, 
+				wp<int>(64a2e611-6dec-4ebe-80a8-60ddf43e7987)
+				{
+					name: "horizontalAlign"
+					value: 1
+				}, 
+				wp<int>(508bdfca-ad4b-4ada-b030-7a970254235d)
+				{
+					name: "verticalAlign"
+					value: 0
+				}]
+			features: feature_list [
+				MultiLine(3f21f818-dc9a-4add-b26b-dc5614763acb)
+				{
+					base_properties: property_list [
+						wp<int>(f8cf853d-668e-410d-b5ec-8c9f8c62ce9f)
+						{
+							name: "lineOffset"
+							value: 0
+						}, 
+						wp<int>(1b4aa4e5-ed1a-4174-a477-6953c2668770)
+						{
+							name: "maxLineCount"
+							value: 0
+						}]
+				}]
+			children: children_list []
+		}]
+}

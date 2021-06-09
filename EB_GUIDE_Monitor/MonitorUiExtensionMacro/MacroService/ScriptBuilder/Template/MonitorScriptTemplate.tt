@@ -1,0 +1,34 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="Elektrobit.Guide.Monitor.Scripting.MonitorContext" #>
+using System;
+using System.Threading.Tasks;
+using System.Windows.Media;
+
+using Elektrobit.Guide.Monitor.Model.Value;
+using Elektrobit.Guide.Monitor.Scripting.MonitorContext;
+
+class <#= ClassName #>
+{
+    public async Task <#= MethodName #> (IMonitorContext monitor)
+    {
+<#
+    PushIndent("    ");
+    PushIndent("    ");
+
+    foreach(var call in Actions)
+    {
+        if( call != null)
+        {
+            WriteAwaitedMethodCall(call);
+        }
+    }
+
+    PopIndent();
+    PopIndent();
+#>
+    }
+}

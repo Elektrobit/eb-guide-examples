@@ -1,0 +1,11 @@
+EBGUIDE 6.11.0.210526170413;
+
+dp_items(1f4315dd-e5ac-401a-863b-24c2a6ae1c75)
+{
+	items: dp_item_list [
+		dp<bool>(ff56931d-9eca-4d00-b4c3-462c0786446d)
+		{
+			value: false
+			name: "focused"
+		}]
+}

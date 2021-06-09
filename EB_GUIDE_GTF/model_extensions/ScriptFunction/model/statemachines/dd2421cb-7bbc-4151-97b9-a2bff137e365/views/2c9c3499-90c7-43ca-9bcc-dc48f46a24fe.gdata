@@ -1,0 +1,37 @@
+EBGUIDE 6.11.0.210526170413;
+
+GtfView_template_instance(2c9c3499-90c7-43ca-9bcc-dc48f46a24fe)
+{
+	name: "Titleview"
+	template: @622fe64a-b36f-4319-8af5-d92528456bf8 (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(9d14cd53-fb3c-459f-beaa-c7e378722125)
+		{
+			name: "title_text"
+			value: "Script function application"
+		}, 
+		wp<string>(85627ddb-812e-4b76-a92f-a0e26e150240)
+		{
+			name: "short_desc_text"
+			value: "Example for implementing script functions using the EB GUIDE SDK"
+		}, 
+		wp<string>(8c49cf0f-1214-4c4a-bfa9-9cf21faeae22)
+		{
+			name: "long_desc_text"
+			value: "Documentation reference:\\nExtensions to EB GUIDE TF > EB GUIDE Script functions"
+		}, 
+		wp<function<bool,int,int,int,int>>(63b52dac-bf4e-4043-8c11-eebea56aa806)
+		{
+			name: "touchPressed"
+			value: function<bool,int,int,int,int>(f9ed46f6-d101-4b66-a950-1816513fd9ac)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:next()" \
+					"    false" \
+					"}"
+			}
+		}]
+	user_properties: property_list []
+	children: children_list []
+}

@@ -1,0 +1,96 @@
+EBGUIDE 6.11.0.210526170413;
+
+GtfView_template_instance(44a166d8-e7f9-4cae-ad01-7d2ec396151a)
+{
+	name: "View 1"
+	template: @d9ee43bd-ee64-4c9f-904a-75cf1fd8f745 (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(186bdc3a-1317-4df9-9039-a2d60e718e12)
+		{
+			name: "text"
+			value: "Downscaling demo"
+		}, 
+		wp<string>(15758eb5-7928-4cab-acb9-ccd8766cd055)
+		{
+			name: "description"
+			value: "The HMI model contains the Downscaling Widget Feature"
+		}]
+	user_properties: property_list []
+	children: children_list [
+		GtfImage(bcb215fb-acf9-4cf8-a865-b17392293c2e)
+		{
+			name: "Image 1"
+			properties: property_list [
+				wp<bool>(62db00a0-633f-40e4-865b-781ab59f2d82)
+				{
+					name: "visible"
+					value: true
+				}, 
+				wp<int>(ac4aec2f-af99-48b1-8664-89cebd96bad6)
+				{
+					name: "width"
+					value: 500
+				}, 
+				wp<int>(fd5ca589-bbaa-4879-a3df-d23b37158a42)
+				{
+					name: "height"
+					value: 254
+				}, 
+				wp<int>(3955d7d2-2372-4e49-b7f4-1ee5a7981ee9)
+				{
+					name: "x"
+					value: 153
+				}, 
+				wp<int>(9d13cac4-1155-4f63-9844-414e2589bb1a)
+				{
+					name: "y"
+					value: 103
+				}, 
+				wp<image>(f06ce300-bae3-4167-965d-90792834c551)
+				{
+					name: "image"
+					value: image_resource(aedc3bfa-4413-45f9-a55d-e845e183e3b8)
+					{
+						sourceType: "model"
+						source: "resources"
+						file: ""
+					}
+				}, 
+				wp<bool>(e5acaae6-f19a-442c-acd1-1451a7c6c415)
+				{
+					name: "sRGB"
+					value: false
+				}, 
+				wp<int>(a2290628-77be-4a12-aaef-5d6692ab3025)
+				{
+					name: "horizontalAlign"
+					value: 1
+				}, 
+				wp<int>(2b6cc3b0-668c-4033-80b1-831475481209)
+				{
+					name: "verticalAlign"
+					value: 0
+				}]
+			features: feature_list [
+				DownScalingFeature(60015f2f-6db1-439a-938d-988069b93bb7)
+				{
+					base_properties: property_list [
+						wp<int>(92fcf580-6e03-4251-ac72-d2d56c58ef18)
+						{
+							name: "targetHeight"
+							value: 127
+						}, 
+						wp<int>(deb27363-f00f-44b9-b14a-517fb8d80ff6)
+						{
+							name: "targetWidth"
+							value: 250
+						}, 
+						wp<string>(aacc898f-887c-41c4-9cf0-8c713f72ebef)
+						{
+							name: "imagePath"
+							value: "resources\\images\\extern.jpg"
+						}]
+				}]
+			children: children_list []
+		}]
+}

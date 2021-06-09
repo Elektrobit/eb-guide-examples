@@ -1,0 +1,46 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:control="http://www.elektrobit.de/Guide/2014/mvvmextensions"
+    xmlns:guide="http://www.elektrobit.de/Guide/2014/guide"
+    xmlns:tagFilterPlugin="clr-namespace:TagFilterPlugin">
+
+    <ResourceDictionary.MergedDictionaries>
+        <guide:DesignTimeResourceDictionary
+            Source="pack://application:,,,/Guide.UI.Shell;Component/Ui/Resources.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <!--
+        DataTemplate for the VariantTagItem.
+        Connects the view model with its view
+    -->
+    <DataTemplate
+        DataType="{x:Type tagFilterPlugin:VariantTagItem}">
+        <guide:TagItemControl
+            TagMargin="4,0,0,0">
+            <guide:TagItemControl.IconContent>
+                <control:SourceIndicator
+                    Width="{StaticResource Size.Icon.S}"
+                    Height="{StaticResource Size.Icon.S}"
+                    Margin="0,2,0,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    DockPanel.Dock="Left"
+                    Indicator="{Binding Indicator}" />
+            </guide:TagItemControl.IconContent>
+            <guide:TagItemControl.HeaderContent>
+                <guide:HighlightingTextBlock
+                    Margin="4,0,4,0"
+                    BaseText="{Binding Name}"
+                    FontSize="{StaticResource FontSize.MediumSmall}"
+                    HighlightTexts="{Binding NameHighlightParts}"
+                    Style="{StaticResource TextBlock.Standard.NoWrap.ToolTip}"
+                    TextTrimming="CharacterEllipsis" />
+            </guide:TagItemControl.HeaderContent>
+            <guide:TagItemControl.ConfigurationContent>
+                <Grid />
+            </guide:TagItemControl.ConfigurationContent>
+        </guide:TagItemControl>
+    </DataTemplate>
+
+</ResourceDictionary>

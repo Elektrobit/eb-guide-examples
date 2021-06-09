@@ -1,0 +1,42 @@
+EBGUIDE 6.11.0.210526170413;
+
+GtfView_template_instance(b626692a-8da1-4992-9ec2-699783714772)
+{
+	name: "InitialView"
+	template: @36192fc9-a3a9-4a7f-9edf-a98a14c704eb (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(963ab77e-0003-4654-822e-0bc01a578af5)
+		{
+			name: "long_desc_text"
+			value: "Documentation reference:\\nBackground information > Interaction between HMI and applications > Datapool > Windowed lists"
+		}, 
+		wp<string>(40847403-9db1-49bf-b071-2b7c6dd07dd5)
+		{
+			name: "title_text"
+			value: "Window list application"
+		}, 
+		wp<string>(07f6fb21-526e-4730-ac33-4e391f92e245)
+		{
+			name: "short_desc_text"
+			value: "The content of the list is provided by an application."
+		}, 
+		wp<function<bool,int,int,int,int>>(fcad89a0-48ca-474d-aee9-0502d2a85b4d)
+		{
+			name: "touchPressed"
+			value: function<bool,int,int,int,int>(173e111a-42f4-4429-9f3c-63c1f07d27be)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    fire ev:next();" \
+					"    false" \
+					"}"
+			}
+		}, 
+		wp<int>(18cb0356-db1f-404b-ad6e-8574214da55c)
+		{
+			name: "width"
+			value: @c50fb21c-ff8a-4c85-8da2-18017858d5eb (objectref<int>)
+		}]
+	user_properties: property_list []
+	children: children_list []
+}

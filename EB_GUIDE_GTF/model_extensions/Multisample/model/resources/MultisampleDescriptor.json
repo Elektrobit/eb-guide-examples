@@ -1,0 +1,59 @@
+{
+   "widgets":[
+      {
+         "name":"Multisample",
+         "alias":"Multisample",
+         "type":"GtfAbstractVisualWidget",
+         "category":"Custom widgets",
+         "description":"A custom widget drawing multisampled geometry.",
+         "canHaveChildren":true,
+         "isAbstract":false,
+         "isInstantiator":false,
+         "isView":false,
+         "properties":[
+            {
+               "name":"fillColor",
+               "type":"color",
+               "category":"Common",
+               "description":"The color",
+               "defaultValue":"0,0,0,255"
+            },
+            {
+               "name":"sampleCount",
+               "type":"integer",
+               "description":"The number of samples per pixel, it should be between 1 and the maximum count of samples supported.",
+               "defaultValue":"1",
+               "constants":[
+                  {
+                     "name":"1",
+                     "value":"0"
+                  },
+                  {
+                     "name":"2",
+                     "value":"1"
+                  },
+                  {
+                     "name":"4",
+                     "value":"2"
+                  },
+                  {
+                     "name":"8",
+                     "value":"3"
+                  },
+                  {
+                     "name":"16",
+                     "value":"4"
+                  }
+               ]
+            },
+            {
+               "name":"animatedProperty",
+               "type":"float",
+               "category":"Common",
+               "description":"The property used for particle animation [0-1].",
+               "defaultValue":"0.0"
+            }
+         ]
+      }
+   ]
+}

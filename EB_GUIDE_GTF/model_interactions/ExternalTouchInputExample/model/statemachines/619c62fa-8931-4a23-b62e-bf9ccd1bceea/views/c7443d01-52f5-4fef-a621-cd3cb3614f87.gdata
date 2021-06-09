@@ -1,0 +1,37 @@
+EBGUIDE 6.11.0.210526170413;
+
+GtfView_template_instance(c7443d01-52f5-4fef-a621-cd3cb3614f87)
+{
+	name: "Titleview"
+	template: @d39ab86b-55e4-41b8-a278-7e8cefa331f9 (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(aaa3cd73-d429-40ee-9711-cc7a98760bc8)
+		{
+			name: "title_text"
+			value: "External touch input demo"
+		}, 
+		wp<string>(bdcce470-44f1-4365-943c-9f1f09cd44ed)
+		{
+			name: "shortDesc"
+			value: "Example for communicating from an application with the HMI using the External Input system"
+		}, 
+		wp<string>(4109991a-0e3c-48d4-a628-819de456c1e9)
+		{
+			name: "long desc"
+			value: "Documentation reference:\\nUsing the EB GUIDE TF plugin mechanism\\nBackground information > Interaction between HMI and applications "
+		}, 
+		wp<function<bool,int,int,int,int>>(f1a0a10e-81b1-47f5-aa34-371014494d44)
+		{
+			name: "touchPressed"
+			value: function<bool,int,int,int,int>(6ea329b3-9b80-4fc3-811e-d42c890a751e)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:next();" \
+					"    false" \
+					"}"
+			}
+		}]
+	user_properties: property_list []
+	children: children_list []
+}

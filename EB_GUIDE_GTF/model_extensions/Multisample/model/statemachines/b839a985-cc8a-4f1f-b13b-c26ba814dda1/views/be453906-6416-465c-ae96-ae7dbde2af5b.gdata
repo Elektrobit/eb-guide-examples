@@ -1,0 +1,37 @@
+EBGUIDE 6.11.0.210526170413;
+
+GtfView_template_instance(be453906-6416-465c-ae96-ae7dbde2af5b)
+{
+	name: "View"
+	template: @f22f375f-74a5-4677-854b-56ad0cc8b440 (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(b0cac3f9-6f4c-4120-8dc9-14ef8a6f9b50)
+		{
+			name: "long desc text"
+			value: "Documentation reference:\\nExtensions to EB GUIDE TF"
+		}, 
+		wp<string>(506b896c-2953-4641-92a0-020755e3b7ae)
+		{
+			name: "short desc text"
+			value: "Example of loading a custom multisampled widget with the HMI"
+		}, 
+		wp<string>(08a17e21-e2a8-49b4-9295-8670857ec681)
+		{
+			name: "title_text"
+			value: "Multisampling demo"
+		}, 
+		wp<function<bool,int,int,int,int>>(bcad1748-0f97-4683-824f-2527dd9392dc)
+		{
+			name: "touchPressed"
+			value: function<bool,int,int,int,int>(edcaa388-d71b-4574-94d8-3c262b8ad866)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:Next();" \
+					"    false" \
+					"}"
+			}
+		}]
+	user_properties: property_list []
+	children: children_list []
+}

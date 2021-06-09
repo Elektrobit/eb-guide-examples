@@ -1,0 +1,13 @@
+EBGUIDE 6.11.0.210526170413;
+
+events(104c145b-88c7-4762-b7b2-4c2915c1dbb0)
+{
+	items: event_list [
+		event(3938f1dd-59fd-4b30-9ff6-06b43e76e61f)
+		{
+			name: "next"
+			eventId: 0
+			event_group: @2dff9d9a-3327-4318-9310-00736e4258f2 (objectref<event_group>)
+			event_params: event_param_list []
+		}]
+}

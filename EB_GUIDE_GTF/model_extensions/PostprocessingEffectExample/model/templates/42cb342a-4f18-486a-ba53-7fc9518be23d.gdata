@@ -1,0 +1,166 @@
+EBGUIDE 6.11.0.210526170413;
+
+GtfRectangle_template(42cb342a-4f18-486a-ba53-7fc9518be23d)
+{
+	name: "Button 1"
+	interface_properties: property_list [
+		wp<int>(eb787841-25c8-4e88-9ec7-5176f9d2f17b)
+		{
+			name: "x"
+			value: @0c0873b7-a59b-4b64-b2c1-c240589467ff (objectref<int>)
+		}, 
+		wp<int>(758f9ee1-0ff7-4677-a446-9ffddb3056e3)
+		{
+			name: "y"
+			value: @860cce4d-1bc7-490d-899d-7082c7d1e851 (objectref<int>)
+		}, 
+		wp<string>(80eb106f-ea45-4bce-a631-317826ccc2b2)
+		{
+			name: "text"
+			value: @8bc622d2-10a2-4d86-8c65-37fe05add287 (objectref<string>)
+		}, 
+		wp<function<bool,int,int,int,int>>(6499d81e-e104-4b69-91f5-3b146321a551)
+		{
+			name: "touchShortReleased"
+			value: @c2a46cc1-7480-4a71-8858-d984f1f19302 (objectref<function<bool,int,int,int,int>>)
+		}]
+	structure: GtfRectangle(6d89fc85-77c7-4f8b-aa77-8e7d738e658b)
+	{
+		name: "Button"
+		properties: property_list [
+			wp<bool>(7986739c-7f96-43d4-918f-3db898e673f0)
+			{
+				name: "visible"
+				value: true
+			}, 
+			wp<int>(31847e51-3df4-4240-8b4f-1f343234dede)
+			{
+				name: "width"
+				value: 39
+			}, 
+			wp<int>(5c96c1e4-b6e5-4c8c-9024-68fc6f3addf6)
+			{
+				name: "height"
+				value: 37
+			}, 
+			wp<int>(0c0873b7-a59b-4b64-b2c1-c240589467ff)
+			{
+				name: "x"
+				value: 0
+			}, 
+			wp<int>(860cce4d-1bc7-490d-899d-7082c7d1e851)
+			{
+				name: "y"
+				value: 0
+			}, 
+			wp<color>(598110ca-3f97-4c8f-ae6f-6c5ea2f30b19)
+			{
+				name: "fillColor"
+				value: #A9A9A9FF
+			}]
+		features: feature_list [
+			TouchShortReleased(52b07e15-8a0c-44e3-856f-6ec5dca6074b)
+			{
+				base_properties: property_list [
+					wp<function<bool,int,int,int,int>>(c2a46cc1-7480-4a71-8858-d984f1f19302)
+					{
+						name: "touchShortReleased"
+						value: function<bool,int,int,int,int>(43494f1e-7d46-40d7-975e-5b00c87d24bd)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{		" \
+								"    false" \
+								"}"
+						}
+					}]
+			}, 
+			StateTouched(26b437d2-a437-45e1-81ef-0f1e06794960)
+			{
+				base_properties: property_list [
+					wp<bool>(c8dea55d-b5ad-49e5-8dc2-696d1b0fcba3)
+					{
+						name: "touchable"
+						value: true
+					}, 
+					wp<bool>(a034c43e-248e-4167-89b1-03c52a3e0038)
+					{
+						name: "touched"
+						value: false
+					}, 
+					wp<int>(ff35cc40-b47a-44a0-86be-23394787e7f4)
+					{
+						name: "touchPolicy"
+						value: 0
+					}, 
+					wp<int>(4b39bff9-33c5-4a11-a961-fffe9a7f0331)
+					{
+						name: "touchBehavior"
+						value: 0
+					}]
+			}]
+		children: children_list [
+			GtfLabel(ab9fbb56-364d-4d42-808b-8760613deab9)
+			{
+				name: "Label"
+				properties: property_list [
+					wp<bool>(f1ee72e2-962b-42c8-ab44-3b2715fd6de8)
+					{
+						name: "visible"
+						value: true
+					}, 
+					wp<int>(abaddc4f-b377-4ee8-852e-4868ae2324c7)
+					{
+						name: "width"
+						value: 36
+					}, 
+					wp<int>(cfc1717a-874f-4e1a-a245-a89debe5ee7e)
+					{
+						name: "height"
+						value: 39
+					}, 
+					wp<int>(75383546-9aef-413a-abfe-47ee0171df4f)
+					{
+						name: "x"
+						value: 1
+					}, 
+					wp<int>(0bf0ebe5-db1c-4b73-9933-f19d0a630540)
+					{
+						name: "y"
+						value: -2
+					}, 
+					wp<string>(8bc622d2-10a2-4d86-8c65-37fe05add287)
+					{
+						name: "text"
+						value: "+"
+					}, 
+					wp<color>(42bfe7e9-4d52-4c12-9bff-1d6af69febf2)
+					{
+						name: "textColor"
+						value: #FFFFFFFF
+					}, 
+					wp<font>(6422e3ed-dcc8-4664-bdbb-53896a71b13c)
+					{
+						name: "font"
+						value: font_resource(4971391c-c7d6-496f-a016-846aca6fda71)
+						{
+							sourceType: "model"
+							source: "resources"
+							file: "PT_Sans_Narrow.ttf"
+							size: 50
+						}
+					}, 
+					wp<int>(8e830971-83e9-4e79-986b-2153f1de0115)
+					{
+						name: "horizontalAlign"
+						value: 1
+					}, 
+					wp<int>(88a07423-4a1a-4575-ab30-13c1256c4e1e)
+					{
+						name: "verticalAlign"
+						value: 0
+					}]
+				features: feature_list []
+				children: children_list []
+			}]
+	}
+}

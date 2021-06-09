@@ -1,0 +1,83 @@
+EBGUIDE 6.11.0.210526170413;
+
+GtfView_template_instance(44a166d8-e7f9-4cae-ad01-7d2ec396151a)
+{
+	name: "View 1"
+	template: @d9ee43bd-ee64-4c9f-904a-75cf1fd8f745 (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(20447dc2-3197-49dc-8661-c7e5d0394d82)
+		{
+			name: "text"
+			value: "Basic application demo"
+		}, 
+		wp<string>(d1bf23e4-fc71-4d0f-9522-51d60e990508)
+		{
+			name: "description"
+			value: "An HMI model can load different applications."
+		}]
+	user_properties: property_list []
+	children: children_list [
+		GtfLabel(51dc5609-9214-47d8-b6f8-9ddee28a2428)
+		{
+			name: "Label 1"
+			properties: property_list [
+				wp<bool>(392bb738-3680-44ec-a407-08161749d5fa)
+				{
+					name: "visible"
+					value: true
+				}, 
+				wp<int>(facb561e-496d-4549-9982-46cd1c3105e5)
+				{
+					name: "width"
+					value: 755
+				}, 
+				wp<int>(327282b8-3e4f-45f9-8d21-bbaca988dd71)
+				{
+					name: "height"
+					value: 117
+				}, 
+				wp<int>(31b31485-aa7d-4a6e-9370-2b28d56f32f4)
+				{
+					name: "x"
+					value: 24
+				}, 
+				wp<int>(96475edf-8a2d-42a5-b8fc-401c511a054a)
+				{
+					name: "y"
+					value: 183
+				}, 
+				wp<string>(3f7ba5a2-4d26-4558-9754-0cf574b6f305)
+				{
+					name: "text"
+					value: "You have started the Basic application plugin model! "
+				}, 
+				wp<color>(ccf26843-900c-4464-aa12-9ae99c826297)
+				{
+					name: "textColor"
+					value: #FFFFFFFF
+				}, 
+				wp<font>(052a9593-29f9-41e6-a3e6-5edbf5c4e9a2)
+				{
+					name: "font"
+					value: font_resource(484077d5-731c-4409-991b-eea98afd48fe)
+					{
+						sourceType: "model"
+						source: "resources"
+						file: "fonts\\PT_Sans.ttf"
+						size: 30
+					}
+				}, 
+				wp<int>(364fcce6-28cf-44e1-bb5a-fe87c1698451)
+				{
+					name: "horizontalAlign"
+					value: 1
+				}, 
+				wp<int>(125c8128-25d8-4f26-9865-49f368d246e7)
+				{
+					name: "verticalAlign"
+					value: 0
+				}]
+			features: feature_list []
+			children: children_list []
+		}]
+}

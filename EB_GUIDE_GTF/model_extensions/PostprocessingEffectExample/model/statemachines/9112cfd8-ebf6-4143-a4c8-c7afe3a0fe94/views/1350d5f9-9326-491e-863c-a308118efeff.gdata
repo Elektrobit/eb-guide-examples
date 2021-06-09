@@ -1,0 +1,47 @@
+EBGUIDE 6.11.0.210526170413;
+
+GtfView_template_instance(1350d5f9-9326-491e-863c-a308118efeff)
+{
+	name: "View"
+	template: @6f669daf-5466-40a2-8339-f3caf73b9950 (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<int>(14a3dc99-b495-4955-b23b-d55c9234312b)
+		{
+			name: "width"
+			value: @8d187850-f7db-467e-bfd8-f1d935cdd7be (objectref<int>)
+		}, 
+		wp<int>(4b8ab9b0-8f4e-420b-a8a3-b2aa7a161f9b)
+		{
+			name: "height"
+			value: @4c336d13-fa87-4b9a-afc7-9d58bd582dab (objectref<int>)
+		}, 
+		wp<string>(4f872ef3-66e7-4566-af42-4380453715fe)
+		{
+			name: "long desc text"
+			value: "Documentation reference:\\nExtensions for EB GUIDE GTF"
+		}, 
+		wp<string>(da168f1d-d5cd-4fe3-9897-8a78c6f5e71c)
+		{
+			name: "short desc text"
+			value: "Example of adding a custom postprocessing effect to the Scene graph widget."
+		}, 
+		wp<string>(858dcaf1-5db9-4ab3-9a6a-735a3ed56818)
+		{
+			name: "title text"
+			value: "Postprocessing effect example"
+		}, 
+		wp<function<bool,int,int,int,int>>(bd0efa0a-2acb-4aaa-be1e-54dd1c07180f)
+		{
+			name: "touchPressed"
+			value: function<bool,int,int,int,int>(0c71ae97-0cc5-487e-977d-8e169353e172)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:Next();" \
+					"    false" \
+					"}"
+			}
+		}]
+	user_properties: property_list []
+	children: children_list []
+}

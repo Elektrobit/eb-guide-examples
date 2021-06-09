@@ -1,0 +1,718 @@
+EBGUIDE 6.11.0.210526170413;
+
+GtfContainer_template(66cd612b-4677-466a-8e21-fe50d179234c)
+{
+	name: "T_ScollList"
+	interface_properties: property_list [
+		wp<int>(16ad8486-185f-4d40-ae30-0e38cbd065b1)
+		{
+			name: "width"
+			value: @0f8233a9-cfd1-4a5b-8042-fac37b907402 (objectref<int>)
+		}, 
+		wp<int>(2b176ab2-7411-424b-985e-8fcaa2f165b8)
+		{
+			name: "height"
+			value: @60064a63-8df0-4387-ae08-97a163c132a5 (objectref<int>)
+		}, 
+		wp<int>(c4f357ff-ec44-4d4d-a016-0d10ab3b0c7b)
+		{
+			name: "x"
+			value: @3b92a1dc-3df5-4c66-a24d-f65c4d47a28a (objectref<int>)
+		}, 
+		wp<int>(dfb792f3-95b4-4c5c-90e1-2dc6d6458b97)
+		{
+			name: "y"
+			value: @03ed5675-e2dc-4bc9-8110-3c8b4065940a (objectref<int>)
+		}, 
+		wp<stringlist>(e7289a9c-c7ae-452f-8540-fe598d9003ff)
+		{
+			name: "inputList"
+			value: @15a6df91-e845-47c3-a7db-697bbb276417 (objectref<stringlist>)
+		}, 
+		wp<boollist>(a64c698d-8745-4ab0-a36f-7d3e959c3b00)
+		{
+			name: "dataValid"
+			value: @56afd73d-979b-475b-a0f8-b8919192b705 (objectref<boollist>)
+		}]
+	structure: GtfContainer(e06b9ddc-c295-4e76-acfd-52cf6d8773ec)
+	{
+		name: "List_Elements"
+		properties: property_list [
+			wp<bool>(4e1dc61b-344a-4fe7-81b7-ff841eefe839)
+			{
+				name: "visible"
+				value: true
+			}, 
+			wp<int>(0f8233a9-cfd1-4a5b-8042-fac37b907402)
+			{
+				name: "width"
+				value: 369
+			}, 
+			wp<int>(60064a63-8df0-4387-ae08-97a163c132a5)
+			{
+				name: "height"
+				value: 418
+			}, 
+			wp<int>(3b92a1dc-3df5-4c66-a24d-f65c4d47a28a)
+			{
+				name: "x"
+				value: 0
+			}, 
+			wp<int>(03ed5675-e2dc-4bc9-8110-3c8b4065940a)
+			{
+				name: "y"
+				value: 0
+			}, 
+			wp<stringlist>(15a6df91-e845-47c3-a7db-697bbb276417)
+			{
+				name: "inputList"
+				value: stringlist []
+			}, 
+			wp<boollist>(56afd73d-979b-475b-a0f8-b8919192b705)
+			{
+				name: "dataValid"
+				value: boollist []
+			}]
+		features: feature_list []
+		children: children_list [
+			GtfInstantiator(533d280b-846a-4117-b71a-9e4eef22a816)
+			{
+				name: "Instantiator 1"
+				properties: property_list [
+					wp<bool>(dd292607-95e6-489d-b885-946d2656eb33)
+					{
+						name: "visible"
+						value: true
+					}, 
+					wp<int>(59d4cf09-6d10-4e3d-a33e-1163771a82ce)
+					{
+						name: "width"
+						value: @0f8233a9-cfd1-4a5b-8042-fac37b907402 (objectref<int>)
+					}, 
+					wp<int>(46a97a8b-ffc6-420d-8f66-5293bb8a3468)
+					{
+						name: "height"
+						value: @60064a63-8df0-4387-ae08-97a163c132a5 (objectref<int>)
+					}, 
+					wp<int>(e42b1232-c3f5-4da6-b012-22629ef51e9e)
+					{
+						name: "x"
+						value: 0
+					}, 
+					wp<int>(c9efa1d6-b01a-424b-bf82-0fa9f04ab77a)
+					{
+						name: "y"
+						value: 0
+					}, 
+					wp<int>(2ac5cec7-c09f-4075-902e-8520ea36023e)
+					{
+						name: "numItems"
+						value: 0
+					}, 
+					wp<intlist>(6e7e7145-d238-4134-b728-9e373c631261)
+					{
+						name: "lineMapping"
+						value: intlist []
+					}, 
+					wp<int>(6d63e4f6-88b3-4775-b700-f31829d656eb)
+					{
+						name: "yCurrentValue"
+						value: 0
+					}, 
+					wp<int>(87ae194f-43d6-4af4-af4d-70b02e67c387)
+					{
+						name: "listButtonHeight"
+						value: 50
+					}, 
+					wp<conditional_script>(90c9a566-9aa8-48fa-bb9d-63da9668090a)
+					{
+						name: "set_window_pos_out"
+						value: conditional_script(b2e2492e-a1c2-4653-bc3f-c06d45c7e428)
+						{
+							triggerList: trigger_list(96144eec-a707-4ab9-9d8f-0ffb826d2bcb)
+							{
+								script: "v:this.firstListIndex" \
+									""
+							}
+							onTrigger: function<bool,bool>(5d1a55a9-31bd-4ac5-a875-679f1030ea26)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	dp:WindowPositionInternal = v:this.firstListIndex" \
+									" " \
+									"	if (dp:WindowPositionInternal >= 0)" \
+									"	{" \
+									"  		dp:WindowPosition = dp:WindowPositionInternal" \
+									"	}" \
+									"	else if (dp:WindowPositionInternal < (length dp:myReceivedWindowList - dp:WindowSize))" \
+									"	{" \
+									"  		dp:WindowPosition = dp:WindowPositionInternal;" \
+									"	}" \
+									"	" \
+									"	false" \
+									"}"
+							}
+						}
+					}, 
+					wp<conditional_script>(e39f2af3-2b09-4d91-a222-b711877fcfd5)
+					{
+						name: "set_numItems"
+						value: conditional_script(11a051a6-f80a-4cf9-b6da-b06f1145204a)
+						{
+							triggerList: trigger_list(afc63a51-8cd4-4044-9ed4-96b8636b5c9e)
+							{
+								script: "v:this->^.inputList" \
+									""
+							}
+							onTrigger: function<bool,bool>(9c1a9241-463a-4e9e-b895-e64447813dd9)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	let v:count = 0  in" \
+									"	{" \
+									"		v:count = v:this.height / v:this.listButtonHeight +1" \
+									"		" \
+									"		v:this.listLength = length v:this->^.inputList;" \
+									"		" \
+									"		if(v:count < v:this.listLength)" \
+									"			{" \
+									"				v:this.numItems = v:count" \
+									"			}" \
+									"			else" \
+									"			{" \
+									"				v:this.numItems = v:this.listLength" \
+									"			}" \
+									"		" \
+									"	}" \
+									"	false" \
+									"}"
+							}
+						}
+					}, 
+					wp<bool>(1a7559ff-ed3e-43e4-8960-49cc0501d1c0)
+					{
+						name: "wasMoved"
+						value: false
+					}, 
+					wp<int>(6fc87103-2e4d-49cb-9653-23c95aa5a268)
+					{
+						name: "touchPosition"
+						value: 0
+					}, 
+					wp<int>(223b1b02-1d79-4f94-bc1b-e653b590efd3)
+					{
+						name: "touchMoveDistance"
+						value: 0
+					}, 
+					wp<int>(b90345f6-e359-4aa9-bcb5-75dd07943a41)
+					{
+						name: "moveThreshold"
+						value: 0
+					}]
+				features: feature_list [
+					TouchPressed(4cc27b2b-77de-4f0c-ad24-b864b2119520)
+					{
+						base_properties: property_list [
+							wp<function<bool,int,int,int,int>>(6f11d12b-2a6a-478b-abad-8b211639d51b)
+							{
+								name: "touchPressed"
+								value: function<bool,int,int,int,int>(e3e61d7c-3202-4196-a149-57acd7fe3808)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{   " \
+										"    if((v:fingerId == 0) || (v:fingerId == 10))" \
+										"    {" \
+										"    	" \
+										"	    v:this.touched = true" \
+										"	    v:this.wasMoved = false" \
+										"	    if(v:this.layoutDirection == 0)" \
+										"	    {" \
+										"	    	v:this.touchPosition = f:transformToWidgetX(v:this,v:x,v:y)" \
+										"	    }" \
+										"	    else" \
+										"	    {" \
+										"	    	v:this.touchPosition = f:transformToWidgetY(v:this,v:x,v:y)" \
+										"	    }" \
+										"	    v:this.scrollOffsetRebase = !v:this.scrollOffsetRebase" \
+										"    }" \
+										"    " \
+										"    //consume touch if this was moved" \
+										"   v:this.wasMoved" \
+										"   " \
+										"  " \
+										" " \
+										"}"
+								}
+							}]
+					}, 
+					TouchShortReleased(c4e2bbf7-3f07-4e7e-8c26-2b3a7ac48e73)
+					{
+						base_properties: property_list [
+							wp<function<bool,int,int,int,int>>(7a32db81-9a83-4272-95bc-1a381ad18f27)
+							{
+								name: "touchShortReleased"
+								value: function<bool,int,int,int,int>(83fe18ce-5b5d-4b44-8465-51a1651c0d15)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"	" \
+										"    if((v:fingerId == 0) || (v:fingerId == 10))" \
+										"    {" \
+										"    	v:this.touched = false" \
+										"    }" \
+										"    " \
+										"    //consume touch if this was moved" \
+										"  v:this.wasMoved" \
+										"" \
+										"    " \
+										"}"
+								}
+							}]
+					}, 
+					TouchMove(05dca582-b72b-40a1-aad2-d1bd892fa9a3)
+					{
+						base_properties: property_list [
+							wp<function<bool,int,int,int,int>>(abd80f04-637b-4ef1-8061-f77719af2a87)
+							{
+								name: "touchMoved"
+								value: function<bool,int,int,int,int>(f5fe5bca-ff32-4dfb-94be-40c587fac1cb)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"	" \
+										"    if(v:this.touched && ((v:fingerId == 0) || (v:fingerId == 10)))" \
+										"	{" \
+										"	" \
+										"		let v:moved = 0" \
+										"			v:newScrollOffset = 0" \
+										"			v:newTouch = 0" \
+										"		in" \
+										"		{" \
+										"			if(v:this.layoutDirection == 0)" \
+										"			{" \
+										"				let v:localX = f:transformToWidgetX(v:this,v:x,v:y)" \
+										"				in" \
+										"				{" \
+										"					v:moved = v:localX - v:this.touchPosition" \
+										"					v:newTouch = v:localX" \
+										"				}" \
+										"			}" \
+										"			else" \
+										"			{" \
+										"				let v:localY = f:transformToWidgetY(v:this,v:x,v:y)" \
+										"				in" \
+										"				{" \
+										"					v:moved = v:localY - v:this.touchPosition" \
+										"					v:newTouch = v:localY	" \
+										"				}" \
+										"			}" \
+										"			" \
+										"			if((f:abs(v:moved) > v:this.moveThreshold || v:this.wasMoved))" \
+										"			{" \
+										"				v:this.scrollOffset -= v:moved " \
+										"				v:this.touchMoveDistance += v:moved" \
+										"				v:this.touchPosition = v:newTouch" \
+										"				v:this.wasMoved = true" \
+										"			}" \
+										"		}" \
+										"		" \
+										"	}" \
+										"	" \
+										"	//consume touch if this was moved" \
+										"	v:this.wasMoved" \
+										"	" \
+										"" \
+										"}"
+								}
+							}]
+					}, 
+					StateTouched(c81ddfca-b678-45f6-93cd-aa0006beff2c)
+					{
+						base_properties: property_list [
+							wp<bool>(0717bd50-3d6b-4654-8dd4-93e31d80a70d)
+							{
+								name: "touchable"
+								value: true
+							}, 
+							wp<bool>(a75d770b-0f25-456b-a019-a6707b279008)
+							{
+								name: "touched"
+								value: false
+							}, 
+							wp<int>(93fe69d7-0901-49bc-a9c9-8fc8fac8c7cf)
+							{
+								name: "touchPolicy"
+								value: 1
+							}, 
+							wp<int>(3ebc9ec2-11e2-4089-a916-a0a15d95e1db)
+							{
+								name: "touchBehavior"
+								value: 0
+							}]
+					}, 
+					ViewPort(585ebb1e-6dcd-4569-9242-1a4348fdf176)
+					{
+						base_properties: property_list [
+							wp<int>(8038d223-19c1-4007-9586-bfc8f7ae5acb)
+							{
+								name: "xOffset"
+								value: 0
+							}, 
+							wp<int>(8ec6c91f-8926-4194-9835-69825822274b)
+							{
+								name: "yOffset"
+								value: 0
+							}]
+					}, 
+					LayoutPolicyList(2ee107df-9ee2-4efd-8b45-1742d9445ff2)
+					{
+						base_properties: property_list [
+							wp<int>(2695afb0-a188-4ded-8850-5817eeaff3e7)
+							{
+								name: "layoutDirection"
+								value: 1
+							}, 
+							wp<int>(4cf4fb1c-162c-4b70-a485-6149ec8bc8d4)
+							{
+								name: "scrollOffset"
+								value: 0
+							}, 
+							wp<bool>(c20d7172-810a-4780-836d-efd8a72bafdd)
+							{
+								name: "scrollOffsetRebase"
+								value: false
+							}, 
+							wp<int>(022b3c8d-c280-4f7a-9b25-a8cfd7976ea1)
+							{
+								name: "firstListIndex"
+								value: 0
+							}, 
+							wp<int>(19ef8cfc-7a6e-4230-934d-a11f08853549)
+							{
+								name: "scrollIndex"
+								value: 0
+							}, 
+							wp<int>(5ffefd7b-72ea-4486-ae11-aa06c417909d)
+							{
+								name: "scrollValue"
+								value: 0
+							}, 
+							wp<int>(01233da8-16b7-4190-a8d4-d4a75d4c7d20)
+							{
+								name: "scrollValueMax"
+								value: 0
+							}, 
+							wp<int>(928458e2-1ff2-4e3f-849c-23d9053e9162)
+							{
+								name: "scrollValueMin"
+								value: 0
+							}, 
+							wp<int>(961ad50b-a5f2-4f17-9efc-c661bdd21f96)
+							{
+								name: "bounceValue"
+								value: 0
+							}, 
+							wp<int>(3d6a5eec-1dfc-48cc-944a-5a3b463330f8)
+							{
+								name: "bounceValueMax"
+								value: 0
+							}, 
+							wp<int>(defaa244-3584-4511-b54a-ad644b5fdc3f)
+							{
+								name: "segments"
+								value: 1
+							}, 
+							wp<int>(b969932a-b7db-4290-a970-4420ad28c2bc)
+							{
+								name: "listLength"
+								value: 0
+							}, 
+							wp<bool>(5e49b111-7eb8-4a32-b56c-d241d150acb4)
+							{
+								name: "wrapAround"
+								value: false
+							}]
+					}]
+				children: children_list [
+					GtfContainer(d09c31b5-f150-4270-b6f8-e4d15b5faef4)
+					{
+						name: "List_Button"
+						properties: property_list [
+							wp<bool>(d36fff48-8b55-4aaf-b2b0-4c2f79d90a3b)
+							{
+								name: "visible"
+								value: true
+							}, 
+							wp<int>(a892b728-9118-40b9-8533-43b0786332b4)
+							{
+								name: "width"
+								value: @0f8233a9-cfd1-4a5b-8042-fac37b907402 (objectref<int>)
+							}, 
+							wp<int>(4d7d988d-5285-4535-a4f3-5b0a9ced0623)
+							{
+								name: "height"
+								value: @87ae194f-43d6-4af4-af4d-70b02e67c387 (objectref<int>)
+							}, 
+							wp<int>(ffc686a2-c30f-44c4-a0a2-0971c7550d15)
+							{
+								name: "x"
+								value: 0
+							}, 
+							wp<int>(2b7f4f8e-ed25-489c-a383-aeda746ff912)
+							{
+								name: "y"
+								value: 0
+							}]
+						features: feature_list [
+							TouchPressed(3f218f0d-2579-45b7-a921-c9fe6ced1b1f)
+							{
+								base_properties: property_list [
+									wp<function<bool,int,int,int,int>>(c7b26259-f7d9-4afd-88e3-52fa195d13c8)
+									{
+										name: "touchPressed"
+										value: function<bool,int,int,int,int>(89fc5a36-d5b2-4e0c-843e-cb41dcb8f488)
+										{
+											script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+												"{" \
+												"    false" \
+												"}"
+										}
+									}]
+							}, 
+							TouchShortReleased(bbcb2ed0-fd81-4104-92fd-87e104d25ec6)
+							{
+								base_properties: property_list [
+									wp<function<bool,int,int,int,int>>(8481da4d-430c-44b7-bf69-d7cae9b8a3a2)
+									{
+										name: "touchShortReleased"
+										value: function<bool,int,int,int,int>(75f8d04e-50c1-4eaa-9b07-5e0d193e361f)
+										{
+											script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+												"{" \
+												"    false" \
+												"}"
+										}
+									}]
+							}, 
+							TouchMove(a2ddabd4-e19a-4478-bb29-279a280a70af)
+							{
+								base_properties: property_list [
+									wp<function<bool,int,int,int,int>>(e0d94327-f02c-48b3-917f-86cc60984eac)
+									{
+										name: "touchMoved"
+										value: function<bool,int,int,int,int>(9659a7d2-446d-45df-b9b6-29ea148eda4e)
+										{
+											script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+												"{" \
+												"	v:this->^.touchMoved(v:touchId,v:x,v:y,v:fingerId);" \
+												"    true;" \
+												"}"
+										}
+									}]
+							}, 
+							StateTouched(9ed383ee-6b3c-4ba4-84d9-53f415ac0d81)
+							{
+								base_properties: property_list [
+									wp<bool>(fe2b9fe8-6594-4917-a8b5-8cdaa0e29cd7)
+									{
+										name: "touchable"
+										value: true
+									}, 
+									wp<bool>(ddc9ad36-5bc2-40d4-ba4f-e61c4a070024)
+									{
+										name: "touched"
+										value: false
+									}, 
+									wp<int>(277b15ee-02d2-44ce-b1da-3106bd104bbb)
+									{
+										name: "touchPolicy"
+										value: 1
+									}, 
+									wp<int>(6a48e1a6-f393-4660-9043-3bafc41c6a40)
+									{
+										name: "touchBehavior"
+										value: 0
+									}]
+							}, 
+							LineIndex(2ad48505-c713-4461-9228-64af5ba7d7d5)
+							{
+								base_properties: property_list [
+									wp<int>(13972fdd-8e75-477d-b10c-1851db5dc745)
+									{
+										name: "lineIndex"
+										value: 0
+									}]
+							}, 
+							LayoutPolicyListItem(0f9a312d-ebcd-4308-9f7d-06026b43c102)
+							{
+								base_properties: property_list [
+									wp<int>(984a242a-060a-4754-937c-0bcf4157e71d)
+									{
+										name: "listIndex"
+										value: 0
+									}]
+							}]
+						children: children_list [
+							GtfRectangle(573cc2e8-abdb-480a-b9d9-db75f9570d8a)
+							{
+								name: "Background"
+								properties: property_list [
+									wp<bool>(a29c26d9-150e-4051-b227-f3e9410248ec)
+									{
+										name: "visible"
+										value: true
+									}, 
+									wp<int>(4687bcd4-c231-4f65-898c-67c8e195f142)
+									{
+										name: "width"
+										value: @a892b728-9118-40b9-8533-43b0786332b4 (objectref<int>)
+									}, 
+									wp<int>(0f7a9041-4f94-4e02-b145-ae4f69671d6b)
+									{
+										name: "height"
+										value: @4d7d988d-5285-4535-a4f3-5b0a9ced0623 (objectref<int>)
+									}, 
+									wp<int>(c2f9bb37-01c0-4b2c-a580-66b5f50c1a22)
+									{
+										name: "x"
+										value: 0
+									}, 
+									wp<int>(26061ee2-0691-4a34-914c-b1b0056c15d1)
+									{
+										name: "y"
+										value: 0
+									}, 
+									wp<color>(3dd48957-14d9-4117-a80c-9b41a394c08f)
+									{
+										name: "fillColor"
+										value: #1E90FFFF
+									}]
+								features: feature_list [
+									Border(ba898bf8-c2ee-4d20-8696-b1c30131ce91)
+									{
+										base_properties: property_list [
+											wp<int>(d02af989-eae9-4aff-a218-bd91e4b03c35)
+											{
+												name: "borderThickness"
+												value: 2
+											}, 
+											wp<color>(7391d4dc-43a2-45cf-ad4f-005e932b0cc1)
+											{
+												name: "borderColor"
+												value: #000000FF
+											}, 
+											wp<int>(60fd9e41-45e4-4512-a62c-3051689bc7b9)
+											{
+												name: "borderStyle"
+												value: 0
+											}]
+									}]
+								children: children_list []
+							}, 
+							GtfLabel(a6ff9ad2-0eee-4536-bd6f-a35bc9b8584b)
+							{
+								name: "Label"
+								properties: property_list [
+									wp<bool>(c6f530ea-378a-4a1a-8a61-82b30a94048f)
+									{
+										name: "visible"
+										value: true
+									}, 
+									wp<int>(305e40f2-076e-4446-91da-3aea8fd252c0)
+									{
+										name: "width"
+										value: @4687bcd4-c231-4f65-898c-67c8e195f142 (objectref<int>)
+									}, 
+									wp<int>(7693559c-c25d-4a3e-93f1-77e3b655c7f7)
+									{
+										name: "height"
+										value: @0f7a9041-4f94-4e02-b145-ae4f69671d6b (objectref<int>)
+									}, 
+									wp<int>(57e2e7a2-86b1-4044-9ba0-ceac1a9fcf2e)
+									{
+										name: "x"
+										value: 0
+									}, 
+									wp<int>(318b8019-e156-44c0-98eb-8e0d8555bc61)
+									{
+										name: "y"
+										value: 0
+									}, 
+									wp<string>(dc7de890-50da-401e-b2b6-1873fdb33ddb)
+									{
+										name: "text"
+										value: ""
+									}, 
+									wp<color>(cba8e5d2-afc1-4ae4-8dc8-6ea78bb2416e)
+									{
+										name: "textColor"
+										value: #FFFFFFFF
+									}, 
+									wp<font>(0dfdd987-4beb-4ff3-be9f-29f23a99cd2f)
+									{
+										name: "font"
+										value: font_resource(bbd0c245-1a0f-42a7-8f54-5fa85334cf0b)
+										{
+											sourceType: "model"
+											source: "resources"
+											file: "fonts\\PT_Sans.ttf"
+											size: 30
+										}
+									}, 
+									wp<int>(cb08abae-5c5a-43f2-8626-f7047b5e4d44)
+									{
+										name: "horizontalAlign"
+										value: 1
+									}, 
+									wp<int>(c1c53993-5750-4f66-b23e-b527471ee982)
+									{
+										name: "verticalAlign"
+										value: 0
+									}, 
+									wp<conditional_script>(9dc10d72-6681-4a58-a94d-cd351fb444b6)
+									{
+										name: "set_Text"
+										value: conditional_script(5e9bea25-4d44-4b37-90fc-cbd6454aa4e5)
+										{
+											triggerList: trigger_list(e00a6025-490f-44a7-9f0a-5996a554871d)
+											{
+												script: "v:this->^.listIndex" \
+													"v:this->^->^->^.inputList" \
+													"v:this->^->^.listLength" \
+													"v:this->^->^->^.dataValid" \
+													""
+											}
+											onTrigger: function<bool,bool>(37612899-dc06-4e4c-94fb-b1df09a120df)
+											{
+												script: "function(v:arg0::bool)" \
+													"{" \
+													"	if (v:this->^.listIndex < v:this->^->^.listLength)" \
+													"	{" \
+													"		v:this->^.visible = true" \
+													"		" \
+													"		if( v:this->^->^->^.dataValid[v:this->^.listIndex] )			" \
+													"		{" \
+													"			v:this.text = v:this->^->^->^.inputList[v:this->^.listIndex]" \
+													"		}" \
+													"		else" \
+													"		{" \
+													"			v:this.text = \"Invalid item\";" \
+													"		}" \
+													"		" \
+													"	}" \
+													"	else" \
+													"	{" \
+													"		v:this->^.visible = false;" \
+													"	}" \
+													"	false" \
+													"}"
+											}
+										}
+									}]
+								features: feature_list []
+								children: children_list []
+							}]
+					}]
+			}]
+	}
+}

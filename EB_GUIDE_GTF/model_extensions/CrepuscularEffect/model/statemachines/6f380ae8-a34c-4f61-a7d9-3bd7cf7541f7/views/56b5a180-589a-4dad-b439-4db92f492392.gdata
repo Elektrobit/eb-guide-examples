@@ -1,0 +1,37 @@
+EBGUIDE 6.11.0.210526170413;
+
+GtfView_template_instance(56b5a180-589a-4dad-b439-4db92f492392)
+{
+	name: "Titleview"
+	template: @18edd3fd-90d3-4e6e-bc08-4db08f8b05ee (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(c9f388d0-ef38-4d6f-bcf7-22d1c34e5642)
+		{
+			name: "title_text"
+			value: "Custom effect demo"
+		}, 
+		wp<string>(aa72bce7-059b-48ab-a566-182090f76206)
+		{
+			name: "short desc_text"
+			value: "Example of loading a custom crepuscular effect with the HMI"
+		}, 
+		wp<string>(14f167f5-1ba1-41c4-a4f5-9df9e6e7aaed)
+		{
+			name: "long desc_text"
+			value: "Documentation reference:\\nExtensions to EB GUIDE TF"
+		}, 
+		wp<function<bool,int,int,int,int>>(c6e71efd-e4f4-4b70-bdc4-633aba840404)
+		{
+			name: "touchPressed"
+			value: function<bool,int,int,int,int>(a833b774-1633-4423-bc01-9bff091cce0c)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:next();" \
+					"    false" \
+					"}"
+			}
+		}]
+	user_properties: property_list []
+	children: children_list []
+}

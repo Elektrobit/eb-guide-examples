@@ -1,0 +1,36 @@
+{
+    "datapool": [
+        {"name": "New_Integer", "type": "int", "value": 4000},
+        {"name": "New_Bool", "type": "bool", "value": true},
+        {"name": "New_String", "type": "string", "value": "Hello EB GUIDE"},
+        {"name": "New_Color", "type": "color", "value": "#8080009F"},
+        {"name": "New_Font", "type": "font", "value": {"file": "PT_Sans_Narrow.ttf", "size": 35}},
+        {"name": "New_IntList", "type": "intlist", "value": [1, 2, 3, 4, 5]},
+        {"name": "New_FloatList", "type": "floatlist", "value": [1.0, 3.0, 5.0, 7.0]},
+        {"name": "New_StringList", "type": "stringlist", "value": ["hello", "how", "do", "you", "do"]},
+        {
+            "name": "New_FontList",
+            "type": "fontlist",
+            "value": [
+                {"file": "PT_Sans_Narrow.ttf", "size": 55},
+                {"file": "PT_Sans_Narrow.ttf", "size": 40},
+                {"file": "PT_Sans_Narrow.ttf", "size": 45}
+            ]
+        }
+    ],
+    "events": [
+        {
+            "name": "Start",
+            "event_group": "Default"
+        },
+        {
+            "name": "Cancel",
+            "event_group": "Touch",
+            "parameters": [
+                {"name": "id", "type": "int"},
+                {"name": "flag", "type": "bool"},
+                {"name": "value", "type": "string"}
+            ]
+        }
+    ]
+}

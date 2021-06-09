@@ -1,0 +1,16 @@
+EBGUIDE 6.11.0.210526170413;
+
+dp_items(4ab33be4-bb9a-48f7-a16b-844ed43135eb)
+{
+	items: dp_item_list [
+		dp<int>(bd650773-6d1c-49c0-8325-061e566c34f7)
+		{
+			value: 2
+			name: "SampleCountIdx"
+		}, 
+		dp<bool>(fae02e81-e69a-46e7-b1c3-578a3a32d23d)
+		{
+			value: false
+			name: "AnimationActive"
+		}]
+}

@@ -1,0 +1,354 @@
+EBGUIDE 6.11.0.210526170413;
+
+GtfView_template_instance(44a166d8-e7f9-4cae-ad01-7d2ec396151a)
+{
+	name: "Homescreen"
+	template: @d9ee43bd-ee64-4c9f-904a-75cf1fd8f745 (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(fc54da43-d102-4074-b3d6-9bf885c285dc)
+		{
+			name: "text"
+			value: "Configuration importer demo"
+		}, 
+		wp<string>(f7d3e090-6eb3-4264-a8d9-516574ba915b)
+		{
+			name: "description"
+			value: "The application loads the values from the configuration file"
+		}]
+	user_properties: property_list []
+	children: children_list [
+		GtfContainer(b1dae64a-544d-4dbc-bdc7-be561092f878)
+		{
+			name: "ConfigContainer"
+			properties: property_list [
+				wp<bool>(68b948a3-5a8c-47f6-a605-2bbe75d57de5)
+				{
+					name: "visible"
+					value: true
+				}, 
+				wp<int>(26138e0b-f156-433d-960d-fa3dc93f52fc)
+				{
+					name: "width"
+					value: 773
+				}, 
+				wp<int>(15decccf-1127-4f87-9d88-4ba37ab4df3d)
+				{
+					name: "height"
+					value: 320
+				}, 
+				wp<int>(c754b7c7-66d5-4a21-9425-ff334278a881)
+				{
+					name: "x"
+					value: 15
+				}, 
+				wp<int>(7141dfc8-5ca7-4bc0-a720-e54e910f672f)
+				{
+					name: "y"
+					value: 82
+				}]
+			features: feature_list [
+				LayoutPolicyGrid(de29deef-c780-49f7-9515-851918793010)
+				{
+					base_properties: property_list [
+						wp<int>(b71a7c89-464a-46b6-a961-8fb7a8beebec)
+						{
+							name: "horizontalGap"
+							value: 10
+						}, 
+						wp<int>(9accd45c-70b4-4c3e-86c4-610a2a5eca26)
+						{
+							name: "verticalGap"
+							value: 0
+						}, 
+						wp<int>(3e7925ad-e1d1-472b-b07a-0a2d5f7b1f9c)
+						{
+							name: "numRows"
+							value: 3
+						}, 
+						wp<int>(a9bd6f12-2bca-40fb-8a35-c96bfbb53fb7)
+						{
+							name: "numColumns"
+							value: 2
+						}]
+				}]
+			children: children_list [
+				GtfLabel_template_instance(47ff2a80-7752-4d39-a0ed-7f6585417515)
+				{
+					name: "Name"
+					template: @20ca6f97-0b5c-4682-95c4-22d43e631111 (objectref<GtfLabel_template>)
+					override_properties: property_list [
+						wp<int>(eb13d3ae-fda3-4f7b-ae2e-4b03314756c3)
+						{
+							name: "x"
+							value: @b7164c32-d3c8-40d8-be57-9b4b26b3cced (objectref<int>)
+						}, 
+						wp<int>(1c8a92fe-6874-498f-8c44-e93b7944c779)
+						{
+							name: "y"
+							value: @94132afc-9e89-42ba-8c6f-771cfec1daa8 (objectref<int>)
+						}, 
+						wp<string>(ac338434-f4b4-44c4-94d4-6ead514d21cd)
+						{
+							name: "text"
+							value: @6c644381-386d-4578-979b-91ff72763d4f (objectref<string>)
+						}]
+					user_properties: property_list [
+						wp<conditional_script>(8e3294ff-8bea-4e0d-81b8-3580a41e012f)
+						{
+							name: "setText"
+							value: conditional_script(7cf7d1e6-ebb7-4352-998e-bd778eb5e390)
+							{
+								triggerList: trigger_list(d2d07a7e-ccf9-4e89-abf1-820179e02870)
+								{
+									script: "dp:ConfigStringName" \
+										""
+								}
+								onTrigger: function<bool,bool>(112f772d-6b9e-463d-a18d-156c3ad90252)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	v:this.text = \"Name:  \" +  dp:ConfigStringName" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					children: children_list []
+				}, 
+				GtfLabel_template_instance(6e00ab5b-f670-42a3-b701-9f424a4f8f0a)
+				{
+					name: "Id"
+					template: @20ca6f97-0b5c-4682-95c4-22d43e631111 (objectref<GtfLabel_template>)
+					override_properties: property_list [
+						wp<int>(b69630c3-d4c5-4687-9f68-eaf73cddad16)
+						{
+							name: "x"
+							value: @b7164c32-d3c8-40d8-be57-9b4b26b3cced (objectref<int>)
+						}, 
+						wp<int>(7c6a9662-a01c-4f27-8e57-a63f581c8606)
+						{
+							name: "y"
+							value: @94132afc-9e89-42ba-8c6f-771cfec1daa8 (objectref<int>)
+						}, 
+						wp<string>(4ad10df8-efe3-4b12-a417-c603643058fb)
+						{
+							name: "text"
+							value: @6c644381-386d-4578-979b-91ff72763d4f (objectref<string>)
+						}]
+					user_properties: property_list [
+						wp<conditional_script>(8a44258c-4653-4fa4-9a28-f848c897ec9a)
+						{
+							name: "setText"
+							value: conditional_script(4435d57c-3575-4767-84c6-0b882596dbbf)
+							{
+								triggerList: trigger_list(4f7cef36-7d55-4cca-93e4-4baf12774497)
+								{
+									script: "dp:ConfigIntId" \
+										""
+								}
+								onTrigger: function<bool,bool>(08619908-8831-4bf6-9628-d935be5adbfb)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	v:this.text = \"ID:  \" +  f:int2string (dp:ConfigIntId)" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					children: children_list []
+				}, 
+				GtfLabel_template_instance(97c0f891-caee-4bb0-b619-9715268b6805)
+				{
+					name: "StringArray"
+					template: @20ca6f97-0b5c-4682-95c4-22d43e631111 (objectref<GtfLabel_template>)
+					override_properties: property_list [
+						wp<int>(2381643a-fbb2-4c64-8eb8-f54112bd009a)
+						{
+							name: "x"
+							value: 7
+						}, 
+						wp<int>(61b65ac3-6e96-464f-b911-18f2b7b67486)
+						{
+							name: "y"
+							value: 0
+						}, 
+						wp<string>(46a288b6-e39f-4c48-b83d-3ea808bcc08e)
+						{
+							name: "text"
+							value: @6c644381-386d-4578-979b-91ff72763d4f (objectref<string>)
+						}]
+					user_properties: property_list [
+						wp<conditional_script>(161fc88f-89f4-4bd8-a3c4-c601b7b1843e)
+						{
+							name: "setText"
+							value: conditional_script(bd2e48c1-525b-484b-881c-caf7cf63bdc1)
+							{
+								triggerList: trigger_list(8f3a5b34-980f-4857-b096-8d4aeedee6aa)
+								{
+									script: "dp:ConfigStringArray" \
+										""
+								}
+								onTrigger: function<bool,bool>(f98cc5a3-cf50-4de4-ad58-5f1545b6e209)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	let   v:index =0" \
+										"		v:text = \"StringArray: \" in" \
+										"		{" \
+										"			while (v:index < length dp:ConfigStringArray)" \
+										"			{" \
+										"				v:text += dp:ConfigStringArray[v:index]+ \" | \"" \
+										"				v:index+=1" \
+										"			}" \
+										"			v:this.text= v:text" \
+										"		}" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					children: children_list []
+				}, 
+				GtfLabel_template_instance(ef588005-1c2b-4713-bb92-5d8afaa8f1ca)
+				{
+					name: "IntArray"
+					template: @20ca6f97-0b5c-4682-95c4-22d43e631111 (objectref<GtfLabel_template>)
+					override_properties: property_list [
+						wp<int>(614e4072-1507-4ff1-8bd8-07a42c14c866)
+						{
+							name: "x"
+							value: 3
+						}, 
+						wp<int>(efdbfba7-84f3-4a36-b602-aff71e1cc9a3)
+						{
+							name: "y"
+							value: @94132afc-9e89-42ba-8c6f-771cfec1daa8 (objectref<int>)
+						}, 
+						wp<string>(3feadd8a-b321-4aa6-ac85-7bc54e9c0215)
+						{
+							name: "text"
+							value: ""
+						}]
+					user_properties: property_list [
+						wp<conditional_script>(4899e17c-d510-473c-b420-6b7e01490d91)
+						{
+							name: "setText"
+							value: conditional_script(bea9cbb0-1338-4cc4-993b-ad32d19141e1)
+							{
+								triggerList: trigger_list(fa69f311-57a9-4d08-be8e-c9dcfc40eb33)
+								{
+									script: "dp:ConfigIntArray" \
+										""
+								}
+								onTrigger: function<bool,bool>(6a3b9e25-da79-47a7-aa72-7b61507f1225)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	let   v:index = 0" \
+										"		v:text = \"IntArray: \" in" \
+										"		{" \
+										"			while (v:index < length dp:ConfigIntArray)" \
+										"			{" \
+										"				v:text += f:int2string (dp:ConfigIntArray[v:index]) + \" | \"" \
+										"				v:index+=1" \
+										"			}" \
+										"			v:this.text = v:text" \
+										"		}" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					children: children_list []
+				}, 
+				GtfLabel_template_instance(38a57f0f-fd74-4ce9-8d81-f5310a82fe16)
+				{
+					name: "Valid"
+					template: @20ca6f97-0b5c-4682-95c4-22d43e631111 (objectref<GtfLabel_template>)
+					override_properties: property_list [
+						wp<int>(127a6925-8cda-4aa8-ab1a-cac05e099ae3)
+						{
+							name: "x"
+							value: 3
+						}, 
+						wp<int>(41b09ef5-ca66-4aec-823e-4697d092f02b)
+						{
+							name: "y"
+							value: @94132afc-9e89-42ba-8c6f-771cfec1daa8 (objectref<int>)
+						}, 
+						wp<string>(7bc800fd-99f9-41fa-9fa3-0ca8b565a2f9)
+						{
+							name: "text"
+							value: @6c644381-386d-4578-979b-91ff72763d4f (objectref<string>)
+						}]
+					user_properties: property_list [
+						wp<conditional_script>(68c76b60-f6be-4524-813b-de737998a9ad)
+						{
+							name: "setText"
+							value: conditional_script(6e33d971-686e-4418-be8d-02d2e76ae44e)
+							{
+								triggerList: trigger_list(d3f78694-b82a-4d59-9491-77881f0c5f6f)
+								{
+									script: "dp:ConfigBoolValid" \
+										""
+								}
+								onTrigger: function<bool,bool>(cc08df91-3418-44ec-bb0d-c410ed4fabad)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	v:this.text = \"Valid:  \" +  f:bool2string (dp:ConfigBoolValid)" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					children: children_list []
+				}, 
+				GtfLabel_template_instance(b09feea7-13e9-4bcb-92cf-95310372bd16)
+				{
+					name: "Version"
+					template: @20ca6f97-0b5c-4682-95c4-22d43e631111 (objectref<GtfLabel_template>)
+					override_properties: property_list [
+						wp<int>(8a1e6402-a650-4118-92c5-ca1ebc3bed5c)
+						{
+							name: "x"
+							value: @b7164c32-d3c8-40d8-be57-9b4b26b3cced (objectref<int>)
+						}, 
+						wp<int>(5bf8fa30-5471-499d-93fb-e99d55116dc6)
+						{
+							name: "y"
+							value: @94132afc-9e89-42ba-8c6f-771cfec1daa8 (objectref<int>)
+						}, 
+						wp<string>(6ee1fc5b-0040-48b5-9103-ac51cd8caf20)
+						{
+							name: "text"
+							value: @6c644381-386d-4578-979b-91ff72763d4f (objectref<string>)
+						}]
+					user_properties: property_list [
+						wp<conditional_script>(f1aa5569-58cf-45d3-8649-75bc417e1ae9)
+						{
+							name: "setText"
+							value: conditional_script(8cdfaaf8-749a-456e-9954-876a48d1731f)
+							{
+								triggerList: trigger_list(5bd76653-6e1c-4cc2-a5f1-9c20d300ed44)
+								{
+									script: "dp:ConfigFloatVersion" \
+										""
+								}
+								onTrigger: function<bool,bool>(17e34b27-8811-4f68-908c-d25a071947be)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	v:this.text = \"version:  \" +  f:float2string (dp:ConfigFloatVersion)" \
+										"" \
+										"	//v:this.text = \"version:  \" + f:format_float(\"%4.2f\",true,dp:ConfigFloatVersion)" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					children: children_list []
+				}]
+		}]
+}

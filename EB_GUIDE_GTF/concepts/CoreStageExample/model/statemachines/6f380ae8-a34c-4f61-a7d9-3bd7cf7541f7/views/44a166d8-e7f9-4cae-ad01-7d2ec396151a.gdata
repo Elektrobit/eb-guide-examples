@@ -1,0 +1,97 @@
+EBGUIDE 6.11.0.210526170413;
+
+GtfView_template_instance(44a166d8-e7f9-4cae-ad01-7d2ec396151a)
+{
+	name: "Homescreen"
+	template: @d9ee43bd-ee64-4c9f-904a-75cf1fd8f745 (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(e493c734-6b20-4a39-a344-57b27bf2f4e2)
+		{
+			name: "text"
+			value: "Core lifecycle demo"
+		}, 
+		wp<string>(4b755282-8dd5-47fd-a30a-735f80ad64f9)
+		{
+			name: "description"
+			value: "The HMI prints core stage information as they are loaded."
+		}]
+	user_properties: property_list []
+	children: children_list [
+		GtfLabel(51dc5609-9214-47d8-b6f8-9ddee28a2428)
+		{
+			name: "Label 1"
+			properties: property_list [
+				wp<bool>(216b3844-6f25-445c-9bb6-77575af1566d)
+				{
+					name: "visible"
+					value: true
+				}, 
+				wp<int>(79ee620e-e8b9-4903-abb9-8128d6ac163f)
+				{
+					name: "width"
+					value: 776
+				}, 
+				wp<int>(f84b12f3-c25b-43fd-88d9-680c27a27087)
+				{
+					name: "height"
+					value: 167
+				}, 
+				wp<int>(9a717114-9a85-436d-b9c7-1afb3d8b89be)
+				{
+					name: "x"
+					value: 12
+				}, 
+				wp<int>(5ab3c1ff-38bb-47fa-aceb-fca2bc8a6b91)
+				{
+					name: "y"
+					value: 151
+				}, 
+				wp<string>(98b26319-ac63-4944-b477-329833f8df81)
+				{
+					name: "text"
+					value: "You have started the core life cycle application model! "
+				}, 
+				wp<color>(b34b90bb-6579-41c8-822f-72a2d4015987)
+				{
+					name: "textColor"
+					value: #FFFFFFFF
+				}, 
+				wp<font>(7c0737f9-fce2-427d-ad89-90f5a6be8a35)
+				{
+					name: "font"
+					value: font_resource(484077d5-731c-4409-991b-eea98afd48fe)
+					{
+						sourceType: "model"
+						source: "resources"
+						file: "fonts\\PT_Sans.ttf"
+						size: 30
+					}
+				}, 
+				wp<int>(ec1ec790-4094-487c-a750-3278eeaba69f)
+				{
+					name: "horizontalAlign"
+					value: 1
+				}, 
+				wp<int>(361a8457-4d8a-4c66-9ebe-ab7fae343981)
+				{
+					name: "verticalAlign"
+					value: 0
+				}]
+			features: feature_list [
+				MultiLine(4a765bef-3863-4c86-953b-97cfc8ee393d)
+				{
+					base_properties: property_list [
+						wp<int>(e50d9ed0-29ed-4d29-b65e-dc49b5db069c)
+						{
+							name: "lineOffset"
+							value: 0
+						}, 
+						wp<int>(f662e4da-4ee8-4bb5-b410-14c5d6b33e41)
+						{
+							name: "maxLineCount"
+							value: 0
+						}]
+				}]
+			children: children_list []
+		}]
+}

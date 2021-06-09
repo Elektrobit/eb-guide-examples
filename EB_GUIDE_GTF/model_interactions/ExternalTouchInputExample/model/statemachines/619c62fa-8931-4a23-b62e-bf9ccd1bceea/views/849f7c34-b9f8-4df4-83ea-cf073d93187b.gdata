@@ -1,0 +1,185 @@
+EBGUIDE 6.11.0.210526170413;
+
+GtfView_template_instance(849f7c34-b9f8-4df4-83ea-cf073d93187b)
+{
+	name: "MainView"
+	template: @c0f1c727-95c8-4441-8262-f18240012cb1 (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(f918770f-2970-499d-96c6-8b372ee2e4be)
+		{
+			name: "text"
+			value: "Main"
+		}, 
+		wp<string>(2ae454f9-cff1-4cfa-9093-d810b8cb0c2a)
+		{
+			name: "text 2"
+			value: "The EB Image reacts on the touch event and moves when it receives the swipe effect. "
+		}, 
+		wp<string>(cc5397fe-d58c-4bb2-b34c-83f983a923e0)
+		{
+			name: "Description"
+			value: "The application will continuously send events with touch coordinates."
+		}]
+	user_properties: property_list [
+		wp<function<bool,int,int,int,int>>(98ca93bf-dac0-42f1-b006-3a7ca9bcdad7)
+		{
+			name: "touchShortReleased"
+			value: function<bool,int,int,int,int>(3e185801-1222-4586-b5f1-0e43eeef35fe)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    false" \
+					"}"
+			}
+		}, 
+		wp<color>(bac0b076-9365-4d35-ab89-10909b1bf708)
+		{
+			name: "fillColor"
+			value: #FF4500FF
+		}]
+	children: children_list [
+		GtfImage(21df18f2-2b38-4190-95b4-7c3155261533)
+		{
+			name: "Image 1"
+			properties: property_list [
+				wp<bool>(07a2c637-eb37-4e0f-8b56-e1ff2467cda9)
+				{
+					name: "visible"
+					value: true
+				}, 
+				wp<int>(1c6d5131-b3e0-4250-99b4-294cd4ab8f68)
+				{
+					name: "width"
+					value: 100
+				}, 
+				wp<int>(fbce54ca-0af3-4fdb-b46b-be2f03340329)
+				{
+					name: "height"
+					value: 100
+				}, 
+				wp<int>(e2e62bad-0a76-4140-a51c-b98dfa2af499)
+				{
+					name: "x"
+					value: 140
+				}, 
+				wp<int>(86bb6509-0fb8-4a03-a1cf-9988dc7674fd)
+				{
+					name: "y"
+					value: 200
+				}, 
+				wp<image>(e12d1ed2-97d5-48a4-8be8-42c8facdfc15)
+				{
+					name: "image"
+					value: image_resource(c38c27d1-1424-4c4e-99bc-9037d92720f5)
+					{
+						sourceType: "model"
+						source: "resources"
+						file: "images\\EB.png"
+					}
+				}, 
+				wp<bool>(05d9865c-4dfa-42f4-ba0a-ae8e068bc409)
+				{
+					name: "sRGB"
+					value: false
+				}, 
+				wp<int>(d5b0da0c-5263-49d4-ad35-5e3cd16a57dd)
+				{
+					name: "horizontalAlign"
+					value: 0
+				}, 
+				wp<int>(86de8c1e-0f66-4bb2-ae7e-ed84bcc9b87e)
+				{
+					name: "verticalAlign"
+					value: 1
+				}, 
+				wp<conditional_script>(ca88486d-f3b1-466a-bdad-acab9753f8d1)
+				{
+					name: "DragImage"
+					value: conditional_script(3fada23a-1530-4989-8177-fab19f0510c8)
+					{
+						triggerList: trigger_list(18ae1485-d72d-4e4d-8506-4015b93c474c)
+						{
+							script: "ev:externalTouch" \
+								""
+						}
+						onTrigger: function<bool,bool>(d05e5eaf-6175-4f92-a7b2-ee51223fed35)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"" \
+								"match_event v:touchEvent = ev:externalTouch in" \
+								"{" \
+								"	f:trace_string (\"touch event received, displaymanagerID \" + f:int2string(v:touchEvent.displayManagerId)" \
+								"	+ \"status \" + f:int2string(v:touchEvent.status))" \
+								"	" \
+								"	if (v:touchEvent.displayManagerId == 1)" \
+								"	{" \
+								"		if(v:touchEvent.status == 0)" \
+								"		{" \
+								"			v:this.scalingEnabled = true" \
+								"		}" \
+								"		else if (v:touchEvent.status == 1)" \
+								"		{" \
+								"			v:this.x = v:this.startX + v:touchEvent.x" \
+								"			v:this.y = v:this.startY + v:touchEvent.y" \
+								"		}" \
+								"		else if (v:touchEvent.status == 2)" \
+								"		{" \
+								"			v:this.scalingEnabled = false;			" \
+								"		}" \
+								"" \
+								"	}" \
+								"}" \
+								"" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				wp<int>(92388eb3-35c9-4329-a137-90ce66d6065d)
+				{
+					name: "startX"
+					value: 140
+				}, 
+				wp<int>(6bd06fdb-0bf6-43ce-8447-f72dd6c64620)
+				{
+					name: "startY"
+					value: 200
+				}]
+			features: feature_list [
+				ScaleMode(cbe85e13-e727-4538-9df5-1f8a61e6b190)
+				{
+					base_properties: property_list [
+						wp<int>(3fd7375f-4369-470e-a548-7defbeb83dce)
+						{
+							name: "scaleMode"
+							value: 2
+						}]
+				}, 
+				Scaling(4032bf95-3b4e-4dd8-bc3b-5c031e25c891)
+				{
+					base_properties: property_list [
+						wp<bool>(2d628fc7-0c65-4747-b109-5e36366480df)
+						{
+							name: "scalingEnabled"
+							value: false
+						}, 
+						wp<float>(e0ba6652-2925-4927-99b9-18920e61c6f0)
+						{
+							name: "scalingX"
+							value: 130F
+						}, 
+						wp<float>(2e47767a-fced-4930-a334-f37bfb5e9a6f)
+						{
+							name: "scalingY"
+							value: 130F
+						}, 
+						wp<float>(2c3940b5-32bb-4526-905a-f2aa5bf0c2b3)
+						{
+							name: "scalingZ"
+							value: 100F
+						}]
+				}]
+			children: children_list []
+		}]
+}

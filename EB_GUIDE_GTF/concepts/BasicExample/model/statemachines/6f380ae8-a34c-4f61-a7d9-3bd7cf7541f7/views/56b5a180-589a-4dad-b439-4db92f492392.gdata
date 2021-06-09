@@ -1,0 +1,37 @@
+EBGUIDE 6.11.0.210526170413;
+
+GtfView_template_instance(56b5a180-589a-4dad-b439-4db92f492392)
+{
+	name: "Titleview"
+	template: @18edd3fd-90d3-4e6e-bc08-4db08f8b05ee (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(f1b0b27e-3acc-4159-953c-b84939f5a548)
+		{
+			name: "title_text"
+			value: "Basic Plugin demo"
+		}, 
+		wp<string>(1a1f3ab7-103b-4a07-9459-71d6a0a05fb2)
+		{
+			name: "short desc_text"
+			value: "Example of loading a basic application with the HMI "
+		}, 
+		wp<string>(5d0acaf5-84a4-4be9-a43d-fa3ffaa8b73b)
+		{
+			name: "long desc_text"
+			value: "Documentation reference:\\nUsing the EB GUIDE TF plugin mechanism > Creating an EB GUIDE TF plugin"
+		}, 
+		wp<function<bool,int,int,int,int>>(9f448ac0-1ad9-496c-baf8-de7a3c0ba8ce)
+		{
+			name: "touchPressed"
+			value: function<bool,int,int,int,int>(a833b774-1633-4423-bc01-9bff091cce0c)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:next();" \
+					"    false" \
+					"}"
+			}
+		}]
+	user_properties: property_list []
+	children: children_list []
+}

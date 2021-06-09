@@ -1,0 +1,37 @@
+EBGUIDE 6.11.0.210526170413;
+
+GtfView_template_instance(dac9d7a0-50d9-462c-8ac4-71ef8b097458)
+{
+	name: "Titleview"
+	template: @18edd3fd-90d3-4e6e-bc08-4db08f8b05ee (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(cd7744ed-21ca-4e8a-ba7f-84d87ea34a14)
+		{
+			name: "title_text"
+			value: "Settings plugin demo"
+		}, 
+		wp<string>(0649e9d5-9658-4369-8a97-502fdbd43c8f)
+		{
+			name: "short desc_text"
+			value: "Example of retrieving settings information from the dependency container. \\nOutput of the model should be redirected to a text file. "
+		}, 
+		wp<string>(c6ce8596-23e5-4482-962d-1877b38a91ee)
+		{
+			name: "long desc_text"
+			value: "Documentation reference:\\nUsing the Configuration module"
+		}, 
+		wp<function<bool,int,int,int,int>>(378e5877-c99d-4e5c-b670-a41d93b80e11)
+		{
+			name: "touchPressed"
+			value: function<bool,int,int,int,int>(d349b8a0-40e6-49c4-bb45-0ddaa07e6781)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:next();" \
+					"    false" \
+					"}"
+			}
+		}]
+	user_properties: property_list []
+	children: children_list []
+}

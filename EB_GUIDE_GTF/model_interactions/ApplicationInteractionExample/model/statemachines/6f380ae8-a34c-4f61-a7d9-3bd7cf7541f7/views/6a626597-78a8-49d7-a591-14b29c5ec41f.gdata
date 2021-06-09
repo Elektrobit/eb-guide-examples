@@ -1,0 +1,61 @@
+EBGUIDE 6.11.0.210526170413;
+
+GtfView_template_instance(6a626597-78a8-49d7-a591-14b29c5ec41f)
+{
+	name: "HomeView"
+	template: @bad749ae-e164-4670-bd0b-647bce039801 (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(353f105e-e357-463c-8de5-f46900a94af0)
+		{
+			name: "title_text"
+			value: "Application interaction demo"
+		}, 
+		wp<imagelist>(caa57462-77d2-40cd-b53a-11e171fa16ff)
+		{
+			name: "button_icon_li"
+			value: imagelist [
+				image_resource(7ae9a1e6-69f1-4a27-b356-34c1921c40cc)
+				{
+					sourceType: "model"
+					source: "resources"
+					file: "images/icon_events.png"
+				}, 
+				image_resource(4c3b84a6-b54a-4f09-850c-766bf5b1a681)
+				{
+					sourceType: "model"
+					source: "resources"
+					file: "images/icon_dp.png"
+				}, 
+				image_resource(54792a23-db4a-410c-8d46-8b6ae73d9260)
+				{
+					sourceType: "model"
+					source: "resources"
+					file: "images/icon_datapool_items.png"
+				}, 
+				image_resource(fb7a45af-c6a6-45db-a74d-e1538b4a71a1)
+				{
+					sourceType: "model"
+					source: "resources"
+					file: "images/icon_external_image.png"
+				}, 
+				image_resource(81343138-0d49-40d8-a445-1a5bde86790c)
+				{
+					sourceType: "model"
+					source: "resources"
+					file: "images/icon_mandelbrot.png"
+				}, 
+				image_resource(4bfda2e7-e10d-4e64-82c3-2bc5a725b764)
+				{
+					sourceType: "model"
+					source: "resources"
+					file: "images/icon_windowed_list.png"
+				}]
+		}, 
+		wp<stringlist>(4d38f058-17ca-4dba-a437-f7ba77c3d6fb)
+		{
+			name: "button_desc_li"
+			value: stringlist ["Communication via events", "Communication via datapool", "Updating datapool items", "Static images", "Dynamic images", "Windowed list"]
+		}]
+	user_properties: property_list []
+	children: children_list []
+}

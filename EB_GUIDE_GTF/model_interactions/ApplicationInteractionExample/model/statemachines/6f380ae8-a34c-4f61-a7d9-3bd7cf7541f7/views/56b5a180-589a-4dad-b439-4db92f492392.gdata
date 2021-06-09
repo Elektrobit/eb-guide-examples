@@ -1,0 +1,38 @@
+EBGUIDE 6.11.0.210526170413;
+
+GtfView_template_instance(56b5a180-589a-4dad-b439-4db92f492392)
+{
+	name: "Titleview"
+	template: @18edd3fd-90d3-4e6e-bc08-4db08f8b05ee (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(7616ae71-aa78-4396-89bf-03714d5b1df9)
+		{
+			name: "title_text"
+			value: "Application interaction demo"
+		}, 
+		wp<string>(e1f890d6-d29c-4d95-80b5-c239d00de5ee)
+		{
+			name: "short desc_text"
+			value: "Example for communicating from an application with the HMI using datapool and event system"
+		}, 
+		wp<string>(469f3de0-a56b-4096-8480-180caf8cb0da)
+		{
+			name: "long desc_text"
+			value: "Documentation reference:\\nBackground information > Interaction between HMI and applications"
+		}, 
+		wp<function<bool,int,int,int,int>>(14dbbade-376c-4afc-8009-54e78db35d60)
+		{
+			name: "touchPressed"
+			value: function<bool,int,int,int,int>(0d8f8101-004c-4bdd-b692-df0d01278531)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	cancel_fire ev:next; // interrupt fire delayed (Titleview's entry action)" \
+					"	fire ev:next();" \
+					"    false;" \
+					"}"
+			}
+		}]
+	user_properties: property_list []
+	children: children_list []
+}

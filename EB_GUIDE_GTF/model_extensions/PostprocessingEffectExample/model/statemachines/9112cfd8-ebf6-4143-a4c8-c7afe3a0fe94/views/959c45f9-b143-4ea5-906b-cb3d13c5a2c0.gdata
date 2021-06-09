@@ -1,0 +1,924 @@
+EBGUIDE 6.11.0.210526170413;
+
+GtfView_template_instance(959c45f9-b143-4ea5-906b-cb3d13c5a2c0)
+{
+	name: "View"
+	template: @97bfae15-8eec-4a27-be28-646b2cd5f0f1 (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<int>(13f7bee1-74ea-4eb4-a56e-a40bd307332c)
+		{
+			name: "width"
+			value: @93ccabf0-11a3-4aa1-b32d-0fef0ff2914a (objectref<int>)
+		}, 
+		wp<int>(7ac2d2af-6c30-4066-adbd-95ae022dd4fd)
+		{
+			name: "height"
+			value: @3a0bd6fa-fb1b-4e78-99c1-9794612ede96 (objectref<int>)
+		}, 
+		wp<string>(c9267bd9-67d2-4264-9f88-c5b01e630d53)
+		{
+			name: "description"
+			value: "An HMI model for the chromatic aberration lens effect"
+		}, 
+		wp<string>(a9202e7b-eb3b-43d4-8b7c-0ad70a13bee7)
+		{
+			name: "text"
+			value: "Postprocessing effect example"
+		}]
+	user_properties: property_list []
+	children: children_list [
+		GtfRectangle(4d72778c-44d4-47ca-97b2-ec713b3108b0)
+		{
+			name: "Button"
+			properties: property_list [
+				wp<bool>(f8aafea5-e5fc-4641-830f-d14c1b61a64f)
+				{
+					name: "visible"
+					value: true
+				}, 
+				wp<int>(02d0468d-bfdf-49a7-b7e9-ab888c0bf211)
+				{
+					name: "width"
+					value: 100
+				}, 
+				wp<int>(29ee2626-e75b-4db6-9298-25f258cb9225)
+				{
+					name: "height"
+					value: 37
+				}, 
+				wp<int>(0fee7fce-e1ae-4d19-874b-d7fed0d0d2cf)
+				{
+					name: "x"
+					value: 14
+				}, 
+				wp<int>(aa2e5e40-6668-4cb9-8e21-ac43c0b8b1f7)
+				{
+					name: "y"
+					value: 86
+				}, 
+				wp<color>(8008369e-e376-4389-bd40-688d66c2e60a)
+				{
+					name: "fillColor"
+					value: #A9A9A9FF
+				}]
+			features: feature_list [
+				TouchShortReleased(69b3bdaf-db68-443c-a3cd-cb77f18c5706)
+				{
+					base_properties: property_list [
+						wp<function<bool,int,int,int,int>>(605236c9-69fc-4053-870f-55aed9827d51)
+						{
+							name: "touchShortReleased"
+							value: function<bool,int,int,int,int>(22826e2f-c2c8-4b59-9bd7-f12444f5860c)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{	" \
+									"	v:this->^->Teapot.enabled = !v:this->^->Teapot.enabled" \
+									"	" \
+									"	if(v:this->^->Teapot.enabled)" \
+									"	{" \
+									"		v:this->Label.text = \"Turn Off\"" \
+									"	}" \
+									"	else" \
+									"	{" \
+									"		v:this->Label.text = \"Turn On\"" \
+									"	}	" \
+									"	" \
+									"    false" \
+									"}"
+							}
+						}]
+				}, 
+				StateTouched(a37f8903-adec-45c0-9c62-7724eaa8994e)
+				{
+					base_properties: property_list [
+						wp<bool>(9d2423d0-0374-4695-82dd-ccdf3b06f7aa)
+						{
+							name: "touchable"
+							value: true
+						}, 
+						wp<bool>(7819f4be-cf50-499d-9e49-3539935e9d19)
+						{
+							name: "touched"
+							value: false
+						}, 
+						wp<int>(47958cfc-4cc6-48b6-bc9e-ff3b3e3c13eb)
+						{
+							name: "touchPolicy"
+							value: 0
+						}, 
+						wp<int>(c1da122c-e0c7-4c29-9f7b-7fb832be8d78)
+						{
+							name: "touchBehavior"
+							value: 0
+						}]
+				}]
+			children: children_list [
+				GtfLabel(975da77f-0a10-4504-93d2-565f80ac964a)
+				{
+					name: "Label"
+					properties: property_list [
+						wp<bool>(952ae64a-7e5c-403b-b4a2-2f8ea87865bd)
+						{
+							name: "visible"
+							value: true
+						}, 
+						wp<int>(723b1d55-1c52-4415-a67b-7dbb65702bbf)
+						{
+							name: "width"
+							value: 94
+						}, 
+						wp<int>(6f97896e-30d5-447f-a3a6-f25c7c721366)
+						{
+							name: "height"
+							value: 39
+						}, 
+						wp<int>(0437e95c-8b85-4485-93e5-1cbf0e35480e)
+						{
+							name: "x"
+							value: 3
+						}, 
+						wp<int>(6f82c73a-a8e8-4ccc-a8c2-4422c7e21065)
+						{
+							name: "y"
+							value: 0
+						}, 
+						wp<string>(cb3c6c2b-924b-454d-9724-f78afb848c97)
+						{
+							name: "text"
+							value: "Turn Off"
+						}, 
+						wp<color>(a03cfb50-7312-44d0-abc6-6d95ec99632d)
+						{
+							name: "textColor"
+							value: #FFFFFFFF
+						}, 
+						wp<font>(b08c42e8-696b-40ea-9faa-f3725d7d5575)
+						{
+							name: "font"
+							value: font_resource(b102aae6-345b-4639-86f7-d4470bc4fba5)
+							{
+								sourceType: "model"
+								source: "resources"
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+						}, 
+						wp<int>(609b05d2-372f-4288-b7d5-4a5e0c3edb89)
+						{
+							name: "horizontalAlign"
+							value: 1
+						}, 
+						wp<int>(80bc1499-700e-43e9-80cd-d3dc412f8bf4)
+						{
+							name: "verticalAlign"
+							value: 0
+						}]
+					features: feature_list []
+					children: children_list []
+				}]
+		}, 
+		GtfSceneGraph(4f5a502a-24b2-4449-9b33-a2f8bb8e2773)
+		{
+			name: "Teapot"
+			properties: property_list [
+				wp<bool>(76db1137-3b69-44b6-8033-0960e4393fba)
+				{
+					name: "visible"
+					value: true
+				}, 
+				wp<int>(1930b169-bd4b-47d5-a525-697ee4361dcd)
+				{
+					name: "width"
+					value: 431
+				}, 
+				wp<int>(448a8995-3289-4da0-a3c5-478bd35dac8f)
+				{
+					name: "height"
+					value: 315
+				}, 
+				wp<int>(de3a6b0b-1084-48fa-b341-09b15c8d847a)
+				{
+					name: "x"
+					value: 168
+				}, 
+				wp<int>(3000ec6f-eaa6-46de-909b-cc94e63e9e24)
+				{
+					name: "y"
+					value: 82
+				}, 
+				wp<float>(bcfdc359-56de-4d53-9659-8df17475e6d3)
+				{
+					name: "gamma"
+					value: 2.2F
+				}, 
+				wp<bool>(74f2a1e3-9713-419d-b976-c7137ef620b6)
+				{
+					name: "debugLightSource"
+					value: false
+				}]
+			features: feature_list [
+				ChromaticAberration(54de0cc4-7b31-4ad0-8e48-b4c9d2009bef)
+				{
+					base_properties: property_list [
+						wp<bool>(fdc427db-5e82-454d-b15b-114524a95944)
+						{
+							name: "enabled"
+							value: true
+						}, 
+						wp<float>(da3a074b-b12b-49ed-bcc9-b3f9772ed77b)
+						{
+							name: "intensity"
+							value: 0.1F
+						}]
+				}]
+			children: children_list [
+				GtfSceneGraphNode(d82b4279-6942-4c20-b04f-23b5c4817b20)
+				{
+					name: "RootNode 1"
+					properties: property_list [
+						wp<bool>(eb9521af-d7ea-4cec-8ebc-e473061ccea5)
+						{
+							name: "visible"
+							value: true
+						}, 
+						wp<float>(8891d586-439f-49a8-a451-ea3786bab8ee)
+						{
+							name: "rotationX"
+							value: 0F
+						}, 
+						wp<float>(cf318d86-8018-4d4e-8254-edbd5870cc81)
+						{
+							name: "rotationY"
+							value: 0F
+						}, 
+						wp<float>(03941252-6b5e-41a4-938b-38335fa56a5f)
+						{
+							name: "rotationZ"
+							value: 0F
+						}, 
+						wp<float>(eb562eb5-7444-4ec9-87be-fbf4137f6b72)
+						{
+							name: "scalingX"
+							value: 1F
+						}, 
+						wp<float>(2fa90f80-82ef-4eb3-a47b-4bc9bbda83be)
+						{
+							name: "scalingY"
+							value: 1F
+						}, 
+						wp<float>(a5a00ec8-20e3-495d-802b-61df1af6e084)
+						{
+							name: "scalingZ"
+							value: 1F
+						}, 
+						wp<float>(8d8fa5f7-3c6d-415d-9b85-caa3f6557865)
+						{
+							name: "translationX"
+							value: 0F
+						}, 
+						wp<float>(2eb11d7a-8b45-4b84-8521-aa46c512c3c7)
+						{
+							name: "translationY"
+							value: 0F
+						}, 
+						wp<float>(f6f335d7-e669-460c-9bf1-567d317f2e82)
+						{
+							name: "translationZ"
+							value: 0F
+						}]
+					features: feature_list []
+					children: children_list [
+						GtfSceneGraphNode(1c161a5b-f612-4a85-a982-4f4fea1171f9)
+						{
+							name: "Camera001"
+							properties: property_list [
+								wp<bool>(cfcc94ca-99ce-4398-b774-852ffa2dbe5c)
+								{
+									name: "visible"
+									value: true
+								}, 
+								wp<float>(b94dbff6-8d0a-4810-a6a0-c7b384f62b9a)
+								{
+									name: "rotationX"
+									value: 0F
+								}, 
+								wp<float>(18dfc902-03d2-4a21-ad9f-aa7b58e81826)
+								{
+									name: "rotationY"
+									value: -9.334668E-06F
+								}, 
+								wp<float>(c36496e5-aab9-42dc-a5d8-28b3885aaafe)
+								{
+									name: "rotationZ"
+									value: 2.504478E-06F
+								}, 
+								wp<float>(4811f2ab-6bb0-42a4-99ac-2061eb4df38d)
+								{
+									name: "scalingX"
+									value: 1F
+								}, 
+								wp<float>(1ca0a00a-b525-4309-b623-7c8a5a33b29f)
+								{
+									name: "scalingY"
+									value: 1F
+								}, 
+								wp<float>(71016db8-f54f-46e7-a29e-7252764a4ab4)
+								{
+									name: "scalingZ"
+									value: 1F
+								}, 
+								wp<float>(cc01e848-95fc-4985-9538-6c1a1289aed2)
+								{
+									name: "translationX"
+									value: -90F
+								}, 
+								wp<float>(5e6cb685-5a89-490f-bb2e-cd99b59acb3d)
+								{
+									name: "translationY"
+									value: 0F
+								}, 
+								wp<float>(d8aa0dbd-9aa5-4284-8bb1-8d525fd4e340)
+								{
+									name: "translationZ"
+									value: -2F
+								}]
+							features: feature_list []
+							children: children_list [
+								GtfCameraWidget(2bb1da49-31fb-462c-93f7-372840bc3d03)
+								{
+									name: "Camera 2"
+									properties: property_list [
+										wp<bool>(04cd8c53-3d17-41fb-99f0-510b4ccfbf4e)
+										{
+											name: "enabled"
+											value: true
+										}, 
+										wp<float>(52ac8bd9-a90e-495a-b00f-e1aa67d4a39c)
+										{
+											name: "nearPlane"
+											value: 10F
+										}, 
+										wp<float>(1cee18cd-c588-49bc-b396-520c50e70e14)
+										{
+											name: "farPlane"
+											value: 4000F
+										}, 
+										wp<float>(7a8db1af-6e6b-40ba-be21-51e595f86a18)
+										{
+											name: "fieldOfView"
+											value: 34.51588F
+										}, 
+										wp<int>(7c4096cc-0585-4a82-8e9c-d254f78558c1)
+										{
+											name: "projectionType"
+											value: 0
+										}]
+									features: feature_list []
+									children: children_list []
+								}]
+						}, 
+						GtfSceneGraphNode(15c60a5a-bc91-4b14-a334-dba699572e96)
+						{
+							name: "Omni001"
+							properties: property_list [
+								wp<bool>(3345f224-d3c9-4782-8420-fc5dfb3ed912)
+								{
+									name: "visible"
+									value: true
+								}, 
+								wp<float>(3580049c-9698-4e6c-82d0-f82ac276bc8d)
+								{
+									name: "rotationX"
+									value: 90.00001F
+								}, 
+								wp<float>(f4ae233f-bbc6-422b-9cc4-6f0c34e6f9c5)
+								{
+									name: "rotationY"
+									value: 0F
+								}, 
+								wp<float>(18c8d5ea-29c7-4cb4-a49c-5fb90ad87bce)
+								{
+									name: "rotationZ"
+									value: 0F
+								}, 
+								wp<float>(368f6646-52c8-48ab-b853-88c978594a18)
+								{
+									name: "scalingX"
+									value: 1F
+								}, 
+								wp<float>(5aca77f0-8cee-4869-b00a-b667da067a64)
+								{
+									name: "scalingY"
+									value: 1F
+								}, 
+								wp<float>(2320c1bc-4d54-4a36-949a-98df9d4e5c4f)
+								{
+									name: "scalingZ"
+									value: 1F
+								}, 
+								wp<float>(2d5e9198-3b5d-47ab-9475-500aabd06d45)
+								{
+									name: "translationX"
+									value: -100.6515F
+								}, 
+								wp<float>(021075b2-3694-48d9-8ce7-a5927a867d0d)
+								{
+									name: "translationY"
+									value: 39.58928F
+								}, 
+								wp<float>(add09b90-9387-4113-ac04-89130b5f9f1e)
+								{
+									name: "translationZ"
+									value: 68.19664F
+								}]
+							features: feature_list []
+							children: children_list [
+								GtfPointLight(a365ec8e-b972-4f5d-a1d3-86e239522df8)
+								{
+									name: "Point light 2"
+									properties: property_list [
+										wp<bool>(4fc8d46c-2ec8-4d51-b72e-4eafe682bb94)
+										{
+											name: "enabled"
+											value: true
+										}, 
+										wp<color>(b46ceae0-25a6-4863-8e6f-3839363ca4fe)
+										{
+											name: "color"
+											value: #FFFFFFFF
+										}, 
+										wp<float>(8ea6f9fd-55a5-4cad-8b18-63e2a0206196)
+										{
+											name: "intensity"
+											value: 1500F
+										}, 
+										wp<float>(5bb37857-2713-448a-bca7-3ae146d51444)
+										{
+											name: "attenuationConstant"
+											value: 0F
+										}, 
+										wp<float>(94ec95db-c162-49d8-a485-afac094b064e)
+										{
+											name: "attenuationLinear"
+											value: 0F
+										}, 
+										wp<float>(b4d52c81-61f7-4845-a7b4-323bb6c88567)
+										{
+											name: "attenuationQuadratic"
+											value: 1F
+										}]
+									features: feature_list []
+									children: children_list []
+								}]
+						}, 
+						GtfSceneGraphNode(24a25873-13aa-4354-8d7a-ba9ca04b17a8)
+						{
+							name: "Omni002"
+							properties: property_list [
+								wp<bool>(e081d2cc-aca6-4542-9453-90f99e4fd684)
+								{
+									name: "visible"
+									value: true
+								}, 
+								wp<float>(0b3ac17b-fc38-4e07-a3b8-8b2e48b7fbd2)
+								{
+									name: "rotationX"
+									value: 90F
+								}, 
+								wp<float>(249c166b-6a47-41a2-997a-ac998ed1500c)
+								{
+									name: "rotationY"
+									value: -89.99999F
+								}, 
+								wp<float>(80609006-7f51-4b9e-962a-8e0b6cd57ec6)
+								{
+									name: "rotationZ"
+									value: 0F
+								}, 
+								wp<float>(ffb206f6-5f07-4f4d-9ba0-1441a3591843)
+								{
+									name: "scalingX"
+									value: 1F
+								}, 
+								wp<float>(497fa2a5-aac3-4c26-98de-1a2fbad8795d)
+								{
+									name: "scalingY"
+									value: 1F
+								}, 
+								wp<float>(50a594b9-d494-47c7-8add-448d9f680b77)
+								{
+									name: "scalingZ"
+									value: 1F
+								}, 
+								wp<float>(0333d4a8-cb90-4539-b0b2-828078c09276)
+								{
+									name: "translationX"
+									value: -110.7492F
+								}, 
+								wp<float>(87198bd7-1ff1-4641-8a93-e985a2e1b408)
+								{
+									name: "translationY"
+									value: 67.63629F
+								}, 
+								wp<float>(b6111c14-f859-4956-bf68-678cc8917fe1)
+								{
+									name: "translationZ"
+									value: -157.6396F
+								}]
+							features: feature_list []
+							children: children_list [
+								GtfPointLight(229d705a-9281-48ad-b56a-00a4417d273c)
+								{
+									name: "Point light 4"
+									properties: property_list [
+										wp<bool>(392389f2-757a-44eb-ab14-154a5aad84f2)
+										{
+											name: "enabled"
+											value: true
+										}, 
+										wp<color>(f1fff3e1-f861-4780-816c-e71483d2f50f)
+										{
+											name: "color"
+											value: #FFFFFFFF
+										}, 
+										wp<float>(8215bab7-c5ae-4156-a9e1-5b0d701ed012)
+										{
+											name: "intensity"
+											value: 18000F
+										}, 
+										wp<float>(9b0bd830-9a56-4fe1-b4e1-d21182462c01)
+										{
+											name: "attenuationConstant"
+											value: 0F
+										}, 
+										wp<float>(33c2ddc3-cd27-4673-b98d-0d0b6e044205)
+										{
+											name: "attenuationLinear"
+											value: 0F
+										}, 
+										wp<float>(efa9a3fb-14f4-4f2d-93dc-388a94e46470)
+										{
+											name: "attenuationQuadratic"
+											value: 1F
+										}]
+									features: feature_list []
+									children: children_list []
+								}]
+						}, 
+						GtfSceneGraphNode(39320944-c33a-48a6-8025-f7c546441bd3)
+						{
+							name: "Omni003"
+							properties: property_list [
+								wp<bool>(69a97283-5a25-4e0b-b79a-39505886ae19)
+								{
+									name: "visible"
+									value: true
+								}, 
+								wp<float>(0964163b-7225-48fa-aae4-75cdcbfc7572)
+								{
+									name: "rotationX"
+									value: 90F
+								}, 
+								wp<float>(e45b904c-53df-4e5c-8a53-01f06e91fa63)
+								{
+									name: "rotationY"
+									value: -89.99999F
+								}, 
+								wp<float>(07a1a79c-9ad8-466e-9be8-f28689816c4d)
+								{
+									name: "rotationZ"
+									value: 0F
+								}, 
+								wp<float>(30fe1e63-3af2-4a69-bda9-384a9548f05b)
+								{
+									name: "scalingX"
+									value: 1F
+								}, 
+								wp<float>(f4d2f0a9-2471-46c0-acf5-ba9054c7720c)
+								{
+									name: "scalingY"
+									value: 1F
+								}, 
+								wp<float>(f1046d75-c7f7-4b03-b4fd-57dd2179906c)
+								{
+									name: "scalingZ"
+									value: 1F
+								}, 
+								wp<float>(3f5090d5-e59a-4297-a064-0196b393ef10)
+								{
+									name: "translationX"
+									value: -273.6156F
+								}, 
+								wp<float>(388c5652-0897-4a78-adae-deae6ba32fcf)
+								{
+									name: "translationY"
+									value: -10.50592F
+								}, 
+								wp<float>(5f829940-9ac8-4f69-ad66-3ea06bda14f7)
+								{
+									name: "translationZ"
+									value: 46.66806F
+								}]
+							features: feature_list []
+							children: children_list [
+								GtfPointLight(c9ce70fe-cbcc-473c-a6ef-1d4276b967a5)
+								{
+									name: "Point light 6"
+									properties: property_list [
+										wp<bool>(87252ba6-d90e-4ee2-87ea-f4df69878b96)
+										{
+											name: "enabled"
+											value: true
+										}, 
+										wp<color>(3e3a8063-ae8d-4e7d-85dc-46eecee8b028)
+										{
+											name: "color"
+											value: #FFFFFFFF
+										}, 
+										wp<float>(7526cf40-a3df-456f-b5c5-571e254a340f)
+										{
+											name: "intensity"
+											value: 120000F
+										}, 
+										wp<float>(bd58fd1b-b8b8-4758-a860-928bc5e612e4)
+										{
+											name: "attenuationConstant"
+											value: 0F
+										}, 
+										wp<float>(f40a6590-b7f7-4593-8abc-b64dc1d71ce2)
+										{
+											name: "attenuationLinear"
+											value: 0F
+										}, 
+										wp<float>(f562854f-de3b-4347-9c05-38ce201c3d37)
+										{
+											name: "attenuationQuadratic"
+											value: 1F
+										}]
+									features: feature_list []
+									children: children_list []
+								}]
+						}, 
+						GtfSceneGraphNode(a446adf6-bcfe-4a85-9797-0d68cfdedf15)
+						{
+							name: "Teapot001"
+							properties: property_list [
+								wp<bool>(208c04f4-bd34-4395-bbdb-bf2f9b035250)
+								{
+									name: "visible"
+									value: true
+								}, 
+								wp<float>(1d4ebb90-379c-48c1-9447-ce027f488abb)
+								{
+									name: "rotationX"
+									value: 78.13293F
+								}, 
+								wp<float>(1db0ac52-7ed7-49c8-8b8e-d276ada425c5)
+								{
+									name: "rotationY"
+									value: 52.57801F
+								}, 
+								wp<float>(8b682f34-243b-4e5a-9002-4d799558c426)
+								{
+									name: "rotationZ"
+									value: -166.4055F
+								}, 
+								wp<float>(9b1b63cc-6928-4c36-b763-3b7988a420a8)
+								{
+									name: "scalingX"
+									value: 1F
+								}, 
+								wp<float>(88db85c6-dc6b-4314-9960-be7f8ecaf9e7)
+								{
+									name: "scalingY"
+									value: 1F
+								}, 
+								wp<float>(27207709-4cc8-4e9d-af30-cf9461a3ea57)
+								{
+									name: "scalingZ"
+									value: 1F
+								}, 
+								wp<float>(803fb47e-f0d7-4013-ab9f-ae9dfdfd5f0b)
+								{
+									name: "translationX"
+									value: 0F
+								}, 
+								wp<float>(101c38ef-202e-4e8a-9f77-c7e9882488ea)
+								{
+									name: "translationY"
+									value: -13.01303F
+								}, 
+								wp<float>(a9615a7c-1027-4993-a3f6-26fcf80ade37)
+								{
+									name: "translationZ"
+									value: -1.166824E-06F
+								}]
+							features: feature_list []
+							children: children_list [
+								GtfMeshWidget(7f99f8f0-b8d9-4688-bbb2-e5bdcc9f1e69)
+								{
+									name: "Mesh 2"
+									properties: property_list [
+										wp<bool>(71649a37-c4e1-4799-9f65-70eabcfd0d2d)
+										{
+											name: "visible"
+											value: true
+										}, 
+										wp<mesh>(c85f141d-30c3-4e64-a327-a9538daf890c)
+										{
+											name: "mesh"
+											value: mesh_resource(228daabc-b445-4e07-80ce-23eeca621c21)
+											{
+												sourceType: "model"
+												source: "resources"
+												file: "Teapot_20180723_125953\\Teapot0010.ebmesh"
+											}
+										}, 
+										wp<int>(14d44ef7-63db-4aa0-a57b-76610573861b)
+										{
+											name: "culling"
+											value: 0
+										}]
+									features: feature_list []
+									children: children_list [
+										GtfMaterialWidget(958fcc24-b4fc-4e6f-b150-613233706198)
+										{
+											name: "Material #25"
+											properties: property_list [
+												wp<color>(c4dcd5d9-4634-4170-8c10-9c6d86657a5b)
+												{
+													name: "ambient"
+													value: #959595FF
+												}, 
+												wp<color>(9a7fcaed-3cb8-4c65-9fb5-252f2b57660e)
+												{
+													name: "diffuse"
+													value: #959595FF
+												}, 
+												wp<color>(7a85440f-fdc6-45a2-8be3-5c3a7ddf4a00)
+												{
+													name: "emissive"
+													value: #000000FF
+												}, 
+												wp<float>(b0dc7c59-13ae-4927-b014-09ca1574b977)
+												{
+													name: "shininess"
+													value: 0.1F
+												}, 
+												wp<color>(135cf39f-4494-44dc-b076-bf7854d6f8a6)
+												{
+													name: "specular"
+													value: #E5E5E5FF
+												}, 
+												wp<float>(975e23c3-8502-4497-a082-8130d8bc23a8)
+												{
+													name: "opacity"
+													value: 1F
+												}]
+											features: feature_list []
+											children: children_list []
+										}]
+								}]
+						}]
+				}]
+		}, 
+		GtfRectangle_template_instance(0eccdfc5-fffe-4b02-97b3-81e04fd9ae32)
+		{
+			name: "IntensityIncrease"
+			template: @42cb342a-4f18-486a-ba53-7fc9518be23d (objectref<GtfRectangle_template>)
+			override_properties: property_list [
+				wp<int>(17397d29-9d7d-4294-8d9c-d15b959f52ca)
+				{
+					name: "x"
+					value: 14
+				}, 
+				wp<int>(e20065a1-60a9-4659-9f42-e12d117dcf0e)
+				{
+					name: "y"
+					value: 180
+				}, 
+				wp<string>(acc79ffc-2b2b-4371-85d8-ae762c8eb4ed)
+				{
+					name: "text"
+					value: @80eb106f-ea45-4bce-a631-317826ccc2b2 (objectref<string>)
+				}, 
+				wp<function<bool,int,int,int,int>>(a0c17463-83e0-4edb-9f46-72efa9197aad)
+				{
+					name: "touchShortReleased"
+					value: function<bool,int,int,int,int>(f0629b32-f9a9-4c11-b512-dd266f731bcc)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(v:this->^->Teapot.enabled && v:this->^->Teapot.intensity < 1.0)" \
+							"	{" \
+							"		v:this->^->Teapot.intensity += 0.1		" \
+							"	}	" \
+							"    false" \
+							"}"
+					}
+				}]
+			user_properties: property_list []
+			children: children_list []
+		}, 
+		GtfRectangle_template_instance(94411bef-8f53-4e5a-9047-4876c90351bb)
+		{
+			name: "IntensityDecrease"
+			template: @42cb342a-4f18-486a-ba53-7fc9518be23d (objectref<GtfRectangle_template>)
+			override_properties: property_list [
+				wp<int>(61ef5c1b-e087-4e54-8c3f-d448e278f873)
+				{
+					name: "x"
+					value: 72
+				}, 
+				wp<int>(7434579c-e45a-4292-b51f-3218e2050f10)
+				{
+					name: "y"
+					value: 180
+				}, 
+				wp<string>(6b7bee97-0221-4984-ad5e-12ac9d748377)
+				{
+					name: "text"
+					value: "-"
+				}, 
+				wp<function<bool,int,int,int,int>>(1cf98eeb-9c56-4a24-b4a6-454edf964c89)
+				{
+					name: "touchShortReleased"
+					value: function<bool,int,int,int,int>(92e5035a-e767-4441-ae8c-aed0d4213bc9)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(v:this->^->Teapot.enabled && v:this->^->Teapot.intensity > 0.0)" \
+							"	{" \
+							"		v:this->^->Teapot.intensity -= 0.1		" \
+							"	}		" \
+							"    false" \
+							"}"
+					}
+				}]
+			user_properties: property_list []
+			children: children_list []
+		}, 
+		GtfLabel(3ad402d0-07df-47e4-9b7a-1fccff63ba71)
+		{
+			name: "Intensity"
+			properties: property_list [
+				wp<bool>(2796e559-c744-41ba-a383-b2ae341a7fa5)
+				{
+					name: "visible"
+					value: true
+				}, 
+				wp<int>(a8cca8e2-8973-4e0b-a630-9cf20bf6d4c4)
+				{
+					name: "width"
+					value: 100
+				}, 
+				wp<int>(90cbf7bd-6cbb-4cca-aeee-9e14b6ca3f92)
+				{
+					name: "height"
+					value: 33
+				}, 
+				wp<int>(fe93c93c-4b2b-4dcd-97a2-1f7ada791c7f)
+				{
+					name: "x"
+					value: 13
+				}, 
+				wp<int>(c59963c6-1cb0-46f7-a2d0-850f170ec541)
+				{
+					name: "y"
+					value: 135
+				}, 
+				wp<string>(d3f77c0a-0757-46b6-a9a4-56350540f5dc)
+				{
+					name: "text"
+					value: "Intensity:"
+				}, 
+				wp<color>(5f8ea4cc-50c4-4f2a-bd40-692a19ca6bfc)
+				{
+					name: "textColor"
+					value: #FFFFFFFF
+				}, 
+				wp<font>(2e1c424b-6e37-430c-b2c8-d6129368d489)
+				{
+					name: "font"
+					value: font_resource(2bdaf669-42bb-44f6-a2e8-d9f8baede6b2)
+					{
+						sourceType: "model"
+						source: "resources"
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+				}, 
+				wp<int>(2f2c02a6-b3c1-4e1c-989e-b30b0ba803f4)
+				{
+					name: "horizontalAlign"
+					value: 0
+				}, 
+				wp<int>(0bdba44c-fb8c-4dce-a987-a214c7423385)
+				{
+					name: "verticalAlign"
+					value: 0
+				}]
+			features: feature_list []
+			children: children_list []
+		}]
+}

@@ -1,0 +1,178 @@
+EBGUIDE 6.11.0.210526170413;
+
+GtfContainer_template(2a0f5cff-ccba-43db-8bb3-bd9c32edf65d)
+{
+	name: "Custom"
+	interface_properties: property_list [
+		wp<int>(cecccd0e-ebe9-4a8a-a01c-5ec671a172d6)
+		{
+			name: "x"
+			value: @7b926b76-db03-488b-b6f8-42a32fd97e69 (objectref<int>)
+		}, 
+		wp<string>(e04c6c0e-fe67-472f-aab7-0d7025cc06b9)
+		{
+			name: "text"
+			value: @0128e2ec-1eb4-4b34-ab9a-92b6d2b9e6a7 (objectref<string>)
+		}]
+	structure: GtfContainer(9579db3e-9324-4ef9-ad19-a03491519b67)
+	{
+		name: "Container"
+		properties: property_list [
+			wp<bool>(cbb2b02d-510a-4034-9c65-6d3b9da10926)
+			{
+				name: "visible"
+				value: true
+			}, 
+			wp<int>(fa083aba-8b0f-40b3-a675-eab6af262298)
+			{
+				name: "width"
+				value: 400
+			}, 
+			wp<int>(ed2497f6-10ad-4498-bf4a-0859a3f34e88)
+			{
+				name: "height"
+				value: 480
+			}, 
+			wp<int>(7b926b76-db03-488b-b6f8-42a32fd97e69)
+			{
+				name: "x"
+				value: 0
+			}, 
+			wp<int>(98596fdc-6067-400d-b630-3608f99f4224)
+			{
+				name: "y"
+				value: 0
+			}]
+		features: feature_list []
+		children: children_list [
+			GtfImage(6eb76ad6-3e4a-4307-a774-4acf6ba85a90)
+			{
+				name: "Icon"
+				properties: property_list [
+					wp<bool>(851e32d0-c8fd-48d0-96bc-20646d397aad)
+					{
+						name: "visible"
+						value: true
+					}, 
+					wp<int>(d9417ae2-2206-4d94-941c-94ab6f9ed6c0)
+					{
+						name: "width"
+						value: 200
+					}, 
+					wp<int>(512960dc-5825-49e0-8348-32a934cef8d7)
+					{
+						name: "height"
+						value: 200
+					}, 
+					wp<int>(d8951b13-cb27-44ae-8840-aa3ac005fd65)
+					{
+						name: "x"
+						value: 100
+					}, 
+					wp<int>(c15ffbe7-873e-42f5-b4ee-883b43015513)
+					{
+						name: "y"
+						value: 100
+					}, 
+					wp<image>(35a319ad-78f4-4198-b4f8-b78715101e4a)
+					{
+						name: "image"
+						value: image_resource(9b305294-4c78-49d0-b936-b18aa2b461b8)
+						{
+							sourceType: "model"
+							source: "resources"
+							file: "images\\example.png"
+						}
+					}, 
+					wp<bool>(5b2f61d8-afb6-470f-9d11-cf80d602feb4)
+					{
+						name: "sRGB"
+						value: false
+					}, 
+					wp<int>(3f558db0-c6b4-426b-b96f-c62d9ef1c9be)
+					{
+						name: "horizontalAlign"
+						value: 0
+					}, 
+					wp<int>(bd0cec46-59ee-4ca0-9e2a-06188f71e643)
+					{
+						name: "verticalAlign"
+						value: 1
+					}]
+				features: feature_list [
+					ScaleMode(0b8e818d-260b-4a9b-8623-2ce2b0b0457e)
+					{
+						base_properties: property_list [
+							wp<int>(5c612a02-1c95-4023-9233-1e86d7e3bf22)
+							{
+								name: "scaleMode"
+								value: 1
+							}]
+					}]
+				children: children_list [
+					GtfLabel(967b6ffa-6f7b-41fb-99a7-47fa7b96e162)
+					{
+						name: "Text"
+						properties: property_list [
+							wp<bool>(2f1aa322-33d9-48dd-a7b0-25d226a0b3d5)
+							{
+								name: "visible"
+								value: true
+							}, 
+							wp<int>(de414e39-5a4e-4d66-8bf2-6699c28f647f)
+							{
+								name: "width"
+								value: 358
+							}, 
+							wp<int>(17f9a948-3b13-4f8a-b135-8c3ffe3dab95)
+							{
+								name: "height"
+								value: 100
+							}, 
+							wp<int>(33ca5d79-987c-4df9-9278-b7195c5864ca)
+							{
+								name: "x"
+								value: -80
+							}, 
+							wp<int>(daf5073e-0628-4276-ab19-acb9dd0b7b7b)
+							{
+								name: "y"
+								value: 190
+							}, 
+							wp<string>(0128e2ec-1eb4-4b34-ab9a-92b6d2b9e6a7)
+							{
+								name: "text"
+								value: "add your text here"
+							}, 
+							wp<color>(bef45a31-3c77-4969-ba32-fd8f96ef85ac)
+							{
+								name: "textColor"
+								value: #FFFFFFFF
+							}, 
+							wp<font>(a99906b7-814d-482c-8e78-3aa62c6802ec)
+							{
+								name: "font"
+								value: font_resource(f5ca15db-a6a8-4ca9-8368-df5ea8c0eb6f)
+								{
+									sourceType: "model"
+									source: "resources"
+									file: "fonts\\PT_Sans.ttf"
+									size: 25
+								}
+							}, 
+							wp<int>(a7d81bc2-0143-4b51-95ca-8f07207aef44)
+							{
+								name: "horizontalAlign"
+								value: 1
+							}, 
+							wp<int>(e1e2a7e2-faef-43d6-b972-b41cca967c37)
+							{
+								name: "verticalAlign"
+								value: 0
+							}]
+						features: feature_list []
+						children: children_list []
+					}]
+			}]
+	}
+}

@@ -1,0 +1,27 @@
+{
+   "features":[
+      {
+         "name":"ChromaticAberration",
+         "alias":"ExampleChromaticAberration",
+         "category":"3D",
+         "description":"Add the chromatic aberration to the postprocessing pipeline.",
+         "requirement":"w:GtfSceneGraph",
+         "properties":[
+            {
+               "name":"enabled",
+               "type":"bool",
+               "category":"Model",
+               "description":"Define whether the effect is enabled or not.",
+               "defaultValue":"true"
+            },
+            {
+               "name":"intensity",
+               "type":"float",
+               "category":"Model",
+               "description":"Strength of the effect with the valid range from 0.0 (no aberration) to 1.0 (maximum aberration). ",
+               "defaultValue":"0.1"
+            }
+         ]
+      }
+   ]
+}

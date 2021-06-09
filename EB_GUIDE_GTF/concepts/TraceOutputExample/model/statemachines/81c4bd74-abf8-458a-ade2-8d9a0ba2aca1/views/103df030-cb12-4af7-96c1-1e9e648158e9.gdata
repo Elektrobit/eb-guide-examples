@@ -1,0 +1,121 @@
+EBGUIDE 6.11.0.210526170413;
+
+GtfView_template_instance(103df030-cb12-4af7-96c1-1e9e648158e9)
+{
+	name: "View 1"
+	template: @d9ee43bd-ee64-4c9f-904a-75cf1fd8f745 (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(6ef15fb1-2f4d-442c-8b4e-c93e3e8570a2)
+		{
+			name: "text"
+			value: "Trace output demo"
+		}, 
+		wp<string>(9006ed4d-1c44-469a-b885-059be5043525)
+		{
+			name: "description"
+			value: "The plugin prints out traces to a \".csv\" file"
+		}]
+	user_properties: property_list [
+		wp<conditional_script>(563d96b1-9dfa-47ef-b641-fde90ba2c8d3)
+		{
+			name: "Shutdown"
+			value: conditional_script(3e8d99e4-25d7-44bd-8573-e1ed43dea642)
+			{
+				triggerList: trigger_list(90a76adf-5b7d-4b0e-98ed-4787281e894d)
+				{
+					script: "ev:end" \
+						""
+				}
+				onTrigger: function<bool,bool>(c749c3c8-8265-4ff4-b42f-e20267929ee4)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	match_event v:event = ev:end in" \
+						"{" \
+						"	f:shutdown()" \
+						"}" \
+						"" \
+						"	false" \
+						"}"
+				}
+			}
+		}]
+	children: children_list [
+		GtfLabel(2c52ae1d-5041-470a-ba3a-9d279348990d)
+		{
+			name: "Label 1"
+			properties: property_list [
+				wp<bool>(0abc4f88-6685-44e5-a482-fc7c709cbcc9)
+				{
+					name: "visible"
+					value: true
+				}, 
+				wp<int>(e6a202ae-d74c-40fd-8a9f-df26546a171d)
+				{
+					name: "width"
+					value: 755
+				}, 
+				wp<int>(f2b4f6a1-c602-4a63-ba61-e5aaa416ef1f)
+				{
+					name: "height"
+					value: 203
+				}, 
+				wp<int>(81fded2e-d971-4620-afa3-d47aa87476ab)
+				{
+					name: "x"
+					value: 28
+				}, 
+				wp<int>(ea620d6e-2d2a-41aa-a4b0-9964e6c7257c)
+				{
+					name: "y"
+					value: 161
+				}, 
+				wp<string>(cfd6430b-8c02-48f5-9160-704dd6720be4)
+				{
+					name: "text"
+					value: "You have started the Trace output plugin model! The TraceOutputExample.dll should be placed in the  GUIDE_INSTALL_PATH/platform/win64/bin directory."
+				}, 
+				wp<color>(e428f17f-cb42-45f8-8416-9192f8aee9a9)
+				{
+					name: "textColor"
+					value: #FFFFFFFF
+				}, 
+				wp<font>(422ffbe5-1525-4165-8fd4-24b995db2e1e)
+				{
+					name: "font"
+					value: font_resource(27141171-5610-4ab2-89d6-f1d61fb155e9)
+					{
+						sourceType: "model"
+						source: "resources"
+						file: "fonts\\PT_Sans.ttf"
+						size: 30
+					}
+				}, 
+				wp<int>(6ffbaba5-c6fc-4080-816b-c6ddf0c6925c)
+				{
+					name: "horizontalAlign"
+					value: 1
+				}, 
+				wp<int>(a4b944ca-96ca-45eb-8986-2ab1d0b6ab14)
+				{
+					name: "verticalAlign"
+					value: 0
+				}]
+			features: feature_list [
+				MultiLine(fefa9c55-d82b-4d32-b428-be4429b9cf0a)
+				{
+					base_properties: property_list [
+						wp<int>(35d7b3ca-1699-48ae-b2ef-2e97f706a4ac)
+						{
+							name: "lineOffset"
+							value: 0
+						}, 
+						wp<int>(1ba6f498-e5b3-4fa7-8cf2-95ac0850cfa2)
+						{
+							name: "maxLineCount"
+							value: 0
+						}]
+				}]
+			children: children_list []
+		}]
+}

@@ -1,0 +1,26 @@
+{
+   "actions":[
+      {
+         "name":"ExampleFunction_SUM",
+         "description":"Returns the sum of two integer values.",
+         "parameters":[
+            {
+               "name":"Operand1",
+               "type":"integer",
+               "description":"First operand"
+            },
+            {
+               "name":"Operand2",
+               "type":"integer",
+               "description":"Second operand"
+            }
+         ],
+         "returnValue":
+            {
+               "name":"Returned value",
+               "type":"integer",
+               "description":"Result of the operation"
+            }
+      }
+   ]
+}

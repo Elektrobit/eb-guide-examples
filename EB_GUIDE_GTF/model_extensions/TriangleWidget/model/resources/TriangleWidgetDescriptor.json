@@ -1,0 +1,24 @@
+{
+   "widgets":[
+      {
+         "name":"Triangle",
+         "alias":"Triangle",
+         "type":"GtfAbstractVisualWidget",
+         "category":"Custom widgets",
+         "description":"A custom widget drawing triangles.",
+         "canHaveChildren":true,
+         "isAbstract":false,
+         "isInstantiator":false,
+         "isView":false,
+         "properties":[
+            {
+               "name":"fillColor",
+               "type":"color",
+               "category":"Common",
+               "description":"The color of the triangle",
+               "defaultValue":"169,169,169,255"
+            }
+         ]
+      }
+   ]
+}

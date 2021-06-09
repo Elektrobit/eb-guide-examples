@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{55B541E0-7E14-4F76-A808-DF013E8539C2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MonitorRemoteViewPlugin</RootNamespace>
+    <AssemblyName>MonitorRemoteViewPlugin</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Elektrobit.Guide.Monitor.Ui">
+      <Version>$(GuideVersion)</Version>
+      <IncludeAssets>compile</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\ExtensionResourceProvider.cs" />
+    <Compile Include="Utilities\ContinuousScreenshot\AlreadyRunningException.cs" />
+    <Compile Include="Utilities\Cancellation\Cancellation.cs" />
+    <Compile Include="Utilities\ContinuousScreenshot\ContinuousScreenshotControllerFactory.cs" />
+    <Compile Include="Utilities\ContinuousScreenshot\ContinuousScreenshotRunner.cs" />
+    <Compile Include="Utilities\ContinuousScreenshot\ContinuousScreenshotController.cs" />
+    <Compile Include="Utilities\Cancellation\ICancellation.cs" />
+    <Compile Include="Utilities\ContinuousScreenshot\IContinuousScreenshotControllerFactory.cs" />
+    <Compile Include="Utilities\ContinuousScreenshot\IContinuousScreenshotRunner.cs" />
+    <Compile Include="Utilities\ContinuousScreenshot\SceneIdMismatchException.cs" />
+    <Compile Include="Utilities\Delayer\Delayer.cs" />
+    <Compile Include="Utilities\FrameDelayConverter\FrameDelayConverter.cs" />
+    <Compile Include="Utilities\ContinuousScreenshot\IContinuousScreenshotController.cs" />
+    <Compile Include="Utilities\FrameDelayConverter\IFrameDelayConverter.cs" />
+    <Compile Include="Utilities\Delayer\IDelayer.cs" />
+    <Compile Include="Utilities\ImageClick\ClickAdorner.cs" />
+    <Compile Include="Utilities\ImageClick\IMouseClickHandler.cs" />
+    <Compile Include="Utilities\ImageClick\MouseClickBehavior.cs" />
+    <Compile Include="ViewModels\RemoteViewViewModelFactory.cs" />
+    <Compile Include="ViewModels\RemoteViewViewModel.cs" />
+    <Compile Include="Views\RemoteView.xaml.cs">
+      <DependentUpon>RemoteView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Resources\Resources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RemoteView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,107 @@
+EBGUIDE 6.11.0.210526170413;
+
+GtfView_template_instance(3fef4d80-1714-4449-894e-c9f9ab4ba72a)
+{
+	name: "View 1"
+	template: @d9ee43bd-ee64-4c9f-904a-75cf1fd8f745 (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(2665750b-3090-4d78-8be8-b974c25abedb)
+		{
+			name: "text"
+			value: "Dependency resolver plugin"
+		}, 
+		wp<string>(a115d41e-7301-4373-aca3-1aaa23c7d061)
+		{
+			name: "description"
+			value: "Application registers the implementation against the interface."
+		}]
+	user_properties: property_list [
+		wp<conditional_script>(95684249-8722-41b4-95b6-f9a9513b9de2)
+		{
+			name: "Shutdown"
+			value: conditional_script(4fc9d662-bee2-4057-acde-e84ed19c236e)
+			{
+				triggerList: trigger_list(10544fc3-1cd6-49de-a2b7-833a88bb43c3)
+				{
+					script: "ev:end" \
+						""
+				}
+				onTrigger: function<bool,bool>(53821e04-28a2-4781-9006-b635fb9345c7)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	match_event v:event = ev:end in" \
+						"{" \
+						"	f:shutdown()" \
+						"}" \
+						"" \
+						"	false" \
+						"}"
+				}
+			}
+		}]
+	children: children_list [
+		GtfLabel(365b1e3e-488c-41ff-95d1-f5b5be78d406)
+		{
+			name: "Label 1"
+			properties: property_list [
+				wp<bool>(121bc7c0-000f-46e2-9f15-70bad656e4d5)
+				{
+					name: "visible"
+					value: true
+				}, 
+				wp<int>(42dcb420-00f9-4aeb-b951-7ed8f69e5b34)
+				{
+					name: "width"
+					value: 666
+				}, 
+				wp<int>(71e82c82-9c51-4da6-9faa-74ebd20404ba)
+				{
+					name: "height"
+					value: 117
+				}, 
+				wp<int>(4b61b0dd-b01e-4543-becd-a9c1d093db07)
+				{
+					name: "x"
+					value: 77
+				}, 
+				wp<int>(03dd562f-96b9-4426-98e1-135a06a2cab2)
+				{
+					name: "y"
+					value: 182
+				}, 
+				wp<string>(bd50e3fa-3154-4025-a9bd-0b7609e6f0aa)
+				{
+					name: "text"
+					value: "You have started the Dependency resolver model."
+				}, 
+				wp<color>(66a4a11d-774b-4b99-97b4-86bfeef1c3a8)
+				{
+					name: "textColor"
+					value: #FFFFFFFF
+				}, 
+				wp<font>(ab76305a-a91b-4288-92cc-01c86ed0b07d)
+				{
+					name: "font"
+					value: font_resource(207dddf8-371c-4000-8b37-c7f724701a18)
+					{
+						sourceType: "model"
+						source: "resources"
+						file: "fonts\\PT_Sans.ttf"
+						size: 30
+					}
+				}, 
+				wp<int>(e6dcffb4-c286-4615-ab20-1de7edc85080)
+				{
+					name: "horizontalAlign"
+					value: 1
+				}, 
+				wp<int>(1330c97a-0347-4392-9382-6bb7bab21ef1)
+				{
+					name: "verticalAlign"
+					value: 0
+				}]
+			features: feature_list []
+			children: children_list []
+		}]
+}

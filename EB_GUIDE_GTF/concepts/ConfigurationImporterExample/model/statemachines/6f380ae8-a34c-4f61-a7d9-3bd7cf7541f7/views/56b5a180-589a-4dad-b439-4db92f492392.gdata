@@ -1,0 +1,37 @@
+EBGUIDE 6.11.0.210526170413;
+
+GtfView_template_instance(56b5a180-589a-4dad-b439-4db92f492392)
+{
+	name: "Titleview"
+	template: @18edd3fd-90d3-4e6e-bc08-4db08f8b05ee (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(cdefd82d-3117-480a-9d67-a2aefdd76f92)
+		{
+			name: "title_text"
+			value: "Configuration importer demo"
+		}, 
+		wp<string>(c8a05752-b06e-4d6d-880d-93b2e5225b07)
+		{
+			name: "short desc_text"
+			value: "Example of retrieving settings information from a configuration file. "
+		}, 
+		wp<string>(2fac82ac-b9fc-42f1-8e9c-942ba9741ba4)
+		{
+			name: "long desc_text"
+			value: "Documentation reference:\\nUsing the Configuration module"
+		}, 
+		wp<function<bool,int,int,int,int>>(8db65585-a357-41c3-afd9-3e536667774d)
+		{
+			name: "touchPressed"
+			value: function<bool,int,int,int,int>(135b17f7-57f7-422f-9dfb-9c4f0a96beb4)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:next();" \
+					"    false" \
+					"}"
+			}
+		}]
+	user_properties: property_list []
+	children: children_list []
+}

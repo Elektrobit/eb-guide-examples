@@ -1,0 +1,11 @@
+{
+    "gtf":
+    {
+        "tracing":
+        {
+            "Plugins": ["GtfFileOutput"],
+            "ChannelSeverities": ["GTF_Model_Stage_Example", "Info"],
+            "DefaultSeverity": "None"
+        }
+    }
+}

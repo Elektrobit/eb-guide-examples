@@ -1,0 +1,41 @@
+EBGUIDE 6.11.0.210526170413;
+
+GtfView_template_instance(849f7c34-b9f8-4df4-83ea-cf073d93187b)
+{
+	name: "MainView"
+	template: @c0f1c727-95c8-4441-8262-f18240012cb1 (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(e56a128c-511a-440e-bbb1-870f3706294a)
+		{
+			name: "text"
+			value: "Main"
+		}, 
+		wp<string>(2bd96400-619d-4b46-82e4-93bdd014ebaa)
+		{
+			name: "text 2"
+			value: "The received key Event is handled and the key status is printed below:"
+		}, 
+		wp<function<bool,int,int,int,int>>(eca86011-810f-4546-b799-1e5fbec91b27)
+		{
+			name: "touchShortReleased"
+			value: function<bool,int,int,int,int>(3e185801-1222-4586-b5f1-0e43eeef35fe)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    false" \
+					"}"
+			}
+		}, 
+		wp<string>(f4d278dd-e59f-4aa3-92d7-c1ba29198b8c)
+		{
+			name: "Description"
+			value: "The application will continuously send key events with different status."
+		}]
+	user_properties: property_list [
+		wp<color>(bc79f2a5-705e-4d2e-8086-182c3faf12c2)
+		{
+			name: "fillColor"
+			value: #FF4500FF
+		}]
+	children: children_list []
+}

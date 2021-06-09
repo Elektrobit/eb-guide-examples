@@ -1,0 +1,37 @@
+EBGUIDE 6.11.0.210526170413;
+
+GtfView_template_instance(1825c3a4-94b5-4639-981e-32dc89d3f1db)
+{
+	name: "Titleview"
+	template: @18edd3fd-90d3-4e6e-bc08-4db08f8b05ee (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(6aacaad9-0564-4a2b-a21b-24a94d322135)
+		{
+			name: "title_text"
+			value: "Stage Plugin demo"
+		}, 
+		wp<string>(84ccbc20-70a7-4a9d-81ac-4bdc6bf3093e)
+		{
+			name: "short desc_text"
+			value: "Example of loading a HMI model that implements the core life cycle mechanism"
+		}, 
+		wp<string>(5399b356-40ee-4035-a240-567b41b2c999)
+		{
+			name: "long desc_text"
+			value: "Documentation reference:\\nBackground information > Overview of EB GUIDE TF > Life cycle > EB GUIDE GTF life cycle"
+		}, 
+		wp<function<bool,int,int,int,int>>(0a343b64-fb62-4d98-9fa0-f5dc48dc908f)
+		{
+			name: "touchPressed"
+			value: function<bool,int,int,int,int>(eab0e529-20dd-46e8-a453-c684c277d1a3)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:next();" \
+					"    false" \
+					"}"
+			}
+		}]
+	user_properties: property_list []
+	children: children_list []
+}

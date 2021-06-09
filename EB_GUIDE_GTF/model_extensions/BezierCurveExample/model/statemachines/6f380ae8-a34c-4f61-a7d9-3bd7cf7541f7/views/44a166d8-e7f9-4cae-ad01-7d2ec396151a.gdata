@@ -1,0 +1,889 @@
+EBGUIDE 6.11.0.210526170413;
+
+GtfView_template_instance(44a166d8-e7f9-4cae-ad01-7d2ec396151a)
+{
+	name: "View 1"
+	template: @d9ee43bd-ee64-4c9f-904a-75cf1fd8f745 (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(b296f9ff-0323-4eeb-9693-014d3214de98)
+		{
+			name: "text"
+			value: "Bezier curve demo"
+		}, 
+		wp<string>(a8bab835-cc30-4752-b7e8-06ab08b63e54)
+		{
+			name: "description"
+			value: "The plugin provides a new custom animation curve"
+		}]
+	user_properties: property_list []
+	children: children_list [
+		GtfLabel(4b2a5931-7abb-4132-83fc-5d1f3eea14c0)
+		{
+			name: "Label 1"
+			properties: property_list [
+				wp<bool>(7c203923-fa29-4b6f-a049-3aabb5112806)
+				{
+					name: "visible"
+					value: true
+				}, 
+				wp<int>(2043c6f0-9cc1-43e0-922a-a4208a7e0e66)
+				{
+					name: "width"
+					value: 445
+				}, 
+				wp<int>(9799cbb5-2f84-4155-a42a-0903e2df471d)
+				{
+					name: "height"
+					value: 79
+				}, 
+				wp<int>(da8c2edc-67a8-478f-84c7-8b5d380ac231)
+				{
+					name: "x"
+					value: 172
+				}, 
+				wp<int>(4b32c211-f382-488c-97bd-5222ec4e7861)
+				{
+					name: "y"
+					value: 75
+				}, 
+				wp<string>(f80a3d96-b289-420a-ab52-c851c7cc9407)
+				{
+					name: "text"
+					value: "Click on each widget to animate it"
+				}, 
+				wp<color>(884e1d64-d4eb-479e-8a24-eac27e8fcd78)
+				{
+					name: "textColor"
+					value: #FFFFFFFF
+				}, 
+				wp<font>(1ebf7169-ae40-40cf-aa2d-dc2d38da5e88)
+				{
+					name: "font"
+					value: font_resource(90107c5c-6a92-4fc8-bb75-fc2d4e822e38)
+					{
+						sourceType: "model"
+						source: "resources"
+						file: "fonts\\PT_Sans.ttf"
+						size: 30
+					}
+				}, 
+				wp<int>(40779424-8814-4547-bd5f-6bce2c5b6b16)
+				{
+					name: "horizontalAlign"
+					value: 0
+				}, 
+				wp<int>(981cc724-1ca9-400c-a949-d05fae40028f)
+				{
+					name: "verticalAlign"
+					value: 0
+				}]
+			features: feature_list []
+			children: children_list []
+		}, 
+		GtfEllipse(c584e096-f144-4a25-9f13-7f989ce409ec)
+		{
+			name: "Ellipse"
+			properties: property_list [
+				wp<bool>(6acd049f-9d94-482a-86c4-bdc9eed80185)
+				{
+					name: "visible"
+					value: true
+				}, 
+				wp<int>(7c77faf4-a240-473c-a463-ffbfbfa25bb5)
+				{
+					name: "width"
+					value: 72
+				}, 
+				wp<int>(224abf71-6e20-4146-ba6e-855b0116ac60)
+				{
+					name: "height"
+					value: 74
+				}, 
+				wp<int>(761bc252-f961-4c46-a0cb-63aa5907e7e6)
+				{
+					name: "x"
+					value: @18a74645-6b00-4815-a3b0-4f55c2befcdb (objectref<int>)
+				}, 
+				wp<int>(9edc2ed1-4416-491a-9c50-2c80f9547b91)
+				{
+					name: "y"
+					value: 141
+				}, 
+				wp<color>(bb748422-1e4c-4ecc-806a-b2867b607f8b)
+				{
+					name: "fillColor"
+					value: #A9A9A9FF
+				}, 
+				wp<int>(f21726ed-34b2-450a-a659-e4375ca4878b)
+				{
+					name: "arcWidth"
+					value: 0
+				}, 
+				wp<float>(c00efab7-4f2a-48c2-99c4-acd7b6fb549f)
+				{
+					name: "centralAngle"
+					value: 360F
+				}, 
+				wp<float>(e10a820c-fc37-4805-b1dd-3c9ec1460fff)
+				{
+					name: "sectorRotation"
+					value: 0F
+				}]
+			features: feature_list [
+				TouchShortReleased(2c4cea6c-b076-4521-8834-f2398e3d71ad)
+				{
+					base_properties: property_list [
+						wp<function<bool,int,int,int,int>>(705e9653-e03a-4b4b-8749-8fdddb368483)
+						{
+							name: "touchShortReleased"
+							value: function<bool,int,int,int,int>(ed74d704-f25c-4e76-a344-beca3ae36944)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:playAnimation_Int()" \
+									"    false" \
+									"}"
+							}
+						}]
+				}, 
+				StateTouched(a1608d56-f9de-46af-b550-ca355c9a02db)
+				{
+					base_properties: property_list [
+						wp<bool>(15f56a92-ef7f-46b1-ba2b-80b01671f25d)
+						{
+							name: "touchable"
+							value: true
+						}, 
+						wp<bool>(fc02de81-acda-4dbe-8edb-f06466e46e56)
+						{
+							name: "touched"
+							value: false
+						}, 
+						wp<int>(84ec0306-0348-49a1-8c34-68f9f4ecc5b0)
+						{
+							name: "touchPolicy"
+							value: 0
+						}, 
+						wp<int>(872041d8-d2b4-486d-84e7-37271885bec9)
+						{
+							name: "touchBehavior"
+							value: 0
+						}]
+				}]
+			children: children_list [
+				GtfParallelAnimation(e2977141-7e5c-4593-b0f8-c4620c4bf95a)
+				{
+					name: "Animation_Int"
+					properties: property_list [
+						wp<bool>(3d81cfcc-abf2-40af-97f7-f6e64f1d0074)
+						{
+							name: "enabled"
+							value: true
+						}, 
+						wp<int>(83b49084-32f1-4a7d-a656-6ccad6e3effb)
+						{
+							name: "repeat"
+							value: 1
+						}, 
+						wp<bool>(4b1aa1aa-b7dd-4204-b3c1-0ee28b60bc56)
+						{
+							name: "alternating"
+							value: false
+						}, 
+						wp<float>(95117e59-d16e-453c-8d83-2c63344be233)
+						{
+							name: "scale"
+							value: 1F
+						}, 
+						wp<function<void,int,bool>>(07c5fda0-9bc4-4dc6-bcff-5f6b32cad400)
+						{
+							name: "onPlay"
+							value: function<void,int,bool>(e4ff0915-b599-4385-8423-dd4a54c00341)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"	dp:isAnimationIntFinished=false" \
+									"}"
+							}
+						}, 
+						wp<function<void,int>>(639e1d00-5637-4e26-9f03-6c537b814be1)
+						{
+							name: "onPause"
+							value: function<void,int>(6839e9a1-7cfb-4d6e-ba73-1c62166b4df3)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+						}, 
+						wp<function<void,int,int>>(92dbcd71-3a21-4645-b423-38599e800b16)
+						{
+							name: "onTerminate"
+							value: function<void,int,int>(9cf530a3-c79c-4b8b-ad0a-9fc332d132c4)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"	dp:isAnimationIntFinished=true" \
+									"}"
+							}
+						}, 
+						wp<conditional_script>(58815e75-9360-46aa-a08e-65e0569bcfcd)
+						{
+							name: "playAnimation_Int"
+							value: conditional_script(bd30d89d-dca8-4a6a-a4fb-3b90587d13b4)
+							{
+								triggerList: trigger_list(ceb775f2-b558-46b2-97d3-758d6a6456ff)
+								{
+									script: "ev:playAnimation_Int"
+								}
+								onTrigger: function<bool,bool>(1ff14016-142e-45cc-b92f-6bc2de856bf8)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	if(v:arg0==false)" \
+										"	{" \
+										"		f:animation_play(v:this)" \
+										"	}" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					features: feature_list []
+					children: children_list [
+						BezierCurveS32(1079904c-21ac-48d5-88ed-0e8a11c498a6)
+						{
+							name: "IntegerCurve"
+							properties: property_list [
+								wp<bool>(fb9ff763-6bee-481b-a0f3-8cb5e4fc72ea)
+								{
+									name: "enabled"
+									value: true
+								}, 
+								wp<int>(cb13c425-85a6-4e58-a28a-084aff2d1e31)
+								{
+									name: "delay"
+									value: 0
+								}, 
+								wp<int>(50dd403a-2768-4219-8b01-dc4e75ae05eb)
+								{
+									name: "duration"
+									value: 2000
+								}, 
+								wp<int>(78719b6c-93e2-47e5-bd66-7de8f8eeb850)
+								{
+									name: "repeat"
+									value: 1
+								}, 
+								wp<bool>(19ac08a2-f17f-4943-b6f5-3c014568c1ce)
+								{
+									name: "alternating"
+									value: true
+								}, 
+								wp<bool>(6e35f606-5540-4e13-a33a-b4034605b51d)
+								{
+									name: "relative"
+									value: false
+								}, 
+								wp<float>(100d58ca-be59-49f7-895b-f8a6e5d6b79c)
+								{
+									name: "handle1x"
+									value: 0F
+								}, 
+								wp<float>(ca088177-9051-4508-9481-d57738ee31ee)
+								{
+									name: "handle1y"
+									value: 1F
+								}, 
+								wp<float>(2331087b-9e25-42c4-ac81-65fceebd66cb)
+								{
+									name: "handle2x"
+									value: 1F
+								}, 
+								wp<float>(15cb97d3-1855-4873-9971-ee394a1ce64f)
+								{
+									name: "handle2y"
+									value: 0F
+								}, 
+								wp<int>(d906f28e-e666-4731-a5c8-9ffa83eadfe5)
+								{
+									name: "start"
+									value: 200
+								}, 
+								wp<int>(0ef17f2c-8a3c-49f3-abe8-c39403cc3a98)
+								{
+									name: "end"
+									value: 500
+								}, 
+								wp<int>(2d6eee09-47ba-4ff1-94df-f72c9f9fe130)
+								{
+									name: "target"
+									value: @761bc252-f961-4c46-a0cb-63aa5907e7e6 (objectref<int>)
+								}, 
+								wp<conditional_script>(fc86abd2-bc06-44ce-b38b-e022ad0c7c71)
+								{
+									name: "fireEventIfAnimationReachesMiddleAfter1second"
+									value: conditional_script(d37c0f88-d547-4ffd-b39b-4b43d155b0b9)
+									{
+										triggerList: trigger_list(3273422b-8411-4dda-8008-4cc04dd75b09)
+										{
+											script: "dp:animationTarget_Ellipse" \
+												""
+										}
+										onTrigger: function<bool,bool>(10497f30-1dc6-4309-aa39-26aa760776a3)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	if(v:arg0==false&&(f:animation_beyond(v:this->^,1000)&&dp:animationTarget_Ellipse==((v:this.end+v:this.start)/2)))" \
+												"	{" \
+												"		fire ev:isAnimationInTheMiddle()" \
+												"	}" \
+												"	false" \
+												"}"
+										}
+									}
+								}]
+							features: feature_list []
+							children: children_list []
+						}]
+				}]
+		}, 
+		GtfEllipse(aff717a4-2c89-4c3c-8ddf-558ba1c7896b)
+		{
+			name: "Ellipse 1"
+			properties: property_list [
+				wp<bool>(6cd88f3d-e209-4562-845e-6d5ff37927e5)
+				{
+					name: "visible"
+					value: true
+				}, 
+				wp<int>(6b89278a-62bc-4a31-8da1-52dc12463a9a)
+				{
+					name: "width"
+					value: 72
+				}, 
+				wp<int>(4c8ebdd9-4142-4da3-8127-9edc5d279481)
+				{
+					name: "height"
+					value: 74
+				}, 
+				wp<int>(0970cef9-f08e-4186-9b81-98c34084decc)
+				{
+					name: "x"
+					value: 200
+				}, 
+				wp<int>(cf210ad8-8a39-4972-89ab-781320f12e1b)
+				{
+					name: "y"
+					value: 227
+				}, 
+				wp<color>(82bb649d-2cd7-41ee-8d91-a712b6c1ed39)
+				{
+					name: "fillColor"
+					value: #A9A9A9FF
+				}, 
+				wp<int>(e3a497b9-8e13-4a71-b12f-044b4c8bc2a8)
+				{
+					name: "arcWidth"
+					value: 0
+				}, 
+				wp<float>(2a2af42b-24a8-4fcf-96d4-50cbac6d2eb6)
+				{
+					name: "centralAngle"
+					value: @48571cbb-3f06-4c70-bd4b-c4bcfd75d44b (objectref<float>)
+				}, 
+				wp<float>(b7673318-2c6b-4213-a61c-18ce1b398b87)
+				{
+					name: "sectorRotation"
+					value: 0F
+				}]
+			features: feature_list [
+				TouchShortReleased(420aee07-27b7-4e00-9276-bca3acf32d38)
+				{
+					base_properties: property_list [
+						wp<function<bool,int,int,int,int>>(83e8c3bf-edf4-445f-8fcc-d79e9f271037)
+						{
+							name: "touchShortReleased"
+							value: function<bool,int,int,int,int>(2ab5325a-3341-43da-a713-0567d462abe5)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:playAnimation_Float()" \
+									"    false" \
+									"}"
+							}
+						}]
+				}, 
+				StateTouched(7c74cc2a-eba8-4a8d-856d-0551edb5ab91)
+				{
+					base_properties: property_list [
+						wp<bool>(00199a55-47c7-405b-abd2-3278ba3c5dc6)
+						{
+							name: "touchable"
+							value: true
+						}, 
+						wp<bool>(3493f275-412e-401e-8101-a73d6ac77fdf)
+						{
+							name: "touched"
+							value: false
+						}, 
+						wp<int>(942660f1-0557-4dc6-93ef-a59cd7b7a7ea)
+						{
+							name: "touchPolicy"
+							value: 0
+						}, 
+						wp<int>(94053c08-afc0-44ed-b3f1-6963a795ddb6)
+						{
+							name: "touchBehavior"
+							value: 0
+						}]
+				}]
+			children: children_list [
+				GtfParallelAnimation(118d62eb-ea25-4edb-975b-13bf01839ec9)
+				{
+					name: "Animation_Float"
+					properties: property_list [
+						wp<bool>(fec7e0c2-0f7b-4458-9cf0-848ad73a5ca9)
+						{
+							name: "enabled"
+							value: true
+						}, 
+						wp<int>(53de526d-a733-4cab-ac55-888c56af76a1)
+						{
+							name: "repeat"
+							value: 1
+						}, 
+						wp<bool>(ef22f4e5-9511-4356-bab1-e6c77f1cc689)
+						{
+							name: "alternating"
+							value: false
+						}, 
+						wp<float>(1b9d8cb9-8a98-4fe1-a374-58b7f0a49191)
+						{
+							name: "scale"
+							value: 1F
+						}, 
+						wp<function<void,int,bool>>(f216d931-0db3-4ba3-8b60-f26b9e07d8e1)
+						{
+							name: "onPlay"
+							value: function<void,int,bool>(1b28551c-24d4-422b-a6cb-5546229dec5a)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"	dp:isAnimationFloatFinished=false" \
+									"}"
+							}
+						}, 
+						wp<function<void,int>>(f7d4aa6e-4867-498f-9e9f-df2e8e3a6fba)
+						{
+							name: "onPause"
+							value: function<void,int>(29f66c02-c68c-4a45-984a-ca82280f01aa)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+						}, 
+						wp<function<void,int,int>>(a4bbc2c2-9e9b-4d4a-a3b4-1c3aacd308da)
+						{
+							name: "onTerminate"
+							value: function<void,int,int>(cc022180-8956-4754-9a35-0f7acaea2983)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"	dp:isAnimationFloatFinished=true" \
+									"}"
+							}
+						}, 
+						wp<conditional_script>(d0539e0e-6e0b-4e85-9003-361d2c3e5b60)
+						{
+							name: "playAnimation_Float"
+							value: conditional_script(998866a9-429d-4926-9c61-03a19bb49e77)
+							{
+								triggerList: trigger_list(75effb81-22f2-4cb7-83fb-2525a49e30a6)
+								{
+									script: "ev:playAnimation_Float"
+								}
+								onTrigger: function<bool,bool>(bb2a9ad6-838e-4542-9ef2-68a52b684aac)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	if(v:arg0==false)" \
+										"	{" \
+										"		f:animation_play(v:this)" \
+										"	}" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					features: feature_list []
+					children: children_list [
+						BezierCurveFloat(d44c495a-b902-4c01-aa6c-4de451ef03a9)
+						{
+							name: "FloatCurve"
+							properties: property_list [
+								wp<bool>(7a9437bb-2e47-4d6c-9a78-e87aadf87c27)
+								{
+									name: "enabled"
+									value: true
+								}, 
+								wp<int>(633dc94f-094a-41eb-85fd-946ccea1586e)
+								{
+									name: "delay"
+									value: 0
+								}, 
+								wp<int>(119c5702-5903-49e7-862a-f5419d84640f)
+								{
+									name: "duration"
+									value: 2000
+								}, 
+								wp<int>(68962acf-5410-4bef-8a73-b82cc4bb6f01)
+								{
+									name: "repeat"
+									value: 1
+								}, 
+								wp<bool>(5a2f2fb8-90ed-486e-a83b-91b45b1bf19b)
+								{
+									name: "alternating"
+									value: true
+								}, 
+								wp<bool>(74acb435-c8bd-4205-a159-64947ea7165e)
+								{
+									name: "relative"
+									value: false
+								}, 
+								wp<float>(9052eb40-f7e0-48c2-ab2c-e395ddc7c9a6)
+								{
+									name: "handle1x"
+									value: 0F
+								}, 
+								wp<float>(c4c41464-c599-492f-a5dd-477bf15f9576)
+								{
+									name: "handle1y"
+									value: 1F
+								}, 
+								wp<float>(5fad798e-cc55-4a6d-be84-1291e3f86e1d)
+								{
+									name: "handle2x"
+									value: 1F
+								}, 
+								wp<float>(16bbde5a-7c6a-41c7-99fa-fe6cb59802fa)
+								{
+									name: "handle2y"
+									value: 0F
+								}, 
+								wp<float>(db3060aa-7e18-4b63-994a-338ab1760390)
+								{
+									name: "start"
+									value: 0F
+								}, 
+								wp<float>(f635dd41-d5a2-4114-bdd7-c90da8501d5b)
+								{
+									name: "end"
+									value: 360F
+								}, 
+								wp<float>(25fba8e0-9602-492d-b6e6-14dbbe1fe5e8)
+								{
+									name: "target"
+									value: @2a2af42b-24a8-4fcf-96d4-50cbac6d2eb6 (objectref<float>)
+								}, 
+								wp<conditional_script>(ffe8010c-1340-40c7-9d59-e32be090ee5a)
+								{
+									name: "fireEventIfAnimationReachesMiddleAfter1second"
+									value: conditional_script(723f073b-b0cb-44ca-8d25-36ea328bc7e6)
+									{
+										triggerList: trigger_list(2e8b4d0d-ab60-4263-a811-9cd7047b0001)
+										{
+											script: "dp:animationTarget_Ellipse1"
+										}
+										onTrigger: function<bool,bool>(dd1aed95-875d-44e2-bcdb-e1aa85853994)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	if(v:arg0==false&&(f:animation_beyond(v:this->^,1000)&&(f:nearbyint(dp:animationTarget_Ellipse1)==180)))" \
+												"	{" \
+												"		fire ev:isAnimationInTheMiddle()" \
+												"	}" \
+												"	false" \
+												"}"
+										}
+									}
+								}]
+							features: feature_list []
+							children: children_list []
+						}]
+				}]
+		}, 
+		GtfEllipse(731773ec-20bd-4366-8a8f-9bb9f7dc2520)
+		{
+			name: "Ellipse 2"
+			properties: property_list [
+				wp<bool>(6952dae0-71de-4940-8c62-01a280f7103d)
+				{
+					name: "visible"
+					value: true
+				}, 
+				wp<int>(d937381b-58f1-4f33-85a9-13ac2422a0f1)
+				{
+					name: "width"
+					value: 72
+				}, 
+				wp<int>(0270f275-dfe7-46c3-a242-ed7f3223aaf4)
+				{
+					name: "height"
+					value: 74
+				}, 
+				wp<int>(0b051126-3a4a-40cd-b0f3-f0c5799ad3b4)
+				{
+					name: "x"
+					value: 200
+				}, 
+				wp<int>(cc902a7a-34e6-43b9-9755-b9ce84cd7259)
+				{
+					name: "y"
+					value: 320
+				}, 
+				wp<color>(3544ce08-014c-4fd7-99af-fa30c2e25181)
+				{
+					name: "fillColor"
+					value: @3583aa42-2e5a-4188-9213-a4642c8746e7 (objectref<color>)
+				}, 
+				wp<int>(23220d1f-f56d-4404-8e05-7fae7f9dfc3e)
+				{
+					name: "arcWidth"
+					value: 0
+				}, 
+				wp<float>(95d0f768-6cb8-4b42-8648-ad999ce1cd6e)
+				{
+					name: "centralAngle"
+					value: 360F
+				}, 
+				wp<float>(ed3ee9e6-efa2-4d59-8cc9-dd2ebf0522b7)
+				{
+					name: "sectorRotation"
+					value: 0F
+				}]
+			features: feature_list [
+				TouchShortReleased(0d973735-3fc8-4991-9b71-0b3ef4c03637)
+				{
+					base_properties: property_list [
+						wp<function<bool,int,int,int,int>>(342a034b-55b7-4339-99f1-d09c468161fc)
+						{
+							name: "touchShortReleased"
+							value: function<bool,int,int,int,int>(4df9e6a4-851e-412b-8f5b-74bf780dd528)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:playAnimation_Color()" \
+									"    false" \
+									"}"
+							}
+						}]
+				}, 
+				StateTouched(842e8e24-b382-425e-a9e2-d2648b705cf7)
+				{
+					base_properties: property_list [
+						wp<bool>(63ed31f3-872c-4cad-aedc-e560e7c4e94f)
+						{
+							name: "touchable"
+							value: true
+						}, 
+						wp<bool>(2075703c-3797-441c-941b-87540641f18d)
+						{
+							name: "touched"
+							value: false
+						}, 
+						wp<int>(9e1f1edc-f9e6-42fb-a284-97879d5f19d7)
+						{
+							name: "touchPolicy"
+							value: 0
+						}, 
+						wp<int>(1944fda6-ef7d-4ec6-ba0a-337f54f4087e)
+						{
+							name: "touchBehavior"
+							value: 0
+						}]
+				}]
+			children: children_list [
+				GtfParallelAnimation(d66803ab-8b3c-4143-b666-abea91791fa7)
+				{
+					name: "Animation_Color"
+					properties: property_list [
+						wp<bool>(aa2330c6-7f50-46ea-a04f-bb1c9fb9381a)
+						{
+							name: "enabled"
+							value: true
+						}, 
+						wp<int>(4db8bb76-f84d-451f-95ba-6de7c90e4482)
+						{
+							name: "repeat"
+							value: 1
+						}, 
+						wp<bool>(18e958ca-e8aa-414d-893a-3b7f5e6e986f)
+						{
+							name: "alternating"
+							value: false
+						}, 
+						wp<float>(e22a78fc-eaef-4008-8712-d0f5f2936ee6)
+						{
+							name: "scale"
+							value: 1F
+						}, 
+						wp<function<void,int,bool>>(1007181f-f0d8-4e5f-9c9a-28915ca044f2)
+						{
+							name: "onPlay"
+							value: function<void,int,bool>(19a872f3-745b-4e9b-81a4-2343c5bece07)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"	dp:isAnimationColorFinished=false" \
+									"}"
+							}
+						}, 
+						wp<function<void,int>>(14fda9cb-8f1d-46e3-9174-1acd56a85ab3)
+						{
+							name: "onPause"
+							value: function<void,int>(223a01a0-79ef-4426-8745-21634b231b8f)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+						}, 
+						wp<function<void,int,int>>(27b454a9-2906-4da2-9622-aa9d5da83e11)
+						{
+							name: "onTerminate"
+							value: function<void,int,int>(9b1e1024-0861-4738-80a3-4ea8e0517e6d)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"	dp:isAnimationColorFinished=true" \
+									"}"
+							}
+						}, 
+						wp<conditional_script>(84b65c66-02eb-426f-94a6-3236d4c5c83c)
+						{
+							name: "playAnimation_Color"
+							value: conditional_script(6aec0cda-c88a-46fa-8320-90ac4dd90dd1)
+							{
+								triggerList: trigger_list(b2b15af3-edb8-438f-8e49-7e4ef60bed6c)
+								{
+									script: "ev:playAnimation_Color"
+								}
+								onTrigger: function<bool,bool>(486c56d0-b690-4474-b9e8-bddb89b9c15e)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	if(v:arg0==false)" \
+										"	{" \
+										"		f:animation_play(v:this)" \
+										"	}" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					features: feature_list []
+					children: children_list [
+						BezierCurveColor(a373d3d3-29eb-40cb-9876-b55ea1699924)
+						{
+							name: "ColorCurve"
+							properties: property_list [
+								wp<bool>(022a8c4c-8921-4816-a3c6-dba6d812b619)
+								{
+									name: "enabled"
+									value: true
+								}, 
+								wp<int>(1f47dca5-483b-4cad-ba7b-9b00360728c2)
+								{
+									name: "delay"
+									value: 0
+								}, 
+								wp<int>(d6517938-8318-4b61-8410-9992d56257fe)
+								{
+									name: "duration"
+									value: 2000
+								}, 
+								wp<int>(5ffc013d-eafa-47c1-b8f9-f1ba162a218a)
+								{
+									name: "repeat"
+									value: 1
+								}, 
+								wp<bool>(03db8553-9015-4bd6-8269-9b2eb5093b52)
+								{
+									name: "alternating"
+									value: true
+								}, 
+								wp<bool>(c47e4262-2cdb-40b5-8eb7-3ef7a1910acf)
+								{
+									name: "relative"
+									value: false
+								}, 
+								wp<float>(910d6321-63d4-41df-87b6-c5b8692ff244)
+								{
+									name: "handle1x"
+									value: 0F
+								}, 
+								wp<float>(0571fe5f-7368-4ca0-b1c8-84c293d5bf8a)
+								{
+									name: "handle1y"
+									value: 1F
+								}, 
+								wp<float>(f0bc6cc3-9549-44f9-a66e-3b45af13c484)
+								{
+									name: "handle2x"
+									value: 1F
+								}, 
+								wp<float>(a4adccbf-2f4b-4fb3-9262-a43999628664)
+								{
+									name: "handle2y"
+									value: 0F
+								}, 
+								wp<color>(69d9268f-2636-457b-81e6-a334c475d426)
+								{
+									name: "start"
+									value: #808080FF
+								}, 
+								wp<color>(a9033ac3-e262-46d8-ae17-77a85a942a83)
+								{
+									name: "end"
+									value: #008000FF
+								}, 
+								wp<color>(3ecaf6ba-19fd-48ea-9482-5ceedac08880)
+								{
+									name: "target"
+									value: @3544ce08-014c-4fd7-99af-fa30c2e25181 (objectref<color>)
+								}, 
+								wp<conditional_script>(092fb882-c677-4c7b-940b-7c2ae9eee803)
+								{
+									name: "fireEventIfAnimationReachesMiddleAfter1second"
+									value: conditional_script(5a5328a1-18ce-4c6c-a712-628ec2a9516d)
+									{
+										triggerList: trigger_list(54b36ff8-67f3-4371-95b4-6c309c076dcc)
+										{
+											script: "dp:animationTarget_Ellipse2" \
+												""
+										}
+										onTrigger: function<bool,bool>(3909c3c9-c744-4a56-8431-f78c4b742ec9)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	if(v:arg0==false&&(f:animation_beyond(v:this->^,1000)&&dp:animationTarget_Ellipse2==color:63, 128, 63, 255))" \
+												"	{" \
+												"		fire ev:isAnimationInTheMiddle()" \
+												"	}" \
+												"	false" \
+												"}"
+										}
+									}
+								}]
+							features: feature_list []
+							children: children_list []
+						}]
+				}]
+		}]
+}

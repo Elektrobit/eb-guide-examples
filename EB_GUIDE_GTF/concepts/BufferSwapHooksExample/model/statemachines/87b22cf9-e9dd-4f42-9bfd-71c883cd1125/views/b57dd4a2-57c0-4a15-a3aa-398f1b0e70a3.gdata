@@ -1,0 +1,44 @@
+EBGUIDE 6.11.0.210526170413;
+
+GtfView_template_instance(b57dd4a2-57c0-4a15-a3aa-398f1b0e70a3)
+{
+	name: "View"
+	template: @b787a2b7-20c5-4050-a39f-e8d67bd6fbef (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(f3aa66e5-58fb-452a-a303-4fc1dece15b1)
+		{
+			name: "description"
+			value: "The buffer swap hooks  are called before and after swapping the buffers."
+		}, 
+		wp<string>(171dde10-da0b-4fbd-a2ed-591ef48b9508)
+		{
+			name: "text"
+			value: "Buffer Swap Hooks demo"
+		}]
+	user_properties: property_list [
+		wp<conditional_script>(d2e96692-e3e4-448f-a9e3-daea3110e980)
+		{
+			name: "Shutdown"
+			value: conditional_script(5012e8cd-1566-492e-9e6d-aafdbacdf41e)
+			{
+				triggerList: trigger_list(7be33227-93ce-473c-b73e-df94b76091c9)
+				{
+					script: "ev:end" \
+						""
+				}
+				onTrigger: function<bool,bool>(6641a51b-a66b-4dd2-aa83-f8d31fe79fe9)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	match_event v:event = ev:end in" \
+						"{" \
+						"	f:shutdown()" \
+						"}" \
+						"" \
+						"	false" \
+						"}"
+				}
+			}
+		}]
+	children: children_list []
+}
