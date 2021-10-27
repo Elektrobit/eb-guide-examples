@@ -1,0 +1,20 @@
+EBGUIDE 6.12.0.211022102259;
+
+events(5381f838-44e5-4ef5-b55e-4a28578bce73)
+{
+	items: event_list [
+		event(20e7ee6e-7257-4bed-bb0c-f00da10f8b8a)
+		{
+			name: "start_animation"
+			eventId: 1
+			event_group: @8a388192-972a-41ba-ae19-b4079f7d117a (objectref<event_group>)
+			event_params: event_param_list []
+		},
+		event(27b0bebe-0e86-41af-b2e7-45810198ef61)
+		{
+			name: "next"
+			eventId: 0
+			event_group: @8a388192-972a-41ba-ae19-b4079f7d117a (objectref<event_group>)
+			event_params: event_param_list []
+		}]
+}

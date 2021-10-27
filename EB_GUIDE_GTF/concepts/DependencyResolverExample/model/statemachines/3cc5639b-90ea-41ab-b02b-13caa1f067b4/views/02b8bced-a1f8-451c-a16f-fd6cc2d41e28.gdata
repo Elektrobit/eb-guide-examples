@@ -1,0 +1,37 @@
+EBGUIDE 6.12.0.211022102259;
+
+GtfView_template_instance(02b8bced-a1f8-451c-a16f-fd6cc2d41e28)
+{
+	name: "Titleview"
+	template: @18edd3fd-90d3-4e6e-bc08-4db08f8b05ee (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(56675449-bcff-4f90-bf4d-03e4a1c03b5f)
+		{
+			name: "title_text"
+			value: "Dependency resolver plugin"
+		},
+		wp<string>(9158f29d-4d73-4ad0-8ed2-37563d1e40f1)
+		{
+			name: "short desc_text"
+			value: "Example of registering two instances of a TemperatureConverter type, than can be retreived from the container and use within a plugin"
+		},
+		wp<string>(b7d67913-e2b4-4dcd-9cfd-5bbf426c66dd)
+		{
+			name: "long desc_text"
+			value: "Documentation reference:\\nUsing the DependencyResolver module"
+		},
+		wp<function<bool,int,int,int,int>>(a7ca0242-bc0f-4176-9ad8-fbc5d8400058)
+		{
+			name: "touchPressed"
+			value: function<bool,int,int,int,int>(bfdbe536-09eb-407f-8901-3b66ebba313c)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:next();" \
+					"    false" \
+					"}"
+			}
+		}]
+	user_properties: property_list []
+	children: children_list []
+}

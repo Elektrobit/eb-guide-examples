@@ -1,0 +1,249 @@
+EBGUIDE 6.12.0.211022102259;
+
+GtfView_template_instance(44a166d8-e7f9-4cae-ad01-7d2ec396151a)
+{
+	name: "View 1"
+	template: @d9ee43bd-ee64-4c9f-904a-75cf1fd8f745 (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(51292ce4-9143-4846-aa35-2de01f448bd9)
+		{
+			name: "text"
+			value: "Focused policy widget feature demo"
+		},
+		wp<string>(7210ab80-2711-4a3c-b34a-dc0125b1c689)
+		{
+			name: "description"
+			value: "An HMI model can load EB GUIDE GTF extension example "
+		},
+		wp<string>(14cbac46-f773-4ca7-a2e6-3e97d6f9dba1)
+		{
+			name: "text 2"
+			value: "Move the focus by pressing on Next and Previous or by selecting one element manually."
+		}]
+	user_properties: property_list []
+	children: children_list [
+		GtfInstantiator(6ede58ce-af4a-4849-91d7-5f13b5ff0e8f)
+		{
+			name: "Instantiator 1"
+			properties: property_list [
+				wp<bool>(811894f7-cb05-498a-a221-4b2ed7858621)
+				{
+					name: "visible"
+					value: true
+				},
+				wp<int>(c5d1e4fc-a732-4a0d-a004-86fabb7ee5ba)
+				{
+					name: "width"
+					value: 278
+				},
+				wp<int>(a5748497-e04b-4062-9b3a-4d59a46ec3d0)
+				{
+					name: "height"
+					value: 242
+				},
+				wp<int>(44e4bde8-43b0-4b2c-9417-bca120f9e50a)
+				{
+					name: "x"
+					value: 216
+				},
+				wp<int>(1c3bdc4d-3306-4038-a85f-d78e8d0c083a)
+				{
+					name: "y"
+					value: 142
+				},
+				wp<int>(895db403-b7e4-4615-91db-1ed026154eba)
+				{
+					name: "numItems"
+					value: 20
+				},
+				wp<intlist>(8a2a8074-8538-4c79-aa88-e04b7cbb202b)
+				{
+					name: "lineMapping"
+					value: intlist []
+				}]
+			features: feature_list [
+				LayoutPolicyFlow(a5abdab3-e034-490c-85a0-be898013c070)
+				{
+					base_properties: property_list [
+						wp<int>(782adf65-57aa-4d2a-a2c5-fd940e686639)
+						{
+							name: "horizontalGap"
+							value: 10
+						},
+						wp<int>(4cb2b497-5d3f-44bd-8ca7-99cbbd350f3f)
+						{
+							name: "verticalGap"
+							value: 10
+						},
+						wp<int>(3ba567a9-f262-4ac9-93e8-7fb805016720)
+						{
+							name: "layoutDirection"
+							value: 1
+						},
+						wp<int>(3b6d952b-d34c-4bfc-80e9-f338a793f31f)
+						{
+							name: "horizontalChildAlign"
+							value: 1
+						},
+						wp<int>(ae8944bc-1a09-4d58-87f7-444be3e38293)
+						{
+							name: "verticalChildAlign"
+							value: 0
+						}]
+				},
+				StateFocused(41ac56d1-ea14-4e16-9b27-8a34417b8ef8)
+				{
+					base_properties: property_list [
+						wp<int>(f71ff98b-52f2-469c-83d0-9413287b9ae5)
+						{
+							name: "focusable"
+							value: 1
+						},
+						wp<bool>(25586cde-8cb4-43d6-af8f-7182c8d2e338)
+						{
+							name: "focused"
+							value: false
+						}]
+				},
+				RandomFocusPolicy(99cf776a-d390-4e8d-a210-e816c4b640e5)
+				{
+					base_properties: property_list []
+				}]
+			children: children_list [
+				GtfRectangle_template_instance(fe39569e-8301-4569-ba7f-34017612677b)
+				{
+					name: "T_FocusableRectangle 1"
+					template: @880b1913-33e4-4201-aab5-5a187b2dce25 (objectref<GtfRectangle_template>)
+					override_properties: property_list [
+						wp<int>(54baf918-76e8-4eba-ac3a-75d3af843866)
+						{
+							name: "x"
+							value: 147
+						},
+						wp<int>(39baa360-edf2-4a9b-9108-18e77199e109)
+						{
+							name: "height"
+							value: 50
+						},
+						wp<int>(5f7fd194-3e22-474f-ad1f-f9274cbfe7fa)
+						{
+							name: "width"
+							value: 50
+						},
+						wp<int>(794eff6b-492b-43ca-8c6f-e3685b07c419)
+						{
+							name: "y"
+							value: 70
+						},
+						wp<bool>(584ff2b0-7320-4ae0-9312-876b7d1b350a)
+						{
+							name: "focused"
+							value: @944a5caa-d257-41e9-8a75-f1f4c7c9f015 (objectref<bool>)
+						},
+						wp<function<bool,int,int,int,int>>(bab10668-fabc-490a-8157-c407846ede4c)
+						{
+							name: "touchShortReleased"
+							value: function<bool,int,int,int,int>(a826fb64-095b-4f46-825d-46d61ddc000e)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	f:focusMoveTo(v:this)" \
+									"    false" \
+									"}"
+							}
+						}]
+					user_properties: property_list []
+					children: children_list []
+				}]
+		},
+		GtfContainer_template_instance(9112cb16-6b9b-414f-b6e6-bbc1cd48e5e2)
+		{
+			name: "NextButton"
+			template: @6ab593c7-e0c4-4fa3-8950-35d1d85945af (objectref<GtfContainer_template>)
+			override_properties: property_list [
+				wp<int>(77962550-729b-44d5-b3ce-0365803c2a1a)
+				{
+					name: "x"
+					value: 562
+				},
+				wp<int>(4c5e7e57-da78-4f22-8360-467a49d10593)
+				{
+					name: "y"
+					value: 201
+				},
+				wp<string>(72ad67d8-2c3f-4236-a829-84114f325b2d)
+				{
+					name: "text"
+					value: "Next"
+				},
+				wp<function<bool,int,int,int,int>>(2f9522c7-9879-475e-a0c3-e7b104a61ac9)
+				{
+					name: "touchShortReleased"
+					value: function<bool,int,int,int,int>(177c98c3-833d-4a86-9523-823ae53160f1)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	f:focusNext();" \
+							"    false" \
+							"}"
+					}
+				},
+				wp<int>(bea36d70-7c18-4535-b780-be287041934d)
+				{
+					name: "width"
+					value: @5fece62c-2904-4196-84a9-ae33b2816786 (objectref<int>)
+				},
+				wp<int>(1238ccb9-b45c-4885-87fc-dcff583d15e3)
+				{
+					name: "height"
+					value: @9ab447f9-cb6f-402a-89f4-864b7a30e289 (objectref<int>)
+				}]
+			user_properties: property_list []
+			children: children_list []
+		},
+		GtfContainer_template_instance(f3b21c49-0fa6-4b7c-9990-31fffc54ba2b)
+		{
+			name: "PreviousButton"
+			template: @6ab593c7-e0c4-4fa3-8950-35d1d85945af (objectref<GtfContainer_template>)
+			override_properties: property_list [
+				wp<int>(41e1625a-c89c-45fc-a0ac-28f758fc9b3b)
+				{
+					name: "x"
+					value: 63
+				},
+				wp<int>(7fa6cb1c-d73f-487f-bc39-2be4a9a348f6)
+				{
+					name: "y"
+					value: 200
+				},
+				wp<string>(9b36d311-4772-467c-813e-2dcd6cbaed0e)
+				{
+					name: "text"
+					value: "Previous"
+				},
+				wp<function<bool,int,int,int,int>>(75703757-b71e-4580-9eea-7070856f5242)
+				{
+					name: "touchShortReleased"
+					value: function<bool,int,int,int,int>(2c81d3d3-5a89-4645-b038-4c63b73eeae5)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	f:focusPrevious();" \
+							"    false" \
+							"}"
+					}
+				},
+				wp<int>(27123bf4-6811-4f69-b9b3-ab120b8c2c29)
+				{
+					name: "width"
+					value: @5fece62c-2904-4196-84a9-ae33b2816786 (objectref<int>)
+				},
+				wp<int>(34e99225-0a8c-40aa-953c-62bc078884f2)
+				{
+					name: "height"
+					value: @9ab447f9-cb6f-402a-89f4-864b7a30e289 (objectref<int>)
+				}]
+			user_properties: property_list []
+			children: children_list []
+		}]
+}

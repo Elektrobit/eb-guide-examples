@@ -1,0 +1,98 @@
+EBGUIDE 6.12.0.211022102259;
+
+GtfView_template_instance(44a166d8-e7f9-4cae-ad01-7d2ec396151a)
+{
+	name: "View 1"
+	template: @d9ee43bd-ee64-4c9f-904a-75cf1fd8f745 (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(a9d5107e-4504-4c09-9bb3-be00fb8d6a68)
+		{
+			name: "text"
+			value: "Ripple effect demo"
+		},
+		wp<string>(1fbe7717-cbaa-4118-ba73-3641b29e28a1)
+		{
+			name: "description"
+			value: "An HMI model can load custom ripple effect."
+		}]
+	user_properties: property_list []
+	children: children_list [
+		GtfContainer_template_instance(f0e7ab53-ebbf-486d-aee6-567a510217a4)
+		{
+			name: "OrginalContainer"
+			template: @2a0f5cff-ccba-43db-8bb3-bd9c32edf65d (objectref<GtfContainer_template>)
+			override_properties: property_list [
+				wp<string>(cc23b2c7-0b48-4296-b3eb-0ae26d8bbf43)
+				{
+					name: "text"
+					value: "without ripple effect"
+				},
+				wp<int>(f8d6e513-1ec4-4d8f-a4b6-e384bf707437)
+				{
+					name: "x"
+					value: @cecccd0e-ebe9-4a8a-a01c-5ec671a172d6 (objectref<int>)
+				}]
+			user_properties: property_list []
+			children: children_list []
+		},
+		RippleEffect(ae7266d1-e302-4251-b749-21405c20610c)
+		{
+			name: "Ripple effect"
+			properties: property_list [
+				wp<bool>(2cef4398-42d2-462b-a376-720065ffe242)
+				{
+					name: "visible"
+					value: true
+				},
+				wp<int>(72d8bfab-f518-4e50-acc1-e93b6f9010ac)
+				{
+					name: "width"
+					value: 400
+				},
+				wp<int>(432bb2b8-51f4-4f87-8d02-4906f4caec28)
+				{
+					name: "height"
+					value: 480
+				},
+				wp<int>(dd883c23-3778-4531-966e-82eba4ae4f6a)
+				{
+					name: "x"
+					value: 400
+				},
+				wp<int>(8eaa54ed-cc77-48ad-9733-d929c74fa682)
+				{
+					name: "y"
+					value: 0
+				},
+				wp<int>(f1025cad-09ed-40dd-9ad8-d3b8b5d89c4f)
+				{
+					name: "animationTime"
+					value: 0
+				},
+				wp<bool>(7ac95f1a-a994-4de6-a4d2-44459e312345)
+				{
+					name: "enabled"
+					value: true
+				}]
+			features: feature_list []
+			children: children_list [
+				GtfContainer_template_instance(161df37a-c330-4e6d-ae2c-834b8558037f)
+				{
+					name: "OrginalContainer 2"
+					template: @2a0f5cff-ccba-43db-8bb3-bd9c32edf65d (objectref<GtfContainer_template>)
+					override_properties: property_list [
+						wp<int>(bb8f9181-7d94-455d-b157-01b9dff67f9c)
+						{
+							name: "x"
+							value: 0
+						},
+						wp<string>(c07c2d27-bcc1-4764-8eea-07b7611fed44)
+						{
+							name: "text"
+							value: "with ripple effect"
+						}]
+					user_properties: property_list []
+					children: children_list []
+				}]
+		}]
+}

@@ -1,0 +1,39 @@
+EBGUIDE 6.12.0.211022102259;
+
+GtfView_template_instance(6a626597-78a8-49d7-a591-14b29c5ec41f)
+{
+	name: "HomeView"
+	template: @bad749ae-e164-4670-bd0b-647bce039801 (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(7040df33-7033-4cc2-8b59-3589885def9a)
+		{
+			name: "title_text"
+			value: "Loading TGA image data"
+		},
+		wp<imagelist>(c0edeb7a-68dd-4e09-906e-7bd630dd79fc)
+		{
+			name: "button_icon_li"
+			value: imagelist [
+				image_resource(5679f8a3-90e9-4515-b5b3-12254919d853)
+				{
+					sourceType: "model"
+					source: "resources"
+					file: "images\\icon_events.png"
+				},
+				image_resource(fb7a45af-c6a6-45db-a74d-e1538b4a71a1)
+				{
+					sourceType: "model"
+					source: "resources"
+					file: "images\\icon_external_image.png"
+				}]
+		},
+		wp<stringlist>(8590e33e-dab1-4fda-ac10-cb8f9412d4d5)
+		{
+			name: "button_desc_li"
+			value: stringlist [
+				"Decompressed image",
+				"Compressed image"]
+		}]
+	user_properties: property_list []
+	children: children_list []
+}

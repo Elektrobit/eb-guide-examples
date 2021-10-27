@@ -1,0 +1,47 @@
+EBGUIDE 6.12.0.211022102259;
+
+GtfView_template_instance(1350d5f9-9326-491e-863c-a308118efeff)
+{
+	name: "View"
+	template: @6f669daf-5466-40a2-8339-f3caf73b9950 (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<int>(3f690102-0367-41af-b402-754a8284b53f)
+		{
+			name: "width"
+			value: @7d406920-11fa-4a07-ac6a-68535481bc7c (objectref<int>)
+		},
+		wp<int>(9ee05c6c-ee34-4dc1-94ed-a6d7da0cb44e)
+		{
+			name: "height"
+			value: @31b92219-3f04-4bc6-bbe2-8be68913bf9e (objectref<int>)
+		},
+		wp<string>(28a2eea7-a80b-49a2-bf6f-362d6b8be13b)
+		{
+			name: "long desc text"
+			value: "Documentation reference:\\nExtensions to EB GUIDE TF"
+		},
+		wp<string>(f9f4f1ae-a99d-4221-9591-f1c124f778c5)
+		{
+			name: "short desc text"
+			value: "Example of adding a custom label shape to label widget."
+		},
+		wp<string>(72f3560e-0980-4bb8-a799-cbf7f7dd6b1c)
+		{
+			name: "title text"
+			value: "Label shape example"
+		},
+		wp<function<bool,int,int,int,int>>(d2335e5c-91c1-4fd0-ab04-8a95bce0b183)
+		{
+			name: "touchPressed"
+			value: function<bool,int,int,int,int>(0c71ae97-0cc5-487e-977d-8e169353e172)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:Next();" \
+					"    false" \
+					"}"
+			}
+		}]
+	user_properties: property_list []
+	children: children_list []
+}

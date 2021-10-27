@@ -1,0 +1,37 @@
+EBGUIDE 6.12.0.211022102259;
+
+GtfView_template_instance(9ee640ec-5684-45db-988b-a772c15fd855)
+{
+	name: "Titleview"
+	template: @23e7baac-65cf-4ba0-beae-e2917811287a (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(d5265b1a-01da-4cea-9086-d253425b622e)
+		{
+			name: "title_text"
+			value: "Datapool demo plugin"
+		},
+		wp<string>(31b60473-9c7b-4192-88c7-eb9e18b435db)
+		{
+			name: "short_desc_text"
+			value: "Example for communicating from an application with the HMI using datapool "
+		},
+		wp<string>(19cfefe8-fbc7-48e2-a133-ae72fa34d46f)
+		{
+			name: "long_desc_text"
+			value: "Documentation reference:\\nUsing the EB GUIDE TF plugin mechanism\\nBackground information > Interaction between HMI and applications > Datapool"
+		},
+		wp<function<bool,int,int,int,int>>(0c8848d9-da01-45cd-a266-9d70f4bee260)
+		{
+			name: "touchPressed"
+			value: function<bool,int,int,int,int>(b4a591e2-833e-47ee-92bb-aca8750e7d1a)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:next();" \
+					"    false" \
+					"}"
+			}
+		}]
+	user_properties: property_list []
+	children: children_list []
+}

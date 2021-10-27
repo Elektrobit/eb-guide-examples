@@ -1,0 +1,16 @@
+{
+  "name": "default.template.package",
+  "id": "c3eb24a4-4862-4a28-84b0-016eca4ae9c9",
+  "version": "1.0.0-0",
+  "authors": [
+    "calu8264"
+  ],
+  "description": "a",
+  "color": "#FFEEAA3B",
+  "ebguide": [
+    {
+      "version": "6.12.0"
+    }
+  ],
+  "dependencies": []
+}

@@ -1,0 +1,11 @@
+EBGUIDE 6.12.0.211022102259;
+
+dp_items(f62b5f8f-ca49-4d20-9b2e-db7dec09c5d0)
+{
+	items: dp_item_list [
+		dp<float>(92312375-a620-4a2e-8379-b097f4eccd42)
+		{
+			value: 0.1F
+			name: "chromaticAberrationIntensity"
+		}]
+}

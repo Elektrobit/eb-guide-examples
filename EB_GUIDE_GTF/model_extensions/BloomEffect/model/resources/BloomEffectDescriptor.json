@@ -1,0 +1,45 @@
+{
+   "widgets":[
+      {
+         "name":"BloomEffect",
+         "alias":"BloomEffect",
+         "type":"GtfAbstractVisualWidget",
+         "category":"Custom widgets",
+         "description":"Fancy effect.",
+         "canHaveChildren":true,
+         "isAbstract":false,
+         "isInstantiator":false,
+         "isView":false,
+         "properties":[
+            {
+               "name":"luminosityRGB",
+               "type":"color",
+               "category":"Common",
+               "description":"Vector to calculate the relative luminace threshold for the bright pass filter. Default is (54, 182, 18, 255).",
+               "defaultValue":"54,182,18,255"
+            },
+            {
+               "name":"threshold",
+               "type":"float",
+               "category":"Common",
+               "description":"Regions of the image brighter than this threshold receive blooming.",
+               "defaultValue":"1.0"
+            },
+            {
+               "name":"luminanceBlurPath",
+               "type":"float",
+               "category":"Common",
+               "description":"If 1.0, shows the results of the luminance-blur rendering path.",
+               "defaultValue":"0.0"
+            },
+            {
+               "name":"blurIterations",
+               "type":"integer",
+               "category":"Common",
+               "description":"The number of times gaussian blur is applied. Higher numbers improve visual quality. The number of iterations is limited to 20.",
+               "defaultValue":"1"
+            }
+         ]
+      }
+   ]
+}

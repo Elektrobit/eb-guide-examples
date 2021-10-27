@@ -1,0 +1,66 @@
+{
+   "widgets":[
+      {
+         "name":"CrepuscularEffect",
+         "alias":"Crepuscular",
+         "type":"GtfAbstractVisualWidget",
+         "category":"Custom widgets",
+         "description":"Fancy effect.",
+         "canHaveChildren":true,
+         "isAbstract":false,
+         "isInstantiator":false,
+         "isView":false,
+         "properties":[
+            {
+               "name":"color",
+               "type":"color",
+               "category":"Common",
+               "description":"The effect color.",
+               "defaultValue":"0,248,0,255"
+            },
+            {
+               "name":"x-pos",
+               "type":"float",
+               "category":"Common",
+               "description":"The x-origin of the effect.",
+               "defaultValue":"0.0"
+            },
+            {
+               "name":"y-pos",
+               "type":"float",
+               "category":"Common",
+               "description":"The y-origin of the effect.",
+               "defaultValue":"0.0"
+            },
+            {
+               "name":"samples",
+               "type":"integer",
+               "category":"Common",
+               "description":"The number of samples.",
+               "defaultValue":"16"
+            },
+            {
+               "name":"decay",
+               "type":"float",
+               "category":"Common",
+               "description":"The decay parameter.",
+               "defaultValue":"1.0"
+            },
+            {
+               "name":"density",
+               "type":"float",
+               "category":"Common",
+               "description":"The density parameter.",
+               "defaultValue":"1.0"
+            },
+            {
+               "name":"weight",
+               "type":"float",
+               "category":"Common",
+               "description":"The weight parameter.",
+               "defaultValue":"1.0"
+            }
+         ]
+      }
+   ]
+}

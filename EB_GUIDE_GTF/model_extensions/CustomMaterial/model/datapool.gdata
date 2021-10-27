@@ -1,0 +1,76 @@
+EBGUIDE 6.12.0.211022102259;
+
+dp_items(bf359bfd-945a-4ec7-8329-0e9964145d5e)
+{
+	items: dp_item_list [
+		dp<float>(2398f637-be5f-4e4a-af45-d8ee622cb847)
+		{
+			value: -0.5F
+			name: "arrowTextureAdvance"
+		},
+		dp<float>(259860cd-a7c5-4701-be54-7180a194d480)
+		{
+			value: 1F
+			name: "glassVariant"
+		},
+		dp<float>(2ff10c8a-50ce-4ddb-824e-619ad96b1304)
+		{
+			value: 0.5F
+			name: "customOpacity"
+		},
+		dp<float>(420e127f-5790-4607-8138-ecf1c93daa5b)
+		{
+			value: 1F
+			name: "steeringAngle"
+		},
+		dp<float>(4d62fb0b-2a30-436b-ac59-a7c3e543b295)
+		{
+			value: 0F
+			name: "glassRough"
+		},
+		dp<string>(57046adf-603a-4f97-adf3-5baab0a12c07)
+		{
+			value: "resources/shaders/deform.vert"
+			name: "deformVS"
+		},
+		dp<float>(74ecc5a4-26da-4cc2-b700-f1951365b43b)
+		{
+			value: 0F
+			name: "glassMetal"
+		},
+		dp<float>(823f28bf-372c-4003-bfbd-0b502f9d09b4)
+		{
+			value: 0.8F
+			name: "iblStrength"
+		},
+		dp<float>(ad6a04b9-cc12-4dee-a2ea-419f254b1989)
+		{
+			value: 0.1F
+			name: "glassClearCoatRough"
+		},
+		dp<color>(b10e00fa-968e-42c8-8f21-4dbc49417192)
+		{
+			value: #FFA500FF
+			name: "CutOutEmissive"
+		},
+		dp<float>(cee4ab56-389f-471f-9faf-75d3ddc916e3)
+		{
+			value: 1F
+			name: "glassClearCoatStrength"
+		},
+		dp<bool>(f1285a9a-21c7-4cb1-a339-f72bc092f145)
+		{
+			value: true
+			name: "BackFaceVisible"
+		},
+		dp<float>(f69bf19d-c07c-461c-9eea-63623b0ebbcc)
+		{
+			value: 0F
+			name: "glassMinTrans"
+		},
+		dp<color>(fc242dc3-414d-4c86-8895-23eb4e3157b0)
+		{
+			value: #000000FF
+			name: "glassBaseColor"
+		}]
+}

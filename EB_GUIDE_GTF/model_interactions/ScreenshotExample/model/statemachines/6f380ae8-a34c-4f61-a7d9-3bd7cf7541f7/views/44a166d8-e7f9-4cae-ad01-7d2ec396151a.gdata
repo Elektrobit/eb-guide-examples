@@ -1,0 +1,285 @@
+EBGUIDE 6.12.0.211022102259;
+
+GtfView_template_instance(44a166d8-e7f9-4cae-ad01-7d2ec396151a)
+{
+	name: "View 1"
+	template: @d9ee43bd-ee64-4c9f-904a-75cf1fd8f745 (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(01053bee-8cd1-41dd-a909-98dfb0013f1e)
+		{
+			name: "text"
+			value: "Screenshot demo"
+		},
+		wp<string>(85488d39-dde2-454a-930c-9b787a0522f1)
+		{
+			name: "description"
+			value: "An HMI model can load different applications."
+		}]
+	user_properties: property_list []
+	children: children_list [
+		GtfImage(463aa1ae-5799-47e9-9876-63bbf533d720)
+		{
+			name: "EB_logo"
+			properties: property_list [
+				wp<bool>(5e09056f-21a0-4be1-90c6-50c7ae5682c0)
+				{
+					name: "visible"
+					value: true
+				},
+				wp<int>(9077b7b1-f330-458c-890e-37cc8f231c2a)
+				{
+					name: "width"
+					value: 144
+				},
+				wp<int>(f2ad071e-ce49-4044-8fda-e1d4b2964d1a)
+				{
+					name: "height"
+					value: 144
+				},
+				wp<int>(8ca08f61-2a82-42dc-b7b9-471e87f2f10a)
+				{
+					name: "x"
+					value: 146
+				},
+				wp<int>(b640f38d-1436-47b5-90bb-839f041fb9ce)
+				{
+					name: "y"
+					value: 113
+				},
+				wp<image>(28df3989-a22b-409e-9102-9b44ebd9d1ca)
+				{
+					name: "image"
+					value: image_resource(2469c540-911b-41e5-b5bf-d1311789b4eb)
+					{
+						sourceType: "model"
+						source: "resources"
+						file: "images\\EB.png"
+					}
+				},
+				wp<bool>(889fe266-fcae-4f3c-b364-c64d69314ef8)
+				{
+					name: "sRGB"
+					value: false
+				},
+				wp<int>(a65ebf33-0f38-436a-ad10-143c65227742)
+				{
+					name: "horizontalAlign"
+					value: 0
+				},
+				wp<int>(2c15ef85-3038-4673-b7d0-3be6cc5a9718)
+				{
+					name: "verticalAlign"
+					value: 1
+				}]
+			features: feature_list []
+			children: children_list [
+				GtfParallelAnimation(b668a378-ac4b-4726-9ebd-648b0a38fd4c)
+				{
+					name: "Animation"
+					properties: property_list [
+						wp<bool>(fcb270c9-7a98-477e-b256-cc3eff2f8aad)
+						{
+							name: "enabled"
+							value: true
+						},
+						wp<int>(a4a20c65-2289-445d-ab1b-57fb1c15da6a)
+						{
+							name: "repeat"
+							value: 0
+						},
+						wp<bool>(1ef0c2a7-af53-4d11-b214-a2d03117975d)
+						{
+							name: "alternating"
+							value: true
+						},
+						wp<float>(9801fd2c-7ffe-418d-bb10-0c49e8513805)
+						{
+							name: "scale"
+							value: 1F
+						},
+						wp<function<void,int,bool>>(8edbd788-0e07-483e-96ef-79bbc909a9c9)
+						{
+							name: "onPlay"
+							value: function<void,int,bool>(b70e8386-045c-4de3-8671-613dd4b20cdc)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+						},
+						wp<function<void,int>>(68d52b08-7805-4e82-9f92-d53c585b4c51)
+						{
+							name: "onPause"
+							value: function<void,int>(d0204ad1-45d4-4221-99ca-7d0d203b3519)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+						},
+						wp<function<void,int,int>>(3f39e0e4-139e-4fe1-858c-00077f0dcd7d)
+						{
+							name: "onTerminate"
+							value: function<void,int,int>(2fe95906-6784-4476-aec7-bb70ecb6ae0f)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+						},
+						wp<conditional_script>(7fec4edc-49bf-4839-a775-5efea867e706)
+						{
+							name: "startAnimation"
+							value: conditional_script(ff1d3b5f-9a85-43e6-930c-43981f04968d)
+							{
+								triggerList: trigger_list(4788fe65-92b9-44ed-a566-78600d5b12bd)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(5e963f8b-28c1-456d-bcd3-e52f8915b889)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	f:animation_play(v:this)" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					features: feature_list []
+					children: children_list [
+						GtfLinearInterpolationS32(1effdd2e-f555-4533-99fd-6167011512fd)
+						{
+							name: "Linear interpolation curve 1"
+							properties: property_list [
+								wp<bool>(87d1c963-5e6b-4662-9171-baefadc28a65)
+								{
+									name: "enabled"
+									value: true
+								},
+								wp<int>(988c636f-df72-4afc-bf36-459bd5e69854)
+								{
+									name: "delay"
+									value: 0
+								},
+								wp<int>(adddf0dc-1eeb-414b-86df-84ce5f4224a4)
+								{
+									name: "duration"
+									value: 1000
+								},
+								wp<int>(1e6b0bef-a85d-4233-9df4-77bbd9e0fd6f)
+								{
+									name: "repeat"
+									value: 1
+								},
+								wp<bool>(95429a80-6a85-43fc-a72b-90fced71f32a)
+								{
+									name: "alternating"
+									value: true
+								},
+								wp<bool>(4b1d538b-7c27-452a-a105-61a39d27008a)
+								{
+									name: "relative"
+									value: true
+								},
+								wp<int>(9b6fcc5d-9a2e-46ee-8592-4637d5f338b0)
+								{
+									name: "start"
+									value: 0
+								},
+								wp<int>(3bbef5bc-494a-493a-91d2-e4082108738a)
+								{
+									name: "end"
+									value: 400
+								},
+								wp<int>(7e1e2c03-4f7d-489d-a64b-06b094a5d335)
+								{
+									name: "target"
+									value: @8ca08f61-2a82-42dc-b7b9-471e87f2f10a (objectref<int>)
+								}]
+							features: feature_list []
+							children: children_list []
+						}]
+				}]
+		},
+		GtfLabel(51dc5609-9214-47d8-b6f8-9ddee28a2428)
+		{
+			name: "Label 1"
+			properties: property_list [
+				wp<bool>(a1a09721-20c2-4eb3-b561-774bb14f903c)
+				{
+					name: "visible"
+					value: true
+				},
+				wp<int>(66c3102e-f4a2-46e6-a4f1-392ad33f4a11)
+				{
+					name: "width"
+					value: 799
+				},
+				wp<int>(74eb066a-3a52-4152-9ba7-a07a085ef22a)
+				{
+					name: "height"
+					value: 168
+				},
+				wp<int>(d84caef4-291b-4ef1-b2ab-09e177f321a1)
+				{
+					name: "x"
+					value: 0
+				},
+				wp<int>(c39be12e-2d12-453d-a4c2-2fbd0209bbfe)
+				{
+					name: "y"
+					value: 259
+				},
+				wp<string>(d112eb77-2dff-48a6-83d7-b077e7d318e0)
+				{
+					name: "text"
+					value: "You have started the ScreenshotExample plugin model. \\n Find the \"scene1.tga\" screenshot file in \\AppData\\Local\\Temp\\eb_guide_simulation_export\\ScreenshotExample\\n or in your export directory. "
+				},
+				wp<color>(2a6e8c13-062f-433f-bf16-3aa5eb888978)
+				{
+					name: "textColor"
+					value: #FFFFFFFF
+				},
+				wp<font>(4a35ef46-432a-415f-aa08-ed2f2a9eb731)
+				{
+					name: "font"
+					value: font_resource(484077d5-731c-4409-991b-eea98afd48fe)
+					{
+						sourceType: "model"
+						source: "resources"
+						file: "fonts\\PT_Sans.ttf"
+						size: 24
+					}
+				},
+				wp<int>(7fde0008-85db-49f7-b5c1-28f6e1c79d02)
+				{
+					name: "horizontalAlign"
+					value: 1
+				},
+				wp<int>(029c0122-600e-4b57-ad18-272706a4e251)
+				{
+					name: "verticalAlign"
+					value: 0
+				}]
+			features: feature_list [
+				MultiLine(8668cb1e-f6f2-4c30-afc9-8fccd45707b8)
+				{
+					base_properties: property_list [
+						wp<int>(4e2ccd2a-f16c-4652-8996-8eb2c4aec46b)
+						{
+							name: "lineOffset"
+							value: 0
+						},
+						wp<int>(06b926e3-c742-4d46-857c-5400eaab4c51)
+						{
+							name: "maxLineCount"
+							value: 5
+						}]
+				}]
+			children: children_list []
+		}]
+}

@@ -1,0 +1,31 @@
+{
+   "widgets":[
+      {
+         "name":"RippleEffect",
+         "alias":"Ripple effect",
+         "type":"GtfAbstractVisualWidget",
+         "category":"Custom widgets",
+         "description":"A custom widget introduced via json file.",
+         "canHaveChildren":true,
+         "isAbstract":false,
+         "isInstantiator":false,
+         "isView":false,
+         "properties":[
+            {
+               "name":"animationTime",
+               "type":"integer",
+               "category":"Common",
+               "description":"The time of the animation.",
+               "defaultValue":"0"
+            },
+            {
+               "name":"enabled",
+               "type":"bool",
+               "category":"Common",
+               "description":"True if the ripple effect is enabled.",
+               "defaultValue":"true"
+            }
+         ]
+      }
+   ]
+}

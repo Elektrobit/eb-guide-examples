@@ -1,0 +1,471 @@
+EBGUIDE 6.12.0.211022102259;
+
+GtfView_template(6f669daf-5466-40a2-8339-f3caf73b9950)
+{
+	name: "TitleView"
+	interface_properties: property_list [
+		wp<int>(7d406920-11fa-4a07-ac6a-68535481bc7c)
+		{
+			name: "width"
+			value: @3b55bdc4-5258-48a3-9a5c-b75ca1dcfa01 (objectref<int>)
+		},
+		wp<int>(31b92219-3f04-4bc6-bbe2-8be68913bf9e)
+		{
+			name: "height"
+			value: @dca70595-f004-44da-a5ba-60f0da2919ff (objectref<int>)
+		},
+		wp<string>(8829e125-2a94-4953-bec1-ce105572a354)
+		{
+			name: "long desc text"
+			value: @188fc521-f0b2-494e-b583-c400d9c9648c (objectref<string>)
+		},
+		wp<string>(79c93134-4ba5-4acc-ba24-2982ec92fc10)
+		{
+			name: "short desc text"
+			value: @2ae90312-eb96-4145-b21c-1bef47c38595 (objectref<string>)
+		},
+		wp<string>(a86be4ff-03d6-4822-abc0-b7bbd816d3d2)
+		{
+			name: "title text"
+			value: @71f113a8-64c0-426e-a2cd-c3c1c0a3d4c3 (objectref<string>)
+		},
+		wp<function<bool,int,int,int,int>>(d1404568-31ee-402f-a8d2-ab6631fff771)
+		{
+			name: "touchPressed"
+			value: @69fed37c-096a-46b5-af2d-1034b543220e (objectref<function<bool,int,int,int,int>>)
+		}]
+	structure: GtfView(fa0ff3a8-e1d3-4214-bbe8-3bc72823b3b2)
+	{
+		name: "View"
+		properties: property_list [
+			wp<bool>(09b26ea8-96b4-4dbf-bc77-37d9af7aef6a)
+			{
+				name: "visible"
+				value: true
+			},
+			wp<int>(3b55bdc4-5258-48a3-9a5c-b75ca1dcfa01)
+			{
+				name: "width"
+				value: 800
+			},
+			wp<int>(dca70595-f004-44da-a5ba-60f0da2919ff)
+			{
+				name: "height"
+				value: 480
+			},
+			wp<int>(da5e1bac-2899-4d46-ac8f-3598322982fa)
+			{
+				name: "x"
+				value: 0
+			},
+			wp<int>(f4fb7779-d777-497a-b932-3850db1a6ec9)
+			{
+				name: "y"
+				value: 0
+			},
+			wp<string>(188fc521-f0b2-494e-b583-c400d9c9648c)
+			{
+				name: "long desc text"
+				value: "<long description>"
+			},
+			wp<string>(2ae90312-eb96-4145-b21c-1bef47c38595)
+			{
+				name: "short desc text"
+				value: "<short description>"
+			},
+			wp<string>(71f113a8-64c0-426e-a2cd-c3c1c0a3d4c3)
+			{
+				name: "title text"
+				value: "<Project title>"
+			}]
+		features: feature_list [
+			StateTouched(4af5b959-dff5-495d-ac20-9506df7a2a53)
+			{
+				base_properties: property_list [
+					wp<bool>(a3691149-d759-4a72-b5ba-cabc9009c8a6)
+					{
+						name: "touchable"
+						value: true
+					},
+					wp<bool>(45539d8c-20d7-4c8c-a062-6c870b9a977d)
+					{
+						name: "touched"
+						value: false
+					},
+					wp<int>(4a988e18-562b-4caa-b880-d97d61d844d9)
+					{
+						name: "touchPolicy"
+						value: 0
+					},
+					wp<int>(bab1c05f-94ee-49ed-be62-2a89def629ed)
+					{
+						name: "touchBehavior"
+						value: 0
+					}]
+			},
+			TouchPressed(342b4d25-605a-422c-b8c5-56c4b29af090)
+			{
+				base_properties: property_list [
+					wp<function<bool,int,int,int,int>>(69fed37c-096a-46b5-af2d-1034b543220e)
+					{
+						name: "touchPressed"
+						value: function<bool,int,int,int,int>(0d14788b-09c9-4e1e-a026-e9901114bf15)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"    false" \
+								"}"
+						}
+					}]
+			}]
+		children: children_list [
+			GtfRectangle(8abbe361-af55-4074-b4e8-44ec69c0c198)
+			{
+				name: "main bg"
+				properties: property_list [
+					wp<bool>(eb978510-efc8-4b04-8066-7d86165f6a59)
+					{
+						name: "visible"
+						value: true
+					},
+					wp<int>(989f5516-3d24-41d3-bf73-745bfa1dcf72)
+					{
+						name: "width"
+						value: @3b55bdc4-5258-48a3-9a5c-b75ca1dcfa01 (objectref<int>)
+					},
+					wp<int>(13c38358-cb63-4bec-a564-b3d482465f50)
+					{
+						name: "height"
+						value: @dca70595-f004-44da-a5ba-60f0da2919ff (objectref<int>)
+					},
+					wp<int>(1332e094-6d80-4fc8-9912-9ecbcb303d9e)
+					{
+						name: "x"
+						value: 0
+					},
+					wp<int>(227bbb04-a619-4fd8-9e3d-81ce225e0b66)
+					{
+						name: "y"
+						value: 0
+					},
+					wp<color>(1bdb3c9a-7aeb-43ee-8e5d-69e38f950c7b)
+					{
+						name: "fillColor"
+						value: #383838FF
+					}]
+				features: feature_list []
+				children: children_list []
+			},
+			GtfImage(a1f5afca-1bbd-4d45-993c-f215c2113a75)
+			{
+				name: "logo"
+				properties: property_list [
+					wp<bool>(a64696ed-0549-49ca-a187-3d5eef8599a5)
+					{
+						name: "visible"
+						value: true
+					},
+					wp<int>(786816a2-8762-4b32-be95-526723901831)
+					{
+						name: "width"
+						value: 135
+					},
+					wp<int>(e7ab17fd-1aa0-485c-bd5c-f90efebd90d6)
+					{
+						name: "height"
+						value: 135
+					},
+					wp<int>(4daafaae-563b-4670-b96e-b223c3e604a8)
+					{
+						name: "x"
+						value: 105
+					},
+					wp<int>(5c46197a-0ab2-4a14-90b5-d03e2ee83257)
+					{
+						name: "y"
+						value: 90
+					},
+					wp<image>(90282a53-026c-45c0-871c-1e0f7cc757bf)
+					{
+						name: "image"
+						value: image_resource(44b394f3-3fed-4ab9-acf3-f4a71adc768e)
+						{
+							sourceType: "model"
+							source: "resources"
+							file: "images\\EB.png"
+						}
+					},
+					wp<bool>(53d72846-16c5-423c-8d99-ffc4c75403d4)
+					{
+						name: "sRGB"
+						value: false
+					},
+					wp<int>(b157b74e-7c74-4905-9508-2dcbe04ebadd)
+					{
+						name: "horizontalAlign"
+						value: 0
+					},
+					wp<int>(67b383be-83d3-4d6a-a2f9-65678a9ddf53)
+					{
+						name: "verticalAlign"
+						value: 1
+					}]
+				features: feature_list []
+				children: children_list []
+			},
+			GtfLabel(2f8cdde4-0a49-4c2e-a26c-4dd55b057d68)
+			{
+				name: "title"
+				properties: property_list [
+					wp<bool>(77da8b14-da0a-4756-98a5-3b6fe9099718)
+					{
+						name: "visible"
+						value: true
+					},
+					wp<int>(39a22f0b-b0ab-4b09-be31-a449fe66d68d)
+					{
+						name: "width"
+						value: 450
+					},
+					wp<int>(89f3989e-12aa-47b7-89d2-1a25dfd26e58)
+					{
+						name: "height"
+						value: 40
+					},
+					wp<int>(b46d4f21-d8c7-4aea-9ca5-83cf33449161)
+					{
+						name: "x"
+						value: 260
+					},
+					wp<int>(07065e7f-dfcb-4e22-9dcd-aef962c7e2f7)
+					{
+						name: "y"
+						value: 105
+					},
+					wp<string>(d0cd41f5-f494-43ae-bd75-f22210880f4e)
+					{
+						name: "text"
+						value: @71f113a8-64c0-426e-a2cd-c3c1c0a3d4c3 (objectref<string>)
+					},
+					wp<color>(503e2004-b64a-48bf-9fa6-7cdb535fa708)
+					{
+						name: "textColor"
+						value: #FFFFFFFF
+					},
+					wp<font>(7371ec64-792a-444d-bc62-eea58430c55d)
+					{
+						name: "font"
+						value: font_resource(e71f7fca-f3d6-4b74-a4bf-5c34dc98154a)
+						{
+							sourceType: "model"
+							source: "resources"
+							file: "fonts\\PT_Sans.ttf"
+							size: 35
+						}
+					},
+					wp<int>(7c0e7054-3d71-4e78-b4f4-b28ebccd91bf)
+					{
+						name: "horizontalAlign"
+						value: 0
+					},
+					wp<int>(25dd1ff0-d1e0-4887-95f1-d7cab8f12408)
+					{
+						name: "verticalAlign"
+						value: 0
+					}]
+				features: feature_list []
+				children: children_list []
+			},
+			GtfLabel(aac4faec-8c2f-4665-aee3-0d52639b4f60)
+			{
+				name: "short desc"
+				properties: property_list [
+					wp<bool>(410f2205-4b35-44a6-9057-a7a784cd09be)
+					{
+						name: "visible"
+						value: true
+					},
+					wp<int>(6bfe9eaf-280f-48a0-be85-7395b4693517)
+					{
+						name: "width"
+						value: 450
+					},
+					wp<int>(da5da971-d594-40e8-addc-d14a167fa7ec)
+					{
+						name: "height"
+						value: 50
+					},
+					wp<int>(0fd87378-f4a5-4876-98f6-2ac77645cf29)
+					{
+						name: "x"
+						value: 260
+					},
+					wp<int>(708c7207-fa8a-499b-94d2-469a53293073)
+					{
+						name: "y"
+						value: 159
+					},
+					wp<string>(8658bddc-89cc-429f-b705-b19296431a4d)
+					{
+						name: "text"
+						value: @2ae90312-eb96-4145-b21c-1bef47c38595 (objectref<string>)
+					},
+					wp<color>(6ef3a3d2-de6a-4732-8c4f-03876ad62c29)
+					{
+						name: "textColor"
+						value: #FFFFFFFF
+					},
+					wp<font>(d9ffe861-31ed-4943-9f79-34d2e963c50a)
+					{
+						name: "font"
+						value: font_resource(3317edc6-5ef5-483d-a222-673d26de5132)
+						{
+							sourceType: "model"
+							source: "resources"
+							file: "fonts\\PT_Sans.ttf"
+							size: 18
+						}
+					},
+					wp<int>(517b4aab-b935-4a27-ab0d-0e6870f5bf18)
+					{
+						name: "horizontalAlign"
+						value: 0
+					},
+					wp<int>(3e30c730-146c-42f0-9706-45eab1089ba0)
+					{
+						name: "verticalAlign"
+						value: 0
+					}]
+				features: feature_list [
+					MultiLine(3d2b992e-0907-4775-9ac2-20b18894919e)
+					{
+						base_properties: property_list [
+							wp<int>(a116fa3a-6275-4cb9-9e97-bc2d1ebca121)
+							{
+								name: "lineOffset"
+								value: 0
+							},
+							wp<int>(a444a755-f8d3-4fa9-a172-d1da14bc54ad)
+							{
+								name: "maxLineCount"
+								value: 0
+							}]
+					}]
+				children: children_list []
+			},
+			GtfRectangle(4cb6b9ab-15f7-4d84-bb88-9be938dfb8e6)
+			{
+				name: "separator"
+				properties: property_list [
+					wp<bool>(1102bd33-3e1b-4938-9265-41ffd1b9d243)
+					{
+						name: "visible"
+						value: true
+					},
+					wp<int>(e6d12e3d-af62-4881-8a8d-eaa2e2cb6da9)
+					{
+						name: "width"
+						value: 600
+					},
+					wp<int>(dbcb24ad-015f-4eff-b4f3-a6ad4584da84)
+					{
+						name: "height"
+						value: 2
+					},
+					wp<int>(7078f3a3-cd45-460e-afaf-4f865dafd3bd)
+					{
+						name: "x"
+						value: 105
+					},
+					wp<int>(3b272e96-9942-4521-a552-cda52fe98649)
+					{
+						name: "y"
+						value: 250
+					},
+					wp<color>(6e5212a1-8393-401e-9c21-fe3f82332b15)
+					{
+						name: "fillColor"
+						value: #50504EFF
+					}]
+				features: feature_list []
+				children: children_list []
+			},
+			GtfLabel(60b0f13c-59f5-46cf-8418-5310a580ddb3)
+			{
+				name: "long desc"
+				properties: property_list [
+					wp<bool>(7417115b-0c3a-40b5-b26c-b086b4a86c80)
+					{
+						name: "visible"
+						value: true
+					},
+					wp<int>(038a377a-34ad-4b91-a6a0-5a4deea1209c)
+					{
+						name: "width"
+						value: 595
+					},
+					wp<int>(d9c4cd69-9f45-4318-be1d-98c4fa2493c7)
+					{
+						name: "height"
+						value: 180
+					},
+					wp<int>(f0b1ae49-b49c-4733-b65e-e4d8bf6db505)
+					{
+						name: "x"
+						value: 110
+					},
+					wp<int>(16ee1ccf-d5c2-440c-a780-ab3745f3c0ee)
+					{
+						name: "y"
+						value: 246
+					},
+					wp<string>(39b3b7b8-07a7-4334-a404-d62c9ba7e4ba)
+					{
+						name: "text"
+						value: @188fc521-f0b2-494e-b583-c400d9c9648c (objectref<string>)
+					},
+					wp<color>(bd14b225-9cd4-460f-87e6-5649417c5a05)
+					{
+						name: "textColor"
+						value: #FFFFFFFF
+					},
+					wp<font>(3c7d4214-fce2-43be-b42f-98be454f5add)
+					{
+						name: "font"
+						value: font_resource(603bff15-26f2-43c5-9fae-1199f80271ac)
+						{
+							sourceType: "model"
+							source: "resources"
+							file: "fonts\\PT_Sans.ttf"
+							size: 18
+						}
+					},
+					wp<int>(adf53add-4634-4b5a-9ecf-5fa047efe967)
+					{
+						name: "horizontalAlign"
+						value: 0
+					},
+					wp<int>(dda98aac-e25c-484f-8334-3363d22bb61b)
+					{
+						name: "verticalAlign"
+						value: 0
+					}]
+				features: feature_list [
+					MultiLine(5ab23e9c-b000-4d62-ae31-e5d10bcc5ff3)
+					{
+						base_properties: property_list [
+							wp<int>(d8e2d2e0-7b0c-4208-9001-559f0eb9c004)
+							{
+								name: "lineOffset"
+								value: 0
+							},
+							wp<int>(90d3e292-f0a9-480d-b4fc-3288aae4e45a)
+							{
+								name: "maxLineCount"
+								value: 0
+							}]
+					}]
+				children: children_list []
+			}]
+	}
+}

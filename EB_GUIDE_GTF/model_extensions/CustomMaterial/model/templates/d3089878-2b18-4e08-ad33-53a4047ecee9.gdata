@@ -1,0 +1,78 @@
+EBGUIDE 6.12.0.211022102259;
+
+PbrGgxGlassMaterial_template(d3089878-2b18-4e08-ad33-53a4047ecee9)
+{
+	name: "Ggx Glass Material 2 1"
+	interface_properties: property_list []
+	structure: PbrGgxGlassMaterial(d5edbffb-04f8-4f8f-ad90-72d53940c3c7)
+	{
+		name: "Ggx Glas Material 2"
+		properties: property_list [
+			wp<color>(3d7addf3-af2d-4aa4-b392-80f43fbd241f)
+			{
+				name: "ambient"
+				value: #000000FF
+			},
+			wp<color>(539ff413-6586-4e38-a618-983e19311523)
+			{
+				name: "baseColor"
+				value: @fc242dc3-414d-4c86-8895-23eb4e3157b0 (objectref<color>)
+			},
+			wp<color>(c9355c56-7457-4fc6-8f74-5d234c8148bb)
+			{
+				name: "emissive"
+				value: #000000FF
+			},
+			wp<float>(806e228b-b8b3-4cef-bbf3-e2a53b9edcfa)
+			{
+				name: "emissiveStrength"
+				value: 1F
+			},
+			wp<float>(cd8b5e34-5b84-43c8-93ee-348756f38c5c)
+			{
+				name: "reflectance"
+				value: 0.5F
+			},
+			wp<float>(00e2c197-a5ec-4370-acf1-15c14325c410)
+			{
+				name: "metallic"
+				value: @74ecc5a4-26da-4cc2-b700-f1951365b43b (objectref<float>)
+			},
+			wp<float>(63955207-4252-4f26-bbb4-aa4e307793fa)
+			{
+				name: "roughness"
+				value: @4d62fb0b-2a30-436b-ac59-a7c3e543b295 (objectref<float>)
+			},
+			wp<float>(fd9fd174-6f7a-48c7-964e-5565f795001e)
+			{
+				name: "opacity"
+				value: 1F
+			},
+			wp<float>(7e63651d-7eae-408a-a31f-799fe1b53f5a)
+			{
+				name: "u_baseTransparency"
+				value: @f69bf19d-c07c-461c-9eea-63623b0ebbcc (objectref<float>)
+			},
+			wp<float>(67789804-6490-4ddc-8783-486edc6bc429)
+			{
+				name: "u_type"
+				value: @259860cd-a7c5-4701-be54-7180a194d480 (objectref<float>)
+			}]
+		features: feature_list [
+			GtfPbrGgxClearCoatFeature(abb35002-17cd-4e7a-9bc6-a98f888ba7fd)
+			{
+				base_properties: property_list [
+					wp<float>(a9518302-9687-4be0-a394-e1ba6bd64ca2)
+					{
+						name: "clearCoatStrength"
+						value: @cee4ab56-389f-471f-9faf-75d3ddc916e3 (objectref<float>)
+					},
+					wp<float>(de105c01-0c2b-4ad0-a03a-30a60fc80bc7)
+					{
+						name: "clearCoatRoughness"
+						value: @ad6a04b9-cc12-4dee-a2ea-419f254b1989 (objectref<float>)
+					}]
+			}]
+		children: children_list []
+	}
+}

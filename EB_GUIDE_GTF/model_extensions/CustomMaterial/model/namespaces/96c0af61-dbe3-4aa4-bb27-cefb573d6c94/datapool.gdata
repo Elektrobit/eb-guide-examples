@@ -1,0 +1,6 @@
+EBGUIDE 6.12.0.211022102259;
+
+dp_items(a312bb6a-a127-4e9e-94e2-462e45753128)
+{
+	items: dp_item_list []
+}

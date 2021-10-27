@@ -1,0 +1,85 @@
+EBGUIDE 6.12.0.211022102259;
+
+dp_items(1f4315dd-e5ac-401a-863b-24c2a6ae1c75)
+{
+	items: dp_item_list [
+		dp<int>(0c767e02-66a7-45cc-ae6e-e8628d2cf658)
+		{
+			value: 0
+			name: "view_y"
+		},
+		dp<int>(3489aba8-3c8d-4f1a-8dab-82828e89be81)
+		{
+			value: 480
+			name: "resolution_height"
+		},
+		dp<int>(5a4bf912-e4e3-4ccd-88c2-b29d91720e75)
+		{
+			value: 3000
+			name: "delay"
+		},
+		dp<float>(aac15288-4a14-4b00-9869-70b8c36130e6)
+		{
+			value: 100F
+			name: "scaling"
+		},
+		dp<conditional_script>(b36eac86-e4a1-4e28-98a1-0877ffa36888)
+		{
+			value: conditional_script(d061134a-0912-4aa6-8ed4-9518f282134a)
+			{
+				triggerList: trigger_list(62534f4e-d931-4665-9047-13eaee575342)
+				{
+					script: "dp:resolution_width" \
+						"dp:resolution_height" \
+						""
+				}
+				onTrigger: function<bool,bool>(4b17fbcc-04e1-4128-a558-19612ce68043)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	if (dp:resolution_width/8 < dp:resolution_height * 10/48)" \
+						"	{" \
+						"		dp:scaling = f:int2float(dp:resolution_width/8)" \
+						"	}  " \
+						"	else" \
+						"	{" \
+						"		dp:scaling = f:int2float(dp:resolution_height * 10/48);" \
+						"	}" \
+						"	" \
+						"	dp:view_x = (dp:resolution_width - 8 * f:round(dp:scaling))/2;" \
+						"	dp:view_y = (dp:resolution_height - f:round(4.8 * dp:scaling))/2;" \
+						"" \
+						"	true;" \
+						"}"
+				}
+			}
+			name: "compute_scale_and_position"
+		},
+		dp<int>(ca521382-8e27-4548-a295-f5c4e8136677)
+		{
+			value: 800
+			name: "resolution_width"
+		},
+		dp<int>(d424c1e4-0698-4bfa-b58d-ef86809aa7d6)
+		{
+			value: 0
+			name: "view_x"
+		},
+		dp<int>(d4a2af4f-7a8e-482b-b5cf-efb82c9d99c5)
+		{
+			value: 1
+			name: "showcase_id_dynamic_image"
+		},
+		dp<stringlist>(e674f9bf-0caa-40dd-89b0-ce9fdd8ccac5)
+		{
+			value: stringlist [
+				"Decompressed image",
+				"Compressed image"]
+			name: "showcase_title_list"
+		},
+		dp<int>(e77cf9db-be76-4d08-a048-334a6c90d495)
+		{
+			value: 0
+			name: "showcase_id_static_image"
+		}]
+}

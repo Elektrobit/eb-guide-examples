@@ -1,0 +1,42 @@
+EBGUIDE 6.12.0.211022102259;
+
+GtfView_template_instance(b7d618dd-ef9a-4140-963a-cbb2c5c93c09)
+{
+	name: "ViewB"
+	template: @c0f1c727-95c8-4441-8262-f18240012cb1 (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(b7f6b91e-3cb7-4746-bf98-ee57df6817f8)
+		{
+			name: "text"
+			value: "State B"
+		},
+		wp<color>(506ae506-ce7e-43a5-8435-27b26e4aea70)
+		{
+			name: "fillColor"
+			value: #FFFF00FF
+		},
+		wp<function<bool,int,int,int,int>>(e3dbd235-210e-4eed-90b5-4f83424d3e3a)
+		{
+			name: "touchShortReleased"
+			value: function<bool,int,int,int,int>(638b8f52-3f18-4cf7-826e-b344b33e71f5)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:back();" \
+					"    false" \
+					"}"
+			}
+		},
+		wp<string>(8f486e13-b13e-43d6-907b-a7c5c44cc675)
+		{
+			name: "text 2"
+			value: "Press the rectangle to go back"
+		},
+		wp<string>(2f34a87e-cc0d-4a0a-b7d6-123decd16584)
+		{
+			name: "Description"
+			value: "The application navigates to State B"
+		}]
+	user_properties: property_list []
+	children: children_list []
+}

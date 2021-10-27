@@ -1,0 +1,922 @@
+EBGUIDE 6.12.0.211022102259;
+
+GtfContainer_template(abc16f1e-4157-4f01-912f-28c58856d605)
+{
+	name: "list"
+	interface_properties: property_list [
+		wp<int>(b5edcb7f-f124-46d3-8869-8b5b7e749ef2)
+		{
+			name: "windowPosOut"
+			value: @4503cf04-5d94-48f3-b34d-36a782d9c03c (objectref<int>)
+		},
+		wp<int>(9b9e8184-d4b1-44d8-8786-6b9352310df2)
+		{
+			name: "windowPosInternal"
+			value: @ae6ca0f9-476d-4900-bca3-9edbff316f7b (objectref<int>)
+		},
+		wp<int>(6cdb6ac7-838d-4c2a-bd24-a8472dd3aeeb)
+		{
+			name: "windowSizeOut"
+			value: @29b4037c-7075-42b8-bb5c-e0826b7ff338 (objectref<int>)
+		},
+		wp<stringlist>(7df1ce81-4e05-4acd-9fae-6ab99b96bd21)
+		{
+			name: "windowListIn"
+			value: @b7a33ba5-e658-48f7-bb5f-bbc861006ad3 (objectref<stringlist>)
+		},
+		wp<float>(27f9b31b-e1ae-4e74-bb7a-4fe41a5238cc)
+		{
+			name: "globalScaling"
+			value: @a5c0c102-5d95-4bdd-a78f-36b251f4dc48 (objectref<float>)
+		},
+		wp<stringlist>(ee97f371-dd16-464a-896e-fd98a3710503)
+		{
+			name: "data"
+			value: @f9ffbb45-82f9-42dc-8f59-6a8eb70e216b (objectref<stringlist>)
+		},
+		wp<boollist>(a9ccb3dc-f5e6-4f33-9ea0-360ea3f9376d)
+		{
+			name: "dataValid"
+			value: @a7499ca4-b122-40e9-a43d-b5c9c83ccd87 (objectref<boollist>)
+		},
+		wp<int>(96370e34-9407-4241-a5df-977b44481590)
+		{
+			name: "x"
+			value: @5618f33d-551a-4d56-8aa3-f942cfddbb78 (objectref<int>)
+		},
+		wp<int>(0f94bd93-ff6b-4084-8ddc-bf9dbacd3a50)
+		{
+			name: "y"
+			value: @d562341b-1d1b-4849-b650-5ae0d3a7285c (objectref<int>)
+		}]
+	structure: GtfContainer(0f41d9af-cfde-42ce-beda-95369526eb2e)
+	{
+		name: "list"
+		properties: property_list [
+			wp<bool>(8f78311c-414c-4716-989b-e907d0a4b7a5)
+			{
+				name: "visible"
+				value: true
+			},
+			wp<int>(214c6214-8369-42de-a0d6-e705e2017d1e)
+			{
+				name: "width"
+				value: 750
+			},
+			wp<int>(2e0d9066-6a46-46f7-ac03-f90fb09844c4)
+			{
+				name: "height"
+				value: 300
+			},
+			wp<int>(5618f33d-551a-4d56-8aa3-f942cfddbb78)
+			{
+				name: "x"
+				value: 0
+			},
+			wp<int>(d562341b-1d1b-4849-b650-5ae0d3a7285c)
+			{
+				name: "y"
+				value: 0
+			},
+			wp<stringlist>(f9ffbb45-82f9-42dc-8f59-6a8eb70e216b)
+			{
+				name: "data"
+				value: @bd1e0e5e-73e7-4cc2-859e-12a26f6dce03 (objectref<stringlist>)
+			},
+			wp<boollist>(a7499ca4-b122-40e9-a43d-b5c9c83ccd87)
+			{
+				name: "dataValid"
+				value: boollist []
+			},
+			wp<conditional_script>(8f6b47d8-6797-46d8-9a12-e88bf7650243)
+			{
+				name: "init"
+				value: conditional_script(a69b6836-122f-4c4f-b554-d0c6f2318a83)
+				{
+					triggerList: trigger_list(15085642-51f5-49f5-a84e-23e35f0ddc89)
+					{
+						script: "v:this.data" \
+							""
+					}
+					onTrigger: function<bool,bool>(66fa61a0-3e6a-493f-8fbf-076204e0936a)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	v:this->Instantiator.listLength = length v:this.data; " \
+							"	true" \
+							"}"
+					}
+				}
+			},
+			wp<int>(4baa58ec-7406-45a8-85e7-088680726b06)
+			{
+				name: "selectDistance"
+				value: 15
+			},
+			wp<int>(57c98713-0e03-494f-a8cb-c105ba81c4ca)
+			{
+				name: "selectedItem"
+				value: -1
+			},
+			wp<int>(3e319bd8-b22f-4e4e-8ece-db1e15ea0e50)
+			{
+				name: "selectItem"
+				value: int_scriptedValue(e6a7b7ac-8762-4a6f-a1e9-52b1ba9547f8)
+				{
+					triggerList: trigger_list(3ce1d726-4d73-407d-9c2b-0cadeb27ff99)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(f3903204-b620-41a2-92ac-e400676f4efa)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(43f0d7b5-5d5e-40cd-a40d-61c48e5e18f2)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this.selectedItem" \
+							"}"
+					}
+					write: function<bool,int>(200fc480-4ded-4a60-afd8-11a0e2910841)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	v:this.selectedItem = v:arg0;" \
+							"	true" \
+							"}"
+					}
+				}
+			}]
+		features: feature_list [
+			ViewPort(96ecfc34-3e74-48dd-b18f-3d309a2e4bd4)
+			{
+				base_properties: property_list [
+					wp<int>(c5a94743-e462-497b-9474-480e2654bf91)
+					{
+						name: "xOffset"
+						value: 0
+					},
+					wp<int>(67c1ab27-ee0d-4ae0-a305-38913e82b68c)
+					{
+						name: "yOffset"
+						value: 0
+					}]
+			}]
+		children: children_list [
+			GtfInstantiator(51b5f311-068c-4b33-a0cb-609df6ba866c)
+			{
+				name: "Instantiator"
+				properties: property_list [
+					wp<bool>(04ec5617-fcbb-4132-822a-d318283c0dbe)
+					{
+						name: "visible"
+						value: true
+					},
+					wp<int>(fb7891c0-025e-4d7c-854c-f13bef66dfee)
+					{
+						name: "width"
+						value: 700
+					},
+					wp<int>(ffdaf700-f592-4086-8f81-bca797d6edc4)
+					{
+						name: "height"
+						value: 300
+					},
+					wp<int>(67681bf5-8d1a-4a3d-b1a9-802e2a8f168d)
+					{
+						name: "x"
+						value: 0
+					},
+					wp<int>(05e93a75-4313-4b96-a49e-973be7325c9d)
+					{
+						name: "y"
+						value: 1
+					},
+					wp<int>(946f1cb0-5997-41b4-b549-b29d2c6004ca)
+					{
+						name: "numItems"
+						value: 9
+					},
+					wp<intlist>(d9190bd0-f022-4142-b95b-654473a06709)
+					{
+						name: "lineMapping"
+						value: intlist []
+					},
+					wp<bool>(3e4d45c7-9940-4743-9ba1-1384c031ac96)
+					{
+						name: "animRunning"
+						value: @a4dcf833-f006-43a6-bf27-a74d69efe74e (objectref<bool>)
+					},
+					wp<int>(86e9307f-cf9c-4a0c-90ed-80e0755f90ac)
+					{
+						name: "touchedItem"
+						value: 0
+					},
+					wp<int>(af8bc017-0add-413e-8aa0-5d9bff2d4223)
+					{
+						name: "yDown"
+						value: 0
+					},
+					wp<int>(db0248a0-fe98-4655-a65f-bd072a7a2e6e)
+					{
+						name: "yLast"
+						value: 0
+					},
+					wp<conditional_script>(55bf41cb-9259-4be9-9459-036e600dbc2c)
+					{
+						name: "set_window_pos_out"
+						value: conditional_script(819aea82-1a17-4118-b4d9-82de66731d76)
+						{
+							triggerList: trigger_list(ea48df0f-e2ec-4d58-aa8a-a000dcb2d114)
+							{
+								script: "v:this.firstListIndex" \
+									""
+							}
+							onTrigger: function<bool,bool>(47321128-e808-4e8a-9634-4059ef743497)
+							{
+								script: "function(v:arg0::bool)" \
+									"	{" \
+									"		v:this.windowPosInternal = v:this.firstListIndex" \
+									"	 " \
+									"	if (v:this.windowPosInternal  > 0)" \
+									"	{" \
+									"	  v:this.windowPosOut = v:this.windowPosInternal " \
+									"	}" \
+									"	else if (v:this.windowPosInternal  < (length v:this.windowListIn - v:this.windowSizeOut))" \
+									"	{" \
+									"	  v:this.windowPosOut = v:this.windowPosInternal ;" \
+									"	}" \
+									"	" \
+									"	false;" \
+									"}"
+							}
+						}
+					},
+					wp<int>(4503cf04-5d94-48f3-b34d-36a782d9c03c)
+					{
+						name: "windowPosOut"
+						value: 0
+					},
+					wp<int>(ae6ca0f9-476d-4900-bca3-9edbff316f7b)
+					{
+						name: "windowPosInternal"
+						value: 0
+					},
+					wp<int>(29b4037c-7075-42b8-bb5c-e0826b7ff338)
+					{
+						name: "windowSizeOut"
+						value: 0
+					},
+					wp<stringlist>(b7a33ba5-e658-48f7-bb5f-bbc861006ad3)
+					{
+						name: "windowListIn"
+						value: stringlist []
+					},
+					wp<int>(56595021-f161-49cd-860a-d428342a2827)
+					{
+						name: "timeDown"
+						value: 0
+					},
+					wp<float>(a5c0c102-5d95-4bdd-a78f-36b251f4dc48)
+					{
+						name: "globalScaling"
+						value: 0F
+					}]
+				features: feature_list [
+					TouchPressed(d4c97bd9-ee9e-4860-b780-6e59216b9992)
+					{
+						base_properties: property_list [
+							wp<function<bool,int,int,int,int>>(71e5f14b-38be-442e-b071-de50d9712609)
+							{
+								name: "touchPressed"
+								value: function<bool,int,int,int,int>(6b398a13-bfb8-4e45-a28e-516cdb956b86)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"	v:this.timeDown = f:system_time_ms();" \
+										"	v:this.yLast = v:y* 100 / f:round(v:this.globalScaling);" \
+										"	v:this.yDown = v:y* 100 / f:round(v:this.globalScaling);" \
+										"	" \
+										"	true" \
+										"}"
+								}
+							}]
+					},
+					TouchShortReleased(0279ffb5-2259-4b16-8444-11b7cff39ead)
+					{
+						base_properties: property_list [
+							wp<function<bool,int,int,int,int>>(5c563aef-6314-4fef-a80a-c25ab237d3eb)
+							{
+								name: "touchShortReleased"
+								value: function<bool,int,int,int,int>(0d7b433d-a0d8-4e69-a879-29c460870a4b)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"	let v:v=-1; " \
+										"	    v:deltaTime=(f:system_time_ms()-v:this.timeDown) " \
+										"	    v:y_scaled = v:y* 100 / f:round(v:this.globalScaling); " \
+										"	in" \
+										"	{" \
+										"	" \
+										"	  if (f:abs(v:this.yDown-v:y_scaled) < v:this->^.selectDistance)" \
+										"	  {" \
+										"	    v:this->^.selectItem = v:this.touchedItem;" \
+										"	    v:this->^->ScrollAnim.stopAnim(); {}" \
+										"	  }" \
+										"	  else" \
+										"	  {" \
+										"	    if (v:this.bounceValue != 0)" \
+										"	    {" \
+										"	      v:this->^->ScrollAnim.stopAnim();" \
+										"	      v:this.scrollOffset += v:this.bounceValue;" \
+										"	    }" \
+										"	    else" \
+										"	    {" \
+										"	      v:v = (v:this.yDown-v:y_scaled)* 100 / (v:deltaTime+1);" \
+										"	      v:this->^->ScrollAnim.scroll = v:v;" \
+										"	    }" \
+										"	  }" \
+										"	}" \
+										"	" \
+										"	true" \
+										"}"
+								}
+							}]
+					},
+					TouchMove(01ed8389-224f-40c1-8871-3e7a34a23034)
+					{
+						base_properties: property_list [
+							wp<function<bool,int,int,int,int>>(48dd71d0-81d7-49b2-b3a5-e1eafeef1eb6)
+							{
+								name: "touchMoved"
+								value: function<bool,int,int,int,int>(ce74e364-f5f0-47fd-95e7-7189a862d67a)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"	if (!v:this.animRunning)" \
+										"	{" \
+										"	  v:this.scrollOffset += v:this.yLast - v:y * 100 / f:round(v:this.globalScaling);" \
+										"	}  " \
+										"	else if (f:system_time_ms()-v:this.timeDown>150)" \
+										"	{ " \
+										"	  v:this->^->ScrollAnim.stopAnim();" \
+										"	  v:this.scrollOffset += v:this.yLast - v:y* 100 / f:round(v:this.globalScaling);" \
+										"	}	" \
+										"		v:this.yLast = v:y* 100 / f:round(v:this.globalScaling);" \
+										"	" \
+										"	true" \
+										"}"
+								}
+							}]
+					},
+					StateTouched(487f664c-4417-489b-bbfb-7452910d9ee0)
+					{
+						base_properties: property_list [
+							wp<bool>(a931ad1d-7921-45d1-b5cf-da55d883d2e7)
+							{
+								name: "touchable"
+								value: true
+							},
+							wp<bool>(a5abdda8-e027-4279-a802-a52f6f718550)
+							{
+								name: "touched"
+								value: false
+							},
+							wp<int>(f880b19a-1d66-4432-bf2c-de149bacf64c)
+							{
+								name: "touchPolicy"
+								value: 1
+							},
+							wp<int>(39d731cb-dd65-47bc-9e52-2fdb63692075)
+							{
+								name: "touchBehavior"
+								value: 0
+							}]
+					},
+					LayoutPolicyList(6a70b2d6-a3c3-4bac-ad5f-bbeb2a357e45)
+					{
+						base_properties: property_list [
+							wp<int>(ddb754cb-81ee-4be9-81e0-ce41069f93e2)
+							{
+								name: "layoutDirection"
+								value: 1
+							},
+							wp<int>(67a3bd6e-bdd4-4173-ae86-f19e89e8f839)
+							{
+								name: "scrollOffset"
+								value: 0
+							},
+							wp<bool>(1756c08f-254f-4a68-8ea2-a70794520e1d)
+							{
+								name: "scrollOffsetRebase"
+								value: false
+							},
+							wp<int>(39541afd-88c8-4965-bf4b-c2d768ccc2ee)
+							{
+								name: "firstListIndex"
+								value: 0
+							},
+							wp<int>(5bd6ec0c-2732-469a-aced-48de234f8217)
+							{
+								name: "scrollIndex"
+								value: 0
+							},
+							wp<int>(d853b4da-29fd-4c47-afdf-2847796a31c3)
+							{
+								name: "scrollValue"
+								value: 0
+							},
+							wp<int>(d7ef303b-9d87-41d9-862a-a86a2f052ca4)
+							{
+								name: "scrollValueMax"
+								value: 253
+							},
+							wp<int>(94293f0b-b9ee-45f1-b66a-e0bf18b33485)
+							{
+								name: "scrollValueMin"
+								value: 0
+							},
+							wp<int>(fcfb399c-a2e7-4ddd-82e6-49eab9cd62e1)
+							{
+								name: "bounceValue"
+								value: 0
+							},
+							wp<int>(0b809c88-3d88-46f5-9aa1-ef7217e0023c)
+							{
+								name: "bounceValueMax"
+								value: 100
+							},
+							wp<int>(c7078409-4cbb-4081-9615-7c0a7976d61f)
+							{
+								name: "segments"
+								value: 1
+							},
+							wp<int>(b934cb9e-70c1-42f9-8032-113a4b38d5bb)
+							{
+								name: "listLength"
+								value: 50
+							},
+							wp<bool>(4900aab5-4e9e-425e-b8f8-6a511b955cbe)
+							{
+								name: "wrapAround"
+								value: false
+							}]
+					}]
+				children: children_list [
+					GtfContainer(8cf86819-d6a7-425a-aa87-8c3411d2c084)
+					{
+						name: "Item"
+						properties: property_list [
+							wp<bool>(d00ee015-6484-4135-b22c-8752f7d8a06d)
+							{
+								name: "visible"
+								value: true
+							},
+							wp<int>(c0e5eb97-6095-4ceb-b195-be8fe11cdddf)
+							{
+								name: "width"
+								value: 700
+							},
+							wp<int>(c7fae320-9fe0-4ae7-a96f-4272fb427712)
+							{
+								name: "height"
+								value: 40
+							},
+							wp<int>(9f0e35fa-f51b-4936-a1c6-5c47b101938b)
+							{
+								name: "x"
+								value: 0
+							},
+							wp<int>(b44e9972-2a75-4696-92cc-d59c4ee18321)
+							{
+								name: "y"
+								value: 0
+							},
+							wp<bool>(ea0cdcb3-18ff-44eb-b4f8-01c0eec1589f)
+							{
+								name: "hovered"
+								value: false
+							},
+							wp<bool>(c831417c-e0f7-4a3c-b0a5-3255e6c7f269)
+							{
+								name: "selected"
+								value: false
+							},
+							wp<conditional_script>(2d4ba2e2-f54b-4aed-9fad-9518e65fcf41)
+							{
+								name: "updatedSelected"
+								value: conditional_script(70e2da91-b620-41da-bbbd-6074ac76b82a)
+								{
+									triggerList: trigger_list(93cab503-1339-4d87-82af-bcbc699b4e4a)
+									{
+										script: "v:this->^->^.selectedItem" \
+											"v:this.listIndex" \
+											""
+									}
+									onTrigger: function<bool,bool>(4d5f52e0-d6b2-4cfd-bf12-026ad3f7e7a2)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	v:this.selected = v:this.listIndex == v:this->^->^.selectedItem;" \
+											"	true" \
+											"}"
+									}
+								}
+							}]
+						features: feature_list [
+							MoveOut(5c6b28b7-e5dc-462f-886c-aafc12ad89a7)
+							{
+								base_properties: property_list [
+									wp<function<bool,int,int,int,int>>(65760a05-6328-48b9-b55d-46e1cc331c60)
+									{
+										name: "moveOut"
+										value: function<bool,int,int,int,int>(34965c6f-f404-4bf7-9a17-804af0a4f7eb)
+										{
+											script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+												"{" \
+												"	v:this.hovered = false;" \
+												"	true;" \
+												"}"
+										}
+									}]
+							},
+							MoveIn(48e9c8e9-5a05-47df-a832-f5c85f883936)
+							{
+								base_properties: property_list [
+									wp<function<bool,int,int,int,int>>(0548c2a6-6bb7-4fd1-8f85-51f9859b37df)
+									{
+										name: "moveIn"
+										value: function<bool,int,int,int,int>(3cea6e53-937f-4751-8bdb-809f6caf1dbf)
+										{
+											script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+												"{" \
+												"	v:this.hovered = true;" \
+												"	true;" \
+												"}"
+										}
+									}]
+							},
+							TouchPressed(8b61019e-d121-424e-8ad4-4362a2fdefd5)
+							{
+								base_properties: property_list [
+									wp<function<bool,int,int,int,int>>(142ba491-4181-4149-8394-59c5eb0f0756)
+									{
+										name: "touchPressed"
+										value: function<bool,int,int,int,int>(727d546a-8bcf-4176-bdb8-51a727e4d11a)
+										{
+											script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+												"{" \
+												"	v:this->^.touchedItem = v:this.listIndex;" \
+												"	" \
+												"	false" \
+												"}"
+										}
+									}]
+							},
+							StateTouched(9d037d32-7af0-46ec-8be2-5fa0b15d1477)
+							{
+								base_properties: property_list [
+									wp<bool>(4d6811a4-a5eb-4ffb-8df3-de5ff629d9c0)
+									{
+										name: "touchable"
+										value: true
+									},
+									wp<bool>(f9eea525-01e1-428b-8541-30855fabbcd8)
+									{
+										name: "touched"
+										value: false
+									},
+									wp<int>(e8a5e8f2-9345-42af-b6af-104594bccc3f)
+									{
+										name: "touchPolicy"
+										value: 0
+									},
+									wp<int>(eca08e01-70ac-4166-aa32-8b27bf3f133a)
+									{
+										name: "touchBehavior"
+										value: 0
+									}]
+							},
+							LayoutPolicyListItem(bc2623ec-6c75-4a70-a99b-ff6547b40a3a)
+							{
+								base_properties: property_list [
+									wp<int>(dbd8a852-7874-4eeb-8e85-5cfa796124ac)
+									{
+										name: "listIndex"
+										value: 0
+									}]
+							}]
+						children: children_list [
+							GtfLabel(67058381-9afd-4c6c-ae0d-396fbbecb1fa)
+							{
+								name: "Label"
+								properties: property_list [
+									wp<bool>(d1184a1e-2e80-45b1-b5b7-48cabae44795)
+									{
+										name: "visible"
+										value: true
+									},
+									wp<int>(2b192fd4-89d8-4a19-b6c7-a31360604fe3)
+									{
+										name: "width"
+										value: 680
+									},
+									wp<int>(ec0a5c2a-103d-4eab-a393-d0a360b1aedd)
+									{
+										name: "height"
+										value: @c7fae320-9fe0-4ae7-a96f-4272fb427712 (objectref<int>)
+									},
+									wp<int>(22e6d4ba-084c-41be-877a-a3359c56d05b)
+									{
+										name: "x"
+										value: 20
+									},
+									wp<int>(fcb05180-e1e1-40b6-8540-b7bcb406b3eb)
+									{
+										name: "y"
+										value: 0
+									},
+									wp<string>(2799cf37-8dce-4606-9ec2-fda87b836653)
+									{
+										name: "text"
+										value: string_scriptedValue(9284ffca-e700-4330-9bd2-addc7e093107)
+										{
+											triggerList: trigger_list(c13e0a1c-25f4-4f3e-8c0b-e5e6bf3c3cb6)
+											{
+												script: "v:this->^->^->^.data" \
+													"v:this->^->^->^.dataValid" \
+													""
+											}
+											onTrigger: function<bool,bool>(b18b2232-f35d-4821-a277-efec395f3ceb)
+											{
+												script: "function(v:arg0::bool)" \
+													"{" \
+													"	true" \
+													"}"
+											}
+											read: function<string>(12065ca2-c809-4762-8f33-7371cb08e6d4)
+											{
+												script: "function()" \
+													"{" \
+													"	if ((v:this->^.listIndex < length v:this->^->^->^.dataValid)" \
+													"	    && (v:this->^->^->^.dataValid[v:this->^.listIndex]))" \
+													"	{" \
+													"	  v:this->^->^->^.data[v:this->^.listIndex]" \
+													"	}" \
+													"	else" \
+													"	{" \
+													"	 \"Updating...\"" \
+													"	}" \
+													"}"
+											}
+											write: function<bool,string>(e03ca213-8484-4c42-a9d8-d6fa09d391be)
+											{
+												script: "function(v:arg0::string)" \
+													"{" \
+													"	// todo: auto generated return value, please adapt" \
+													"	false" \
+													"}"
+											}
+										}
+									},
+									wp<color>(d13a787f-27d1-4e1a-8196-2140f32423d7)
+									{
+										name: "textColor"
+										value: #FFFFFFFF
+									},
+									wp<font>(5a219f88-08c1-4b75-9115-4d561f6b5d07)
+									{
+										name: "font"
+										value: font_resource(67edcbb0-d199-41f6-8c81-b9b830446bfa)
+										{
+											sourceType: "model"
+											source: "resources"
+											file: "fonts\\PT_Sans.ttf"
+											size: 22
+										}
+									},
+									wp<int>(3d79cc50-6f7f-480e-980c-2d5ccb366784)
+									{
+										name: "horizontalAlign"
+										value: 0
+									},
+									wp<int>(5846946e-58ee-42a8-8586-a01bf7e8c870)
+									{
+										name: "verticalAlign"
+										value: 0
+									}]
+								features: feature_list []
+								children: children_list []
+							}]
+					}]
+			},
+			GtfParallelAnimation(2f144313-eeb6-436f-986d-cdd5072323a9)
+			{
+				name: "ScrollAnim"
+				properties: property_list [
+					wp<bool>(1d9a57e7-19c7-4788-a289-4b1934ae8a1e)
+					{
+						name: "enabled"
+						value: true
+					},
+					wp<int>(f3c55e50-d1e5-49ac-a0e9-8b5a19c4f2f8)
+					{
+						name: "repeat"
+						value: 1
+					},
+					wp<bool>(bf55c9bd-f105-4a06-a30c-6186f690d6a9)
+					{
+						name: "alternating"
+						value: false
+					},
+					wp<float>(a89a0313-5976-483b-8a74-626c9fe24823)
+					{
+						name: "scale"
+						value: 1F
+					},
+					wp<function<void,int,bool>>(02ad2ec3-4a48-41fe-b556-a1682d1f9c89)
+					{
+						name: "onPlay"
+						value: function<void,int,bool>(2581a9d8-6d4c-42c5-b597-fe783681e2ee)
+						{
+							script: "function(v:animation_time::int, v:forward::bool)" \
+								"{" \
+								"   v:this.animRunning = true;" \
+								"}"
+						}
+					},
+					wp<function<void,int>>(05052b87-d174-4aa1-ae4c-969868baa42b)
+					{
+						name: "onPause"
+						value: function<void,int>(160de2c7-3fc4-49fc-9c26-ed0d39d4a318)
+						{
+							script: "function(v:animation_time::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+					},
+					wp<function<void,int,int>>(57fbfee8-5a2d-443a-97ed-96b64d698e65)
+					{
+						name: "onTerminate"
+						value: function<void,int,int>(434b85f8-8524-423f-93b5-3864603d35b3)
+						{
+							script: "function(v:animation_time::int, v:terminate::int)" \
+								"{" \
+								"	v:this.animRunning = false;" \
+								"}"
+						}
+					},
+					wp<bool>(a4dcf833-f006-43a6-bf27-a74d69efe74e)
+					{
+						name: "animRunning"
+						value: false
+					},
+					wp<int>(f3014b9d-84b6-41a8-93ab-9399ebb6f266)
+					{
+						name: "scroll"
+						value: int_scriptedValue(919f4850-570a-4e5c-8c20-4ba54e055388)
+						{
+							triggerList: trigger_list(c5b54690-228d-4419-975b-ccabfbbe297d)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(84e95dae-1e06-4459-81b3-666a1eaa20e1)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<int>(cd560810-6843-4f8d-b77d-42bf5bc12e63)
+							{
+								script: "function()" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	0" \
+									"}"
+							}
+							write: function<bool,int>(c00b67a9-7983-4380-a36b-8e42d5825576)
+							{
+								script: "function(v:arg0::int)" \
+									"{" \
+									"	if ( !v:this.animRunning )" \
+									"	{  " \
+									"	  v:this.speedup = 1;" \
+									"	  v:this->Curve.duration = 2000;" \
+									"	  v:this->Curve.start = v:this->^->Instantiator.scrollOffset;" \
+									"	  v:this->Curve.end = v:this->Curve.start + (v:this.velocity * v:arg0);" \
+									"	  f:animation_play(v:this);" \
+									"	  {}" \
+									"	}" \
+									"	else if ((v:arg0*(v:this->Curve.end-v:this->Curve.start))<0) // scroll direction changed" \
+									"	{" \
+									"	  f:animation_cancel(v:this);" \
+									"	  v:this->Curve.start = v:this->^->Instantiator.scrollOffset;" \
+									"	  v:this->Curve.end = v:this->Curve.start + (v:this.velocity * v:arg0);" \
+									"	  f:animation_play(v:this);" \
+									"	  {}" \
+									"	}" \
+									"	else" \
+									"	{" \
+									"	  v:this.speedup += 1;" \
+									"	  f:animation_cancel(v:this);" \
+									"	  v:this->Curve.start = v:this->^->Instantiator.scrollOffset;" \
+									"	  v:this->Curve.end += v:this.speedup * (v:this.velocity * v:arg0);" \
+									"	  v:this->Curve.duration = 2000;" \
+									"	  f:animation_play(v:this);" \
+									"	  {}" \
+									"	}" \
+									"	true" \
+									"}"
+							}
+						}
+					},
+					wp<int>(839ff079-82b6-4fa5-ac8e-f303f19e71b4)
+					{
+						name: "speedup"
+						value: 0
+					},
+					wp<int>(87bc1e83-3cb3-4293-b30d-b8d24875c0ac)
+					{
+						name: "velocity"
+						value: 2
+					},
+					wp<function<bool>>(5b21f6de-1c32-4e5f-8986-7beac531b249)
+					{
+						name: "stopAnim"
+						value: function<bool>(3c3c3fc6-4774-4a50-a864-390c93209ffb)
+						{
+							script: "function()" \
+								"{" \
+								"  if (v:this.animRunning)" \
+								" {" \
+								"  f:animation_cancel(v:this)" \
+								" }" \
+								" false" \
+								"}"
+						}
+					}]
+				features: feature_list []
+				children: children_list [
+					GtfFastStartS32(89a28d7c-f93a-480d-8b60-81c11a23ac4d)
+					{
+						name: "Curve"
+						properties: property_list [
+							wp<bool>(f95d15d8-6380-492e-84cb-1ea2f17896d6)
+							{
+								name: "enabled"
+								value: true
+							},
+							wp<int>(db4d14aa-8554-45ee-a211-f8969dc6ea69)
+							{
+								name: "delay"
+								value: 0
+							},
+							wp<int>(bae98f8b-ea97-49af-8eab-a5439c3c7cf0)
+							{
+								name: "duration"
+								value: 1000
+							},
+							wp<int>(d7952ed8-f231-47d1-a39f-7a2d381efb55)
+							{
+								name: "repeat"
+								value: 1
+							},
+							wp<bool>(2cf3f5f4-7cb5-4203-8bd4-1df7e9b79457)
+							{
+								name: "alternating"
+								value: false
+							},
+							wp<bool>(581e3fc4-e397-42a1-ac16-da61caab4ae7)
+							{
+								name: "relative"
+								value: false
+							},
+							wp<int>(975575fd-bc47-4fc9-99d0-69af7c92686a)
+							{
+								name: "start"
+								value: 0
+							},
+							wp<int>(2d33833e-4653-4fbf-93a2-3d801ad775c5)
+							{
+								name: "end"
+								value: 1
+							},
+							wp<int>(7a23d79b-d14a-462f-adf9-5b0073f48205)
+							{
+								name: "target"
+								value: @67a3bd6e-bdd4-4173-ae86-f19e89e8f839 (objectref<int>)
+							}]
+						features: feature_list []
+						children: children_list []
+					}]
+			}]
+	}
+}

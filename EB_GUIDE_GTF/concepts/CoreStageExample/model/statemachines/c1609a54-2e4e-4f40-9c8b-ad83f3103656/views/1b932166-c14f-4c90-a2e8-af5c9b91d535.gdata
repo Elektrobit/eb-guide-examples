@@ -1,0 +1,121 @@
+EBGUIDE 6.12.0.211022102259;
+
+GtfView_template_instance(1b932166-c14f-4c90-a2e8-af5c9b91d535)
+{
+	name: "Homescreen"
+	template: @d9ee43bd-ee64-4c9f-904a-75cf1fd8f745 (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(462a316d-f6e9-458b-bf6c-d40b9a79c8f6)
+		{
+			name: "text"
+			value: "Core lifecycle demo"
+		},
+		wp<string>(f43ef040-7a55-491f-965c-b7339ab0f145)
+		{
+			name: "description"
+			value: "The HMI prints core stage information as they are loaded."
+		}]
+	user_properties: property_list [
+		wp<conditional_script>(b234b750-1195-41a3-9958-979cdd15f183)
+		{
+			name: "Shutdown"
+			value: conditional_script(fbdcfba3-5f7b-4167-9290-7d65c4ba4532)
+			{
+				triggerList: trigger_list(50463ea1-3874-4209-84f0-77f44cb5dddf)
+				{
+					script: "ev:end" \
+						""
+				}
+				onTrigger: function<bool,bool>(7a07e732-5987-4dc6-8135-d844610eb2fe)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	match_event v:event = ev:end in" \
+						"{" \
+						"	f:shutdown()" \
+						"}" \
+						"" \
+						"	false" \
+						"}"
+				}
+			}
+		}]
+	children: children_list [
+		GtfLabel(af45cde5-6610-4130-9c57-6a1c02e3ac5f)
+		{
+			name: "Label 1"
+			properties: property_list [
+				wp<bool>(f8d644a3-ca39-402f-a96b-0a0d8f057ce4)
+				{
+					name: "visible"
+					value: true
+				},
+				wp<int>(5db0d949-94cb-49fd-bfef-cac4cd49022e)
+				{
+					name: "width"
+					value: 776
+				},
+				wp<int>(8ed61941-41ee-4f68-966b-d8e026db6d20)
+				{
+					name: "height"
+					value: 167
+				},
+				wp<int>(0a6c077b-6afb-40f4-927e-8130f461d3c6)
+				{
+					name: "x"
+					value: 12
+				},
+				wp<int>(3c4aaca2-0a60-44e7-a39b-d0041b18c6b9)
+				{
+					name: "y"
+					value: 151
+				},
+				wp<string>(c385718c-ac72-4e92-b95e-4e357c722b52)
+				{
+					name: "text"
+					value: "You have started the core life cycle application model! "
+				},
+				wp<color>(12b61971-5717-4ff8-b4fc-d39850c61d65)
+				{
+					name: "textColor"
+					value: #FFFFFFFF
+				},
+				wp<font>(8909f348-44cb-4164-8245-53ddcad49e3d)
+				{
+					name: "font"
+					value: font_resource(a7fff87a-cf25-49b4-81a8-1c4b287cfbd1)
+					{
+						sourceType: "model"
+						source: "resources"
+						file: "fonts\\PT_Sans.ttf"
+						size: 30
+					}
+				},
+				wp<int>(319b9c22-df89-4a98-b247-d22b31f6f0ed)
+				{
+					name: "horizontalAlign"
+					value: 1
+				},
+				wp<int>(bafcf351-72b4-4fc1-a699-183896e40e58)
+				{
+					name: "verticalAlign"
+					value: 0
+				}]
+			features: feature_list [
+				MultiLine(2a305da9-c801-49f6-b056-a71bc772e60e)
+				{
+					base_properties: property_list [
+						wp<int>(a9072209-c521-40fa-b5c1-530d8e280ea5)
+						{
+							name: "lineOffset"
+							value: 0
+						},
+						wp<int>(9cfee585-4876-4434-ab41-485b54322745)
+						{
+							name: "maxLineCount"
+							value: 0
+						}]
+				}]
+			children: children_list []
+		}]
+}

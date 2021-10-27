@@ -1,0 +1,127 @@
+EBGUIDE 6.12.0.211022102259;
+
+GtfView_template_instance(959c45f9-b143-4ea5-906b-cb3d13c5a2c0)
+{
+	name: "View"
+	template: @97bfae15-8eec-4a27-be28-646b2cd5f0f1 (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<int>(fcc141a6-2794-4e6c-acdd-e5669a3108bc)
+		{
+			name: "width"
+			value: @5ee7eea8-a586-47ac-a346-4a9447a97268 (objectref<int>)
+		},
+		wp<int>(abbe2ab4-7e4c-47d6-86db-c4e226284bca)
+		{
+			name: "height"
+			value: @e10f1b82-873d-4d82-99ec-e1ab3ee5791e (objectref<int>)
+		},
+		wp<string>(42fe042a-354f-4d8a-b095-501580594a97)
+		{
+			name: "description"
+			value: "An HMI model for sine curve label shape widget feature."
+		},
+		wp<string>(3cffa383-dbd4-4e0f-9462-04ea6e65212d)
+		{
+			name: "text"
+			value: "Label shape example"
+		}]
+	user_properties: property_list []
+	children: children_list [
+		GtfLabel(3cd2a0fd-7dbc-416b-b1cb-385d3d5312ea)
+		{
+			name: "SineWaveLabel"
+			properties: property_list [
+				wp<bool>(83fb01c4-1ee9-40e2-8583-91ecf8c1f9ff)
+				{
+					name: "visible"
+					value: true
+				},
+				wp<int>(42d16bbe-f7d7-4c74-9975-dd4de7999c12)
+				{
+					name: "width"
+					value: 672
+				},
+				wp<int>(35c8bfe8-cc2c-4708-afb6-e4e4efdd5622)
+				{
+					name: "height"
+					value: 275
+				},
+				wp<int>(102cc934-8c5c-4760-96ff-afd7e0af4bd5)
+				{
+					name: "x"
+					value: 76
+				},
+				wp<int>(fef1c82a-6794-4198-ada9-65a697d07bea)
+				{
+					name: "y"
+					value: 97
+				},
+				wp<string>(555b4c3b-1e7a-4fb1-8382-e6746bad4084)
+				{
+					name: "text"
+					value: "Elektrobit Automotive GmbH! Driving the future of automotive technology!"
+				},
+				wp<color>(1bf22d1f-7c19-4b26-91b3-87291f0449c9)
+				{
+					name: "textColor"
+					value: #FFFFFFFF
+				},
+				wp<font>(3a30c11f-4f78-46d8-8c30-17ec5505767c)
+				{
+					name: "font"
+					value: font_resource(d62c5c59-4260-48f6-8dee-a9b06d6b654f)
+					{
+						sourceType: "model"
+						source: "resources"
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+				},
+				wp<int>(c57e251b-e0a7-47fa-b144-235a5ffa6622)
+				{
+					name: "horizontalAlign"
+					value: @65018900-9448-4ed4-9c0a-d5886c13e7f3 (objectref<int>)
+				},
+				wp<int>(32762029-9ee2-40c9-abf5-6228e619bbe0)
+				{
+					name: "verticalAlign"
+					value: 0
+				}]
+			features: feature_list [
+				SineLabelShape(876a6eb0-99be-4276-af4e-16d143200656)
+				{
+					base_properties: property_list [
+						wp<bool>(61b0a621-5875-4fc9-9194-a5748cd35166)
+						{
+							name: "enabled"
+							value: true
+						},
+						wp<float>(6cb032ff-ebd5-43fd-95df-9052aed948bf)
+						{
+							name: "amplitude"
+							value: @76e0f782-6619-4aba-9145-88b49f18912e (objectref<float>)
+						},
+						wp<float>(6afd87ce-ee69-48f2-a3fc-a0783865de34)
+						{
+							name: "periodLength"
+							value: 400F
+						},
+						wp<float>(1163c090-3ce5-4fb3-9539-2e2f243cb525)
+						{
+							name: "horizontalOffset"
+							value: 80F
+						},
+						wp<float>(8160fab6-7d20-4a67-9819-d595746fb464)
+						{
+							name: "verticalOffset"
+							value: 150F
+						},
+						wp<float>(3cab330e-90ea-4da3-a235-48290c24693a)
+						{
+							name: "cycleCount"
+							value: 2F
+						}]
+				}]
+			children: children_list []
+		}]
+}

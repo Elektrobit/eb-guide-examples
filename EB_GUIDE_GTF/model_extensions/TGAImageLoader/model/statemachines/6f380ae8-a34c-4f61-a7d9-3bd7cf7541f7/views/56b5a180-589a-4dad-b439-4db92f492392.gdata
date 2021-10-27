@@ -1,0 +1,38 @@
+EBGUIDE 6.12.0.211022102259;
+
+GtfView_template_instance(56b5a180-589a-4dad-b439-4db92f492392)
+{
+	name: "Titleview"
+	template: @18edd3fd-90d3-4e6e-bc08-4db08f8b05ee (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(c04de5c5-9383-4c4e-bb50-6f54046a432f)
+		{
+			name: "title_text"
+			value: "Loading TGA image data"
+		},
+		wp<string>(e3e01ea9-6f2e-45b7-aafe-494d51470ae9)
+		{
+			name: "short desc_text"
+			value: "Example of adding a custom decoder in order to support TGA images in a HMI model."
+		},
+		wp<string>(3ad8cea9-b7e7-4476-8bf0-74135b95cc94)
+		{
+			name: "long desc_text"
+			value: "Documentation reference:\\nBackground information > Interaction between HMI and applications"
+		},
+		wp<function<bool,int,int,int,int>>(418c099a-605b-457d-ba69-2829539e6126)
+		{
+			name: "touchPressed"
+			value: function<bool,int,int,int,int>(0d8f8101-004c-4bdd-b692-df0d01278531)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	cancel_fire ev:next; // interrupt fire delayed (Titleview's entry action)" \
+					"	fire ev:next();" \
+					"    false;" \
+					"}"
+			}
+		}]
+	user_properties: property_list []
+	children: children_list []
+}

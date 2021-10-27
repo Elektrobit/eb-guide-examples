@@ -1,0 +1,106 @@
+EBGUIDE 6.12.0.211022102259;
+
+GtfView_template_instance(f78c357b-2769-4bd3-93b1-8e316ec2ea21)
+{
+	name: "View 1"
+	template: @d9ee43bd-ee64-4c9f-904a-75cf1fd8f745 (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(d908dca4-acfc-42ef-8587-58b811ee3e31)
+		{
+			name: "text"
+			value: "Basic application demo"
+		},
+		wp<string>(f0ba9a07-ac39-4aec-998d-39db6a30a5d3)
+		{
+			name: "description"
+			value: "An HMI model can load different applications."
+		}]
+	user_properties: property_list [
+		wp<conditional_script>(0722092f-a9e2-44ca-888b-f47856febc25)
+		{
+			name: "Shutdown"
+			value: conditional_script(16eedd54-7dcb-40a7-aef4-b0b4e8941d65)
+			{
+				triggerList: trigger_list(e11320d2-265f-40b5-bd1a-c945aea227c3)
+				{
+					script: "ev:end" \
+						""
+				}
+				onTrigger: function<bool,bool>(fd2afdf1-3243-4435-9e34-0e0767fe1ecc)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	match_event v:event = ev:end in" \
+						"{" \
+						"	f:shutdown()" \
+						"}" \
+						"	false" \
+						"}"
+				}
+			}
+		}]
+	children: children_list [
+		GtfLabel(56031758-578b-40af-9014-2fe23c81b6af)
+		{
+			name: "Label 1"
+			properties: property_list [
+				wp<bool>(1995e117-248d-4b9a-9aad-71b4c6019f67)
+				{
+					name: "visible"
+					value: true
+				},
+				wp<int>(7e86f9c8-d4ef-4533-b61e-69a7e6c04453)
+				{
+					name: "width"
+					value: 755
+				},
+				wp<int>(b3cef389-5e56-45e6-b968-354c96d88983)
+				{
+					name: "height"
+					value: 117
+				},
+				wp<int>(86d5da4b-bf36-497b-847e-794a65b566e8)
+				{
+					name: "x"
+					value: 24
+				},
+				wp<int>(66db5a6e-82e2-4708-8cf9-aa5cb2b9d8a3)
+				{
+					name: "y"
+					value: 183
+				},
+				wp<string>(af688428-fdd0-435a-a4ba-fbf2bd42adc9)
+				{
+					name: "text"
+					value: "You have started the Basic application plugin model! "
+				},
+				wp<color>(176989a6-e045-4e0f-8a3e-195d1d4b95ff)
+				{
+					name: "textColor"
+					value: #FFFFFFFF
+				},
+				wp<font>(dd3dcda8-4f78-4122-9bb3-d48a82e886aa)
+				{
+					name: "font"
+					value: font_resource(edc9a5c3-c46a-4c4c-be68-980502311511)
+					{
+						sourceType: "model"
+						source: "resources"
+						file: "fonts\\PT_Sans.ttf"
+						size: 30
+					}
+				},
+				wp<int>(d0b37f68-da09-48c7-86fb-69251f7ee96a)
+				{
+					name: "horizontalAlign"
+					value: 1
+				},
+				wp<int>(c19f59d5-1cdb-4a03-99b3-d3d87c6a163b)
+				{
+					name: "verticalAlign"
+					value: 0
+				}]
+			features: feature_list []
+			children: children_list []
+		}]
+}

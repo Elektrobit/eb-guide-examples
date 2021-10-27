@@ -1,0 +1,21 @@
+{
+    "features" : [
+            {
+                "name" : "GtfFocusRectColorFeature",
+                "alias" : "FocusRectColor",
+                "category" : "Appearance",
+                "description" : "Adds a different background color for a focused rectangle.",
+                "requirement" : "w:GtfRectangle&&wf:StateFocused",
+                "properties" : [
+                    {
+                        "name" : "focusedColor",
+                        "type" : "color",
+                        "category" : "Common",
+                        "description" : "Background color for the focused rectangle.",
+                        "defaultValue" : "169,169,169,255"
+                    }
+                ],
+                "controller" : "focusedwidgetfeature::FocusRectColorFeature"
+            }
+    ]
+}

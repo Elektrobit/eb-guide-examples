@@ -1,0 +1,186 @@
+EBGUIDE 6.12.0.211022102259;
+
+GtfRectangle_template(880b1913-33e4-4201-aab5-5a187b2dce25)
+{
+	name: "T_FocusableRectangle"
+	interface_properties: property_list [
+		wp<bool>(944a5caa-d257-41e9-8a75-f1f4c7c9f015)
+		{
+			name: "focused"
+			value: @2a301612-3aa0-4e4a-a6f0-ba2dee3f1c8a (objectref<bool>)
+		},
+		wp<int>(c6eaa9bd-1e2a-48ef-99e3-4b7f94149d3c)
+		{
+			name: "width"
+			value: @544fd86a-b871-4f3d-bc68-cf96aeeeffa2 (objectref<int>)
+		},
+		wp<int>(c2b3cb9a-0477-4fab-8420-3b24c977f7a5)
+		{
+			name: "height"
+			value: @89e29de8-b378-4487-855b-f964312c6301 (objectref<int>)
+		},
+		wp<int>(d8aeb81c-54da-4445-baf0-6d5f179bfff1)
+		{
+			name: "x"
+			value: @937fbb2b-8995-4ee2-9b0a-440421e6d90e (objectref<int>)
+		},
+		wp<int>(4576bc91-dd07-42d5-95ed-edac19144f66)
+		{
+			name: "y"
+			value: @d62de911-6a72-4c1a-aaea-bcee42b8ac16 (objectref<int>)
+		},
+		wp<function<bool,int,int,int,int>>(51921266-dd12-43e0-9361-0a47e139854d)
+		{
+			name: "touchShortReleased"
+			value: @243a41f7-14a1-4d7d-9d37-64d6390a47bd (objectref<function<bool,int,int,int,int>>)
+		}]
+	structure: GtfRectangle(df50bf9f-86af-4500-bb6e-9df5f032f844)
+	{
+		name: "Rectangle 1"
+		properties: property_list [
+			wp<bool>(74f3aa1e-8528-45e9-a090-529089b22a4f)
+			{
+				name: "visible"
+				value: true
+			},
+			wp<int>(544fd86a-b871-4f3d-bc68-cf96aeeeffa2)
+			{
+				name: "width"
+				value: 100
+			},
+			wp<int>(89e29de8-b378-4487-855b-f964312c6301)
+			{
+				name: "height"
+				value: 100
+			},
+			wp<int>(937fbb2b-8995-4ee2-9b0a-440421e6d90e)
+			{
+				name: "x"
+				value: 0
+			},
+			wp<int>(d62de911-6a72-4c1a-aaea-bcee42b8ac16)
+			{
+				name: "y"
+				value: 0
+			},
+			wp<color>(de5c56a4-2a36-4cfb-8b7c-ecc811307b6d)
+			{
+				name: "fillColor"
+				value: #008000FF
+			},
+			wp<color>(78c1f612-2dd8-478d-8000-de58e77d1874)
+			{
+				name: "focusedBorderColor"
+				value: #FF0000FF
+			},
+			wp<color>(1d04c349-6628-42f6-ac1f-43e26301dfbe)
+			{
+				name: "defaultBorderColor"
+				value: #008000FF
+			},
+			wp<conditional_script>(c9eab115-6fab-49f0-a655-5668a4541768)
+			{
+				name: "CheckFocus"
+				value: conditional_script(3ee71e5f-bfe8-4881-b7fb-9d3738b1b913)
+				{
+					triggerList: trigger_list(286939df-64bf-4df6-8b56-98bad3f8fe8f)
+					{
+						script: "v:this.focused" \
+							""
+					}
+					onTrigger: function<bool,bool>(e5052905-cf44-43ff-bfdc-3bf44144d658)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	if(v:this.focused)" \
+							"	{" \
+							"		" \
+							"		v:this.borderColor = v:this.focusedBorderColor" \
+							"		v:this.borderThickness = 5;" \
+							"	}" \
+							"	else" \
+							"	{" \
+							"		v:this.borderColor = v:this.defaultBorderColor" \
+							"		v:this.borderThickness = 0" \
+							"	}" \
+							"	false" \
+							"}"
+					}
+				}
+			}]
+		features: feature_list [
+			StateFocused(a846c163-0dcf-48f5-8111-090f2215b0f8)
+			{
+				base_properties: property_list [
+					wp<int>(1bd787bc-284c-4f62-b262-531f1fde6e5f)
+					{
+						name: "focusable"
+						value: 1
+					},
+					wp<bool>(2a301612-3aa0-4e4a-a6f0-ba2dee3f1c8a)
+					{
+						name: "focused"
+						value: false
+					}]
+			},
+			Border(b5837ad2-dff8-4fa0-8e93-3c549148f009)
+			{
+				base_properties: property_list [
+					wp<int>(400b6721-da5d-4cf1-985e-fc816a82eda1)
+					{
+						name: "borderThickness"
+						value: 0
+					},
+					wp<color>(394eabaf-b6d7-4a98-acab-993c06d7770e)
+					{
+						name: "borderColor"
+						value: #000000FF
+					},
+					wp<int>(7661a7a8-0086-4f8b-aecc-aa7fbfd28ceb)
+					{
+						name: "borderStyle"
+						value: 0
+					}]
+			},
+			StateTouched(30afcfee-c6df-4974-8a85-6a2e13b3bd51)
+			{
+				base_properties: property_list [
+					wp<bool>(eb0820c9-7a4d-4d06-bf80-7f45f9d4c0ff)
+					{
+						name: "touchable"
+						value: true
+					},
+					wp<bool>(85d52e57-af17-4fb6-b2b1-5e479af90ee2)
+					{
+						name: "touched"
+						value: false
+					},
+					wp<int>(7d04d908-61dd-4a6d-9d37-7086d22318f0)
+					{
+						name: "touchPolicy"
+						value: 0
+					},
+					wp<int>(e7bcfde9-0065-4271-9549-035bb883a684)
+					{
+						name: "touchBehavior"
+						value: 0
+					}]
+			},
+			TouchShortReleased(36676c08-67d4-4ac9-abbd-d847c6327a3f)
+			{
+				base_properties: property_list [
+					wp<function<bool,int,int,int,int>>(243a41f7-14a1-4d7d-9d37-64d6390a47bd)
+					{
+						name: "touchShortReleased"
+						value: function<bool,int,int,int,int>(2e203802-b0ff-4b86-a989-9ec5ab3e6a9b)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"    false" \
+								"}"
+						}
+					}]
+			}]
+		children: children_list []
+	}
+}

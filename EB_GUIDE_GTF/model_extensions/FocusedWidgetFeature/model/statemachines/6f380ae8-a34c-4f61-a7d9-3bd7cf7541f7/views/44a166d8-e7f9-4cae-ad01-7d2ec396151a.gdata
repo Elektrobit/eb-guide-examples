@@ -1,0 +1,133 @@
+EBGUIDE 6.12.0.211022102259;
+
+GtfView_template_instance(44a166d8-e7f9-4cae-ad01-7d2ec396151a)
+{
+	name: "View 1"
+	template: @d9ee43bd-ee64-4c9f-904a-75cf1fd8f745 (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(0438c769-3bfb-4e1c-83ca-bb368ef14584)
+		{
+			name: "text"
+			value: "Focused widget feature demo"
+		},
+		wp<string>(560573c2-eb68-4417-a5c2-a0007ed2f92a)
+		{
+			name: "description"
+			value: "An HMI model can load EB GUIDE GTF extension example "
+		},
+		wp<string>(e688eca4-4b81-42f7-8b8e-8d9e2463bf78)
+		{
+			name: "text 2"
+			value: "Press rectangle to focus it"
+		},
+		wp<int>(cd0aac51-dd0f-4b6a-be64-ff96c5e05a74)
+		{
+			name: "focusable"
+			value: @b32c6aa0-bc51-48ce-a841-3646d26490a1 (objectref<int>)
+		}]
+	user_properties: property_list []
+	children: children_list [
+		GtfRectangle(8353cb5b-093a-4ec6-88eb-9b911b27ebc8)
+		{
+			name: "Rectangle 1"
+			properties: property_list [
+				wp<bool>(2d9f6373-0c8a-46ec-a5e0-9fe270acb467)
+				{
+					name: "visible"
+					value: true
+				},
+				wp<int>(3365a63d-3a7f-4d05-bc5c-fd01fdb55b42)
+				{
+					name: "width"
+					value: 100
+				},
+				wp<int>(52314d14-8807-49a2-a61b-fd00350d1e11)
+				{
+					name: "height"
+					value: 100
+				},
+				wp<int>(e21e394e-d5ee-439d-8a92-571973aa8e2c)
+				{
+					name: "x"
+					value: 350
+				},
+				wp<int>(a3bb1713-6b65-4f70-98f1-551523228204)
+				{
+					name: "y"
+					value: 190
+				},
+				wp<color>(7b247fa6-09ff-4bff-b7ae-edd1c89378c9)
+				{
+					name: "fillColor"
+					value: #A9A9A9FF
+				}]
+			features: feature_list [
+				GtfFocusRectColorFeature(3542c525-e3a6-4c3a-b160-b2550ff2ed0e)
+				{
+					base_properties: property_list [
+						wp<color>(f7c6bd7a-d52a-4643-b430-db632e8ac4d3)
+						{
+							name: "focusedColor"
+							value: #FF0000FF
+						}]
+				},
+				StateFocused(cac35bfc-dde2-4338-98a9-cdd0176f9e22)
+				{
+					base_properties: property_list [
+						wp<int>(4e23c660-4a03-4461-8a39-11a20fd4f203)
+						{
+							name: "focusable"
+							value: 1
+						},
+						wp<bool>(b536d432-70b3-40b8-bbe9-57f89c3b1e28)
+						{
+							name: "focused"
+							value: @ff56931d-9eca-4d00-b4c3-462c0786446d (objectref<bool>)
+						}]
+				},
+				TouchPressed(3116a36b-d98d-4926-af71-b005299514db)
+				{
+					base_properties: property_list [
+						wp<function<bool,int,int,int,int>>(e02bd6dd-89cc-4145-900a-e0713d6c1acc)
+						{
+							name: "touchPressed"
+							value: function<bool,int,int,int,int>(ff817151-f858-4a19-94c6-c55a202b077c)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(v:this->^.focusable==3)" \
+									"		v:this->^.focusable=0" \
+									"	else if(v:this->^.focusable==0)" \
+									"		v:this->^.focusable=3" \
+									"    true" \
+									"}"
+							}
+						}]
+				},
+				StateTouched(d93d0c3e-addd-4e53-bf8d-6b89b7cb1f1e)
+				{
+					base_properties: property_list [
+						wp<bool>(da34160d-ec8d-48c2-88b8-dda58f0566e4)
+						{
+							name: "touchable"
+							value: true
+						},
+						wp<bool>(5ff37f2d-4f61-4137-9f24-0d1f313f9ae9)
+						{
+							name: "touched"
+							value: false
+						},
+						wp<int>(84487944-3996-4eb1-8474-4fff90838b6c)
+						{
+							name: "touchPolicy"
+							value: 0
+						},
+						wp<int>(254be44c-41a9-4cb1-b2ae-cda18c39288f)
+						{
+							name: "touchBehavior"
+							value: 0
+						}]
+				}]
+			children: children_list []
+		}]
+}

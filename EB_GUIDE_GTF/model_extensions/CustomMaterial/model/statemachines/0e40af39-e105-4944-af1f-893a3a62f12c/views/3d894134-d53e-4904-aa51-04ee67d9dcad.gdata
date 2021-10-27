@@ -1,0 +1,30 @@
+EBGUIDE 6.12.0.211022102259;
+
+GtfView_template_instance(3d894134-d53e-4904-aa51-04ee67d9dcad)
+{
+	name: "View 2"
+	template: @18edd3fd-90d3-4e6e-bc08-4db08f8b05ee (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(223b179d-419b-48f1-8985-afff10d7d555)
+		{
+			name: "title_text"
+			value: "Custom material demo"
+		},
+		wp<string>(4fe76d7e-fec4-4bfe-afd4-1d10857fad19)
+		{
+			name: "short desc_text"
+			value: "Example of loading custom shaders as materials for the scene graph widget."
+		},
+		wp<string>(2675f47e-1076-46a7-9624-c70509931c7e)
+		{
+			name: "long desc_text"
+			value: "For more information, see\\n - Extensions to EB GUIDE TF\\n - Accompanying readme.md file"
+		},
+		wp<function<bool,int,int,int,int>>(5c66c7ba-28e6-4e66-b7ec-49eeaf9225fc)
+		{
+			name: "touchPressed"
+			value: @a4cf3f74-7245-45cb-82aa-0944884c630a (objectref<function<bool,int,int,int,int>>)
+		}]
+	user_properties: property_list []
+	children: children_list []
+}

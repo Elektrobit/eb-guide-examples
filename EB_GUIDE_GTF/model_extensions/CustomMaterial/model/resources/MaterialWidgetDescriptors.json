@@ -1,0 +1,274 @@
+{
+    "widgets":[
+        {
+            "name":"PbrGgxDeformMaterial",
+            "alias":"Deformable PBR GGX Material",
+            "type":"GtfPbrGgxMaterialWidget",
+            "category":"Deformation material widgets",
+            "description":"A PBR GGX material than can be deformed, see u_deformation.",
+            "canHaveChildren":false,
+            "isAbstract":false,
+            "isInstantiator":false,
+            "isView":false,
+            "properties":[
+                {
+                    "name":"u_deformation",
+                    "type":"float",
+                    "category":"Common",
+                    "description":"A custom shader constant to control the amount of deformation. Positive and negative float values are valid, 0.0 does not cause any deformation.",
+                    "defaultValue":"1.0"
+                },
+                {
+                    "name":"u_emissiveMapHighlightColor",
+                    "type":"color",
+                    "category":"EmissiveMap",
+                    "description":"The color of areas with extra emission as specified by the emissive strength map.",
+                    "defaultValue":"255,255,255,255"
+                },
+                {
+                    "name":"u_emissiveMapColor",
+                    "type":"color",
+                    "category":"EmissiveMap",
+                    "description":"The color of areas with emission as specified by the emissive map.",
+                    "defaultValue":"255,255,255,255"
+                },
+                {
+                    "name":"u_emissiveStrengthMapStrength",
+                    "type":"float",
+                    "category":"EmissiveMap",
+                    "description":"The extra strength of the emission in areas specified by the emissive strength map.",
+                    "defaultValue":"1.0"
+                },
+                {
+                    "name":"u_emissiveStrengthMap",
+                    "type":"image",
+                    "category":"EmissiveMap",
+                    "description":"The grayscale emissive strength map that specifies which regions of the model should have extra light emission.\nBlack regions in the map indicate no extra emission, white regions have full emission in the strength as specified by u_emissiveStrengthMapStrength, in the color specified by u_emissiveMapHighlightColor.",
+                    "defaultValue":""
+                }
+            ],
+            "shaderSpecification":{
+                "gles2":{
+                    "vertexShaderPath":"resources/shaders/deform.vert",
+                    "fragmentShaderPath":"resources/shaders/custom_emissive_map.frag"
+                },
+                "gles3":{
+                    "vertexShaderPath":"resources/shaders/deform.vert",
+                    "fragmentShaderPath":"resources/shaders/custom_emissive_map.frag"
+                }
+            }
+        },
+        {
+            "name":"PbrPhongDeformMaterial",
+            "alias":"Deformable PBR Phong Material",
+            "type":"GtfPbrPhongMaterialWidget",
+            "category":"Deformation material widgets",
+            "description":"A PBR Phong material than can be deformed, see u_deformation.",
+            "canHaveChildren":false,
+            "isAbstract":false,
+            "isInstantiator":false,
+            "isView":false,
+            "properties":[
+                {
+                    "name":"u_deformation",
+                    "type":"float",
+                    "category":"Common",
+                    "description":"A custom shader constant to control the amount of deformation. Positive and negative float values are valid, 0.0 does not cause any deformation.",
+                    "defaultValue":"1.0"
+                }
+            ],
+            "shaderSpecification":{
+                "gles2":{
+                    "vertexShaderPath":"resources/shaders/deform.vert"
+                },
+                "gles3":{
+                    "vertexShaderPath":"resources/shaders/deform.vert"
+                }
+            }
+        },
+        {
+            "name":"PhongDeformMaterial",
+            "alias":"Deformable Phong Material",
+            "type":"GtfPhongMaterialWidget",
+            "category":"Deformation material widgets",
+            "description":"A Phong material than can be deformed, see u_deformation.",
+            "canHaveChildren":false,
+            "isAbstract":false,
+            "isInstantiator":false,
+            "isView":false,
+            "properties":[
+                {
+                    "name":"u_deformation",
+                    "type":"float",
+                    "category":"Common",
+                    "description":"A custom shader constant to control the amount of deformation. Positive and negative float values are valid, 0.0 does not cause any deformation.",
+                    "defaultValue":"1.0"
+                }
+            ],
+            "shaderSpecification":{
+                "gles2":{
+                    "vertexShaderPath":"resources/shaders/deform.vert"
+                },
+                "gles3":{
+                    "vertexShaderPath":"resources/shaders/deform.vert"
+                }
+            }
+        },
+        {
+            "name":"PbrGgxGlassMaterial",
+            "alias":"PBR GGX Glass Material",
+            "type":"GtfPbrGgxMaterialWidget",
+            "category":"Custom Glass Materials",
+            "description":"A glass shader, based on the PBR GGX shader implementation.",
+            "canHaveChildren":false,
+            "isAbstract":false,
+            "isInstantiator":false,
+            "isView":false,
+            "properties":[
+                {
+                    "name":"u_baseTransparency",
+                    "type":"float",
+                    "category":"Common",
+                    "description":"The base transparency of the glass. Use values > 0.0 achieve a glass coloration effect.",
+                    "defaultValue":"0.2"
+                },
+                {
+                    "name":"u_type",
+                    "type":"float",
+                    "category":"Common",
+                    "description":"The type of the reflection intensity calculations.\n0: no glass reflections\n1: square rooted luminance as reflection intensity\n2: squared luminance as reflection intensity\n3: linear luminance as reflection intensity." ,
+                    "defaultValue":"0.5"
+                }
+            ],
+            "shaderSpecification":{
+                "gles2":{
+                    "fragmentShaderPath":"resources/shaders/custom_glas.frag"
+                },
+                "gles3":{
+                    "fragmentShaderPath":"resources/shaders/custom_glas.frag"
+                },
+                "isTransparent":true
+            }
+        },
+        {
+            "name":"PbrGgxClearCoatGlassMaterial",
+            "alias":"PBR GGX Clearcoat Glass Material",
+            "type":"GtfPbrGgxMaterialWidget",
+            "category":"Custom Glass Materials",
+            "description":"An alternative glass shader, based on clear-coat reflections. To work correctly, it requires the clear-coat feature to be active.",
+            "canHaveChildren":false,
+            "isAbstract":false,
+            "isInstantiator":false,
+            "isView":false,
+            "properties":[
+                {
+                    "name":"u_baseTransparency",
+                    "type":"float",
+                    "category":"Common",
+                    "description":"The base transparency of the glass. Use values > 0.0 achieve a glass coloration effect.",
+                    "defaultValue":"0.5"
+                },
+                {
+                    "name":"u_type",
+                    "type":"float",
+                    "category":"Common",
+                    "description":"The type of the reflection intensity calculations.\n0: no glass reflections\n1: square rooted luminance as reflection intensity\n2: squared luminance as reflection intensity\n3: linear luminance as reflection intensity." ,
+                    "defaultValue":"1.0"
+                }
+            ],
+            "shaderSpecification":{
+                "gles2":{
+                    "fragmentShaderPath":"resources/shaders/custom_glas_ggx_clearcoat.frag"
+                },
+                "gles3":{
+                    "fragmentShaderPath":"resources/shaders/custom_glas_ggx_clearcoat.frag"
+                },
+                "isTransparent":true
+            }
+        },
+        {
+            "name":"PbrGgxFadeableMaterial",
+            "alias":"PBR GGX Fadeable Material",
+            "type":"GtfPbrGgxMaterialWidget",
+            "category":"Custom Fadeable Materials",
+            "description":"A PBR GGX material that allows for controlling the transparency while also having an Opaque texture widget feature.",
+            "canHaveChildren":false,
+            "isAbstract":false,
+            "isInstantiator":false,
+            "isView":false,
+            "properties":[
+                {
+                    "name":"u_globalTransparency",
+                    "type":"float",
+                    "category":"Common",
+                    "description":"Controls the transparency, 0.0 for full transparency, 1.0 means fully opaque.",
+                    "defaultValue":"1.0"
+                }
+            ],
+            "shaderSpecification":{
+                "gles2":{
+                    "fragmentShaderPath":"resources/shaders/custom_opacity.frag"
+                },
+                "gles3":{
+                    "fragmentShaderPath":"resources/shaders/custom_opacity.frag"
+                }
+            }
+        },
+        {
+            "name":"PbrPhongFadeableMaterial",
+            "alias":"PBR Phong Fadeable Material",
+            "type":"GtfPbrPhongMaterialWidget",
+            "category":"Custom Fadeable Materials",
+            "description":"A PBR Phong material that allows for controlling the transparency while also having an Opaque texture widget feature.",
+            "canHaveChildren":false,
+            "isAbstract":false,
+            "isInstantiator":false,
+            "isView":false,
+            "properties":[
+                {
+                    "name":"u_globalTransparency",
+                    "type":"float",
+                    "category":"Common",
+                    "description":"Controls the transparency, 0.0 for full transparency, 1.0 means fully opaque.",
+                    "defaultValue":"1.0"
+                }
+            ],
+            "shaderSpecification":{
+                "gles2":{
+                    "fragmentShaderPath":"resources/shaders/custom_opacity.frag"
+                },
+                "gles3":{
+                    "fragmentShaderPath":"resources/shaders/custom_opacity.frag"
+                }
+            }
+        },
+        {
+            "name":"PhongFadeableMaterial",
+            "alias":"Phong Fadeable Material",
+            "type":"GtfPhongMaterialWidget",
+            "category":"Custom Fadeable Materials",
+            "description":"A Phong material that allows for controlling the transparency while also having an OpaqueTexture widget feature.",
+            "canHaveChildren":false,
+            "isAbstract":false,
+            "isInstantiator":false,
+            "isView":false,
+            "properties":[
+                {
+                    "name":"u_globalTransparency",
+                    "type":"float",
+                    "category":"Common",
+                    "description":"Controls the transparency, 0.0 for full transparency, 1.0 means fully opaque.",
+                    "defaultValue":"1.0"
+                }
+            ],
+            "shaderSpecification":{
+                "gles2":{
+                    "fragmentShaderPath":"resources/shaders/custom_opacity.frag"
+                },
+                "gles3":{
+                    "fragmentShaderPath":"resources/shaders/custom_opacity.frag"
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+   "features":[
+      {
+         "name":"DownScalingFeature",
+         "alias":"Downscaling",
+         "category":"Appearance",
+         "description":"Downscales an Image widget to a target size.",
+         "requirement":"w:GtfImage",
+         "properties":[
+            {
+               "name":"targetHeight",
+               "type":"integer",
+               "category":"Appearance",
+               "description":"Target image height.",
+               "defaultValue":"100"
+            },
+            {
+               "name":"targetWidth",
+               "type":"integer",
+               "category":"Appearance",
+               "description":"Target image width.",
+               "defaultValue":"100"
+            },
+            {
+               "name":"imagePath",
+               "type":"string",
+               "category":"Appearance",
+               "description":"Relative path to the image.",
+               "defaultValue":"0"
+            }
+         ],
+         "controller":"downscalingFeature::DownscalingFeature"
+      }
+   ]
+}

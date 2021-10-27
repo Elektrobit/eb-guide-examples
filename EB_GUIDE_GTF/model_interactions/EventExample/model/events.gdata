@@ -1,0 +1,41 @@
+EBGUIDE 6.12.0.211022102259;
+
+events(18d508fd-81f1-47d3-8d6e-b8fdcb0de559)
+{
+	items: event_list [
+		event(0ef4a9bf-ec8d-4c8d-ab94-f95d27ebf28c)
+		{
+			name: "WhatToDo"
+			eventId: 0
+			event_group: @0154822c-a529-42c4-8923-9efab88044c2 (objectref<event_group>)
+			event_params: event_param_list []
+		},
+		event(30f37b3a-b95d-4abd-a0de-ff0ef8236f93)
+		{
+			name: "GoToB"
+			eventId: 2
+			event_group: @0154822c-a529-42c4-8923-9efab88044c2 (objectref<event_group>)
+			event_params: event_param_list []
+		},
+		event(53314cb8-ee87-411d-86d7-0b1019f72d11)
+		{
+			name: "back"
+			eventId: 3
+			event_group: @55bd7598-b548-4b67-b3c9-ac38a1745d53 (objectref<event_group>)
+			event_params: event_param_list []
+		},
+		event(7c293e74-5229-4ee3-b7fb-351112136b05)
+		{
+			name: "next"
+			eventId: 4
+			event_group: @55bd7598-b548-4b67-b3c9-ac38a1745d53 (objectref<event_group>)
+			event_params: event_param_list []
+		},
+		event(f23ee48b-835f-4995-854b-8be7f38531fb)
+		{
+			name: "GoToA"
+			eventId: 1
+			event_group: @0154822c-a529-42c4-8923-9efab88044c2 (objectref<event_group>)
+			event_params: event_param_list []
+		}]
+}

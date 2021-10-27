@@ -1,0 +1,56 @@
+{
+   "features":[
+      {
+         "name":"SineLabelShape",
+         "alias":"SineLabelShape",
+         "category":"Effect",
+         "description":"Adds a Sine curve label shape.",
+         "requirement":"w:GtfLabel",
+         "properties":[
+            {
+               "name":"enabled",
+               "type":"bool",
+               "category":"Appearance",
+               "description":"Enables or disables the sine wave curved widget feature.",
+               "defaultValue":"true"
+            },
+            {
+               "name":"amplitude",
+               "type":"float",
+               "category":"Appearance",
+               "description":"Amplitude of the sine wave (in pixels).",
+               "defaultValue":"10.0"
+            },
+            {
+               "name":"periodLength",
+               "type":"float",
+               "category":"Appearance",
+               "description":"Period length of one cycle (in pixels).",
+               "defaultValue":"10.0"
+            },
+            {
+               "name":"horizontalOffset",
+               "type":"float",
+               "category":"Appearance",
+               "description":"Horizontal offset of the sine wave.",
+               "defaultValue":"10.0"
+            },
+            {
+               "name":"verticalOffset",
+               "type":"float",
+               "category":"Appearance",
+               "description":"Vertical offset of the sine wave.",
+               "defaultValue":"10.0"
+            },
+            {
+               "name":"cycleCount",
+               "type":"float",
+               "category":"Appearance",
+               "description":"Number of cycles of the sine wave.",
+               "defaultValue":"1.0"
+            }
+         ],
+         "controller":"labelshapewidgetfeature::SineCurveShapeAdder"
+      }
+   ]
+}

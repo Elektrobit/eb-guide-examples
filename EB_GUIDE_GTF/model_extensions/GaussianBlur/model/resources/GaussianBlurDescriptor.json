@@ -1,0 +1,31 @@
+{
+   "widgets":[
+      {
+         "name":"GaussianBlur",
+         "alias":"Gaussian blur",
+         "type":"GtfAbstractVisualWidget",
+         "category":"Custom widgets",
+         "description":"A custom widget adding gaussian blur.",
+         "canHaveChildren":true,
+         "isAbstract":false,
+         "isInstantiator":false,
+         "isView":false,
+         "properties":[
+            {
+               "name":"sigma",
+               "type":"float",
+               "category":"Common",
+               "description":"The standard deviation or filter width.",
+               "defaultValue":"1.0"
+            },
+            {
+               "name":"enabled",
+               "type":"bool",
+               "category":"Common",
+               "description":"True if the gaussian blur is enabled.",
+               "defaultValue":"true"
+            }
+         ]
+      }
+   ]
+}

@@ -1,0 +1,83 @@
+EBGUIDE 6.12.0.211022102259;
+
+GtfView_template_instance(44a166d8-e7f9-4cae-ad01-7d2ec396151a)
+{
+	name: "View 1"
+	template: @d9ee43bd-ee64-4c9f-904a-75cf1fd8f745 (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(88e77700-5500-47b6-97b3-1786c1980435)
+		{
+			name: "text"
+			value: "Dependency resolver plugin"
+		},
+		wp<string>(0d2ec24f-ae11-4024-a8f6-faa219b2be9e)
+		{
+			name: "description"
+			value: "Application registers the implementation against the interface."
+		}]
+	user_properties: property_list []
+	children: children_list [
+		GtfLabel(51dc5609-9214-47d8-b6f8-9ddee28a2428)
+		{
+			name: "Label 1"
+			properties: property_list [
+				wp<bool>(b37e93ef-2dc9-4607-bd7c-4bd2ace362f0)
+				{
+					name: "visible"
+					value: true
+				},
+				wp<int>(c5ed8484-9a0f-488f-b7fe-fa2d1f10de86)
+				{
+					name: "width"
+					value: 666
+				},
+				wp<int>(2f7d2fc2-5604-44d5-af45-269f0f0d2b4d)
+				{
+					name: "height"
+					value: 117
+				},
+				wp<int>(be16c906-63f3-4034-b66a-b69be240438a)
+				{
+					name: "x"
+					value: 77
+				},
+				wp<int>(8ab12e25-9349-4dbf-bea9-4ea335aee17d)
+				{
+					name: "y"
+					value: 182
+				},
+				wp<string>(d5a61b10-355c-4248-87f0-86d4094c4c24)
+				{
+					name: "text"
+					value: "You have started the Dependency resolver model."
+				},
+				wp<color>(4e7242e9-b882-42ac-a5bc-9053e715b76d)
+				{
+					name: "textColor"
+					value: #FFFFFFFF
+				},
+				wp<font>(415c2379-ddf3-4a24-9955-509de1af0702)
+				{
+					name: "font"
+					value: font_resource(484077d5-731c-4409-991b-eea98afd48fe)
+					{
+						sourceType: "model"
+						source: "resources"
+						file: "fonts\\PT_Sans.ttf"
+						size: 30
+					}
+				},
+				wp<int>(70feaa15-7096-4d64-84ba-8777f18858be)
+				{
+					name: "horizontalAlign"
+					value: 1
+				},
+				wp<int>(48270eb0-e129-4248-b520-b4800dcee097)
+				{
+					name: "verticalAlign"
+					value: 0
+				}]
+			features: feature_list []
+			children: children_list []
+		}]
+}

@@ -1,0 +1,196 @@
+EBGUIDE 6.12.0.211022102259;
+
+GtfSceneGraphNode_template(9bd29285-8f5d-45da-860e-a159fb70a3c9)
+{
+	name: "GlassSphere Clearcoat"
+	interface_properties: property_list []
+	structure: GtfSceneGraphNode(c39af34e-e761-4d34-b1d5-d9025c349a9e)
+	{
+		name: "GlassSphere"
+		properties: property_list [
+			wp<bool>(dbb48f71-697b-4478-87e9-69e256249bb6)
+			{
+				name: "visible"
+				value: true
+			},
+			wp<float>(a602d8f5-524e-4254-8112-40e57a010468)
+			{
+				name: "rotationX"
+				value: 0F
+			},
+			wp<float>(45622a5d-6f85-41b9-b547-a1814c59d558)
+			{
+				name: "rotationY"
+				value: 0F
+			},
+			wp<float>(fd071b0e-dcf8-4ad8-be38-2e4f32d06655)
+			{
+				name: "rotationZ"
+				value: 0F
+			},
+			wp<float>(ffd1ad6d-bce6-4553-b5ed-872486dfabad)
+			{
+				name: "scalingX"
+				value: 1.1F
+			},
+			wp<float>(1e65a44b-19bc-4b2d-9439-1a647991c6a6)
+			{
+				name: "scalingY"
+				value: 1.1F
+			},
+			wp<float>(90defd73-7e67-4417-83f8-47ffe30c2e84)
+			{
+				name: "scalingZ"
+				value: 1.1F
+			},
+			wp<float>(6c2c45cb-35d3-472d-8fdd-e38008aebb8f)
+			{
+				name: "translationX"
+				value: 0F
+			},
+			wp<float>(733b4f18-e3b8-49d5-8f80-5d2503ada7c9)
+			{
+				name: "translationY"
+				value: 0F
+			},
+			wp<float>(6485ceba-c8bc-44b3-acfc-c34310d6895d)
+			{
+				name: "translationZ"
+				value: 0F
+			}]
+		features: feature_list []
+		children: children_list [
+			GtfMeshWidget(2bac2d60-e833-4852-9c3f-65f4b62157e6)
+			{
+				name: "GlassSphereFront"
+				properties: property_list [
+					wp<bool>(2a4e131f-100c-4572-9d33-b447af0c6be2)
+					{
+						name: "visible"
+						value: true
+					},
+					wp<mesh>(986e6363-9e01-403e-b40e-09c9288680f6)
+					{
+						name: "mesh"
+						value: mesh_resource(780c0ad6-0596-4cc8-b36f-223a7798e5e3)
+						{
+							sourceType: "model"
+							source: "resources"
+							file: "3D_arrow_sphere_only_20210224_162226\\Sphere.0020.ebmesh"
+						}
+					},
+					wp<int>(83e7dd2b-8d86-4290-8c2c-33147a183a37)
+					{
+						name: "culling"
+						value: 2
+					}]
+				features: feature_list []
+				children: children_list [
+					PbrGgxClearCoatGlassMaterial_template_instance(e5f81e52-28af-47e2-a324-e0c11c25a6b5)
+					{
+						name: "Ggx Clearcoat Glas Material 1 1 1"
+						template: @a3ea7de0-b910-4469-9383-7763cd0a3ed3 (objectref<PbrGgxClearCoatGlassMaterial_template>)
+						override_properties: property_list []
+						user_properties: property_list []
+						children: children_list []
+					}]
+			},
+			GtfSceneGraphNode(c362d3e1-b950-4e20-bcc1-24f16358f3b5)
+			{
+				name: "RenderBackFirstOffset"
+				properties: property_list [
+					wp<bool>(67362136-4a79-43ab-85d7-1017bb456837)
+					{
+						name: "visible"
+						value: true
+					},
+					wp<float>(dbfd5854-a848-45fe-8362-773d112122f8)
+					{
+						name: "rotationX"
+						value: 0F
+					},
+					wp<float>(d8f2fffd-7812-417a-94d3-df9fd58b41f7)
+					{
+						name: "rotationY"
+						value: 0F
+					},
+					wp<float>(7e854b46-cc83-4998-bd43-ebd0fd3257ab)
+					{
+						name: "rotationZ"
+						value: 0F
+					},
+					wp<float>(47fe6db4-cbf2-4f4c-ac65-31e791f1a7ce)
+					{
+						name: "scalingX"
+						value: 1F
+					},
+					wp<float>(bfa1047e-a681-41c7-b23a-4d16e7ff8590)
+					{
+						name: "scalingY"
+						value: 1F
+					},
+					wp<float>(8259b99d-9ccc-481c-a9c0-52b63861f24d)
+					{
+						name: "scalingZ"
+						value: 1F
+					},
+					wp<float>(5dca741d-2104-448b-8e0c-3cb9397ec250)
+					{
+						name: "translationX"
+						value: 0F
+					},
+					wp<float>(84b6d0cc-ac08-40ee-a898-61b40de4307a)
+					{
+						name: "translationY"
+						value: 0F
+					},
+					wp<float>(70529bda-48e5-42d8-a236-6ab522113b1e)
+					{
+						name: "translationZ"
+						value: -0.001F
+					},
+					wp<string>(3ae6ff76-d059-4eb2-946d-54a3a8f97514)
+					{
+						name: "Note"
+						value: "Offset vertically away from camera to be rendered first."
+					}]
+				features: feature_list []
+				children: children_list [
+					GtfMeshWidget(f6d44f20-5f3e-4753-a0ca-f05a8431f1a5)
+					{
+						name: "GlassSphereBack"
+						properties: property_list [
+							wp<bool>(ead0d928-874c-4d8d-8ac7-96cf8c04462b)
+							{
+								name: "visible"
+								value: @f1285a9a-21c7-4cb1-a339-f72bc092f145 (objectref<bool>)
+							},
+							wp<mesh>(b5e1c0c6-b5d4-4f10-8bd6-bad3a59f5da0)
+							{
+								name: "mesh"
+								value: mesh_resource(42b350c5-63af-4eaa-b751-248049b6bd04)
+								{
+									sourceType: "model"
+									source: "resources"
+									file: "3D_arrow_sphere_only_flipped_20210308_093017\\Sphere.0020.ebmesh"
+								}
+							},
+							wp<int>(4912e00b-990e-45ef-a66a-d8c48d1744a5)
+							{
+								name: "culling"
+								value: 2
+							}]
+						features: feature_list []
+						children: children_list [
+							PbrGgxClearCoatGlassMaterial_template_instance(1ce736d0-efea-4c1f-b6c5-dc3d925adccf)
+							{
+								name: "Ggx Clearcoat Glas Material 1"
+								template: @a3ea7de0-b910-4469-9383-7763cd0a3ed3 (objectref<PbrGgxClearCoatGlassMaterial_template>)
+								override_properties: property_list []
+								user_properties: property_list []
+								children: children_list []
+							}]
+					}]
+			}]
+	}
+}

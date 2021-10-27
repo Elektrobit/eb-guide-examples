@@ -1,0 +1,37 @@
+EBGUIDE 6.12.0.211022102259;
+
+GtfView_template_instance(56b5a180-589a-4dad-b439-4db92f492392)
+{
+	name: "Titleview"
+	template: @18edd3fd-90d3-4e6e-bc08-4db08f8b05ee (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(69043b72-9c3b-46fd-8f14-c2aa1f2faeb3)
+		{
+			name: "title_text"
+			value: "Custom effect demo"
+		},
+		wp<string>(c65c0b7e-ca20-4220-a0a9-51c26c7da5a1)
+		{
+			name: "short desc_text"
+			value: "Example of loading a custom gaussian blur effect with the HMI"
+		},
+		wp<string>(6705c3ce-e4b8-4904-a9ab-117b05f02018)
+		{
+			name: "long desc_text"
+			value: "Documentation reference:\\nExtensions to EB GUIDE TF"
+		},
+		wp<function<bool,int,int,int,int>>(b5e969ea-ea84-4e0f-ab62-b2a8eeb39ac5)
+		{
+			name: "touchPressed"
+			value: function<bool,int,int,int,int>(a833b774-1633-4423-bc01-9bff091cce0c)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:next();" \
+					"    false" \
+					"}"
+			}
+		}]
+	user_properties: property_list []
+	children: children_list []
+}

@@ -1,0 +1,38 @@
+{
+   "widgets":[
+      {
+         "name":"GtfExtendedContainerWidget",
+         "alias":"ExtendedContainer",
+         "type":"GtfAbstractVisualWidget",
+         "category":"Custom widgets",
+         "description":"A container that displays or hides its children.",
+         "canHaveChildren":true,
+         "isAbstract":false,
+         "isInstantiator":false,
+         "isView":false,
+         "properties":[
+            {
+               "name":"displayStatus",
+               "type":"integer",
+               "description":"Defines which child widgets to display.",
+               "defaultValue":"0",
+               "constants":[
+                  {
+                     "name":"all",
+                     "value":"0"
+                  },
+                  {
+                     "name":"first",
+                     "value":"1"
+                  },
+                  {
+                     "name":"none",
+                     "value":"2"
+                  }
+               ]
+            }
+         ],
+         "controller":"extendedcontainerwidget::ExtendedContainerWidget"
+      }
+   ]
+}

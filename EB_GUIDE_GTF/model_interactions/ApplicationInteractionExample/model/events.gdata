@@ -1,0 +1,60 @@
+EBGUIDE 6.12.0.211022102259;
+
+events(fe6bdf48-39a9-4112-8ad5-7404a575cd68)
+{
+	items: event_list [
+		event(01ffb473-23d9-4f56-945a-7875a2cd708a)
+		{
+			name: "home"
+			eventId: 1
+			event_group: @91a9bab0-e2b2-4952-b5c1-f02e10b46f18 (objectref<event_group>)
+			event_params: event_param_list []
+		},
+		event(12ec2e58-1634-4462-857d-218bbdbee673)
+		{
+			name: "evInterplayIn"
+			eventId: 3
+			event_group: @d9eb3fc6-b9f6-4ff0-a46b-7c318b5dc719 (objectref<event_group>)
+			event_params: event_param_list [
+				event_param<int>(630be322-93a9-4cf3-ba42-f2d5f6733a2a)
+				{
+					name: "myParam"
+				}]
+		},
+		event(3fb0949e-e8bb-4761-9442-498412daa5c9)
+		{
+			name: "evInterplayOut"
+			eventId: 4
+			event_group: @d9eb3fc6-b9f6-4ff0-a46b-7c318b5dc719 (objectref<event_group>)
+			event_params: event_param_list [
+				event_param<int>(a7be4d8e-5399-46d8-ab06-538bc0b12bb6)
+				{
+					name: "myParam"
+				}]
+		},
+		event(a5c53304-298c-4710-adc5-a15f85ff9973)
+		{
+			name: "prev"
+			eventId: 5
+			event_group: @91a9bab0-e2b2-4952-b5c1-f02e10b46f18 (objectref<event_group>)
+			event_params: event_param_list []
+		},
+		event(cdbb1a1f-08ba-4f82-aa5b-909c3c4b36bb)
+		{
+			name: "feature"
+			eventId: 2
+			event_group: @91a9bab0-e2b2-4952-b5c1-f02e10b46f18 (objectref<event_group>)
+			event_params: event_param_list [
+				event_param<int>(fbea7222-5476-4bb7-8f48-77870ead299e)
+				{
+					name: "featureID"
+				}]
+		},
+		event(cf5d0e4a-6e0e-409c-9511-5e244e7095d9)
+		{
+			name: "next"
+			eventId: 0
+			event_group: @91a9bab0-e2b2-4952-b5c1-f02e10b46f18 (objectref<event_group>)
+			event_params: event_param_list []
+		}]
+}

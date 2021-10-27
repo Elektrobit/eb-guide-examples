@@ -1,0 +1,176 @@
+EBGUIDE 6.12.0.211022102259;
+
+configuration_profile(ad3fe8be-21ec-4f27-814d-d6a86eb16eda)
+{
+	name: "Edit"
+	isDefault: true
+	scene_configurations: scene_configurations [
+		scene_configuration(eed7fa20-9a2a-43b0-b7ef-92aa7feaa328)
+		{
+			context: @94f4c807-6042-40f2-8cf5-de6145e66413 (objectref<context>)
+			statemachine: @6f380ae8-a34c-4f61-a7d9-3bd7cf7541f7 (objectref<haptic_statemachine>)
+			enabled: true
+			scene: GtfVisualScene(123d2765-b4f6-4568-8d83-3ca0725f3577)
+			{
+				name: ""
+				properties: property_list [
+					wp<bool>(9944027d-518d-4a76-a98e-e60e80e7d02c)
+					{
+						name: "visible"
+						value: true
+					},
+					wp<int>(3faba668-53e9-47f3-a4ce-d055230e7e51)
+					{
+						name: "width"
+						value: 800
+					},
+					wp<int>(8124af90-ed13-428a-968c-6a3642c551b9)
+					{
+						name: "height"
+						value: 480
+					},
+					wp<int>(84044d60-9a8c-4e53-b2d5-21de34adb5b6)
+					{
+						name: "x"
+						value: 0
+					},
+					wp<int>(bffe5aa6-a7fb-4a10-8d38-84d4632702ed)
+					{
+						name: "y"
+						value: 0
+					},
+					wp<string>(0053ae35-56e0-40e0-ab0f-d7e9f11833f7)
+					{
+						name: "projectName"
+						value: "project"
+					},
+					wp<string>(7fc394bf-6c9c-44bc-86f8-28022c719a36)
+					{
+						name: "windowCaption"
+						value: "EB GUIDE 6 model"
+					},
+					wp<int>(8d01f0ab-d15e-42ba-94ad-de6014574122)
+					{
+						name: "sceneId"
+						value: 0
+					},
+					wp<int>(d009485c-6d56-4911-8173-10fe416927d1)
+					{
+						name: "maxFPS"
+						value: 0
+					},
+					wp<int>(f4ada9ae-7a52-409f-83a6-963b218d6eb2)
+					{
+						name: "hwLayerId"
+						value: 0
+					},
+					wp<int>(a6e0ba0c-517e-4d0c-b265-5827afa702bb)
+					{
+						name: "colorMode"
+						value: 1
+					},
+					wp<int>(ddb03922-7e4d-4437-8f46-1084d0c15a96)
+					{
+						name: "antiAliasing"
+						value: 0
+					},
+					wp<bool>(23b00f27-ecec-4a30-b891-d4852a72a792)
+					{
+						name: "enableRemoteFramebuffer"
+						value: true
+					},
+					wp<bool>(05119405-e7f7-4ba7-ad60-c3fae3c1dd9d)
+					{
+						name: "showWindowFrame"
+						value: false
+					},
+					wp<bool>(e6835afd-0eeb-483c-8d84-347831476e16)
+					{
+						name: "showWindow"
+						value: false
+					},
+					wp<bool>(90da90b3-f55e-4ca7-bc7a-d6e07e1e560f)
+					{
+						name: "disableVSync"
+						value: false
+					},
+					wp<int>(2b7cd263-8914-4602-b42d-bbef34606175)
+					{
+						name: "showFPS"
+						value: 0
+					}]
+				features: feature_list [
+					OpenGL3Renderer(c5438de0-9f3d-4cf0-a5d2-0888988ec2d4)
+					{
+						base_properties: property_list []
+					}]
+				children: children_list []
+			}
+			additional_data: object(none)
+		}]
+	platform_configuration: "{" \
+		"  \"gtf\": {" \
+		"    \"resourcesystem\": {" \
+		"      \"defaultdecoding\": [" \
+		"        {" \
+		"          \"inputformat\": \"gtf::decoder::ImagePath\"," \
+		"          \"outputformat\": \"gtf::decoder::EncodedMemImage\"" \
+		"        }," \
+		"        {" \
+		"          \"inputformat\": \"gtf::decoder::MeshPath\"," \
+		"          \"outputformat\": \"gtf::decoder::EncodedMeshData\"" \
+		"        }," \
+		"        {" \
+		"          \"inputformat\": \"gtf::decoder::IBLPath\"," \
+		"          \"outputformat\": \"gtf::decoder::EncodedIBLData\"" \
+		"        }," \
+		"        {" \
+		"          \"inputformat\": \"gtf::decoder::EncodedMemImage\"," \
+		"          \"outputformat\": \"gtf::decoder::MemImage\"" \
+		"        }," \
+		"        {" \
+		"          \"inputformat\": \"gtf::decoder::DescriptorResource::font\"," \
+		"          \"outputformat\": \"gtf::decoder::FontData\"" \
+		"        }," \
+		"        {" \
+		"          \"inputformat\": \"gtf::decoder::DescriptorResource::image\"," \
+		"          \"outputformat\": \"gtf::decoder::ImagePath\"" \
+		"        }," \
+		"        {" \
+		"          \"inputformat\": \"gtf::decoder::DescriptorResource::ibl\"," \
+		"          \"outputformat\": \"gtf::decoder::IBLPath\"" \
+		"        }," \
+		"        {" \
+		"          \"inputformat\": \"gtf::decoder::DescriptorResource::mesh\"," \
+		"          \"outputformat\": \"gtf::decoder::MeshPath\"" \
+		"        }," \
+		"        {" \
+		"          \"inputformat\": \"gtf::decoder::MemImage\"," \
+		"          \"outputformat\": \"gtf::scdr::decoder::NinePatchImage\"" \
+		"        }" \
+		"      ]," \
+		"      \"residentformats\": [" \
+		"        \"gtf::decoder::FontData\"," \
+		"        \"gtf::decoder::IBLPath\"," \
+		"        \"gtf::decoder::ImagePath\"," \
+		"        \"gtf::decoder::MeshPath\"" \
+		"      ]" \
+		"    }" \
+		"  }" \
+		"}"
+	model_configuration: "{" \
+		"\"gtf\": {" \
+		"     \"model\": {" \
+		"	     \"pluginstoload\": [" \
+		"             \"resources/GaussianBlur\"" \
+		"         				]," \
+		"          \"descriptorFiles\":[ " \
+		"          \"resources/GaussianBlurDescriptor.json\"" \
+		"          				]				" \
+		"     		}" \
+		" 	}" \
+		"}"
+	target_platform: "win64"
+	disabled_packages: imported_package_refs []
+	additional_data: object(none)
+}

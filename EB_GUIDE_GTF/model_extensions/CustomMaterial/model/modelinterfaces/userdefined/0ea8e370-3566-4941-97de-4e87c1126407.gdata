@@ -1,0 +1,9 @@
+EBGUIDE 6.12.0.211022102259;
+
+model_interface(0ea8e370-3566-4941-97de-4e87c1126407)
+{
+	name: "CustomShader"
+	color: #00D6DEFF
+	dp_items: dp_item_refs []
+	events: event_refs []
+}

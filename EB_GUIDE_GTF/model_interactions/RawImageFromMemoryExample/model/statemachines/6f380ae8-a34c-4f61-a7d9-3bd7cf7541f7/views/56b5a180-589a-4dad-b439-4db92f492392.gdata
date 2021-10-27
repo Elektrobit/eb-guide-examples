@@ -1,0 +1,38 @@
+EBGUIDE 6.12.0.211022102259;
+
+GtfView_template_instance(56b5a180-589a-4dad-b439-4db92f492392)
+{
+	name: "Titleview"
+	template: @18edd3fd-90d3-4e6e-bc08-4db08f8b05ee (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(d4504950-058a-4636-9305-ba3360b456a1)
+		{
+			name: "title_text"
+			value: "Loading image data"
+		},
+		wp<string>(195c3aee-257c-4d54-ad6a-fc9d447df51f)
+		{
+			name: "short desc_text"
+			value: "Example for sending image data from an application to the HMI using the datapool system"
+		},
+		wp<string>(11061de2-256d-495b-a880-20528b5c190e)
+		{
+			name: "long desc_text"
+			value: "Documentation reference:\\nBackground information > Interaction between HMI and applications"
+		},
+		wp<function<bool,int,int,int,int>>(0aa6be51-0358-4399-adad-76129be42e13)
+		{
+			name: "touchPressed"
+			value: function<bool,int,int,int,int>(0d8f8101-004c-4bdd-b692-df0d01278531)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	cancel_fire ev:next; // interrupt fire delayed (Titleview's entry action)" \
+					"	fire ev:next();" \
+					"    false;" \
+					"}"
+			}
+		}]
+	user_properties: property_list []
+	children: children_list []
+}

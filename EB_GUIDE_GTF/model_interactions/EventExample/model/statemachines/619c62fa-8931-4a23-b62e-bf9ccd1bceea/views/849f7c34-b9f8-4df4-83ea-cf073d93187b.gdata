@@ -1,0 +1,42 @@
+EBGUIDE 6.12.0.211022102259;
+
+GtfView_template_instance(849f7c34-b9f8-4df4-83ea-cf073d93187b)
+{
+	name: "MainView"
+	template: @c0f1c727-95c8-4441-8262-f18240012cb1 (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(962c6f27-d14b-46af-a000-a61ec25db29d)
+		{
+			name: "text"
+			value: "Main"
+		},
+		wp<color>(314a1fdd-1c09-48f8-b7d2-e2af8876bd34)
+		{
+			name: "fillColor"
+			value: #FF4500FF
+		},
+		wp<string>(541b97b9-6ae2-4370-88d7-030ba799ae89)
+		{
+			name: "text 2"
+			value: "Please press the red rectangle to navigate to one of the states"
+		},
+		wp<function<bool,int,int,int,int>>(7e55c86c-4bdc-4a23-9eb5-065235207ff1)
+		{
+			name: "touchShortReleased"
+			value: function<bool,int,int,int,int>(3e185801-1222-4586-b5f1-0e43eeef35fe)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:WhatToDo()" \
+					"    false" \
+					"}"
+			}
+		},
+		wp<string>(d8284fff-7e8c-4db8-80d8-c395fb8f2696)
+		{
+			name: "Description"
+			value: "The application will receive the touch event and send a response."
+		}]
+	user_properties: property_list []
+	children: children_list []
+}

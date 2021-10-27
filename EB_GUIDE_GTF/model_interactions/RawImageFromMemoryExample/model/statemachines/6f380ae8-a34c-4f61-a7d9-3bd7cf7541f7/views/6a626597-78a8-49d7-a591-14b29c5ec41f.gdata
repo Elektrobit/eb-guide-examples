@@ -1,0 +1,39 @@
+EBGUIDE 6.12.0.211022102259;
+
+GtfView_template_instance(6a626597-78a8-49d7-a591-14b29c5ec41f)
+{
+	name: "HomeView"
+	template: @bad749ae-e164-4670-bd0b-647bce039801 (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(30a8fee1-de51-4e2c-b845-6cac552fad2f)
+		{
+			name: "title_text"
+			value: "Loading image data"
+		},
+		wp<imagelist>(c8252b8f-bff6-4bce-bfda-ca1c6e294861)
+		{
+			name: "button_icon_li"
+			value: imagelist [
+				image_resource(fb7a45af-c6a6-45db-a74d-e1538b4a71a1)
+				{
+					sourceType: "model"
+					source: "resources"
+					file: "images\\icon_external_image.png"
+				},
+				image_resource(81343138-0d49-40d8-a445-1a5bde86790c)
+				{
+					sourceType: "model"
+					source: "resources"
+					file: "images\\icon_mandelbrot.png"
+				}]
+		},
+		wp<stringlist>(c8e6924a-a15d-44ed-ba24-ef5fa3e6081c)
+		{
+			name: "button_desc_li"
+			value: stringlist [
+				"Static images",
+				"Dynamic images"]
+		}]
+	user_properties: property_list []
+	children: children_list []
+}

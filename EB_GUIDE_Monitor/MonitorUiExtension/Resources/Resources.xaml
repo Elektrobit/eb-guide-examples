@@ -1,0 +1,14 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:viewModels="clr-namespace:MonitorUiExtension.ViewModels"
+    xmlns:views="clr-namespace:MonitorUiExtension.Views">
+
+    <DataTemplate DataType="{x:Type viewModels:ExtensionComponentViewModel}">
+        <views:ExtensionComponentView />
+    </DataTemplate>
+
+</ResourceDictionary>
+
+
+

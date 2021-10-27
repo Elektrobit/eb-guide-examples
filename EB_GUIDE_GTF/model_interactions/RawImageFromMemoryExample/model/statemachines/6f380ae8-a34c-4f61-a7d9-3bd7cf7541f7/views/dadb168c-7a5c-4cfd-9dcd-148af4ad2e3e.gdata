@@ -1,0 +1,102 @@
+EBGUIDE 6.12.0.211022102259;
+
+GtfView_template_instance(dadb168c-7a5c-4cfd-9dcd-148af4ad2e3e)
+{
+	name: "StaticImagesView"
+	template: @4ba5e50b-dc6c-4c10-8165-b319a5cef09c (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(2a2e16fc-5fa7-4ad3-8a0c-ffc947b3a825)
+		{
+			name: "description_text"
+			value: "This image is loaded once by an application during run-time."
+		},
+		wp<string>(1d129e25-7c0d-486e-aec2-01697edcf6bf)
+		{
+			name: "title_text"
+			value: ""
+		},
+		wp<bool>(2deec9b0-cea4-45f3-b7f0-cfc0732d0b3d)
+		{
+			name: "next_enabled"
+			value: true
+		},
+		wp<bool>(d9532aff-08eb-4ffb-a818-27d18a85c1e8)
+		{
+			name: "prev_enabled"
+			value: true
+		}]
+	user_properties: property_list [
+		wp<conditional_script>(dbc85220-ba35-4d55-bb60-1630bdf3fa89)
+		{
+			name: "setTitleText"
+			value: conditional_script(deb090ec-820d-43e7-9ddc-93b02ad1dd9b)
+			{
+				triggerList: trigger_list(a59fb5ac-4a92-4359-a1e6-d5cc204cc5bd)
+				{
+					script: "dp:showcase_title_list" \
+						""
+				}
+				onTrigger: function<bool,bool>(7fd3bded-1d56-46e3-a630-bccc71a02a47)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	v:this.title_text = dp:showcase_title_list[dp:showcase_id_static_image];" \
+						"	false;" \
+						"}"
+				}
+			}
+		}]
+	children: children_list [
+		GtfImage(197f5554-ed48-4925-a24e-2712a4ef7202)
+		{
+			name: "image"
+			properties: property_list [
+				wp<bool>(5e5db15c-55aa-4d00-8b62-066b717e4808)
+				{
+					name: "visible"
+					value: true
+				},
+				wp<int>(c82ec891-f276-44fd-8ab4-8fc332e36563)
+				{
+					name: "width"
+					value: 500
+				},
+				wp<int>(323fbb84-a5ce-42c5-8b83-e8aee91aa9ac)
+				{
+					name: "height"
+					value: 254
+				},
+				wp<int>(6fe41a9c-f2c7-418e-96b6-c36703b8d0c3)
+				{
+					name: "x"
+					value: 150
+				},
+				wp<int>(bcb4abcd-d85c-4aee-835a-9e0fbbf5f255)
+				{
+					name: "y"
+					value: 100
+				},
+				wp<image>(c7eae60e-39a3-4bef-afda-51af94a7b5aa)
+				{
+					name: "image"
+					value: @11c8170d-7549-4521-98d0-9afa8bd7dfcf (objectref<image>)
+				},
+				wp<bool>(1f8c8b78-7534-4c3b-be37-c7c1642826cc)
+				{
+					name: "sRGB"
+					value: false
+				},
+				wp<int>(ac572b96-61c8-43a5-a4ea-d986159ffafd)
+				{
+					name: "horizontalAlign"
+					value: 0
+				},
+				wp<int>(3b2071a6-9192-4e64-95ca-cd85694f2c33)
+				{
+					name: "verticalAlign"
+					value: 1
+				}]
+			features: feature_list []
+			children: children_list []
+		}]
+}

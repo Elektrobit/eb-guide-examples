@@ -1,0 +1,9 @@
+EBGUIDE 6.12.0.211022102259;
+
+model_interface(76fa6618-c9ac-408a-8139-7d732da79682)
+{
+	name: "Multisample"
+	color: #3399FFFF
+	dp_items: dp_item_refs []
+	events: event_refs []
+}

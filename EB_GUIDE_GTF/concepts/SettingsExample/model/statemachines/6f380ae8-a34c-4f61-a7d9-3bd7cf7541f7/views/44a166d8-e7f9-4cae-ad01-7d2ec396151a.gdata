@@ -1,0 +1,97 @@
+EBGUIDE 6.12.0.211022102259;
+
+GtfView_template_instance(44a166d8-e7f9-4cae-ad01-7d2ec396151a)
+{
+	name: "Homescreen"
+	template: @d9ee43bd-ee64-4c9f-904a-75cf1fd8f745 (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(fab9c92a-4d31-4fca-ac22-b7f66f91a5d1)
+		{
+			name: "text"
+			value: "Settings application demo"
+		},
+		wp<string>(0f9a85c5-157e-4bfa-87a3-7ac85e111446)
+		{
+			name: "description"
+			value: "The application retrieves the loaded plugins in the model"
+		}]
+	user_properties: property_list []
+	children: children_list [
+		GtfLabel(51dc5609-9214-47d8-b6f8-9ddee28a2428)
+		{
+			name: "Label 1"
+			properties: property_list [
+				wp<bool>(b316c7a4-e7d8-4ce2-960b-7c837698bafb)
+				{
+					name: "visible"
+					value: true
+				},
+				wp<int>(77e47911-e937-4980-b331-dda501811a19)
+				{
+					name: "width"
+					value: 685
+				},
+				wp<int>(3759ea7b-920a-4817-8561-0df592c0f9a6)
+				{
+					name: "height"
+					value: 153
+				},
+				wp<int>(1aad0902-c1cb-4909-b5a8-aa2a79e6a72b)
+				{
+					name: "x"
+					value: 59
+				},
+				wp<int>(e24c7a84-1452-4e59-b3a6-ccd96a18b00c)
+				{
+					name: "y"
+					value: 160
+				},
+				wp<string>(4ec690fd-8874-4b0b-a6cb-7c285a903327)
+				{
+					name: "text"
+					value: "You have started the Settings application plugin model!\\nCheck the output text file for the list of loaded plugins."
+				},
+				wp<color>(b967eecf-3b7e-4038-bb91-1396d507c9f3)
+				{
+					name: "textColor"
+					value: #FFFFFFFF
+				},
+				wp<font>(8d714aff-dc3c-4f51-974e-7b420316b5d3)
+				{
+					name: "font"
+					value: font_resource(768b262b-a8cb-4f5d-93a9-583e3a976c56)
+					{
+						sourceType: "model"
+						source: "resources"
+						file: "fonts/PT_Sans.ttf"
+						size: 25
+					}
+				},
+				wp<int>(315b64d9-60ab-4676-97c2-cf3c2a92dc3a)
+				{
+					name: "horizontalAlign"
+					value: 1
+				},
+				wp<int>(d413e501-735c-46da-8923-3f9f5486b9fa)
+				{
+					name: "verticalAlign"
+					value: 0
+				}]
+			features: feature_list [
+				MultiLine(c083e626-fb35-4ff4-b54c-0b3a3ed5b84c)
+				{
+					base_properties: property_list [
+						wp<int>(9686e760-3f28-4e49-81b1-0af27f95fcb9)
+						{
+							name: "lineOffset"
+							value: 0
+						},
+						wp<int>(49074c00-8ba8-438f-a8ae-fff79ea9a458)
+						{
+							name: "maxLineCount"
+							value: 0
+						}]
+				}]
+			children: children_list []
+		}]
+}

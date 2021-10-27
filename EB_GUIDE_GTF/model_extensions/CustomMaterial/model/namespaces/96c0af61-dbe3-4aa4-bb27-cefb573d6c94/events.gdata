@@ -1,0 +1,6 @@
+EBGUIDE 6.12.0.211022102259;
+
+events(994b383d-0ef2-4c1a-bfe2-0606031ae324)
+{
+	items: event_list []
+}

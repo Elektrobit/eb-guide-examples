@@ -1,0 +1,37 @@
+EBGUIDE 6.12.0.211022102259;
+
+GtfView_template_instance(ca7a53a4-a3db-40f3-9616-39e6fb1a8f80)
+{
+	name: "Titleview"
+	template: @18edd3fd-90d3-4e6e-bc08-4db08f8b05ee (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(00693cf9-e3d9-48c9-8791-284a79c03f76)
+		{
+			name: "title_text"
+			value: "Trace output demo"
+		},
+		wp<string>(0761fa75-78f9-451b-a717-ff3f861ac680)
+		{
+			name: "short desc_text"
+			value: "Example of creating and own trace output plugin"
+		},
+		wp<string>(eba2255a-c545-4ece-bd51-a22cf5822ac3)
+		{
+			name: "long desc_text"
+			value: "Documentation reference:\\nBackground information  > Core concepts > Tracing"
+		},
+		wp<function<bool,int,int,int,int>>(8fd1ef85-90ee-422e-9906-da46a7014b69)
+		{
+			name: "touchPressed"
+			value: function<bool,int,int,int,int>(bb43ace4-da92-4db0-89eb-3f9648124518)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:next();" \
+					"    false" \
+					"}"
+			}
+		}]
+	user_properties: property_list []
+	children: children_list []
+}

@@ -1,0 +1,930 @@
+EBGUIDE 6.12.0.211022102259;
+
+GtfView_template_instance(5ef56ca6-67c0-4d91-81e0-0b3381f7bd73)
+{
+	name: "View 1"
+	template: @d9ee43bd-ee64-4c9f-904a-75cf1fd8f745 (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(b41049be-5acb-464b-862c-b698428d58f7)
+		{
+			name: "text"
+			value: "Custom shader demo"
+		},
+		wp<string>(760c9a22-6de3-4921-937a-fc80669a7744)
+		{
+			name: "description"
+			value: "An HMI model can run user defined shaders in a 2D widget."
+		}]
+	user_properties: property_list []
+	children: children_list [
+		BoxBlur(9257a57c-69fd-4e36-a1ba-fd7fe55bbff4)
+		{
+			name: "BoxBlur"
+			properties: property_list [
+				wp<bool>(9f785224-575a-4183-b761-6253d565066e)
+				{
+					name: "visible"
+					value: true
+				},
+				wp<int>(c807fa32-2cc7-43b6-8069-eb82008f7d0c)
+				{
+					name: "width"
+					value: 150
+				},
+				wp<int>(3c625466-b6d5-4162-b840-162225711d18)
+				{
+					name: "height"
+					value: 150
+				},
+				wp<int>(cec1bc05-e0fe-4d07-b3a3-0f11ac749697)
+				{
+					name: "x"
+					value: 77
+				},
+				wp<int>(ae06a868-6d54-4b5e-9e9a-c3ea31a408c5)
+				{
+					name: "y"
+					value: 160
+				},
+				wp<int>(e1d22a01-3463-412a-9875-13a16112ce0a)
+				{
+					name: "u_blurIntensity"
+					value: 3
+				}]
+			features: feature_list []
+			children: children_list [
+				GtfImage(4fb0f605-eb1a-411e-b28d-289ad3433668)
+				{
+					name: "Image 1"
+					properties: property_list [
+						wp<bool>(079c008a-ae3c-4e59-855f-851113c796c8)
+						{
+							name: "visible"
+							value: true
+						},
+						wp<int>(944f2e18-8d3b-4218-9054-b940872313ba)
+						{
+							name: "width"
+							value: 110
+						},
+						wp<int>(82a35554-019a-417d-995f-c861b7acdcb5)
+						{
+							name: "height"
+							value: 110
+						},
+						wp<int>(5c6aac39-0e35-474d-acd9-8f5304f494ff)
+						{
+							name: "x"
+							value: 20
+						},
+						wp<int>(767e5924-267c-4fce-8bd7-d0076f37d28f)
+						{
+							name: "y"
+							value: 20
+						},
+						wp<image>(41ebacda-0a2f-4bc8-b498-e16ca962e5de)
+						{
+							name: "image"
+							value: image_resource(3ba6a404-7f5c-4ed6-8757-e6e03b8b32c2)
+							{
+								sourceType: "model"
+								source: "resources"
+								file: "images\\Nummer_bold_RGB.png"
+							}
+						},
+						wp<bool>(207c05cd-5e04-41a7-bac5-ee57b5786a49)
+						{
+							name: "sRGB"
+							value: false
+						},
+						wp<int>(db0f063a-d960-4be7-9475-763658fea86e)
+						{
+							name: "horizontalAlign"
+							value: 0
+						},
+						wp<int>(d67f23a9-6229-4543-beb8-0a12eb746a45)
+						{
+							name: "verticalAlign"
+							value: 1
+						}]
+					features: feature_list [
+						ScaleMode(3f8535cd-18fa-4b86-9a0b-9e637edc3ffc)
+						{
+							base_properties: property_list [
+								wp<int>(66c45f3c-9fc7-4563-8fc4-8248decba3ca)
+								{
+									name: "scaleMode"
+									value: 2
+								}]
+						}]
+					children: children_list []
+				}]
+		},
+		GtfParallelAnimation(ae95fd6d-1b1d-4215-bb89-77ccd16c04cd)
+		{
+			name: "ProgressBarAnimation"
+			properties: property_list [
+				wp<bool>(6f632062-ef53-4e22-a922-0f836b7a9b60)
+				{
+					name: "enabled"
+					value: true
+				},
+				wp<int>(1dc56772-d4b7-4223-96c8-31dfbeaf8de2)
+				{
+					name: "repeat"
+					value: 1
+				},
+				wp<bool>(47f123c1-78ba-49f6-8d75-62740a3938d6)
+				{
+					name: "alternating"
+					value: true
+				},
+				wp<float>(ba21ba21-be81-49c8-950c-496e94ea9a05)
+				{
+					name: "scale"
+					value: 1F
+				},
+				wp<function<void,int,bool>>(d15cda0c-bf28-4ac9-b181-dba944742271)
+				{
+					name: "onPlay"
+					value: function<void,int,bool>(802230a0-a406-4e88-a096-a75e83d153fe)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"" \
+							"}"
+					}
+				},
+				wp<function<void,int>>(5f86bd98-e466-41f2-a065-ccd59696bd9b)
+				{
+					name: "onPause"
+					value: function<void,int>(878ae103-aeda-4983-a126-d3f53ae76015)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+				},
+				wp<function<void,int,int>>(d1ca672d-e22c-4cbd-94c6-f8784126e8f0)
+				{
+					name: "onTerminate"
+					value: function<void,int,int>(6f627a5d-ee19-4afc-91fb-f70f51674255)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+				}]
+			features: feature_list []
+			children: children_list [
+				GtfFastStartFloat(74b9e1da-f57e-46e1-b59d-3da66f727a1b)
+				{
+					name: "Fast start curve 1"
+					properties: property_list [
+						wp<bool>(90e3e508-921f-446e-a5ad-edf475364be6)
+						{
+							name: "enabled"
+							value: true
+						},
+						wp<int>(800bf04c-fdc8-48ec-8726-5de4eec8ce48)
+						{
+							name: "delay"
+							value: 0
+						},
+						wp<int>(eccde04a-0301-4e4b-8d7d-0614e061faad)
+						{
+							name: "duration"
+							value: 2000
+						},
+						wp<int>(bfd12c17-9b9b-4f2d-a597-65fe64158714)
+						{
+							name: "repeat"
+							value: 0
+						},
+						wp<bool>(12d3cee2-99bd-4690-b1a4-a1822d0e6ccd)
+						{
+							name: "alternating"
+							value: true
+						},
+						wp<bool>(20a8fadc-9dd4-44dd-893d-aaec35ae5173)
+						{
+							name: "relative"
+							value: false
+						},
+						wp<float>(bdffaebc-a3e7-4164-9df4-f15dcf86280e)
+						{
+							name: "start"
+							value: 0F
+						},
+						wp<float>(6ba81606-cedf-4751-a652-88b4473c2a51)
+						{
+							name: "end"
+							value: 100F
+						},
+						wp<float>(8c9b8ec4-d992-41a6-8aa1-f553e63e5cdc)
+						{
+							name: "target"
+							value: @4889a2c6-e0a7-45bf-9e58-22ad8c31fb85 (objectref<float>)
+						}]
+					features: feature_list []
+					children: children_list []
+				}]
+		},
+		ProgressBar(10f47650-acda-44a0-bbef-b07f48490ce5)
+		{
+			name: "ProgressBar"
+			properties: property_list [
+				wp<bool>(a1859cba-be1d-40a9-92e3-260843da368e)
+				{
+					name: "visible"
+					value: true
+				},
+				wp<int>(191e7d26-7c18-445e-9598-b5c07cfeea9d)
+				{
+					name: "width"
+					value: 150
+				},
+				wp<int>(2d695c8c-5c7b-4652-8203-c0c2d9447bfb)
+				{
+					name: "height"
+					value: 150
+				},
+				wp<int>(c5588634-5d4b-4d6a-8251-d7b607ad09ea)
+				{
+					name: "x"
+					value: 313
+				},
+				wp<int>(11798350-0db7-4223-b4af-971b35954d14)
+				{
+					name: "y"
+					value: 159
+				},
+				wp<image>(a7fb2270-212b-4a5d-b218-acb275d89f2c)
+				{
+					name: "u_barImage"
+					value: image_resource(84a306a0-3236-4d0c-bcea-fed90a172faa)
+					{
+						sourceType: "model"
+						source: "resources"
+						file: "images\\bar_image.png"
+					}
+				},
+				wp<image>(87811ac1-ff52-4832-89c9-d74e9d9d4e84)
+				{
+					name: "u_colorationImage"
+					value: image_resource(2bf2eed6-1908-42be-ab9d-2b59e10b2135)
+					{
+						sourceType: "model"
+						source: "resources"
+						file: "images\\coloration_image.png"
+					}
+				},
+				wp<float>(4889a2c6-e0a7-45bf-9e58-22ad8c31fb85)
+				{
+					name: "u_progress"
+					value: 0F
+				},
+				wp<bool>(03189338-7df0-4ac5-ae47-eb7f9bca6664)
+				{
+					name: "u_enableDynamicColoration"
+					value: false
+				},
+				wp<conditional_script>(ad0e3585-def5-488b-851c-7c4e26c8b3a4)
+				{
+					name: "AnimationScript"
+					value: conditional_script(9b920280-cfab-4f21-a214-064551071dcb)
+					{
+						triggerList: trigger_list(14d3aa2f-10cd-4749-aac4-de0743b27548)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(a9f13f74-757b-4b9b-a1ab-3127eee8add1)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	f:animation_play(v:this)" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			features: feature_list []
+			children: children_list []
+		},
+		CustomShaderColoration(b3dc175f-ead3-4b7a-8fee-80d61c4ee9f1)
+		{
+			name: "Coloration"
+			properties: property_list [
+				wp<bool>(03b5bc60-45b6-401e-9c72-655068052cd5)
+				{
+					name: "visible"
+					value: true
+				},
+				wp<int>(f2c22356-4bef-4b6b-bb9c-bf315456f9f4)
+				{
+					name: "width"
+					value: 150
+				},
+				wp<int>(00d2a629-321d-4c58-b6a2-530410767bea)
+				{
+					name: "height"
+					value: 150
+				},
+				wp<int>(fbba3b12-36c5-4bc0-964f-2398559f9594)
+				{
+					name: "x"
+					value: 571
+				},
+				wp<int>(5e2b0fa0-486d-4a37-afc3-9596ea72d370)
+				{
+					name: "y"
+					value: 160
+				},
+				wp<image>(03462803-04da-42b7-bb21-e7030543b521)
+				{
+					name: "u_image"
+					value: image_resource(1fcdbcf8-6675-42d6-87f4-0da8b3fe13b8)
+					{
+						sourceType: "model"
+						source: "resources"
+						file: "images\\Nummer_bold_RGB.png"
+					}
+				}]
+			features: feature_list [
+				Coloration(f8713b50-11e3-419e-9557-e5d10e8b5901)
+				{
+					base_properties: property_list [
+						wp<bool>(146b42e3-9226-4b1f-a08a-72990fe132d5)
+						{
+							name: "colorationEnabled"
+							value: true
+						},
+						wp<color>(0322aa89-90af-4fb8-b5ba-cbbca668852e)
+						{
+							name: "colorationColor"
+							value: #FF8C00FF
+						}]
+				}]
+			children: children_list []
+		},
+		GtfLabel(4e60460f-1141-45e9-856a-3be6732f2e94)
+		{
+			name: "Label_BoxBlur"
+			properties: property_list [
+				wp<bool>(d80c6a19-5e0e-4031-8c4c-cb85477bf0b3)
+				{
+					name: "visible"
+					value: true
+				},
+				wp<int>(ace926bc-7100-42ee-8f7f-8dc6a9e63b82)
+				{
+					name: "width"
+					value: 100
+				},
+				wp<int>(92bf5fc3-fce0-4fbf-864f-b8fda5a1e914)
+				{
+					name: "height"
+					value: 40
+				},
+				wp<int>(e50aad3d-7bfe-400e-a348-a52b78011778)
+				{
+					name: "x"
+					value: 96
+				},
+				wp<int>(514b9185-08fa-40f7-b2be-724bd16b952d)
+				{
+					name: "y"
+					value: 331
+				},
+				wp<string>(656bf2b3-b357-41b0-a65f-dd24d5cf86f5)
+				{
+					name: "text"
+					value: "Blur Box"
+				},
+				wp<color>(2e757c9b-a18c-41b8-aeef-c8aed2660925)
+				{
+					name: "textColor"
+					value: #FFFFFFFF
+				},
+				wp<font>(242ca8e2-52c0-4bab-b8fa-025cdec8650c)
+				{
+					name: "font"
+					value: font_resource(f9377496-17b6-4dbd-a9fe-28958ec92132)
+					{
+						sourceType: "model"
+						source: "resources"
+						file: "PT_Sans_Narrow.ttf"
+						size: 24
+					}
+				},
+				wp<int>(700839e0-182a-4741-ba82-43bcd367f7c3)
+				{
+					name: "horizontalAlign"
+					value: 1
+				},
+				wp<int>(71cd3146-b65f-4e4a-b598-a0490c34568e)
+				{
+					name: "verticalAlign"
+					value: 0
+				}]
+			features: feature_list []
+			children: children_list []
+		},
+		GtfLabel(b2428bc2-c5ab-4158-a1a0-0dc8968db6d1)
+		{
+			name: "Label_ProgressBar"
+			properties: property_list [
+				wp<bool>(89869a33-ca6f-4d6a-bfab-5079ae54255a)
+				{
+					name: "visible"
+					value: true
+				},
+				wp<int>(3bc54730-c8df-4272-9745-c839bf578eec)
+				{
+					name: "width"
+					value: 100
+				},
+				wp<int>(76a3a795-c4ee-488d-80d4-ec62c974b738)
+				{
+					name: "height"
+					value: 40
+				},
+				wp<int>(049f1bb1-e055-4728-84d2-3160c4082e32)
+				{
+					name: "x"
+					value: 343
+				},
+				wp<int>(ebff4dca-d4e1-4d70-94d3-5c8924020eac)
+				{
+					name: "y"
+					value: 334
+				},
+				wp<string>(5197089d-6610-4445-8e5d-5f0eb703f629)
+				{
+					name: "text"
+					value: "Progress Bar"
+				},
+				wp<color>(0d9daab2-fbf1-4aab-b4b3-f44f7ae566c0)
+				{
+					name: "textColor"
+					value: #FFFFFFFF
+				},
+				wp<font>(de9169cc-2d98-4a21-9119-d9106f266c44)
+				{
+					name: "font"
+					value: font_resource(b79de8dd-254f-43e6-8d18-6319453b520f)
+					{
+						sourceType: "model"
+						source: "resources"
+						file: "PT_Sans_Narrow.ttf"
+						size: 24
+					}
+				},
+				wp<int>(fd535b30-c831-4ec6-bfc3-b2645aab8717)
+				{
+					name: "horizontalAlign"
+					value: 1
+				},
+				wp<int>(751943e0-3163-4ba1-9a9d-78db53f5eaab)
+				{
+					name: "verticalAlign"
+					value: 0
+				}]
+			features: feature_list []
+			children: children_list []
+		},
+		GtfLabel(df4c38c6-27d1-4abc-9501-52dda9695b0a)
+		{
+			name: "Label_Coloration"
+			properties: property_list [
+				wp<bool>(00fd6e51-7b92-41c3-b85c-fa76642be3bc)
+				{
+					name: "visible"
+					value: true
+				},
+				wp<int>(fb7fda80-72c9-473c-bd54-3f00a58bd2bb)
+				{
+					name: "width"
+					value: 100
+				},
+				wp<int>(19bb3e60-666c-4004-8b1b-1a16bbe770f1)
+				{
+					name: "height"
+					value: 40
+				},
+				wp<int>(8d0b2f87-313b-487a-92ef-240352b0fc01)
+				{
+					name: "x"
+					value: 604
+				},
+				wp<int>(49a39724-413a-4a80-a1ad-a0aebd0db298)
+				{
+					name: "y"
+					value: 333
+				},
+				wp<string>(a950f879-c7c5-4ee9-b653-c4808f94b3e6)
+				{
+					name: "text"
+					value: "Coloration"
+				},
+				wp<color>(f382047d-1b69-4fc7-8442-1e78813211ee)
+				{
+					name: "textColor"
+					value: #FFFFFFFF
+				},
+				wp<font>(9ce99129-d5ee-4bb6-b0e7-a020072014f6)
+				{
+					name: "font"
+					value: font_resource(67329a7c-f053-4a3e-ae4c-9a89dc2e989f)
+					{
+						sourceType: "model"
+						source: "resources"
+						file: "PT_Sans_Narrow.ttf"
+						size: 24
+					}
+				},
+				wp<int>(99f10068-0344-4536-8ec1-86e4e3b6ce57)
+				{
+					name: "horizontalAlign"
+					value: 1
+				},
+				wp<int>(de1d06c7-63a9-464c-be6d-aa74de4b46de)
+				{
+					name: "verticalAlign"
+					value: 0
+				}]
+			features: feature_list []
+			children: children_list []
+		},
+		GtfRectangle_template_instance(3685495a-2969-4618-b22a-50df458809e7)
+		{
+			name: "BlurBtn_Increase"
+			template: @5af0dbe6-a955-45f9-99f1-91af4fe8c7d7 (objectref<GtfRectangle_template>)
+			override_properties: property_list [
+				wp<string>(c13b620e-3c4c-4eca-80bb-e55f1fd20742)
+				{
+					name: "text"
+					value: "+"
+				},
+				wp<int>(c34f871e-174d-4817-9eaa-7541a7486b32)
+				{
+					name: "x"
+					value: 79
+				},
+				wp<int>(bc4812f2-28fb-4430-bd5c-612f308a0d60)
+				{
+					name: "y"
+					value: 120
+				},
+				wp<color>(8f0740f2-b7ba-4c94-b67b-32a6f534b5a6)
+				{
+					name: "fillColor"
+					value: #A9A9A9FF
+				},
+				wp<function<bool,int,int,int,int>>(533b4419-38a1-4d8d-a8f8-e4b6651dacee)
+				{
+					name: "touchShortReleased"
+					value: function<bool,int,int,int,int>(cffdfe26-6e2f-4c0d-a987-2ae1395395f0)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(v:this->^->BoxBlur.u_blurIntensity < 15)" \
+							"	{" \
+							"		v:this->^->BoxBlur.u_blurIntensity = v:this->^->BoxBlur.u_blurIntensity + 1	" \
+							"	}" \
+							"    " \
+							"    false" \
+							"}"
+					}
+				}]
+			user_properties: property_list []
+			children: children_list []
+		},
+		GtfRectangle_template_instance(a2359190-6757-4ec9-b0f7-3f680b84fd4f)
+		{
+			name: "BlurBtn_Decrease"
+			template: @5af0dbe6-a955-45f9-99f1-91af4fe8c7d7 (objectref<GtfRectangle_template>)
+			override_properties: property_list [
+				wp<string>(d0398ce5-1430-42b2-83ec-9b517342a4ff)
+				{
+					name: "text"
+					value: "-"
+				},
+				wp<int>(2150bb0e-d89b-4cfb-87f3-e2ca05e22f3e)
+				{
+					name: "x"
+					value: 159
+				},
+				wp<int>(8c202e32-9358-4c33-b445-d6b3b04569ce)
+				{
+					name: "y"
+					value: 120
+				},
+				wp<color>(763203bb-5813-4aa7-ae64-70f44a0abb4f)
+				{
+					name: "fillColor"
+					value: #A9A9A9FF
+				},
+				wp<function<bool,int,int,int,int>>(ed3b9cc5-89d9-493e-949c-5a486e4107fa)
+				{
+					name: "touchShortReleased"
+					value: function<bool,int,int,int,int>(e731fbcb-d60a-49c6-a233-f8de15b07cc5)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(v:this->^->BoxBlur.u_blurIntensity > -1)" \
+							"	{" \
+							"		v:this->^->BoxBlur.u_blurIntensity = v:this->^->BoxBlur.u_blurIntensity - 1	" \
+							"	}" \
+							"    " \
+							"    false" \
+							"}"
+					}
+				}]
+			user_properties: property_list []
+			children: children_list []
+		},
+		GtfRectangle_template_instance(6426ac59-6745-4f49-886a-1f68b187e58b)
+		{
+			name: "ProgressBarBtn_Start"
+			template: @5af0dbe6-a955-45f9-99f1-91af4fe8c7d7 (objectref<GtfRectangle_template>)
+			override_properties: property_list [
+				wp<string>(070c387d-a647-4c5f-be3a-6449195cc19e)
+				{
+					name: "text"
+					value: "Start"
+				},
+				wp<int>(05cb93be-f8aa-474a-b2ba-cc041167e63f)
+				{
+					name: "x"
+					value: 312
+				},
+				wp<int>(87244c8b-4b36-4ec2-a643-8a501c7a3696)
+				{
+					name: "y"
+					value: 78
+				},
+				wp<color>(099b4b3f-3d8d-4757-a642-eaa5846063cf)
+				{
+					name: "fillColor"
+					value: #008000FF
+				},
+				wp<function<bool,int,int,int,int>>(8e50e44a-7fdd-42d2-8f5a-8c6d811e834f)
+				{
+					name: "touchShortReleased"
+					value: function<bool,int,int,int,int>(d232de42-f1b6-4f29-87a1-76654f2eb408)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    f:animation_play(v:this->^->ProgressBarAnimation)" \
+							"    false" \
+							"}"
+					}
+				}]
+			user_properties: property_list []
+			children: children_list []
+		},
+		GtfRectangle_template_instance(9bf6de06-0f12-4476-95e5-814ad2e6877d)
+		{
+			name: "ProgressBarBtn_Reset"
+			template: @5af0dbe6-a955-45f9-99f1-91af4fe8c7d7 (objectref<GtfRectangle_template>)
+			override_properties: property_list [
+				wp<string>(c1b629c1-3430-4478-ad76-aa84116c2606)
+				{
+					name: "text"
+					value: "Reset"
+				},
+				wp<int>(70e10587-fa8f-493e-8d62-706743075910)
+				{
+					name: "x"
+					value: 356
+				},
+				wp<int>(13d4739b-1346-490c-91cf-dd8f301c7a4b)
+				{
+					name: "y"
+					value: 120
+				},
+				wp<color>(aafa37aa-8b31-4686-af06-66f94a3b40d3)
+				{
+					name: "fillColor"
+					value: #A9A9A9FF
+				},
+				wp<function<bool,int,int,int,int>>(cee686d1-f637-4f15-bd7b-f4bf909fe67d)
+				{
+					name: "touchShortReleased"
+					value: function<bool,int,int,int,int>(6a174bdf-84db-47e5-ac03-729bd09879ff)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    f:animation_cancel_reset(v:this->^->ProgressBarAnimation)" \
+							"    v:this->^->ProgressBar.u_progress = 0.0" \
+							"    false" \
+							"}"
+					}
+				}]
+			user_properties: property_list []
+			children: children_list []
+		},
+		GtfRectangle_template_instance(79495d0a-d4a9-4933-9495-663b9d6f55c4)
+		{
+			name: "ProgressBarBtn_Stop"
+			template: @5af0dbe6-a955-45f9-99f1-91af4fe8c7d7 (objectref<GtfRectangle_template>)
+			override_properties: property_list [
+				wp<string>(574096ac-14ec-4a7e-9b58-b0af3d0b2292)
+				{
+					name: "text"
+					value: "Stop"
+				},
+				wp<int>(682eb351-3164-48d6-9942-bb2e5f999e63)
+				{
+					name: "x"
+					value: 390
+				},
+				wp<int>(675aa5d8-f146-42b4-90cf-d07818b4685f)
+				{
+					name: "y"
+					value: 78
+				},
+				wp<color>(2e9d54ab-74ff-4965-8f90-794bc37f35ad)
+				{
+					name: "fillColor"
+					value: #FF0000FF
+				},
+				wp<function<bool,int,int,int,int>>(f2bebec0-c483-4042-8075-630953fd1d71)
+				{
+					name: "touchShortReleased"
+					value: function<bool,int,int,int,int>(a8cf2dfe-71ab-4962-94e8-1743184fdd20)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    f:animation_pause(v:this->^->ProgressBarAnimation)" \
+							"    false" \
+							"}"
+					}
+				}]
+			user_properties: property_list []
+			children: children_list []
+		},
+		GtfRectangle_template_instance(ffd6feba-c78b-48f3-800f-638e70f1bc86)
+		{
+			name: "ColorationBtn_Green"
+			template: @5af0dbe6-a955-45f9-99f1-91af4fe8c7d7 (objectref<GtfRectangle_template>)
+			override_properties: property_list [
+				wp<string>(c745f465-09a5-4acb-b223-00e27066a688)
+				{
+					name: "text"
+					value: ""
+				},
+				wp<int>(a255f385-50ed-4de0-9d08-dd929299edea)
+				{
+					name: "x"
+					value: 688
+				},
+				wp<int>(f0fb630f-cbcd-4c6f-bf61-9ad3ab3abdc7)
+				{
+					name: "y"
+					value: 120
+				},
+				wp<color>(2ca8f010-4a07-49a8-a93e-383f65e29f71)
+				{
+					name: "fillColor"
+					value: #008000FF
+				},
+				wp<function<bool,int,int,int,int>>(b12e6286-6973-46ad-8e4b-5e8e4d66e6bf)
+				{
+					name: "touchShortReleased"
+					value: function<bool,int,int,int,int>(c93e3475-12db-4d09-a144-1bf1339fd794)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    v:this->^->Coloration.colorationColor = color:0, 255, 0, 255" \
+							"    false" \
+							"}"
+					}
+				}]
+			user_properties: property_list []
+			children: children_list []
+		},
+		GtfRectangle_template_instance(2e094cf3-03de-4573-9ee7-506070ef56ac)
+		{
+			name: "ColorationBtn_Blue"
+			template: @5af0dbe6-a955-45f9-99f1-91af4fe8c7d7 (objectref<GtfRectangle_template>)
+			override_properties: property_list [
+				wp<string>(9af25488-7d6a-430a-9d93-bcd5704ccbc1)
+				{
+					name: "text"
+					value: ""
+				},
+				wp<int>(1d2f3674-a2d3-4451-8053-b87093456efc)
+				{
+					name: "x"
+					value: 612
+				},
+				wp<int>(26dd5306-240a-46dd-8b75-65f9e7b51d44)
+				{
+					name: "y"
+					value: 120
+				},
+				wp<color>(2058bda7-5c35-433b-9ee0-9655f00ced56)
+				{
+					name: "fillColor"
+					value: #1E90FFFF
+				},
+				wp<function<bool,int,int,int,int>>(af386428-5cc2-40e0-89a2-95a63a90ee56)
+				{
+					name: "touchShortReleased"
+					value: function<bool,int,int,int,int>(0e81d063-8635-48d1-a24d-b8673af01d49)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    v:this->^->Coloration.colorationColor = color:0, 0, 255, 255" \
+							"    false" \
+							"}"
+					}
+				}]
+			user_properties: property_list []
+			children: children_list []
+		},
+		GtfRectangle_template_instance(283ceedb-a957-44e9-9b9d-5dfaca343a92)
+		{
+			name: "ColorationBtn_Red"
+			template: @5af0dbe6-a955-45f9-99f1-91af4fe8c7d7 (objectref<GtfRectangle_template>)
+			override_properties: property_list [
+				wp<string>(a7fd9008-e69f-449e-bae6-2c222e07fe26)
+				{
+					name: "text"
+					value: ""
+				},
+				wp<int>(429860a6-9699-4cc0-9672-312b86293b60)
+				{
+					name: "x"
+					value: 531
+				},
+				wp<int>(1abb3851-93b1-4b68-84e3-ceb0090307ab)
+				{
+					name: "y"
+					value: 120
+				},
+				wp<color>(a642ef2e-44e8-445b-8991-a1e2c0ff8d52)
+				{
+					name: "fillColor"
+					value: #FF0000FF
+				},
+				wp<function<bool,int,int,int,int>>(a46f15a7-1263-4df6-b1f9-8d66fe1391ce)
+				{
+					name: "touchShortReleased"
+					value: function<bool,int,int,int,int>(3ea03c27-93ae-445f-8405-316e9312594e)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    v:this->^->Coloration.colorationColor = color:255, 0, 0, 255" \
+							"    false" \
+							"}"
+					}
+				}]
+			user_properties: property_list []
+			children: children_list []
+		},
+		GtfRectangle_template_instance(17e3c790-9436-484c-beb3-2b58ffbde6f7)
+		{
+			name: "ColorationBtn_Off"
+			template: @5af0dbe6-a955-45f9-99f1-91af4fe8c7d7 (objectref<GtfRectangle_template>)
+			override_properties: property_list [
+				wp<string>(80cd685f-0476-414e-b692-e22d45e0c1b1)
+				{
+					name: "text"
+					value: "Off"
+				},
+				wp<int>(ccfc1d71-38f6-4845-9583-c95f6575423d)
+				{
+					name: "x"
+					value: 612
+				},
+				wp<int>(c4f8b396-98b4-4bf6-b156-d53f38657dd1)
+				{
+					name: "y"
+					value: 78
+				},
+				wp<color>(74eb4149-8849-4043-85cc-a7d1a935bbf9)
+				{
+					name: "fillColor"
+					value: @e24ac0c3-b282-46ef-b301-f0c6e2c81116 (objectref<color>)
+				},
+				wp<function<bool,int,int,int,int>>(5c36744e-3032-4443-a421-613a6e27d53c)
+				{
+					name: "touchShortReleased"
+					value: function<bool,int,int,int,int>(a92a9a84-4a1b-4c6c-aec2-ec7f26820897)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->Coloration.colorationColor = color:255, 255, 255, 255" \
+							"    false" \
+							"}"
+					}
+				}]
+			user_properties: property_list []
+			children: children_list []
+		}]
+}

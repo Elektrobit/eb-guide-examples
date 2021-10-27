@@ -1,0 +1,38 @@
+EBGUIDE 6.12.0.211022102259;
+
+events(fe6bdf48-39a9-4112-8ad5-7404a575cd68)
+{
+	items: event_list [
+		event(01ffb473-23d9-4f56-945a-7875a2cd708a)
+		{
+			name: "home"
+			eventId: 1
+			event_group: @91a9bab0-e2b2-4952-b5c1-f02e10b46f18 (objectref<event_group>)
+			event_params: event_param_list []
+		},
+		event(a5c53304-298c-4710-adc5-a15f85ff9973)
+		{
+			name: "prev"
+			eventId: 5
+			event_group: @91a9bab0-e2b2-4952-b5c1-f02e10b46f18 (objectref<event_group>)
+			event_params: event_param_list []
+		},
+		event(cdbb1a1f-08ba-4f82-aa5b-909c3c4b36bb)
+		{
+			name: "feature"
+			eventId: 2
+			event_group: @91a9bab0-e2b2-4952-b5c1-f02e10b46f18 (objectref<event_group>)
+			event_params: event_param_list [
+				event_param<int>(daab3ef5-c575-4d27-a47f-b29980936586)
+				{
+					name: "featureID"
+				}]
+		},
+		event(cf5d0e4a-6e0e-409c-9511-5e244e7095d9)
+		{
+			name: "next"
+			eventId: 0
+			event_group: @91a9bab0-e2b2-4952-b5c1-f02e10b46f18 (objectref<event_group>)
+			event_params: event_param_list []
+		}]
+}

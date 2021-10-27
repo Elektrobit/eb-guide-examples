@@ -1,0 +1,4624 @@
+EBGUIDE 6.12.0.211022102259;
+
+GtfView_template_instance(3c41cee0-9553-4bc8-b281-b75c8e2956fd)
+{
+	name: "MainView"
+	template: @d9ee43bd-ee64-4c9f-904a-75cf1fd8f745 (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(dd50f820-1852-41b8-a292-43da6a44101b)
+		{
+			name: "description"
+			value: "An HMI model can load custom shaders for scene graphs."
+		},
+		wp<string>(0f3647aa-b6d4-4b8b-a470-aea8b960a2be)
+		{
+			name: "text"
+			value: "Custom material demo"
+		}]
+	user_properties: property_list []
+	children: children_list [
+		GtfContainer(0fd33d37-d14f-47e8-9a84-1b78b89a2683)
+		{
+			name: "Scene"
+			properties: property_list [
+				wp<bool>(09672fdd-7374-41d0-875d-cfe7406338b0)
+				{
+					name: "visible"
+					value: true
+				},
+				wp<int>(b4d7db58-63f3-4664-93f4-645da564bd8b)
+				{
+					name: "width"
+					value: 780
+				},
+				wp<int>(16cdcdc9-afbd-4261-b279-be66af414997)
+				{
+					name: "height"
+					value: 337
+				},
+				wp<int>(7cae7684-f94e-45cf-ab29-c9026a62de11)
+				{
+					name: "x"
+					value: 10
+				},
+				wp<int>(271d745c-b4ac-4d30-a173-9e89860589fd)
+				{
+					name: "y"
+					value: 72
+				},
+				wp<conditional_script>(1e374adc-9710-474a-9c95-c82fad6251c9)
+				{
+					name: "StartAnimationTrigger"
+					value: conditional_script(2a880eb2-48be-4a2f-97e5-2d93880db47b)
+					{
+						triggerList: trigger_list(a9f48cc5-9b62-47f3-97a2-9bc00c3e8e63)
+						{
+							script: "ev:start_animation"
+						}
+						onTrigger: function<bool,bool>(fe5ee4bb-c7f0-45d0-903b-db054e68a359)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	match_event v:event = ev:start_animation in" \
+								"	{" \
+								"		f:animation_play(v:this->DatapoolAnimations)" \
+								"		f:animation_play(v:this->\"Scene graph\"->\"GGX Sphere|Sphere.002Action\")" \
+								"		f:animation_play(v:this->\"Scene graph\"->\"Phong Sphere|Sphere.002Action\")" \
+								"		f:animation_play(v:this->\"Scene graph\"->\"PBR Phong Sphere|Sphere.002Action\")	" \
+								"	}" \
+								"" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			features: feature_list [
+				ViewPort(f5e97e07-9824-4cdf-b22e-c4b7cf4d225f)
+				{
+					base_properties: property_list [
+						wp<int>(cca8ab85-0572-460e-a43e-3f662dbdf9b6)
+						{
+							name: "xOffset"
+							value: 0
+						},
+						wp<int>(5bfac43e-8ff2-4a74-a043-fe753eb0c423)
+						{
+							name: "yOffset"
+							value: 0
+						}]
+				},
+				StateTouched(7c57eaf0-9666-46cb-87be-a23e4351da92)
+				{
+					base_properties: property_list [
+						wp<bool>(801d5817-fad9-44a2-a426-ba41297ea8b7)
+						{
+							name: "touchable"
+							value: true
+						},
+						wp<bool>(63fa43a6-abe3-44cb-b4d9-8ee325f20963)
+						{
+							name: "touched"
+							value: false
+						},
+						wp<int>(226f030f-5c5c-47ea-b7d4-6879a2303176)
+						{
+							name: "touchPolicy"
+							value: 0
+						},
+						wp<int>(c72ee592-59db-4793-81dd-9323fc42c555)
+						{
+							name: "touchBehavior"
+							value: 0
+						}]
+				},
+				TouchPressed(337d9a6a-25fe-4e33-9e17-ddf6f5b0993c)
+				{
+					base_properties: property_list [
+						wp<function<bool,int,int,int,int>>(c77f9e2b-68fc-4873-a11c-e81d72fcea12)
+						{
+							name: "touchPressed"
+							value: function<bool,int,int,int,int>(a468c83d-a5fe-4d33-8fea-9221ce9cb826)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:start_animation()" \
+									"    false" \
+									"}"
+							}
+						}]
+				}]
+			children: children_list [
+				GtfParallelAnimation(79c420d4-9607-447c-a032-79f3a5f78514)
+				{
+					name: "DatapoolAnimations"
+					properties: property_list [
+						wp<bool>(d572d3fa-e1e4-4dcc-9658-6b8022eec55e)
+						{
+							name: "enabled"
+							value: true
+						},
+						wp<int>(739b13a2-a49d-44c7-a0e0-f072a2c03c45)
+						{
+							name: "repeat"
+							value: 0
+						},
+						wp<bool>(f463de8a-4043-4a31-8717-a3bb1428269b)
+						{
+							name: "alternating"
+							value: false
+						},
+						wp<float>(df7cb7de-6861-44ae-a371-a6c30ac5d394)
+						{
+							name: "scale"
+							value: 1F
+						},
+						wp<function<void,int,bool>>(76bba200-3c84-4433-a142-6a1332fcdcfb)
+						{
+							name: "onPlay"
+							value: function<void,int,bool>(c3f8aa90-2c07-4e86-892b-da4186e95b80)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+						},
+						wp<function<void,int>>(96440c3b-0ab6-4fc6-bfb2-32f08b617944)
+						{
+							name: "onPause"
+							value: function<void,int>(e98331fb-ac09-4b10-b64c-cfebb89804d4)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+						},
+						wp<function<void,int,int>>(cce735a5-fbdd-4f18-a6f9-7e3f191b1902)
+						{
+							name: "onTerminate"
+							value: function<void,int,int>(f9e2ce2b-92ae-4c8c-8beb-abd395c2bc34)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+						}]
+					features: feature_list []
+					children: children_list [
+						GtfSinusCurveFloat(cf258e24-49e6-45b7-a732-4e5e0fac377b)
+						{
+							name: "Sinus curve 1"
+							properties: property_list [
+								wp<bool>(c8b74fe5-cd92-4a9c-bff7-8c0786bb89d1)
+								{
+									name: "enabled"
+									value: true
+								},
+								wp<int>(6ef62f22-3800-4c37-a5c1-e92b90e63ea0)
+								{
+									name: "delay"
+									value: 0
+								},
+								wp<int>(bc786447-5313-4f7d-a766-feb70779e13e)
+								{
+									name: "duration"
+									value: 6000
+								},
+								wp<int>(11f349ed-d8bb-4115-964d-b23ae7f32c22)
+								{
+									name: "repeat"
+									value: 0
+								},
+								wp<bool>(1719f10c-c781-4bd2-9721-df41d70a0496)
+								{
+									name: "alternating"
+									value: false
+								},
+								wp<bool>(0898708f-6ec2-401a-bbf3-a4d69696ddf6)
+								{
+									name: "relative"
+									value: false
+								},
+								wp<float>(24fa83ea-844e-47da-a831-0081f690998b)
+								{
+									name: "amplitude"
+									value: 2.7F
+								},
+								wp<float>(330fc0fb-7e4d-4914-9f0b-5a1604a983a4)
+								{
+									name: "constant"
+									value: 0F
+								},
+								wp<float>(10c43af2-ff82-4aef-97d5-2f384a668dc3)
+								{
+									name: "frequency"
+									value: 0.166667F
+								},
+								wp<float>(5d6851b3-9395-4901-a2aa-ffc1ae8d8994)
+								{
+									name: "phase"
+									value: 0F
+								},
+								wp<float>(b66d9b59-a627-464d-a7e5-459aa0039425)
+								{
+									name: "target"
+									value: @420e127f-5790-4607-8138-ecf1c93daa5b (objectref<float>)
+								}]
+							features: feature_list []
+							children: children_list []
+						},
+						GtfLinearInterpolationFloat(10958039-1e7a-40f5-b2d3-905e04e79c75)
+						{
+							name: "Linear interpolation curve 2 copy 1"
+							properties: property_list [
+								wp<bool>(72e47d55-b4e6-4042-8549-d1324e233c11)
+								{
+									name: "enabled"
+									value: true
+								},
+								wp<int>(89d535be-be8b-4ab4-96ce-b40a25f2adef)
+								{
+									name: "delay"
+									value: 0
+								},
+								wp<int>(d07a2a43-e170-4a56-9e04-25a8ba98191e)
+								{
+									name: "duration"
+									value: 125
+								},
+								wp<int>(7188b303-b902-40f6-84ef-ca68897d807b)
+								{
+									name: "repeat"
+									value: 5
+								},
+								wp<bool>(0da1379e-2fb2-4568-8590-384dd0ded17b)
+								{
+									name: "alternating"
+									value: true
+								},
+								wp<bool>(68587950-df65-4ce0-8433-039d60c36e3b)
+								{
+									name: "relative"
+									value: false
+								},
+								wp<float>(c5501d57-7885-4f5b-9a41-2555cb906d41)
+								{
+									name: "start"
+									value: 0F
+								},
+								wp<float>(2daa6071-dc7d-45f0-b694-cc52ff6c4cf5)
+								{
+									name: "end"
+									value: 1F
+								},
+								wp<float>(79f3dced-443a-4880-96dc-61e69b9c0067)
+								{
+									name: "target"
+									value: @2ff10c8a-50ce-4ddb-824e-619ad96b1304 (objectref<float>)
+								}]
+							features: feature_list []
+							children: children_list []
+						},
+						GtfLinearInterpolationFloat(70877619-2f4f-4d2d-b461-e5f1aa4507d6)
+						{
+							name: "Linear interpolation curve 3 copy 1"
+							properties: property_list [
+								wp<bool>(fbbaef5f-c6e4-42d4-b1a6-80d065a4d514)
+								{
+									name: "enabled"
+									value: true
+								},
+								wp<int>(023e4641-fa06-48ed-aed3-6ccc1904f45f)
+								{
+									name: "delay"
+									value: 1210
+								},
+								wp<int>(5f9a5220-1f2e-48e1-bf78-787ea3eb8aaf)
+								{
+									name: "duration"
+									value: 300
+								},
+								wp<int>(1bd98ae8-26ae-4da5-9edf-bcdc7c440011)
+								{
+									name: "repeat"
+									value: 5
+								},
+								wp<bool>(0beceb58-a37e-47d4-98c3-75e3359aa387)
+								{
+									name: "alternating"
+									value: true
+								},
+								wp<bool>(04827f81-f7d9-457c-a8a5-0f61b17d3aec)
+								{
+									name: "relative"
+									value: false
+								},
+								wp<float>(c9473cc8-e704-488c-a646-09835e764c93)
+								{
+									name: "start"
+									value: 0F
+								},
+								wp<float>(5cd07888-8ec9-47d3-9ae2-8ea4b61c5aa1)
+								{
+									name: "end"
+									value: 1F
+								},
+								wp<float>(638ec06b-8b99-4f4d-bce7-90b2a73992aa)
+								{
+									name: "target"
+									value: @2ff10c8a-50ce-4ddb-824e-619ad96b1304 (objectref<float>)
+								}]
+							features: feature_list []
+							children: children_list []
+						},
+						GtfConstCurveFloat(65385613-6268-4a41-bd98-7c9238c30754)
+						{
+							name: "Constant curve 1 copy 1"
+							properties: property_list [
+								wp<bool>(afc421cb-cc1c-4c67-af52-c3c4215fad3a)
+								{
+									name: "enabled"
+									value: true
+								},
+								wp<int>(4ef8d06e-7518-4fa7-a9d9-9c7bca6ec87f)
+								{
+									name: "delay"
+									value: 5000
+								},
+								wp<int>(3f750f91-c141-4f44-8860-9fb8247b8b02)
+								{
+									name: "duration"
+									value: 1020
+								},
+								wp<int>(b194c6c8-197b-469b-ab85-60b192bf4c15)
+								{
+									name: "repeat"
+									value: 1
+								},
+								wp<bool>(adc50f60-361b-47f3-959a-90578b2d7214)
+								{
+									name: "alternating"
+									value: false
+								},
+								wp<bool>(d800f993-bc9f-4894-bbb9-c7388ce2126e)
+								{
+									name: "relative"
+									value: false
+								},
+								wp<float>(d32774c6-d435-4b9f-b723-99672ab71422)
+								{
+									name: "value"
+									value: 1F
+								},
+								wp<float>(b5771fe9-4791-4af6-862e-daeeb88c482e)
+								{
+									name: "target"
+									value: @2ff10c8a-50ce-4ddb-824e-619ad96b1304 (objectref<float>)
+								}]
+							features: feature_list []
+							children: children_list []
+						},
+						GtfScriptCurveFloat(ea7017d0-98ea-4770-a90b-20a8b89c7cbd)
+						{
+							name: "Script curve 1"
+							properties: property_list [
+								wp<bool>(5e9f515a-67ff-4c5e-8a31-b09fba2ae1a2)
+								{
+									name: "enabled"
+									value: true
+								},
+								wp<int>(79eff714-4718-40bc-bb8d-127448d95ae3)
+								{
+									name: "delay"
+									value: 0
+								},
+								wp<int>(30d82d60-de54-4b75-8978-be0fea4e2531)
+								{
+									name: "duration"
+									value: 6000
+								},
+								wp<int>(5305e39c-e0c3-4545-a5dc-f90fde495156)
+								{
+									name: "repeat"
+									value: 1
+								},
+								wp<bool>(3dd1a9d3-1b10-4d67-85a5-44b7cae85dca)
+								{
+									name: "alternating"
+									value: false
+								},
+								wp<bool>(dd2cf70c-aa01-4124-ba28-28d7ae311eea)
+								{
+									name: "relative"
+									value: false
+								},
+								wp<function<float,int,int>>(68c9889e-301a-425e-8f19-4509e3521386)
+								{
+									name: "curve"
+									value: function<float,int,int>(1886725d-1bd5-4ebb-b0e4-3ddd3923c694)
+									{
+										script: "function(v:diff::int, v:t_anim::int)" \
+											"{" \
+											"	let v:var1 = 0.0 in" \
+											"	{" \
+											"		if ((v:t_anim % 2000) < 500)" \
+											"    	{" \
+											"    		v:var1 = 0.0;" \
+											"    	} else  if ((v:t_anim % 2000) < 1000)" \
+											"    	{" \
+											"    		v:var1 = -0.75;" \
+											"    	} else if ((v:t_anim % 2000) < 1500)" \
+											"    	{" \
+											"    		v:var1 = -0.5;" \
+											"    	} else" \
+											"    	{" \
+											"    		v:var1 = -0.25;" \
+											"    	}" \
+											"    	" \
+											"    	v:var1;" \
+											"	}" \
+											"}"
+									}
+								},
+								wp<float>(4f60e7ea-de95-42dd-803a-7febd0bedf3c)
+								{
+									name: "target"
+									value: @2398f637-be5f-4e4a-af45-d8ee622cb847 (objectref<float>)
+								}]
+							features: feature_list []
+							children: children_list []
+						}]
+				},
+				GtfImage(7bd2e649-58ac-46b2-9ca8-957407bdf68d)
+				{
+					name: "BackgroundGradient"
+					properties: property_list [
+						wp<bool>(ea71f286-5531-462a-92ef-c096789c5bb2)
+						{
+							name: "visible"
+							value: true
+						},
+						wp<int>(876a9818-c554-4ea7-a139-3b2f633ad660)
+						{
+							name: "width"
+							value: @b4d7db58-63f3-4664-93f4-645da564bd8b (objectref<int>)
+						},
+						wp<int>(d9ff5a34-6119-45fa-93af-1db0d4858224)
+						{
+							name: "height"
+							value: 600
+						},
+						wp<int>(c7478079-ece1-4fbd-851c-ebb8fdbcce5a)
+						{
+							name: "x"
+							value: 0
+						},
+						wp<int>(72426148-3444-40e6-8e77-dac618687003)
+						{
+							name: "y"
+							value: -100
+						},
+						wp<image>(4bb4d627-2864-46ae-9de0-33c438ca3d3c)
+						{
+							name: "image"
+							value: image_resource(85b1fc15-b7ff-4a22-8ca1-4e67bc9eb25a)
+							{
+								sourceType: "model"
+								source: "resources"
+								file: "gradient.png"
+							}
+						},
+						wp<bool>(88c16404-e892-422f-b945-5ecc8d92b236)
+						{
+							name: "sRGB"
+							value: false
+						},
+						wp<int>(dd8809c0-5928-4669-b5c8-dfdbde212ba0)
+						{
+							name: "horizontalAlign"
+							value: 0
+						},
+						wp<int>(7ee354f5-fb12-457f-aba0-4a9bc3219623)
+						{
+							name: "verticalAlign"
+							value: 1
+						}]
+					features: feature_list [
+						ScaleMode(c4bf1e89-cd65-41a2-921f-9af03217a8d3)
+						{
+							base_properties: property_list [
+								wp<int>(0d31c932-1c8e-45c7-9100-ecd4618e2f8d)
+								{
+									name: "scaleMode"
+									value: 1
+								}]
+						},
+						Coloration(e243c341-a4ec-4d42-92cd-3c39ed68a159)
+						{
+							base_properties: property_list [
+								wp<bool>(3edefe79-8f6a-4916-84bf-1286d71cad7e)
+								{
+									name: "colorationEnabled"
+									value: true
+								},
+								wp<color>(352203a4-3c5c-479e-89c1-36cf8bfd09ff)
+								{
+									name: "colorationColor"
+									value: #2D5947FF
+								}]
+						}]
+					children: children_list []
+				},
+				GtfSceneGraph(b05dd5cb-dd4d-4602-a7e1-977da503d120)
+				{
+					name: "Scene graph"
+					properties: property_list [
+						wp<bool>(a22d1801-2d4d-43b7-8af3-aedb8a229ed7)
+						{
+							name: "visible"
+							value: true
+						},
+						wp<int>(a3f30aab-c46d-4088-adee-527aec57ff5b)
+						{
+							name: "width"
+							value: @b4d7db58-63f3-4664-93f4-645da564bd8b (objectref<int>)
+						},
+						wp<int>(2c131e9c-d797-4536-871d-5aeb6efa7da7)
+						{
+							name: "height"
+							value: @16cdcdc9-afbd-4261-b279-be66af414997 (objectref<int>)
+						},
+						wp<int>(90869377-c9c2-41cc-90af-2c2cbc3ee972)
+						{
+							name: "x"
+							value: 0
+						},
+						wp<int>(c64784bf-606a-4ea8-8bc8-95e32c267c18)
+						{
+							name: "y"
+							value: 0
+						},
+						wp<float>(b60774a4-4abd-4ef6-a89e-f7e2ce320a52)
+						{
+							name: "gamma"
+							value: 2.2F
+						},
+						wp<bool>(f65d839d-c8c7-4307-8114-89f512819018)
+						{
+							name: "debugLightSource"
+							value: false
+						}]
+					features: feature_list [
+						GtfToneMappingFeature(4354d493-9f39-4fe3-81fa-de670d536fc9)
+						{
+							base_properties: property_list [
+								wp<float>(2deb703e-9f0b-45f9-990a-5fc5bf2904a0)
+								{
+									name: "pureWhiteLuminance"
+									value: 0F
+								}]
+						},
+						GtfAntiAliasingFeature(804c26c5-352a-443a-a9bd-5ab0ef4e85f3)
+						{
+							base_properties: property_list [
+								wp<int>(b8639351-f983-4a13-9490-48ee4452ecea)
+								{
+									name: "antiAliasing"
+									value: 2
+								}]
+						}]
+					children: children_list [
+						GtfSceneGraphNode(61db2b3b-f328-4e3b-aff2-14d874abf43b)
+						{
+							name: "MultipleArrowScene"
+							properties: property_list [
+								wp<bool>(cfbf78d2-729c-4d08-bf85-6faca8892d73)
+								{
+									name: "visible"
+									value: true
+								},
+								wp<float>(e8e5206c-8def-4c79-933d-d03cd0d96962)
+								{
+									name: "rotationX"
+									value: 0F
+								},
+								wp<float>(ba4efd0d-6fd6-4908-abb9-bfa84522f1a0)
+								{
+									name: "rotationY"
+									value: 0F
+								},
+								wp<float>(ec0c71d8-7396-4e64-b6c2-371d7dfd2643)
+								{
+									name: "rotationZ"
+									value: 0F
+								},
+								wp<float>(cc90a5f2-ea1b-4205-b70f-174fddae27a1)
+								{
+									name: "scalingX"
+									value: 1F
+								},
+								wp<float>(dc9f3972-593a-4a58-ac65-11d6d3704069)
+								{
+									name: "scalingY"
+									value: 1F
+								},
+								wp<float>(fe026258-e407-4f6c-bcf1-90e277446144)
+								{
+									name: "scalingZ"
+									value: 1F
+								},
+								wp<float>(a676da05-946f-4808-b7b3-257369fe90f9)
+								{
+									name: "translationX"
+									value: 0F
+								},
+								wp<float>(233a3d9d-0005-4a71-bbdf-181490dbdbcb)
+								{
+									name: "translationY"
+									value: 0F
+								},
+								wp<float>(2256c421-954b-4307-88f1-2ca2743fe18e)
+								{
+									name: "translationZ"
+									value: 0F
+								}]
+							features: feature_list []
+							children: children_list [
+								GtfSceneGraphNode(add19d0a-ac0e-4317-9e88-74873de29213)
+								{
+									name: "Phong Arrow"
+									properties: property_list [
+										wp<bool>(50697184-f9bb-4a61-b520-b7ef0a8e88e2)
+										{
+											name: "visible"
+											value: true
+										},
+										wp<float>(9e48b270-840d-476c-82df-188b2e9bc2e3)
+										{
+											name: "rotationX"
+											value: -90.00001F
+										},
+										wp<float>(b118addf-8374-43d8-b385-3df95a2e7da4)
+										{
+											name: "rotationY"
+											value: 0F
+										},
+										wp<float>(1dd74ce7-8031-4103-ab72-f092fa0f670d)
+										{
+											name: "rotationZ"
+											value: 0F
+										},
+										wp<float>(914abc0d-73b1-4e0e-9fca-d43dedd8cbce)
+										{
+											name: "scalingX"
+											value: 100F
+										},
+										wp<float>(bdbb2e0e-095c-4636-ae3c-e81f4507d595)
+										{
+											name: "scalingY"
+											value: 100F
+										},
+										wp<float>(570da218-54d2-4ceb-a244-882bac758f38)
+										{
+											name: "scalingZ"
+											value: 100F
+										},
+										wp<float>(2322296d-0674-495c-b4fc-9b7a8f94dd34)
+										{
+											name: "translationX"
+											value: 500F
+										},
+										wp<float>(76ee1977-ab7f-47dc-9330-f6fbfeeb12f9)
+										{
+											name: "translationY"
+											value: 42.48215F
+										},
+										wp<float>(87d0512c-b1a0-41c6-bd33-628ce621961c)
+										{
+											name: "translationZ"
+											value: 0F
+										}]
+									features: feature_list []
+									children: children_list [
+										GtfMeshWidget(081aaa92-3405-43ad-a45b-78185b799521)
+										{
+											name: "Mesh 50"
+											properties: property_list [
+												wp<bool>(f08fec31-5050-40c8-92b3-4b375cd39696)
+												{
+													name: "visible"
+													value: true
+												},
+												wp<mesh>(28fac163-b047-46a6-a711-ec3371c3156d)
+												{
+													name: "mesh"
+													value: mesh_resource(93a472bb-d0e3-4254-bee7-113e20ae35c0)
+													{
+														sourceType: "model"
+														source: "resources"
+														file: "3D_arrow_anim_20210223_142836\\Cube.0010.ebmesh"
+													}
+												},
+												wp<int>(4d82872c-fcc1-4432-8c8f-82214baa2ba2)
+												{
+													name: "culling"
+													value: 2
+												}]
+											features: feature_list []
+											children: children_list [
+												PhongDeformMaterial(bd1022fb-aa13-4fa4-abf1-f5751d73d0b0)
+												{
+													name: "Deformable Phong Material 1"
+													properties: property_list [
+														wp<color>(2412374b-cba7-4706-b66b-90edd92579b8)
+														{
+															name: "ambient"
+															value: #FFFFFFFF
+														},
+														wp<color>(0edc886d-be4c-4e40-9e16-e8775b7ee32a)
+														{
+															name: "diffuse"
+															value: #3B3A3AFF
+														},
+														wp<color>(40916167-dbbf-4ca2-8b66-9a1b69899d9a)
+														{
+															name: "emissive"
+															value: #000000FF
+														},
+														wp<float>(3995d32b-c518-425d-960e-06b5bc6d940b)
+														{
+															name: "emissiveStrength"
+															value: 1F
+														},
+														wp<float>(6e203b43-bb20-4679-8b1b-6398baa5c7d4)
+														{
+															name: "shininess"
+															value: 0.1F
+														},
+														wp<color>(27684723-6d4e-4caa-8ff6-0af420c6a34a)
+														{
+															name: "specular"
+															value: #00FF00FF
+														},
+														wp<float>(07bcc57d-b14e-4d07-b01e-3f57a3e70b7c)
+														{
+															name: "opacity"
+															value: 1F
+														},
+														wp<float>(8498df73-b614-4800-a2ea-43b5e8e2017a)
+														{
+															name: "u_deformation"
+															value: @420e127f-5790-4607-8138-ecf1c93daa5b (objectref<float>)
+														}]
+													features: feature_list []
+													children: children_list []
+												}]
+										},
+										GtfMeshWidget(8ef66f51-fefc-4536-8288-87b8dc5b3e74)
+										{
+											name: "Mesh 52"
+											properties: property_list [
+												wp<bool>(537d8e76-014b-4531-b5ee-7c3f20c22177)
+												{
+													name: "visible"
+													value: true
+												},
+												wp<mesh>(1fb2e224-69b1-4ddb-8671-71f0d25faea2)
+												{
+													name: "mesh"
+													value: mesh_resource(a3dcba9e-0f5f-4166-a20a-7db44d292be0)
+													{
+														sourceType: "model"
+														source: "resources"
+														file: "3D_arrow_anim_20210223_142836\\Cube.0011.ebmesh"
+													}
+												},
+												wp<int>(57676a29-3457-4679-a595-8c594095bfec)
+												{
+													name: "culling"
+													value: 2
+												}]
+											features: feature_list []
+											children: children_list [
+												PhongDeformMaterial(67fef4af-8453-433f-b191-b1feabc490ef)
+												{
+													name: "Deformable Phong Material 2"
+													properties: property_list [
+														wp<color>(0bd1ea7a-ef2e-4dd0-8dee-eeb8883b373b)
+														{
+															name: "ambient"
+															value: #FFFFFFFF
+														},
+														wp<color>(56a7ae57-e2fb-4a21-9e28-d3a897e8a9f5)
+														{
+															name: "diffuse"
+															value: #696969FF
+														},
+														wp<color>(2469d39e-41df-41ed-9828-109a34e170ee)
+														{
+															name: "emissive"
+															value: #000000FF
+														},
+														wp<float>(867deccb-38fb-45ae-8214-f01744db0f6e)
+														{
+															name: "emissiveStrength"
+															value: 1F
+														},
+														wp<float>(36da662d-4af0-4320-8c6a-e2e9375c789b)
+														{
+															name: "shininess"
+															value: 0.5F
+														},
+														wp<color>(0afc0ba2-1fb4-42cc-bd25-562c716fb6bf)
+														{
+															name: "specular"
+															value: #696969FF
+														},
+														wp<float>(a9171354-acde-4481-9ce3-ff8daba9cb3f)
+														{
+															name: "opacity"
+															value: 1F
+														},
+														wp<float>(8662bb26-5d84-4525-b618-7b73c26db74d)
+														{
+															name: "u_deformation"
+															value: @420e127f-5790-4607-8138-ecf1c93daa5b (objectref<float>)
+														}]
+													features: feature_list []
+													children: children_list []
+												}]
+										}]
+								},
+								GtfSceneGraphNode(d25fa54e-5c5e-41da-89ce-93bbeebe3494)
+								{
+									name: "Phong Sphere"
+									properties: property_list [
+										wp<bool>(21220e8b-7a04-4e4d-b24c-120db7ff8e38)
+										{
+											name: "visible"
+											value: true
+										},
+										wp<float>(9fbfd405-eaba-40ba-9e54-6dce7d241175)
+										{
+											name: "rotationX"
+											value: -90.00003F
+										},
+										wp<float>(77a94a93-4abd-4673-a204-3e2ba1837b5c)
+										{
+											name: "rotationY"
+											value: 0F
+										},
+										wp<float>(5b36da31-1f69-417d-bd84-81006685ec05)
+										{
+											name: "rotationZ"
+											value: 0F
+										},
+										wp<float>(0eac09c3-8e82-4247-8128-998dc062fc7e)
+										{
+											name: "scalingX"
+											value: 100F
+										},
+										wp<float>(aa72af26-8c46-4304-b1b3-a80304944207)
+										{
+											name: "scalingY"
+											value: 100F
+										},
+										wp<float>(e453af14-0ad1-43df-97f8-85ee03cfc2fb)
+										{
+											name: "scalingZ"
+											value: 100F
+										},
+										wp<float>(1a676188-29ce-4759-9eca-38614cd27e63)
+										{
+											name: "translationX"
+											value: 500F
+										},
+										wp<float>(18604af6-ef42-47d1-a519-21825c898c3c)
+										{
+											name: "translationY"
+											value: 269.0388F
+										},
+										wp<float>(5a53b0ad-89cb-47b0-b0d9-7a7722d3a764)
+										{
+											name: "translationZ"
+											value: -257.2294F
+										}]
+									features: feature_list []
+									children: children_list [
+										GtfMeshWidget(611e9627-9ca0-4b5b-8f62-ee0d0bef78e9)
+										{
+											name: "Mesh 54"
+											properties: property_list [
+												wp<bool>(ec4e53c3-94e1-4308-9a10-3f00e8022ce8)
+												{
+													name: "visible"
+													value: true
+												},
+												wp<mesh>(f0c374da-b566-433c-afa0-39cda336a2eb)
+												{
+													name: "mesh"
+													value: mesh_resource(1ce9880a-d2e2-447f-b3ac-b2acd07302d6)
+													{
+														sourceType: "model"
+														source: "resources"
+														file: "3D_arrow_anim_20210223_142836\\Sphere.0020.ebmesh"
+													}
+												},
+												wp<int>(0e6c427a-a607-4d79-a4da-816105b78b0c)
+												{
+													name: "culling"
+													value: 0
+												}]
+											features: feature_list []
+											children: children_list [
+												PhongFadeableMaterial(19e52eac-428c-4f19-933d-e05e41bd5574)
+												{
+													name: "Phong Fadeable Material 1"
+													properties: property_list [
+														wp<color>(21128777-4127-4cd9-9f4f-7cbebbe244d6)
+														{
+															name: "ambient"
+															value: #FFFFFFFF
+														},
+														wp<color>(55446fb9-11c0-4bec-a336-387104e3f23e)
+														{
+															name: "diffuse"
+															value: #FFFFFFFF
+														},
+														wp<color>(52aa08ea-7709-4c75-92d1-df89acad8c43)
+														{
+															name: "emissive"
+															value: @b10e00fa-968e-42c8-8f21-4dbc49417192 (objectref<color>)
+														},
+														wp<float>(e8484333-1ca0-4350-99a3-876c331c653e)
+														{
+															name: "emissiveStrength"
+															value: 1F
+														},
+														wp<float>(187b72b8-f99d-4e99-984d-b414bd9f42a9)
+														{
+															name: "shininess"
+															value: 0.5169925F
+														},
+														wp<color>(60fed7da-15ff-41e6-ad74-0a304586033c)
+														{
+															name: "specular"
+															value: #FFFFFFFF
+														},
+														wp<float>(d4502a65-ab1e-4fc9-afae-45ff0b0fe89c)
+														{
+															name: "opacity"
+															value: 1F
+														},
+														wp<float>(e4c6bd4b-6216-4eaf-8ac8-ec29f5cc3399)
+														{
+															name: "u_globalTransparency"
+															value: @2ff10c8a-50ce-4ddb-824e-619ad96b1304 (objectref<float>)
+														}]
+													features: feature_list [
+														GtfOpaqueTextureFeature(b1f17a56-245e-4e9e-a437-4bed87f6e3cd)
+														{
+															base_properties: property_list [
+																wp<image>(7c82ac2c-ddf0-438b-bf27-1a3fc60ac72c)
+																{
+																	name: "opaqueTexture"
+																	value: image_resource(7b5bc78c-ce66-4d8b-b3ec-cd2c2788c0c2)
+																	{
+																		sourceType: "model"
+																		source: "resources"
+																		file: "Phong.png"
+																	}
+																},
+																wp<int>(3ddd30fa-fb9e-4fd3-aff6-18d8de7400d5)
+																{
+																	name: "opaqueTextureAddressModeU"
+																	value: 0
+																},
+																wp<int>(7be6eb18-d0d2-4012-a2f3-60f99c7abf38)
+																{
+																	name: "opaqueTextureAddressModeV"
+																	value: 0
+																},
+																wp<int>(7edf9702-2c76-4758-8b81-a4cd268b06ee)
+																{
+																	name: "opaqueFilterMode"
+																	value: 0
+																}]
+														},
+														GtfTextureCoordinateTransformationFeature(45c29d58-b938-4502-91f9-63e61f79b042)
+														{
+															base_properties: property_list [
+																wp<float>(f2c8cb6a-216b-45ad-beb3-f6716bb05013)
+																{
+																	name: "uOffset"
+																	value: 0F
+																},
+																wp<float>(3f46ea8e-a68b-4f7b-833b-1d5266bea073)
+																{
+																	name: "vOffset"
+																	value: 0F
+																},
+																wp<float>(007ddbb8-12f0-45a9-827e-ef1007d74ba6)
+																{
+																	name: "uScale"
+																	value: 2F
+																},
+																wp<float>(948bb33c-a79c-408c-b60e-5be57ab109ac)
+																{
+																	name: "vScale"
+																	value: 1F
+																}]
+														}]
+													children: children_list []
+												}]
+										},
+										GtfSceneGraphNode_template_instance(f00ad1bb-6ac0-4b3d-a4ea-ed4f583f9202)
+										{
+											name: "GlassSphere Clearcoat 1"
+											template: @9bd29285-8f5d-45da-860e-a159fb70a3c9 (objectref<GtfSceneGraphNode_template>)
+											override_properties: property_list []
+											user_properties: property_list []
+											children: children_list []
+										}]
+								},
+								GtfSceneGraphNode(4a25a8b4-dfd8-4aa6-bd58-b5cbf30f0d30)
+								{
+									name: "PBR Phong Arrow"
+									properties: property_list [
+										wp<bool>(36d9044a-60a3-4e34-9b00-038feb62d5cb)
+										{
+											name: "visible"
+											value: true
+										},
+										wp<float>(006a2583-a94c-472e-a2ab-1b2105edf683)
+										{
+											name: "rotationX"
+											value: -90.00001F
+										},
+										wp<float>(ca8de2bb-f96e-4794-a46f-822ebbb7319e)
+										{
+											name: "rotationY"
+											value: 0F
+										},
+										wp<float>(0cb48d75-5df5-490e-bf78-5f83ec90521a)
+										{
+											name: "rotationZ"
+											value: 0F
+										},
+										wp<float>(b25b5831-5dbb-4110-abf0-330eb37e485c)
+										{
+											name: "scalingX"
+											value: 100F
+										},
+										wp<float>(20358c22-cecb-4421-a722-11d6facef1c7)
+										{
+											name: "scalingY"
+											value: 100F
+										},
+										wp<float>(13a62922-560e-4999-aef0-13795358914f)
+										{
+											name: "scalingZ"
+											value: 100F
+										},
+										wp<float>(5232554b-ef8b-46de-86be-8348f3259287)
+										{
+											name: "translationX"
+											value: -500F
+										},
+										wp<float>(8f61408a-23bb-421a-8e25-d11df6a7142a)
+										{
+											name: "translationY"
+											value: 44.89856F
+										},
+										wp<float>(0d768990-e3c5-4a61-8d3d-c092a36a0a91)
+										{
+											name: "translationZ"
+											value: -0.9478433F
+										}]
+									features: feature_list []
+									children: children_list [
+										GtfMeshWidget(dbf6528b-a7e1-45ce-8fa2-0a0aa531461e)
+										{
+											name: "Mesh 56"
+											properties: property_list [
+												wp<bool>(e86032fb-c233-4830-a347-3326db75fb54)
+												{
+													name: "visible"
+													value: true
+												},
+												wp<mesh>(d1e48d31-cf9d-43ea-968c-74aef5df88e8)
+												{
+													name: "mesh"
+													value: mesh_resource(2a95a55c-7b6a-4170-a242-7f77a8aa787a)
+													{
+														sourceType: "model"
+														source: "resources"
+														file: "3D_arrow_anim_20210223_142836\\Cube.0020.ebmesh"
+													}
+												},
+												wp<int>(70ff8216-84ec-4b94-949d-ec159d585ffb)
+												{
+													name: "culling"
+													value: 2
+												}]
+											features: feature_list []
+											children: children_list [
+												PbrPhongDeformMaterial(95138b23-738c-417c-b4ed-a616070d33b1)
+												{
+													name: "Deformable PBR Phong Material 1"
+													properties: property_list [
+														wp<color>(1e90165a-16de-4499-9c19-a5d1e8e393e2)
+														{
+															name: "ambient"
+															value: #FFFFFFFF
+														},
+														wp<color>(b0f461dc-5088-4fd0-9a02-dfc82c5ddcec)
+														{
+															name: "diffuse"
+															value: #00FF00FF
+														},
+														wp<color>(d17ee41d-4cdd-4dd2-b35c-63ed6ea68ddf)
+														{
+															name: "emissive"
+															value: #000000FF
+														},
+														wp<float>(3dab2b4e-9ae7-4b57-9665-6fd416868d92)
+														{
+															name: "emissiveStrength"
+															value: 1F
+														},
+														wp<float>(10035a4d-2793-4d65-b94f-08a3bd56b3f0)
+														{
+															name: "shininess"
+															value: 0.9F
+														},
+														wp<color>(4101461c-b5e8-4942-afef-bba84a755335)
+														{
+															name: "specular"
+															value: #696969FF
+														},
+														wp<float>(9040d303-eb4b-44c1-af9e-8e93ec13f24a)
+														{
+															name: "metallic"
+															value: 0F
+														},
+														wp<float>(22a802fa-c20d-4823-ae7b-7f5033108b86)
+														{
+															name: "opacity"
+															value: 1F
+														},
+														wp<float>(416ed2d9-81df-4324-9455-e3212d0ab10f)
+														{
+															name: "u_deformation"
+															value: @420e127f-5790-4607-8138-ecf1c93daa5b (objectref<float>)
+														}]
+													features: feature_list []
+													children: children_list []
+												}]
+										},
+										GtfMeshWidget(61d9f95d-9469-4cca-b0fb-ad72ad48f2b4)
+										{
+											name: "Mesh 58"
+											properties: property_list [
+												wp<bool>(713bd476-5eab-4d5e-9116-142888e6afe0)
+												{
+													name: "visible"
+													value: true
+												},
+												wp<mesh>(d1808af4-9971-4b1b-8bd8-b27425a40685)
+												{
+													name: "mesh"
+													value: mesh_resource(0622cba0-a256-4640-972b-7c4aed704797)
+													{
+														sourceType: "model"
+														source: "resources"
+														file: "3D_arrow_anim_20210223_142836\\Cube.0021.ebmesh"
+													}
+												},
+												wp<int>(c639e314-2e08-4f4c-9e8e-76cda51909b7)
+												{
+													name: "culling"
+													value: 2
+												}]
+											features: feature_list []
+											children: children_list [
+												PbrPhongDeformMaterial(5e6791d7-fd53-4d4d-beb4-04bfdcfda938)
+												{
+													name: "Deformable PBR Phong Material 2"
+													properties: property_list [
+														wp<color>(214d345a-15f6-4758-9e72-ab106d54568a)
+														{
+															name: "ambient"
+															value: #FFFFFFFF
+														},
+														wp<color>(3e945fc3-8abb-4f27-bf8b-3212a898695c)
+														{
+															name: "diffuse"
+															value: #696969FF
+														},
+														wp<color>(9e178ee5-777c-43fa-ab61-a105f198aa82)
+														{
+															name: "emissive"
+															value: #000000FF
+														},
+														wp<float>(de841673-334b-4c83-9e07-95eef24843c7)
+														{
+															name: "emissiveStrength"
+															value: 1F
+														},
+														wp<float>(9c7c5148-5940-48a4-a0b8-15d62f7fa70d)
+														{
+															name: "shininess"
+															value: 0F
+														},
+														wp<color>(9b6a8b69-32cc-4f1f-853e-c040225013ab)
+														{
+															name: "specular"
+															value: #FFFFFFFF
+														},
+														wp<float>(4337c371-c8ec-4645-b778-3af661be653f)
+														{
+															name: "metallic"
+															value: 1F
+														},
+														wp<float>(ae5393bf-b5bb-46ac-94ef-80abb1f72c6e)
+														{
+															name: "opacity"
+															value: 1F
+														},
+														wp<float>(6fa05411-ffc4-4447-94cb-09a839ac7000)
+														{
+															name: "u_deformation"
+															value: @420e127f-5790-4607-8138-ecf1c93daa5b (objectref<float>)
+														}]
+													features: feature_list []
+													children: children_list []
+												}]
+										}]
+								},
+								GtfSceneGraphNode(4cb91f03-552a-4238-bed8-becfa389ef38)
+								{
+									name: "PBR Phong Sphere"
+									properties: property_list [
+										wp<bool>(2cba5b6a-0171-4a22-964e-30a2fa8cb007)
+										{
+											name: "visible"
+											value: true
+										},
+										wp<float>(232ec427-cbf1-4912-acfa-f8fba5cf14bc)
+										{
+											name: "rotationX"
+											value: -90.00003F
+										},
+										wp<float>(2bcebc3a-503d-472e-8fb7-376baf9351d8)
+										{
+											name: "rotationY"
+											value: 0F
+										},
+										wp<float>(9712f31d-dd31-46d7-8fed-bed45892f3e7)
+										{
+											name: "rotationZ"
+											value: 0F
+										},
+										wp<float>(50edba5a-2641-497f-9061-6dfd054a128e)
+										{
+											name: "scalingX"
+											value: 100F
+										},
+										wp<float>(e7db2851-be4a-430c-8932-16a09c538cdb)
+										{
+											name: "scalingY"
+											value: 100F
+										},
+										wp<float>(244b4cb7-582e-40f2-80c5-aad29dbb9a24)
+										{
+											name: "scalingZ"
+											value: 100F
+										},
+										wp<float>(53088346-fea9-446c-bb48-df4898928d30)
+										{
+											name: "translationX"
+											value: -500F
+										},
+										wp<float>(98c92369-4757-4841-9d2c-0543090f8104)
+										{
+											name: "translationY"
+											value: 269.0388F
+										},
+										wp<float>(261286d0-848f-4a8d-bc51-18a754e2bea6)
+										{
+											name: "translationZ"
+											value: -257.2294F
+										}]
+									features: feature_list []
+									children: children_list [
+										GtfMeshWidget(1236949c-8e50-4958-b7f5-81352d542dfb)
+										{
+											name: "Mesh 60"
+											properties: property_list [
+												wp<bool>(8f232471-ea43-4004-b4a0-5b219fed3015)
+												{
+													name: "visible"
+													value: true
+												},
+												wp<mesh>(6cd9e0ed-7048-4bce-996d-372bdf5f310d)
+												{
+													name: "mesh"
+													value: mesh_resource(c2c6655c-bbac-486c-9598-a0d9009387c4)
+													{
+														sourceType: "model"
+														source: "resources"
+														file: "3D_arrow_sphere_only_20210224_162226\\Sphere.0020.ebmesh"
+													}
+												},
+												wp<int>(d297778e-b4f7-4234-af4d-28e8d0cf1b91)
+												{
+													name: "culling"
+													value: 0
+												}]
+											features: feature_list []
+											children: children_list [
+												PbrPhongFadeableMaterial(6781f2aa-b680-42a3-8fc4-eb44febb9741)
+												{
+													name: "Pbr Phong Fadeable Material 1"
+													properties: property_list [
+														wp<color>(6c9fb170-ab3b-4455-b71f-fbc287167a8e)
+														{
+															name: "ambient"
+															value: #FFFFFFFF
+														},
+														wp<color>(24111c3e-0198-4678-8c1b-8f94aee82608)
+														{
+															name: "diffuse"
+															value: #FFFFFFFF
+														},
+														wp<color>(8ab71fec-4242-4ebb-a251-90df66f55ab4)
+														{
+															name: "emissive"
+															value: @b10e00fa-968e-42c8-8f21-4dbc49417192 (objectref<color>)
+														},
+														wp<float>(fe3883b6-566e-4304-b3ff-f4e9ff446e5d)
+														{
+															name: "emissiveStrength"
+															value: 1F
+														},
+														wp<float>(c284ccc1-982e-46e5-b6a9-59ba9a39d8b6)
+														{
+															name: "shininess"
+															value: 0F
+														},
+														wp<color>(13300005-ecfe-4c78-a9f7-0a10f879b9f7)
+														{
+															name: "specular"
+															value: #FFFFFFFF
+														},
+														wp<float>(66bf43c7-2a50-4024-a76b-185c191ef204)
+														{
+															name: "metallic"
+															value: 0F
+														},
+														wp<float>(0ba994b7-e5f1-4f63-9435-64aa07c1383a)
+														{
+															name: "opacity"
+															value: 1F
+														},
+														wp<float>(39383c7e-cc72-40eb-9bb3-dd4684ec5c90)
+														{
+															name: "u_globalTransparency"
+															value: @2ff10c8a-50ce-4ddb-824e-619ad96b1304 (objectref<float>)
+														}]
+													features: feature_list [
+														GtfTextureCoordinateTransformationFeature(2ee1bef5-5afc-4932-afe4-1dfa170d6732)
+														{
+															base_properties: property_list [
+																wp<float>(e6bf4648-aeec-4cdc-8201-54a4e1c18d8d)
+																{
+																	name: "uOffset"
+																	value: 0F
+																},
+																wp<float>(dd62f720-7d95-4388-9335-bfa5a0c3083a)
+																{
+																	name: "vOffset"
+																	value: 0F
+																},
+																wp<float>(f2bdced8-a257-4f91-b00b-3392d8637577)
+																{
+																	name: "uScale"
+																	value: 2F
+																},
+																wp<float>(6f54bc83-a2ad-4e2c-b0a6-d41a20d9e7ff)
+																{
+																	name: "vScale"
+																	value: 1F
+																}]
+														},
+														GtfOpaqueTextureFeature(dd5fe724-751c-4164-9ed2-c0405dcbc33e)
+														{
+															base_properties: property_list [
+																wp<image>(5ab05faa-98cd-4859-b6f3-89fef283ef26)
+																{
+																	name: "opaqueTexture"
+																	value: image_resource(bbb05d9b-21ee-407a-bd6e-600f0b5912b1)
+																	{
+																		sourceType: "model"
+																		source: "resources"
+																		file: "PBRPhong.png"
+																	}
+																},
+																wp<int>(a1aec546-7ddb-4e58-a4aa-fde0ec8979d3)
+																{
+																	name: "opaqueTextureAddressModeU"
+																	value: 0
+																},
+																wp<int>(bde0db44-a2ad-4bdc-b4eb-8b64f3d106b5)
+																{
+																	name: "opaqueTextureAddressModeV"
+																	value: 0
+																},
+																wp<int>(cba8c83e-5c86-429b-b405-e8ba302be6b8)
+																{
+																	name: "opaqueFilterMode"
+																	value: 0
+																}]
+														}]
+													children: children_list []
+												}]
+										},
+										GtfSceneGraphNode_template_instance(210f9237-dca1-473f-99aa-59dbcf0b1db5)
+										{
+											name: "GlassSphere Clearcoat 1"
+											template: @9bd29285-8f5d-45da-860e-a159fb70a3c9 (objectref<GtfSceneGraphNode_template>)
+											override_properties: property_list []
+											user_properties: property_list []
+											children: children_list []
+										}]
+								},
+								GtfSceneGraphNode(7ae9e908-6751-4a76-b85a-6e3de2a520e6)
+								{
+									name: "GGX Arrow"
+									properties: property_list [
+										wp<bool>(767a4209-0520-4b7e-8157-74789f84b164)
+										{
+											name: "visible"
+											value: true
+										},
+										wp<float>(ce1aee2d-6b15-4150-9da6-7623baeb2f63)
+										{
+											name: "rotationX"
+											value: -90.00001F
+										},
+										wp<float>(3e3ca792-9f91-4f5a-8e5d-da472a34f739)
+										{
+											name: "rotationY"
+											value: 0F
+										},
+										wp<float>(a4c6dd58-0755-46ab-95d8-27189746b147)
+										{
+											name: "rotationZ"
+											value: 0F
+										},
+										wp<float>(d57a34e6-22c4-4bad-8e03-ae433477aad7)
+										{
+											name: "scalingX"
+											value: 100F
+										},
+										wp<float>(f6f0599d-794a-4ce9-ada5-c385f10e9f8a)
+										{
+											name: "scalingY"
+											value: 100F
+										},
+										wp<float>(4a9f8dee-1750-4770-85e5-e86de0ed576a)
+										{
+											name: "scalingZ"
+											value: 100F
+										},
+										wp<float>(fe3ae43b-ef71-43fa-a75d-cd99b564455a)
+										{
+											name: "translationX"
+											value: 0F
+										},
+										wp<float>(ed718ac0-e1e5-4d3b-ab20-3a03b93526d1)
+										{
+											name: "translationY"
+											value: 42.48215F
+										},
+										wp<float>(efe63c30-7137-498c-a555-7ae3d2e723d5)
+										{
+											name: "translationZ"
+											value: 0F
+										}]
+									features: feature_list []
+									children: children_list [
+										GtfMeshWidget(d4231b29-8ed5-4d3c-9437-cc45eee58d07)
+										{
+											name: "Mesh 62"
+											properties: property_list [
+												wp<bool>(5a75af5d-4fce-4bd3-a8f0-6858eea610d1)
+												{
+													name: "visible"
+													value: true
+												},
+												wp<mesh>(2293bc08-e076-431c-9f13-af96c9016315)
+												{
+													name: "mesh"
+													value: mesh_resource(28bec363-9a14-4f31-aaa6-f0905ed7d092)
+													{
+														sourceType: "model"
+														source: "resources"
+														file: "3D_arrow_anim_20210223_142836\\Cube0.ebmesh"
+													}
+												},
+												wp<int>(0103c49d-db79-444f-9f68-27151eb76c9b)
+												{
+													name: "culling"
+													value: 2
+												}]
+											features: feature_list []
+											children: children_list [
+												PbrGgxDeformMaterial(40544a6e-dea1-4092-a00e-5c6affae0bc0)
+												{
+													name: "Deformable Ggx Material 1"
+													properties: property_list [
+														wp<color>(92c944cf-e05d-459c-84e4-21ff4d829833)
+														{
+															name: "ambient"
+															value: #FFFFFFFF
+														},
+														wp<color>(27bdae61-948b-44b1-8e29-5d3ad87324d4)
+														{
+															name: "baseColor"
+															value: #00FF00FF
+														},
+														wp<color>(e9853a43-b520-413f-a5e6-ae3a1e731afb)
+														{
+															name: "emissive"
+															value: #000000FF
+														},
+														wp<float>(108f01fa-2114-4dc5-8ec5-a64f72da486b)
+														{
+															name: "emissiveStrength"
+															value: 1F
+														},
+														wp<float>(b4fa8672-d43a-458a-b154-4076128fbce9)
+														{
+															name: "reflectance"
+															value: 0.5F
+														},
+														wp<float>(b957bc7c-ab87-4ff3-8672-781aa9683a06)
+														{
+															name: "metallic"
+															value: 0F
+														},
+														wp<float>(4dfd1bb0-ce5a-4642-babb-02ea2aac69a0)
+														{
+															name: "roughness"
+															value: 0.3F
+														},
+														wp<float>(578c31ec-4db3-4a6c-92cc-f7ecb255a1e2)
+														{
+															name: "opacity"
+															value: 1F
+														},
+														wp<float>(8359fe85-b817-44da-ae0a-3ca632605d50)
+														{
+															name: "u_deformation"
+															value: @420e127f-5790-4607-8138-ecf1c93daa5b (objectref<float>)
+														},
+														wp<color>(5c7f12c9-07af-4076-ba26-77d0dce45f9e)
+														{
+															name: "u_emissiveMapHighlightColor"
+															value: #000000FF
+														},
+														wp<color>(eee30428-e2df-487b-af98-7e29700889d0)
+														{
+															name: "u_emissiveMapColor"
+															value: #000000FF
+														},
+														wp<float>(a5f9a50a-2133-46c6-b8d9-7e5a4ad41246)
+														{
+															name: "u_emissiveStrengthMapStrength"
+															value: 0F
+														},
+														wp<image>(9ddf1d96-d0fb-4cf5-87e1-2d99533c9c43)
+														{
+															name: "u_emissiveStrengthMap"
+															value: image_resource(afe9a531-3706-421f-ad5a-0de8777baf4e)
+															{
+																sourceType: "model"
+																source: "resources"
+																file: ""
+															}
+														}]
+													features: feature_list []
+													children: children_list []
+												}]
+										},
+										GtfMeshWidget(793d685a-7fa4-426a-8f44-5a40f50925c0)
+										{
+											name: "Mesh 64"
+											properties: property_list [
+												wp<bool>(6763d1c3-91d7-4f25-9f2a-f7f50519e91d)
+												{
+													name: "visible"
+													value: true
+												},
+												wp<mesh>(da85a62b-2467-4362-9552-9f47e1c4440d)
+												{
+													name: "mesh"
+													value: mesh_resource(c9855633-bcf8-40f5-90c3-38d1ae0fe52e)
+													{
+														sourceType: "model"
+														source: "resources"
+														file: "3D_arrow_with_uv_20210920_140114\\Cube1.ebmesh"
+													}
+												},
+												wp<int>(ff8c2abf-63a8-434c-87b2-a7d8ea5f191c)
+												{
+													name: "culling"
+													value: 2
+												}]
+											features: feature_list []
+											children: children_list [
+												PbrGgxDeformMaterial(e301f7d1-4fac-4241-a2cf-cb661ded7954)
+												{
+													name: "Deformable Ggx Material 2"
+													properties: property_list [
+														wp<color>(b43cac6c-3375-4b92-aefd-bac193233b46)
+														{
+															name: "ambient"
+															value: #FFFFFFFF
+														},
+														wp<color>(43eced86-1fc9-423a-b7e0-43311f1acec7)
+														{
+															name: "baseColor"
+															value: #C0C0C0FF
+														},
+														wp<color>(362d4195-ec77-4d9f-93f2-54e5ace3c39e)
+														{
+															name: "emissive"
+															value: #000000FF
+														},
+														wp<float>(06bcc586-be36-401d-b21e-e9ee2d68bbfa)
+														{
+															name: "emissiveStrength"
+															value: 1F
+														},
+														wp<float>(e5fbd4cb-6865-4b50-9cb0-7d2c39f13526)
+														{
+															name: "reflectance"
+															value: 0.5F
+														},
+														wp<float>(62f4705f-9031-40b5-8d48-193ce9eb4eed)
+														{
+															name: "metallic"
+															value: 1F
+														},
+														wp<float>(ba634dfd-e0e7-4be1-9cd9-27b6bfbc6b18)
+														{
+															name: "roughness"
+															value: 0.8F
+														},
+														wp<float>(fd4233b3-81d7-49f1-ae2a-453c7c3ebf2b)
+														{
+															name: "opacity"
+															value: 1F
+														},
+														wp<float>(f75f386d-f6ea-4bcf-aebb-4b3b75fc8ce6)
+														{
+															name: "u_deformation"
+															value: @420e127f-5790-4607-8138-ecf1c93daa5b (objectref<float>)
+														},
+														wp<color>(e9eb4997-3978-448f-9e26-b77ce2fff8c6)
+														{
+															name: "u_emissiveMapHighlightColor"
+															value: #DC143CFF
+														},
+														wp<color>(bd7cc0e7-f93b-4032-90c6-651210c0b9e7)
+														{
+															name: "u_emissiveMapColor"
+															value: #00CED1FF
+														},
+														wp<float>(6788b452-60a9-4b50-a9ff-bf9676cd3b84)
+														{
+															name: "u_emissiveStrengthMapStrength"
+															value: 25F
+														},
+														wp<image>(8c8a4665-c9e9-4ec8-9f14-2ea735cf4170)
+														{
+															name: "u_emissiveStrengthMap"
+															value: image_resource(de0b4372-23bb-4903-8bf8-188b106192b5)
+															{
+																sourceType: "model"
+																source: "resources"
+																file: "GGX Arrow Emissive Strength Map.png"
+															}
+														}]
+													features: feature_list [
+														GtfEmissiveTextureFeature(be4b73e8-fded-4eaa-9d11-be07dc788d48)
+														{
+															base_properties: property_list [
+																wp<image>(352dda82-b93a-4c26-9a5d-1104dbc85354)
+																{
+																	name: "emissiveTexture"
+																	value: image_resource(2a151c8e-0954-423f-beee-08038e9ce8f5)
+																	{
+																		sourceType: "model"
+																		source: "resources"
+																		file: "GGX Arrow Emissive.png"
+																	}
+																},
+																wp<int>(cd109aef-b7d6-44c1-8bd3-885e4a95b2e3)
+																{
+																	name: "emissiveTextureAddressModeU"
+																	value: 0
+																},
+																wp<int>(28e5ad95-4731-4a4f-ae72-ebad22a98538)
+																{
+																	name: "emissiveTextureAddressModeV"
+																	value: 0
+																},
+																wp<int>(0fc8e666-f93a-4879-b9ab-148bafbc1d4b)
+																{
+																	name: "emissiveFilterMode"
+																	value: 1
+																},
+																wp<bool>(bd1a9d0b-69b3-48a2-a81e-5e7f3a29787a)
+																{
+																	name: "emissiveSRGB"
+																	value: false
+																}]
+														},
+														GtfTextureCoordinateTransformationFeature(148242a0-be91-4fa5-84e0-0e09a95229ef)
+														{
+															base_properties: property_list [
+																wp<float>(aedfd727-1b74-42e9-a5a2-df94785abad9)
+																{
+																	name: "uOffset"
+																	value: 0F
+																},
+																wp<float>(457aafdb-6cf6-4da0-8687-aa65a124beec)
+																{
+																	name: "vOffset"
+																	value: @2398f637-be5f-4e4a-af45-d8ee622cb847 (objectref<float>)
+																},
+																wp<float>(f704a90f-cc9d-4b85-b131-ca5ed8f20cb3)
+																{
+																	name: "uScale"
+																	value: 1F
+																},
+																wp<float>(acb36fb8-bf48-4d8e-93cb-3b1764a74a75)
+																{
+																	name: "vScale"
+																	value: 1F
+																}]
+														}]
+													children: children_list []
+												}]
+										}]
+								},
+								GtfSceneGraphNode(23f6f3f3-baa6-4d12-95e0-4db1164211a2)
+								{
+									name: "GGX Sphere"
+									properties: property_list [
+										wp<bool>(4d6c2042-c48d-415a-b8d8-68e546e6999d)
+										{
+											name: "visible"
+											value: true
+										},
+										wp<float>(9128bd80-3471-4f64-b703-3930cb1e37fb)
+										{
+											name: "rotationX"
+											value: -90.00003F
+										},
+										wp<float>(4b082afd-4f64-4b78-a137-a8604f4cb616)
+										{
+											name: "rotationY"
+											value: 0F
+										},
+										wp<float>(5c1763be-31d2-4670-83d4-881c5030884a)
+										{
+											name: "rotationZ"
+											value: 0F
+										},
+										wp<float>(6c9c30b8-850d-4ab7-8930-fadbe91350a3)
+										{
+											name: "scalingX"
+											value: 100F
+										},
+										wp<float>(8b3d1291-ba1d-474d-8bc0-a6f9c686d392)
+										{
+											name: "scalingY"
+											value: 100F
+										},
+										wp<float>(0b565ac3-deca-49c3-93f2-06faa73a7a49)
+										{
+											name: "scalingZ"
+											value: 100F
+										},
+										wp<float>(bfc1a319-7582-4269-a84f-06dd6b7a1da7)
+										{
+											name: "translationX"
+											value: 0F
+										},
+										wp<float>(34e74755-26e8-4879-965c-eb5d759ff914)
+										{
+											name: "translationY"
+											value: 269.0388F
+										},
+										wp<float>(c0852601-62c2-4eab-8510-30e1e360f9d8)
+										{
+											name: "translationZ"
+											value: -257.2294F
+										}]
+									features: feature_list []
+									children: children_list [
+										GtfMeshWidget(7fcadd29-70cc-47c8-bbda-cf30b8c9011d)
+										{
+											name: "Mesh 66"
+											properties: property_list [
+												wp<bool>(9d65ac70-64a6-42c5-8c7e-ee6de7497793)
+												{
+													name: "visible"
+													value: true
+												},
+												wp<mesh>(d4fb3681-9da6-452d-b1c5-08b17a4ddcee)
+												{
+													name: "mesh"
+													value: mesh_resource(97bf19fe-9aec-4870-b6bb-73dd4b79c74d)
+													{
+														sourceType: "model"
+														source: "resources"
+														file: "3D_arrow_sphere_only_20210224_162226\\Sphere.0020.ebmesh"
+													}
+												},
+												wp<int>(0f95293f-6bde-4672-8cda-703a29335d70)
+												{
+													name: "culling"
+													value: 0
+												}]
+											features: feature_list []
+											children: children_list [
+												PbrGgxFadeableMaterial(26a66087-90b9-43c8-94d4-b4b90227af3d)
+												{
+													name: "Ggx Fadeable Material 1"
+													properties: property_list [
+														wp<color>(bb9c7fc2-4545-4432-bcf2-78e357938268)
+														{
+															name: "ambient"
+															value: #FFFFFFFF
+														},
+														wp<color>(d32b0f2f-59f4-4335-949f-34db4794275a)
+														{
+															name: "baseColor"
+															value: #FFFFFFFF
+														},
+														wp<color>(fd1729cc-15f6-42f1-ba5c-7a6074939430)
+														{
+															name: "emissive"
+															value: @b10e00fa-968e-42c8-8f21-4dbc49417192 (objectref<color>)
+														},
+														wp<float>(a790443e-855f-4fe5-b515-b60c141cd6d2)
+														{
+															name: "emissiveStrength"
+															value: 1F
+														},
+														wp<float>(625a5d7a-c87e-4fc7-9f0e-0fb508d03a68)
+														{
+															name: "reflectance"
+															value: 0.5F
+														},
+														wp<float>(886913ee-b69d-4562-a578-3361b89b2af3)
+														{
+															name: "metallic"
+															value: 0F
+														},
+														wp<float>(80164e4e-75e8-4693-bfe2-62915a68b91f)
+														{
+															name: "roughness"
+															value: 0F
+														},
+														wp<float>(c732602b-e668-4459-ae35-ab69d9f4fc2d)
+														{
+															name: "opacity"
+															value: 1F
+														},
+														wp<float>(46c7c61e-0071-4875-97f6-309f211e0c7b)
+														{
+															name: "u_globalTransparency"
+															value: @2ff10c8a-50ce-4ddb-824e-619ad96b1304 (objectref<float>)
+														}]
+													features: feature_list [
+														GtfOpaqueTextureFeature(6bf85505-c64c-4c3c-9903-67fb7fcc8956)
+														{
+															base_properties: property_list [
+																wp<image>(4ef361a7-ed2f-4f33-b84c-9d794aab37af)
+																{
+																	name: "opaqueTexture"
+																	value: image_resource(11f1c238-d02c-46ac-94b5-56f38ba597d2)
+																	{
+																		sourceType: "model"
+																		source: "resources"
+																		file: "GGX.png"
+																	}
+																},
+																wp<int>(6e92cb66-0669-47cc-a209-dc1b6e3509eb)
+																{
+																	name: "opaqueTextureAddressModeU"
+																	value: 0
+																},
+																wp<int>(fba5f7ea-da2f-4b61-88c6-1cfd4a3c0854)
+																{
+																	name: "opaqueTextureAddressModeV"
+																	value: 0
+																},
+																wp<int>(d7b779e7-784b-4e6b-9434-ef7bb8130c83)
+																{
+																	name: "opaqueFilterMode"
+																	value: 0
+																}]
+														},
+														GtfTextureCoordinateTransformationFeature(68d734ab-a557-4f3d-8178-adf047d4ca05)
+														{
+															base_properties: property_list [
+																wp<float>(2c06e0ee-8857-438e-9c50-d6b42e437578)
+																{
+																	name: "uOffset"
+																	value: 0F
+																},
+																wp<float>(54935fae-0f64-4d07-95de-1d301dc21ed4)
+																{
+																	name: "vOffset"
+																	value: 0F
+																},
+																wp<float>(69381f15-422b-4212-9ae6-cb4727232611)
+																{
+																	name: "uScale"
+																	value: 2F
+																},
+																wp<float>(604bfa40-91d7-4f4a-a230-5a78e85b77d1)
+																{
+																	name: "vScale"
+																	value: 1F
+																}]
+														}]
+													children: children_list []
+												}]
+										},
+										GtfSceneGraphNode_template_instance(4cfff6da-f0b7-4b18-97dd-041efaca5e10)
+										{
+											name: "GlassSphere 1"
+											template: @e56140a4-9b9f-421c-8e80-a00f10c80115 (objectref<GtfSceneGraphNode_template>)
+											override_properties: property_list []
+											user_properties: property_list []
+											children: children_list []
+										}]
+								},
+								GtfSceneGraphNode(ca694c27-7cf0-450d-91da-3fe865c1172c)
+								{
+									name: "Light"
+									properties: property_list [
+										wp<bool>(069dc390-6f05-4511-b145-efe665ecb028)
+										{
+											name: "visible"
+											value: true
+										},
+										wp<float>(d223dd53-acac-4a99-914d-6eea176566c0)
+										{
+											name: "rotationX"
+											value: 47.53357F
+										},
+										wp<float>(0b35e4d2-dc19-419f-9fea-a7750ad170a5)
+										{
+											name: "rotationY"
+											value: 107.2208F
+										},
+										wp<float>(29c5d49a-2ff2-4127-b227-d4c297e0ae5a)
+										{
+											name: "rotationZ"
+											value: 10.74366F
+										},
+										wp<float>(a89c95f0-bf03-44cb-9577-e7716dcd952f)
+										{
+											name: "scalingX"
+											value: 100F
+										},
+										wp<float>(7e87420f-ee68-477d-99cc-7132d3a46b6b)
+										{
+											name: "scalingY"
+											value: 100F
+										},
+										wp<float>(be0ca535-f154-446a-8ce1-bb377a694787)
+										{
+											name: "scalingZ"
+											value: 100F
+										},
+										wp<float>(4a80c3ac-9b6c-440c-afd2-5df95faeaa0b)
+										{
+											name: "translationX"
+											value: 1.584911F
+										},
+										wp<float>(67807040-5cff-4e25-a9ae-7375deed6183)
+										{
+											name: "translationY"
+											value: 578.3743F
+										},
+										wp<float>(138d2a47-c84c-4f2e-ba11-c1309dada717)
+										{
+											name: "translationZ"
+											value: -943.1208F
+										}]
+									features: feature_list []
+									children: children_list [
+										GtfPointLight(4ffa0ee1-235d-4fd1-8494-876d52eb7bfa)
+										{
+											name: "Light"
+											properties: property_list [
+												wp<bool>(19d2b9e5-2922-4900-8d60-f703347819a7)
+												{
+													name: "enabled"
+													value: true
+												},
+												wp<color>(ff6fad4a-6b05-472d-b261-9a1ca2cbda57)
+												{
+													name: "color"
+													value: #FFFFFFFF
+												},
+												wp<float>(f94f9d90-6d91-4a4c-b99b-5d588d95385e)
+												{
+													name: "intensity"
+													value: 100000F
+												},
+												wp<float>(8815f8d6-3b42-4a3b-beb8-3926f3c1ad03)
+												{
+													name: "attenuationConstant"
+													value: 0F
+												},
+												wp<float>(d039bae4-2e3e-483f-a57c-b6996cc7997c)
+												{
+													name: "attenuationLinear"
+													value: 0F
+												},
+												wp<float>(fc0b3561-f51f-493c-ac94-2c792a17baf2)
+												{
+													name: "attenuationQuadratic"
+													value: 1F
+												}]
+											features: feature_list []
+											children: children_list []
+										},
+										GtfAmbientLight(dca97db6-868b-4557-bafd-00b5ebbe592b)
+										{
+											name: "Ambient light 3"
+											properties: property_list [
+												wp<bool>(506992a8-23c8-4db5-b350-17eb7f37ad62)
+												{
+													name: "enabled"
+													value: true
+												},
+												wp<color>(7bcdc61e-f656-4eac-8d2e-780f333aa983)
+												{
+													name: "color"
+													value: #00FF00FF
+												},
+												wp<float>(622847e9-600c-435b-a337-ebb1b7ea45f7)
+												{
+													name: "intensity"
+													value: 0.03F
+												}]
+											features: feature_list []
+											children: children_list []
+										}]
+								},
+								GtfSceneGraphNode(95c1731b-7f5b-4005-a57f-eed9dbbc0eee)
+								{
+									name: "Camera"
+									properties: property_list [
+										wp<bool>(7d08f7a0-fb07-4db4-b4a5-e467c60c96e1)
+										{
+											name: "visible"
+											value: true
+										},
+										wp<float>(92ca65e9-2624-42ed-9bd9-5cc3ae72622b)
+										{
+											name: "rotationX"
+											value: -90.00001F
+										},
+										wp<float>(3471b57a-38a7-4c63-832e-eec680ef11b5)
+										{
+											name: "rotationY"
+											value: 75.60024F
+										},
+										wp<float>(a386c25c-4170-4aca-9142-50cfeb6ed274)
+										{
+											name: "rotationZ"
+											value: -90.00001F
+										},
+										wp<float>(b09c99bc-af78-4ecd-8827-3109240f82b6)
+										{
+											name: "scalingX"
+											value: 100F
+										},
+										wp<float>(d07441c2-146d-4372-9508-cdfa2bf0aed1)
+										{
+											name: "scalingY"
+											value: 100F
+										},
+										wp<float>(9cefd3d0-8495-4b0b-b5a2-54bb8a07daff)
+										{
+											name: "scalingZ"
+											value: 100F
+										},
+										wp<float>(56225267-45ee-4aa7-a662-200486dcae41)
+										{
+											name: "translationX"
+											value: 0F
+										},
+										wp<float>(82245556-fb7b-4301-97b9-1e14b0f35bb0)
+										{
+											name: "translationY"
+											value: 848.967F
+										},
+										wp<float>(3bf388a1-a6ad-4024-801f-45c23f91e404)
+										{
+											name: "translationZ"
+											value: 1898.003F
+										}]
+									features: feature_list []
+									children: children_list [
+										GtfCameraWidget(3b6e7865-bac4-463e-a6e1-4f60f41755d4)
+										{
+											name: "Camera"
+											properties: property_list [
+												wp<bool>(c1d1937b-7315-4312-8f37-a53bc05e5975)
+												{
+													name: "enabled"
+													value: true
+												},
+												wp<float>(7e8e3b72-1110-49a6-8d72-8bcafb9712f0)
+												{
+													name: "nearPlane"
+													value: 10F
+												},
+												wp<float>(fc4aaf89-542c-4152-81d9-8580bb4ed5d5)
+												{
+													name: "farPlane"
+													value: 10000F
+												},
+												wp<float>(75159ad4-0314-41f6-9846-66df41f75cdb)
+												{
+													name: "fieldOfView"
+													value: 22.89519F
+												},
+												wp<int>(9bd2dae3-7bf5-4563-9c01-4a2d2d585ea9)
+												{
+													name: "projectionType"
+													value: 0
+												}]
+											features: feature_list [
+												GtfCameraDofFeature(578621c3-4627-4d4a-b379-ced93876e529)
+												{
+													base_properties: property_list [
+														wp<bool>(8d533447-eb59-4875-b71e-859254f96d67)
+														{
+															name: "enabled"
+															value: false
+														},
+														wp<float>(6b6c1b5d-53a7-4d05-a5d5-4a5f9a73fc52)
+														{
+															name: "focusDistance"
+															value: 4100F
+														},
+														wp<float>(70b1ea12-7fc6-4ea8-b082-09b1bde90f18)
+														{
+															name: "fStop"
+															value: 0.11F
+														}]
+												},
+												GtfCameraBloomFeature(66c240c5-2818-4964-a8c9-d80a392aca8a)
+												{
+													base_properties: property_list [
+														wp<bool>(05f0464a-dd6b-4fba-aaa7-32662ebabe74)
+														{
+															name: "enabled"
+															value: true
+														},
+														wp<float>(680bb4ae-967c-40a5-8cef-e1eee03cdc34)
+														{
+															name: "threshold"
+															value: 0.9F
+														},
+														wp<float>(33bc6657-49b8-4d7b-b88b-b5319ba7eeae)
+														{
+															name: "strength"
+															value: 1.5F
+														},
+														wp<float>(ae5d44a9-a5aa-430d-948e-21bbc6992196)
+														{
+															name: "radius"
+															value: 0.5F
+														}]
+												}]
+											children: children_list []
+										}]
+								},
+								GtfImageBasedLight(163b0a6a-7e49-4e0c-ba50-23e6a1c6caf1)
+								{
+									name: "Image-based light 1"
+									properties: property_list [
+										wp<bool>(2c1221b7-4336-4b98-9cae-9606dd9d8581)
+										{
+											name: "enabled"
+											value: true
+										},
+										wp<ibl>(9e5da7c8-7006-4bc8-b794-01026c1ece71)
+										{
+											name: "ibl"
+											value: ibl_resource(2338beed-fbfe-4e2f-aa23-3fd74df0a0b1)
+											{
+												sourceType: "model"
+												source: "resources"
+												file: "warehouse.ebibl"
+											}
+										},
+										wp<float>(cdaa6b3a-fea9-49ed-8482-5e834c1db4c5)
+										{
+											name: "intensity"
+											value: @823f28bf-372c-4003-bfbd-0b502f9d09b4 (objectref<float>)
+										},
+										wp<bool>(a900dcc9-8866-4eb3-b5a0-5c3da897d41f)
+										{
+											name: "environmentMap"
+											value: false
+										}]
+									features: feature_list []
+									children: children_list []
+								}]
+						},
+						GtfParallelAnimation(8052a90f-c1f6-4150-8bd1-5de0f742f100)
+						{
+							name: "Phong Sphere|Sphere.002Action"
+							properties: property_list [
+								wp<bool>(deee6272-f45d-4ad9-911f-d987bafaa2e7)
+								{
+									name: "enabled"
+									value: true
+								},
+								wp<int>(2f697a37-3397-4be4-b374-c7046bdeca37)
+								{
+									name: "repeat"
+									value: 0
+								},
+								wp<bool>(34ed2831-9b6c-4840-a916-97d7e3735229)
+								{
+									name: "alternating"
+									value: false
+								},
+								wp<float>(ae8a1cc3-1891-4ed8-b2c6-cf179ad38590)
+								{
+									name: "scale"
+									value: 1F
+								},
+								wp<function<void,int,bool>>(dab22f98-ea33-4d6c-9b82-e5ee4dd5008c)
+								{
+									name: "onPlay"
+									value: function<void,int,bool>(6f1dffce-98e0-40db-8e31-29cbc4303a64)
+									{
+										script: "function(v:animation_time::int, v:forward::bool)" \
+											"{" \
+											"" \
+											"}"
+									}
+								},
+								wp<function<void,int>>(24b2badb-c88a-438d-959a-e0244bb89d1d)
+								{
+									name: "onPause"
+									value: function<void,int>(90e182f0-81b4-4d7b-81d0-db889917948c)
+									{
+										script: "function(v:animation_time::int)" \
+											"{" \
+											"" \
+											"}"
+									}
+								},
+								wp<function<void,int,int>>(2fb53b02-5c81-4b8a-a424-531b3c076c29)
+								{
+									name: "onTerminate"
+									value: function<void,int,int>(575f5c28-9853-48e5-aa4d-e564617af554)
+									{
+										script: "function(v:animation_time::int, v:terminate::int)" \
+											"{" \
+											"" \
+											"}"
+									}
+								}]
+							features: feature_list []
+							children: children_list [
+								GtfLinearKeyValueInterpolationFloat(7271eea0-7ab3-4eed-9986-fd9b652141be)
+								{
+									name: "Translation for Phong Sphere 1"
+									properties: property_list [
+										wp<bool>(09229185-a92f-4167-9d02-d8127bd4f35a)
+										{
+											name: "enabled"
+											value: true
+										},
+										wp<int>(2fb4858f-2b06-4377-abad-20205db62361)
+										{
+											name: "delay"
+											value: 0
+										},
+										wp<int>(658838da-2a94-43c8-ad56-580a3d8c0883)
+										{
+											name: "duration"
+											value: 5000
+										},
+										wp<int>(724e3be4-ce0e-4930-b2d1-400103f115ec)
+										{
+											name: "repeat"
+											value: 1
+										},
+										wp<bool>(68e2fefa-4589-4b4f-a02c-10e7e55500c6)
+										{
+											name: "alternating"
+											value: false
+										},
+										wp<bool>(67140704-bb4e-4250-a3fc-8223106e3efc)
+										{
+											name: "relative"
+											value: false
+										},
+										wp<float>(ff0fbcc9-de8d-42d1-b91d-fc7f7700028e)
+										{
+											name: "start"
+											value: 0F
+										},
+										wp<float>(47dca4f5-0308-48b6-9466-98c01503df3f)
+										{
+											name: "end"
+											value: 500F
+										},
+										wp<float>(a4631cad-e0a6-4be9-a8ed-756c605e4892)
+										{
+											name: "target"
+											value: @1a676188-29ce-4759-9eca-38614cd27e63 (objectref<float>)
+										},
+										wp<intlist>(8a623935-5fdf-45de-8995-61d9f788198c)
+										{
+											name: "times"
+											value: intlist [
+												0,
+												5000]
+										},
+										wp<floatlist>(5f76ad28-8d71-480d-a268-976d61bc7e28)
+										{
+											name: "values"
+											value: floatlist [
+												500F,
+												500F]
+										}]
+									features: feature_list []
+									children: children_list []
+								},
+								GtfLinearKeyValueInterpolationFloat(6e21a632-ec83-4326-af3a-1d8038969142)
+								{
+									name: "Translation for Phong Sphere 2"
+									properties: property_list [
+										wp<bool>(9bf1b33a-c916-4397-93e4-448992eb2ea1)
+										{
+											name: "enabled"
+											value: true
+										},
+										wp<int>(98ffdebf-755e-447d-82b0-e0453a80ebfe)
+										{
+											name: "delay"
+											value: 0
+										},
+										wp<int>(120475b0-c58a-40fe-8619-bc1a3e3b977b)
+										{
+											name: "duration"
+											value: 5000
+										},
+										wp<int>(07e5d50d-dcef-4c83-a431-d7a0b1d5e17f)
+										{
+											name: "repeat"
+											value: 1
+										},
+										wp<bool>(25c5246f-2450-49c2-ac1f-67e6969bd565)
+										{
+											name: "alternating"
+											value: false
+										},
+										wp<bool>(0032b29e-0238-40bb-b04d-beb263d83170)
+										{
+											name: "relative"
+											value: false
+										},
+										wp<float>(9b9d1133-9fa1-4a3b-94e9-945030b965ee)
+										{
+											name: "start"
+											value: 0F
+										},
+										wp<float>(a551f620-97bc-4fca-a641-984aaf544d7d)
+										{
+											name: "end"
+											value: 269.0388F
+										},
+										wp<float>(88064a03-de13-445e-8b4c-4b519d1236b1)
+										{
+											name: "target"
+											value: @18604af6-ef42-47d1-a519-21825c898c3c (objectref<float>)
+										},
+										wp<intlist>(4ca0ae80-9f64-4309-80cb-9dc295c626e4)
+										{
+											name: "times"
+											value: intlist [
+												0,
+												5000]
+										},
+										wp<floatlist>(b810cfe4-0e3f-4202-a1c0-60ab823b0549)
+										{
+											name: "values"
+											value: floatlist [
+												269.0388F,
+												269.0388F]
+										}]
+									features: feature_list []
+									children: children_list []
+								},
+								GtfLinearKeyValueInterpolationFloat(8db0d8cb-1cfa-414f-b88e-42333f2e2433)
+								{
+									name: "Translation for Phong Sphere 3"
+									properties: property_list [
+										wp<bool>(9f869989-1a51-4b47-a7cd-21254c5b76b1)
+										{
+											name: "enabled"
+											value: true
+										},
+										wp<int>(b8f0ce81-6b9c-44cb-92cd-dd7b53cf5700)
+										{
+											name: "delay"
+											value: 0
+										},
+										wp<int>(5ff98ff9-6c5d-4c2a-a656-f5ef1ee7d19d)
+										{
+											name: "duration"
+											value: 5000
+										},
+										wp<int>(e324ed32-409a-4e7a-82e4-691ed621b936)
+										{
+											name: "repeat"
+											value: 1
+										},
+										wp<bool>(1c8163af-058c-4d9e-ba25-79b5d6595792)
+										{
+											name: "alternating"
+											value: false
+										},
+										wp<bool>(23a78931-0a07-42e3-b2e6-1077792abfbc)
+										{
+											name: "relative"
+											value: false
+										},
+										wp<float>(1c0f52a0-5bd8-4bbe-9984-f44cac64a512)
+										{
+											name: "start"
+											value: 0F
+										},
+										wp<float>(dd10c6da-3dad-4fea-837f-c9990a980b77)
+										{
+											name: "end"
+											value: -257.2294F
+										},
+										wp<float>(197135d8-6700-40ff-b9a4-9ae4965b40b2)
+										{
+											name: "target"
+											value: @5a53b0ad-89cb-47b0-b0d9-7a7722d3a764 (objectref<float>)
+										},
+										wp<intlist>(fa6099d1-6c2c-4c7f-8bc8-bf93312c2aad)
+										{
+											name: "times"
+											value: intlist [
+												0,
+												5000]
+										},
+										wp<floatlist>(622e437f-42c1-40fc-9291-3255e1468331)
+										{
+											name: "values"
+											value: floatlist [
+												-257.2294F,
+												-257.2294F]
+										}]
+									features: feature_list []
+									children: children_list []
+								},
+								GtfLinearKeyValueInterpolationFloat(74203801-0bf5-40e2-b7aa-82cdfd8d9a8d)
+								{
+									name: "Rotation for Phong Sphere"
+									properties: property_list [
+										wp<bool>(07591a7d-41e8-4334-afe4-95f87fb2c9b5)
+										{
+											name: "enabled"
+											value: true
+										},
+										wp<int>(b6a80529-e460-49e1-bfc7-2ed5c2207472)
+										{
+											name: "delay"
+											value: 0
+										},
+										wp<int>(69be04c4-4044-4020-82c9-fee9bda4e337)
+										{
+											name: "duration"
+											value: 5000
+										},
+										wp<int>(81bc1896-946b-4f86-abea-8f0140fb7dba)
+										{
+											name: "repeat"
+											value: 1
+										},
+										wp<bool>(1715c2bd-c943-4aea-9b62-e87b26c3a93e)
+										{
+											name: "alternating"
+											value: false
+										},
+										wp<bool>(91af196a-31a2-4eca-ac9c-6b125ef88e06)
+										{
+											name: "relative"
+											value: false
+										},
+										wp<float>(abea28cc-e539-417a-bce4-d89c297dbc73)
+										{
+											name: "start"
+											value: 0F
+										},
+										wp<float>(9ca5dd58-f796-48f9-b52b-2cbc6a5fae87)
+										{
+											name: "end"
+											value: 360F
+										},
+										wp<float>(d773886f-8be2-4ee0-947b-3d6a2ec29f97)
+										{
+											name: "target"
+											value: @77a94a93-4abd-4673-a204-3e2ba1837b5c (objectref<float>)
+										},
+										wp<intlist>(203c5a75-d4f6-4e12-bd75-865ffa28973a)
+										{
+											name: "times"
+											value: intlist [
+												0,
+												41,
+												83,
+												125,
+												166,
+												208,
+												250,
+												291,
+												333,
+												375,
+												416,
+												458,
+												500,
+												541,
+												583,
+												625,
+												666,
+												708,
+												750,
+												791,
+												833,
+												875,
+												916,
+												958,
+												1000,
+												1041,
+												1083,
+												1125,
+												1166,
+												1208,
+												1250,
+												1291,
+												1333,
+												1375,
+												1416,
+												1458,
+												1500,
+												1541,
+												1583,
+												1625,
+												1666,
+												1708,
+												1750,
+												1791,
+												1833,
+												1875,
+												1916,
+												1958,
+												2000,
+												2041,
+												2083,
+												2125,
+												2166,
+												2208,
+												2250,
+												2291,
+												2333,
+												2375,
+												2416,
+												2458,
+												2500,
+												2541,
+												2583,
+												2625,
+												2666,
+												2708,
+												2750,
+												2791,
+												2833,
+												2875,
+												2916,
+												2958,
+												3000,
+												3041,
+												3083,
+												3125,
+												3166,
+												3208,
+												3250,
+												3291,
+												3333,
+												3375,
+												3416,
+												3458,
+												3500,
+												3541,
+												3583,
+												3625,
+												3666,
+												3708,
+												3750,
+												3791,
+												3833,
+												3875,
+												3916,
+												3958,
+												4000,
+												4041,
+												4083,
+												4125,
+												4166,
+												4208,
+												4250,
+												4291,
+												4333,
+												4375,
+												4416,
+												4458,
+												4500,
+												4541,
+												4583,
+												4625,
+												4666,
+												4708,
+												4750,
+												4791,
+												4833,
+												4875,
+												4916,
+												4958,
+												5000]
+										},
+										wp<floatlist>(12ad821b-e8b0-4d39-8cb1-c6fd9f571805)
+										{
+											name: "values"
+											value: floatlist [
+												0F,
+												3F,
+												6F,
+												9.000001F,
+												12F,
+												15F,
+												18F,
+												21F,
+												24F,
+												27F,
+												30F,
+												33F,
+												36F,
+												39F,
+												42F,
+												45F,
+												48.00001F,
+												51F,
+												54F,
+												57.00001F,
+												60.00001F,
+												63.00001F,
+												66.00001F,
+												69.00002F,
+												72.00001F,
+												75F,
+												78.00001F,
+												81.00001F,
+												84.00001F,
+												87F,
+												89.99999F,
+												92.99999F,
+												96.00002F,
+												99.00002F,
+												102F,
+												105F,
+												108F,
+												111F,
+												114F,
+												117F,
+												120F,
+												123F,
+												126F,
+												129F,
+												132F,
+												135F,
+												138F,
+												141F,
+												144F,
+												147F,
+												150F,
+												153F,
+												156F,
+												159F,
+												162F,
+												165F,
+												168F,
+												171F,
+												174.0001F,
+												177.0002F,
+												180F,
+												183F,
+												185.9999F,
+												189F,
+												192F,
+												195F,
+												198F,
+												201F,
+												204F,
+												207F,
+												210F,
+												213F,
+												216F,
+												219F,
+												222F,
+												225F,
+												228F,
+												231F,
+												234F,
+												237F,
+												240F,
+												243F,
+												246F,
+												249F,
+												252F,
+												255F,
+												258F,
+												261F,
+												264F,
+												267F,
+												270F,
+												273F,
+												276F,
+												279F,
+												282F,
+												285F,
+												288F,
+												291F,
+												294F,
+												297F,
+												300F,
+												303F,
+												306F,
+												309F,
+												312F,
+												315F,
+												318F,
+												321F,
+												324F,
+												327F,
+												330F,
+												333F,
+												336F,
+												339F,
+												342F,
+												345F,
+												348F,
+												351F,
+												354F,
+												357F,
+												360F]
+										}]
+									features: feature_list []
+									children: children_list []
+								},
+								GtfLinearKeyValueInterpolationFloat(1666a054-dc4c-418d-8b3e-7eef7079f53d)
+								{
+									name: "Scaling for Phong Sphere 1"
+									properties: property_list [
+										wp<bool>(2600ce57-cfd2-4f1e-b853-ece6222e5518)
+										{
+											name: "enabled"
+											value: true
+										},
+										wp<int>(4dd53a70-33c9-4b99-a171-e4b8995f6613)
+										{
+											name: "delay"
+											value: 0
+										},
+										wp<int>(65855a83-6607-441b-afbf-9a2ce0b06d6e)
+										{
+											name: "duration"
+											value: 5000
+										},
+										wp<int>(f787ca25-3d9b-4979-ba46-4bd259512524)
+										{
+											name: "repeat"
+											value: 1
+										},
+										wp<bool>(2df733fa-cb9e-4c3f-b800-ee5703eed7a6)
+										{
+											name: "alternating"
+											value: false
+										},
+										wp<bool>(a6f380ba-88c8-4707-8b5b-73e67a612791)
+										{
+											name: "relative"
+											value: false
+										},
+										wp<float>(08701386-a455-49bc-b93e-2a91d6082dd8)
+										{
+											name: "start"
+											value: 0F
+										},
+										wp<float>(83dca7cb-fc65-44c2-b5e7-d6cd9d0bfb91)
+										{
+											name: "end"
+											value: 100F
+										},
+										wp<float>(4a73de37-4a05-418a-88a7-620126489e7e)
+										{
+											name: "target"
+											value: @0eac09c3-8e82-4247-8128-998dc062fc7e (objectref<float>)
+										},
+										wp<intlist>(5629dee1-5e35-4af0-b4ab-ef11815edeaf)
+										{
+											name: "times"
+											value: intlist [
+												0,
+												5000]
+										},
+										wp<floatlist>(dfce5594-5bde-42c6-9140-003fe5efe46b)
+										{
+											name: "values"
+											value: floatlist [
+												100F,
+												100F]
+										}]
+									features: feature_list []
+									children: children_list []
+								},
+								GtfLinearKeyValueInterpolationFloat(d8e57223-e4c3-4f61-99c3-2e50a1a78c33)
+								{
+									name: "Scaling for Phong Sphere 2"
+									properties: property_list [
+										wp<bool>(c3ca311a-134f-434e-bddf-d6e03ce93863)
+										{
+											name: "enabled"
+											value: true
+										},
+										wp<int>(86d41d19-7715-4542-9a42-21234bb61efb)
+										{
+											name: "delay"
+											value: 0
+										},
+										wp<int>(af7259df-b218-4401-9d7d-d302c6c8ff24)
+										{
+											name: "duration"
+											value: 5000
+										},
+										wp<int>(7082d5ce-9683-471b-9ddd-77f4913b5c49)
+										{
+											name: "repeat"
+											value: 1
+										},
+										wp<bool>(a8120e97-29cb-4d4c-9b23-216fd324fdbd)
+										{
+											name: "alternating"
+											value: false
+										},
+										wp<bool>(bf489a7a-8ffe-4908-917a-d11c4fc268a4)
+										{
+											name: "relative"
+											value: false
+										},
+										wp<float>(63fb9b6b-7ca8-4d45-8fe2-4567e104c9f8)
+										{
+											name: "start"
+											value: 0F
+										},
+										wp<float>(709b0420-9060-4753-b297-3c0bf84703ac)
+										{
+											name: "end"
+											value: 100F
+										},
+										wp<float>(3de85910-555b-4829-8e8a-2cfb871a2d1a)
+										{
+											name: "target"
+											value: @aa72af26-8c46-4304-b1b3-a80304944207 (objectref<float>)
+										},
+										wp<intlist>(8092ef9b-2309-485d-a1a0-6d979b6c24bb)
+										{
+											name: "times"
+											value: intlist [
+												0,
+												5000]
+										},
+										wp<floatlist>(a069b24a-57c8-4b7c-bd00-a1e26fcd3570)
+										{
+											name: "values"
+											value: floatlist [
+												100F,
+												100F]
+										}]
+									features: feature_list []
+									children: children_list []
+								},
+								GtfLinearKeyValueInterpolationFloat(398a37fe-85b1-4672-9d56-59bf9e86073d)
+								{
+									name: "Scaling for Phong Sphere 3"
+									properties: property_list [
+										wp<bool>(5ea0f078-1ed5-4109-a32a-542ffedafe5c)
+										{
+											name: "enabled"
+											value: true
+										},
+										wp<int>(aa65aff1-0f9e-4532-af83-e6a0c2663314)
+										{
+											name: "delay"
+											value: 0
+										},
+										wp<int>(e7425fe5-ea7e-42a8-b8ec-ff950b5b5d31)
+										{
+											name: "duration"
+											value: 5000
+										},
+										wp<int>(9361b157-b8d2-4231-ad22-72858fb38e30)
+										{
+											name: "repeat"
+											value: 1
+										},
+										wp<bool>(ff5e406f-8579-4e10-bcb1-488a6e83b0a4)
+										{
+											name: "alternating"
+											value: false
+										},
+										wp<bool>(36ddff5c-49eb-4616-8583-f4dfa68422b8)
+										{
+											name: "relative"
+											value: false
+										},
+										wp<float>(71c13e50-ea42-4ab1-a9bd-96ed80a4eae6)
+										{
+											name: "start"
+											value: 0F
+										},
+										wp<float>(307a2c1b-de94-41f5-9bdc-b998e0f74760)
+										{
+											name: "end"
+											value: 100F
+										},
+										wp<float>(36b039ba-b1ed-4740-a99f-55416e556d89)
+										{
+											name: "target"
+											value: @e453af14-0ad1-43df-97f8-85ee03cfc2fb (objectref<float>)
+										},
+										wp<intlist>(d6de762c-656b-4bb1-a779-f31993c27537)
+										{
+											name: "times"
+											value: intlist [
+												0,
+												5000]
+										},
+										wp<floatlist>(ceef7ad5-374f-4bc1-aae7-c5099f5960b5)
+										{
+											name: "values"
+											value: floatlist [
+												100F,
+												100F]
+										}]
+									features: feature_list []
+									children: children_list []
+								}]
+						},
+						GtfParallelAnimation(9c5e2928-cfd8-4eef-96b2-8ac09b8df958)
+						{
+							name: "PBR Phong Sphere|Sphere.002Action"
+							properties: property_list [
+								wp<bool>(c35e64cb-0b78-4994-aad5-130de41821c3)
+								{
+									name: "enabled"
+									value: true
+								},
+								wp<int>(2b055a91-0a8e-4200-9f73-5c790e62db96)
+								{
+									name: "repeat"
+									value: 0
+								},
+								wp<bool>(d595e423-8039-4735-9bd4-3e27507dfbbb)
+								{
+									name: "alternating"
+									value: false
+								},
+								wp<float>(558d135a-8d43-4408-aab9-b0a5adca3e82)
+								{
+									name: "scale"
+									value: 1F
+								},
+								wp<function<void,int,bool>>(1531aded-9eb1-4f95-8ab6-aaf64c2d7dce)
+								{
+									name: "onPlay"
+									value: function<void,int,bool>(2fffe265-7250-4232-a051-d58ba7a8669d)
+									{
+										script: "function(v:animation_time::int, v:forward::bool)" \
+											"{" \
+											"" \
+											"}"
+									}
+								},
+								wp<function<void,int>>(a6e5e510-d566-4fdb-b94b-efd76a2d879b)
+								{
+									name: "onPause"
+									value: function<void,int>(190d538c-8a8e-4c60-a012-8e1eb307386b)
+									{
+										script: "function(v:animation_time::int)" \
+											"{" \
+											"" \
+											"}"
+									}
+								},
+								wp<function<void,int,int>>(6d0337b1-02e7-4288-9519-265ae448f650)
+								{
+									name: "onTerminate"
+									value: function<void,int,int>(5999a017-6064-4099-890f-1a1a881539a5)
+									{
+										script: "function(v:animation_time::int, v:terminate::int)" \
+											"{" \
+											"" \
+											"}"
+									}
+								}]
+							features: feature_list []
+							children: children_list [
+								GtfLinearKeyValueInterpolationFloat(a88a27a4-df8d-4b8d-b2ec-127a89f6bca5)
+								{
+									name: "Translation for PBR Phong Sphere 1"
+									properties: property_list [
+										wp<bool>(eb314135-0abd-40b7-ad07-250eafbaeef6)
+										{
+											name: "enabled"
+											value: true
+										},
+										wp<int>(b19e0d6a-bd69-454c-ae95-0852b2f9aafb)
+										{
+											name: "delay"
+											value: 0
+										},
+										wp<int>(ce03b05f-c5e6-4b52-8d03-73ee551e8399)
+										{
+											name: "duration"
+											value: 5000
+										},
+										wp<int>(709e988c-a5b0-4eb7-a67b-d217176c597b)
+										{
+											name: "repeat"
+											value: 1
+										},
+										wp<bool>(90c0d044-b6f9-409e-999f-7722ecf3c76a)
+										{
+											name: "alternating"
+											value: false
+										},
+										wp<bool>(5eb6614b-5058-4fa5-a032-80bebcf31015)
+										{
+											name: "relative"
+											value: false
+										},
+										wp<float>(5770de09-5f91-45ad-8373-29572ea0d65d)
+										{
+											name: "start"
+											value: 0F
+										},
+										wp<float>(6a79b31b-991f-460a-9a62-9b424e1232a2)
+										{
+											name: "end"
+											value: -500F
+										},
+										wp<float>(ef9ae888-d0bf-440c-983f-827a81170ca0)
+										{
+											name: "target"
+											value: @53088346-fea9-446c-bb48-df4898928d30 (objectref<float>)
+										},
+										wp<intlist>(68416ecd-03b0-4f59-bb47-089a04d2f12e)
+										{
+											name: "times"
+											value: intlist [
+												0,
+												5000]
+										},
+										wp<floatlist>(39842427-edfb-4548-8eee-e0fccbd97652)
+										{
+											name: "values"
+											value: floatlist [
+												-500F,
+												-500F]
+										}]
+									features: feature_list []
+									children: children_list []
+								},
+								GtfLinearKeyValueInterpolationFloat(a5beec59-1d83-411d-b833-0c6fa3665e2d)
+								{
+									name: "Translation for PBR Phong Sphere 2"
+									properties: property_list [
+										wp<bool>(a6746370-8ec7-4291-a626-f549a0a328f4)
+										{
+											name: "enabled"
+											value: true
+										},
+										wp<int>(131727cf-421a-4e22-8dc3-6d19150cbcc0)
+										{
+											name: "delay"
+											value: 0
+										},
+										wp<int>(17908861-e911-427c-9755-e1461957aec0)
+										{
+											name: "duration"
+											value: 5000
+										},
+										wp<int>(9b9af415-fa61-46a4-b745-0493478f7377)
+										{
+											name: "repeat"
+											value: 1
+										},
+										wp<bool>(3349b26c-acc6-419b-a131-ea3534d91d65)
+										{
+											name: "alternating"
+											value: false
+										},
+										wp<bool>(554fa389-a82f-4cc0-b66b-d46440c781dd)
+										{
+											name: "relative"
+											value: false
+										},
+										wp<float>(e4c2369b-a242-4234-a709-fe0e843854a4)
+										{
+											name: "start"
+											value: 0F
+										},
+										wp<float>(b05d73be-a1cf-4bd0-95c7-b3719c866624)
+										{
+											name: "end"
+											value: 269.0388F
+										},
+										wp<float>(f0f20ef2-ff5f-4685-a127-cf4694edbc59)
+										{
+											name: "target"
+											value: @98c92369-4757-4841-9d2c-0543090f8104 (objectref<float>)
+										},
+										wp<intlist>(87859f8f-56ce-4cea-aeaf-aaf6c9d73a97)
+										{
+											name: "times"
+											value: intlist [
+												0,
+												5000]
+										},
+										wp<floatlist>(3708e3bc-ac0d-4d35-88ec-9057f8ee589d)
+										{
+											name: "values"
+											value: floatlist [
+												269.0388F,
+												269.0388F]
+										}]
+									features: feature_list []
+									children: children_list []
+								},
+								GtfLinearKeyValueInterpolationFloat(c350501e-4d4b-4758-bd65-760720ad4bad)
+								{
+									name: "Translation for PBR Phong Sphere 3"
+									properties: property_list [
+										wp<bool>(8e3b43cf-325c-49f5-a2d6-669cb2ef17f8)
+										{
+											name: "enabled"
+											value: true
+										},
+										wp<int>(90f5b7ab-b39f-47a9-9819-598b489e0d79)
+										{
+											name: "delay"
+											value: 0
+										},
+										wp<int>(5c6b722a-b76c-47ca-b4f1-e70c9b6d1801)
+										{
+											name: "duration"
+											value: 5000
+										},
+										wp<int>(80eaec8a-b2e2-40e6-ba4d-3eaaa84d6cdd)
+										{
+											name: "repeat"
+											value: 1
+										},
+										wp<bool>(6e59d063-28e9-4ae7-9af6-a9f4354af0af)
+										{
+											name: "alternating"
+											value: false
+										},
+										wp<bool>(6d844cd3-055d-47c0-ba61-0b8fece06f46)
+										{
+											name: "relative"
+											value: false
+										},
+										wp<float>(5fd38c05-ab4e-4c85-9534-fe510a5af8f7)
+										{
+											name: "start"
+											value: 0F
+										},
+										wp<float>(7fa0ef65-7edc-4012-ae7a-a6a951efac2f)
+										{
+											name: "end"
+											value: -257.2294F
+										},
+										wp<float>(8292db03-5134-4900-83c4-1f7017bc75b5)
+										{
+											name: "target"
+											value: @261286d0-848f-4a8d-bc51-18a754e2bea6 (objectref<float>)
+										},
+										wp<intlist>(272dd4cf-ccf6-49ba-92c2-253603ba3acd)
+										{
+											name: "times"
+											value: intlist [
+												0,
+												5000]
+										},
+										wp<floatlist>(155a5c86-46b6-482a-8c21-f978554fa879)
+										{
+											name: "values"
+											value: floatlist [
+												-257.2294F,
+												-257.2294F]
+										}]
+									features: feature_list []
+									children: children_list []
+								},
+								GtfLinearKeyValueInterpolationFloat(b57d0a1e-bc08-417c-bbf7-6b35da518b6f)
+								{
+									name: "Rotation for PBR Phong Sphere"
+									properties: property_list [
+										wp<bool>(22bd5bfd-4429-492d-bcc9-d432a3b243db)
+										{
+											name: "enabled"
+											value: true
+										},
+										wp<int>(8eb5948d-eb67-4e92-bcf5-a83692590f5c)
+										{
+											name: "delay"
+											value: 0
+										},
+										wp<int>(28b92733-e998-4fdf-8409-29c55ff08daf)
+										{
+											name: "duration"
+											value: 5000
+										},
+										wp<int>(14d836ec-2361-430e-8df7-30d8f58ff6be)
+										{
+											name: "repeat"
+											value: 1
+										},
+										wp<bool>(7d7a8135-a08f-4ed3-9780-aa57e94f8764)
+										{
+											name: "alternating"
+											value: false
+										},
+										wp<bool>(fed1e015-ce1b-4ee6-9e31-017a20eedeb8)
+										{
+											name: "relative"
+											value: false
+										},
+										wp<float>(3f514c00-cdbd-4084-90c1-59caa9845a9c)
+										{
+											name: "start"
+											value: 0F
+										},
+										wp<float>(3d837518-f5b7-4f31-94ad-422f41ac2f5b)
+										{
+											name: "end"
+											value: 360F
+										},
+										wp<float>(a8a3a094-d56d-4826-8736-53bb01d33fa7)
+										{
+											name: "target"
+											value: @2bcebc3a-503d-472e-8fb7-376baf9351d8 (objectref<float>)
+										},
+										wp<intlist>(2a90945f-b9a3-4716-a0eb-a57ecc1b5754)
+										{
+											name: "times"
+											value: intlist [
+												0,
+												41,
+												83,
+												125,
+												166,
+												208,
+												250,
+												291,
+												333,
+												375,
+												416,
+												458,
+												500,
+												541,
+												583,
+												625,
+												666,
+												708,
+												750,
+												791,
+												833,
+												875,
+												916,
+												958,
+												1000,
+												1041,
+												1083,
+												1125,
+												1166,
+												1208,
+												1250,
+												1291,
+												1333,
+												1375,
+												1416,
+												1458,
+												1500,
+												1541,
+												1583,
+												1625,
+												1666,
+												1708,
+												1750,
+												1791,
+												1833,
+												1875,
+												1916,
+												1958,
+												2000,
+												2041,
+												2083,
+												2125,
+												2166,
+												2208,
+												2250,
+												2291,
+												2333,
+												2375,
+												2416,
+												2458,
+												2500,
+												2541,
+												2583,
+												2625,
+												2666,
+												2708,
+												2750,
+												2791,
+												2833,
+												2875,
+												2916,
+												2958,
+												3000,
+												3041,
+												3083,
+												3125,
+												3166,
+												3208,
+												3250,
+												3291,
+												3333,
+												3375,
+												3416,
+												3458,
+												3500,
+												3541,
+												3583,
+												3625,
+												3666,
+												3708,
+												3750,
+												3791,
+												3833,
+												3875,
+												3916,
+												3958,
+												4000,
+												4041,
+												4083,
+												4125,
+												4166,
+												4208,
+												4250,
+												4291,
+												4333,
+												4375,
+												4416,
+												4458,
+												4500,
+												4541,
+												4583,
+												4625,
+												4666,
+												4708,
+												4750,
+												4791,
+												4833,
+												4875,
+												4916,
+												4958,
+												5000]
+										},
+										wp<floatlist>(3f1abd29-54c7-4fde-b1bd-7fedeef14a6c)
+										{
+											name: "values"
+											value: floatlist [
+												0F,
+												3F,
+												6F,
+												9.000001F,
+												12F,
+												15F,
+												18F,
+												21F,
+												24F,
+												27F,
+												30F,
+												33F,
+												36F,
+												39F,
+												42F,
+												45F,
+												48.00001F,
+												51F,
+												54F,
+												57.00001F,
+												60.00001F,
+												63.00001F,
+												66.00001F,
+												69.00002F,
+												72.00001F,
+												75F,
+												78.00001F,
+												81.00001F,
+												84.00001F,
+												87F,
+												89.99999F,
+												92.99999F,
+												96.00002F,
+												99.00002F,
+												102F,
+												105F,
+												108F,
+												111F,
+												114F,
+												117F,
+												120F,
+												123F,
+												126F,
+												129F,
+												132F,
+												135F,
+												138F,
+												141F,
+												144F,
+												147F,
+												150F,
+												153F,
+												156F,
+												159F,
+												162F,
+												165F,
+												168F,
+												171F,
+												174.0001F,
+												177.0002F,
+												180F,
+												183F,
+												185.9999F,
+												189F,
+												192F,
+												195F,
+												198F,
+												201F,
+												204F,
+												207F,
+												210F,
+												213F,
+												216F,
+												219F,
+												222F,
+												225F,
+												228F,
+												231F,
+												234F,
+												237F,
+												240F,
+												243F,
+												246F,
+												249F,
+												252F,
+												255F,
+												258F,
+												261F,
+												264F,
+												267F,
+												270F,
+												273F,
+												276F,
+												279F,
+												282F,
+												285F,
+												288F,
+												291F,
+												294F,
+												297F,
+												300F,
+												303F,
+												306F,
+												309F,
+												312F,
+												315F,
+												318F,
+												321F,
+												324F,
+												327F,
+												330F,
+												333F,
+												336F,
+												339F,
+												342F,
+												345F,
+												348F,
+												351F,
+												354F,
+												357F,
+												360F]
+										}]
+									features: feature_list []
+									children: children_list []
+								},
+								GtfLinearKeyValueInterpolationFloat(6cbea222-a9eb-4ec0-90a2-d2d3501b9443)
+								{
+									name: "Scaling for PBR Phong Sphere 1"
+									properties: property_list [
+										wp<bool>(8902bc74-b14f-430f-831c-5a37eb8c5faf)
+										{
+											name: "enabled"
+											value: true
+										},
+										wp<int>(65bffb8e-585c-4905-956f-ed71cf138d97)
+										{
+											name: "delay"
+											value: 0
+										},
+										wp<int>(40a70a5c-784b-43e6-8a2f-ab637caca964)
+										{
+											name: "duration"
+											value: 5000
+										},
+										wp<int>(1c20c27b-5400-4674-aebf-512d63974ab9)
+										{
+											name: "repeat"
+											value: 1
+										},
+										wp<bool>(1ccc9472-4e17-4022-982d-217fac754bfc)
+										{
+											name: "alternating"
+											value: false
+										},
+										wp<bool>(4b4f441e-b02d-4842-be44-0d730115896a)
+										{
+											name: "relative"
+											value: false
+										},
+										wp<float>(9c73b010-7804-4d3b-a75a-51b3732fa6fe)
+										{
+											name: "start"
+											value: 0F
+										},
+										wp<float>(9fc5acf2-22b0-45ae-9dc1-f543d18b23a1)
+										{
+											name: "end"
+											value: 100F
+										},
+										wp<float>(8858a6c1-97c5-4746-b30c-5804e23eba5f)
+										{
+											name: "target"
+											value: @50edba5a-2641-497f-9061-6dfd054a128e (objectref<float>)
+										},
+										wp<intlist>(868b6fc9-54e2-48ea-a9b1-72efe326b85b)
+										{
+											name: "times"
+											value: intlist [
+												0,
+												5000]
+										},
+										wp<floatlist>(3bc9cb3a-df80-4a71-a154-f3cee4d24893)
+										{
+											name: "values"
+											value: floatlist [
+												100F,
+												100F]
+										}]
+									features: feature_list []
+									children: children_list []
+								},
+								GtfLinearKeyValueInterpolationFloat(60e63d45-b525-4f4e-a9ef-4f1119a6e19a)
+								{
+									name: "Scaling for PBR Phong Sphere 2"
+									properties: property_list [
+										wp<bool>(5c971183-0f28-4c55-9523-bbf7945d74c2)
+										{
+											name: "enabled"
+											value: true
+										},
+										wp<int>(c917da76-8d5d-4ab5-aaac-ff1db314154f)
+										{
+											name: "delay"
+											value: 0
+										},
+										wp<int>(d8a89d98-4bf8-4138-957b-ceecb63d27da)
+										{
+											name: "duration"
+											value: 5000
+										},
+										wp<int>(a39aa365-e196-48f3-8879-7bfa65d86f48)
+										{
+											name: "repeat"
+											value: 1
+										},
+										wp<bool>(c0cb38ba-109f-42e8-834f-945cd305c713)
+										{
+											name: "alternating"
+											value: false
+										},
+										wp<bool>(d05a5a69-253c-4618-893e-64d3480e7bc2)
+										{
+											name: "relative"
+											value: false
+										},
+										wp<float>(912ed720-5f4d-4baf-b1a0-e22ff4c1c717)
+										{
+											name: "start"
+											value: 0F
+										},
+										wp<float>(c0113904-1380-4c1d-b2f4-b9a22bfac09a)
+										{
+											name: "end"
+											value: 100F
+										},
+										wp<float>(78668889-7dbc-441e-9b85-6cc8490f2680)
+										{
+											name: "target"
+											value: @e7db2851-be4a-430c-8932-16a09c538cdb (objectref<float>)
+										},
+										wp<intlist>(3fec5562-cab1-47b8-b751-1e24e830f8ee)
+										{
+											name: "times"
+											value: intlist [
+												0,
+												5000]
+										},
+										wp<floatlist>(1521e823-0c27-4863-bb75-471082804522)
+										{
+											name: "values"
+											value: floatlist [
+												100F,
+												100F]
+										}]
+									features: feature_list []
+									children: children_list []
+								},
+								GtfLinearKeyValueInterpolationFloat(acc64fbe-801b-4567-a623-48264ed04097)
+								{
+									name: "Scaling for PBR Phong Sphere 3"
+									properties: property_list [
+										wp<bool>(40b5a29b-c67a-461b-9dd4-9fcee8254fa4)
+										{
+											name: "enabled"
+											value: true
+										},
+										wp<int>(f639d2a8-b9d9-45ce-b3de-34cfaa4cf5e9)
+										{
+											name: "delay"
+											value: 0
+										},
+										wp<int>(235d7d92-3920-4aae-8aa1-bd0435ec710a)
+										{
+											name: "duration"
+											value: 5000
+										},
+										wp<int>(ce529ac3-576d-4b0c-a9d5-599ba995acb6)
+										{
+											name: "repeat"
+											value: 1
+										},
+										wp<bool>(8e670d67-535e-4be8-bff8-c9b35fc5089d)
+										{
+											name: "alternating"
+											value: false
+										},
+										wp<bool>(f827e6a7-9915-4d9b-bfa6-99420787d100)
+										{
+											name: "relative"
+											value: false
+										},
+										wp<float>(9ffcc992-41f9-4f04-bf1b-0c7d84154726)
+										{
+											name: "start"
+											value: 0F
+										},
+										wp<float>(38f61f3b-13ba-4b8b-be0d-6c4ec31af60f)
+										{
+											name: "end"
+											value: 100F
+										},
+										wp<float>(cc8afec7-89c4-40b5-9366-5b2b2c8db658)
+										{
+											name: "target"
+											value: @244b4cb7-582e-40f2-80c5-aad29dbb9a24 (objectref<float>)
+										},
+										wp<intlist>(4d708152-6986-4920-b7f7-2b420bf46f36)
+										{
+											name: "times"
+											value: intlist [
+												0,
+												5000]
+										},
+										wp<floatlist>(c63bb8f9-d920-4226-97aa-9d6ca59a7524)
+										{
+											name: "values"
+											value: floatlist [
+												100F,
+												100F]
+										}]
+									features: feature_list []
+									children: children_list []
+								}]
+						},
+						GtfParallelAnimation(53904187-e08a-4964-b82f-d89124c841aa)
+						{
+							name: "GGX Sphere|Sphere.002Action"
+							properties: property_list [
+								wp<bool>(547c9389-548d-423d-9c66-8936ac4e0526)
+								{
+									name: "enabled"
+									value: true
+								},
+								wp<int>(d2ca6cdc-e146-4bc1-95ae-08797ee6f45d)
+								{
+									name: "repeat"
+									value: 0
+								},
+								wp<bool>(48488ee3-ce97-44b6-ac7c-57cc723d6bd4)
+								{
+									name: "alternating"
+									value: false
+								},
+								wp<float>(0de9ce2b-8cdf-4480-b3a7-d2124866f5ef)
+								{
+									name: "scale"
+									value: 1F
+								},
+								wp<function<void,int,bool>>(ece0ccfc-b40d-4f83-9953-f6beb8170033)
+								{
+									name: "onPlay"
+									value: function<void,int,bool>(dc6bc3c3-6e77-4558-9c7f-cd1351b00ad3)
+									{
+										script: "function(v:animation_time::int, v:forward::bool)" \
+											"{" \
+											"" \
+											"}"
+									}
+								},
+								wp<function<void,int>>(518c895d-924a-4c66-b50f-939d6db7d14a)
+								{
+									name: "onPause"
+									value: function<void,int>(038c6dcc-4ce0-40da-90ba-18ac6aa06083)
+									{
+										script: "function(v:animation_time::int)" \
+											"{" \
+											"" \
+											"}"
+									}
+								},
+								wp<function<void,int,int>>(801fd4aa-eaa5-46f6-b9f0-6b35f58d4749)
+								{
+									name: "onTerminate"
+									value: function<void,int,int>(4da32710-565c-425c-abff-d37900666a17)
+									{
+										script: "function(v:animation_time::int, v:terminate::int)" \
+											"{" \
+											"" \
+											"}"
+									}
+								}]
+							features: feature_list []
+							children: children_list [
+								GtfLinearKeyValueInterpolationFloat(f36277f0-0c70-43ed-ba89-74b2931bb87c)
+								{
+									name: "Translation for GGX Sphere 1"
+									properties: property_list [
+										wp<bool>(b0ea39cd-b200-4165-8860-630a5d8241d5)
+										{
+											name: "enabled"
+											value: true
+										},
+										wp<int>(0c35206d-5f83-404a-94da-a7fcb3db4613)
+										{
+											name: "delay"
+											value: 0
+										},
+										wp<int>(d779ff15-5495-4b80-ba6f-44d5f63dbb43)
+										{
+											name: "duration"
+											value: 5000
+										},
+										wp<int>(8572a046-9659-4943-bea7-3ed7670462ff)
+										{
+											name: "repeat"
+											value: 1
+										},
+										wp<bool>(835b552a-5cfb-4192-86e4-4ada55ef2967)
+										{
+											name: "alternating"
+											value: false
+										},
+										wp<bool>(efa996fb-11ca-4ab0-801e-d70ad44880d2)
+										{
+											name: "relative"
+											value: false
+										},
+										wp<float>(d2cfb8a4-1495-4b9b-a2ea-592cbdb02ce6)
+										{
+											name: "start"
+											value: 0F
+										},
+										wp<float>(252d2201-295c-4b12-a2d4-b0a0c9fb3391)
+										{
+											name: "end"
+											value: 0F
+										},
+										wp<float>(4ed7abd5-f08f-4f1a-b95f-199e6ccbcfcd)
+										{
+											name: "target"
+											value: @bfc1a319-7582-4269-a84f-06dd6b7a1da7 (objectref<float>)
+										},
+										wp<intlist>(244764c3-3629-43f0-97b9-7b11d98cf935)
+										{
+											name: "times"
+											value: intlist [
+												0,
+												5000]
+										},
+										wp<floatlist>(7dd9db77-6a41-4a3d-bfdb-f80afc27f22c)
+										{
+											name: "values"
+											value: floatlist [
+												0F,
+												0F]
+										}]
+									features: feature_list []
+									children: children_list []
+								},
+								GtfLinearKeyValueInterpolationFloat(9e1544fa-3c06-4a4b-a4dd-d103f5dde794)
+								{
+									name: "Translation for GGX Sphere 2"
+									properties: property_list [
+										wp<bool>(c801a45a-eadb-4571-83bc-6750a6c43a3e)
+										{
+											name: "enabled"
+											value: true
+										},
+										wp<int>(e97a0010-f170-445a-bb7b-c0d10cd96c0a)
+										{
+											name: "delay"
+											value: 0
+										},
+										wp<int>(d5d976cf-bf49-4e3a-ad5d-60eaea29b8ac)
+										{
+											name: "duration"
+											value: 5000
+										},
+										wp<int>(ac0f8b18-edf5-4e53-9384-d19489f91750)
+										{
+											name: "repeat"
+											value: 1
+										},
+										wp<bool>(371bd26f-c6fc-411d-8758-697d7b8e3f90)
+										{
+											name: "alternating"
+											value: false
+										},
+										wp<bool>(96c98cb9-b0c8-45ec-a952-d3603b81b851)
+										{
+											name: "relative"
+											value: false
+										},
+										wp<float>(d01b395f-baf6-4ee9-97a0-b2c3b5e36829)
+										{
+											name: "start"
+											value: 0F
+										},
+										wp<float>(057a72bc-bc9b-407b-b255-d1c67b3c4840)
+										{
+											name: "end"
+											value: 269.0388F
+										},
+										wp<float>(83a0bbc2-6902-4dc9-bec3-4eaa20b800a0)
+										{
+											name: "target"
+											value: @34e74755-26e8-4879-965c-eb5d759ff914 (objectref<float>)
+										},
+										wp<intlist>(83f65ebb-8e90-4f1b-80e4-2a751fda110e)
+										{
+											name: "times"
+											value: intlist [
+												0,
+												5000]
+										},
+										wp<floatlist>(49ee5f49-d1f9-4525-87f5-530227c2643d)
+										{
+											name: "values"
+											value: floatlist [
+												269.0388F,
+												269.0388F]
+										}]
+									features: feature_list []
+									children: children_list []
+								},
+								GtfLinearKeyValueInterpolationFloat(b6336fc8-83ae-4bf8-abad-d0b410bcf211)
+								{
+									name: "Translation for GGX Sphere 3"
+									properties: property_list [
+										wp<bool>(25f53ae9-c453-4a1b-a856-f2c1f1f0278b)
+										{
+											name: "enabled"
+											value: true
+										},
+										wp<int>(adb642a6-6873-44d9-b51c-d6a441eac60d)
+										{
+											name: "delay"
+											value: 0
+										},
+										wp<int>(7e324ed7-7d6e-486f-a2a7-52d2bb2e0c2b)
+										{
+											name: "duration"
+											value: 5000
+										},
+										wp<int>(5ac8e810-1c36-4b87-b17e-e980f67d21c0)
+										{
+											name: "repeat"
+											value: 1
+										},
+										wp<bool>(ba13c5d5-3845-45f0-9753-7f0b52e5c424)
+										{
+											name: "alternating"
+											value: false
+										},
+										wp<bool>(7c4c0b8c-4e28-4608-aa50-bc28c9c7c8a7)
+										{
+											name: "relative"
+											value: false
+										},
+										wp<float>(9b7e847c-10e6-4f11-ba73-15583534b5af)
+										{
+											name: "start"
+											value: 0F
+										},
+										wp<float>(275fcc73-028c-4072-85b2-8440dbf0cfa0)
+										{
+											name: "end"
+											value: -257.2294F
+										},
+										wp<float>(17fd82fc-7196-473e-8759-794917e66598)
+										{
+											name: "target"
+											value: @c0852601-62c2-4eab-8510-30e1e360f9d8 (objectref<float>)
+										},
+										wp<intlist>(b9110c72-9cad-4fbb-8ac2-59fbb532f160)
+										{
+											name: "times"
+											value: intlist [
+												0,
+												5000]
+										},
+										wp<floatlist>(74700898-018e-42ae-9aef-6e3457989aba)
+										{
+											name: "values"
+											value: floatlist [
+												-257.2294F,
+												-257.2294F]
+										}]
+									features: feature_list []
+									children: children_list []
+								},
+								GtfLinearKeyValueInterpolationFloat(17d5ed10-9414-4b23-add5-5680df380d20)
+								{
+									name: "Rotation for GGX Sphere"
+									properties: property_list [
+										wp<bool>(dce0727e-e7eb-4f1a-b4c9-bcdf88e8784b)
+										{
+											name: "enabled"
+											value: true
+										},
+										wp<int>(855992f9-0260-4d9e-a076-41ad8f011b13)
+										{
+											name: "delay"
+											value: 0
+										},
+										wp<int>(b61ae363-4749-4529-bf8c-e1804c843688)
+										{
+											name: "duration"
+											value: 5000
+										},
+										wp<int>(b6350271-698e-4e2c-a594-cfe36f1063da)
+										{
+											name: "repeat"
+											value: 1
+										},
+										wp<bool>(24938dc6-14e1-4ec8-b6f1-5d6d930c837e)
+										{
+											name: "alternating"
+											value: false
+										},
+										wp<bool>(56391512-e5f1-4958-bfbc-e9f826a9cc1d)
+										{
+											name: "relative"
+											value: false
+										},
+										wp<float>(4e56f2a8-e992-406e-959d-fe22b8d6fbba)
+										{
+											name: "start"
+											value: 0F
+										},
+										wp<float>(0a5107a2-85e5-4550-8795-33e8cb59160f)
+										{
+											name: "end"
+											value: 360F
+										},
+										wp<float>(a192cbf9-cf0a-44bf-a0c7-dacb5bc7e54e)
+										{
+											name: "target"
+											value: @4b082afd-4f64-4b78-a137-a8604f4cb616 (objectref<float>)
+										},
+										wp<intlist>(4d4dcb66-1d8b-49be-9833-c3878c4d7a57)
+										{
+											name: "times"
+											value: intlist [
+												0,
+												41,
+												83,
+												125,
+												166,
+												208,
+												250,
+												291,
+												333,
+												375,
+												416,
+												458,
+												500,
+												541,
+												583,
+												625,
+												666,
+												708,
+												750,
+												791,
+												833,
+												875,
+												916,
+												958,
+												1000,
+												1041,
+												1083,
+												1125,
+												1166,
+												1208,
+												1250,
+												1291,
+												1333,
+												1375,
+												1416,
+												1458,
+												1500,
+												1541,
+												1583,
+												1625,
+												1666,
+												1708,
+												1750,
+												1791,
+												1833,
+												1875,
+												1916,
+												1958,
+												2000,
+												2041,
+												2083,
+												2125,
+												2166,
+												2208,
+												2250,
+												2291,
+												2333,
+												2375,
+												2416,
+												2458,
+												2500,
+												2541,
+												2583,
+												2625,
+												2666,
+												2708,
+												2750,
+												2791,
+												2833,
+												2875,
+												2916,
+												2958,
+												3000,
+												3041,
+												3083,
+												3125,
+												3166,
+												3208,
+												3250,
+												3291,
+												3333,
+												3375,
+												3416,
+												3458,
+												3500,
+												3541,
+												3583,
+												3625,
+												3666,
+												3708,
+												3750,
+												3791,
+												3833,
+												3875,
+												3916,
+												3958,
+												4000,
+												4041,
+												4083,
+												4125,
+												4166,
+												4208,
+												4250,
+												4291,
+												4333,
+												4375,
+												4416,
+												4458,
+												4500,
+												4541,
+												4583,
+												4625,
+												4666,
+												4708,
+												4750,
+												4791,
+												4833,
+												4875,
+												4916,
+												4958,
+												5000]
+										},
+										wp<floatlist>(5103537d-ea27-4083-add1-accd2f8723a1)
+										{
+											name: "values"
+											value: floatlist [
+												0F,
+												3F,
+												6F,
+												9.000001F,
+												12F,
+												15F,
+												18F,
+												21F,
+												24F,
+												27F,
+												30F,
+												33F,
+												36F,
+												39F,
+												42F,
+												45F,
+												48.00001F,
+												51F,
+												54F,
+												57.00001F,
+												60.00001F,
+												63.00001F,
+												66.00001F,
+												69.00002F,
+												72.00001F,
+												75F,
+												78.00001F,
+												81.00001F,
+												84.00001F,
+												87F,
+												89.99999F,
+												92.99999F,
+												96.00002F,
+												99.00002F,
+												102F,
+												105F,
+												108F,
+												111F,
+												114F,
+												117F,
+												120F,
+												123F,
+												126F,
+												129F,
+												132F,
+												135F,
+												138F,
+												141F,
+												144F,
+												147F,
+												150F,
+												153F,
+												156F,
+												159F,
+												162F,
+												165F,
+												168F,
+												171F,
+												174.0001F,
+												177.0002F,
+												180F,
+												183F,
+												185.9999F,
+												189F,
+												192F,
+												195F,
+												198F,
+												201F,
+												204F,
+												207F,
+												210F,
+												213F,
+												216F,
+												219F,
+												222F,
+												225F,
+												228F,
+												231F,
+												234F,
+												237F,
+												240F,
+												243F,
+												246F,
+												249F,
+												252F,
+												255F,
+												258F,
+												261F,
+												264F,
+												267F,
+												270F,
+												273F,
+												276F,
+												279F,
+												282F,
+												285F,
+												288F,
+												291F,
+												294F,
+												297F,
+												300F,
+												303F,
+												306F,
+												309F,
+												312F,
+												315F,
+												318F,
+												321F,
+												324F,
+												327F,
+												330F,
+												333F,
+												336F,
+												339F,
+												342F,
+												345F,
+												348F,
+												351F,
+												354F,
+												357F,
+												360F]
+										}]
+									features: feature_list []
+									children: children_list []
+								},
+								GtfLinearKeyValueInterpolationFloat(de68e27e-f09d-48ba-9b34-b2e41901fa82)
+								{
+									name: "Scaling for GGX Sphere 1"
+									properties: property_list [
+										wp<bool>(782d4a57-0b7b-4fa8-838a-c4c4dc794a14)
+										{
+											name: "enabled"
+											value: true
+										},
+										wp<int>(01a266a3-f88e-4b6c-8ea3-0462aeaa571c)
+										{
+											name: "delay"
+											value: 0
+										},
+										wp<int>(f10b29fd-f2f6-4862-8d2f-d4e2ce07a1e7)
+										{
+											name: "duration"
+											value: 5000
+										},
+										wp<int>(6ec6a961-06a6-4680-a0ac-66cdac38b6bd)
+										{
+											name: "repeat"
+											value: 1
+										},
+										wp<bool>(e4dad1e0-e635-48ec-ab0a-bacb54219224)
+										{
+											name: "alternating"
+											value: false
+										},
+										wp<bool>(1cdec153-c5aa-4ca4-a79e-19907519d412)
+										{
+											name: "relative"
+											value: false
+										},
+										wp<float>(be52e4de-4255-49ae-87ba-34f6fd5bba1a)
+										{
+											name: "start"
+											value: 0F
+										},
+										wp<float>(cd32a019-213d-4dd9-a181-c79066e325fc)
+										{
+											name: "end"
+											value: 100F
+										},
+										wp<float>(2f865af9-4851-473a-a350-a97e3924e892)
+										{
+											name: "target"
+											value: @6c9c30b8-850d-4ab7-8930-fadbe91350a3 (objectref<float>)
+										},
+										wp<intlist>(c14f1c6a-8aa1-4ad4-a334-9fbae971c090)
+										{
+											name: "times"
+											value: intlist [
+												0,
+												5000]
+										},
+										wp<floatlist>(582617e4-9542-41ff-9c58-66a495ee0036)
+										{
+											name: "values"
+											value: floatlist [
+												100F,
+												100F]
+										}]
+									features: feature_list []
+									children: children_list []
+								},
+								GtfLinearKeyValueInterpolationFloat(c00f2670-56a4-4d9a-9c20-f0c5a87218f2)
+								{
+									name: "Scaling for GGX Sphere 2"
+									properties: property_list [
+										wp<bool>(bf18c328-a9f4-4dc2-ae53-9f21e41487b6)
+										{
+											name: "enabled"
+											value: true
+										},
+										wp<int>(7b401e41-ee93-42bf-b27f-837da9641abd)
+										{
+											name: "delay"
+											value: 0
+										},
+										wp<int>(e5dbd92f-ba3c-49e0-8048-71305fce6278)
+										{
+											name: "duration"
+											value: 5000
+										},
+										wp<int>(4bbb5080-3f9d-4ae0-b7e1-e4c18da6153b)
+										{
+											name: "repeat"
+											value: 1
+										},
+										wp<bool>(d6be92c7-482a-468c-8b14-7f47e7ec16ce)
+										{
+											name: "alternating"
+											value: false
+										},
+										wp<bool>(aca25fe6-b864-44c1-a158-5b547de53177)
+										{
+											name: "relative"
+											value: false
+										},
+										wp<float>(1790d77b-704c-4ce0-8a82-2f45a4f712f6)
+										{
+											name: "start"
+											value: 0F
+										},
+										wp<float>(f5ef75a2-bed7-4021-b09d-9265159ddbb2)
+										{
+											name: "end"
+											value: 100F
+										},
+										wp<float>(5f8e1133-5b57-47ac-aec9-467eb68388bd)
+										{
+											name: "target"
+											value: @8b3d1291-ba1d-474d-8bc0-a6f9c686d392 (objectref<float>)
+										},
+										wp<intlist>(49f92573-33ca-4f6f-8c53-9f991464e270)
+										{
+											name: "times"
+											value: intlist [
+												0,
+												5000]
+										},
+										wp<floatlist>(4a0ab4ad-f798-47db-89c5-bee4b15940c5)
+										{
+											name: "values"
+											value: floatlist [
+												100F,
+												100F]
+										}]
+									features: feature_list []
+									children: children_list []
+								},
+								GtfLinearKeyValueInterpolationFloat(68afd84b-ee1b-44af-9935-e5d8629ded80)
+								{
+									name: "Scaling for GGX Sphere 3"
+									properties: property_list [
+										wp<bool>(8178fb64-221d-48c1-af0c-e49b981a89f2)
+										{
+											name: "enabled"
+											value: true
+										},
+										wp<int>(11d01e62-fac1-4f54-89e2-14215342823d)
+										{
+											name: "delay"
+											value: 0
+										},
+										wp<int>(2bef5188-f379-4aeb-8e03-40a1ce44b30c)
+										{
+											name: "duration"
+											value: 5000
+										},
+										wp<int>(bf41ede8-4c87-41b2-8619-0501d464edfd)
+										{
+											name: "repeat"
+											value: 1
+										},
+										wp<bool>(6d065f91-9518-43fe-8523-402a2ca26589)
+										{
+											name: "alternating"
+											value: false
+										},
+										wp<bool>(ed21d47d-bffd-477b-b287-aa9d18e46311)
+										{
+											name: "relative"
+											value: false
+										},
+										wp<float>(30357b1a-d739-4678-9711-2fff073e3b48)
+										{
+											name: "start"
+											value: 0F
+										},
+										wp<float>(8e9d11cf-45c2-4af4-85d0-f7ea33e1e09a)
+										{
+											name: "end"
+											value: 100F
+										},
+										wp<float>(cd0867ed-e435-43fa-909a-4ee5f658cf73)
+										{
+											name: "target"
+											value: @0b565ac3-deca-49c3-93f2-06faa73a7a49 (objectref<float>)
+										},
+										wp<intlist>(79c1d884-0be4-4656-a6ce-772d77bffc89)
+										{
+											name: "times"
+											value: intlist [
+												0,
+												5000]
+										},
+										wp<floatlist>(0da1275d-8c55-4a2e-8535-4cf08b22b433)
+										{
+											name: "values"
+											value: floatlist [
+												100F,
+												100F]
+										}]
+									features: feature_list []
+									children: children_list []
+								}]
+						}]
+				},
+				GtfLabel(436996c9-4e32-4aaa-8616-cb27b98ccd3a)
+				{
+					name: "Label 1"
+					properties: property_list [
+						wp<bool>(2437ee6d-f76a-4a2c-872d-3f22ded38fcf)
+						{
+							name: "visible"
+							value: true
+						},
+						wp<int>(7a7a1221-782e-4528-be8b-95511efced20)
+						{
+							name: "width"
+							value: 780
+						},
+						wp<int>(6a0fd907-f4af-4803-8a0e-ed5af549ce9b)
+						{
+							name: "height"
+							value: 50
+						},
+						wp<int>(f97befe3-be9c-4329-8e92-d99575f046c7)
+						{
+							name: "x"
+							value: 0
+						},
+						wp<int>(27461963-9848-436e-a200-8ebc1d556918)
+						{
+							name: "y"
+							value: 0
+						},
+						wp<string>(98c0c1b3-1a72-40d9-b5a5-679356728d22)
+						{
+							name: "text"
+							value: "Click the scene to start the animation"
+						},
+						wp<color>(9d856e4a-5d6d-424f-bd6f-136c4c70ee91)
+						{
+							name: "textColor"
+							value: #808080FF
+						},
+						wp<font>(998a37e5-8372-475f-95df-707fe18e0a98)
+						{
+							name: "font"
+							value: font_resource(b95c9c38-8f3a-4da9-8604-c552dad1dfcd)
+							{
+								sourceType: "model"
+								source: "resources"
+								file: "PT_Sans_Narrow.ttf"
+								size: 20
+							}
+						},
+						wp<int>(467ad008-b363-4f4e-a7df-ad709ade4ac3)
+						{
+							name: "horizontalAlign"
+							value: 1
+						},
+						wp<int>(d9194cba-bc2d-475f-a91f-5f848a5526a0)
+						{
+							name: "verticalAlign"
+							value: 0
+						}]
+					features: feature_list []
+					children: children_list []
+				}]
+		}]
+}

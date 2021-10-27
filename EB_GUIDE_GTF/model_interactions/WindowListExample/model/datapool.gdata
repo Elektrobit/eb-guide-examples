@@ -1,0 +1,31 @@
+EBGUIDE 6.12.0.211022102259;
+
+dp_items(c019edfb-fc36-47bf-a3c4-df70fa4be86b)
+{
+	items: dp_item_list [
+		dp<int>(49272c40-1d40-4618-8c2c-eb29675e07ef)
+		{
+			value: 2000
+			name: "WindowListSize"
+		},
+		dp<int>(6fb97221-4b98-4a21-a7c6-cddbbf8d063c)
+		{
+			value: 0
+			name: "WindowPositionInternal"
+		},
+		dp<stringlist>(7cc88ba8-a363-494d-94c3-086a44d923be)
+		{
+			value: stringlist []
+			name: "myReceivedWindowList"
+		},
+		dp<int>(a534a8c2-cb0e-4d06-b012-125a2a20ba71)
+		{
+			value: 50
+			name: "WindowSize"
+		},
+		dp<int>(f2060e20-2b2a-499d-90fe-7ed10f14b3bb)
+		{
+			value: 0
+			name: "WindowPosition"
+		}]
+}

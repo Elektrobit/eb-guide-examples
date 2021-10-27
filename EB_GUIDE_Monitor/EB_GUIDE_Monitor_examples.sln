@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.852
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitorUiExtension", "MonitorUiExtension\MonitorUiExtension.csproj", "{CA958564-6B78-4AE5-B07B-8092B571BB33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitorUiExtensionDatapool", "MonitorUiExtensionDatapool\MonitorUiExtensionDatapool.csproj", "{6BB1ABAE-0F51-4DDC-8A53-25CF177733CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitorUiExtensionEvents", "MonitorUiExtensionEvents\MonitorUiExtensionEvents.csproj", "{607673E2-59AF-4E87-8749-CDEAF5E84E56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitorUiExtensionTargetViewer", "MonitorUiExtensionTargetViewer\MonitorUiExtensionTargetViewer.csproj", "{AFF6FB8F-2012-402B-B3C4-DB8CD7E3452B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitorRemoteViewPlugin", "MonitorRemoteViewPlugin\MonitorRemoteViewPlugin.csproj", "{55B541E0-7E14-4F76-A808-DF013E8539C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitorUiExtensionMacro", "MonitorUiExtensionMacro\MonitorUiExtensionMacro.csproj", "{1ADDA299-AD40-4960-B927-DA81C642C9BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA958564-6B78-4AE5-B07B-8092B571BB33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA958564-6B78-4AE5-B07B-8092B571BB33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA958564-6B78-4AE5-B07B-8092B571BB33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA958564-6B78-4AE5-B07B-8092B571BB33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BB1ABAE-0F51-4DDC-8A53-25CF177733CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BB1ABAE-0F51-4DDC-8A53-25CF177733CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BB1ABAE-0F51-4DDC-8A53-25CF177733CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BB1ABAE-0F51-4DDC-8A53-25CF177733CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{607673E2-59AF-4E87-8749-CDEAF5E84E56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{607673E2-59AF-4E87-8749-CDEAF5E84E56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{607673E2-59AF-4E87-8749-CDEAF5E84E56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{607673E2-59AF-4E87-8749-CDEAF5E84E56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFF6FB8F-2012-402B-B3C4-DB8CD7E3452B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFF6FB8F-2012-402B-B3C4-DB8CD7E3452B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFF6FB8F-2012-402B-B3C4-DB8CD7E3452B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFF6FB8F-2012-402B-B3C4-DB8CD7E3452B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55B541E0-7E14-4F76-A808-DF013E8539C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55B541E0-7E14-4F76-A808-DF013E8539C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55B541E0-7E14-4F76-A808-DF013E8539C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55B541E0-7E14-4F76-A808-DF013E8539C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1ADDA299-AD40-4960-B927-DA81C642C9BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1ADDA299-AD40-4960-B927-DA81C642C9BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1ADDA299-AD40-4960-B927-DA81C642C9BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1ADDA299-AD40-4960-B927-DA81C642C9BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AF2D59B0-D78D-4A6A-8E7F-B7AB7356170C}
+	EndGlobalSection
+EndGlobal

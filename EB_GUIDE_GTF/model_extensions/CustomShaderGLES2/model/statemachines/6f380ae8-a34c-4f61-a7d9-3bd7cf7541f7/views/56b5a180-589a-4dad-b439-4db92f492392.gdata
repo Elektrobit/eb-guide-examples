@@ -1,0 +1,37 @@
+EBGUIDE 6.12.0.211022102259;
+
+GtfView_template_instance(56b5a180-589a-4dad-b439-4db92f492392)
+{
+	name: "Titleview"
+	template: @18edd3fd-90d3-4e6e-bc08-4db08f8b05ee (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(0fa558a1-ee77-44e2-acc9-2f397a0ddd4f)
+		{
+			name: "title_text"
+			value: "Custom shader demo"
+		},
+		wp<string>(c07824fe-8803-4146-9805-5bf1eec9ebd9)
+		{
+			name: "short desc_text"
+			value: "Example of creating custom shader widgets"
+		},
+		wp<string>(9337c8f4-6901-4bc1-9ae8-b87bc2285afb)
+		{
+			name: "long desc_text"
+			value: "Documentation reference:\\nExtensions to EB GUIDE TF"
+		},
+		wp<function<bool,int,int,int,int>>(ff17221e-3a51-4133-b896-b6a5ab216ac3)
+		{
+			name: "touchPressed"
+			value: function<bool,int,int,int,int>(a833b774-1633-4423-bc01-9bff091cce0c)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:next();" \
+					"    false" \
+					"}"
+			}
+		}]
+	user_properties: property_list []
+	children: children_list []
+}

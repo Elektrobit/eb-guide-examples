@@ -1,0 +1,37 @@
+EBGUIDE 6.12.0.211022102259;
+
+GtfView_template_instance(c7443d01-52f5-4fef-a621-cd3cb3614f87)
+{
+	name: "Titleview"
+	template: @d39ab86b-55e4-41b8-a278-7e8cefa331f9 (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(86664cad-8e88-4b90-bdf3-98a8fd330ed2)
+		{
+			name: "title_text"
+			value: "Event plugin demo"
+		},
+		wp<string>(ac95bb3e-4b41-4e23-9bdc-7b033c0dd014)
+		{
+			name: "shortDesc"
+			value: "Example for communicating from an application with the HMI using event system"
+		},
+		wp<string>(71719f92-f066-4697-b98c-a498d0269747)
+		{
+			name: "long desc"
+			value: "Documentation reference:\\nUsing the EB GUIDE TF plugin mechanism\\nBackground information > Interaction between HMI and applications > Event System"
+		},
+		wp<function<bool,int,int,int,int>>(a090a1b4-6fda-4bf9-bbb3-12fd5d6262f1)
+		{
+			name: "touchPressed"
+			value: function<bool,int,int,int,int>(6ea329b3-9b80-4fc3-811e-d42c890a751e)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:next();" \
+					"    false" \
+					"}"
+			}
+		}]
+	user_properties: property_list []
+	children: children_list []
+}

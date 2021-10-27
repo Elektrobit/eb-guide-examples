@@ -1,0 +1,40 @@
+EBGUIDE 6.12.0.211022102259;
+
+events(18d508fd-81f1-47d3-8d6e-b8fdcb0de559)
+{
+	items: event_list [
+		event(7c293e74-5229-4ee3-b7fb-351112136b05)
+		{
+			name: "next"
+			eventId: 4
+			event_group: @55bd7598-b548-4b67-b3c9-ac38a1745d53 (objectref<event_group>)
+			event_params: event_param_list []
+		},
+		event(c65d5796-9339-4183-a2a2-d2617240746d)
+		{
+			name: "externalTouch"
+			eventId: 0
+			event_group: @2ae02214-3bfa-4de2-90b1-00d90a4408dc (objectref<event_group>)
+			event_params: event_param_list [
+				event_param<int>(3492aa7c-109c-4429-9e24-c4530c97d31e)
+				{
+					name: "displayManagerId"
+				},
+				event_param<int>(274f133b-7d65-444a-a915-de3ac8560b52)
+				{
+					name: "status"
+				},
+				event_param<int>(97222cb0-caed-435f-95f1-510644bab5de)
+				{
+					name: "x"
+				},
+				event_param<int>(09d8b171-9564-449c-96ed-78797f53cfbd)
+				{
+					name: "y"
+				},
+				event_param<int>(bd04b348-1ed6-41d2-8365-0cb43eec59e6)
+				{
+					name: "fingerId"
+				}]
+		}]
+}

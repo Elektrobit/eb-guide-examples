@@ -1,0 +1,36 @@
+EBGUIDE 6.12.0.211022102259;
+
+dp_items(1f4315dd-e5ac-401a-863b-24c2a6ae1c75)
+{
+	items: dp_item_list [
+		dp<bool>(0b91c3b6-899b-4ea8-a239-b08bd00ac688)
+		{
+			value: false
+			name: "isAnimationFloatFinished"
+		},
+		dp<int>(18a74645-6b00-4815-a3b0-4f55c2befcdb)
+		{
+			value: 200
+			name: "animationTarget_Ellipse"
+		},
+		dp<color>(3583aa42-2e5a-4188-9213-a4642c8746e7)
+		{
+			value: #A9A9A9FF
+			name: "animationTarget_Ellipse2"
+		},
+		dp<float>(48571cbb-3f06-4c70-bd4b-c4bcfd75d44b)
+		{
+			value: 360F
+			name: "animationTarget_Ellipse1"
+		},
+		dp<bool>(c04b78bb-684f-4e61-9135-c7f1cc135a6a)
+		{
+			value: false
+			name: "isAnimationIntFinished"
+		},
+		dp<bool>(e3f3398d-dfc5-48cf-8b2b-42d27ae4851a)
+		{
+			value: false
+			name: "isAnimationColorFinished"
+		}]
+}

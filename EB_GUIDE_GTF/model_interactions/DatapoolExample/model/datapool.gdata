@@ -1,0 +1,75 @@
+EBGUIDE 6.12.0.211022102259;
+
+dp_items(c019edfb-fc36-47bf-a3c4-df70fa4be86b)
+{
+	items: dp_item_list [
+		dp<intlist>(4bf467cd-7dba-4352-9254-b642834585ff)
+		{
+			value: intlist []
+			name: "myResponseList"
+		},
+		dp<int>(a534a8c2-cb0e-4d06-b012-125a2a20ba71)
+		{
+			value: 0
+			name: "mySentValue"
+		},
+		dp<intlist>(ebf6fd01-7704-43e5-875b-f79a6b5f6a44)
+		{
+			value: intlist [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0]
+			name: "mySentList"
+		},
+		dp<int>(f2060e20-2b2a-499d-90fe-7ed10f14b3bb)
+		{
+			value: 0
+			name: "myResponseValue"
+		}]
+}

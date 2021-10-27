@@ -1,0 +1,1332 @@
+{
+  "metadata": {
+    "file_version": "1.0",
+    "studio_version": "6.12.0.211022102259"
+  },
+  "gtf_plugins": [
+    {
+      "plugin_name": "_unknown_",
+      "plugin_version": "6.12.0",
+      "widgets": [
+        {
+          "name": "GtfViewManager",
+          "base": "GtfContainer",
+          "properties": {}
+        },
+        {
+          "name": "GtfVisualScene",
+          "base": "GtfAbstractWidget",
+          "properties": {
+            "visible": "bool",
+            "width": "int",
+            "height": "int",
+            "x": "int",
+            "y": "int",
+            "projectName": "string",
+            "windowCaption": "string",
+            "sceneId": "int",
+            "maxFPS": "int",
+            "hwLayerId": "int",
+            "colorMode": "int",
+            "antiAliasing": "int",
+            "enableRemoteFramebuffer": "bool",
+            "showWindowFrame": "bool",
+            "showWindow": "bool",
+            "disableVSync": "bool",
+            "showFPS": "int"
+          }
+        },
+        {
+          "name": "GtfAbstractLogicWidget",
+          "base": "GtfAbstractWidget",
+          "properties": {}
+        },
+        {
+          "name": "GtfAbstractAnimation",
+          "base": "GtfAbstractLogicWidget",
+          "properties": {
+            "enabled": "bool"
+          }
+        },
+        {
+          "name": "GtfAnimationContainer",
+          "base": "GtfAbstractAnimation",
+          "properties": {
+            "repeat": "int",
+            "alternating": "bool",
+            "scale": "float",
+            "onPlay": "function<void,int,bool>",
+            "onPause": "function<void,int>",
+            "onTerminate": "function<void,int,int>"
+          }
+        },
+        {
+          "name": "GtfParallelAnimation",
+          "base": "GtfAnimationContainer",
+          "properties": {}
+        },
+        {
+          "name": "GtfDelayedFixedCurve",
+          "base": "GtfAbstractAnimation",
+          "properties": {
+            "delay": "int",
+            "duration": "int",
+            "repeat": "int",
+            "alternating": "bool",
+            "relative": "bool"
+          }
+        },
+        {
+          "name": "GtfConstCurveS32",
+          "base": "GtfDelayedFixedCurve",
+          "properties": {
+            "value": "int",
+            "target": "int"
+          }
+        },
+        {
+          "name": "GtfConstCurveColor",
+          "base": "GtfDelayedFixedCurve",
+          "properties": {
+            "value": "color",
+            "target": "color"
+          }
+        },
+        {
+          "name": "GtfConstCurveBool",
+          "base": "GtfDelayedFixedCurve",
+          "properties": {
+            "value": "bool",
+            "target": "bool"
+          }
+        },
+        {
+          "name": "GtfConstCurveFloat",
+          "base": "GtfDelayedFixedCurve",
+          "properties": {
+            "value": "float",
+            "target": "float"
+          }
+        },
+        {
+          "name": "GtfLinearInterpolationS32",
+          "base": "GtfDelayedFixedCurve",
+          "properties": {
+            "start": "int",
+            "end": "int",
+            "target": "int"
+          }
+        },
+        {
+          "name": "GtfLinearInterpolationColor",
+          "base": "GtfDelayedFixedCurve",
+          "properties": {
+            "start": "color",
+            "end": "color",
+            "target": "color"
+          }
+        },
+        {
+          "name": "GtfLinearInterpolationFloat",
+          "base": "GtfDelayedFixedCurve",
+          "properties": {
+            "start": "float",
+            "end": "float",
+            "target": "float"
+          }
+        },
+        {
+          "name": "GtfLinearKeyValueInterpolationS32",
+          "base": "GtfDelayedFixedCurve",
+          "properties": {
+            "start": "int",
+            "end": "int",
+            "target": "int",
+            "times": "intlist",
+            "values": "intlist"
+          }
+        },
+        {
+          "name": "GtfLinearKeyValueInterpolationColor",
+          "base": "GtfDelayedFixedCurve",
+          "properties": {
+            "start": "color",
+            "end": "color",
+            "target": "color",
+            "times": "intlist",
+            "values": "colorlist"
+          }
+        },
+        {
+          "name": "GtfLinearKeyValueInterpolationFloat",
+          "base": "GtfDelayedFixedCurve",
+          "properties": {
+            "start": "float",
+            "end": "float",
+            "target": "float",
+            "times": "intlist",
+            "values": "floatlist"
+          }
+        },
+        {
+          "name": "GtfSlowStartS32",
+          "base": "GtfDelayedFixedCurve",
+          "properties": {
+            "start": "int",
+            "end": "int",
+            "target": "int"
+          }
+        },
+        {
+          "name": "GtfSlowStartColor",
+          "base": "GtfDelayedFixedCurve",
+          "properties": {
+            "start": "color",
+            "end": "color",
+            "target": "color"
+          }
+        },
+        {
+          "name": "GtfSlowStartFloat",
+          "base": "GtfDelayedFixedCurve",
+          "properties": {
+            "start": "float",
+            "end": "float",
+            "target": "float"
+          }
+        },
+        {
+          "name": "GtfFastStartS32",
+          "base": "GtfDelayedFixedCurve",
+          "properties": {
+            "start": "int",
+            "end": "int",
+            "target": "int"
+          }
+        },
+        {
+          "name": "GtfFastStartColor",
+          "base": "GtfDelayedFixedCurve",
+          "properties": {
+            "start": "color",
+            "end": "color",
+            "target": "color"
+          }
+        },
+        {
+          "name": "GtfFastStartFloat",
+          "base": "GtfDelayedFixedCurve",
+          "properties": {
+            "start": "float",
+            "end": "float",
+            "target": "float"
+          }
+        },
+        {
+          "name": "GtfQuadraticCurveS32",
+          "base": "GtfDelayedFixedCurve",
+          "properties": {
+            "acceleration": "int",
+            "velocity": "int",
+            "constant": "int",
+            "target": "int"
+          }
+        },
+        {
+          "name": "GtfQuadraticCurveColor",
+          "base": "GtfDelayedFixedCurve",
+          "properties": {
+            "acceleration": "color",
+            "velocity": "color",
+            "constant": "color",
+            "target": "color"
+          }
+        },
+        {
+          "name": "GtfQuadraticCurveFloat",
+          "base": "GtfDelayedFixedCurve",
+          "properties": {
+            "acceleration": "float",
+            "velocity": "float",
+            "constant": "float",
+            "target": "float"
+          }
+        },
+        {
+          "name": "GtfSinusCurveS32",
+          "base": "GtfDelayedFixedCurve",
+          "properties": {
+            "amplitude": "int",
+            "constant": "int",
+            "frequency": "float",
+            "phase": "float",
+            "target": "int"
+          }
+        },
+        {
+          "name": "GtfSinusCurveColor",
+          "base": "GtfDelayedFixedCurve",
+          "properties": {
+            "amplitude": "color",
+            "constant": "color",
+            "frequency": "float",
+            "phase": "float",
+            "target": "color"
+          }
+        },
+        {
+          "name": "GtfSinusCurveFloat",
+          "base": "GtfDelayedFixedCurve",
+          "properties": {
+            "amplitude": "float",
+            "constant": "float",
+            "frequency": "float",
+            "phase": "float",
+            "target": "float"
+          }
+        },
+        {
+          "name": "GtfLinearCurveS32",
+          "base": "GtfDelayedFixedCurve",
+          "properties": {
+            "velocity": "int",
+            "constant": "int",
+            "target": "int"
+          }
+        },
+        {
+          "name": "GtfLinearCurveColor",
+          "base": "GtfDelayedFixedCurve",
+          "properties": {
+            "velocity": "color",
+            "constant": "color",
+            "target": "color"
+          }
+        },
+        {
+          "name": "GtfLinearCurveFloat",
+          "base": "GtfDelayedFixedCurve",
+          "properties": {
+            "velocity": "float",
+            "constant": "float",
+            "target": "float"
+          }
+        },
+        {
+          "name": "GtfScriptCurveBool",
+          "base": "GtfDelayedFixedCurve",
+          "properties": {
+            "curve": "function<bool,int,int>",
+            "target": "bool"
+          }
+        },
+        {
+          "name": "GtfScriptCurveS32",
+          "base": "GtfDelayedFixedCurve",
+          "properties": {
+            "curve": "function<int,int,int>",
+            "target": "int"
+          }
+        },
+        {
+          "name": "GtfScriptCurveColor",
+          "base": "GtfDelayedFixedCurve",
+          "properties": {
+            "curve": "function<color,int,int>",
+            "target": "color"
+          }
+        },
+        {
+          "name": "GtfScriptCurveFloat",
+          "base": "GtfDelayedFixedCurve",
+          "properties": {
+            "curve": "function<float,int,int>",
+            "target": "float"
+          }
+        },
+        {
+          "name": "GtfAbstractWidget",
+          "base": null,
+          "properties": {}
+        },
+        {
+          "name": "GtfAbstractVisualWidget",
+          "base": "GtfAbstractWidget",
+          "properties": {
+            "visible": "bool",
+            "width": "int",
+            "height": "int",
+            "x": "int",
+            "y": "int"
+          }
+        },
+        {
+          "name": "GtfLabel",
+          "base": "GtfAbstractVisualWidget",
+          "properties": {
+            "text": "string",
+            "textColor": "color",
+            "font": "font",
+            "horizontalAlign": "int",
+            "verticalAlign": "int"
+          }
+        },
+        {
+          "name": "GtfImage",
+          "base": "GtfAbstractVisualWidget",
+          "properties": {
+            "image": "image",
+            "sRGB": "bool",
+            "horizontalAlign": "int",
+            "verticalAlign": "int"
+          }
+        },
+        {
+          "name": "GtfApplicationWindowWidget",
+          "base": "GtfImage",
+          "properties": {
+            "forwardTouch": "bool",
+            "forwardKey": "bool"
+          }
+        },
+        {
+          "name": "GtfRectangle",
+          "base": "GtfAbstractVisualWidget",
+          "properties": {
+            "fillColor": "color"
+          }
+        },
+        {
+          "name": "GtfEllipse",
+          "base": "GtfAbstractVisualWidget",
+          "properties": {
+            "fillColor": "color",
+            "arcWidth": "int",
+            "centralAngle": "float",
+            "sectorRotation": "float"
+          }
+        },
+        {
+          "name": "GtfCustomShader",
+          "base": "GtfAbstractVisualWidget",
+          "properties": {}
+        },
+        {
+          "name": "GtfInstantiator",
+          "base": "GtfAbstractVisualWidget",
+          "properties": {
+            "numItems": "int",
+            "lineMapping": "intlist"
+          }
+        },
+        {
+          "name": "GtfContainer",
+          "base": "GtfAbstractVisualWidget",
+          "properties": {}
+        },
+        {
+          "name": "GtfAlphaMask",
+          "base": "GtfAbstractVisualWidget",
+          "properties": {
+            "enabled": "bool",
+            "image": "image",
+            "horizontalAlign": "int",
+            "verticalAlign": "int",
+            "scaleMode": "int"
+          }
+        },
+        {
+          "name": "GtfView",
+          "base": "GtfAbstractVisualWidget",
+          "properties": {}
+        },
+        {
+          "name": "GtfSceneGraph",
+          "base": "GtfAbstractVisualWidget",
+          "properties": {
+            "gamma": "float",
+            "debugLightSource": "bool"
+          }
+        },
+        {
+          "name": "GtfAbstract3dWidget",
+          "base": "GtfAbstractWidget",
+          "properties": {}
+        },
+        {
+          "name": "GtfAbstractLightWidget",
+          "base": "GtfAbstract3dWidget",
+          "properties": {
+            "enabled": "bool",
+            "color": "color",
+            "intensity": "float"
+          }
+        },
+        {
+          "name": "GtfAbstractMaterialWidget",
+          "base": "GtfAbstractWidget",
+          "properties": {}
+        },
+        {
+          "name": "GtfSceneGraphNode",
+          "base": "GtfAbstract3dWidget",
+          "properties": {
+            "visible": "bool",
+            "rotationX": "float",
+            "rotationY": "float",
+            "rotationZ": "float",
+            "scalingX": "float",
+            "scalingY": "float",
+            "scalingZ": "float",
+            "translationX": "float",
+            "translationY": "float",
+            "translationZ": "float"
+          }
+        },
+        {
+          "name": "GtfCameraWidget",
+          "base": "GtfAbstract3dWidget",
+          "properties": {
+            "enabled": "bool",
+            "nearPlane": "float",
+            "farPlane": "float",
+            "fieldOfView": "float",
+            "projectionType": "int"
+          }
+        },
+        {
+          "name": "GtfMeshWidget",
+          "base": "GtfAbstract3dWidget",
+          "properties": {
+            "visible": "bool",
+            "mesh": "mesh",
+            "culling": "int"
+          }
+        },
+        {
+          "name": "GtfAmbientLight",
+          "base": "GtfAbstractLightWidget",
+          "properties": {}
+        },
+        {
+          "name": "GtfDirectionalLight",
+          "base": "GtfAbstractLightWidget",
+          "properties": {}
+        },
+        {
+          "name": "GtfPointLight",
+          "base": "GtfAbstractLightWidget",
+          "properties": {
+            "attenuationConstant": "float",
+            "attenuationLinear": "float",
+            "attenuationQuadratic": "float"
+          }
+        },
+        {
+          "name": "GtfSpotLight",
+          "base": "GtfAbstractLightWidget",
+          "properties": {
+            "attenuationConstant": "float",
+            "attenuationLinear": "float",
+            "attenuationQuadratic": "float",
+            "coneAngleInner": "float",
+            "coneAngleOuter": "float"
+          }
+        },
+        {
+          "name": "GtfImageBasedLight",
+          "base": "GtfAbstract3dWidget",
+          "properties": {
+            "enabled": "bool",
+            "ibl": "ibl",
+            "intensity": "float",
+            "environmentMap": "bool"
+          }
+        },
+        {
+          "name": "GtfPhongMaterialWidget",
+          "base": "GtfAbstractMaterialWidget",
+          "properties": {
+            "ambient": "color",
+            "diffuse": "color",
+            "emissive": "color",
+            "emissiveStrength": "float",
+            "shininess": "float",
+            "specular": "color",
+            "opacity": "float"
+          }
+        },
+        {
+          "name": "GtfPbrGgxMaterialWidget",
+          "base": "GtfAbstractMaterialWidget",
+          "properties": {
+            "ambient": "color",
+            "baseColor": "color",
+            "emissive": "color",
+            "emissiveStrength": "float",
+            "reflectance": "float",
+            "metallic": "float",
+            "roughness": "float",
+            "opacity": "float"
+          }
+        },
+        {
+          "name": "GtfPbrPhongMaterialWidget",
+          "base": "GtfAbstractMaterialWidget",
+          "properties": {
+            "ambient": "color",
+            "diffuse": "color",
+            "emissive": "color",
+            "emissiveStrength": "float",
+            "shininess": "float",
+            "specular": "color",
+            "metallic": "float",
+            "opacity": "float"
+          }
+        }
+      ],
+      "widget_features": [
+        {
+          "name": "OpenGLRenderer",
+          "properties": {},
+          "requirement": "w:GtfVisualScene"
+        },
+        {
+          "name": "OpenGL3Renderer",
+          "properties": {},
+          "requirement": "w:GtfVisualScene"
+        },
+        {
+          "name": "StateFocused",
+          "properties": {
+            "focusable": "int",
+            "focused": "bool"
+          },
+          "requirement": "w:GtfAbstractVisualWidget"
+        },
+        {
+          "name": "UserDefinedFocus",
+          "properties": {
+            "initFocus": "int",
+            "focusedIndex": "int",
+            "focusNext": "bool",
+            "focusPrev": "bool",
+            "focusFlow": "int",
+            "focusOrder": "intlist"
+          },
+          "requirement": "w:GtfAbstractVisualWidget&&!wf:AutoFocus&&wf:StateFocused"
+        },
+        {
+          "name": "AutoFocus",
+          "properties": {
+            "initFocus": "int",
+            "focusedIndex": "int",
+            "focusNext": "bool",
+            "focusPrev": "bool",
+            "focusFlow": "int"
+          },
+          "requirement": "w:GtfAbstractVisualWidget&&!wf:UserDefinedFocus&&wf:StateFocused"
+        },
+        {
+          "name": "MoveOver",
+          "properties": {
+            "moveOver": "function<bool,int,int,int,int>"
+          },
+          "requirement": "w:GtfAbstractVisualWidget&&wf:StateTouched"
+        },
+        {
+          "name": "MoveOut",
+          "properties": {
+            "moveOut": "function<bool,int,int,int,int>"
+          },
+          "requirement": "w:GtfAbstractVisualWidget&&wf:StateTouched"
+        },
+        {
+          "name": "MoveIn",
+          "properties": {
+            "moveIn": "function<bool,int,int,int,int>"
+          },
+          "requirement": "w:GtfAbstractVisualWidget&&wf:StateTouched"
+        },
+        {
+          "name": "TouchPressed",
+          "properties": {
+            "touchPressed": "function<bool,int,int,int,int>"
+          },
+          "requirement": "w:GtfAbstractVisualWidget&&wf:StateTouched"
+        },
+        {
+          "name": "TouchShortReleased",
+          "properties": {
+            "touchShortReleased": "function<bool,int,int,int,int>"
+          },
+          "requirement": "w:GtfAbstractVisualWidget&&wf:StateTouched"
+        },
+        {
+          "name": "TouchGrabLost",
+          "properties": {
+            "onTouchGrabLost": "function<bool,int,int,int,int>"
+          },
+          "requirement": "w:GtfAbstractVisualWidget&&wf:StateTouched"
+        },
+        {
+          "name": "TouchStatusChanged",
+          "properties": {
+            "touchStatusChanged": "function<bool,int,int,int,int,int>"
+          },
+          "requirement": "w:GtfAbstractVisualWidget&&wf:StateTouched"
+        },
+        {
+          "name": "TouchMove",
+          "properties": {
+            "touchMoved": "function<bool,int,int,int,int>"
+          },
+          "requirement": "w:GtfAbstractVisualWidget&&wf:StateTouched"
+        },
+        {
+          "name": "Gestures",
+          "properties": {},
+          "requirement": "w:GtfAbstractVisualWidget&&wf:StateTouched"
+        },
+        {
+          "name": "GestureHold",
+          "properties": {
+            "onGestureHold": "function<void,int,int>",
+            "holdDuration": "int"
+          },
+          "requirement": "w:GtfAbstractVisualWidget&&wf:Gestures"
+        },
+        {
+          "name": "GestureLongHold",
+          "properties": {
+            "onGestureLongHold": "function<void,int,int>",
+            "longHoldDuration": "int"
+          },
+          "requirement": "w:GtfAbstractVisualWidget&&wf:Gestures"
+        },
+        {
+          "name": "GestureFlick",
+          "properties": {
+            "onGestureFlick": "function<void,float,int,int>",
+            "flickMaxTime": "int",
+            "flickMinLength": "int"
+          },
+          "requirement": "w:GtfAbstractVisualWidget&&wf:Gestures"
+        },
+        {
+          "name": "GesturePinch",
+          "properties": {
+            "onGesturePinchStart": "function<void,float,int,int>",
+            "onGesturePinchUpdate": "function<void,float,int,int>",
+            "onGesturePinchEnd": "function<void,float,int,int>",
+            "pinchThreshold": "int"
+          },
+          "requirement": "w:GtfAbstractVisualWidget&&wf:Gestures"
+        },
+        {
+          "name": "GestureRotate",
+          "properties": {
+            "onGestureRotateStart": "function<void,float,int,int>",
+            "onGestureRotateUpdate": "function<void,float,int,int>",
+            "onGestureRotateEnd": "function<void,float,int,int>",
+            "rotateThreshold": "int"
+          },
+          "requirement": "w:GtfAbstractVisualWidget&&wf:Gestures"
+        },
+        {
+          "name": "Path",
+          "properties": {
+            "onPath": "function<void,int>",
+            "onPathStart": "function<void>",
+            "onPathNotRecognized": "function<void>",
+            "pathMinXBox": "int",
+            "pathMinYBox": "int"
+          },
+          "requirement": "w:GtfAbstractVisualWidget&&wf:Gestures"
+        },
+        {
+          "name": "KeyPressed",
+          "properties": {
+            "keyPressed": "function<bool,int>"
+          },
+          "requirement": "w:GtfAbstractVisualWidget&&wf:StatePressed"
+        },
+        {
+          "name": "KeyUnicode",
+          "properties": {
+            "keyUnicode": "function<bool,string>"
+          },
+          "requirement": "w:GtfAbstractVisualWidget&&wf:StatePressed"
+        },
+        {
+          "name": "KeyShortReleased",
+          "properties": {
+            "keyShortReleased": "function<bool,int>"
+          },
+          "requirement": "w:GtfAbstractVisualWidget&&wf:StatePressed"
+        },
+        {
+          "name": "KeyStatusChanged",
+          "properties": {
+            "keyStatusChanged": "function<bool,int,int>"
+          },
+          "requirement": "w:GtfAbstractVisualWidget&&wf:StatePressed"
+        },
+        {
+          "name": "Rotary",
+          "properties": {
+            "rotaryReaction": "function<bool,int,int>"
+          },
+          "requirement": "w:GtfAbstractVisualWidget&&wf:StateFocused"
+        },
+        {
+          "name": "StatePressed",
+          "properties": {
+            "pressed": "bool"
+          },
+          "requirement": "w:GtfAbstractVisualWidget&&wf:StateFocused"
+        },
+        {
+          "name": "StateTouched",
+          "properties": {
+            "touchable": "bool",
+            "touched": "bool",
+            "touchPolicy": "int",
+            "touchBehavior": "int"
+          },
+          "requirement": "w:GtfAbstractVisualWidget"
+        },
+        {
+          "name": "Moveable",
+          "properties": {
+            "moveDirection": "int"
+          },
+          "requirement": "w:GtfAbstractVisualWidget&&wf:StateTouched&&wf:TouchMove"
+        },
+        {
+          "name": "LayoutPolicyAbsolute",
+          "properties": {
+            "itemLeftOffset": "intlist",
+            "itemTopOffset": "intlist",
+            "itemRightOffset": "intlist",
+            "itemBottomOffset": "intlist"
+          },
+          "requirement": "w:GtfAbstractVisualWidget&&!w:GtfSceneGraph&&!wf:LayoutPolicyFlow&&!wf:LayoutPolicyGrid&&!wf:LayoutPolicyBox&&!wf:LayoutPolicyList"
+        },
+        {
+          "name": "LayoutPolicyFlow",
+          "properties": {
+            "horizontalGap": "int",
+            "verticalGap": "int",
+            "layoutDirection": "int",
+            "horizontalChildAlign": "int",
+            "verticalChildAlign": "int"
+          },
+          "requirement": "w:GtfAbstractVisualWidget&&!w:GtfSceneGraph&&!wf:LayoutPolicyAbsolute&&!wf:LayoutPolicyGrid&&!wf:LayoutPolicyBox&&!wf:LayoutPolicyList"
+        },
+        {
+          "name": "LayoutPolicyGrid",
+          "properties": {
+            "horizontalGap": "int",
+            "verticalGap": "int",
+            "numRows": "int",
+            "numColumns": "int"
+          },
+          "requirement": "w:GtfAbstractVisualWidget&&!w:GtfSceneGraph&&!wf:LayoutPolicyAbsolute&&!wf:LayoutPolicyFlow&&!wf:LayoutPolicyBox&&!wf:LayoutPolicyList"
+        },
+        {
+          "name": "LayoutPolicyBox",
+          "properties": {
+            "gap": "int",
+            "layoutDirection": "int"
+          },
+          "requirement": "w:GtfAbstractVisualWidget&&!w:GtfSceneGraph&&!wf:LayoutPolicyAbsolute&&!wf:LayoutPolicyFlow&&!wf:LayoutPolicyGrid&&!wf:LayoutPolicyList"
+        },
+        {
+          "name": "LayoutPolicyList",
+          "properties": {
+            "layoutDirection": "int",
+            "scrollOffset": "int",
+            "scrollOffsetRebase": "bool",
+            "firstListIndex": "int",
+            "scrollIndex": "int",
+            "scrollValue": "int",
+            "scrollValueMax": "int",
+            "scrollValueMin": "int",
+            "bounceValue": "int",
+            "bounceValueMax": "int",
+            "segments": "int",
+            "listLength": "int",
+            "wrapAround": "bool"
+          },
+          "requirement": "w:GtfAbstractVisualWidget&&!w:GtfSceneGraph&&!wf:LayoutPolicyAbsolute&&!wf:LayoutPolicyGrid&&!wf:LayoutPolicyBox&&!wf:LayoutPolicyFlow&&!wf:Multistate"
+        },
+        {
+          "name": "LayoutPolicyListItem",
+          "properties": {
+            "listIndex": "int"
+          },
+          "requirement": "w:GtfAbstractVisualWidget&&!w:GtfSceneGraph"
+        },
+        {
+          "name": "LayoutMargins",
+          "properties": {
+            "leftMargin": "int",
+            "topMargin": "int",
+            "rightMargin": "int",
+            "bottomMargin": "int"
+          },
+          "requirement": "w:GtfAbstractVisualWidget&&!w:GtfSceneGraph"
+        },
+        {
+          "name": "TextTruncation",
+          "properties": {
+            "truncationSymbol": "string",
+            "truncationPolicy": "int"
+          },
+          "requirement": "w:GtfLabel"
+        },
+        {
+          "name": "MultiLine",
+          "properties": {
+            "lineOffset": "int",
+            "maxLineCount": "int"
+          },
+          "requirement": "w:GtfLabel&&!wf:CircularText"
+        },
+        {
+          "name": "Border",
+          "properties": {
+            "borderThickness": "int",
+            "borderColor": "color",
+            "borderStyle": "int"
+          },
+          "requirement": "w:GtfRectangle"
+        },
+        {
+          "name": "ScaleMode",
+          "properties": {
+            "scaleMode": "int"
+          },
+          "requirement": "w:GtfImage"
+        },
+        {
+          "name": "Stroke",
+          "properties": {
+            "strokeEnabled": "bool",
+            "strokeThickness": "float",
+            "strokeColor": "color"
+          },
+          "requirement": "w:GtfLabel"
+        },
+        {
+          "name": "CircularText",
+          "properties": {
+            "enabled": "bool",
+            "centerX": "int",
+            "centerY": "int",
+            "radius": "int",
+            "direction": "int",
+            "startingAngle": "float",
+            "characterSpacing": "float"
+          },
+          "requirement": "w:GtfLabel&&!wf:MultiLine&&!wf:FontMetrics"
+        },
+        {
+          "name": "StateEnabled",
+          "properties": {
+            "enabled": "bool"
+          },
+          "requirement": "w:GtfAbstractVisualWidget"
+        },
+        {
+          "name": "StateSelected",
+          "properties": {
+            "selected": "bool"
+          },
+          "requirement": "w:GtfAbstractVisualWidget"
+        },
+        {
+          "name": "Multistate",
+          "properties": {
+            "containerIndex": "int",
+            "containerMapping": "intlist"
+          },
+          "requirement": "w:GtfAbstractVisualWidget"
+        },
+        {
+          "name": "Buttongroup",
+          "properties": {
+            "buttonId": "int",
+            "buttonValue": "int"
+          },
+          "requirement": "w:GtfAbstractVisualWidget&&wf:StateSelected"
+        },
+        {
+          "name": "Rotarybutton",
+          "properties": {
+            "currentValue": "int",
+            "maxValue": "int",
+            "minValue": "int",
+            "incValueTrigger": "bool",
+            "incValueReaction": "function<void>",
+            "decValueTrigger": "bool",
+            "decValueReaction": "function<void>",
+            "steps": "int",
+            "valueWrapAround": "bool"
+          },
+          "requirement": "w:GtfAbstractVisualWidget"
+        },
+        {
+          "name": "LineIndex",
+          "properties": {
+            "lineIndex": "int"
+          },
+          "requirement": "w:GtfAbstractVisualWidget"
+        },
+        {
+          "name": "ViewPort",
+          "properties": {
+            "xOffset": "int",
+            "yOffset": "int"
+          },
+          "requirement": "w:GtfAbstractVisualWidget"
+        },
+        {
+          "name": "FontMetrics",
+          "properties": {
+            "ascender": "int",
+            "descender": "int",
+            "lineGap": "int"
+          },
+          "requirement": "w:GtfLabel&&!wf:CircularText"
+        },
+        {
+          "name": "LineTemplateIndex",
+          "properties": {
+            "lineTemplateIndex": "int"
+          },
+          "requirement": "w:GtfAbstractVisualWidget"
+        },
+        {
+          "name": "Coloration",
+          "properties": {
+            "colorationEnabled": "bool",
+            "colorationColor": "color"
+          },
+          "requirement": "w:GtfAbstractVisualWidget"
+        },
+        {
+          "name": "Translation",
+          "properties": {
+            "translationEnabled": "bool",
+            "translationX": "float",
+            "translationY": "float",
+            "translationZ": "float"
+          },
+          "requirement": "w:GtfAbstractVisualWidget"
+        },
+        {
+          "name": "Rotation",
+          "properties": {
+            "rotationEnabled": "bool",
+            "rotationAngleX": "float",
+            "rotationAngleY": "float",
+            "rotationAngleZ": "float"
+          },
+          "requirement": "w:GtfAbstractVisualWidget"
+        },
+        {
+          "name": "Scaling",
+          "properties": {
+            "scalingEnabled": "bool",
+            "scalingX": "float",
+            "scalingY": "float",
+            "scalingZ": "float"
+          },
+          "requirement": "w:GtfAbstractVisualWidget"
+        },
+        {
+          "name": "Shearing",
+          "properties": {
+            "shearingEnabled": "bool",
+            "shearingXbyY": "float",
+            "shearingXbyZ": "float",
+            "shearingYbyX": "float",
+            "shearingYbyZ": "float",
+            "shearingZbyX": "float",
+            "shearingZbyY": "float"
+          },
+          "requirement": "w:GtfAbstractVisualWidget"
+        },
+        {
+          "name": "Pivot",
+          "properties": {
+            "pivotX": "float",
+            "pivotY": "float",
+            "pivotZ": "float"
+          },
+          "requirement": "w:GtfAbstractVisualWidget&&(wf:Rotation||wf:Scaling||wf:Shearing)"
+        },
+        {
+          "name": "EbGuideStudioData",
+          "properties": {
+            "UUID": "string"
+          },
+          "requirement": "!w:GtfAbstractWidget"
+        },
+        {
+          "name": "GtfCameraViewportFeature",
+          "properties": {
+            "viewportX": "int",
+            "viewportY": "int",
+            "viewportWidth": "int",
+            "viewportHeight": "int"
+          },
+          "requirement": "w:GtfCameraWidget"
+        },
+        {
+          "name": "GtfCameraDofFeature",
+          "properties": {
+            "enabled": "bool",
+            "focusDistance": "float",
+            "fStop": "float"
+          },
+          "requirement": "w:GtfCameraWidget"
+        },
+        {
+          "name": "GtfCameraBloomFeature",
+          "properties": {
+            "enabled": "bool",
+            "threshold": "float",
+            "strength": "float",
+            "radius": "float"
+          },
+          "requirement": "w:GtfCameraWidget"
+        },
+        {
+          "name": "GtfAmbientTextureFeature",
+          "properties": {
+            "ambientTexture": "image",
+            "ambientTextureAddressModeU": "int",
+            "ambientTextureAddressModeV": "int",
+            "ambientFilterMode": "int",
+            "ambientSRGB": "bool"
+          },
+          "requirement": "w:GtfPhongMaterialWidget||w:GtfPbrGgxMaterialWidget||w:GtfPbrPhongMaterialWidget"
+        },
+        {
+          "name": "GtfDiffuseTextureFeature",
+          "properties": {
+            "diffuseTexture": "image",
+            "diffuseTextureAddressModeU": "int",
+            "diffuseTextureAddressModeV": "int",
+            "diffuseFilterMode": "int",
+            "diffuseSRGB": "bool"
+          },
+          "requirement": "w:GtfPhongMaterialWidget||w:GtfPbrPhongMaterialWidget"
+        },
+        {
+          "name": "GtfBaseColorTextureFeature",
+          "properties": {
+            "baseColorTexture": "image",
+            "baseColorTextureAddressModeU": "int",
+            "baseColorTextureAddressModeV": "int",
+            "baseColorFilterMode": "int",
+            "baseColorSRGB": "bool"
+          },
+          "requirement": "w:GtfPbrGgxMaterialWidget"
+        },
+        {
+          "name": "GtfEmissiveTextureFeature",
+          "properties": {
+            "emissiveTexture": "image",
+            "emissiveTextureAddressModeU": "int",
+            "emissiveTextureAddressModeV": "int",
+            "emissiveFilterMode": "int",
+            "emissiveSRGB": "bool"
+          },
+          "requirement": "w:GtfPhongMaterialWidget||w:GtfPbrGgxMaterialWidget||w:GtfPbrPhongMaterialWidget"
+        },
+        {
+          "name": "GtfLightMapTextureFeature",
+          "properties": {
+            "lightMapTexture": "image",
+            "lightMapTextureAddressModeU": "int",
+            "lightMapTextureAddressModeV": "int",
+            "lightMapFilterMode": "int"
+          },
+          "requirement": "w:GtfPhongMaterialWidget||w:GtfPbrGgxMaterialWidget||w:GtfPbrPhongMaterialWidget"
+        },
+        {
+          "name": "GtfOcclusionMapTextureFeature",
+          "properties": {
+            "occlusionMapTexture": "image",
+            "occlusionMapTextureAddressModeU": "int",
+            "occlusionMapTextureAddressModeV": "int",
+            "occlusionMapFilterMode": "int"
+          },
+          "requirement": "w:GtfPhongMaterialWidget||w:GtfPbrGgxMaterialWidget||w:GtfPbrPhongMaterialWidget"
+        },
+        {
+          "name": "GtfNormalMapTextureFeature",
+          "properties": {
+            "normalMapTexture": "image",
+            "normalMapTextureAddressModeU": "int",
+            "normalMapTextureAddressModeV": "int",
+            "normalMapFilterMode": "int",
+            "normalMapStrength": "float"
+          },
+          "requirement": "w:GtfPhongMaterialWidget||w:GtfPbrGgxMaterialWidget||w:GtfPbrPhongMaterialWidget"
+        },
+        {
+          "name": "GtfSpecularTextureFeature",
+          "properties": {
+            "specularTexture": "image",
+            "specularTextureAddressModeU": "int",
+            "specularTextureAddressModeV": "int",
+            "specularFilterMode": "int",
+            "specularSRGB": "bool"
+          },
+          "requirement": "w:GtfPhongMaterialWidget||w:GtfPbrPhongMaterialWidget"
+        },
+        {
+          "name": "GtfReflectanceTextureFeature",
+          "properties": {
+            "reflectanceTexture": "image",
+            "reflectanceTextureAddressModeU": "int",
+            "reflectanceTextureAddressModeV": "int",
+            "reflectanceFilterMode": "int"
+          },
+          "requirement": "w:GtfPbrGgxMaterialWidget"
+        },
+        {
+          "name": "GtfShininessTextureFeature",
+          "properties": {
+            "shininessTexture": "image",
+            "shininessMinFactor": "float",
+            "shininessMaxFactor": "float",
+            "shininessTextureAddressModeU": "int",
+            "shininessTextureAddressModeV": "int",
+            "shininessFilterMode": "int"
+          },
+          "requirement": "w:GtfPhongMaterialWidget||w:GtfPbrPhongMaterialWidget"
+        },
+        {
+          "name": "GtfMetallicTextureFeature",
+          "properties": {
+            "metallicTexture": "image",
+            "metallicMinFactor": "float",
+            "metallicMaxFactor": "float",
+            "metallicTextureAddressModeU": "int",
+            "metallicTextureAddressModeV": "int",
+            "metallicFilterMode": "int"
+          },
+          "requirement": "w:GtfPbrPhongMaterialWidget||w:GtfPbrGgxMaterialWidget"
+        },
+        {
+          "name": "GtfRoughnessTextureFeature",
+          "properties": {
+            "roughnessTexture": "image",
+            "roughnessMinFactor": "float",
+            "roughnessMaxFactor": "float",
+            "roughnessTextureAddressModeU": "int",
+            "roughnessTextureAddressModeV": "int",
+            "roughnessFilterMode": "int"
+          },
+          "requirement": "w:GtfPbrGgxMaterialWidget"
+        },
+        {
+          "name": "GtfAnisotropyTextureFeature",
+          "properties": {
+            "anisotropyTexture": "image",
+            "anisotropyTextureAddressModeU": "int",
+            "anisotropyTextureAddressModeV": "int",
+            "anisotropyTextureFilterMode": "int"
+          },
+          "requirement": "w:GtfPbrGgxMaterialWidget&&wf:GtfAnisotropyFeature"
+        },
+        {
+          "name": "GtfOpaqueTextureFeature",
+          "properties": {
+            "opaqueTexture": "image",
+            "opaqueTextureAddressModeU": "int",
+            "opaqueTextureAddressModeV": "int",
+            "opaqueFilterMode": "int"
+          },
+          "requirement": "w:GtfPhongMaterialWidget||w:GtfPbrGgxMaterialWidget||w:GtfPbrPhongMaterialWidget"
+        },
+        {
+          "name": "GtfReflectionTextureFeature",
+          "properties": {
+            "reflectionTopTexture": "image",
+            "reflectionBottomTexture": "image",
+            "reflectionLeftTexture": "image",
+            "reflectionRightTexture": "image",
+            "reflectionFrontTexture": "image",
+            "reflectionBackTexture": "image",
+            "reflectionFilterMode": "int"
+          },
+          "requirement": "w:GtfPhongMaterialWidget||w:GtfPbrGgxMaterialWidget||w:GtfPbrPhongMaterialWidget"
+        },
+        {
+          "name": "GtfToneMappingFeature",
+          "properties": {
+            "pureWhiteLuminance": "float"
+          },
+          "requirement": "w:GtfSceneGraph"
+        },
+        {
+          "name": "GtfSSAOFeature",
+          "properties": {
+            "enabled": "bool",
+            "radius": "float",
+            "fallOff": "float",
+            "samples": "int"
+          },
+          "requirement": "w:GtfSceneGraph"
+        },
+        {
+          "name": "GtfTextureCoordinateTransformationFeature",
+          "properties": {
+            "uOffset": "float",
+            "vOffset": "float",
+            "uScale": "float",
+            "vScale": "float"
+          },
+          "requirement": "w:GtfPhongMaterialWidget||w:GtfPbrGgxMaterialWidget||w:GtfPbrPhongMaterialWidget"
+        },
+        {
+          "name": "GtfPbrGgxClearCoatFeature",
+          "properties": {
+            "clearCoatStrength": "float",
+            "clearCoatRoughness": "float"
+          },
+          "requirement": "w:GtfPbrGgxMaterialWidget"
+        },
+        {
+          "name": "GtfPbrPhongClearCoatFeature",
+          "properties": {
+            "clearCoatStrength": "float",
+            "clearCoatShininess": "float"
+          },
+          "requirement": "w:GtfPbrPhongMaterialWidget"
+        },
+        {
+          "name": "GtfAntiAliasingFeature",
+          "properties": {
+            "antiAliasing": "int"
+          },
+          "requirement": "w:GtfSceneGraph"
+        },
+        {
+          "name": "GtfAnisotropyFeature",
+          "properties": {
+            "anisotropy": "float"
+          },
+          "requirement": "w:GtfPbrGgxMaterialWidget"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+    "features" : [
+            {
+                "name" : "RandomFocusPolicy",
+                "alias" : "RandomFocusPolicy",
+                "category" : "Focus",
+                "description" : "Addes a custom focus policy that switches the focus to a random child.",
+                "requirement" : "w:GtfAbstractVisualWidget&&wf:StateFocused&&!wf:AutoFocus&&!wf:UserDefinedFocus",
+                "controller" : "focusedpolicywidgetfeature::FocusPolicyFeature"
+            }
+    ]
+}

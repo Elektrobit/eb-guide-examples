@@ -1,0 +1,15 @@
+EBGUIDE 6.12.0.211022102259;
+
+imported_namespace(96c0af61-dbe3-4aa4-bb27-cefb573d6c94)
+{
+	name: "default.template.package"
+	namespaces: namespaces []
+	events: (994b383d-0ef2-4c1a-bfe2-0606031ae324)
+	statemachines: statemachines []
+	dp_items: (a312bb6a-a127-4e9e-94e2-462e45753128)
+	templates: templates [
+		(18edd3fd-90d3-4e6e-bc08-4db08f8b05ee),
+		(d9ee43bd-ee64-4c9f-904a-75cf1fd8f745)]
+	view_transition_animation_configurations: view_transition_animation_configurations []
+	originalId: "38235024-5254-4db7-80b1-1e47080c1652"
+}

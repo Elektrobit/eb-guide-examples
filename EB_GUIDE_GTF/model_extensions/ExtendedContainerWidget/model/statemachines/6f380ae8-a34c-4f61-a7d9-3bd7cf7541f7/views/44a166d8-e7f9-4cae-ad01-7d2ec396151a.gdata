@@ -1,0 +1,214 @@
+EBGUIDE 6.12.0.211022102259;
+
+GtfView_template_instance(44a166d8-e7f9-4cae-ad01-7d2ec396151a)
+{
+	name: "View 1"
+	template: @d9ee43bd-ee64-4c9f-904a-75cf1fd8f745 (objectref<GtfView_template>)
+	override_properties: property_list [
+		wp<string>(e97f9d7d-a8e2-4990-bf5f-7b422eabe066)
+		{
+			name: "text"
+			value: "Custom container demo"
+		},
+		wp<string>(dcf82d5b-22b2-4ce2-9031-64a7a8063e48)
+		{
+			name: "description"
+			value: "An HMI model can load custom widgets."
+		},
+		wp<function<bool,int,int,int,int>>(54bb970d-3746-4315-9447-c77312f83e52)
+		{
+			name: "touchPressed"
+			value: function<bool,int,int,int,int>(2c421f08-e812-4ee9-ab93-387a37383742)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	if(v:this->\"ExtendedContainer 1\".displayStatus==0)" \
+					"	{" \
+					"		v:this->\"ExtendedContainer 1\".displayStatus=1" \
+					"	}" \
+					"	else if(v:this->\"ExtendedContainer 1\".displayStatus==1)" \
+					"	{" \
+					"		v:this->\"ExtendedContainer 1\".displayStatus=2" \
+					"	}" \
+					"	else if(v:this->\"ExtendedContainer 1\".displayStatus==2)" \
+					"	{" \
+					"		v:this->\"ExtendedContainer 1\".displayStatus=0" \
+					"	}" \
+					"    false" \
+					"}"
+			}
+		}]
+	user_properties: property_list []
+	children: children_list [
+		GtfExtendedContainerWidget(45fe0c11-4940-4c84-b0f8-2af76c5665fb)
+		{
+			name: "ExtendedContainer 1"
+			properties: property_list [
+				wp<bool>(d6ff8a23-a215-4695-adfa-b46d475a9bf7)
+				{
+					name: "visible"
+					value: true
+				},
+				wp<int>(bdd97799-7653-4f93-9913-5003e4df16e7)
+				{
+					name: "width"
+					value: 100
+				},
+				wp<int>(30dcd716-b249-4eb5-90fe-b2fb9ef36f8f)
+				{
+					name: "height"
+					value: 100
+				},
+				wp<int>(c6a84e4c-ab65-495e-870d-81d16a4d1c37)
+				{
+					name: "x"
+					value: 0
+				},
+				wp<int>(74a89119-1527-44b6-ac1f-0a74112edc35)
+				{
+					name: "y"
+					value: 0
+				},
+				wp<int>(c067b7b1-a9bb-4ef3-9b07-0d40eb664c39)
+				{
+					name: "displayStatus"
+					value: @eaf41c79-d817-41dd-a9fb-0b0694556675 (objectref<int>)
+				}]
+			features: feature_list []
+			children: children_list [
+				GtfImage(1f4c4b0a-0c81-4fbb-915f-6d93d70e3aaf)
+				{
+					name: "ExampleImage"
+					properties: property_list [
+						wp<bool>(d649ade2-a930-4398-aca5-0f238d5e969e)
+						{
+							name: "visible"
+							value: true
+						},
+						wp<int>(d5d79b25-ce13-4ccb-96cf-85d113a2b7cb)
+						{
+							name: "width"
+							value: 135
+						},
+						wp<int>(cb1ed076-c05c-45b9-a270-fe05fd5158db)
+						{
+							name: "height"
+							value: 135
+						},
+						wp<int>(dafcdb10-a5c0-455e-bebc-162b894cbeaa)
+						{
+							name: "x"
+							value: 332
+						},
+						wp<int>(f0ba4537-7f67-47f4-bd3b-411ca9edd135)
+						{
+							name: "y"
+							value: 113
+						},
+						wp<image>(77e531e2-15a6-440b-a5de-1fc27591c54e)
+						{
+							name: "image"
+							value: image_resource(c7a9dfa3-d13e-4aac-abac-27fcc2205130)
+							{
+								sourceType: "model"
+								source: "resources"
+								file: "images\\EB.png"
+							}
+						},
+						wp<bool>(5725f0e7-24a7-423c-84e7-a765adc80292)
+						{
+							name: "sRGB"
+							value: false
+						},
+						wp<int>(eddd8e81-9df9-4345-ad4c-aff8963f963c)
+						{
+							name: "horizontalAlign"
+							value: 0
+						},
+						wp<int>(1a9daaf8-a0a7-47a7-be62-85df004c8dd6)
+						{
+							name: "verticalAlign"
+							value: 1
+						}]
+					features: feature_list []
+					children: children_list []
+				},
+				GtfLabel(859bce67-c8df-4f57-be20-70a8af0ac874)
+				{
+					name: "Description"
+					properties: property_list [
+						wp<bool>(f9788462-1c0e-45ab-9a4c-b3cdc9467240)
+						{
+							name: "visible"
+							value: true
+						},
+						wp<int>(2f5d17ca-bff1-4242-a76b-9ef723729590)
+						{
+							name: "width"
+							value: 600
+						},
+						wp<int>(065572bc-8d61-4071-b42d-66605c52a4dd)
+						{
+							name: "height"
+							value: 100
+						},
+						wp<int>(5b2ba0d3-3547-457d-8deb-d1dfb3173d31)
+						{
+							name: "x"
+							value: 100
+						},
+						wp<int>(851187c4-b24d-46a8-b631-f7a95b5a0019)
+						{
+							name: "y"
+							value: 250
+						},
+						wp<string>(86b51576-33b9-4d63-a560-bf18bd6e30e2)
+						{
+							name: "text"
+							value: "This is an example of a custom container widget\\nClick background to change the display status of custom container"
+						},
+						wp<color>(19ba4c3f-f8c3-44b1-90a3-69c3a45d609b)
+						{
+							name: "textColor"
+							value: #FFFFFFFF
+						},
+						wp<font>(14f5d4bd-2106-4333-9c03-f9f7b3823cbc)
+						{
+							name: "font"
+							value: font_resource(aa9e27ab-94e4-4fe8-8ef0-4652d1bdd777)
+							{
+								sourceType: "model"
+								source: "resources"
+								file: "fonts\\PT_Sans.ttf"
+								size: 25
+							}
+						},
+						wp<int>(75fc7ad7-5543-4dcb-825e-4080771d07ce)
+						{
+							name: "horizontalAlign"
+							value: 1
+						},
+						wp<int>(199f4c13-430e-414b-a10e-623948a3536d)
+						{
+							name: "verticalAlign"
+							value: 0
+						}]
+					features: feature_list [
+						MultiLine(1df47c5f-6681-4b2e-b49e-24ac1d0d723a)
+						{
+							base_properties: property_list [
+								wp<int>(2a1821cc-7b57-4b7b-b515-ee123ebaaa0f)
+								{
+									name: "lineOffset"
+									value: 0
+								},
+								wp<int>(910e0caf-5f8b-4c25-a902-27c7ec53e5d0)
+								{
+									name: "maxLineCount"
+									value: 0
+								}]
+						}]
+					children: children_list []
+				}]
+		}]
+}

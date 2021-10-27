@@ -1,0 +1,180 @@
+EBGUIDE 6.12.0.211022102259;
+
+configuration_profile(417d04d7-fb39-44be-b3cd-a350d3171223)
+{
+	name: "Simulation"
+	isDefault: true
+	scene_configurations: scene_configurations [
+		scene_configuration(4eec5548-b241-4e6e-b959-d046fde46be9)
+		{
+			context: @94f4c807-6042-40f2-8cf5-de6145e66413 (objectref<context>)
+			statemachine: @6f380ae8-a34c-4f61-a7d9-3bd7cf7541f7 (objectref<haptic_statemachine>)
+			enabled: true
+			scene: GtfVisualScene(3a86cff9-9d1c-475b-8b71-3bbcd83cdce0)
+			{
+				name: ""
+				properties: property_list [
+					wp<bool>(0b730150-cd69-4a93-b541-25896dcb3789)
+					{
+						name: "visible"
+						value: true
+					},
+					wp<int>(7b4a7b35-673d-4221-a4e8-a631558d8e21)
+					{
+						name: "width"
+						value: 800
+					},
+					wp<int>(0cef99c4-2b14-4c65-8f0f-eaf79b15759a)
+					{
+						name: "height"
+						value: 480
+					},
+					wp<int>(197bf5b0-544e-43d2-8383-5f05892eaa1c)
+					{
+						name: "x"
+						value: 0
+					},
+					wp<int>(351e0100-8ff8-448f-82f1-945a4c807e76)
+					{
+						name: "y"
+						value: 0
+					},
+					wp<string>(6fe54527-3eeb-418f-bcf2-1341199618b6)
+					{
+						name: "projectName"
+						value: "project"
+					},
+					wp<string>(679472b5-9c38-45a5-b367-14cd81e2b2b0)
+					{
+						name: "windowCaption"
+						value: "EB GUIDE 6 model"
+					},
+					wp<int>(8f8f783e-6044-4d9e-ae1f-b95f4ac1ad07)
+					{
+						name: "sceneId"
+						value: 0
+					},
+					wp<int>(278546a9-7ae7-416f-8acb-f340dcd72524)
+					{
+						name: "maxFPS"
+						value: 60
+					},
+					wp<int>(f33c6ce2-8f8e-45fe-93c4-2c7d2c530e59)
+					{
+						name: "hwLayerId"
+						value: 0
+					},
+					wp<int>(9af34d0c-f5e5-4c36-a44c-1e9476a314ca)
+					{
+						name: "colorMode"
+						value: 1
+					},
+					wp<int>(0dd18ec6-540f-4dc9-87e4-76b7fffca08a)
+					{
+						name: "antiAliasing"
+						value: 0
+					},
+					wp<bool>(b7b75e47-9fb7-4e68-8ae6-9daea0e45456)
+					{
+						name: "enableRemoteFramebuffer"
+						value: true
+					},
+					wp<bool>(3064b542-4e89-4b60-8e35-991aee8be8cc)
+					{
+						name: "showWindowFrame"
+						value: true
+					},
+					wp<bool>(d3c9f2a8-16b5-49b4-844f-5a66c19f30d1)
+					{
+						name: "showWindow"
+						value: true
+					},
+					wp<bool>(2e6dee7b-0dbb-47d4-b13e-2db778408bfb)
+					{
+						name: "disableVSync"
+						value: false
+					},
+					wp<int>(d86379b4-4471-41b1-baa0-d98066d43178)
+					{
+						name: "showFPS"
+						value: 0
+					}]
+				features: feature_list [
+					OpenGL3Renderer(4f00c313-427c-4b21-90aa-daf53cf024a7)
+					{
+						base_properties: property_list []
+					}]
+				children: children_list []
+			}
+			additional_data: object(none)
+		}]
+	platform_configuration: "{" \
+		"  \"gtf\": {" \
+		"    \"core\": {" \
+		"      \"pluginstoload\": [" \
+		"        \"GtfService\"" \
+		"      ]" \
+		"    }," \
+		"    \"servicemapper\": {" \
+		"      \"port\": 60000" \
+		"    }," \
+		"    \"resourcesystem\": {" \
+		"      \"defaultdecoding\": [" \
+		"        {" \
+		"          \"inputformat\": \"gtf::decoder::ImagePath\"," \
+		"          \"outputformat\": \"gtf::decoder::EncodedMemImage\"" \
+		"        }," \
+		"        {" \
+		"          \"inputformat\": \"gtf::decoder::MeshPath\"," \
+		"          \"outputformat\": \"gtf::decoder::EncodedMeshData\"" \
+		"        }," \
+		"        {" \
+		"          \"inputformat\": \"gtf::decoder::IBLPath\"," \
+		"          \"outputformat\": \"gtf::decoder::EncodedIBLData\"" \
+		"        }," \
+		"        {" \
+		"          \"inputformat\": \"gtf::decoder::EncodedMemImage\"," \
+		"          \"outputformat\": \"gtf::decoder::MemImage\"" \
+		"        }," \
+		"        {" \
+		"          \"inputformat\": \"gtf::decoder::DescriptorResource::font\"," \
+		"          \"outputformat\": \"gtf::decoder::FontData\"" \
+		"        }," \
+		"        {" \
+		"          \"inputformat\": \"gtf::decoder::DescriptorResource::image\"," \
+		"          \"outputformat\": \"gtf::decoder::ImagePath\"" \
+		"        }," \
+		"        {" \
+		"          \"inputformat\": \"gtf::decoder::DescriptorResource::ibl\"," \
+		"          \"outputformat\": \"gtf::decoder::IBLPath\"" \
+		"        }," \
+		"        {" \
+		"          \"inputformat\": \"gtf::decoder::DescriptorResource::mesh\"," \
+		"          \"outputformat\": \"gtf::decoder::MeshPath\"" \
+		"        }," \
+		"        {" \
+		"          \"inputformat\": \"gtf::decoder::MemImage\"," \
+		"          \"outputformat\": \"gtf::scdr::decoder::NinePatchImage\"" \
+		"        }" \
+		"      ]," \
+		"      \"residentformats\": [" \
+		"        \"gtf::decoder::FontData\"," \
+		"        \"gtf::decoder::IBLPath\"," \
+		"        \"gtf::decoder::ImagePath\"," \
+		"        \"gtf::decoder::MeshPath\"" \
+		"      ]" \
+		"    }" \
+		"  }" \
+		"}"
+	model_configuration: "{" \
+		"\"gtf\": {" \
+		"     \"model\": {" \
+		"     \"pluginstoload\": [" \
+		"             \"resources/TGAImageLoader\"]" \
+		"}" \
+		"}" \
+		"}"
+	target_platform: "win64"
+	disabled_packages: imported_package_refs []
+	additional_data: object(none)
+}

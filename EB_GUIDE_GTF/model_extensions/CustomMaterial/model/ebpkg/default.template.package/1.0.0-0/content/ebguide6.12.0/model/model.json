@@ -1,0 +1,40 @@
+﻿{
+  "package": {
+    "project_id": "c5502165-63b6-47ca-83b2-340df41ed57f",
+    "root": {
+      "id": "38235024-5254-4db7-80b1-1e47080c1652",
+      "name": "",
+      "templates": [
+        {
+          "id": "18edd3fd-90d3-4e6e-bc08-4db08f8b05ee",
+          "name": "TitleView",
+          "dependencies": {
+            "dp_items": [],
+            "events": [],
+            "templates": [],
+            "assets": [
+              "images\\EB.png",
+              "fonts\\PT_Sans.ttf"
+            ]
+          }
+        },
+        {
+          "id": "d9ee43bd-ee64-4c9f-904a-75cf1fd8f745",
+          "name": "MainView",
+          "dependencies": {
+            "dp_items": [],
+            "events": [],
+            "templates": [],
+            "assets": [
+              "fonts\\PT_Sans.ttf"
+            ]
+          }
+        }
+      ],
+      "dp_items": [],
+      "events": [],
+      "namespaces": []
+    },
+    "event_groups": []
+  }
+}

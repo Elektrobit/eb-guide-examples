@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>default.template.package</id>
+    <version>1.0.0-0</version>
+    <authors>calu8264</authors>
+    <owners>calu8264</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>a</description>
+    <packageTypes>
+      <packageType name="EBGuidePackage" version="1.0" />
+    </packageTypes>
+    <dependencies>
+      <group targetFramework="ebguide6.12">
+        <dependency id="ebguide" version="6.12.0" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

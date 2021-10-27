@@ -1,0 +1,35 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:TGAImageLoaderPlugin"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary
+            Source="pack://application:,,,/Studio.UI.Assets;component/assets/Views/Resources.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <local:TgaPathToThumbnailConverter
+        x:Key="TgaPathToThumbnailConverter" />
+
+    <DataTemplate
+        DataType="{x:Type local:TgaAssetViewModel}">
+        <ContentControl
+            x:Name="ContentControl"
+            Style="{StaticResource ContentControl.Asset.CheckerBoardBackground}"
+            Tag="{Binding AbsolutePath, Mode=OneWay, Converter={StaticResource TgaPathToThumbnailConverter}, ConverterParameter=48}"
+            >
+            <Image
+                Focusable="False"
+                Source="{Binding ElementName=ContentControl, Path=Tag, Mode=OneWay}" />
+        </ContentControl>
+
+        <DataTemplate.Triggers>
+            <Trigger SourceName="ContentControl" Property="Tag" Value="{x:Null}">
+                <Setter TargetName="ContentControl" Property="Content" Value="{StaticResource TextBlock.InvalidAsset}" />
+                <Setter TargetName="ContentControl" Property="Style" Value="{x:Null}" />
+            </Trigger>
+        </DataTemplate.Triggers>
+    </DataTemplate>
+</ResourceDictionary>

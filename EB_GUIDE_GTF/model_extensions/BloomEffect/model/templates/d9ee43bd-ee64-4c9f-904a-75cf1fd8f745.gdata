@@ -1,0 +1,291 @@
+EBGUIDE 6.12.0.211022102259;
+
+GtfView_template(d9ee43bd-ee64-4c9f-904a-75cf1fd8f745)
+{
+	name: "MainView"
+	interface_properties: property_list [
+		wp<string>(05b922ee-2fa1-41fc-b397-38fbb18ddfaf)
+		{
+			name: "description"
+			value: @50f5038e-a103-41a8-9f0f-646010c0aba4 (objectref<string>)
+		},
+		wp<string>(8277ed74-603c-4318-a1ba-1138fea6494d)
+		{
+			name: "text"
+			value: @be1d7c74-8aba-4cd3-8045-e000a44fa14e (objectref<string>)
+		}]
+	structure: GtfView(68fc7fd2-5637-4a1f-95aa-3e351b7dad9c)
+	{
+		name: "View"
+		properties: property_list [
+			wp<bool>(773752a7-89f3-4a2b-80b7-8dcfa9cf95df)
+			{
+				name: "visible"
+				value: true
+			},
+			wp<int>(86c0ec49-98cb-4e18-9a83-fe846b9aaccf)
+			{
+				name: "width"
+				value: 800
+			},
+			wp<int>(e2426254-b45b-46ab-99c6-32d489ccffee)
+			{
+				name: "height"
+				value: 480
+			},
+			wp<int>(b3227ade-7a2a-4aed-8c88-0184ec355745)
+			{
+				name: "x"
+				value: 0
+			},
+			wp<int>(a9f19c68-1e8e-47c6-9469-b86cff41bac9)
+			{
+				name: "y"
+				value: 0
+			},
+			wp<string>(50f5038e-a103-41a8-9f0f-646010c0aba4)
+			{
+				name: "description"
+				value: "<description>"
+			}]
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(a7b25ebc-6287-4211-b4c2-7607f2aa52d0)
+			{
+				name: "main bg"
+				properties: property_list [
+					wp<bool>(2cf89138-b9ea-470b-acf3-ca3f308c3e62)
+					{
+						name: "visible"
+						value: true
+					},
+					wp<int>(6f4fbb7b-82f5-45c4-91eb-23582170a3d6)
+					{
+						name: "width"
+						value: @86c0ec49-98cb-4e18-9a83-fe846b9aaccf (objectref<int>)
+					},
+					wp<int>(78394dc5-271e-4367-877b-ce66ef174c2b)
+					{
+						name: "height"
+						value: @e2426254-b45b-46ab-99c6-32d489ccffee (objectref<int>)
+					},
+					wp<int>(a77d6c2a-8658-4baf-9904-1df10a275ccd)
+					{
+						name: "x"
+						value: 0
+					},
+					wp<int>(337b23b2-aab1-472e-8696-ddd1d6e9b336)
+					{
+						name: "y"
+						value: 0
+					},
+					wp<color>(ceb3707a-6260-4d0f-83df-38282767155a)
+					{
+						name: "fillColor"
+						value: #383838FF
+					}]
+				features: feature_list []
+				children: children_list []
+			},
+			GtfLabel(c6f98777-2a3f-4ca9-bace-3092c8c46a00)
+			{
+				name: "title"
+				properties: property_list [
+					wp<bool>(4c990095-15a3-4465-b7f2-ff34e7cefcda)
+					{
+						name: "visible"
+						value: true
+					},
+					wp<int>(c4ef9304-6874-4bd2-a034-00001935d0b6)
+					{
+						name: "width"
+						value: 760
+					},
+					wp<int>(ef9a15a7-8391-498f-a69a-899b146a825b)
+					{
+						name: "height"
+						value: 50
+					},
+					wp<int>(94a99e7b-58b1-43d4-92d2-77c0619b239e)
+					{
+						name: "x"
+						value: 20
+					},
+					wp<int>(5e408142-26c4-4060-a7d5-6b222c46b5de)
+					{
+						name: "y"
+						value: 10
+					},
+					wp<string>(be1d7c74-8aba-4cd3-8045-e000a44fa14e)
+					{
+						name: "text"
+						value: "Widget features demo"
+					},
+					wp<color>(77a51aeb-4304-41ce-bba5-d271452cb185)
+					{
+						name: "textColor"
+						value: #C0C0C0FF
+					},
+					wp<font>(b10e7c6d-3506-43f4-8396-21fb2ac51e91)
+					{
+						name: "font"
+						value: font_resource(0a341b13-4f0e-4ba0-9277-315d9317b57c)
+						{
+							sourceType: "model"
+							source: "resources"
+							file: "fonts/PT_Sans.ttf"
+							size: 35
+						}
+					},
+					wp<int>(101310cc-8a7e-4752-8b34-b20d861622c2)
+					{
+						name: "horizontalAlign"
+						value: 1
+					},
+					wp<int>(fd9b6005-d754-4f6b-b48b-87aeeec15bc6)
+					{
+						name: "verticalAlign"
+						value: 0
+					}]
+				features: feature_list []
+				children: children_list []
+			},
+			GtfRectangle(d6a3e2ac-13d0-448a-8fad-062ddb61cded)
+			{
+				name: "separator top"
+				properties: property_list [
+					wp<bool>(77ac5bbc-a2e6-4f9e-a1f7-fd4f62458f06)
+					{
+						name: "visible"
+						value: true
+					},
+					wp<int>(19326cc6-8457-452b-8600-fd40df804c91)
+					{
+						name: "width"
+						value: 780
+					},
+					wp<int>(5ff56c3b-311a-43cb-a6b9-b0818e30586c)
+					{
+						name: "height"
+						value: 2
+					},
+					wp<int>(9aae87d3-1320-4b06-89df-66e34a4cf0cb)
+					{
+						name: "x"
+						value: 10
+					},
+					wp<int>(a8fbe3d1-2c33-406a-837b-2b015453ced6)
+					{
+						name: "y"
+						value: 70
+					},
+					wp<color>(65df6460-4376-4732-bc91-a69d00cad6a0)
+					{
+						name: "fillColor"
+						value: #504E4EFF
+					}]
+				features: feature_list []
+				children: children_list []
+			},
+			GtfRectangle(3b41b657-b89b-4726-ac22-512fdd3ed760)
+			{
+				name: "separator bottom"
+				properties: property_list [
+					wp<bool>(95349ffd-6789-4d01-b817-2960791f5e7a)
+					{
+						name: "visible"
+						value: true
+					},
+					wp<int>(376811aa-9870-4070-8576-78141994b117)
+					{
+						name: "width"
+						value: 780
+					},
+					wp<int>(2913e3a2-eb5f-4013-83d2-25df1beb959a)
+					{
+						name: "height"
+						value: 2
+					},
+					wp<int>(0137c4c2-92f9-4c8b-88f2-1276b9f8e55a)
+					{
+						name: "x"
+						value: 10
+					},
+					wp<int>(ae6e08bc-deb5-43d6-bb10-5d440b772fbf)
+					{
+						name: "y"
+						value: 410
+					},
+					wp<color>(8ee21cc7-c5f8-492d-89e8-0a804a1524c9)
+					{
+						name: "fillColor"
+						value: #504E4EFF
+					}]
+				features: feature_list []
+				children: children_list []
+			},
+			GtfLabel(7b023cd2-6ce3-4d95-b25a-2bab1d05eaf4)
+			{
+				name: "text bottom"
+				properties: property_list [
+					wp<bool>(740c3ba5-abe7-4fe3-a30f-a16bd8397012)
+					{
+						name: "visible"
+						value: true
+					},
+					wp<int>(dadefad1-9228-4b74-b3de-35dedac58b5d)
+					{
+						name: "width"
+						value: 780
+					},
+					wp<int>(e5cc985d-ab46-4443-866f-72d8ad1bffae)
+					{
+						name: "height"
+						value: 40
+					},
+					wp<int>(ed23ba50-a295-4383-8f1e-0c974dd71a6b)
+					{
+						name: "x"
+						value: 10
+					},
+					wp<int>(63c21d12-e817-4b22-8c8d-db29d2392f6e)
+					{
+						name: "y"
+						value: 425
+					},
+					wp<string>(344e8111-17ef-4790-86bb-d15a54ac0e57)
+					{
+						name: "text"
+						value: @50f5038e-a103-41a8-9f0f-646010c0aba4 (objectref<string>)
+					},
+					wp<color>(f239b0a3-6300-40be-8038-a8f14b0017a6)
+					{
+						name: "textColor"
+						value: #C0C0C0FF
+					},
+					wp<font>(d0494db6-bf0a-4973-83c2-3b43b77ab592)
+					{
+						name: "font"
+						value: font_resource(7fd311b4-2566-483d-8fc5-ac59aced9c74)
+						{
+							sourceType: "model"
+							source: "resources"
+							file: "fonts/PT_Sans.ttf"
+							size: 25
+						}
+					},
+					wp<int>(d8a41a46-3b23-4681-b65d-17e91b303b2b)
+					{
+						name: "horizontalAlign"
+						value: 1
+					},
+					wp<int>(8a57e479-12e5-4f7b-9f0f-31f40fa55c5c)
+					{
+						name: "verticalAlign"
+						value: 0
+					}]
+				features: feature_list []
+				children: children_list []
+			}]
+	}
+}

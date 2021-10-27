@@ -1,0 +1,137 @@
+{
+  "widgets": [
+    {
+      "name": "ProgressBar",
+      "alias": "ProgressBar",
+      "type": "GtfCustomShader",
+      "category": "CustomShaderWidget",
+      "description": "A progress bar.",
+      "canHaveChildren": false,
+      "isAbstract": false,
+      "isInstantiator": false,
+      "isView": false,
+      "transparencyMode": 1,
+      "properties": [
+        {
+          "name": "u_barImage",
+          "type": "image",
+          "description": "An image which outlines the geometry of the bar and encodes the animation path of the progress. Red-channel: alpha mask, green-channel: gradient mask.",
+          "defaultValue": "resources/images/bar_image.png"
+        },
+        {
+          "name": "u_colorationImage",
+          "type": "image",
+          "description": "A color palette image.",
+          "defaultValue": "resources/images/coloration_image.png"
+        },
+        {
+          "name": "u_progress",
+          "type": "float",
+          "description": "The value of progress in percent.",
+          "defaultValue": "100.0"
+        },
+        {
+          "name": "u_enableDynamicColoration",
+          "type": "bool",
+          "description": "If true, the color changes dynamically according to the progress.",
+          "defaultValue": "true"
+        }
+      ],
+      "shaderSpecification": {
+        "gles2": {
+          "vertexShaderPath": "resources/shaders/v_default.glsl",
+          "fragmentShaderPath": "resources/shaders/f_progressbar.glsl"
+        },
+        "gles3": {
+          "vertexShaderPath": "resources/shaders/v_default.glsl",
+          "fragmentShaderPath": "resources/shaders/f_progressbar.glsl"
+        }
+      }
+    },
+    {
+      "name": "SuperSimple",
+      "alias": "SuperSimple",
+      "type": "GtfCustomShader",
+      "category": "CustomShaderWidget",
+      "description": "A super simple shader.",
+      "canHaveChildren": false,
+      "properties": [
+        {
+          "name": "u_fillColor",
+          "type": "color",
+          "description": "fill color.",
+          "defaultValue": "169,169,169,255"
+        }
+      ],
+      "shaderSpecification": {
+        "gles2": {
+          "vertexShaderPath": "resources/shaders/v_custom_shader_default.glsl",
+          "fragmentShaderPath": "resources/shaders/f_custom_shader_default.glsl"
+        },
+        "gles3": {
+          "vertexShaderPath": "resources/shaders/v_custom_shader_default.glsl",
+          "fragmentShaderPath": "resources/shaders/f_custom_shader_default.glsl"
+        }
+      }
+    },
+    {
+      "name": "BoxBlur",
+      "alias": "BoxBlur",
+      "type": "GtfCustomShader",
+      "category": "CustomShaderWidget",
+      "description": "A box blur shader which blurres the render output of all child widgets.",
+      "canHaveChildren": true,
+      "isAbstract": false,
+      "isInstantiator": false,
+      "isView": false,
+      "useOutputFromChildren": true,
+      "transparencyMode": 1,
+      "properties": [
+        {
+          "name": "u_blurIntensity",
+          "type": "integer",
+          "description": "The blur step width.",
+          "defaultValue": "1"
+        }
+      ],
+      "shaderSpecification": {
+        "gles2": {
+          "vertexShaderPath": "resources/shaders/v_default.glsl",
+          "fragmentShaderPath": "resources/shaders/f_boxblur.glsl"
+        },
+        "gles3": {
+          "vertexShaderPath": "resources/shaders/v_default.glsl",
+          "fragmentShaderPath": "resources/shaders/f_boxblur.glsl"
+        }
+      }
+    },
+    {
+      "name": "CustomShaderColoration",
+      "alias": "Coloration",
+      "type": "GtfCustomShader",
+      "category": "CustomShaderWidget",
+      "description": "A coloration shader.",
+      "canHaveChildren": false,
+      "transparencyMode": 1,
+      "useColoration": true,
+      "properties": [
+        {
+          "name": "u_image",
+          "type": "image",
+          "description": "A color palette image.",
+          "defaultValue": ""
+        }
+      ],
+      "shaderSpecification": {
+        "gles2": {
+          "vertexShaderPath": "resources/shaders/v_default.glsl",
+          "fragmentShaderPath": "resources/shaders/f_coloration.glsl"
+        },
+        "gles3": {
+          "vertexShaderPath": "resources/shaders/v_default.glsl",
+          "fragmentShaderPath": "resources/shaders/f_coloration.glsl"
+        }
+      }
+    }
+  ]
+}
