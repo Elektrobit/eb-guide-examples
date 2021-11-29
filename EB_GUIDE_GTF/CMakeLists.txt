@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.8)
 
 project(sdk_examples)
 
-set(GTF_TARGET_SDK_ROOT "C:\\Program Files\\Elektrobit\\EB GUIDE 6.10\\platform\\win64" CACHE PATH "Install path of EB GUIDE GTF SDK")
+set(GTF_TARGET_SDK_ROOT "C:\\Program Files\\Elektrobit\\EB GUIDE 6.11\\platform\\win64" CACHE PATH "Install path of EB GUIDE GTF SDK")
 
 include(${GTF_TARGET_SDK_ROOT}/lib/gtf-exports.cmake)
 include(${GTF_TARGET_SDK_ROOT}/cmake/utility_macros.cmake)
